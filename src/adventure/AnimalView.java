@@ -1,3 +1,4 @@
+package View;
 import javax.swing.JFrame;
 
 public class AnimalView extends JFrame{
