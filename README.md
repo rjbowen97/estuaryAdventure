@@ -1,7 +1,7 @@
 # estuaryAdventure
 
 
-planning:
+intial planning:
 
 	MVC:
 		Model: Behavior - State
