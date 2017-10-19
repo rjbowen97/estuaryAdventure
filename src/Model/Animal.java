@@ -9,9 +9,12 @@ public class Animal {
 	private double health;
 	private int score;
 	private int position_x, position_y;
-	private double velocity;
-	private boolean powered_up;
+	private int x_acceleration;
+	private int y_acceleration;
+	private int velocity;
 	
+	private boolean powered_up;
+	private boolean animal_type; //for the different estuaries
 	
 	//getters and setters
 	public double getHealth() {
@@ -49,6 +52,18 @@ public class Animal {
 	}
 	public void setPowered_up(boolean powered_up) {
 		this.powered_up = powered_up;
+	}
+	public int getX_acceleration() {
+		return x_acceleration;
+	}
+	public void setX_acceleration(int x_acceleration) {
+		this.x_acceleration = x_acceleration;
+	}
+	public int getY_acceleration() {
+		return y_acceleration;
+	}
+	public void setY_acceleration(int y_acceleration) {
+		this.y_acceleration = y_acceleration;
 	}
 
 

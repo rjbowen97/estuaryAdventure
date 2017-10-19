@@ -2,6 +2,8 @@ package Model;
 
 public class Fish extends Animal {
 
+	
+	
 	public Fish() {
 		super.setHealth(MAX_HEALTH);
 		super.setScore(0);
@@ -9,6 +11,8 @@ public class Fish extends Animal {
 		super.setPosition_y(0);
 		super.setVelocity(0);
 		super.setPowered_up(false);
+		super.setX_acceleration(0);
+		super.setY_acceleration(0);
 	}
 	
 	public void move(){
