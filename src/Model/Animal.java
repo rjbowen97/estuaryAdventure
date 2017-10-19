@@ -1,4 +1,4 @@
-package project;
+package Model;
 
 public class Animal {
 
