@@ -1,4 +1,4 @@
-package Model;
+package adventure;
 
 public class Animal {
 
@@ -14,7 +14,7 @@ public class Animal {
 	private int velocity;
 	
 	private boolean powered_up;
-	private boolean animal_type; //for the different estuaries
+	private boolean animal_type; //for the two different estuaries
 	
 	//getters and setters
 	public double getHealth() {
@@ -41,10 +41,10 @@ public class Animal {
 	public void setScore(int score) {
 		this.score = score;
 	}
-	public double getVelocity() {
+	public int getVelocity() {
 		return velocity;
 	}
-	public void setVelocity(double velocity) {
+	public void setVelocity(int velocity) {
 		this.velocity = velocity;
 	}
 	public boolean isPowered_up() {

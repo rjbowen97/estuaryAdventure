@@ -1,4 +1,4 @@
-package Model;
+package adventure;
 
 public class Fish extends Animal {
 
@@ -14,9 +14,6 @@ public class Fish extends Animal {
 		super.setX_acceleration(0);
 		super.setY_acceleration(0);
 	}
-	
-	public void move(){
 		
-	}
 
 }

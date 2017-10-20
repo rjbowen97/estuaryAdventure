@@ -1,14 +1,8 @@
-package Controller;
+package adventure;
 
 import javax.swing.JPanel;
-import Model.Interactable;
-import Model.Animal;
-import Model.Arena;
-import Model.Bird;
-import Model.Crab;
-import Model.Fish;
 
-public class PlayerController extends JPanel{
+public class Controller extends JPanel{
 
 	private final static int frameWidth = 500;
 	private final static int frameHeight = 300;
@@ -19,7 +13,7 @@ public class PlayerController extends JPanel{
     
     private Interactable interactables[];
 	
-	public PlayerController(int animal_type, int num_food, int num_enemies) {
+	public Controller(int animal_type, int num_food, int num_enemies) {
 		if(animal_type < 1){
 			//Bird
 			player = new Bird();
@@ -33,6 +27,22 @@ public class PlayerController extends JPanel{
 		}
 		
 		
+	}
+
+	public static int getFramewidth() {
+		return frameWidth;
+	}
+
+	public static int getFrameheight() {
+		return frameHeight;
+	}
+
+	public static int getImgheight() {
+		return imgHeight;
+	}
+
+	public static int getImgwidth() {
+		return imgWidth;
 	}
 
 }

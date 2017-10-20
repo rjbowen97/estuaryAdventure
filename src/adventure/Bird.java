@@ -1,4 +1,4 @@
-package Model;
+package adventure;
 
 
 public class Bird extends Animal {

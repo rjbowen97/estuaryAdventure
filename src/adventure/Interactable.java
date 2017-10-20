@@ -1,4 +1,4 @@
-package Model;
+package adventure;
 
 /*
  Food : An interactable with positive effect on player
