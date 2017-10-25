@@ -7,16 +7,13 @@ public class Arena {
 	private int number_of_enemies;
 	private int number_of_food;
 	
-	
 	public Arena() {
 		
 	}
 
-
 	public int getArena_width() {
 		return arena_width;
 	}
-
 
 	public int getArena_height() {
 		return arena_height;

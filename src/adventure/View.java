@@ -11,7 +11,7 @@ public class View extends JFrame{
 	public JFrame frame;
 	private BufferedImage playerSprite, backgroundImage, interactable_sprites[];
 	
-	private Animal m_model;
+	private Animal mainModel;
 	
 	@Override
 	public void paint(Graphics g){
@@ -20,7 +20,7 @@ public class View extends JFrame{
 	
 	
 	public View(Animal model) {
-		m_model = model;
+		mainModel = model;
 		frame = new JFrame();
 		frame.setBackground(Color.cyan);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

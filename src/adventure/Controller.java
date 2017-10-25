@@ -13,19 +13,19 @@ public class Controller extends JPanel{
     
     private Interactable interactables[];
 	
-	public Controller(int animal_type, int num_food, int num_enemies) {
-		if(animal_type < 1){
-			//Bird
+	public Controller(AnimalType animal_type, int num_food, int num_enemies) {
+		if (animal_type == AnimalType.BIRD){
 			player = new Bird();
 			
-		}else if(animal_type < 2){
-			//Fish
-			player = new Fish();
-		}else{
-			//Crab
-			player = new Crab();
 		}
 		
+		else if (animal_type == AnimalType.FISH){
+			player = new Fish();
+		}
+		
+		else if (animal_type == AnimalType.CRAB){
+			player = new Crab();
+		}
 		
 	}
 
