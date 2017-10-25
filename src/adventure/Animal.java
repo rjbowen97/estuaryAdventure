@@ -3,10 +3,10 @@ package adventure;
 public class Animal {
 
 	//limits
-	protected final double MAX_HEALTH = 100;
+	protected final int MAX_HEALTH = 100;
 	
 	//attributes
-	private double health;
+	private int health;
 	private int score;
 	private int position_x, position_y;
 	private int x_acceleration;
@@ -20,7 +20,7 @@ public class Animal {
 	public double getHealth() {
 		return health;
 	}
-	public void setHealth(double health) {
+	public void setHealth(int health) {
 		this.health = health;
 	}
 	public int getPosition_x() {
