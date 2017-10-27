@@ -7,8 +7,7 @@ package adventure;
  */
 
 public class Interactable {
-	private int x_position;
-	private int y_position;
-	private int effect_on_player; //can be positive or negative depending on category
-	private InteractableType type;
+	private int xPosition;
+	private int yPosition;
+	private boolean isFood;
 }

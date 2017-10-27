@@ -9,7 +9,7 @@ public class View extends JFrame{
 	
 	
 	public JFrame frame;
-	private BufferedImage playerSprite, backgroundImage, interactable_sprites[];
+	private BufferedImage playerSprite, backgroundImage, interactableSprites[];
 	
 	private Animal mainModel;
 	
@@ -18,7 +18,6 @@ public class View extends JFrame{
 
 	}
 	
-	
 	public View(Animal model) {
 		mainModel = model;
 		frame = new JFrame();
@@ -26,7 +25,7 @@ public class View extends JFrame{
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(Controller.getFramewidth(), Controller.getFrameheight());
 		frame.setVisible(true);
-		//frame.getContentPane().add(m_model);		
+		//frame.getContentPane().add(mainModel);		
 	}
 
 }

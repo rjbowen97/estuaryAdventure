@@ -2,21 +2,21 @@ package adventure;
 
 public class Arena {
 
-	private final int arena_width = 100;
-	private final int arena_height = 100;
-	private int number_of_enemies;
-	private int number_of_food;
+	private final int arenaWidth = 100;
+	private final int arenaHeight = 100;
+	private int enemyCount;
+	private int foodCount;
 	
 	public Arena() {
 		
 	}
 
 	public int getArena_width() {
-		return arena_width;
+		return arenaWidth;
 	}
 
 	public int getArena_height() {
-		return arena_height;
+		return arenaHeight;
 	}
 
 }

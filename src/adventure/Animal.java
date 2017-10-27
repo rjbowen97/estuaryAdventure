@@ -8,13 +8,13 @@ public class Animal {
 	//attributes
 	private int health;
 	private int score;
-	private int position_x, position_y;
-	private int x_acceleration;
-	private int y_acceleration;
+	private int xPosition, yPosition;
+	private int xAcceleration;
+	private int yAcceleration;
 	private int velocity;
 	
-	private boolean powered_up;
-	private boolean animal_type; //for the two different estuaries
+	private boolean poweredUp;
+	private boolean animalType; //for the two different estuaries
 	
 	//getters and setters
 	public double getHealth() {
@@ -23,17 +23,17 @@ public class Animal {
 	public void setHealth(int health) {
 		this.health = health;
 	}
-	public int getPosition_x() {
-		return position_x;
+	public int getXPosition() {
+		return xPosition;
 	}
-	public void setPosition_x(int position_x) {
-		this.position_x = position_x;
+	public void setXPosition(int xPosition) {
+		this.xPosition = xPosition;
 	}
-	public int getPosition_y() {
-		return position_y;
+	public int getYPosition() {
+		return yPosition;
 	}
-	public void setPosition_y(int position_y) {
-		this.position_y = position_y;
+	public void setYPosition(int yPosition) {
+		this.yPosition = yPosition;
 	}
 	public int getScore() {
 		return score;
@@ -47,23 +47,23 @@ public class Animal {
 	public void setVelocity(int velocity) {
 		this.velocity = velocity;
 	}
-	public boolean isPowered_up() {
-		return powered_up;
+	public boolean isPoweredUp() {
+		return poweredUp;
 	}
-	public void setPowered_up(boolean powered_up) {
-		this.powered_up = powered_up;
+	public void setPoweredUp(boolean poweredUp) {
+		this.poweredUp = poweredUp;
 	}
-	public int getX_acceleration() {
-		return x_acceleration;
+	public int getXAcceleration() {
+		return xAcceleration;
 	}
-	public void setX_acceleration(int x_acceleration) {
-		this.x_acceleration = x_acceleration;
+	public void setXAcceleration(int xAcceleration) {
+		this.xAcceleration = xAcceleration;
 	}
-	public int getY_acceleration() {
-		return y_acceleration;
+	public int getYAcceleration() {
+		return yAcceleration;
 	}
-	public void setY_acceleration(int y_acceleration) {
-		this.y_acceleration = y_acceleration;
+	public void setYAcceleration(int yAcceleration) {
+		this.yAcceleration = yAcceleration;
 	}
 
 
