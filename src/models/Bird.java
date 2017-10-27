@@ -1,9 +1,8 @@
-package adventure;
+package models;
 
+public class Bird extends Animal {
 
-public class Crab extends Animal {
-
-	public Crab() {
+	public Bird() {
 		super.setHealth(MAX_HEALTH);
 		super.setScore(0);
 		super.setXPosition(0);
@@ -18,6 +17,5 @@ public class Crab extends Animal {
 		
 	}
 
-	
 	
 }

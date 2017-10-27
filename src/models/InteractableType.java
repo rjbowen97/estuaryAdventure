@@ -1,4 +1,4 @@
-package adventure;
+package models;
 
 public enum InteractableType {
 	FOOD,

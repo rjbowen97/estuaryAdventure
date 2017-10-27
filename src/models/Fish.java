@@ -1,4 +1,4 @@
-package adventure;
+package models;
 
 public class Fish extends Animal {
 

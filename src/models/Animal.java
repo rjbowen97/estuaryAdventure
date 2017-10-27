@@ -1,4 +1,4 @@
-package adventure;
+package models;
 
 public class Animal {
 

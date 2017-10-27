@@ -1,9 +1,12 @@
-package adventure;
+package views;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
 import javax.swing.JFrame;
+
+import controller.Controller;
+import models.Animal;
 
 public class View extends JFrame{
 	
