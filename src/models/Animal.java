@@ -10,13 +10,12 @@ public class Animal {
 
 	//limits
 	protected final int MAXHEALTH = 100;
+	private int moveIncrement = 10;
 	
 	//attributes
 	private int health;
 	private int score;
 	private int xPosition, yPosition;
-	private int xAcceleration;
-	private int yAcceleration;
 	private int velocity;
 
 	private String spriteFile = "C:\\Users\\RJ\\Coding\\IDEs\\Eclipse\\workspace\\estuaryAdventure\\src\\models\\sprite.png";
@@ -57,7 +56,25 @@ public class Animal {
 		}
 	}
 	
-	public void move(){
+	public void isMoveHorizontal(boolean right){
+		
+		if(right){
+			xPosition += moveIncrement;
+		}
+		else {
+			xPosition -= moveIncrement;
+		}
+		
+	}
+	
+	public void isMoveVertical(boolean up){
+		
+		if(up){
+			yPosition += moveIncrement;
+		}
+		else {
+			yPosition -= moveIncrement;
+		}
 		
 	}
 	
@@ -97,18 +114,6 @@ public class Animal {
 	}
 	public void setPoweredUp(boolean poweredUp) {
 		this.poweredUp = poweredUp;
-	}
-	public int getXAcceleration() {
-		return xAcceleration;
-	}
-	public void setXAcceleration(int xAcceleration) {
-		this.xAcceleration = xAcceleration;
-	}
-	public int getYAcceleration() {
-		return yAcceleration;
-	}
-	public void setYAcceleration(int yAcceleration) {
-		this.yAcceleration = yAcceleration;
 	}
 
 
