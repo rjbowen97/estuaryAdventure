@@ -11,9 +11,9 @@ import models.Animal;
 public class View extends JFrame{
 	
 	
-	JFrame frame;
+	public JFrame frame;
 	
-	Animal viewModel;
+	public Animal viewModel;
 	
 	public View(Animal animalModel) {
 		

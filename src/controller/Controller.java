@@ -8,14 +8,7 @@ import models.Interactable;
 import views.View;
 
 public class Controller extends JPanel{
-
-	private final static int frameWidth = 500;
-	private final static int frameHeight = 300;
-	private final static int imgWidth = 165;
-	private final static int imgHeight = 165;
-    final static int frameCount = 10;
-    private static Animal player;
-    
+	
     String birdSprite = "sprite.png";
     String fishSprite = "sprite.png";
     String crabSprite = "sprite.png";
@@ -23,8 +16,8 @@ public class Controller extends JPanel{
     
     private Interactable interactables[];
     
-    Animal currentAnimalModel;
-    View mainView;
+    Animal player;
+    View view;
 	
 	public Controller(AnimalType animalType, int foodCount, int enemyCount) {
 		
@@ -40,22 +33,15 @@ public class Controller extends JPanel{
 			player = new Animal(crabSprite);
 		}
 		
+		view = new View(player);
 	}
-
-	public static int getFramewidth() {
-		return frameWidth;
+	
+	public void updateModel() {
 	}
-
-	public static int getFrameheight() {
-		return frameHeight;
+	
+	public void updateView() {
+		view.updateViewModel(player);
+		view.frame.repaint();
 	}
-
-	public static int getImgheight() {
-		return imgHeight;
-	}
-
-	public static int getImgwidth() {
-		return imgWidth;
-	}
-
+	
 }
