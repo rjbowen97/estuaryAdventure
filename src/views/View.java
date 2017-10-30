@@ -11,24 +11,28 @@ import models.Animal;
 public class View extends JFrame{
 	
 	
-	public JFrame frame;
-	private BufferedImage playerSprite, backgroundImage, interactableSprites[];
+	JFrame frame;
 	
-	private Animal mainModel;
+	Animal viewModel;
+	
+	public View(Animal animalModel) {
+		
+		frame.getContentPane().add(this);
+		frame.setBackground(Color.GRAY);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(animalModel.frameWidth, animalModel.frameHeight);
+		frame.setVisible(true);
+		viewModel = animalModel;
+	}
+	
+	public void updateViewModel(Animal newViewModel) {
+		this.viewModel = newViewModel;
+	}
 	
 	@Override
 	public void paint(Graphics g){
-
+		g.drawImage(viewModel.sprite, viewModel.getXPosition(), viewModel.getYPosition(), Color.gray, this);
 	}
 	
-	public View(Animal model) {
-		mainModel = model;
-		frame = new JFrame();
-		frame.setBackground(Color.cyan);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(Controller.getFramewidth(), Controller.getFrameheight());
-		frame.setVisible(true);
-		//frame.getContentPane().add(mainModel);		
-	}
 
 }

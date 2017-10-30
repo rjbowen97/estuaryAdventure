@@ -1,5 +1,11 @@
 package models;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+
 public class Animal {
 
 	//limits
@@ -12,13 +18,32 @@ public class Animal {
 	private int xAcceleration;
 	private int yAcceleration;
 	private int velocity;
-	private String spriteFile;
+	private String spriteFile = "sprite.png";
 	
 	private boolean poweredUp;
 	private boolean animalType; //for the two different estuaries
 	
+	public final int frameWidth = 500;
+	public final int frameHeight = 300;
+	public final int imgWidth = 165;
+	public final int imgHeight = 165;
+	
+	public BufferedImage sprite;
+	
 	public Animal(String spriteFile) {
 		this.spriteFile = spriteFile;
+		
+		LoadBufferedImage();
+	}
+	
+	private void LoadBufferedImage() {
+		try {
+			sprite = ImageIO.read(new File(spriteFile));
+		}
+		
+		catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public void move(){
