@@ -16,6 +16,10 @@ public class Animal {
 	private boolean poweredUp;
 	private boolean animalType; //for the two different estuaries
 	
+	public void move(){
+		
+	}
+	
 	//getters and setters
 	public double getHealth() {
 		return health;

@@ -4,9 +4,6 @@ import javax.swing.JPanel;
 
 import models.Animal;
 import models.AnimalType;
-import models.Bird;
-import models.Crab;
-import models.Fish;
 import models.Interactable;
 
 public class Controller extends JPanel{
@@ -22,16 +19,15 @@ public class Controller extends JPanel{
 	
 	public Controller(AnimalType animalType, int foodCount, int enemyCount) {
 		if (animalType == AnimalType.BIRD){
-			player = new Bird();
-			
+			player = new Animal();
 		}
 		
 		else if (animalType == AnimalType.FISH){
-			player = new Fish();
+			player = new Animal();
 		}
 		
 		else if (animalType == AnimalType.CRAB){
-			player = new Crab();
+			player = new Animal();
 		}
 		
 	}
