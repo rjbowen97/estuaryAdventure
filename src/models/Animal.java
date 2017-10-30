@@ -12,9 +12,14 @@ public class Animal {
 	private int xAcceleration;
 	private int yAcceleration;
 	private int velocity;
+	private String spriteFile;
 	
 	private boolean poweredUp;
 	private boolean animalType; //for the two different estuaries
+	
+	public Animal(String spriteFile) {
+		this.spriteFile = spriteFile;
+	}
 	
 	public void move(){
 		

@@ -5,6 +5,7 @@ import javax.swing.JPanel;
 import models.Animal;
 import models.AnimalType;
 import models.Interactable;
+import views.View;
 
 public class Controller extends JPanel{
 
@@ -15,19 +16,28 @@ public class Controller extends JPanel{
     final static int frameCount = 10;
     private static Animal player;
     
+    String birdSprite = "sprite.png";
+    String fishSprite = "sprite.png";
+    String crabSprite = "sprite.png";
+    
+    
     private Interactable interactables[];
+    
+    Animal currentAnimalModel;
+    View mainView;
 	
 	public Controller(AnimalType animalType, int foodCount, int enemyCount) {
+		
 		if (animalType == AnimalType.BIRD){
-			player = new Animal();
+			player = new Animal(birdSprite);
 		}
 		
 		else if (animalType == AnimalType.FISH){
-			player = new Animal();
+			player = new Animal(fishSprite);
 		}
 		
 		else if (animalType == AnimalType.CRAB){
-			player = new Animal();
+			player = new Animal(crabSprite);
 		}
 		
 	}
