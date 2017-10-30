@@ -3,7 +3,7 @@ package models;
 public class Animal {
 
 	//limits
-	protected final int MAX_HEALTH = 100;
+	protected final int MAXHEALTH = 100;
 	
 	//attributes
 	private int health;

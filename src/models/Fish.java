@@ -5,7 +5,7 @@ public class Fish extends Animal {
 	
 	
 	public Fish() {
-		super.setHealth(MAX_HEALTH);
+		super.setHealth(MAXHEALTH);
 		super.setScore(0);
 		super.setXPosition(0);
 		super.setYPosition(0);
