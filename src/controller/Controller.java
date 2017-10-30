@@ -19,21 +19,9 @@ public class Controller extends JPanel{
     Animal player;
     View view;
 	
-	public Controller(AnimalType animalType, int foodCount, int enemyCount) {
-		
-		if (animalType == AnimalType.BIRD){
-			player = new Animal(birdSprite);
-		}
-		
-		else if (animalType == AnimalType.FISH){
-			player = new Animal(fishSprite);
-		}
-		
-		else if (animalType == AnimalType.CRAB){
-			player = new Animal(crabSprite);
-		}
-		
-		view = new View(player);
+	public Controller(Animal model, View view) {
+		this.player = model;
+		this.view = view;
 	}
 	
 	public void updateModel() {

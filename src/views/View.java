@@ -1,22 +1,18 @@
 package views;
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.image.BufferedImage;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
-import controller.Controller;
 import models.Animal;
 
-public class View extends JFrame{
+public class View extends JPanel{
 	
-	
-	public JFrame frame;
-	
+	public JFrame frame = new JFrame();
 	public Animal viewModel;
 	
 	public View(Animal animalModel) {
-		
 		frame.getContentPane().add(this);
 		frame.setBackground(Color.GRAY);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
