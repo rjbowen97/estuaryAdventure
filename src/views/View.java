@@ -5,7 +5,6 @@ import java.awt.Graphics;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import controller.Controller;
 import models.Animal;
 
 public class View extends JPanel{
@@ -29,10 +28,6 @@ public class View extends JPanel{
 	@Override
 	public void paint(Graphics g){
 		g.drawImage(viewModel.sprite, viewModel.getXPosition(), viewModel.getYPosition(), Color.gray, this);
-	}
-	
-	public void registerListeners(Controller mouseController) {
-		
 	}
 	
 
