@@ -4,6 +4,7 @@ import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 
 import javax.swing.JComponent;
 import javax.swing.JFrame;
@@ -18,7 +19,7 @@ public class View extends JPanel{
 	
 	Component mouseClick = new MyComponent();
 	
-	class MyComponent extends JComponent implements MouseListener {
+	class MyComponent extends JComponent implements MouseListener, MouseMotionListener {
 
 		@Override
 		public void mouseClicked(MouseEvent arg0) {
@@ -48,6 +49,21 @@ public class View extends JPanel{
 			// TODO Auto-generated method stub
 			
 		}
+
+		@Override
+		public void mouseDragged(MouseEvent e) {
+			System.out.println(e.getX());
+			
+			viewModel.setXPosition(e.getX());
+			viewModel.setYPosition(e.getY());
+			
+		}
+
+		@Override
+		public void mouseMoved(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
 		
 	}
 	
@@ -57,6 +73,7 @@ public class View extends JPanel{
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(animalModel.frameWidth, animalModel.frameHeight);
 		frame.addMouseListener((MouseListener) mouseClick);
+		frame.addMouseMotionListener((MouseMotionListener) mouseClick);
 		frame.setVisible(true);
 		viewModel = animalModel;
 	}
