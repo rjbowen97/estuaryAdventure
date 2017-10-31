@@ -1,7 +1,11 @@
 package views;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Graphics;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -12,11 +16,47 @@ public class View extends JPanel{
 	public JFrame frame = new JFrame();
 	public Animal viewModel;
 	
+	Component mouseClick = new MyComponent();
+	
+	class MyComponent extends JComponent implements MouseListener {
+
+		@Override
+		public void mouseClicked(MouseEvent arg0) {
+			System.out.println("CLICKED!");
+		}
+
+		@Override
+		public void mouseEntered(MouseEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseExited(MouseEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mousePressed(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseReleased(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+	}
+	
 	public View(Animal animalModel) {
 		frame.getContentPane().add(this);
 		frame.setBackground(Color.GRAY);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(animalModel.frameWidth, animalModel.frameHeight);
+		frame.addMouseListener((MouseListener) mouseClick);
 		frame.setVisible(true);
 		viewModel = animalModel;
 	}
