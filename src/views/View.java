@@ -92,17 +92,17 @@ public class View extends JPanel{
 	private class MainGamePanel extends JPanel {
         private static final int DIM_W = 500;
         private static final int DIM_H = 500;
-        private static final int INCREMENT = 10;
+        private static final int BACKGROUND_INCREMENT = 10;
 
         private BufferedImage backgroundImage;
 
         private int targetGraphicFirstCornerXCoord, targetGraphicFirstCornerYCoord, targetGraphicSecondCornerXCoord, targetGraphicSecondCornerYCoord;
         private int backgroundFirstCornerXCoord, backgroundFirstCornerYCoord, backgroundSecondCornerXCoord, backgroundSecondCornerYCoord;
-        private int IMAGE_WIDTH;
+        private int BACKGROUND_WIDTH;
 
         public MainGamePanel() {
             initImages();
-            initImagePoints();
+            initBackgroundImagePoints();
             Timer timer = new Timer(40, new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     moveBackground();
@@ -114,7 +114,7 @@ public class View extends JPanel{
 
         @Override
         protected void paintComponent(Graphics g) {
-            g.setColor(Color.GRAY);
+            g.setColor(Color.LIGHT_GRAY);
             g.fillRect(0, 0, getWidth(), getHeight());
             g.drawImage(backgroundImage,
             		targetGraphicFirstCornerXCoord,
@@ -126,6 +126,7 @@ public class View extends JPanel{
                     backgroundSecondCornerXCoord,
                     backgroundSecondCornerYCoord,
                     this);
+            
     		g.drawImage(playerViewModel.sprite, playerViewModel.getXPosition(), playerViewModel.getYPosition(),this);
         }
 
@@ -134,7 +135,7 @@ public class View extends JPanel{
             return new Dimension(DIM_W, DIM_H);
         }
 
-        private void initImagePoints() {
+        private void initBackgroundImagePoints() {
             targetGraphicFirstCornerXCoord = 0;
             targetGraphicFirstCornerYCoord = 0;
             targetGraphicSecondCornerXCoord = DIM_W;
@@ -147,21 +148,21 @@ public class View extends JPanel{
 
         private void initImages() {
             try {
-                backgroundImage = ImageIO.read(new File("b1.png"));
-                IMAGE_WIDTH = backgroundImage.getWidth();
-                System.out.println(IMAGE_WIDTH);
+                backgroundImage = ImageIO.read(new File("b1.jpg"));
+                BACKGROUND_WIDTH = backgroundImage.getWidth();
+                System.out.println(BACKGROUND_WIDTH);
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
         }
 
         private void moveBackground() {
-            if (backgroundFirstCornerXCoord > IMAGE_WIDTH) {
+            if (backgroundFirstCornerXCoord > BACKGROUND_WIDTH) {
                 backgroundFirstCornerXCoord = 0 - DIM_W;
                 backgroundSecondCornerXCoord = 0;
             } else {
-                backgroundFirstCornerXCoord += INCREMENT;
-                backgroundSecondCornerXCoord += INCREMENT;
+                backgroundFirstCornerXCoord += BACKGROUND_INCREMENT;
+                backgroundSecondCornerXCoord += BACKGROUND_INCREMENT;
             }
         }
     }
