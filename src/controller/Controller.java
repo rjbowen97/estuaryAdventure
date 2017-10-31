@@ -28,6 +28,9 @@ public class Controller extends JPanel {
 	}
 	
 	public void updateView() {
+		 
+		//put updateBackground here
+		view.updateArenas();
 		view.updateViewModel(player);
 		view.frame.repaint();
 	}
