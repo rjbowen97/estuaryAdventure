@@ -23,8 +23,6 @@ public class Animal {
 	
 	private boolean poweredUp;
 	
-	public final int frameWidth = 500;
-	public final int frameHeight = 300;
 	public final int imgWidth = 165;
 	public final int imgHeight = 165;
 	

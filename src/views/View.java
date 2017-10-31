@@ -3,43 +3,32 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Graphics;
-import java.awt.Image;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.IOException;
-import java.nio.file.Paths;
-import java.nio.file.Files;
-import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
-import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 
-import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 
 import models.Animal;
-import models.Arena;
 
 public class View extends JPanel{
 	
 	public JFrame frame = new JFrame();
 	public Animal playerViewModel;
-	public ArrayList<Arena> arenas = null;
 	
-	Component mouseClick = new MyComponent();
+	Component mouseClick = new MouseComponent();
 	
-	class MyComponent extends JComponent implements MouseListener, MouseMotionListener {
+	private class MouseComponent extends JComponent implements MouseListener, MouseMotionListener {
 
 		@Override
 		public void mouseClicked(MouseEvent arg0) {
@@ -88,11 +77,11 @@ public class View extends JPanel{
 	public View(Animal animalModel) { //Maybe change this so it accepts an array of models
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(animalModel.frameWidth, animalModel.frameHeight);
+		frame.setSize(animalModel.imgWidth, animalModel.imgHeight);
 		
 		frame.addMouseListener((MouseListener) mouseClick);
 		frame.addMouseMotionListener((MouseMotionListener) mouseClick);
-		frame.add(new AnimatingPanel());
+		frame.add(new MainGamePanel());
 		
 		frame.pack();		
 		frame.setVisible(true);
@@ -100,7 +89,7 @@ public class View extends JPanel{
 		playerViewModel = animalModel;
 	}
 	
-	private class AnimatingPanel extends JPanel {
+	private class MainGamePanel extends JPanel {
         private static final int DIM_W = 500;
         private static final int DIM_H = 500;
         private static final int INCREMENT = 10;
@@ -111,7 +100,7 @@ public class View extends JPanel{
         private int backgroundFirstCornerXCoord, backgroundFirstCornerYCoord, backgroundSecondCornerXCoord, backgroundSecondCornerYCoord;
         private int IMAGE_WIDTH;
 
-        public AnimatingPanel() {
+        public MainGamePanel() {
             initImages();
             initImagePoints();
             Timer timer = new Timer(40, new ActionListener() {
@@ -121,16 +110,11 @@ public class View extends JPanel{
                 }
             });
             timer.start();
-
-            FlowLayout layout = (FlowLayout)getLayout();
-            layout.setHgap(0);
-            layout.setVgap(0);
         }
 
         @Override
         protected void paintComponent(Graphics g) {
-            super.paintComponent(g);
-            g.setColor(Color.WHITE);
+            g.setColor(Color.GRAY);
             g.fillRect(0, 0, getWidth(), getHeight());
             g.drawImage(backgroundImage,
             		targetGraphicFirstCornerXCoord,
@@ -185,15 +169,4 @@ public class View extends JPanel{
 	public void updateViewModel(Animal newViewModel) {
 		this.playerViewModel = newViewModel;
 	}
-	
-	@Override
-	public void paint(Graphics g){
-		super.paint(g);
-		g.drawImage(playerViewModel.sprite, playerViewModel.getXPosition(), playerViewModel.getYPosition(),this);
-		//if(arenas.isEmpty()) return;
-//		for(Arena currentArena: arenas)
-//			g.drawImage(currentArena.getImage(), currentArena.getPoisitionX(), currentArena.getPositionY(), this);
-	}
-	
-
 }
