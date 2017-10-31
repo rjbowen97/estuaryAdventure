@@ -81,18 +81,21 @@ public class Animal {
 		return health;
 	}
 	public void setHealth(int health) {
+		System.out.println(this.health);
 		this.health = health; 
 	}
 	public int getXPosition() {
 		return xPosition;
 	}
 	public void setXPosition(int xPosition) {
+		System.out.println("X Position " + xPosition);
 		this.xPosition = xPosition;
 	}
 	public int getYPosition() {
 		return yPosition;
 	}
 	public void setYPosition(int yPosition) {
+		System.out.println("Y Position " + yPosition);
 		this.yPosition = yPosition;
 	}
 	public int getScore() {

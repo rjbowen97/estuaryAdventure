@@ -32,7 +32,6 @@ public class View extends JPanel{
 
 		@Override
 		public void mouseClicked(MouseEvent arg0) {
-			System.out.println("CLICKED!");
 		}
 
 		@Override
@@ -150,7 +149,6 @@ public class View extends JPanel{
             try {
                 backgroundImage = ImageIO.read(new File("b1.jpg"));
                 BACKGROUND_WIDTH = backgroundImage.getWidth();
-                System.out.println(BACKGROUND_WIDTH);
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
