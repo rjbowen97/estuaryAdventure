@@ -18,13 +18,11 @@ public class Animal {
 	private int xPosition, yPosition;
 	private int velocity;
 
-	private String spriteFile = "C:\\Users\\RJ\\Coding\\IDEs\\Eclipse\\workspace\\estuaryAdventure\\src\\models\\sprite.png";
+	private String spriteFile = "sprite.jpg";
 	public BufferedImage sprite;
 	
 	private boolean poweredUp;
 	
-	public final int frameWidth = 500;
-	public final int frameHeight = 300;
 	public final int imgWidth = 165;
 	public final int imgHeight = 165;
 	
@@ -43,7 +41,7 @@ public class Animal {
 			//sprite = crabSprite;
 		}
 		
-		LoadBufferedImage();
+		LoadBufferedImage(); 
 	}
 	
 	private void LoadBufferedImage() {
@@ -83,7 +81,7 @@ public class Animal {
 		return health;
 	}
 	public void setHealth(int health) {
-		this.health = health;
+		this.health = health; 
 	}
 	public int getXPosition() {
 		return xPosition;
