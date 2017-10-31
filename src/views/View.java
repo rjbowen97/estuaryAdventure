@@ -21,19 +21,21 @@ import javax.swing.JFrame;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.SwingUtilities;
+import javax.swing.Timer;
+
 import models.Animal;
 import models.Arena;
 
 public class View extends JPanel{
 	
 	public JFrame frame = new JFrame();
-	public Animal viewModel;
+	public Animal playerViewModel;
 	public ArrayList<Arena> arenas = null;
-	private final String backgroundFolder = "/backgrounds";
-	
-	private int backgroundPosition;
-		
-	private JLayeredPane layeredPane;
 	
 	Component mouseClick = new MyComponent();
 	
@@ -70,8 +72,8 @@ public class View extends JPanel{
 
 		@Override
 		public void mouseDragged(MouseEvent e) {
-			viewModel.setXPosition(e.getX());
-			viewModel.setYPosition(e.getY());
+			playerViewModel.setXPosition(e.getX());
+			playerViewModel.setYPosition(e.getY());
 			
 		}
 
@@ -83,45 +85,111 @@ public class View extends JPanel{
 		
 	}
 	
-	public View(Animal animalModel) {
-		super();
-		frame.getContentPane().add(this);
-		frame.setBackground(Color.GRAY);
+	public View(Animal animalModel) { //Maybe change this so it accepts an array of models
+		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(animalModel.frameWidth, animalModel.frameHeight);
+		
 		frame.addMouseListener((MouseListener) mouseClick);
 		frame.addMouseMotionListener((MouseMotionListener) mouseClick);
+		frame.add(new AnimatingPanel());
 		
-		viewModel = animalModel;
-		getArenas(); //does nothing for now
+		frame.pack();		
 		frame.setVisible(true);
+		
+		playerViewModel = animalModel;
 	}
 	
-	private void getArenas(){
-//		for(String imageFile: new File(backgroundFolder).list())
-//				arenas.add(new Arena(imageFile));		
-	}
-	
-	public void updateArenas(){
-//		for(Arena ar: arenas)
-//			ar.updatePosition();
-		backgroundPosition = (backgroundPosition > frame.getWidth()) ? 0 : backgroundPosition + 10;		
-	}
+	private class AnimatingPanel extends JPanel {
+        private static final int DIM_W = 500;
+        private static final int DIM_H = 500;
+        private static final int INCREMENT = 10;
+
+        private BufferedImage backgroundImage;
+
+        private int targetGraphicFirstCornerXCoord, targetGraphicFirstCornerYCoord, targetGraphicSecondCornerXCoord, targetGraphicSecondCornerYCoord;
+        private int backgroundFirstCornerXCoord, backgroundFirstCornerYCoord, backgroundSecondCornerXCoord, backgroundSecondCornerYCoord;
+        private int IMAGE_WIDTH;
+
+        public AnimatingPanel() {
+            initImages();
+            initImagePoints();
+            Timer timer = new Timer(40, new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    moveBackground();
+                    repaint();
+                }
+            });
+            timer.start();
+
+            FlowLayout layout = (FlowLayout)getLayout();
+            layout.setHgap(0);
+            layout.setVgap(0);
+        }
+
+        @Override
+        protected void paintComponent(Graphics g) {
+            super.paintComponent(g);
+            g.setColor(Color.WHITE);
+            g.fillRect(0, 0, getWidth(), getHeight());
+            g.drawImage(backgroundImage,
+            		targetGraphicFirstCornerXCoord,
+            		targetGraphicFirstCornerYCoord,
+            		targetGraphicSecondCornerXCoord,
+            		targetGraphicSecondCornerYCoord,
+            		backgroundFirstCornerXCoord,
+            		backgroundFirstCornerYCoord,
+                    backgroundSecondCornerXCoord,
+                    backgroundSecondCornerYCoord,
+                    this);
+    		g.drawImage(playerViewModel.sprite, playerViewModel.getXPosition(), playerViewModel.getYPosition(),this);
+        }
+
+        @Override
+        public Dimension getPreferredSize() {
+            return new Dimension(DIM_W, DIM_H);
+        }
+
+        private void initImagePoints() {
+            targetGraphicFirstCornerXCoord = 0;
+            targetGraphicFirstCornerYCoord = 0;
+            targetGraphicSecondCornerXCoord = DIM_W;
+            targetGraphicSecondCornerYCoord = DIM_H;
+            backgroundFirstCornerXCoord = 0;
+            backgroundFirstCornerYCoord = 0;
+            backgroundSecondCornerXCoord = DIM_W;
+            backgroundSecondCornerYCoord = DIM_H;
+        }
+
+        private void initImages() {
+            try {
+                backgroundImage = ImageIO.read(new File("b1.png"));
+                IMAGE_WIDTH = backgroundImage.getWidth();
+                System.out.println(IMAGE_WIDTH);
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+
+        private void moveBackground() {
+            if (backgroundFirstCornerXCoord > IMAGE_WIDTH) {
+                backgroundFirstCornerXCoord = 0 - DIM_W;
+                backgroundSecondCornerXCoord = 0;
+            } else {
+                backgroundFirstCornerXCoord += INCREMENT;
+                backgroundSecondCornerXCoord += INCREMENT;
+            }
+        }
+    }
 	
 	public void updateViewModel(Animal newViewModel) {
-		this.viewModel = newViewModel;
+		this.playerViewModel = newViewModel;
 	}
 	
-		
 	@Override
 	public void paint(Graphics g){
 		super.paint(g);
-		g.drawImage(new Arena("b1.png").getImage(), backgroundPosition, 0, this);
-		g.drawImage(new Arena("b2.png").getImage(), -backgroundPosition, 0, this);
-		g.drawImage(new Arena("b3.png").getImage(), 200, 0, this);
-		g.drawImage(new Arena("b4.png").getImage(), 210, 0, this);
-		g.drawImage(new Arena("b5.png").getImage(), 310, 0, this);
-		g.drawImage(viewModel.sprite, viewModel.getXPosition(), viewModel.getYPosition(), Color.gray, this);
+		g.drawImage(playerViewModel.sprite, playerViewModel.getXPosition(), playerViewModel.getYPosition(),this);
 		//if(arenas.isEmpty()) return;
 //		for(Arena currentArena: arenas)
 //			g.drawImage(currentArena.getImage(), currentArena.getPoisitionX(), currentArena.getPositionY(), this);
