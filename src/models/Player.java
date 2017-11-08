@@ -10,7 +10,7 @@ import javax.imageio.ImageIO;
 public class Player {
 
 	//limits
-	protected final int MAXHEALTH = 100;
+	protected final int MAXHEALTH = 3;
 	private int moveIncrement = 10;
 	
 	//attributes

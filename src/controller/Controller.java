@@ -11,16 +11,15 @@ import java.awt.event.*;
 
 public class Controller extends JPanel {
 	
-    Player player;
+    Player playerModel;
     View view;
     
     Component mouseComponent = new MouseComponent();
 	
     public Controller(Player model, View view) {
-		this.player = model;
+		this.playerModel = model;
 		this.view = view;
 	}
-    
     
 	private class MouseComponent extends JComponent implements MouseListener, MouseMotionListener {
 
@@ -65,7 +64,6 @@ public class Controller extends JPanel {
 			// TODO Auto-generated method stub
 			
 		}
-
 	}
 	
 }
