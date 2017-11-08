@@ -24,12 +24,12 @@ import models.Player;
 public class View extends JPanel{
 	
 	public JFrame frame = new JFrame();
-	public Player playerViewModel;
+	public Player playerModel;
 	
 	
-	public View(Player animalModel) { //Maybe change this so it accepts an array of models
+	public View(Player playerModel) { //Maybe change this so it accepts an array of models
 		
-		playerViewModel = animalModel;
+		this.playerModel = playerModel;
 	}
 	
 	private class MainGamePanel extends JPanel {
