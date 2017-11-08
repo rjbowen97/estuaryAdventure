@@ -1,11 +1,9 @@
 package controller;
 
-import javax.swing.JPanel;
 
 import models.Player;
 import views.View;
 
-import java.awt.Component;
 import java.awt.event.*;
 
 public class Controller {
@@ -13,13 +11,19 @@ public class Controller {
     Player playerModel;
     View view;
     
-    public MouseMotionListenerComponent mouseMotionListenerComponent = new MouseMotionListenerComponent();
     public MouseListenerComponent mouseListenerComponent = new MouseListenerComponent();
+    public MouseMotionListenerComponent mouseMotionListenerComponent = new MouseMotionListenerComponent();
     
     public Controller(Player model, View view) {
 		this.playerModel = model;
 		this.view = view;
+		
+		setUpView();
 	}
+    
+    private void setUpView() {
+    	view.registerListenersFromController(this);
+    }
     
     private class MouseMotionListenerComponent implements MouseMotionListener {
 

@@ -13,7 +13,7 @@ public class View extends JFrame {
 		this.playerModel = playerModel;
 	}
 	
-	public void registerListeners(Controller controller) {
+	public void registerListenersFromController(Controller controller) {
 		frame.getContentPane().addMouseListener(controller.mouseListenerComponent);
 		frame.getContentPane().addMouseMotionListener(controller.mouseMotionListenerComponent);
 		
