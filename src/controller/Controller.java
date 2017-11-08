@@ -32,7 +32,6 @@ public class Controller {
 		@Override
 		public void mouseMoved(MouseEvent e) {
 			// TODO Auto-generated method stub
-			
 		}
     	
     }
