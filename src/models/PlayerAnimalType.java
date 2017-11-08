@@ -1,6 +1,6 @@
 package models;
 
-public enum AnimalType {
+public enum PlayerAnimalType {
 	BIRD,
 	FISH,
 	CRAB

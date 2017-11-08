@@ -19,71 +19,15 @@ import java.awt.event.ActionListener;
 
 import javax.swing.Timer;
 
-import models.Animal;
+import models.Player;
 
 public class View extends JPanel{
 	
 	public JFrame frame = new JFrame();
-	public Animal playerViewModel;
+	public Player playerViewModel;
 	
-	Component mouseClick = new MouseComponent();
 	
-	private class MouseComponent extends JComponent implements MouseListener, MouseMotionListener {
-
-		@Override
-		public void mouseClicked(MouseEvent arg0) {
-		}
-
-		@Override
-		public void mouseEntered(MouseEvent arg0) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void mouseExited(MouseEvent arg0) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void mousePressed(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void mouseReleased(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void mouseDragged(MouseEvent e) {
-			playerViewModel.setXPosition(e.getX());
-			playerViewModel.setYPosition(e.getY());
-			
-		}
-
-		@Override
-		public void mouseMoved(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-		
-	}
-	
-	public View(Animal animalModel) { //Maybe change this so it accepts an array of models
-		
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(animalModel.imgWidth, animalModel.imgHeight);
-		
-		frame.addMouseListener((MouseListener) mouseClick);
-		frame.addMouseMotionListener((MouseMotionListener) mouseClick);
-		frame.add(new MainGamePanel());
-		
-		frame.pack();		
-		frame.setVisible(true);
+	public View(Player animalModel) { //Maybe change this so it accepts an array of models
 		
 		playerViewModel = animalModel;
 	}
@@ -165,7 +109,7 @@ public class View extends JPanel{
         }
     }
 	
-	public void updateViewModel(Animal newViewModel) {
+	public void updateViewModel(Player newViewModel) {
 		this.playerViewModel = newViewModel;
 	}
 }

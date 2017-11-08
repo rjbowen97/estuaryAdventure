@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 import javax.imageio.ImageIO;
 
-public class Animal {
+public class Player {
 
 	//limits
 	protected final int MAXHEALTH = 100;
@@ -28,17 +28,17 @@ public class Animal {
 	public final int imgHeight = 165;
 	
 	
-	public Animal(AnimalType animalType) {
+	public Player(PlayerAnimalType animalType) {
 		
-		if (animalType == AnimalType.BIRD){
+		if (animalType == PlayerAnimalType.BIRD){
 			//sprite = birdSprite;
 		}
 		
-		else if (animalType == AnimalType.FISH){
+		else if (animalType == PlayerAnimalType.FISH){
 			//sprite = fishSprite;
 		}
 		
-		else if (animalType == AnimalType.CRAB){
+		else if (animalType == PlayerAnimalType.CRAB){
 			//sprite = crabSprite;
 		}
 		
@@ -120,7 +120,7 @@ public class Animal {
 
 	public static void main(String[] Argsv){
 		
-		Animal an = new Animal(AnimalType.BIRD);
+		Player an = new Player(PlayerAnimalType.BIRD);
 
 		
 		Scanner reader = new Scanner(System.in);  // Reading from System.in

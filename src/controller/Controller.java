@@ -1,36 +1,71 @@
 package controller;
 
+import javax.swing.JComponent;
 import javax.swing.JPanel;
 
-import models.Animal;
-import models.AnimalType;
-import models.Interactable;
+import models.Player;
 import views.View;
+
+import java.awt.Component;
 import java.awt.event.*;
 
 public class Controller extends JPanel {
 	
-    String birdSprite = "sprite.png";
-    String fishSprite = "sprite.png";
-    String crabSprite = "sprite.png";
-    
-    
-    private Interactable interactables[];
-    Animal player;
+    Player player;
     View view;
+    
+    Component mouseComponent = new MouseComponent();
 	
-	public Controller(Animal model, View view) {
+    public Controller(Player model, View view) {
 		this.player = model;
 		this.view = view;
 	}
-	
-	public void updateModel() {
-	}
-	
-	public void updateView() {
-		
-		view.updateViewModel(player);
-		view.frame.repaint();
+    
+    
+	private class MouseComponent extends JComponent implements MouseListener, MouseMotionListener {
+
+		@Override
+		public void mouseDragged(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseMoved(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseClicked(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseEntered(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseExited(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mousePressed(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseReleased(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
 	}
 	
 }

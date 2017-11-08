@@ -1,20 +1,18 @@
 package controller;
 
-import models.Animal;
-import models.AnimalType;
+import models.Player;
+import models.PlayerAnimalType;
 import views.View;
 
 public class GameWrapper {
 
 	public static void main(String[] args) {
 
-		Animal mainModel = new Animal(AnimalType.BIRD);
+		Player mainModel = new Player(PlayerAnimalType.BIRD);
 
 		Controller mainController = new Controller(mainModel, new View(mainModel));
 
 		for(int i = 0; i < 1000; i++){
-			mainController.updateModel();
-			mainController.updateView();
 			try {
 				Thread.sleep(100);
 			} catch (InterruptedException e) {
