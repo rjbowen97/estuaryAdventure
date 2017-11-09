@@ -7,10 +7,10 @@ import java.util.Scanner;
 
 import javax.imageio.ImageIO;
 
-public class Animal {
+public class Player {
 
 	//limits
-	protected final int MAXHEALTH = 100;
+	protected final int MAXHEALTH = 3;
 	private int moveIncrement = 10;
 	
 	//attributes
@@ -24,23 +24,21 @@ public class Animal {
 	
 	private boolean poweredUp;
 	
-	public final int frameWidth = 500;
-	public final int frameHeight = 300;
 	public final int imgWidth = 165;
 	public final int imgHeight = 165;
 	
 	
-	public Animal(AnimalType animalType) {
+	public Player(PlayerAnimalType animalType) {
 		
-		if (animalType == AnimalType.BIRD){
+		if (animalType == PlayerAnimalType.BIRD){
 			//sprite = birdSprite;
 		}
 		
-		else if (animalType == AnimalType.FISH){
+		else if (animalType == PlayerAnimalType.FISH){
 			//sprite = fishSprite;
 		}
 		
-		else if (animalType == AnimalType.CRAB){
+		else if (animalType == PlayerAnimalType.CRAB){
 			//sprite = crabSprite;
 		}
 		
@@ -84,18 +82,21 @@ public class Animal {
 		return health;
 	}
 	public void setHealth(int health) {
+		System.out.println(this.health);
 		this.health = health; 
 	}
 	public int getXPosition() {
 		return xPosition;
 	}
 	public void setXPosition(int xPosition) {
+		System.out.println("X Position " + xPosition);
 		this.xPosition = xPosition;
 	}
 	public int getYPosition() {
 		return yPosition;
 	}
 	public void setYPosition(int yPosition) {
+		System.out.println("Y Position " + yPosition);
 		this.yPosition = yPosition;
 	}
 	public int getScore() {
@@ -119,7 +120,7 @@ public class Animal {
 
 	public static void main(String[] Argsv){
 		
-		Animal an = new Animal(AnimalType.BIRD);
+		Player an = new Player(PlayerAnimalType.BIRD);
 
 		
 		Scanner reader = new Scanner(System.in);  // Reading from System.in
