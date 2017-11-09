@@ -14,7 +14,6 @@ public class Controller extends JPanel {
     String fishSprite = "sprite.png";
     String crabSprite = "sprite.png";
     
-    
     private Interactable interactables[];
     Animal player;
     View view;
@@ -25,6 +24,7 @@ public class Controller extends JPanel {
 	}
 	
 	public void updateModel() {
+		
 	}
 	
 	public void updateView() {
