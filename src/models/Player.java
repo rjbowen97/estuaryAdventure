@@ -19,7 +19,7 @@ public class Player {
 	private int xPosition, yPosition;
 	private int velocity;
 
-	private String spriteFile = "sprite.jpg";
+	private String spriteFile = "./sprites/sprite.jpg";
 	public BufferedImage sprite;
 	
 	private boolean poweredUp;
@@ -41,19 +41,11 @@ public class Player {
 		else if (animalType == PlayerAnimalType.CRAB){
 			//sprite = crabSprite;
 		}
-		
-		LoadBufferedImage(); 
+		xPosition = 0;
+		yPosition = 0;		
 	}
 	
-	private void LoadBufferedImage() {
-		try {
-			sprite = ImageIO.read(new File(spriteFile));
-		}
-		
-		catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
+	
 	
 	public void isMoveHorizontal(boolean right){
 		
@@ -152,6 +144,18 @@ public class Player {
 		
 		reader.close(); 
 		
+	}
+
+
+
+	public String getSpriteFile() {
+		return spriteFile;
+	}
+
+
+
+	public void setSpriteFile(String spriteFile) {
+		this.spriteFile = spriteFile;
 	}
 	
 	

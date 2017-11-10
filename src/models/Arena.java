@@ -13,20 +13,21 @@ public class Arena {
 
 	private final int arenaWidth = 100;
 	private final int arenaHeight = 300;
-	private int poisitionX;
-	private int positionY;
+	private int xPosition;
+	private int yPosition;
 	private BufferedImage image;
+	private String fileName;
 	
 	
 	private int enemy;
 	private int foodCount;
 	
-	public Arena(String file_name) {
+	public Arena(File inFile) {
 		this.setPositionY(0);
-		this.setPoisitionX(0);
+		this.setXPosition(0);
 		try{
-			File imageFile = new File(file_name);
-			setImage(ImageIO.read(imageFile));
+			this.image = ImageIO.read(inFile);
+			fileName = inFile.getName();
 		}catch(IOException e){
 			e.printStackTrace();
 		}
@@ -52,26 +53,31 @@ public class Arena {
 	}
 
 
-	public int getPoisitionX() {
-		return poisitionX;
+	public int getXPosition() {
+		return xPosition;
 	}
 
 
-	protected void setPoisitionX(int poisitionX) {
-		this.poisitionX = poisitionX;
+	protected void setXPosition(int poisitionX) {
+		this.xPosition = poisitionX;
 	}
 
 	public void updatePosition(){
-		this.poisitionX += 1;
+		this.xPosition += 1;
 	}
 	
-	public int getPositionY() {
-		return positionY;
+	public int getYPosition() {
+		return yPosition;
 	}
 
 
 	protected void setPositionY(int positionY) {
-		this.positionY = positionY;
+		this.yPosition = positionY;
+	}
+
+
+	public String getFileName() {
+		return fileName;
 	}
 
 }
