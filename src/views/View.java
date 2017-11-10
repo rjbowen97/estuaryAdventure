@@ -27,7 +27,7 @@ import models.*;
 public class View extends JFrame{
 
 	private final int FRAME_DIMENSION = 700;
-	public JLayeredPane layers = new JLayeredPane();
+	public JLayeredPane layeredPane = new JLayeredPane();
 	private PlayerComponent playerComponent;
 	private ArrayList<BackgroundComponent> backgroundComponents;
 
@@ -37,9 +37,9 @@ public class View extends JFrame{
 		playerComponent = new PlayerComponent(playerModel);
 		backgroundComponents = new ArrayList<BackgroundComponent>();
 		
-		layers = new JLayeredPane();
-		layers.setBounds(0, 0, FRAME_DIMENSION, FRAME_DIMENSION);
-		layers.add(playerComponent, 20);
+		layeredPane = new JLayeredPane();
+		layeredPane.setBounds(0, 0, FRAME_DIMENSION, FRAME_DIMENSION);
+		layeredPane.add(playerComponent, 20);
 
 		BackgroundComponent temp = null;
 		int loc = 0;
@@ -47,10 +47,10 @@ public class View extends JFrame{
 			temp = new BackgroundComponent(currentModel, loc);
 			backgroundComponents.add(temp);
 			backgroundComponents.iterator().next().setVisible(true);
-			layers.add(temp, loc);
+			layeredPane.add(temp, loc);
 			loc += 10;
 	
-		add(layers);
+		add(layeredPane);
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
@@ -107,12 +107,12 @@ public class View extends JFrame{
 			this.backgroundNumber = modelNumber;
 			this.setSize(FRAME_DIMENSION,FRAME_DIMENSION);
 			try {
-				File imageFile = new File(model.getFileName());
+				File imageFile = new File(model.getBackgroundImagefileName());
 				System.out.println(imageFile.exists());
 				backgroundImage = ImageIO.read(imageFile);
 			}			
 			catch (IOException e) {
-				System.out.println(model.getFileName());
+				System.out.println(model.getBackgroundImagefileName());
 				e.printStackTrace();
 			}
 			this.setVisible(true);

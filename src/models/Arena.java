@@ -15,16 +15,16 @@ public class Arena {
 	private final int arenaHeight = 300;
 	private int xPosition;
 	private int yPosition;
-	private String fileName;
+	private String backgroundImagefileName;
 	
 	
 	private int enemy;
 	private int foodCount;
 	
-	public Arena(File inFile) {
+	public Arena(File backgroundImageFile) {
 		this.setPositionY(0);
 		this.setXPosition(0);
-		this.fileName = "./Backgrounds/" + inFile.getName();
+		this.backgroundImagefileName = "./Backgrounds/" + backgroundImageFile.getName();
 	}
 	
 	
@@ -59,8 +59,8 @@ public class Arena {
 	}
 
 
-	public String getFileName() {
-		return fileName;
+	public String getBackgroundImagefileName() {
+		return backgroundImagefileName;
 	}
 
 }
