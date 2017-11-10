@@ -15,7 +15,6 @@ public class Arena {
 	private final int arenaHeight = 300;
 	private int xPosition;
 	private int yPosition;
-	private BufferedImage image;
 	private String fileName;
 	
 	
@@ -25,12 +24,7 @@ public class Arena {
 	public Arena(File inFile) {
 		this.setPositionY(0);
 		this.setXPosition(0);
-		try{
-			this.image = ImageIO.read(inFile);
-			fileName = inFile.getName();
-		}catch(IOException e){
-			e.printStackTrace();
-		}
+		this.fileName = "./Backgrounds/" + inFile.getName();
 	}
 	
 	
@@ -41,17 +35,6 @@ public class Arena {
 	public int getArena_height() {
 		return arenaHeight;
 	}
-
-
-	public BufferedImage getImage() {
-		return image;
-	}
-
-
-	public void setImage(BufferedImage image) {
-		this.image = image;
-	}
-
 
 	public int getXPosition() {
 		return xPosition;

@@ -1,5 +1,4 @@
 package views;
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -22,22 +21,34 @@ import javax.swing.JPanel;
 import controller.Controller;
 import models.*;
 
+
+
 @SuppressWarnings("serial")
 public class View extends JFrame{
 
+	private final int FRAME_DIMENSION = 700;
 	public JLayeredPane layers = new JLayeredPane();
 	private PlayerComponent playerComponent;
 	private ArrayList<BackgroundComponent> backgroundComponents;
 
 	public View(Player playerModel, ArrayList<Arena> backgroundModels) { //Maybe change this so it accepts an array of models
 		//setup background components
+		setSize(FRAME_DIMENSION, FRAME_DIMENSION);
 		playerComponent = new PlayerComponent(playerModel);
-		for(Arena currentModel: backgroundModels)
-			layers.add(new BackgroundComponent(currentModel), 10);
-		setSize(500, 500);
+		backgroundComponents = new ArrayList<BackgroundComponent>();
 		
 		layers = new JLayeredPane();
+		layers.setBounds(0, 0, FRAME_DIMENSION, FRAME_DIMENSION);
 		layers.add(playerComponent, 20);
+
+		BackgroundComponent temp = null;
+		int loc = 0;
+		for(Arena currentModel: backgroundModels)
+			temp = new BackgroundComponent(currentModel, loc);
+			backgroundComponents.add(temp);
+			backgroundComponents.iterator().next().setVisible(true);
+			layers.add(temp, loc);
+			loc += 10;
 	
 		add(layers);
 		setVisible(true);
@@ -58,8 +69,7 @@ public class View extends JFrame{
 		PlayerComponent(Player model){
 			this.xPosition = model.getXPosition();
 			this.yPosition = model.getYPosition();
-			this.setSize(model.imgWidth,model.imgHeight);
-			this.setBackground(Color.black);
+			this.setSize(FRAME_DIMENSION,FRAME_DIMENSION);
 			try {
 				File imageFile = new File(model.getSpriteFile());
 				if(imageFile.exists() == true){
@@ -79,28 +89,30 @@ public class View extends JFrame{
 		}
 		
 		void updateComponent(int x, int y){
-			this.xPosition = x;
-			this.yPosition = y;
+			//this.xPosition = x;
+			//this.yPosition = y;
+			this.xPosition += 4;
+			this.yPosition++;
 			repaint();
 		}
 	}
 	
 	class BackgroundComponent extends JComponent{
-		private int xPosition, yPosition;
+		private int xPosition, yPosition, backgroundNumber;
 		BufferedImage backgroundImage;
 		
-		BackgroundComponent(Arena model){
-			this.xPosition = model.getXPosition();
+		BackgroundComponent(Arena model, int modelNumber){
+			this.xPosition = FRAME_DIMENSION - model.getArena_width();
 			this.yPosition = model.getYPosition();
-			this.setSize(400,300);
-			this.setBackground(Color.black);
+			this.backgroundNumber = modelNumber;
+			this.setSize(FRAME_DIMENSION,FRAME_DIMENSION);
 			try {
 				File imageFile = new File(model.getFileName());
-				if(imageFile.exists() == true){
-					backgroundImage = ImageIO.read(imageFile);
-				}
+				System.out.println(imageFile.exists());
+				backgroundImage = ImageIO.read(imageFile);
 			}			
 			catch (IOException e) {
+				System.out.println(model.getFileName());
 				e.printStackTrace();
 			}
 			this.setVisible(true);
@@ -113,8 +125,8 @@ public class View extends JFrame{
 		}
 		
 		void updateComponent(){
-			this.xPosition++;
-			this.yPosition++;
+			this.xPosition -= 4; //move to left, simulates motion
+			this.yPosition++; //not sure what to do yet
 			repaint();
 		}
 		
@@ -123,16 +135,13 @@ public class View extends JFrame{
 	
 	public void updateBackgrounds(){
 		for(BackgroundComponent currComponent: backgroundComponents){
+			System.out.println(currComponent.backgroundNumber  + ": " +currComponent.xPosition);
 			currComponent.updateComponent();
 		}
 	}
 	
 	public void updatePlayer(int x, int y){
 		playerComponent.updateComponent(x, y);
-	}
-
-	public void paint(){
-//		playerComponent.repaint();
 	}
 
 }
