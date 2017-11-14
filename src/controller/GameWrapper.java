@@ -6,6 +6,10 @@ import java.util.ArrayList;
 import models.*;
 import views.View;
 
+/*
+ * This class essentially wraps the game up into a presentable/runnable product, Player model is
+ * defined as well as the background. 
+ */
 public class GameWrapper {
 
 	public static void main(String[] args) {
