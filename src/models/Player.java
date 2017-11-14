@@ -27,6 +27,12 @@ public class Player {
 	public final int imgWidth = 165;
 	public final int imgHeight = 165;
 	
+	/* This constructor takes in the animal type, which is then used to
+	 * display the correct animal type to the screen, and sets the starting position to 0,0.
+	 * 
+	 * @param animalType enum parameter to determine which sprite to use.
+	 * 
+	 * */
 	
 	public Player(PlayerAnimalType animalType) {
 		
@@ -45,7 +51,13 @@ public class Player {
 		yPosition = 0;		
 	}
 	
-	
+	/* This function controls the horizontal movement of the model by incrementing
+	 * the x position by a factor of the variable moveIncrement.
+	 * 
+	 * @param right boolean parameter that moves the model right if true and left if false by
+	 * the move increment
+	 * 
+	 * */
 	
 	public void isMoveHorizontal(boolean right){
 		
@@ -57,6 +69,14 @@ public class Player {
 		}
 		
 	}
+	
+	/* This function controls the vertical movement of the model by incrementing
+	 * the y position by a factor of moveIncrement.
+	 * 
+	 * @param up boolean parameter that moves the model up if true and down if false by
+	 * the move increment
+	 * 
+	 * */
 	
 	public void isMoveVertical(boolean up){
 		
@@ -109,6 +129,10 @@ public class Player {
 	public void setPoweredUp(boolean poweredUp) {
 		this.poweredUp = poweredUp;
 	}
+	
+	/* Main
+	 * 
+	 * */
 
 	public static void main(String[] Argsv){
 		
