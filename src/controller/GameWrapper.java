@@ -30,6 +30,7 @@ public class GameWrapper {
     				Integer.parseInt(settings.globalSettings.get("backgroundXPosition").toString()),
     				Integer.parseInt(settings.globalSettings.get("backgroundYPosition").toString())));
     	}  
+    	
 		Controller mainController = new Controller(mainModel, new View(mainModel, backgroundModels));
 
 		for(int i = 0; i < 1000; i++){
