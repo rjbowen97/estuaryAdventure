@@ -15,14 +15,14 @@ public class GameWrapper {
 	public static void main(String[] args) {
 
 		Player mainModel = new Player(PlayerAnimalType.BIRD);
-		ArrayList<Background> arenaModels = new ArrayList<Background>();
+		ArrayList<Background> backgroundModels = new ArrayList<Background>();
     	File[] backgroundImageFiles = new File("./backgrounds").listFiles();
     	for(File currentBackgroundImageFiles: backgroundImageFiles){
-    		arenaModels.add(new Background(currentBackgroundImageFiles));
+    		backgroundModels.add(new Background(currentBackgroundImageFiles));
     	}  
 		
 
-		Controller mainController = new Controller(mainModel, new View(mainModel, arenaModels));
+		Controller mainController = new Controller(mainModel, new View(mainModel, backgroundModels));
 
 		for(int i = 0; i < 1000; i++){
 			try {

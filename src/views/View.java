@@ -61,42 +61,6 @@ public class View extends JFrame{
 
 	}
 	
-	@SuppressWarnings("serial")
-	class PlayerComponent extends JComponent{
-		private int xPosition, yPosition;
-		BufferedImage playerImage;
-		
-		PlayerComponent(Player model){
-			this.xPosition = model.getXPosition();
-			this.yPosition = model.getYPosition();
-			this.setSize(MAIN_FRAME_DIMENSION,MAIN_FRAME_DIMENSION);
-			try {
-				File imageFile = new File(model.getSpriteFile());
-				if(imageFile.exists() == true){
-					playerImage = ImageIO.read(imageFile);
-				}
-			}			
-			catch (IOException e) {
-				e.printStackTrace();
-			}
-			this.setVisible(true);
-		}
-		
-		@Override
-		public void paintComponent(Graphics g){
-			super.paintComponent(g);
-			g.drawImage(playerImage, xPosition, yPosition, null);
-		}
-		
-		void updateComponent(int x, int y){
-			//this.xPosition = x;
-			//this.yPosition = y;
-			this.xPosition += 4;
-			this.yPosition++;
-			repaint();
-		}
-	}
-	
 	class BackgroundComponent extends JComponent{
 		private int xPosition, yPosition, backgroundNumber;
 		BufferedImage backgroundImage;

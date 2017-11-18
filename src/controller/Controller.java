@@ -18,9 +18,9 @@ public class Controller {
     String crabSprite = "sprite.png";
     
     //models
-    private Interactable interactables[];
-    private ArrayList<Background> backgrounds;
-    Player playerModel;
+    
+    public Background background;
+    public Player playerModel;
     
     //view
     private View view;
