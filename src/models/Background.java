@@ -17,7 +17,7 @@ public class Background {
 	private int backgroundHeight;
 	private String backgroundImagefileName;
 	
-	public Background(File backgroundImageFile, int xPosition, int yPosition, int width, int height) {
+	public Background(File backgroundImageFile, int xPosition, int yPosition) {
 		this.setXPosition(xPosition);
 		this.setPositionY(yPosition);
 		

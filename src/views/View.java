@@ -26,19 +26,19 @@ import models.*;
 @SuppressWarnings("serial")
 public class View extends JFrame{
 
-	private final int MAIN_FRAME_DIMENSION = 700;
+	private final int FRAME_DIMENSION = 700;
 	public JLayeredPane layeredPane = new JLayeredPane();
 	private PlayerComponent playerComponent;
 	private ArrayList<BackgroundComponent> backgroundComponents;
 
 	public View(Player playerModel, ArrayList<Background> backgroundModels) { //Maybe change this so it accepts an array of models
 		//setup background components
-		setSize(MAIN_FRAME_DIMENSION, MAIN_FRAME_DIMENSION);
+		setSize(FRAME_DIMENSION, FRAME_DIMENSION);
 		playerComponent = new PlayerComponent(playerModel);
 		backgroundComponents = new ArrayList<BackgroundComponent>();
 		
 		layeredPane = new JLayeredPane();
-		layeredPane.setBounds(0, 0, MAIN_FRAME_DIMENSION, MAIN_FRAME_DIMENSION);
+		layeredPane.setBounds(0, 0, FRAME_DIMENSION, FRAME_DIMENSION);
 		layeredPane.add(playerComponent, 20);
 
 		BackgroundComponent temp = null;
@@ -61,15 +61,51 @@ public class View extends JFrame{
 
 	}
 	
+	@SuppressWarnings("serial")
+	class PlayerComponent extends JComponent{
+		private int xPosition, yPosition;
+		BufferedImage playerImage;
+		
+		PlayerComponent(Player model){
+			this.xPosition = model.getXPosition();
+			this.yPosition = model.getYPosition();
+			this.setSize(FRAME_DIMENSION,FRAME_DIMENSION);
+			try {
+				File imageFile = new File(model.getSpriteFile());
+				if(imageFile.exists() == true){
+					playerImage = ImageIO.read(imageFile);
+				}
+			}			
+			catch (IOException e) {
+				e.printStackTrace();
+			}
+			this.setVisible(true);
+		}
+		
+		@Override
+		public void paintComponent(Graphics g){
+			super.paintComponent(g);
+			g.drawImage(playerImage, xPosition, yPosition, null);
+		}
+		
+		void updateComponent(int x, int y){
+			//this.xPosition = x;
+			//this.yPosition = y;
+			this.xPosition += 4;
+			this.yPosition++;
+			repaint();
+		}
+	}
+	
 	class BackgroundComponent extends JComponent{
 		private int xPosition, yPosition, backgroundNumber;
 		BufferedImage backgroundImage;
 		
 		BackgroundComponent(Background model, int modelNumber){
-			this.xPosition = MAIN_FRAME_DIMENSION - model.getBackgroundWidth();
+			this.xPosition = FRAME_DIMENSION - model.getBackgroundWidth();
 			this.yPosition = model.getYPosition();
 			this.backgroundNumber = modelNumber;
-			this.setSize(MAIN_FRAME_DIMENSION,MAIN_FRAME_DIMENSION);
+			this.setSize(FRAME_DIMENSION,FRAME_DIMENSION);
 			try {
 				File imageFile = new File(model.getBackgroundImagefileName());
 				System.out.println(imageFile.exists());
