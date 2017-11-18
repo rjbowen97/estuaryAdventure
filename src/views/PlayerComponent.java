@@ -23,9 +23,9 @@ class PlayerComponent extends JComponent{
 		
 		this.xPosition = this.playerModel.getXPosition();
 		this.yPosition = this.playerModel.getYPosition();
-		this.setSize(this.playerModel.getSize,this.playerModel.getSize());
+		this.setSize(this.playerModel.getSize(),this.playerModel.getSize());
 		try {
-			File imageFile = new File(model.getSpriteFile());
+			File imageFile = new File(playerModel.getSpriteFile());
 			if(imageFile.exists() == true){
 				playerImage = ImageIO.read(imageFile);
 			}

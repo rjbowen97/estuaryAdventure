@@ -22,13 +22,20 @@ public class Player {
 	private int velocity;
 	private int size;
 
+	public int getSize() {
+		return size;
+	}
+
+	public void setSize(int size) {
+		this.size = size;
+	}
+
+
+
 	private String spriteFile = "./sprites/sprite.jpg";
 	public BufferedImage sprite;
 	
 	private boolean poweredUp;
-	
-	public final int imgWidth = Settings.globalSettings.get("playerSize");
-	public final int imgHeight = 165;
 	
 	/* This constructor takes in the animal type, which is then used to
 	 * display the correct animal type to the screen, and sets the starting position to 0,0.
@@ -38,6 +45,8 @@ public class Player {
 	 * */
 	
 	public Player(PlayerAnimalType animalType) {
+		
+		size = Integer.parseInt(Settings.globalSettings.get("playerSize").toString());
 		
 		if (animalType == PlayerAnimalType.BIRD){
 			//sprite = birdSprite;
@@ -63,14 +72,12 @@ public class Player {
 	 * */
 	
 	public void isMoveHorizontal(boolean right){
-		
 		if(right){
 			xPosition += moveIncrement;
 		}
 		else {
 			xPosition -= moveIncrement;
 		}
-		
 	}
 	
 	/* This function controls the vertical movement of the model by incrementing
@@ -89,7 +96,6 @@ public class Player {
 		else {
 			yPosition -= moveIncrement;
 		}
-		
 	}
 	
 	//getters and setters
