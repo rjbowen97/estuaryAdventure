@@ -18,38 +18,18 @@ import views.View;
  */
 public class GameWrapper {
 	
-	public Properties globalSettings;
-
 	public static void main(String[] args) {
 		
-		Properties globalSettings = new Properties();
-		InputStream configPropertiesInputStream = null;
-
-		try {
-
-			configPropertiesInputStream = new FileInputStream("config.properties");
-
-			globalSettings.load(configPropertiesInputStream);
-
-		} catch (IOException ioException) {
-			ioException.printStackTrace();
-		} finally {
-			if (configPropertiesInputStream != null) {
-				try {
-					configPropertiesInputStream.close();
-				} catch (IOException ioException) {
-					ioException.printStackTrace();
-				}
-			}
-		}
+		Settings settings = new Settings();
 		
 		Player mainModel = new Player(PlayerAnimalType.BIRD);
 		ArrayList<Background> backgroundModels = new ArrayList<Background>();
     	File[] backgroundImageFiles = new File("./backgrounds").listFiles();
     	for(File currentBackgroundImageFiles: backgroundImageFiles){
-    		backgroundModels.add(new Background(currentBackgroundImageFiles, Integer.parseInt(globalSettings.get("backgroundXPosition").toString()), Integer.parseInt(globalSettings.get("backgroundYPosition").toString())));
+    		backgroundModels.add(new Background(currentBackgroundImageFiles,
+    				Integer.parseInt(settings.globalSettings.get("backgroundXPosition").toString()),
+    				Integer.parseInt(settings.globalSettings.get("backgroundYPosition").toString())));
     	}  
-		
 		Controller mainController = new Controller(mainModel, new View(mainModel, backgroundModels));
 
 		for(int i = 0; i < 1000; i++){
