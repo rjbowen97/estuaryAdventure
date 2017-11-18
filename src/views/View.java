@@ -30,13 +30,12 @@ public class View extends JFrame{
 	public JLayeredPane layeredPane = new JLayeredPane();
 	private PlayerComponent playerComponent;
 	private ArrayList<BackgroundComponent> backgroundComponents;
-	private Settings settings = new Settings();
 	private int mainFrameDimension = 0;
 	
 	public View(Player playerModel, ArrayList<Background> backgroundModels) { //Maybe change this so it accepts an array of models
 		//setup background components
 		
-		this.mainFrameDimension = Integer.parseInt(settings.globalSettings.getProperty("mainFrameDimension"));
+		this.mainFrameDimension = Integer.parseInt(Settings.globalSettings.getProperty("mainFrameDimension"));
 		
 		setSize(mainFrameDimension, mainFrameDimension);
 		playerComponent = new PlayerComponent(playerModel);
@@ -67,40 +66,6 @@ public class View extends JFrame{
 	}
 	
 	@SuppressWarnings("serial")
-	class PlayerComponent extends JComponent{
-		private int xPosition, yPosition;
-		BufferedImage playerImage;
-		
-		PlayerComponent(Player model){
-			this.xPosition = model.getXPosition();
-			this.yPosition = model.getYPosition();
-			this.setSize(mainFrameDimension,mainFrameDimension);
-			try {
-				File imageFile = new File(model.getSpriteFile());
-				if(imageFile.exists() == true){
-					playerImage = ImageIO.read(imageFile);
-				}
-			}			
-			catch (IOException e) {
-				e.printStackTrace();
-			}
-			this.setVisible(true);
-		}
-		
-		@Override
-		public void paintComponent(Graphics g){
-			super.paintComponent(g);
-			g.drawImage(playerImage, xPosition, yPosition, null);
-		}
-		
-		void updateComponent(int x, int y){
-			//this.xPosition = x;
-			//this.yPosition = y;
-			this.xPosition += 4;
-			this.yPosition++;
-			repaint();
-		}
-	}
 	
 	class BackgroundComponent extends JComponent{
 		private int xPosition, yPosition, backgroundNumber;

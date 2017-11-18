@@ -6,15 +6,15 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class Settings {
-	public Properties globalSettings;
+	public static Properties globalSettings;
 	
 	public Settings() {
-		this.globalSettings = new Properties();
+		Settings.globalSettings = new Properties();
 		InputStream globalSettingsPropertiesInputStream = null;
 
 		try {
 			globalSettingsPropertiesInputStream = new FileInputStream("globalSettings.properties");
-			this.globalSettings.load(globalSettingsPropertiesInputStream);
+			Settings.globalSettings.load(globalSettingsPropertiesInputStream);
 
 		} catch (IOException ioException) {
 			ioException.printStackTrace();

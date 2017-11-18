@@ -7,6 +7,8 @@ import java.util.Scanner;
 
 import javax.imageio.ImageIO;
 
+import controller.Settings;
+
 public class Player {
 
 	//limits
@@ -18,13 +20,14 @@ public class Player {
 	private int score;
 	private int xPosition, yPosition;
 	private int velocity;
+	private int size;
 
 	private String spriteFile = "./sprites/sprite.jpg";
 	public BufferedImage sprite;
 	
 	private boolean poweredUp;
 	
-	public final int imgWidth = 165;
+	public final int imgWidth = Settings.globalSettings.get("playerSize");
 	public final int imgHeight = 165;
 	
 	/* This constructor takes in the animal type, which is then used to
