@@ -15,10 +15,10 @@ public class GameWrapper {
 	public static void main(String[] args) {
 
 		Player mainModel = new Player(PlayerAnimalType.BIRD);
-		ArrayList<Arena> arenaModels = new ArrayList<Arena>();
+		ArrayList<Background> arenaModels = new ArrayList<Background>();
     	File[] backgroundImageFiles = new File("./backgrounds").listFiles();
     	for(File currentBackgroundImageFiles: backgroundImageFiles){
-    		arenaModels.add(new Arena(currentBackgroundImageFiles));
+    		arenaModels.add(new Background(currentBackgroundImageFiles));
     	}  
 		
 

@@ -31,7 +31,7 @@ public class View extends JFrame{
 	private PlayerComponent playerComponent;
 	private ArrayList<BackgroundComponent> backgroundComponents;
 
-	public View(Player playerModel, ArrayList<Arena> backgroundModels) { //Maybe change this so it accepts an array of models
+	public View(Player playerModel, ArrayList<Background> backgroundModels) { //Maybe change this so it accepts an array of models
 		//setup background components
 		setSize(FRAME_DIMENSION, FRAME_DIMENSION);
 		playerComponent = new PlayerComponent(playerModel);
@@ -43,7 +43,7 @@ public class View extends JFrame{
 
 		BackgroundComponent temp = null;
 		int loc = 0;
-		for(Arena currentModel: backgroundModels)
+		for(Background currentModel: backgroundModels)
 			temp = new BackgroundComponent(currentModel, loc);
 			backgroundComponents.add(temp);
 			backgroundComponents.iterator().next().setVisible(true);
@@ -101,8 +101,8 @@ public class View extends JFrame{
 		private int xPosition, yPosition, backgroundNumber;
 		BufferedImage backgroundImage;
 		
-		BackgroundComponent(Arena model, int modelNumber){
-			this.xPosition = FRAME_DIMENSION - model.getArena_width();
+		BackgroundComponent(Background model, int modelNumber){
+			this.xPosition = FRAME_DIMENSION - model.getBackgroundWidth();
 			this.yPosition = model.getYPosition();
 			this.backgroundNumber = modelNumber;
 			this.setSize(FRAME_DIMENSION,FRAME_DIMENSION);

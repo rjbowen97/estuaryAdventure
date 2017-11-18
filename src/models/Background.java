@@ -9,31 +9,27 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-public class Arena {
+public class Background {
 
-	private final int arenaWidth = 100;
-	private final int arenaHeight = 300;
+	private final int backgroundWidth = 100;
+	private final int backgroundHeight = 300;
 	private int xPosition;
 	private int yPosition;
 	private String backgroundImagefileName;
 	
-	
-	private int enemy;
-	private int foodCount;
-	
-	public Arena(File backgroundImageFile) {
+	public Background(File backgroundImageFile) {
 		this.setPositionY(0);
 		this.setXPosition(0);
 		this.backgroundImagefileName = "./Backgrounds/" + backgroundImageFile.getName();
 	}
 	
 	
-	public int getArena_width() {
-		return arenaWidth;
+	public int getBackgroundWidth() {
+		return backgroundWidth;
 	}
 
-	public int getArena_height() {
-		return arenaHeight;
+	public int getBackgroundHeight() {
+		return backgroundHeight;
 	}
 
 	public int getXPosition() {

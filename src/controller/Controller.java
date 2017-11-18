@@ -19,7 +19,7 @@ public class Controller {
     
     //models
     private Interactable interactables[];
-    private ArrayList<Arena> backgrounds;
+    private ArrayList<Background> backgrounds;
     Player playerModel;
     
     //view
