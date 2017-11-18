@@ -11,19 +11,27 @@ import javax.imageio.ImageIO;
 
 public class Background {
 
-	private final int backgroundWidth = 100;
-	private final int backgroundHeight = 300;
 	private int xPosition;
 	private int yPosition;
+	private int backgroundWidth;
+	private int backgroundHeight;
 	private String backgroundImagefileName;
 	
-	public Background(File backgroundImageFile) {
-		this.setPositionY(0);
-		this.setXPosition(0);
+	public Background(File backgroundImageFile, int xPosition, int yPosition, int width, int height) {
+		this.setXPosition(xPosition);
+		this.setPositionY(yPosition);
+		
 		this.backgroundImagefileName = "./Backgrounds/" + backgroundImageFile.getName();
 	}
 	
-	
+	public void setBackgroundWidth(int backgroundWidth) {
+		this.backgroundWidth = backgroundWidth;
+	}
+
+	public void setBackgroundHeight(int backgroundHeight) {
+		this.backgroundHeight = backgroundHeight;
+	}
+
 	public int getBackgroundWidth() {
 		return backgroundWidth;
 	}
@@ -35,7 +43,10 @@ public class Background {
 	public int getXPosition() {
 		return xPosition;
 	}
-
+	
+	public int getYPosition() {
+		return yPosition;
+	}
 
 	protected void setXPosition(int poisitionX) {
 		this.xPosition = poisitionX;
@@ -44,11 +55,6 @@ public class Background {
 	public void updatePosition(){
 		this.xPosition += 1;
 	}
-	
-	public int getYPosition() {
-		return yPosition;
-	}
-
 
 	protected void setPositionY(int positionY) {
 		this.yPosition = positionY;

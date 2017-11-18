@@ -26,19 +26,19 @@ import models.*;
 @SuppressWarnings("serial")
 public class View extends JFrame{
 
-	private final int FRAME_DIMENSION = 700;
+	private final int MAIN_FRAME_DIMENSION = 700;
 	public JLayeredPane layeredPane = new JLayeredPane();
 	private PlayerComponent playerComponent;
 	private ArrayList<BackgroundComponent> backgroundComponents;
 
 	public View(Player playerModel, ArrayList<Background> backgroundModels) { //Maybe change this so it accepts an array of models
 		//setup background components
-		setSize(FRAME_DIMENSION, FRAME_DIMENSION);
+		setSize(MAIN_FRAME_DIMENSION, MAIN_FRAME_DIMENSION);
 		playerComponent = new PlayerComponent(playerModel);
 		backgroundComponents = new ArrayList<BackgroundComponent>();
 		
 		layeredPane = new JLayeredPane();
-		layeredPane.setBounds(0, 0, FRAME_DIMENSION, FRAME_DIMENSION);
+		layeredPane.setBounds(0, 0, MAIN_FRAME_DIMENSION, MAIN_FRAME_DIMENSION);
 		layeredPane.add(playerComponent, 20);
 
 		BackgroundComponent temp = null;
@@ -69,7 +69,7 @@ public class View extends JFrame{
 		PlayerComponent(Player model){
 			this.xPosition = model.getXPosition();
 			this.yPosition = model.getYPosition();
-			this.setSize(FRAME_DIMENSION,FRAME_DIMENSION);
+			this.setSize(MAIN_FRAME_DIMENSION,MAIN_FRAME_DIMENSION);
 			try {
 				File imageFile = new File(model.getSpriteFile());
 				if(imageFile.exists() == true){
@@ -102,10 +102,10 @@ public class View extends JFrame{
 		BufferedImage backgroundImage;
 		
 		BackgroundComponent(Background model, int modelNumber){
-			this.xPosition = FRAME_DIMENSION - model.getBackgroundWidth();
+			this.xPosition = MAIN_FRAME_DIMENSION - model.getBackgroundWidth();
 			this.yPosition = model.getYPosition();
 			this.backgroundNumber = modelNumber;
-			this.setSize(FRAME_DIMENSION,FRAME_DIMENSION);
+			this.setSize(MAIN_FRAME_DIMENSION,MAIN_FRAME_DIMENSION);
 			try {
 				File imageFile = new File(model.getBackgroundImagefileName());
 				System.out.println(imageFile.exists());
