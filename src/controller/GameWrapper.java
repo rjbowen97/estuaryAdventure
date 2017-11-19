@@ -16,7 +16,7 @@ public class GameWrapper {
 		
 		Settings settings = new Settings();
 		
-		Player playerModel = new Player(PlayerAnimalType.BIRD);
+		NonLandAnimal playerModel = new NonLandAnimal();
 		ArrayList<Background> backgroundModels = new ArrayList<Background>();
     	File[] backgroundImageFiles = new File("./backgrounds").listFiles();
     	

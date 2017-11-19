@@ -9,33 +9,20 @@ import javax.imageio.ImageIO;
 
 import controller.Settings;
 
-public class Player {
+public abstract class Player {
 
 	//limits
 	
 	//attributes
-	private int health;
-	private int score;
+	protected int health;
+	protected int score;
 
-	private int xPosition;
-	private int yPosition;
+	protected int xPosition;
+	protected int yPosition;
 
-	private String spriteFile = "./sprites/sprite.jpg";
-		
-	/* This constructor takes in the animal type, which is then used to
-	 * display the correct animal type to the screen, and sets the starting position to 0,0.
-	 * 
-	 * @param animalType enum parameter to determine which sprite to use.
-	 * 
-	 * */
+	protected String spriteFile = "./sprites/sprite.jpg";
 	
-	public Player(PlayerAnimalType animalType) {
-		
-	}
-	
-	public void move(int xIncrement, int yIncrement) {
-		this.xPosition += xIncrement;
-	}
+	public abstract void move();
 	
 	public int getHealth() {
 		return health;
