@@ -27,24 +27,20 @@ import models.*;
 @SuppressWarnings("serial")
 public class View extends JFrame{
 
-	public JLayeredPane mainLayeredPane = new JLayeredPane();
 	public JLayeredPane backgroundLayeredPane;
-	
-	private PlayerComponent playerComponent;
+	public JLayeredPane mainLayeredPane;
+
 	private int mainFrameDimension;
 	
 	public View(Player playerModel, ArrayList<Background> backgroundModels) {
 		
 		this.mainFrameDimension = Integer.parseInt(Settings.globalSettings.getProperty("mainFrameDimension"));
-		
-		setSize(mainFrameDimension, mainFrameDimension);
-		playerComponent = new PlayerComponent(playerModel);
+		this.setSize(mainFrameDimension, mainFrameDimension);
 		
 		mainLayeredPane = new JLayeredPane();
 		mainLayeredPane.setBounds(0, 0, mainFrameDimension, mainFrameDimension);
-		mainLayeredPane.add(playerComponent, 5);
 		
-		
+		this.add(backgroundLayeredPane);
 		this.add(mainLayeredPane);
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

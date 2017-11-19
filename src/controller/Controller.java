@@ -18,7 +18,7 @@ public class Controller {
     String crabSprite = "sprite.png";
     
     //models
-    public ArrayList<Background> backgrounds;
+    public ArrayList<Background> backgroundModels;
     public Player playerModel;
     
     //view

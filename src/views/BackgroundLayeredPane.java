@@ -6,9 +6,9 @@ import javax.swing.JLayeredPane;
 
 import models.Background;
 
-public class BackgroundLayeredPanel extends JLayeredPane {
+public class BackgroundLayeredPane extends JLayeredPane {
 	
-	public BackgroundLayeredPanel(ArrayList<Background> backgroundModels) {
+	public BackgroundLayeredPane(ArrayList<Background> backgroundModels) {
 		BackgroundComponent backgroundComponentToAdd = null;
 		
 		for (int backgroundModelIndex = 0; backgroundModelIndex < backgroundModels.size(); backgroundModelIndex++) {
