@@ -37,8 +37,7 @@ class PlayerComponent extends JComponent{
 	}
 	
 	@Override
-	public void paintComponent(Graphics g){
-		super.paintComponent(g);
+	public void paint(Graphics g){
 		g.drawImage(playerImage, xPosition, yPosition, null);
 	}
 	

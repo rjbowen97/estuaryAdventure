@@ -17,12 +17,13 @@ public class MainLayeredPane extends JLayeredPane {
 		
 		backgroundLayeredPane = new BackgroundLayeredPane(backgroundModels);
 		playerComponent = new PlayerComponent(playerModel);
-		
 		this.add(backgroundLayeredPane, new Integer(0));
+		this.add(playerComponent, new Integer(1));
 	}
 	
 	@Override
 	public void paint(Graphics g) {
+		playerComponent.paint(g);
 		backgroundLayeredPane.paint(g);
 	}
 	
