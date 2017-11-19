@@ -54,7 +54,6 @@ public class Controller {
 	}
 	
 	public void updateView(){
-		view.updateComponents();
 		view.repaint();
 	}
     

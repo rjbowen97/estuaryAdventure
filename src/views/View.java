@@ -46,16 +46,4 @@ public class View extends JFrame{
 		this.setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
-	
-	@Override
-	public void paint(Graphics g) {
-		super.paint(g);
-		mainLayeredPane.paintComponent(g);
-	}
-	
-	public void updateComponents() {
-		mainLayeredPane.updatePlayerComponent();
-	}
-	
-	
 }

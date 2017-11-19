@@ -36,17 +36,4 @@ public class BackgroundComponent extends JComponent{
 		}
 		this.setVisible(true);
 	}
-	
-	@Override
-	public void paintComponent(Graphics g){
-		g.drawImage(backgroundImage, xPosition, yPosition, null);
-		System.out.println("Background" + this.backgroundImage.toString() + " Paint Called");
-	}
-	
-	void updateComponent(){
-//		this.xPosition -= 4; //move to left, simulates motion
-//		repaint();
-	}
-	
-	
 }

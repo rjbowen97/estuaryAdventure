@@ -22,17 +22,12 @@ public class BackgroundLayeredPane extends JLayeredPane {
 		this.setBounds(0, 0, mainFrameDimension, mainFrameDimension);
 		
 		for (int backgroundModelIndex = 0; backgroundModelIndex < backgroundModels.size(); backgroundModelIndex++) {
+			
 			backgroundComponentToAdd = new BackgroundComponent(backgroundModels.get(backgroundModelIndex));
+			
 			this.add(backgroundComponentToAdd, backgroundModelIndex);
+			
 			backgroundComponents.add(backgroundComponentToAdd);
 		}
 	}
-	
-	@Override
-	public void update(Graphics g) {
-		for (BackgroundComponent backgroundComponent : backgroundComponents) {
-			backgroundComponent.repaint();
-		}
-	}
-	
 }

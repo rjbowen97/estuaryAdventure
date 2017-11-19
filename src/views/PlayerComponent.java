@@ -13,16 +13,12 @@ import models.Player;
 class PlayerComponent extends JComponent{
 	
 	Player playerModel;
-	private int xPosition;
-	private int yPosition;
 	BufferedImage playerImage;
 	
 	PlayerComponent(Player playerModel){
 		
 		this.playerModel = playerModel;
 		
-		this.xPosition = this.playerModel.getXPosition();
-		this.yPosition = this.playerModel.getYPosition();
 		this.setSize(this.playerModel.getSize(),this.playerModel.getSize());
 		try {
 			File imageFile = new File(playerModel.getSpriteFile());
@@ -34,19 +30,5 @@ class PlayerComponent extends JComponent{
 			e.printStackTrace();
 		}
 		this.setVisible(true);
-	}
-	
-	@Override
-	public void paint(Graphics g){
-		g.drawImage(playerImage, xPosition, yPosition, null);
-	}
-	
-	void updateComponent(){
-		updatePositionWithModelPosition();
-	}
-	
-	private void updatePositionWithModelPosition() {
-		this.xPosition = playerModel.getXPosition();
-		this.yPosition = playerModel.getYPosition();
 	}
 }

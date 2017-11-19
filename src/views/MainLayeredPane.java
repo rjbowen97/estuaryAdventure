@@ -21,14 +21,4 @@ public class MainLayeredPane extends JLayeredPane {
 		this.add(playerComponent, new Integer(0));
 	}
 	
-	@Override
-	public void paintComponent(Graphics g) {
-		playerComponent.repaint();
-		backgroundLayeredPane.repaint();
-	}
-	
-	public void updatePlayerComponent() {
-		playerComponent.updateComponent();
-	}
-	
 }
