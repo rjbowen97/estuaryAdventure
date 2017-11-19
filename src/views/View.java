@@ -27,7 +27,7 @@ import models.*;
 @SuppressWarnings("serial")
 public class View extends JFrame{
 
-	public MainLayeredPane mainLayeredPane;
+	private MainLayeredPane mainLayeredPane;
 
 	private int mainFrameDimension;
 	
@@ -48,4 +48,10 @@ public class View extends JFrame{
 	public void paint(Graphics g) {
 		mainLayeredPane.paint(g);
 	}
+	
+	public void updateComponents() {
+		
+		
+	}
+	
 }

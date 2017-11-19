@@ -41,9 +41,12 @@ class PlayerComponent extends JComponent{
 		g.drawImage(playerImage, xPosition, yPosition, null);
 	}
 	
-	void updateComponent(int x, int y){
-//		this.xPosition += 4;
-//		this.yPosition++;
-//		repaint();
+	void updateComponent(){
+		updatePositionWithModelPosition();
+	}
+	
+	private void updatePositionWithModelPosition() {
+		this.xPosition = playerModel.getXPosition();
+		this.yPosition = playerModel.getYPosition();
 	}
 }

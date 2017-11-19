@@ -50,11 +50,11 @@ public class Controller {
     }
 	
 	public void updateModel() {
+		this.playerModel.move(5, 5);
 	}
-	/*
-	 * This method changes position according to model changes and updates and repaints the view
-	 */
+	
 	public void updateView(){
+		view.updateComponents();
 		view.repaint();
 	}
     

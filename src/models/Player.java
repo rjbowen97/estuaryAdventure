@@ -16,17 +16,10 @@ public class Player {
 	//attributes
 	private int health;
 	private int score;
+
 	private int xPosition;
 	private int yPosition;
 	private int size;
-
-	public int getSize() {
-		return size;
-	}
-
-	public void setSize(int size) {
-		this.size = size;
-	}
 
 	private String spriteFile = "./sprites/sprite.jpg";
 	public BufferedImage sprite;
@@ -53,36 +46,19 @@ public class Player {
 		else if (animalType == PlayerAnimalType.CRAB){
 			//sprite = crabSprite;
 		}
-		xPosition = 0;
-		yPosition = 0;		
 	}
 	
-	//getters and setters
-	public double getHealth() {
+	public void move(int xIncrement, int yIncrement) {
+		this.xPosition += xIncrement;
+		this.yPosition += yIncrement;
+	}
+	
+	public int getHealth() {
 		return health;
 	}
 	
 	public void setHealth(int health) {
-		System.out.println(this.health);
-		this.health = health; 
-	}
-	
-	public int getXPosition() {
-		return xPosition;
-	}
-	
-	public void setXPosition(int xPosition) {
-		System.out.println("X Position " + xPosition);
-		this.xPosition = xPosition;
-	}
-	
-	public int getYPosition() {
-		return yPosition;
-	}
-	
-	public void setYPosition(int yPosition) {
-		System.out.println("Y Position " + yPosition);
-		this.yPosition = yPosition;
+		this.health = health;
 	}
 	
 	public int getScore() {
@@ -93,6 +69,30 @@ public class Player {
 		this.score = score;
 	}
 	
+	public int getXPosition() {
+		return xPosition;
+	}
+	
+	public void setXPosition(int xPosition) {
+		this.xPosition = xPosition;
+	}
+	
+	public int getYPosition() {
+		return yPosition;
+	}
+	
+	public void setYPosition(int yPosition) {
+		this.yPosition = yPosition;
+	}
+	
+	public String getSpriteFile() {
+		return spriteFile;
+	}
+	
+	public void setSpriteFile(String spriteFile) {
+		this.spriteFile = spriteFile;
+	}
+	
 	public boolean isPoweredUp() {
 		return poweredUp;
 	}
@@ -100,16 +100,13 @@ public class Player {
 	public void setPoweredUp(boolean poweredUp) {
 		this.poweredUp = poweredUp;
 	}
-
-	public String getSpriteFile() {
-		return spriteFile;
-	}
-
-
-
-	public void setSpriteFile(String spriteFile) {
-		this.spriteFile = spriteFile;
+	
+	public int getSize() {
+		return size;
 	}
 	
+	public void setSize(int size) {
+		this.size = size;
+	}
 	
 }
