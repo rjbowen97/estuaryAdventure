@@ -1,5 +1,7 @@
 package views;
 import java.awt.Color;
+import java.awt.Component;
+import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
@@ -28,6 +30,7 @@ import models.*;
 public class View extends JFrame{
 
 	private MainLayeredPane mainLayeredPane;
+	private ArrayList<Component> allComponentsInView;
 
 	private int mainFrameDimension;
 	
@@ -51,7 +54,24 @@ public class View extends JFrame{
 	
 	public void updateComponents() {
 		
+		this.allComponentsInView = getAllComponents(this);
+		
+		for (Component component : allComponentsInView ) {
+			System.out.println(component.toString());
+		}
 		
 	}
+	
+	public ArrayList<Component> getAllComponents(final Container c) {
+	    Component[] comps = c.getComponents();
+	    ArrayList<Component> compList = new ArrayList<Component>();
+	    for (Component comp : comps) {
+	        compList.add(comp);
+	        if (comp instanceof Container)
+	            compList.addAll(getAllComponents((Container) comp));
+	    }
+	    return compList;
+	}
+	
 	
 }
