@@ -14,6 +14,7 @@ public class GameWrapper {
 	
 	public static void main(String[] args) {
 		
+		@SuppressWarnings("unused")
 		Settings settings = new Settings();
 		
 		NonLandAnimal playerModel = new NonLandAnimal();

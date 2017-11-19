@@ -13,6 +13,8 @@ public abstract class Player {
 	protected String spriteFile = "./sprites/sprite.jpg";
 	
 	public abstract void move();
+	public abstract void onViewClicked();
+	
 	
 	public int getHealth() {
 		return health;

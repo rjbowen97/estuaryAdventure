@@ -38,6 +38,11 @@ public class Controller {
 		this.backgroundModels = backgroundModels;
 		this.view = new View(playerModel, backgroundModels, this);
 	}
+    
+    public void onViewClicked() {
+    	playerModel.onViewClicked();
+    }
+    
     /*
      * This method consolidates the updates into one call
      */
