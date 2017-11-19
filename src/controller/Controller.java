@@ -37,19 +37,24 @@ public class Controller {
      * @see Player
      * @see View
      */
-    public Controller(Player model, View view) {
-		this.playerModel = model;
+    public Controller(Player playerModel, ArrayList<Background> backgroundModels, View view) {
+		this.playerModel = playerModel;
+		this.backgroundModels = backgroundModels;
 		this.view = view;
 	}
     /*
      * This method consolidates the updates into one call
      */
     public void update(){
-    	updateModel();
+    	updateModels();
     	updateView();
     }
 	
-	public void updateModel() {
+	public void updateModels() {
+		for (Background backgroundModel : backgroundModels) {
+			backgroundModel.updateBackgroundPositions();
+		}
+		
 		this.playerModel.move(5, 5);
 	}
 	

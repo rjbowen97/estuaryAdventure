@@ -35,7 +35,6 @@ public class Player {
 	
 	public void move(int xIncrement, int yIncrement) {
 		this.xPosition += xIncrement;
-		this.yPosition += yIncrement;
 	}
 	
 	public int getHealth() {

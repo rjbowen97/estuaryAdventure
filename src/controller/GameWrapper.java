@@ -16,7 +16,7 @@ public class GameWrapper {
 		
 		Settings settings = new Settings();
 		
-		Player mainModel = new Player(PlayerAnimalType.BIRD);
+		Player playerModel = new Player(PlayerAnimalType.BIRD);
 		ArrayList<Background> backgroundModels = new ArrayList<Background>();
     	File[] backgroundImageFiles = new File("./backgrounds").listFiles();
     	
@@ -27,7 +27,7 @@ public class GameWrapper {
     				backgroundImageFileIndex));
     	}
     	
-		Controller mainController = new Controller(mainModel, new View(mainModel, backgroundModels));
+		Controller mainController = new Controller(playerModel, backgroundModels, new View(playerModel, backgroundModels));
 
 		for(int i = 0; i < 1000; i++){
 			try {

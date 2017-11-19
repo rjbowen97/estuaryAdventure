@@ -22,7 +22,6 @@ public class Background {
 		this.xPosition = xPosition;
 		this.yPosition = yPosition;
 		this.backgroundLayerIndex = backgroundLayerIndex;
-		
 	}
 
 	public int getXPosition() {
@@ -34,7 +33,7 @@ public class Background {
 	}
 	
 	public void updateBackgroundPositions() {
-		this.xPosition += backgroundLayerIndex;
+		this.xPosition -= backgroundLayerIndex;
 	}
 	
 	public String getBackgroundImagefileName() {
