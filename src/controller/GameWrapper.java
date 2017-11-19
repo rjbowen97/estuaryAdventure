@@ -19,8 +19,8 @@ public class GameWrapper {
 		Player mainModel = new Player(PlayerAnimalType.BIRD);
 		ArrayList<Background> backgroundModels = new ArrayList<Background>();
     	File[] backgroundImageFiles = new File("./backgrounds").listFiles();
-    	for(File currentBackgroundImageFiles: backgroundImageFiles){
-    		backgroundModels.add(new Background(currentBackgroundImageFiles,
+    	for(File currentBackgroundImageFile: backgroundImageFiles){
+    		backgroundModels.add(new Background(currentBackgroundImageFile,
     				Integer.parseInt(Settings.globalSettings.getProperty("backgroundXPosition")),
     				Integer.parseInt(Settings.globalSettings.getProperty("backgroundYPosition"))));
     	}  

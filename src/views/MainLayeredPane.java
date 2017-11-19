@@ -19,12 +19,10 @@ public class MainLayeredPane extends JLayeredPane {
 		playerComponent = new PlayerComponent(playerModel);
 		
 		this.add(backgroundLayeredPane, new Integer(0));
-//		this.add(playerComponent, 1);
 	}
 	
 	@Override
 	public void paint(Graphics g) {
-		super.paintComponent(g);
 		backgroundLayeredPane.paint(g);
 	}
 	
