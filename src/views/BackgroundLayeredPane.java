@@ -1,6 +1,5 @@
 package views;
 
-import java.awt.Graphics;
 import java.util.ArrayList;
 
 import javax.swing.JLayeredPane;

@@ -1,15 +1,11 @@
 package controller;
 
 
-import models.*;
-import views.View;
-
-import javax.swing.JComponent;
-
-import java.awt.Graphics;
-import java.awt.event.*;
-import java.io.File;
 import java.util.ArrayList;
+
+import models.Background;
+import models.Player;
+import views.View;
 
 public class Controller {
 	
@@ -37,10 +33,10 @@ public class Controller {
      * @see Player
      * @see View
      */
-    public Controller(Player playerModel, ArrayList<Background> backgroundModels, View view) {
+    public Controller(Player playerModel, ArrayList<Background> backgroundModels) {
 		this.playerModel = playerModel;
 		this.backgroundModels = backgroundModels;
-		this.view = view;
+		this.view = new View(playerModel, backgroundModels, this);
 	}
     /*
      * This method consolidates the updates into one call

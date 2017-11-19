@@ -1,14 +1,4 @@
 package models;
-
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.util.Scanner;
-
-import javax.imageio.ImageIO;
-
-import controller.Settings;
-
 public abstract class Player {
 
 	//limits

@@ -1,28 +1,12 @@
 package views;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 
-import javax.imageio.ImageIO;
-import javax.swing.JComponent;
 import javax.swing.JFrame;
-import javax.swing.JLayeredPane;
-import javax.swing.JPanel;
 
 import controller.Controller;
 import controller.Settings;
-import models.*;
+import models.Background;
+import models.Player;
 
 
 
@@ -30,11 +14,12 @@ import models.*;
 public class View extends JFrame{
 
 	private MainLayeredPane mainLayeredPane;
-
 	private int viewDimension;
+	Controller controller;
 	
-	public View(Player playerModel, ArrayList<Background> backgroundModels) {
+	public View(Player playerModel, ArrayList<Background> backgroundModels, Controller controller) {
 		
+		this.controller = controller;
 		this.viewDimension = Settings.getViewDimensionDefault();
 		this.setSize(viewDimension, viewDimension);
 		

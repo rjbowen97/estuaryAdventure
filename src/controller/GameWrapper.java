@@ -3,8 +3,8 @@ package controller;
 import java.io.File;
 import java.util.ArrayList;
 
-import models.*;
-import views.View;
+import models.Background;
+import models.NonLandAnimal;
 
 /*
  * This class essentially wraps the game up into a presentable/runnable product, Player model is
@@ -27,7 +27,7 @@ public class GameWrapper {
     				backgroundImageFileIndex));
     	}
     	
-		Controller mainController = new Controller(playerModel, backgroundModels, new View(playerModel, backgroundModels));
+		Controller mainController = new Controller(playerModel, backgroundModels);
 
 		for(int i = 0; i < 1000; i++){
 			try {
