@@ -9,19 +9,20 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
+import controller.Settings;
+
 public class Background {
 
+	private String backgroundImagefileName;
 	private int xPosition;
 	private int yPosition;
-	private int backgroundLayerIndex;
-	private String backgroundImagefileName;
+	private int moveSpeed;
 	
 	public Background(File backgroundImageFile, int xPosition, int yPosition, int backgroundLayerIndex) {
-		
 		this.backgroundImagefileName = "./Backgrounds/" + backgroundImageFile.getName();
 		this.xPosition = xPosition;
 		this.yPosition = yPosition;
-		this.backgroundLayerIndex = backgroundLayerIndex;
+		this.moveSpeed = Settings.getBackgroundBaseSpeed(backgroundLayerIndex);
 	}
 
 	public int getXPosition() {
@@ -33,7 +34,7 @@ public class Background {
 	}
 	
 	public void updateBackgroundPositions() {
-		this.xPosition -= backgroundLayerIndex;
+		this.xPosition -= this.moveSpeed;
 	}
 	
 	public String getBackgroundImagefileName() {

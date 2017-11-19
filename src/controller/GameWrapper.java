@@ -22,8 +22,8 @@ public class GameWrapper {
     	
     	for (int backgroundImageFileIndex = 0; backgroundImageFileIndex < backgroundImageFiles.length; backgroundImageFileIndex++) {
     		backgroundModels.add(new Background(backgroundImageFiles[backgroundImageFileIndex],
-    				Integer.parseInt(Settings.globalSettings.getProperty("background" + backgroundImageFileIndex + "XPosition")),
-    				Integer.parseInt(Settings.globalSettings.getProperty("background" + backgroundImageFileIndex + "YPosition")),
+    				Settings.getBackgroundXPositionDefault(backgroundImageFileIndex),
+    				Settings.getBackgroundYPositionDefault(backgroundImageFileIndex),
     				backgroundImageFileIndex));
     	}
     	

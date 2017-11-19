@@ -31,12 +31,12 @@ public class View extends JFrame{
 
 	private MainLayeredPane mainLayeredPane;
 
-	private int mainFrameDimension;
+	private int viewDimension;
 	
 	public View(Player playerModel, ArrayList<Background> backgroundModels) {
 		
-		this.mainFrameDimension = Integer.parseInt(Settings.globalSettings.getProperty("mainFrameDimension"));
-		this.setSize(mainFrameDimension, mainFrameDimension);
+		this.viewDimension = Settings.getViewDimensionDefault();
+		this.setSize(viewDimension, viewDimension);
 		
 		mainLayeredPane = new MainLayeredPane(playerModel, backgroundModels);
 		

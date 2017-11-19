@@ -6,15 +6,15 @@ import java.io.InputStream;
 import java.util.Properties;
 
 public class Settings {
-	public static Properties globalSettings;
+	private static Properties globalSettings;
 	
 	public Settings() {
-		Settings.globalSettings = new Properties();
+		globalSettings = new Properties();
 		InputStream globalSettingsPropertiesInputStream = null;
 
 		try {
 			globalSettingsPropertiesInputStream = new FileInputStream("globalSettings.properties");
-			Settings.globalSettings.load(globalSettingsPropertiesInputStream);
+			globalSettings.load(globalSettingsPropertiesInputStream);
 
 		} catch (IOException ioException) {
 			ioException.printStackTrace();
@@ -28,4 +28,21 @@ public class Settings {
 			}
 		}
 	}
+	
+	public static int getViewDimensionDefault() {
+		return Integer.parseInt(globalSettings.getProperty("viewDimension"));
+	}
+	
+	public static int getBackgroundXPositionDefault(int backgroundLayerIndex) {
+		return Integer.parseInt(globalSettings.getProperty("background" + backgroundLayerIndex + "XPosition"));
+	}
+	
+	public static int getBackgroundYPositionDefault(int backgroundLayerIndex) {
+		return Integer.parseInt(globalSettings.getProperty("background" + backgroundLayerIndex + "YPosition"));
+	}
+	
+	public static int getBackgroundBaseSpeed(int backgroundLayerIndex) {
+		return Integer.parseInt(globalSettings.getProperty("background" + backgroundLayerIndex + "BaseSpeed"));
+	}
+	
 }

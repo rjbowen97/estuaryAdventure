@@ -14,7 +14,7 @@ public class BackgroundLayeredPane extends JLayeredPane {
 	
 	public BackgroundLayeredPane(ArrayList<Background> backgroundModels) {
 		
-		int mainFrameDimension = Integer.parseInt(Settings.globalSettings.getProperty("mainFrameDimension"));
+		int mainFrameDimension = Settings.getViewDimensionDefault();
 		
 		backgroundComponents = new ArrayList<BackgroundComponent>();
 		BackgroundComponent backgroundComponentToAdd = null;

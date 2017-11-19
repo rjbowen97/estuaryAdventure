@@ -19,7 +19,7 @@ public class BackgroundComponent extends JComponent{
 	
 	BackgroundComponent(Background backgroundModel){
 		
-		this.mainFrameDimension = Integer.parseInt(Settings.globalSettings.getProperty("mainFrameDimension"));
+		this.mainFrameDimension = Settings.getViewDimensionDefault();
 		this.setBounds(0,0,mainFrameDimension,mainFrameDimension);
 		
 		this.backgroundModel = backgroundModel;
