@@ -29,9 +29,9 @@ public class BackgroundLayeredPane extends JLayeredPane {
 	}
 	
 	@Override
-	public void paint(Graphics g) {
+	public void update(Graphics g) {
 		for (BackgroundComponent backgroundComponent : backgroundComponents) {
-			backgroundComponent.paint(g);
+			backgroundComponent.repaint();
 		}
 	}
 	

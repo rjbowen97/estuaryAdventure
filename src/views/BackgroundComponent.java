@@ -38,7 +38,7 @@ public class BackgroundComponent extends JComponent{
 	}
 	
 	@Override
-	public void paint(Graphics g){
+	public void paintComponent(Graphics g){
 		g.drawImage(backgroundImage, xPosition, yPosition, null);
 		System.out.println("Background" + this.backgroundImage.toString() + " Paint Called");
 	}

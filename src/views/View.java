@@ -49,28 +49,12 @@ public class View extends JFrame{
 	
 	@Override
 	public void paint(Graphics g) {
-		mainLayeredPane.paint(g);
+		super.paint(g);
+		mainLayeredPane.paintComponent(g);
 	}
 	
 	public void updateComponents() {
-		
-		this.allComponentsInView = getAllComponents(this);
-		
-		for (Component component : allComponentsInView ) {
-			System.out.println(component.toString());
-		}
-		
-	}
-	
-	public ArrayList<Component> getAllComponents(final Container c) {
-	    Component[] comps = c.getComponents();
-	    ArrayList<Component> compList = new ArrayList<Component>();
-	    for (Component comp : comps) {
-	        compList.add(comp);
-	        if (comp instanceof Container)
-	            compList.addAll(getAllComponents((Container) comp));
-	    }
-	    return compList;
+		mainLayeredPane.updatePlayerComponent();
 	}
 	
 	
