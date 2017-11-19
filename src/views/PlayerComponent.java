@@ -43,10 +43,8 @@ class PlayerComponent extends JComponent{
 	}
 	
 	void updateComponent(int x, int y){
-		//this.xPosition = x;
-		//this.yPosition = y;
-		this.xPosition += 4;
-		this.yPosition++;
-		repaint();
+//		this.xPosition += 4;
+//		this.yPosition++;
+//		repaint();
 	}
 }

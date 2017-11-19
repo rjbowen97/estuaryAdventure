@@ -27,10 +27,12 @@ import models.*;
 @SuppressWarnings("serial")
 public class View extends JFrame{
 
-	public JLayeredPane layeredPane = new JLayeredPane();
+	public JLayeredPane mainLayeredPane = new JLayeredPane();
+	public JLayeredPane backgroundLayeredPane = new JLayeredPane();
+	
 	private PlayerComponent playerComponent;
 	private ArrayList<BackgroundComponent> backgroundComponents;
-	private int mainFrameDimension = 0;
+	private int mainFrameDimension;
 	
 	public View(Player playerModel, ArrayList<Background> backgroundModels) { //Maybe change this so it accepts an array of models
 		//setup background components
@@ -41,9 +43,9 @@ public class View extends JFrame{
 		playerComponent = new PlayerComponent(playerModel);
 		backgroundComponents = new ArrayList<BackgroundComponent>();
 		
-		layeredPane = new JLayeredPane();
-		layeredPane.setBounds(0, 0, mainFrameDimension, mainFrameDimension);
-		layeredPane.add(playerComponent, 20);
+		mainLayeredPane = new JLayeredPane();
+		mainLayeredPane.setBounds(0, 0, mainFrameDimension, mainFrameDimension);
+		mainLayeredPane.add(playerComponent, 20);
 
 		BackgroundComponent temp = null;
 		int loc = 0;
@@ -51,10 +53,10 @@ public class View extends JFrame{
 			temp = new BackgroundComponent(currentModel, loc);
 			backgroundComponents.add(temp);
 			backgroundComponents.iterator().next().setVisible(true);
-			layeredPane.add(temp, loc);
+			mainLayeredPane.add(temp, loc);
 			loc += 10;
 	
-		add(layeredPane);
+		add(mainLayeredPane);
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
