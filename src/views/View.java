@@ -28,10 +28,9 @@ import models.*;
 public class View extends JFrame{
 
 	public JLayeredPane mainLayeredPane = new JLayeredPane();
-	public JLayeredPane backgroundLayeredPane = new JLayeredPane();
+	public JLayeredPane backgroundLayeredPane;
 	
 	private PlayerComponent playerComponent;
-	private ArrayList<BackgroundComponent> backgroundComponents;
 	private int mainFrameDimension;
 	
 	public View(Player playerModel, ArrayList<Background> backgroundModels) {
@@ -40,22 +39,13 @@ public class View extends JFrame{
 		
 		setSize(mainFrameDimension, mainFrameDimension);
 		playerComponent = new PlayerComponent(playerModel);
-		backgroundComponents = new ArrayList<BackgroundComponent>();
 		
 		mainLayeredPane = new JLayeredPane();
 		mainLayeredPane.setBounds(0, 0, mainFrameDimension, mainFrameDimension);
-		mainLayeredPane.add(playerComponent, 20);
-
-		BackgroundComponent temp = null;
-		int loc = 0;
-		for(Background currentModel: backgroundModels)
-			temp = new BackgroundComponent(currentModel, loc);
-			backgroundComponents.add(temp);
-			backgroundComponents.iterator().next().setVisible(true);
-			mainLayeredPane.add(temp, loc);
-			loc += 10;
-	
-		add(mainLayeredPane);
+		mainLayeredPane.add(playerComponent, 5);
+		
+		
+		this.add(mainLayeredPane);
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
@@ -65,16 +55,4 @@ public class View extends JFrame{
 		//frame.addMouseMotionListener(controller.mouseMotionListenerComponent);
 
 	}
-	
-	public void updateBackgrounds(){
-		for(BackgroundComponent currComponent: backgroundComponents){
-			System.out.println(currComponent.backgroundNumber  + ": " +currComponent.xPosition);
-			currComponent.updateComponent();
-		}
-	}
-	
-	public void updatePlayer(int x, int y){
-		playerComponent.updateComponent(x, y);
-	}
-
 }

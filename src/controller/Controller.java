@@ -18,8 +18,7 @@ public class Controller {
     String crabSprite = "sprite.png";
     
     //models
-    
-    public Background background;
+    public ArrayList<Background> backgrounds;
     public Player playerModel;
     
     //view
@@ -57,8 +56,6 @@ public class Controller {
 	 * This method changes position according to model changes and updates and repaints the view
 	 */
 	public void updateView(){
-		view.updatePlayer(playerModel.getXPosition(), playerModel.getYPosition());
-		view.updateBackgrounds();
 		view.repaint();
 	}
     
