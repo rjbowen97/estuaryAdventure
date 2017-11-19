@@ -39,8 +39,14 @@ public class View extends JFrame{
 		mainLayeredPane = new MainLayeredPane(playerModel, backgroundModels);
 		mainLayeredPane.setBounds(0, 0, mainFrameDimension, mainFrameDimension);
 		
-		this.add(mainLayeredPane);
-		setVisible(true);
+		this.setLayeredPane(mainLayeredPane);
+		this.setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	
+	@Override
+	public void paint(Graphics g) {
+		super.paint(g);
+		mainLayeredPane.paint(g);
 	}
 }

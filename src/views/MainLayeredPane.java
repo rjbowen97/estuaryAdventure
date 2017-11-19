@@ -1,5 +1,6 @@
 package views;
 
+import java.awt.Graphics;
 import java.util.ArrayList;
 
 import javax.swing.JLayeredPane;
@@ -17,8 +18,14 @@ public class MainLayeredPane extends JLayeredPane {
 		backgroundLayeredPane = new BackgroundLayeredPane(backgroundModels);
 		playerComponent = new PlayerComponent(playerModel);
 		
-		this.add(backgroundLayeredPane, 0);
-		this.add(playerComponent, 1);
+		this.add(backgroundLayeredPane, new Integer(0));
+//		this.add(playerComponent, 1);
+	}
+	
+	@Override
+	public void paint(Graphics g) {
+		super.paintComponent(g);
+		backgroundLayeredPane.paint(g);
 	}
 	
 }

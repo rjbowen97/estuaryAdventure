@@ -50,7 +50,6 @@ public class Controller {
     }
 	
 	public void updateModel() {
-		
 	}
 	/*
 	 * This method changes position according to model changes and updates and repaints the view

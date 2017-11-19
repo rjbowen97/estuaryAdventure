@@ -38,8 +38,8 @@ public class BackgroundComponent extends JComponent{
 	}
 	
 	@Override
-	public void paintComponent(Graphics g){
-		super.paintComponent(g);
+	public void paint(Graphics g){
+		super.paint(g);
 		g.drawImage(backgroundImage, xPosition, yPosition, null);
 	}
 	
