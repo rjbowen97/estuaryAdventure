@@ -14,11 +14,9 @@ public class MainLayeredPane extends JLayeredPane {
 	BackgroundLayeredPane backgroundLayeredPane;
 	
 	public MainLayeredPane(Player playerModel, ArrayList<Background> backgroundModels) {
-		
 		backgroundLayeredPane = new BackgroundLayeredPane(backgroundModels);
 		playerComponent = new PlayerComponent(playerModel);
-		this.add(backgroundLayeredPane, new Integer(1));
-		this.add(playerComponent, new Integer(0));
+		this.add(backgroundLayeredPane, new Integer(0));
+		this.add(playerComponent, new Integer(1));
 	}
-	
 }

@@ -30,7 +30,6 @@ import models.*;
 public class View extends JFrame{
 
 	private MainLayeredPane mainLayeredPane;
-	private ArrayList<Component> allComponentsInView;
 
 	private int mainFrameDimension;
 	
@@ -42,7 +41,7 @@ public class View extends JFrame{
 		mainLayeredPane = new MainLayeredPane(playerModel, backgroundModels);
 		mainLayeredPane.setBounds(0, 0, mainFrameDimension, mainFrameDimension);
 		
-		this.setLayeredPane(mainLayeredPane);
+		this.add(mainLayeredPane);
 		this.setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}

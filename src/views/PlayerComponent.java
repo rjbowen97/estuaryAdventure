@@ -31,4 +31,9 @@ class PlayerComponent extends JComponent{
 		}
 		this.setVisible(true);
 	}
+
+	@Override
+	public void paintComponent(Graphics g) {
+		g.drawImage(playerImage, playerModel.getXPosition(), playerModel.getYPosition(), null);
+	}
 }

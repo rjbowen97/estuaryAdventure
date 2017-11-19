@@ -25,7 +25,7 @@ public class BackgroundLayeredPane extends JLayeredPane {
 			
 			backgroundComponentToAdd = new BackgroundComponent(backgroundModels.get(backgroundModelIndex));
 			
-			this.add(backgroundComponentToAdd, backgroundModelIndex);
+			this.add(backgroundComponentToAdd, new Integer(backgroundModelIndex));
 			
 			backgroundComponents.add(backgroundComponentToAdd);
 		}

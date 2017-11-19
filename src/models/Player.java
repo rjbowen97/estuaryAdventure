@@ -46,6 +46,9 @@ public class Player {
 		else if (animalType == PlayerAnimalType.CRAB){
 			//sprite = crabSprite;
 		}
+		
+		this.size = Integer.parseInt(Settings.globalSettings.getProperty("playerSize"));
+		
 	}
 	
 	public void move(int xIncrement, int yIncrement) {

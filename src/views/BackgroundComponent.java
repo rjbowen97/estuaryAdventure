@@ -36,4 +36,10 @@ public class BackgroundComponent extends JComponent{
 		}
 		this.setVisible(true);
 	}
+	
+	@Override
+	public void paintComponent(Graphics g) {
+		g.drawImage(backgroundImage, xPosition, yPosition, null);
+	}
+	
 }
