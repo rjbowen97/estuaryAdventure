@@ -16,22 +16,22 @@ public class BackgroundComponent extends JComponent{
 	BufferedImage backgroundImage;
 	private int mainFrameDimension;
 	
-	BackgroundComponent(Background model){
+	BackgroundComponent(Background backgroundModel){
 		
 		this.mainFrameDimension = Integer.parseInt(Settings.globalSettings.getProperty("mainFrameDimension"));
 		
-		this.xPosition = mainFrameDimension - model.getBackgroundWidth();
-		this.yPosition = model.getYPosition();
+		this.xPosition = backgroundModel.getXPosition();
+		this.yPosition = backgroundModel.getYPosition();
 		
 		this.setSize(mainFrameDimension,mainFrameDimension);
 		
 		try {
-			File imageFile = new File(model.getBackgroundImagefileName());
+			File imageFile = new File(backgroundModel.getBackgroundImagefileName());
 			System.out.println(imageFile.exists());
 			backgroundImage = ImageIO.read(imageFile);
 		}			
 		catch (IOException e) {
-			System.out.println(model.getBackgroundImagefileName());
+			System.out.println(backgroundModel.getBackgroundImagefileName());
 			e.printStackTrace();
 		}
 		this.setVisible(true);
@@ -44,9 +44,8 @@ public class BackgroundComponent extends JComponent{
 	}
 	
 	void updateComponent(){
-		this.xPosition -= 4; //move to left, simulates motion
-		this.yPosition++; //not sure what to do yet
-		repaint();
+//		this.xPosition -= 4; //move to left, simulates motion
+//		repaint();
 	}
 	
 	

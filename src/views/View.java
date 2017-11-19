@@ -34,8 +34,7 @@ public class View extends JFrame{
 	private ArrayList<BackgroundComponent> backgroundComponents;
 	private int mainFrameDimension;
 	
-	public View(Player playerModel, ArrayList<Background> backgroundModels) { //Maybe change this so it accepts an array of models
-		//setup background components
+	public View(Player playerModel, ArrayList<Background> backgroundModels) {
 		
 		this.mainFrameDimension = Integer.parseInt(Settings.globalSettings.getProperty("mainFrameDimension"));
 		
