@@ -39,7 +39,6 @@ public class View extends JFrame{
 		this.setSize(mainFrameDimension, mainFrameDimension);
 		
 		mainLayeredPane = new MainLayeredPane(playerModel, backgroundModels);
-		mainLayeredPane.setBounds(0, 0, mainFrameDimension, mainFrameDimension);
 		
 		this.add(mainLayeredPane);
 		this.setVisible(true);

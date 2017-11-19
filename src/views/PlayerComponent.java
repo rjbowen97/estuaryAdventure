@@ -8,6 +8,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JComponent;
 
+import controller.Settings;
 import models.Player;
 
 class PlayerComponent extends JComponent{
@@ -18,8 +19,8 @@ class PlayerComponent extends JComponent{
 	PlayerComponent(Player playerModel){
 		
 		this.playerModel = playerModel;
+		this.setBounds(0,0,Integer.parseInt(Settings.globalSettings.getProperty("mainFrameDimension")),Integer.parseInt(Settings.globalSettings.getProperty("mainFrameDimension")));
 		
-		this.setSize(this.playerModel.getSize(),this.playerModel.getSize());
 		try {
 			File imageFile = new File(playerModel.getSpriteFile());
 			if(imageFile.exists() == true){

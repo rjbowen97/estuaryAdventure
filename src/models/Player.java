@@ -19,7 +19,6 @@ public class Player {
 
 	private int xPosition;
 	private int yPosition;
-	private int size;
 
 	private String spriteFile = "./sprites/sprite.jpg";
 	public BufferedImage sprite;
@@ -46,9 +45,6 @@ public class Player {
 		else if (animalType == PlayerAnimalType.CRAB){
 			//sprite = crabSprite;
 		}
-		
-		this.size = Integer.parseInt(Settings.globalSettings.getProperty("playerSize"));
-		
 	}
 	
 	public void move(int xIncrement, int yIncrement) {
@@ -102,14 +98,6 @@ public class Player {
 	
 	public void setPoweredUp(boolean poweredUp) {
 		this.poweredUp = poweredUp;
-	}
-	
-	public int getSize() {
-		return size;
-	}
-	
-	public void setSize(int size) {
-		this.size = size;
 	}
 	
 }
