@@ -21,10 +21,7 @@ public class Player {
 	private int yPosition;
 
 	private String spriteFile = "./sprites/sprite.jpg";
-	public BufferedImage sprite;
-	
-	private boolean poweredUp;
-	
+		
 	/* This constructor takes in the animal type, which is then used to
 	 * display the correct animal type to the screen, and sets the starting position to 0,0.
 	 * 
@@ -56,48 +53,20 @@ public class Player {
 		return health;
 	}
 	
-	public void setHealth(int health) {
-		this.health = health;
-	}
-	
 	public int getScore() {
 		return score;
-	}
-	
-	public void setScore(int score) {
-		this.score = score;
 	}
 	
 	public int getXPosition() {
 		return xPosition;
 	}
 	
-	public void setXPosition(int xPosition) {
-		this.xPosition = xPosition;
-	}
-	
 	public int getYPosition() {
 		return yPosition;
 	}
 	
-	public void setYPosition(int yPosition) {
-		this.yPosition = yPosition;
-	}
-	
 	public String getSpriteFile() {
 		return spriteFile;
-	}
-	
-	public void setSpriteFile(String spriteFile) {
-		this.spriteFile = spriteFile;
-	}
-	
-	public boolean isPoweredUp() {
-		return poweredUp;
-	}
-	
-	public void setPoweredUp(boolean poweredUp) {
-		this.poweredUp = poweredUp;
 	}
 	
 }
