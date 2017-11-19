@@ -19,11 +19,13 @@ public class GameWrapper {
 		Player mainModel = new Player(PlayerAnimalType.BIRD);
 		ArrayList<Background> backgroundModels = new ArrayList<Background>();
     	File[] backgroundImageFiles = new File("./backgrounds").listFiles();
-    	for(File currentBackgroundImageFile: backgroundImageFiles){
-    		backgroundModels.add(new Background(currentBackgroundImageFile,
-    				Integer.parseInt(Settings.globalSettings.getProperty("backgroundXPosition")),
-    				Integer.parseInt(Settings.globalSettings.getProperty("backgroundYPosition"))));
-    	}  
+    	
+    	for (int backgroundImageFileIndex = 0; backgroundImageFileIndex < backgroundImageFiles.length; backgroundImageFileIndex++) {
+    		backgroundModels.add(new Background(backgroundImageFiles[backgroundImageFileIndex],
+    				Integer.parseInt(Settings.globalSettings.getProperty("background" + backgroundImageFileIndex + "XPosition")),
+    				Integer.parseInt(Settings.globalSettings.getProperty("background" + backgroundImageFileIndex + "YPosition")),
+    				backgroundImageFileIndex));
+    	}
     	
 		Controller mainController = new Controller(mainModel, new View(mainModel, backgroundModels));
 

@@ -13,12 +13,16 @@ public class Background {
 
 	private int xPosition;
 	private int yPosition;
+	private int backgroundLayerIndex;
 	private String backgroundImagefileName;
 	
-	public Background(File backgroundImageFile, int xPosition, int yPosition) {
+	public Background(File backgroundImageFile, int xPosition, int yPosition, int backgroundLayerIndex) {
+		
+		this.backgroundImagefileName = "./Backgrounds/" + backgroundImageFile.getName();
 		this.xPosition = xPosition;
 		this.yPosition = yPosition;
-		this.backgroundImagefileName = "./Backgrounds/" + backgroundImageFile.getName();
+		this.backgroundLayerIndex = backgroundLayerIndex;
+		
 	}
 
 	public int getXPosition() {
@@ -28,7 +32,11 @@ public class Background {
 	public int getYPosition() {
 		return yPosition;
 	}
-
+	
+	public void updateBackgroundPositions() {
+		this.xPosition += backgroundLayerIndex;
+	}
+	
 	public String getBackgroundImagefileName() {
 		return backgroundImagefileName;
 	}
