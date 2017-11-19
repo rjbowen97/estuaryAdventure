@@ -45,4 +45,12 @@ public class Settings {
 		return Integer.parseInt(globalSettings.getProperty("background" + backgroundLayerIndex + "BaseSpeed"));
 	}
 	
+	public static int getNonLandAnimalFallSpeed() {
+		return Integer.parseInt(globalSettings.getProperty("nonLandAnimalFallSpeed"));
+	}
+	
+	public static int getNonLandAnimalFlapSpeed() {
+		return Integer.parseInt(globalSettings.getProperty("nonLandAnimalFlapSpeed"));
+	}
+	
 }

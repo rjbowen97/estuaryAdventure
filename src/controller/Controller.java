@@ -56,7 +56,7 @@ public class Controller {
 			backgroundModel.updateBackgroundPositions();
 		}
 		
-		this.playerModel.move();
+		this.playerModel.onTick();
 	}
 	
 	public void updateView(){

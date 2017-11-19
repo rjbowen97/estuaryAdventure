@@ -1,16 +1,25 @@
 package models;
 
+import controller.Settings;
+
 public class NonLandAnimal extends Player {
 
 	@Override
-	public void move() {
-		this.yPosition += 5;
+	public void onTick() {
+		this.fallDown();
 	}
-
+	
+	private void fallDown() {
+		this.yPosition += Settings.getNonLandAnimalFallSpeed();
+	}
+	
 	@Override
 	public void onViewClicked() {
-		this.yPosition -= 15;
-		
+		this.flap();
+	}
+	
+	private void flap() {
+		this.yPosition -= Settings.getNonLandAnimalFlapSpeed();
 	}
 	
 }

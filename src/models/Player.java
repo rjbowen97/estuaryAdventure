@@ -12,7 +12,7 @@ public abstract class Player {
 
 	protected String spriteFile = "./sprites/sprite.jpg";
 	
-	public abstract void move();
+	public abstract void onTick();
 	public abstract void onViewClicked();
 	
 	
