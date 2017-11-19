@@ -27,8 +27,7 @@ import models.*;
 @SuppressWarnings("serial")
 public class View extends JFrame{
 
-	public JLayeredPane backgroundLayeredPane;
-	public JLayeredPane mainLayeredPane;
+	public MainLayeredPane mainLayeredPane;
 
 	private int mainFrameDimension;
 	
@@ -37,18 +36,11 @@ public class View extends JFrame{
 		this.mainFrameDimension = Integer.parseInt(Settings.globalSettings.getProperty("mainFrameDimension"));
 		this.setSize(mainFrameDimension, mainFrameDimension);
 		
-		mainLayeredPane = new JLayeredPane();
+		mainLayeredPane = new MainLayeredPane(playerModel, backgroundModels);
 		mainLayeredPane.setBounds(0, 0, mainFrameDimension, mainFrameDimension);
 		
-		this.add(backgroundLayeredPane);
 		this.add(mainLayeredPane);
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}
-
-	public void registerListenersFromController(Controller controller) {
-		//frame.getContentPane().addMouseListener(controller.mouseListenerComponent);
-		//frame.addMouseMotionListener(controller.mouseMotionListenerComponent);
-
 	}
 }

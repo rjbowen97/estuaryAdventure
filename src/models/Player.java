@@ -41,9 +41,7 @@ public class Player {
 	 * */
 	
 	public Player(PlayerAnimalType animalType) {
-		
-		size = Integer.parseInt(Settings.globalSettings.get("playerSize").toString());
-		
+				
 		if (animalType == PlayerAnimalType.BIRD){
 			//sprite = birdSprite;
 		}

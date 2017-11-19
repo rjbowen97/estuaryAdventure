@@ -21,8 +21,8 @@ public class GameWrapper {
     	File[] backgroundImageFiles = new File("./backgrounds").listFiles();
     	for(File currentBackgroundImageFiles: backgroundImageFiles){
     		backgroundModels.add(new Background(currentBackgroundImageFiles,
-    				Integer.parseInt(settings.globalSettings.get("backgroundXPosition").toString()),
-    				Integer.parseInt(settings.globalSettings.get("backgroundYPosition").toString())));
+    				Integer.parseInt(Settings.globalSettings.getProperty("backgroundXPosition")),
+    				Integer.parseInt(Settings.globalSettings.getProperty("backgroundYPosition"))));
     	}  
     	
 		Controller mainController = new Controller(mainModel, new View(mainModel, backgroundModels));
