@@ -30,18 +30,7 @@ public class Player {
 	 * */
 	
 	public Player(PlayerAnimalType animalType) {
-				
-		if (animalType == PlayerAnimalType.BIRD){
-			//sprite = birdSprite;
-		}
 		
-		else if (animalType == PlayerAnimalType.FISH){
-			//sprite = fishSprite;
-		}
-		
-		else if (animalType == PlayerAnimalType.CRAB){
-			//sprite = crabSprite;
-		}
 	}
 	
 	public void move(int xIncrement, int yIncrement) {

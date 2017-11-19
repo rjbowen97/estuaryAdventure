@@ -12,18 +12,17 @@ import controller.Settings;
 import models.Background;
 
 public class BackgroundComponent extends JComponent{
-	private int xPosition, yPosition;
+	
+	Background backgroundModel;
 	BufferedImage backgroundImage;
 	private int mainFrameDimension;
 	
 	BackgroundComponent(Background backgroundModel){
 		
 		this.mainFrameDimension = Integer.parseInt(Settings.globalSettings.getProperty("mainFrameDimension"));
+		this.setBounds(0,0,mainFrameDimension,mainFrameDimension);
 		
-		this.xPosition = backgroundModel.getXPosition();
-		this.yPosition = backgroundModel.getYPosition();
-		
-		this.setSize(mainFrameDimension,mainFrameDimension);
+		this.backgroundModel = backgroundModel;
 		
 		try {
 			File imageFile = new File(backgroundModel.getBackgroundImagefileName());
@@ -39,7 +38,7 @@ public class BackgroundComponent extends JComponent{
 	
 	@Override
 	public void paintComponent(Graphics g) {
-		g.drawImage(backgroundImage, xPosition, yPosition, null);
+		g.drawImage(backgroundImage, backgroundModel.getXPosition(), backgroundModel.getYPosition(), null);
 	}
 	
 }
