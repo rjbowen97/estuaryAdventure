@@ -10,23 +10,29 @@ public class Interactable implements GameModel {
 	private boolean isFood;
 	private String spriteFilePath;
 	
+	private int activationTick;
 	private boolean isActive = false;
 	
 	private int speed;
 	
 	private Random random = new Random();
 	
-	public Interactable() {
+	public Interactable(int activationTick) {
 		this.xPosition = Settings.getInteractableStartXPosition();
 		this.yPosition = random.nextInt(Settings.getViewDimensionDefault());
 		this.isFood = random.nextBoolean();
 		this.speed = Settings.getInteractableSpeed();
+		this.activationTick = activationTick;
 		
 		if (isFood) {
 			this.spriteFilePath = "./sprites/foodSprite.jpg";
 		} else {
 			this.spriteFilePath = "./sprites/notFoodSprite.jpg";
 		}
+	}
+	
+	public void activate() {
+		this.isActive = true;
 	}
 	
 	public int getXPosition() {
@@ -43,6 +49,10 @@ public class Interactable implements GameModel {
 	
 	public boolean isActive() {
 		return this.isActive;
+	}
+	
+	public int getActivationTick() {
+		return this.activationTick;
 	}
 	
 	public String getSpriteFilePath() {

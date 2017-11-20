@@ -45,12 +45,14 @@ public class InteractableComponent extends JComponent {
 	@Override
 	public void paintComponent(Graphics g) {
 		for (Interactable interactableModel : interactableModels) {
-			if (interactableModel.isFood() == true) {
-				g.drawImage(foodSprite, interactableModel.getXPosition(), interactableModel.getYPosition(), null);
-			}
-			
-			else {
-				g.drawImage(notFoodSprite, interactableModel.getXPosition(), interactableModel.getYPosition(), null);
+			if (interactableModel.isActive() == true) {
+				if (interactableModel.isFood() == true) {
+					g.drawImage(foodSprite, interactableModel.getXPosition(), interactableModel.getYPosition(), null);
+				}
+				
+				else {
+					g.drawImage(notFoodSprite, interactableModel.getXPosition(), interactableModel.getYPosition(), null);
+				}
 			}
 		}
 	}

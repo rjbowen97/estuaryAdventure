@@ -29,13 +29,13 @@ public class Controller {
     }
     
     public void tick(int tickNumber){
-    	tickModels();
+    	tickModels(tickNumber);
     	tickView();
     }
 	
-	private void tickModels() {
+	private void tickModels(int tickNumber) {
 		tickBackgroundModels();
-		tickInteractableModels();
+		tickInteractableModels(tickNumber);
 		tickPlayerModel();
 	}
 	
@@ -45,8 +45,13 @@ public class Controller {
 		}
 	}
 	
-	private void tickInteractableModels() {
+	private void tickInteractableModels(int tickNumber) {
 		for (Interactable interactableModel :interactableModels) {
+			
+			if (interactableModel.getActivationTick() == tickNumber) {
+				interactableModel.activate();
+			}
+			
 			if (interactableModel.isActive()) {
 				interactableModel.onTick();				
 			}
