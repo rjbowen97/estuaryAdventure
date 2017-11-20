@@ -13,7 +13,6 @@ public class GameWrapper {
 	
 	public static void main(String[] args) {
 		
-		@SuppressWarnings("unused")
 		Settings settings = new Settings();
 		
 		Player playerModel = new LandAnimal();

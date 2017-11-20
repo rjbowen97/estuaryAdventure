@@ -12,16 +12,10 @@ import models.Player;
 public class View extends JFrame {
 
 	private MainLayeredPane mainLayeredPane;
-	private int viewDimension;
-	private Controller controller;
 	
 	public View(Player playerModel, ArrayList<Background> backgroundModels, Controller controller, ArrayList<Interactable> interactableModels) {
 
-		this.controller = controller;
-		this.viewDimension = Settings.getViewDimensionDefault();
 		this.setBounds(0,0,Settings.getViewDimensionDefault(), Settings.getViewDimensionDefault());
-		
-		
 		mainLayeredPane = new MainLayeredPane(playerModel, backgroundModels, controller, interactableModels);
 		
 		this.add(mainLayeredPane);
