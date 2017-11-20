@@ -52,26 +52,19 @@ class PlayerComponent extends JComponent{
 
 		@Override
 		public void mouseEntered(MouseEvent mouseEvent) {
-			// TODO Auto-generated method stub
-			
 		}
 
 		@Override
 		public void mouseExited(MouseEvent mouseEvent) {
-			// TODO Auto-generated method stub
-			
 		}
 
 		@Override
 		public void mousePressed(MouseEvent mouseEvent) {
-			// TODO Auto-generated method stub
 			
 		}
 
 		@Override
 		public void mouseReleased(MouseEvent mouseEvent) {
-			// TODO Auto-generated method stub
-			
 		}
 	}
 }
