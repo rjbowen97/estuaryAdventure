@@ -69,7 +69,7 @@ public class Settings {
 		return Integer.parseInt(globalSettings.getProperty("interactableStartXPosition"));
 	}
 	
-	public static int getInteractableMaxSpeed() {
-		return Integer.parseInt(globalSettings.getProperty("interactableMaxSpeed"));
+	public static int getInteractableSpeed() {
+		return Integer.parseInt(globalSettings.getProperty("interactableSpeed"));
 	}
 }

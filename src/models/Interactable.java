@@ -18,7 +18,7 @@ public class Interactable implements GameModel {
 		this.xPosition = Settings.getInteractableStartXPosition();
 		this.yPosition = random.nextInt(Settings.getViewDimensionDefault());
 		this.isFood = random.nextBoolean();
-		this.speed = random.nextInt(Settings.getInteractableMaxSpeed()) + 1;
+		this.speed = Settings.getInteractableSpeed();
 		
 		if (isFood) {
 			this.spriteFilePath = "./sprites/foodSprite.jpg";
@@ -30,9 +30,11 @@ public class Interactable implements GameModel {
 	public int getXPosition() {
 		return xPosition;
 	}
+	
 	public int getYPosition() {
 		return yPosition;
 	}
+	
 	public boolean isFood() {
 		return isFood;
 	}
