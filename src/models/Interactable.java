@@ -25,10 +25,9 @@ public class Interactable implements GameModel {
 	public boolean isFood() {
 		return isFood;
 	}
-	
 	@Override
 	public void onTick() {
-		// TODO Auto-generated method stub
+		this.xPosition -= Settings.getInteractableSpeed();
 	}
 	
 }
