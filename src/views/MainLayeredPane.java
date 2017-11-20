@@ -12,13 +12,11 @@ import models.Player;
 
 public class MainLayeredPane extends JLayeredPane {
 	
-	PlayerComponent playerComponent;
-	BackgroundLayeredPane backgroundLayeredPane;
-	Controller controller;
-	InteractableComponent interactableComponent;
+	private PlayerComponent playerComponent;
+	private BackgroundLayeredPane backgroundLayeredPane;
+	private InteractableComponent interactableComponent;
 	
 	public MainLayeredPane(Player playerModel, ArrayList<Background> backgroundModels, Controller controller, ArrayList<Interactable> interactableModels) {
-		this.controller = controller;
 		this.backgroundLayeredPane = new BackgroundLayeredPane(backgroundModels);
 		this.playerComponent = new PlayerComponent(playerModel, controller);
 		this.interactableComponent = new InteractableComponent(interactableModels);

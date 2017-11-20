@@ -26,13 +26,12 @@ public class Background implements GameModel {
 		return yPosition;
 	}
 
-
 	@Override
 	public void onTick() {
 		this.updateBackgroundPositions();
 	}
 
-	public void updateBackgroundPositions() {
+	private void updateBackgroundPositions() {
 		this.xPosition -= this.moveSpeed;
 	}
 

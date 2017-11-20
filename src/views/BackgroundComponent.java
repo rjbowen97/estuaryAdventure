@@ -13,8 +13,8 @@ import models.Background;
 
 public class BackgroundComponent extends JComponent{
 	
-	Background backgroundModel;
-	BufferedImage backgroundImage;
+	private Background backgroundModel;
+	private BufferedImage backgroundImage;
 	private int mainFrameDimension;
 	
 	BackgroundComponent(Background backgroundModel){

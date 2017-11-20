@@ -14,9 +14,9 @@ import models.Interactable;
 
 public class InteractableComponent extends JComponent {
 	
-	ArrayList<Interactable> interactableModels;
-	BufferedImage foodSprite;
-	BufferedImage notFoodSprite;
+	private ArrayList<Interactable> interactableModels;
+	private BufferedImage foodSprite;
+	private BufferedImage notFoodSprite;
 	
 	public InteractableComponent(ArrayList<Interactable> interactableModels) {
 		this.interactableModels = interactableModels;

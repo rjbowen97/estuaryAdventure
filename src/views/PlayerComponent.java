@@ -16,9 +16,9 @@ import models.Player;
 
 class PlayerComponent extends JComponent{
 	
-	Player playerModel;
-	BufferedImage playerImage;
-	Controller controller;
+	private Player playerModel;
+	private BufferedImage playerImage;
+	private Controller controller;
 	
 	PlayerComponent(Player playerModel, Controller controller){
 		

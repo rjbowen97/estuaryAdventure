@@ -9,7 +9,7 @@ import models.Background;
 
 public class BackgroundLayeredPane extends JLayeredPane {
 	
-	public ArrayList<BackgroundComponent> backgroundComponents;
+	private ArrayList<BackgroundComponent> backgroundComponents;
 	
 	public BackgroundLayeredPane(ArrayList<Background> backgroundModels) {
 		

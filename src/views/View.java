@@ -15,7 +15,7 @@ public class View extends JFrame {
 
 	private MainLayeredPane mainLayeredPane;
 	private int viewDimension;
-	Controller controller;
+	private Controller controller;
 	
 	public View(Player playerModel, ArrayList<Background> backgroundModels, Controller controller, ArrayList<Interactable> interactableModels) {
 

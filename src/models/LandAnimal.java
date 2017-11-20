@@ -8,6 +8,7 @@ public class LandAnimal extends Player {
 	
 	@Override
 	public void onTick() {
+		
 	}
 	
 	@Override

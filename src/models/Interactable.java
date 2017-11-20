@@ -12,7 +12,7 @@ public class Interactable implements GameModel {
 	
 	private int speed;
 	
-	Random random = new Random();
+	private Random random = new Random();
 	
 	public Interactable() {
 		this.xPosition = Settings.getInteractableStartXPosition();

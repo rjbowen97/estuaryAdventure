@@ -11,16 +11,10 @@ import views.View;
 
 public class Controller {
 	
-    String birdSprite = "sprite.png";
-    String fishSprite = "sprite.png";
-    String crabSprite = "sprite.png";
+    private ArrayList<Background> backgroundModels;
+    private Player playerModel;
+    private ArrayList<Interactable> interactableModels;
     
-    //models
-    public ArrayList<Background> backgroundModels;
-    public Player playerModel;
-    public ArrayList<Interactable> interactableModels;
-    
-    //view
     private View view;
     
     public Controller(Player playerModel, ArrayList<Background> backgroundModels, ArrayList<Interactable> interactableModels) {
@@ -39,7 +33,7 @@ public class Controller {
     	tickView();
     }
 	
-	public void tickModels() {
+	private void tickModels() {
 		for (Background backgroundModel : backgroundModels) {
 			backgroundModel.onTick();
 		}
@@ -50,7 +44,7 @@ public class Controller {
 		}
 	}
 	
-	public void tickView(){
+	private void tickView(){
 		view.repaint();
 	}
     
