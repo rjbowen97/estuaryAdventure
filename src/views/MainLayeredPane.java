@@ -24,8 +24,8 @@ public class MainLayeredPane extends JLayeredPane {
 		this.interactableComponent = new InteractableComponent(interactableModels);
 		
 		this.add(backgroundLayeredPane, new Integer(0));
-		this.add(playerComponent, new Integer(1));
-		this.add(interactableComponent, new Integer(2));
+		this.add(interactableComponent, new Integer(1));
+		this.add(playerComponent, new Integer(2));
 		
 		this.setBounds(0,0,Settings.getViewDimensionDefault(), Settings.getViewDimensionDefault());
 		this.setVisible(true);

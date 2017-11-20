@@ -44,8 +44,6 @@ public class InteractableComponent extends JComponent {
 	
 	@Override
 	public void paintComponent(Graphics g) {
-		
-		System.out.println("interactablecomponentPaintCalled");
 		for (Interactable interactableModel : interactableModels) {
 			if (interactableModel.isFood() == true) {
 				g.drawImage(foodSprite, interactableModel.getXPosition(), interactableModel.getYPosition(), null);
