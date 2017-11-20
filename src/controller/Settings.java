@@ -53,9 +53,16 @@ public class Settings {
 		return Integer.parseInt(globalSettings.getProperty("nonLandAnimalFlapSpeed"));
 	}
 	
-
 	public static int getLandAnimalShuffleSpeed() {
 		return Integer.parseInt(globalSettings.getProperty("landAnimalShuffleSpeed"));
+	}
+	
+	public static int getPlayerStartXPosition() {
+		return Integer.parseInt(globalSettings.getProperty("playerStartXPosition"));
+	}
+	
+	public static int getPlayerStartYPosition() {
+		return Integer.parseInt(globalSettings.getProperty("playerStartYPosition"));
 	}
 	
 }

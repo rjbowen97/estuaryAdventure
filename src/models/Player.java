@@ -2,10 +2,15 @@ package models;
 
 import java.awt.event.MouseEvent;
 
+import controller.Settings;
+
 public abstract class Player {
 
-	//limits
-	
+	public Player() {
+		this.xPosition = Settings.getPlayerStartXPosition();
+		this.yPosition = Settings.getPlayerStartYPosition();
+	}
+		
 	//attributes
 	protected int health;
 	protected int score;
@@ -17,7 +22,6 @@ public abstract class Player {
 	
 	public abstract void onTick();
 	public abstract void onViewClicked(MouseEvent mouseEvent);
-	
 	
 	public int getHealth() {
 		return health;
@@ -38,5 +42,4 @@ public abstract class Player {
 	public String getSpriteFile() {
 		return spriteFile;
 	}
-	
 }

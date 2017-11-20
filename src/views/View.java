@@ -20,7 +20,8 @@ public class View extends JFrame {
 		
 		this.controller = controller;
 		this.viewDimension = Settings.getViewDimensionDefault();
-		this.setSize(viewDimension, viewDimension);
+		this.setBounds(0,0,Settings.getViewDimensionDefault(), Settings.getViewDimensionDefault());
+		
 		
 		mainLayeredPane = new MainLayeredPane(playerModel, backgroundModels);
 		

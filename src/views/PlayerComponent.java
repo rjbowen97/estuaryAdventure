@@ -19,7 +19,7 @@ class PlayerComponent extends JComponent{
 	PlayerComponent(Player playerModel){
 		
 		this.playerModel = playerModel;
-		this.setBounds(0,0,Settings.getViewDimensionDefault(), Settings.getViewDimensionDefault());
+		this.setBounds(playerModel.getXPosition(),playerModel.getYPosition(),Settings.getViewDimensionDefault(), Settings.getViewDimensionDefault());
 		
 		try {
 			File imageFile = new File(playerModel.getSpriteFile());
