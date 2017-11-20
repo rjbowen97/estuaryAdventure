@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class MiniGame {
 	
-	ArrayList<QuestionAndAnswerPair> questionAndAnswerPairs;
+	private ArrayList<QuestionAndAnswerPair> questionAndAnswerPairs;
 	
 	public MiniGame() {
 		QuestionAndAnswerPairsReader questionAndAnswerPairsReader = new QuestionAndAnswerPairsReader();
