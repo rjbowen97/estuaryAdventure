@@ -21,7 +21,7 @@ public abstract class Player {
 	protected String spriteFile = "./sprites/sprite.jpg";
 	
 	public abstract void onTick();
-	public abstract void onClicked(MouseEvent mouseEvent);
+	public abstract void onMouseReleased(MouseEvent mouseEvent);
 	
 	public int getHealth() {
 		return health;

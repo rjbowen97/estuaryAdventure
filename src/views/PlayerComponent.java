@@ -47,7 +47,6 @@ class PlayerComponent extends JComponent{
 	private class PlayerComponentMouseListener implements MouseListener {
 		@Override
 		public void mouseClicked(MouseEvent mouseEvent) {
-			controller.onPlayerComponentClicked(mouseEvent);
 		}
 
 		@Override
@@ -65,6 +64,7 @@ class PlayerComponent extends JComponent{
 
 		@Override
 		public void mouseReleased(MouseEvent mouseEvent) {
+			controller.onPlayerComponentMouseReleased(mouseEvent);
 		}
 	}
 }
