@@ -8,7 +8,7 @@ public class Interactable implements GameModel {
 	private int xPosition;
 	private int yPosition;
 	private boolean isFood;
-	private String
+	private String spriteFilePath;
 	
 	Random random = new Random();
 	
@@ -18,11 +18,10 @@ public class Interactable implements GameModel {
 		this.isFood = random.nextBoolean();
 		
 		if (isFood) {
-			
+			this.spriteFilePath = "./sprites/foodSprite.jpg";
 		} else {
-
+			this.spriteFilePath = "./sprites/notFoodSprite.jpg";
 		}
-		
 	}
 	
 	public int getxPosition() {

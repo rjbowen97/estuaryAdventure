@@ -25,12 +25,12 @@ public class BackgroundComponent extends JComponent{
 		this.backgroundModel = backgroundModel;
 		
 		try {
-			File imageFile = new File(backgroundModel.getBackgroundImagefileName());
+			File imageFile = new File(backgroundModel.getBackgroundImagePath());
 			System.out.println(imageFile.exists());
 			backgroundImage = ImageIO.read(imageFile);
 		}			
 		catch (IOException e) {
-			System.out.println(backgroundModel.getBackgroundImagefileName());
+			System.out.println(backgroundModel.getBackgroundImagePath());
 			e.printStackTrace();
 		}
 		this.setVisible(true);

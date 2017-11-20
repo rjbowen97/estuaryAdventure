@@ -6,13 +6,13 @@ import controller.Settings;
 
 public class Background implements GameModel {
 
-	private String backgroundImagefileName;
+	private String backgroundImagePath;
 	private int xPosition;
 	private int yPosition;
 	private int moveSpeed;
 
 	public Background(File backgroundImageFile, int xPosition, int yPosition, int backgroundLayerIndex) {
-		this.backgroundImagefileName = "./Backgrounds/" + backgroundImageFile.getName();
+		this.backgroundImagePath = "./Backgrounds/" + backgroundImageFile.getName();
 		this.xPosition = xPosition;
 		this.yPosition = yPosition;
 		this.moveSpeed = Settings.getBackgroundBaseSpeed(backgroundLayerIndex);
@@ -36,7 +36,7 @@ public class Background implements GameModel {
 		this.xPosition -= this.moveSpeed;
 	}
 
-	public String getBackgroundImagefileName() {
-		return backgroundImagefileName;
+	public String getBackgroundImagePath() {
+		return backgroundImagePath;
 	}
 }

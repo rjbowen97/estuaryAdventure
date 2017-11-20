@@ -14,10 +14,9 @@ public abstract class Player implements GameModel{
 	//attributes
 	protected int health;
 	protected int score;
-
 	protected int xPosition;
 	protected int yPosition;
-
+	
 	protected String spriteFile = "./sprites/sprite.jpg";
 	
 	public abstract void onMouseReleased(MouseEvent mouseEvent);
