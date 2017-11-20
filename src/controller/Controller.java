@@ -42,16 +42,19 @@ public class Controller {
 	}
 	
 	private void detectCollisions() {
+		detectPlayerInteractableCollisions();
+	}
+	
+	private void detectPlayerInteractableCollisions() {
+		
 		for (Interactable interactableModel : interactableModels) {
+			
+			if (Math.abs(playerModel.getXPosition() - interactableModel.getXPosition()) <= playerModel.getHitboxWidth()) {
+				if (Math.abs(playerModel.getYPosition() - interactableModel.getYPosition()) <= playerModel.getHitboxHeight()) {
+					System.out.println("COLLISION!");
+				}
+			}
 		}
-	}
-	
-	private boolean isXCollision() {
-		return true;
-	}
-	
-	private boolean isYCollision() {
-		return true;
 	}
 	
 	private void tickBackgroundModels() {
