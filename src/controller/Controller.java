@@ -40,8 +40,8 @@ public class Controller {
 		this.view = new View(playerModel, backgroundModels, this);
 	}
     
-    public void onViewClicked(MouseEvent mouseEvent) {
-    	playerModel.onViewClicked(mouseEvent);
+    public void onPlayerComponentClicked(MouseEvent mouseEvent) {
+    	playerModel.onClicked(mouseEvent);
     }
     
     /*

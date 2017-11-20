@@ -16,7 +16,7 @@ public class NonLandAnimal extends Player {
 	}
 	
 	@Override
-	public void onViewClicked(MouseEvent mouseEvent) {
+	public void onClicked(MouseEvent mouseEvent) {
 		this.flap();
 	}
 	

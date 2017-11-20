@@ -11,7 +11,7 @@ public class LandAnimal extends Player {
 	}
 	
 	@Override
-	public void onViewClicked(MouseEvent mouseEvent) {
+	public void onClicked(MouseEvent mouseEvent) {
 		
 		System.out.println(mouseEvent.getY());
 		System.out.println("^ mouse event ---- V this.positions");
