@@ -34,9 +34,9 @@ public class GameWrapper {
     	
 		Controller controller = new Controller(playerModel, backgroundModels, interactableModels);
 
-		for(int i = 0; i < 1000; i++){
+		for(int tickNumber = 0; tickNumber < 1000; tickNumber++){
 			try {
-				controller.tick();
+				controller.tick(tickNumber);
 				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				e.printStackTrace();

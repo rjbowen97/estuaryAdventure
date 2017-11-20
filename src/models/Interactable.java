@@ -10,6 +10,8 @@ public class Interactable implements GameModel {
 	private boolean isFood;
 	private String spriteFilePath;
 	
+	private boolean isActive = false;
+	
 	private int speed;
 	
 	private Random random = new Random();
@@ -37,6 +39,10 @@ public class Interactable implements GameModel {
 	
 	public boolean isFood() {
 		return isFood;
+	}
+	
+	public boolean isActive() {
+		return this.isActive;
 	}
 	
 	public String getSpriteFilePath() {

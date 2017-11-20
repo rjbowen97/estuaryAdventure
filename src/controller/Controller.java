@@ -28,20 +28,33 @@ public class Controller {
     	playerModel.onMouseReleased(mouseEvent);
     }
     
-    public void tick(){
+    public void tick(int tickNumber){
     	tickModels();
     	tickView();
     }
 	
 	private void tickModels() {
+		tickBackgroundModels();
+		tickInteractableModels();
+		tickPlayerModel();
+	}
+	
+	private void tickBackgroundModels() {
 		for (Background backgroundModel : backgroundModels) {
 			backgroundModel.onTick();
 		}
-		this.playerModel.onTick();
-		
+	}
+	
+	private void tickInteractableModels() {
 		for (Interactable interactableModel :interactableModels) {
-			interactableModel.onTick();
+			if (interactableModel.isActive()) {
+				interactableModel.onTick();				
+			}
 		}
+	}
+	
+	private void tickPlayerModel() {
+		this.playerModel.onTick();
 	}
 	
 	private void tickView(){
