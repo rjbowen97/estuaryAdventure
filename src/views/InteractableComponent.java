@@ -29,8 +29,8 @@ public class InteractableComponent extends JComponent {
 		for (Interactable interactableModel : interactableModels) {
 			if (interactableModel.isActive() == true) {
 				
-				g.fillRect(interactableModel.getXPosition() - 5, interactableModel.getYPosition(),5,5); //DEBUGGING
-				
+				g.fillRect(interactableModel.getXPosition() - 5, interactableModel.getYPosition() - 5, interactableModel.getHitboxWidth() + 10, interactableModel.getHitboxHeight() + 10); //DEBUGGING
+								
 				g.drawImage(interactableModel.getSpriteImage(), interactableModel.getXPosition(), interactableModel.getYPosition(), null);
 			}
 		}

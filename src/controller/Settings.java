@@ -65,14 +65,6 @@ public class Settings {
 		return Integer.parseInt(globalSettings.getProperty("playerStartYPosition"));
 	}
 	
-	public static int getPlayerHitBoxHeight() {
-		return Integer.parseInt(globalSettings.getProperty("playerHitBoxHeight"));
-	}
-	
-	public static int getPlayerHitBoxWidth() {
-		return Integer.parseInt(globalSettings.getProperty("playerHitBoxWidth"));
-	}
-	
 	public static int getInteractableStartXPosition() {
 		return Integer.parseInt(globalSettings.getProperty("interactableStartXPosition"));
 	}

@@ -30,7 +30,7 @@ class PlayerComponent extends JComponent{
 
 	@Override
 	public void paintComponent(Graphics g) {
-		g.fillRect(playerModel.getXPosition() - 5, playerModel.getYPosition(),5,5); //DEBUGGING
+		g.fillRect(playerModel.getXPosition() - 5, playerModel.getYPosition() - 5, playerModel.getHitboxWidth() + 10, playerModel.getHitboxHeight() + 10); //DEBUGGING
 		
 		g.drawImage(playerModel.getSpriteImage(), playerModel.getXPosition(), playerModel.getYPosition(), null);
 	}

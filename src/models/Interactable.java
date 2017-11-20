@@ -14,6 +14,9 @@ public class Interactable implements GameModel {
 	private int yPosition;
 	private boolean isFood;
 	private BufferedImage spriteImage;
+	private int hitboxHeight;
+	private int hitboxWidth;
+	
 	
 	private int activationTick;
 	private boolean isActive = false;
@@ -29,6 +32,12 @@ public class Interactable implements GameModel {
 		this.speed = Settings.getInteractableSpeed();
 		this.activationTick = activationTick;
 		this.setSpriteImage();
+		this.setHitboxDimensions();
+	}
+	
+	private void setHitboxDimensions() {
+		this.hitboxHeight = this.spriteImage.getHeight();
+		this.hitboxWidth = this.spriteImage.getWidth();
 	}
 	
 	private void setSpriteImage() {
@@ -63,6 +72,14 @@ public class Interactable implements GameModel {
 	
 	public void activate() {
 		this.isActive = true;
+	}
+	
+	public int getHitboxHeight () {
+		return hitboxHeight;
+	}
+	
+	public int getHitboxWidth () {
+		return hitboxWidth;
 	}
 	
 	public int getXPosition() {

@@ -15,15 +15,21 @@ public abstract class Player implements GameModel{
 	protected int score;
 	protected int xPosition;
 	protected int yPosition;
-	protected int hitBoxHeight;
+	protected int hitboxHeight;
+	protected int hitboxWidth;
 	
 	protected BufferedImage spriteImage;
 	
 	public Player() {
 		this.xPosition = Settings.getPlayerStartXPosition();
 		this.yPosition = Settings.getPlayerStartYPosition();
-		this.hitBoxHeight = Settings.getPlayerHitBoxHeight();
 		this.setSpriteImage();
+		this.setHitboxDimensions();
+	}
+	
+	private void setHitboxDimensions() {
+		this.hitboxHeight = this.spriteImage.getHeight();
+		this.hitboxWidth = this.spriteImage.getWidth();
 	}
 	
 	private void setSpriteImage() {
@@ -66,7 +72,12 @@ public abstract class Player implements GameModel{
 		return spriteImage;
 	}
 	
-	public int getHitBoxHeight () {
-		return hitBoxHeight;
+	public int getHitboxHeight () {
+		return hitboxHeight;
 	}
+	
+	public int getHitboxWidth () {
+		return hitboxWidth;
+	}
+	
 }

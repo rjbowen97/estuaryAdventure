@@ -1,5 +1,5 @@
 package models;
 
-public interface GameModel {
+interface GameModel {	
 	public void onTick();
 }
