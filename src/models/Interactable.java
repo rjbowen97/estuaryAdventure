@@ -82,6 +82,17 @@ public class Interactable extends GameModel {
 	}
 	
 	@Override
+	protected void setHitbox() {
+		this.setHitbox(new Hitbox(this));
+	}
+
+	@Override
+	protected void updateHitbox() {
+		this.getHitbox().update();
+		
+	}
+	
+	@Override
 	public void onTick() {
 		int newXPosition = this.getXPosition() - this.getSpeed();
 		this.setxPosition(newXPosition);

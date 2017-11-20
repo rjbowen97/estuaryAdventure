@@ -8,7 +8,6 @@ public class LandAnimal extends Player {
 	
 	@Override
 	public void onTick() {
-		
 	}
 	
 	@Override
@@ -22,5 +21,16 @@ public class LandAnimal extends Player {
 			int newYPosition = this.getYPosition() - Settings.getLandAnimalShuffleSpeed();
 			this.setyPosition(newYPosition);
 		}
-	}	
+	}
+	
+	@Override
+	protected void setHitbox() {
+		this.setHitbox(new Hitbox(this));
+	}
+
+	@Override
+	protected void updateHitbox() {
+		this.getHitbox().update();
+		
+	}
 }

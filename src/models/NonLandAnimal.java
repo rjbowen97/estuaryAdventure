@@ -25,5 +25,16 @@ public class NonLandAnimal extends Player {
 		int newYPosition = this.getYPosition() - Settings.getNonLandAnimalFlapSpeed();
 		this.setyPosition(newYPosition);
 	}
+
+	@Override
+	protected void setHitbox() {
+		this.setHitbox(new Hitbox(this));
+	}
+
+	@Override
+	protected void updateHitbox() {
+		this.getHitbox().update();
+		
+	}
 	
 }

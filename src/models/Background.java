@@ -21,6 +21,17 @@ public class Background extends GameModel {
 	}
 	
 	@Override
+	protected void setHitbox() {
+		this.setHitbox(new Hitbox(this));
+	}
+
+	@Override
+	protected void updateHitbox() {
+		this.getHitbox().update();
+		
+	}
+	
+	@Override
 	protected void setSpriteImage() {
 		BufferedImage spriteImageToUse = null;
 		
