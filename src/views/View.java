@@ -20,44 +20,13 @@ public class View extends JFrame {
 		
 		this.controller = controller;
 		this.viewDimension = Settings.getViewDimensionDefault();
-		this.setSize(viewDimension, viewDimension);
+		this.setBounds(0,0,Settings.getViewDimensionDefault(), Settings.getViewDimensionDefault());
 		
-		mainLayeredPane = new MainLayeredPane(playerModel, backgroundModels);
+		
+		mainLayeredPane = new MainLayeredPane(playerModel, backgroundModels, controller);
 		
 		this.add(mainLayeredPane);
-		this.addMouseListener(new viewMouseListener());
 		this.setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}
-	
-	private class viewMouseListener implements MouseListener {
-		@Override
-		public void mouseClicked(MouseEvent e) {
-			controller.onViewClicked();
-		}
-
-		@Override
-		public void mouseEntered(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void mouseExited(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void mousePressed(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void mouseReleased(MouseEvent e) {
-			// TODO Auto-generated method stub
-			
-		}
 	}
 }

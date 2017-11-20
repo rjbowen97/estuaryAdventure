@@ -4,7 +4,9 @@ import java.io.File;
 import java.util.ArrayList;
 
 import models.Background;
+import models.LandAnimal;
 import models.NonLandAnimal;
+import models.Player;
 
 /*
  * This class essentially wraps the game up into a presentable/runnable product, Player model is
@@ -17,7 +19,7 @@ public class GameWrapper {
 		@SuppressWarnings("unused")
 		Settings settings = new Settings();
 		
-		NonLandAnimal playerModel = new NonLandAnimal();
+		Player playerModel = new LandAnimal();
 		ArrayList<Background> backgroundModels = new ArrayList<Background>();
     	File[] backgroundImageFiles = new File("./backgrounds").listFiles();
     	
