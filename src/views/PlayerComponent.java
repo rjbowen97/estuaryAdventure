@@ -17,7 +17,6 @@ import models.Player;
 class PlayerComponent extends JComponent{
 	
 	private Player playerModel;
-	private BufferedImage playerImage;
 	private Controller controller;
 	
 	PlayerComponent(Player playerModel, Controller controller){
@@ -26,16 +25,6 @@ class PlayerComponent extends JComponent{
 		this.playerModel = playerModel;
 		this.setBounds(playerModel.getXPosition(),playerModel.getYPosition(),Settings.getViewDimensionDefault(), Settings.getViewDimensionDefault());
 		this.addMouseListener(new PlayerComponentMouseListener());
-		
-		try {
-			File imageFile = new File(playerModel.getSpriteFile());
-			if(imageFile.exists() == true){
-				playerImage = ImageIO.read(imageFile);
-			}
-		}			
-		catch (IOException e) {
-			e.printStackTrace();
-		}
 		this.setVisible(true);
 	}
 
@@ -43,7 +32,7 @@ class PlayerComponent extends JComponent{
 	public void paintComponent(Graphics g) {
 		g.fillRect(playerModel.getXPosition() - 5, playerModel.getYPosition(),5,5); //DEBUGGING
 		
-		g.drawImage(playerImage, playerModel.getXPosition(), playerModel.getYPosition(), null);
+		g.drawImage(playerModel.getSpriteImage(), playerModel.getXPosition(), playerModel.getYPosition(), null);
 	}
 	
 	private class PlayerComponentMouseListener implements MouseListener {

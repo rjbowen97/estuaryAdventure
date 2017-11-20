@@ -5,7 +5,7 @@ import java.awt.event.MouseEvent;
 import controller.Settings;
 
 public class NonLandAnimal extends Player {
-
+	
 	@Override
 	public void onTick() {
 		this.fallDown();

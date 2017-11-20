@@ -28,10 +28,10 @@ public class Interactable implements GameModel {
 		this.isFood = random.nextBoolean();
 		this.speed = Settings.getInteractableSpeed();
 		this.activationTick = activationTick;
-		this.setBufferedImage();
+		this.setSpriteImage();
 	}
 	
-	private void setBufferedImage() {
+	private void setSpriteImage() {
 		
 		BufferedImage foodImage = null;
 		BufferedImage notFoodImage = null;
