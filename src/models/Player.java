@@ -15,7 +15,6 @@ public abstract class Player {
 	public abstract void onTick();
 	public abstract void onViewClicked();
 	
-	
 	public int getHealth() {
 		return health;
 	}
