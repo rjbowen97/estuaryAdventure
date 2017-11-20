@@ -1,6 +1,7 @@
 package models;
 
 import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
 
 import controller.Settings;
 
@@ -19,7 +20,7 @@ public abstract class Player implements GameModel{
 	protected int yPosition;
 	protected int hitBoxHeight;
 	
-	protected String spriteFile = "./sprites/sprite.jpg";
+	protected BufferedImage spriteImage;
 	
 	public abstract void onMouseReleased(MouseEvent mouseEvent);
 	
@@ -39,8 +40,8 @@ public abstract class Player implements GameModel{
 		return yPosition;
 	}
 	
-	public String getSpriteFile() {
-		return spriteFile;
+	public BufferedImage getSpriteImage() {
+		return spriteImage;
 	}
 	
 	public int getHitBoxHeight () {

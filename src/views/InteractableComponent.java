@@ -15,30 +15,12 @@ import models.Interactable;
 public class InteractableComponent extends JComponent {
 	
 	private ArrayList<Interactable> interactableModels;
-	private BufferedImage foodSprite;
-	private BufferedImage notFoodSprite;
 	
 	public InteractableComponent(ArrayList<Interactable> interactableModels) {
 		this.interactableModels = interactableModels;
 		
 		this.setBounds(0,0,Settings.getViewDimensionDefault(), Settings.getViewDimensionDefault());
 		
-		try {
-			File foodFile = new File("./sprites/foodSprite.jpg");
-			File notFoodFile = new File("./sprites/notFoodSprite.jpg");
-			
-			if(foodFile.exists() == true){
-				foodSprite = ImageIO.read(foodFile);
-			}
-			
-			if(notFoodFile.exists() == true){
-				notFoodSprite = ImageIO.read(notFoodFile);
-			}
-			
-		}
-		catch (IOException e) {
-			e.printStackTrace();
-		}
 		this.setVisible(true);
 	}
 	
@@ -49,13 +31,7 @@ public class InteractableComponent extends JComponent {
 				
 				g.fillRect(interactableModel.getXPosition() - 5, interactableModel.getYPosition(),5,5); //DEBUGGING
 				
-				if (interactableModel.isFood() == true) {
-					g.drawImage(foodSprite, interactableModel.getXPosition(), interactableModel.getYPosition(), null);
-				}
-				
-				else {
-					g.drawImage(notFoodSprite, interactableModel.getXPosition(), interactableModel.getYPosition(), null);
-				}
+				g.drawImage(interactableModel.getSpriteImage(), interactableModel.getXPosition(), interactableModel.getYPosition(), null);
 			}
 		}
 	}
