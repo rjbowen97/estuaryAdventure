@@ -25,7 +25,6 @@ public class Background extends GameModel {
 		BufferedImage spriteImageToUse = null;
 		
     	File backgroundImageFile = new File("./backgrounds/b" + backgroundLayerIndex + ".jpg");
-		
 		try {			
 			if(backgroundImageFile.exists() == true){
 				spriteImageToUse = ImageIO.read(backgroundImageFile);

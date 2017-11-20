@@ -12,9 +12,7 @@ public class NonLandAnimal extends Player {
 	}
 	
 	private void fallDown() {
-		
 		int newYPosition = this.getYPosition() + Settings.getNonLandAnimalFallSpeed();
-		
 		this.setyPosition(newYPosition);
 	}
 	

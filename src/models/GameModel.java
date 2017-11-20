@@ -7,10 +7,21 @@ public abstract class GameModel {
 	private int yPosition;
 	private BufferedImage spriteImage;
 	private int speed = 0;
+	private Hitbox hitbox;
 	
 	protected abstract void setSpriteImage();
-
+	protected abstract void setHitbox();
+	protected abstract void updateHitbox();
+	
 	public abstract void onTick();
+	
+	public Hitbox getHitbox() {
+		return hitbox;
+	}
+	
+	protected void setHitbox(Hitbox hitbox) {
+		this.hitbox = hitbox;
+	}
 	
 	public int getXPosition() {
 		return this.xPosition;
