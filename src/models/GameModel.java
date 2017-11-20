@@ -40,5 +40,9 @@ public abstract class GameModel {
 		this.speed = speed;
 	}
 	
+	protected void setSpriteImage(BufferedImage spriteImage) {
+		this.spriteImage = spriteImage;
+	}
+	
 	
 }

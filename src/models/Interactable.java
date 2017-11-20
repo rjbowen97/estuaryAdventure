@@ -18,20 +18,15 @@ public class Interactable extends GameModel {
 	private Random random = new Random();
 	
 	public Interactable(int activationTick) {
-		this.xPosition = Settings.getInteractableStartXPosition();
-		this.yPosition = random.nextInt(Settings.getViewDimensionDefault());
+		this.setxPosition(Settings.getInteractableStartXPosition());
+		this.setyPosition(random.nextInt(Settings.getViewDimensionDefault()));
 		this.isFood = random.nextBoolean();
-		this.speed = Settings.getInteractableSpeed();
+		this.setSpeed(Settings.getInteractableSpeed());
 		this.activationTick = activationTick;
 		this.setSpriteImage();
-		this.setHitboxDimensions();
 	}
 	
-	private void setHitboxDimensions() {
-		this.hitboxHeight = this.spriteImage.getHeight();
-		this.hitboxWidth = this.spriteImage.getWidth();
-	}
-	
+	@Override
 	protected void setSpriteImage() {
 		
 		BufferedImage foodImage = null;
@@ -54,11 +49,11 @@ public class Interactable extends GameModel {
 		}
 		
 		if (this.isFood == true) {
-			this.spriteImage = foodImage;
+			this.setSpriteImage(foodImage);
 		}
 		
 		else {
-			this.spriteImage = notFoodImage;
+			this.setSpriteImage(notFoodImage);
 		}
 	}
 	
@@ -74,14 +69,6 @@ public class Interactable extends GameModel {
 		this.isActive = true;
 	}
 	
-	public int getXPosition() {
-		return xPosition;
-	}
-	
-	public int getYPosition() {
-		return yPosition;
-	}
-	
 	public boolean isFood() {
 		return isFood;
 	}
@@ -94,13 +81,10 @@ public class Interactable extends GameModel {
 		return this.activationTick;
 	}
 	
-	public BufferedImage getSpriteImage() {
-		return this.spriteImage;
-	}
-	
 	@Override
 	public void onTick() {
-		this.xPosition -= this.speed;
+		int newXPosition = this.getXPosition() - this.getSpeed();
+		this.setxPosition(newXPosition);
 	}
 	
 }

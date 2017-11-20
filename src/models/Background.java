@@ -13,9 +13,9 @@ public class Background extends GameModel {
 	private BufferedImage spriteImage;
 
 	public Background(File backgroundImageFile, int xPosition, int yPosition, int backgroundLayerIndex) {
-		this.xPosition = xPosition;
-		this.yPosition = yPosition;
-		this.moveSpeed = Settings.getBackgroundBaseSpeed(backgroundLayerIndex);
+		this.setxPosition(xPosition);
+		this.setyPosition(yPosition);;
+		this.setSpeed(Settings.getBackgroundBaseSpeed(backgroundLayerIndex));
 		this.setSpriteImage(backgroundImageFile);
 	}
 	
@@ -45,6 +45,7 @@ public class Background extends GameModel {
 	}
 
 	private void updateBackgroundPositions() {
-		this.xPosition -= this.moveSpeed;
+		int newXPosition = this.getXPosition() - this.getSpeed();
+		this.setxPosition(newXPosition);
 	}
 }

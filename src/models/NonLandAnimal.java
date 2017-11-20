@@ -12,7 +12,10 @@ public class NonLandAnimal extends Player {
 	}
 	
 	private void fallDown() {
-		this.yPosition += Settings.getNonLandAnimalFallSpeed();
+		
+		int newYPosition = this.getYPosition() + Settings.getNonLandAnimalFallSpeed();
+		
+		this.setyPosition(newYPosition);
 	}
 	
 	@Override
@@ -21,7 +24,8 @@ public class NonLandAnimal extends Player {
 	}
 	
 	private void flap() {
-		this.yPosition -= Settings.getNonLandAnimalFlapSpeed();
+		int newYPosition = this.getYPosition() - Settings.getNonLandAnimalFlapSpeed();
+		this.setyPosition(newYPosition);
 	}
 	
 }

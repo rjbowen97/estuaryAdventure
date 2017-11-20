@@ -13,12 +13,14 @@ public class LandAnimal extends Player {
 	
 	@Override
 	public void onMouseReleased(MouseEvent mouseEvent) {
-		if (mouseEvent.getY() > this.yPosition) {
-			this.yPosition += Settings.getLandAnimalShuffleSpeed();
+		if (mouseEvent.getY() > this.getYPosition()) {
+			int newYPosition = this.getYPosition() + Settings.getLandAnimalShuffleSpeed();
+			this.setyPosition(newYPosition);
 		}
 		
 		else {
-			this.yPosition -= Settings.getLandAnimalShuffleSpeed();
+			int newYPosition = this.getYPosition() - Settings.getLandAnimalShuffleSpeed();
+			this.setyPosition(newYPosition);
 		}
 	}	
 }

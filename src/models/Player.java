@@ -19,11 +19,12 @@ public abstract class Player extends GameModel {
 		this.health = 3;
 		this.score = 0;
 		
-		this.xPosition = Settings.getPlayerStartXPosition();
-		this.yPosition = Settings.getPlayerStartYPosition();
+		this.setxPosition(Settings.getPlayerStartXPosition());
+		this.setyPosition(Settings.getPlayerStartYPosition());
 		this.setSpriteImage();
 	}
 	
+	@Override
 	protected void setSpriteImage() {
 		BufferedImage spriteImageToUse = null;
 		
@@ -38,7 +39,7 @@ public abstract class Player extends GameModel {
 			e.printStackTrace();
 		}
 		
-		this.spriteImage = spriteImageToUse;
+		this.setSpriteImage(spriteImageToUse);
 	}
 	
 	public abstract void onMouseReleased(MouseEvent mouseEvent);
