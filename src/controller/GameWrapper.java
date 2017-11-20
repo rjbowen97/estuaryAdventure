@@ -41,15 +41,11 @@ public class GameWrapper {
 	
 	private static ArrayList<Background> generateBackgroundModels() {
 		ArrayList<Background> backgroundModels = new ArrayList<Background>();
-    	File[] backgroundImageFiles = new File("./backgrounds").listFiles();
-    	
-    	for (int backgroundImageFileIndex = 0; backgroundImageFileIndex < backgroundImageFiles.length; backgroundImageFileIndex++) {
-    		backgroundModels.add(new Background(backgroundImageFiles[backgroundImageFileIndex],
-    				Settings.getBackgroundXPositionDefault(backgroundImageFileIndex),
-    				Settings.getBackgroundYPositionDefault(backgroundImageFileIndex),
-    				backgroundImageFileIndex));
+    	for (int backgroundImageFileIndex = 0; backgroundImageFileIndex < Settings.getNumberOfBackgroundLayers(); backgroundImageFileIndex++) {
+    		backgroundModels.add(new Background(Settings.getBackgroundXPositionDefault(backgroundImageFileIndex),
+    											Settings.getBackgroundYPositionDefault(backgroundImageFileIndex),
+    											backgroundImageFileIndex));
     	}
-    	
     	return backgroundModels;
 	}
 	

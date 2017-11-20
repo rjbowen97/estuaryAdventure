@@ -29,6 +29,10 @@ public class Settings {
 		}
 	}
 	
+	public static int getNumberOfBackgroundLayers() {
+		return Integer.parseInt(globalSettings.getProperty("numberOfBackgroundLayers"));	
+	}
+	
 	public static int getViewDimensionDefault() {
 		return Integer.parseInt(globalSettings.getProperty("viewDimension"));
 	}

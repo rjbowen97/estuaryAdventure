@@ -10,17 +10,21 @@ import controller.Settings;
 
 public class Background extends GameModel {
 
-	private BufferedImage spriteImage;
+	private int backgroundLayerIndex;
 
-	public Background(File backgroundImageFile, int xPosition, int yPosition, int backgroundLayerIndex) {
+	public Background(int xPosition, int yPosition, int backgroundLayerIndex) {
 		this.setxPosition(xPosition);
-		this.setyPosition(yPosition);;
+		this.setyPosition(yPosition);
+		this.backgroundLayerIndex = backgroundLayerIndex;
 		this.setSpeed(Settings.getBackgroundBaseSpeed(backgroundLayerIndex));
-		this.setSpriteImage(backgroundImageFile);
+		this.setSpriteImage();
 	}
 	
-	private void setSpriteImage(File backgroundImageFile) {
+	@Override
+	protected void setSpriteImage() {
 		BufferedImage spriteImageToUse = null;
+		
+    	File backgroundImageFile = new File("./backgrounds/b" + backgroundLayerIndex + ".jpg");
 		
 		try {			
 			if(backgroundImageFile.exists() == true){
@@ -31,12 +35,8 @@ public class Background extends GameModel {
 			e.printStackTrace();
 		}
 		
-		this.spriteImage = spriteImageToUse;
+		this.setSpriteImage(spriteImageToUse);
 		
-	}
-	
-	public BufferedImage getSpriteImage() {
-		return this.spriteImage;
 	}
 	
 	@Override
