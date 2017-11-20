@@ -43,10 +43,15 @@ public class Controller {
 	
 	private void detectCollisions() {
 		for (Interactable interactableModel : interactableModels) {
-			if (interactableModel.getYPosition() >= playerModel.getYPosition()) {
-				System.out.println("COLLISION!");
-			}
 		}
+	}
+	
+	private boolean isXCollision() {
+		return true;
+	}
+	
+	private boolean isYCollision() {
+		return true;
 	}
 	
 	private void tickBackgroundModels() {
