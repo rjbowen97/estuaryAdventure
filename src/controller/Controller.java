@@ -46,9 +46,7 @@ public class Controller {
 	}
 	
 	private void detectPlayerInteractableCollisions() {
-		
 		for (Interactable interactableModel : interactableModels) {
-			
 			if (Math.abs(playerModel.getXPosition() - interactableModel.getXPosition()) <= playerModel.getHitboxWidth()) {
 				if (Math.abs(playerModel.getYPosition() - interactableModel.getYPosition()) <= playerModel.getHitboxHeight()) {
 					System.out.println("COLLISION!");
