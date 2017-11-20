@@ -37,6 +37,16 @@ public class Controller {
 		tickBackgroundModels();
 		tickInteractableModels(tickNumber);
 		tickPlayerModel();
+		
+		detectCollisions();
+	}
+	
+	private void detectCollisions() {
+		for (Interactable interactableModel : interactableModels) {
+			if (interactableModel.getYPosition() >= playerModel.getYPosition()) {
+				System.out.println("COLLISION!");
+			}
+		}
 	}
 	
 	private void tickBackgroundModels() {

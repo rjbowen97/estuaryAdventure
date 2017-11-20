@@ -9,6 +9,7 @@ public abstract class Player implements GameModel{
 	public Player() {
 		this.xPosition = Settings.getPlayerStartXPosition();
 		this.yPosition = Settings.getPlayerStartYPosition();
+		this.hitBoxHeight = Settings.getPlayerHitBoxHeight();
 	}
 		
 	//attributes
@@ -16,6 +17,7 @@ public abstract class Player implements GameModel{
 	protected int score;
 	protected int xPosition;
 	protected int yPosition;
+	protected int hitBoxHeight;
 	
 	protected String spriteFile = "./sprites/sprite.jpg";
 	
@@ -39,5 +41,9 @@ public abstract class Player implements GameModel{
 	
 	public String getSpriteFile() {
 		return spriteFile;
+	}
+	
+	public int getHitBoxHeight () {
+		return hitBoxHeight;
 	}
 }
