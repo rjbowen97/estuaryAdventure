@@ -34,6 +34,7 @@ public class Controller {
      * @see Player
      * @see View
      */
+    
     public Controller(Player playerModel, ArrayList<Background> backgroundModels) {
 		this.playerModel = playerModel;
 		this.backgroundModels = backgroundModels;
@@ -44,9 +45,6 @@ public class Controller {
     	playerModel.onMouseReleased(mouseEvent);
     }
     
-    /*
-     * This method consolidates the updates into one call
-     */
     public void tick(){
     	tickModels();
     	tickView();

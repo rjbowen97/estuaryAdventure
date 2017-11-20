@@ -1,9 +1,20 @@
 package models;
 
+import java.util.Random;
+
+import controller.Settings;
+
 public class Interactable implements GameModel {
 	private int xPosition;
 	private int yPosition;
 	private boolean isFood;
+	
+	Random random = new Random();
+	
+	public Interactable() {
+		this.xPosition = random.nextInt(Settings.getViewDimensionDefault());
+		this.yPosition = Settings.getInteractableStartYPosition();
+	}
 	
 	public int getxPosition() {
 		return xPosition;

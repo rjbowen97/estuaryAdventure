@@ -65,4 +65,11 @@ public class Settings {
 		return Integer.parseInt(globalSettings.getProperty("playerStartYPosition"));
 	}
 	
+	public static int getInteractableStartYPosition() {
+		return Integer.parseInt(globalSettings.getProperty("interactableStartYPosition"));
+	}
+	
+	public static int getInteractableSpeed() {
+		return Integer.parseInt(globalSettings.getProperty("interactableSpeed"));
+	}
 }
