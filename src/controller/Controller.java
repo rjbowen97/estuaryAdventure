@@ -44,6 +44,10 @@ public class Controller {
 			backgroundModel.onTick();
 		}
 		this.playerModel.onTick();
+		
+		for (Interactable interactableModel :interactableModels) {
+			interactableModel.onTick();
+		}
 	}
 	
 	public void tickView(){

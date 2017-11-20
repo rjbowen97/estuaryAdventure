@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 import javax.swing.JComponent;
@@ -13,18 +14,27 @@ import models.Interactable;
 
 public class InteractableComponent extends JComponent {
 	
-	Interactable interactableModel;
-	BufferedImage interactableImage;
+	ArrayList<Interactable> interactableModels;
+	BufferedImage foodSprite;
+	BufferedImage notFoodSprite;
 	
-	public InteractableComponent(Interactable interactableModel) {
-		this.interactableModel = interactableModel;
-		this.setBounds(interactableModel.getXPosition(),interactableModel.getYPosition(),Settings.getViewDimensionDefault(), Settings.getViewDimensionDefault());
+	public InteractableComponent(ArrayList<Interactable> interactableModels) {
+		this.interactableModels = interactableModels;
+		
+		this.setBounds(0,0,Settings.getViewDimensionDefault(), Settings.getViewDimensionDefault());
 		
 		try {
-			File imageFile = new File(interactableModel.getSpriteFilePath());
-			if(imageFile.exists() == true){
-				interactableImage = ImageIO.read(imageFile);
+			File foodFile = new File("./sprites/foodSprite.jpg");
+			File notFoodFile = new File("./sprites/notFoodSprite.jpg");
+			
+			if(foodFile.exists() == true){
+				foodSprite = ImageIO.read(foodFile);
 			}
+			
+			if(notFoodFile.exists() == true){
+				notFoodSprite = ImageIO.read(notFoodFile);
+			}
+			
 		}
 		catch (IOException e) {
 			e.printStackTrace();
@@ -34,7 +44,21 @@ public class InteractableComponent extends JComponent {
 	
 	@Override
 	public void paintComponent(Graphics g) {
-		System.out.println("paint interactable called");
-		g.drawImage(interactableImage, interactableModel.getXPosition(), interactableModel.getYPosition(), null);
+		
+		System.out.println("interactablecomponentPaintCalled");
+		for (Interactable interactableModel : interactableModels) {
+			if (interactableModel.isFood() == true) {
+				g.drawImage(foodSprite, interactableModel.getXPosition(), interactableModel.getYPosition(), null);
+			}
+			
+			else {
+				g.drawImage(notFoodSprite, interactableModel.getXPosition(), interactableModel.getYPosition(), null);
+			}
+		}
 	}
 }
+
+
+
+
+
