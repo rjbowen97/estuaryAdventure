@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import models.Background;
 import models.Interactable;
 import models.LandAnimal;
-import models.NonLandAnimal;
 import models.Player;
 
 
