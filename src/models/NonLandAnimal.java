@@ -1,5 +1,7 @@
 package models;
 
+import java.awt.event.MouseEvent;
+
 import controller.Settings;
 
 public class NonLandAnimal extends Player {
@@ -14,7 +16,7 @@ public class NonLandAnimal extends Player {
 	}
 	
 	@Override
-	public void onViewClicked() {
+	public void onViewClicked(MouseEvent mouseEvent) {
 		this.flap();
 	}
 	

@@ -1,4 +1,7 @@
 package models;
+
+import java.awt.event.MouseEvent;
+
 public abstract class Player {
 
 	//limits
@@ -13,7 +16,7 @@ public abstract class Player {
 	protected String spriteFile = "./sprites/sprite.jpg";
 	
 	public abstract void onTick();
-	public abstract void onViewClicked();
+	public abstract void onViewClicked(MouseEvent mouseEvent);
 	
 	
 	public int getHealth() {

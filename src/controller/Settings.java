@@ -53,4 +53,9 @@ public class Settings {
 		return Integer.parseInt(globalSettings.getProperty("nonLandAnimalFlapSpeed"));
 	}
 	
+
+	public static int getLandAnimalShuffleSpeed() {
+		return Integer.parseInt(globalSettings.getProperty("landAnimalShuffleSpeed"));
+	}
+	
 }

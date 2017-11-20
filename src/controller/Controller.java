@@ -1,6 +1,7 @@
 package controller;
 
 
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 import models.Background;
@@ -39,8 +40,8 @@ public class Controller {
 		this.view = new View(playerModel, backgroundModels, this);
 	}
     
-    public void onViewClicked() {
-    	playerModel.onViewClicked();
+    public void onViewClicked(MouseEvent mouseEvent) {
+    	playerModel.onViewClicked(mouseEvent);
     }
     
     /*

@@ -32,30 +32,30 @@ public class View extends JFrame {
 	
 	private class viewMouseListener implements MouseListener {
 		@Override
-		public void mouseClicked(MouseEvent e) {
-			controller.onViewClicked();
+		public void mouseClicked(MouseEvent mouseEvent) {
+			controller.onViewClicked(mouseEvent);
 		}
 
 		@Override
-		public void mouseEntered(MouseEvent e) {
+		public void mouseEntered(MouseEvent mouseEvent) {
 			// TODO Auto-generated method stub
 			
 		}
 
 		@Override
-		public void mouseExited(MouseEvent e) {
+		public void mouseExited(MouseEvent mouseEvent) {
 			// TODO Auto-generated method stub
 			
 		}
 
 		@Override
-		public void mousePressed(MouseEvent e) {
+		public void mousePressed(MouseEvent mouseEvent) {
 			// TODO Auto-generated method stub
 			
 		}
 
 		@Override
-		public void mouseReleased(MouseEvent e) {
+		public void mouseReleased(MouseEvent mouseEvent) {
 			// TODO Auto-generated method stub
 			
 		}
