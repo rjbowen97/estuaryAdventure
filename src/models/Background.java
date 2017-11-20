@@ -8,11 +8,8 @@ import javax.imageio.ImageIO;
 
 import controller.Settings;
 
-public class Background implements GameModel {
+public class Background extends GameModel {
 
-	private int xPosition;
-	private int yPosition;
-	private int moveSpeed;
 	private BufferedImage spriteImage;
 
 	public Background(File backgroundImageFile, int xPosition, int yPosition, int backgroundLayerIndex) {
@@ -37,15 +34,7 @@ public class Background implements GameModel {
 		this.spriteImage = spriteImageToUse;
 		
 	}
-
-	public int getXPosition() {
-		return xPosition;
-	}
-
-	public int getYPosition() {
-		return yPosition;
-	}
-
+	
 	public BufferedImage getSpriteImage() {
 		return this.spriteImage;
 	}

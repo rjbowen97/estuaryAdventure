@@ -9,16 +9,10 @@ import javax.imageio.ImageIO;
 
 import controller.Settings;
 
-public abstract class Player implements GameModel{
+public abstract class Player extends GameModel {
 		
-	protected int health;
-	protected int score;
-	protected int xPosition;
-	protected int yPosition;
-	protected int hitboxHeight;
-	protected int hitboxWidth;
-	
-	protected BufferedImage spriteImage;
+	private int health;
+	private int score;
 	
 	public Player() {
 		
@@ -28,15 +22,9 @@ public abstract class Player implements GameModel{
 		this.xPosition = Settings.getPlayerStartXPosition();
 		this.yPosition = Settings.getPlayerStartYPosition();
 		this.setSpriteImage();
-		this.setHitboxDimensions();
 	}
 	
-	private void setHitboxDimensions() {
-		this.hitboxHeight = this.spriteImage.getHeight();
-		this.hitboxWidth = this.spriteImage.getWidth();
-	}
-	
-	private void setSpriteImage() {
+	protected void setSpriteImage() {
 		BufferedImage spriteImageToUse = null;
 		
 		try {
@@ -51,7 +39,6 @@ public abstract class Player implements GameModel{
 		}
 		
 		this.spriteImage = spriteImageToUse;
-		
 	}
 	
 	public abstract void onMouseReleased(MouseEvent mouseEvent);
@@ -73,25 +60,4 @@ public abstract class Player implements GameModel{
 	public int getScore() {
 		return score;
 	}
-	
-	public int getXPosition() {
-		return xPosition;
-	}
-	
-	public int getYPosition() {
-		return yPosition;
-	}
-	
-	public BufferedImage getSpriteImage() {
-		return spriteImage;
-	}
-	
-	public int getHitboxHeight () {
-		return hitboxHeight;
-	}
-	
-	public int getHitboxWidth () {
-		return hitboxWidth;
-	}
-	
 }

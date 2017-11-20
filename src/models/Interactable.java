@@ -9,19 +9,11 @@ import javax.imageio.ImageIO;
 
 import controller.Settings;
 
-public class Interactable implements GameModel {
-	private int xPosition;
-	private int yPosition;
-	private boolean isFood;
-	private BufferedImage spriteImage;
-	private int hitboxHeight;
-	private int hitboxWidth;
-	
-	
+public class Interactable extends GameModel {
+
+	private boolean isFood;	
 	private int activationTick;
 	private boolean isActive = false;
-	
-	private int speed;
 	
 	private Random random = new Random();
 	
@@ -40,7 +32,7 @@ public class Interactable implements GameModel {
 		this.hitboxWidth = this.spriteImage.getWidth();
 	}
 	
-	private void setSpriteImage() {
+	protected void setSpriteImage() {
 		
 		BufferedImage foodImage = null;
 		BufferedImage notFoodImage = null;
@@ -80,14 +72,6 @@ public class Interactable implements GameModel {
 	
 	public void activate() {
 		this.isActive = true;
-	}
-	
-	public int getHitboxHeight () {
-		return hitboxHeight;
-	}
-	
-	public int getHitboxWidth () {
-		return hitboxWidth;
 	}
 	
 	public int getXPosition() {
