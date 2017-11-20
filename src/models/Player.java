@@ -21,6 +21,10 @@ public abstract class Player implements GameModel{
 	protected BufferedImage spriteImage;
 	
 	public Player() {
+		
+		this.health = 3;
+		this.score = 0;
+		
 		this.xPosition = Settings.getPlayerStartXPosition();
 		this.yPosition = Settings.getPlayerStartYPosition();
 		this.setSpriteImage();
@@ -51,6 +55,16 @@ public abstract class Player implements GameModel{
 	}
 	
 	public abstract void onMouseReleased(MouseEvent mouseEvent);
+	
+	public void collisionWithInteractableModel(Interactable interactableModel) {
+		if (interactableModel.isFood()) {
+			this.score++;
+		}
+		
+		else {
+			this.health--;
+		}
+	}
 	
 	public int getHealth() {
 		return health;

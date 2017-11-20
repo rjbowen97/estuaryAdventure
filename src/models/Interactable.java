@@ -70,6 +70,14 @@ public class Interactable implements GameModel {
 		}
 	}
 	
+	public void collisionWithPlayerModel(Player playerModel) {
+		this.deactivate();
+	}
+	
+	private void deactivate() {
+		this.isActive = false;
+	}
+	
 	public void activate() {
 		this.isActive = true;
 	}
