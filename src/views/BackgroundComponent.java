@@ -14,31 +14,19 @@ import models.Background;
 public class BackgroundComponent extends JComponent{
 	
 	private Background backgroundModel;
-	private BufferedImage backgroundImage;
 	private int mainFrameDimension;
 	
 	BackgroundComponent(Background backgroundModel){
 		
 		this.mainFrameDimension = Settings.getViewDimensionDefault();
 		this.setBounds(0,0,mainFrameDimension,mainFrameDimension);
-		
 		this.backgroundModel = backgroundModel;
-		
-		try {
-			File imageFile = new File(backgroundModel.getBackgroundImagePath());
-			System.out.println(imageFile.exists());
-			backgroundImage = ImageIO.read(imageFile);
-		}			
-		catch (IOException e) {
-			System.out.println(backgroundModel.getBackgroundImagePath());
-			e.printStackTrace();
-		}
 		this.setVisible(true);
 	}
 	
 	@Override
 	public void paintComponent(Graphics g) {
-		g.drawImage(backgroundImage, backgroundModel.getXPosition(), backgroundModel.getYPosition(), null);
+		g.drawImage(backgroundModel.getSpriteImage(), backgroundModel.getXPosition(), backgroundModel.getYPosition(), null);
 	}
 	
 }
