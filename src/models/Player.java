@@ -4,7 +4,7 @@ import java.awt.event.MouseEvent;
 
 import controller.Settings;
 
-public abstract class Player {
+public abstract class Player implements GameModel{
 
 	public Player() {
 		this.xPosition = Settings.getPlayerStartXPosition();
@@ -20,7 +20,6 @@ public abstract class Player {
 
 	protected String spriteFile = "./sprites/sprite.jpg";
 	
-	public abstract void onTick();
 	public abstract void onMouseReleased(MouseEvent mouseEvent);
 	
 	public int getHealth() {
