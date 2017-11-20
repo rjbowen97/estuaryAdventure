@@ -46,6 +46,9 @@ public class InteractableComponent extends JComponent {
 	public void paintComponent(Graphics g) {
 		for (Interactable interactableModel : interactableModels) {
 			if (interactableModel.isActive() == true) {
+				
+				g.fillRect(interactableModel.getXPosition() - 5, interactableModel.getYPosition(),5,5); //DEBUGGING
+				
 				if (interactableModel.isFood() == true) {
 					g.drawImage(foodSprite, interactableModel.getXPosition(), interactableModel.getYPosition(), null);
 				}

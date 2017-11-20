@@ -41,6 +41,8 @@ class PlayerComponent extends JComponent{
 
 	@Override
 	public void paintComponent(Graphics g) {
+		g.fillRect(playerModel.getXPosition() - 5, playerModel.getYPosition(),5,5); //DEBUGGING
+		
 		g.drawImage(playerImage, playerModel.getXPosition(), playerModel.getYPosition(), null);
 	}
 	
