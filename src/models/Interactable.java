@@ -24,15 +24,20 @@ public class Interactable implements GameModel {
 		}
 	}
 	
-	public int getxPosition() {
+	public int getXPosition() {
 		return xPosition;
 	}
-	public int getyPosition() {
+	public int getYPosition() {
 		return yPosition;
 	}
 	public boolean isFood() {
 		return isFood;
 	}
+	
+	public String getSpriteFilePath() {
+		return this.spriteFilePath;
+	}
+	
 	@Override
 	public void onTick() {
 		this.xPosition -= Settings.getInteractableSpeed();

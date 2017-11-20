@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.ArrayList;
 
 import models.Background;
+import models.Interactable;
 import models.LandAnimal;
 import models.NonLandAnimal;
 import models.Player;
@@ -20,6 +21,7 @@ public class GameWrapper {
 		Settings settings = new Settings();
 		
 		Player playerModel = new LandAnimal();
+		
 		ArrayList<Background> backgroundModels = new ArrayList<Background>();
     	File[] backgroundImageFiles = new File("./backgrounds").listFiles();
     	
@@ -30,7 +32,12 @@ public class GameWrapper {
     				backgroundImageFileIndex));
     	}
     	
-		Controller controller = new Controller(playerModel, backgroundModels);
+    	ArrayList<Interactable> interactableModels = new ArrayList<Interactable>();
+    	for (int interactableIndex = 0; interactableIndex < 100; interactableIndex++) {
+    		interactableModels.add(new Interactable());
+    	}
+    	
+		Controller controller = new Controller(playerModel, backgroundModels, interactableModels);
 
 		for(int i = 0; i < 1000; i++){
 			try {
