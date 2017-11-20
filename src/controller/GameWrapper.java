@@ -30,11 +30,11 @@ public class GameWrapper {
     				backgroundImageFileIndex));
     	}
     	
-		Controller mainController = new Controller(playerModel, backgroundModels);
+		Controller controller = new Controller(playerModel, backgroundModels);
 
 		for(int i = 0; i < 1000; i++){
 			try {
-				mainController.update();
+				controller.tick();
 				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				e.printStackTrace();

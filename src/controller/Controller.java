@@ -47,20 +47,19 @@ public class Controller {
     /*
      * This method consolidates the updates into one call
      */
-    public void update(){
-    	updateModels();
-    	updateView();
+    public void tick(){
+    	tickModels();
+    	tickView();
     }
 	
-	public void updateModels() {
+	public void tickModels() {
 		for (Background backgroundModel : backgroundModels) {
-			backgroundModel.updateBackgroundPositions();
+			backgroundModel.onTick();
 		}
-		
 		this.playerModel.onTick();
 	}
 	
-	public void updateView(){
+	public void tickView(){
 		view.repaint();
 	}
     
