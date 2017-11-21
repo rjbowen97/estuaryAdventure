@@ -37,7 +37,6 @@ public class Controller {
 		tickBackgroundModels();
 		tickInteractableModels(tickNumber);
 		tickPlayerModel();
-		
 		detectCollisions();
 	}
 	

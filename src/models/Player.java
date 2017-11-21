@@ -18,19 +18,23 @@ public abstract class Player extends GameModel {
 		
 		this.health = 3;
 		this.score = 0;
-		
 		this.setxPosition(Settings.getPlayerStartXPosition());
 		this.setyPosition(Settings.getPlayerStartYPosition());
 		this.setSpriteImage();
 		this.setHitbox();
 		
 	}
-
+	
 	@Override
 	protected void setHitbox() {
 		this.setHitbox(new Hitbox(this));
 	}
 
+	@Override
+	public void onTick() {
+		this.updateHitbox();
+	}
+	
 	@Override
 	protected void updateHitbox() {
 		this.getHitbox().update();

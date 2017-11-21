@@ -8,7 +8,7 @@ public class LandAnimal extends Player {
 	
 	@Override
 	public void onTick() {
-		this.updateHitbox();
+		super.onTick();
 	}
 	
 	@Override

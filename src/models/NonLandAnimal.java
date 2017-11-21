@@ -8,8 +8,8 @@ public class NonLandAnimal extends Player {
 	
 	@Override
 	public void onTick() {
+		super.onTick();
 		this.fallDown();
-		this.updateHitbox();
 	}
 	
 	private void fallDown() {
