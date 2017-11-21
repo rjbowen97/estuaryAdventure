@@ -11,17 +11,24 @@ import controller.Settings;
 
 public abstract class Player extends GameModel {
 		
-	private int health;
-	private int score;
+	private int health = 3;
+	private int score = 0;
+	private boolean poweredUp = false;
+	private int scoreStreak = 0;
 	
 	public Player() {
 		
-		this.health = 3;
-		this.score = 0;
 		this.setxPosition(Settings.getPlayerStartXPosition());
 		this.setyPosition(Settings.getPlayerStartYPosition());
 		this.setSpriteImage();
 		this.setHitbox();
+	}
+	
+	public void powerUp() {
+		if (this.poweredUp == false) {
+			this.poweredUp = true;
+			System.out.println("POWERED UP!");
+		}
 	}
 	
 	@Override
@@ -63,10 +70,12 @@ public abstract class Player extends GameModel {
 	public void onCollisionWithInteractableModel(Interactable interactableModel) {
 		if (interactableModel.isFood()) {
 			this.score++;
+			this.scoreStreak++;
 		}
 		
 		else {
 			this.health--;
+			this.scoreStreak = 0;
 		}
 	}
 	
@@ -76,5 +85,9 @@ public abstract class Player extends GameModel {
 	
 	public int getScore() {
 		return score;
+	}
+	
+	public int getScoreStreak() {
+		return scoreStreak;
 	}
 }

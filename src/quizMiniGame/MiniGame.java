@@ -42,6 +42,10 @@ public class MiniGame extends GameModel {
 		}
 	}
 	
+	public int getCorrectAnswerFlag() {
+		return this.correctAnswerFlag;
+	}
+	
 	@Override
 	protected void setSpriteImage() {
 		

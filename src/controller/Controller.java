@@ -49,7 +49,7 @@ public class Controller {
     	}
     	
     	if (gameState.equals(GameState.MiniGame)) {
-    		
+    		GameStateMiniGameTick();
     	}
     	
     	else { //gameOver
@@ -65,7 +65,7 @@ public class Controller {
     		this.gameState = GameState.GameOver;
     	}
     	
-    	if (playerModel.getScore() >= 1) {
+    	if (playerModel.getScoreStreak() > 1) {
     		view.setVisible(false);
     		miniGameView.setVisible(true);
     		this.gameState = GameState.MiniGame;
@@ -73,14 +73,34 @@ public class Controller {
     	
     }
     
+    private void GameStateMiniGameTick() {
+    	
+    	if (this.miniGame.getCorrectAnswerFlag() == 0) {
+    	}
+    	
+    	else {
+    		if (this.miniGame.getCorrectAnswerFlag() > 0) {
+    			playerModel.powerUp();
+        	}
+        	
+        	else if (this.miniGame.getCorrectAnswerFlag() < 0) {
+        	}
+    		
+    		miniGameView.setVisible(false);
+    		view.setVisible(true);
+    	}
+		
+    	
+    }
+    
     private void GameStateGameOverTick() {
-    	tickViews();
+    	gameOverView.repaint();
     }
     
     private void GameStateActiveTick(int tickNumber) {
     	tickModels(tickNumber);
     	checkGameState();
-    	tickViews();
+    	tickView();
     }
 	
 	private void tickModels(int tickNumber) {
@@ -129,8 +149,7 @@ public class Controller {
 		this.playerModel.onTick();
 	}
 	
-	private void tickViews(){
-		gameOverView.repaint();
+	private void tickView(){
 		view.repaint();
 	}
     
