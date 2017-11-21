@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import models.Background;
 import models.Interactable;
 import models.Player;
+import views.GameOverView;
 import views.View;
 
 public class Controller {
@@ -16,6 +17,7 @@ public class Controller {
     private ArrayList<Interactable> interactableModels;
     
     private View view;
+    private GameOverView gameOverView;
     
     public Controller(Player playerModel, ArrayList<Background> backgroundModels, ArrayList<Interactable> interactableModels) {
 		this.playerModel = playerModel;
@@ -30,7 +32,15 @@ public class Controller {
     
     public void tick(int tickNumber){
     	tickModels(tickNumber);
+    	checkGameState();
     	tickView();
+    }
+    
+    private void checkGameState() {
+    	if (playerModel.getHealth() <= 0) {
+    		view.setVisible(false);
+    		gameOverView = new GameOverView();
+    	}
     }
 	
 	private void tickModels(int tickNumber) {

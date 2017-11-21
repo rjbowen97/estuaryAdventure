@@ -22,7 +22,6 @@ public abstract class Player extends GameModel {
 		this.setyPosition(Settings.getPlayerStartYPosition());
 		this.setSpriteImage();
 		this.setHitbox();
-		
 	}
 	
 	@Override
