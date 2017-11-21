@@ -50,6 +50,8 @@ public class Controller {
 			
 			if (interactableModel.isActive()) {
 				if (playerModel.getHitbox().isOverlapping(interactableModel.getHitbox())) {
+					playerModel.onCollisionWithInteractableModel(interactableModel);
+					interactableModel.onCollisionWithPlayerModel(playerModel);
 				}
 			}
 		}

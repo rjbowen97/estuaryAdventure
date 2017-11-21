@@ -57,7 +57,7 @@ public abstract class Player extends GameModel {
 	
 	public abstract void onMouseReleased(MouseEvent mouseEvent);
 	
-	public void collisionWithInteractableModel(Interactable interactableModel) {
+	public void onCollisionWithInteractableModel(Interactable interactableModel) {
 		if (interactableModel.isFood()) {
 			this.score++;
 		}

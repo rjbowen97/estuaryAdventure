@@ -58,7 +58,7 @@ public class Interactable extends GameModel {
 		}
 	}
 	
-	public void collisionWithPlayerModel(Player playerModel) {
+	public void onCollisionWithPlayerModel(Player playerModel) {
 		this.deactivate();
 	}
 	
