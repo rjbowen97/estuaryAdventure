@@ -4,12 +4,20 @@
 
 	<QuestionAndAnswer ID="0">
 		<Question>How many legs does a dog have?</Question>
-		<Answer>4</Answer>
+		<answerA>4</answerA>
+		<answerB>2</answerB>
+		<answerC>8</answerC>
+		<answerD>7</answerD>
+		<correctAnswer>A</correctAnswer>
 	</QuestionAndAnswer>
 	
 	<QuestionAndAnswer ID="1">
 		<Question>How many legs does a human have?</Question>
-		<Answer>2</Answer>
+		<answerA>23</answerA>
+		<answerB>7</answerB>
+		<answerC>2</answerC>
+		<answerD>1</answerD>
+		<correctAnswer>C</correctAnswer>
 	</QuestionAndAnswer>
 
 </QuestionsAndAnswers>

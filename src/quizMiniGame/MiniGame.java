@@ -10,7 +10,7 @@ public class MiniGame extends GameModel {
 	
 	private QuestionAndAnswerPair currentQuestionAndAnswerPair;
 	
-	private String currentPlayerAnswer;
+	private String currentPlayerAnswer = "";
 	
 	private int correctAnswerFlag = 0;
 	
@@ -32,7 +32,7 @@ public class MiniGame extends GameModel {
 		}
 		
 		else {
-			if (currentPlayerAnswer.equals(currentQuestionAndAnswerPair.answer)) {
+			if (currentPlayerAnswer.equals(currentQuestionAndAnswerPair.correctAnswer)) {
 				this.correctAnswerFlag = 1;
 			}
 			
@@ -48,6 +48,10 @@ public class MiniGame extends GameModel {
 	
 	public QuestionAndAnswerPair getCurrentQuestionAndAnswerPair() {
 		return this.currentQuestionAndAnswerPair;
+	}
+	
+	public void setCurrentPlayerAnswer(String currentPlayerAnswer) {
+		this.currentPlayerAnswer = currentPlayerAnswer;
 	}
 	
 	@Override

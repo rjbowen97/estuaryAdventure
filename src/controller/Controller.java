@@ -34,7 +34,7 @@ public class Controller {
 		this.gameOverView = new GameOverView();
 		
 		this.miniGame = new MiniGame();
-		this.miniGameView = new MiniGameView(this.miniGame);
+		this.miniGameView = new MiniGameView(this.miniGame, this);
 		
 		this.gameState = GameState.Active;
 	}
@@ -74,6 +74,7 @@ public class Controller {
     }
     
     private void GameStateMiniGameTick() {
+    	this.miniGame.onTick();
     	
     	if (this.miniGame.getCorrectAnswerFlag() == 0) {
     	}
@@ -88,9 +89,14 @@ public class Controller {
     		
     		miniGameView.setVisible(false);
     		view.setVisible(true);
+    		this.gameState = GameState.Active;
     	}
 		
     	
+    }
+    
+    public void setMiniGameCurrentPlayerAnswer(String currentPlayerAnswer) {
+    	this.miniGame.setCurrentPlayerAnswer(currentPlayerAnswer);
     }
     
     private void GameStateGameOverTick() {

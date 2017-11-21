@@ -28,7 +28,11 @@ public class QuestionAndAnswerPairsReader {
 				Element elementNodeAtCurrentIndex = (Element) nodeAtCurrentIndex;
 
 				questionAndAnswerPairs.add(new QuestionAndAnswerPair(elementNodeAtCurrentIndex.getElementsByTagName("Question").item(0).getTextContent(),
-										elementNodeAtCurrentIndex.getElementsByTagName("Answer").item(0).getTextContent()));
+										elementNodeAtCurrentIndex.getElementsByTagName("answerA").item(0).getTextContent(),
+										elementNodeAtCurrentIndex.getElementsByTagName("answerB").item(0).getTextContent(),
+										elementNodeAtCurrentIndex.getElementsByTagName("answerC").item(0).getTextContent(),
+										elementNodeAtCurrentIndex.getElementsByTagName("answerD").item(0).getTextContent(),
+										elementNodeAtCurrentIndex.getElementsByTagName("correctAnswer").item(0).getTextContent()));
 			}
 		}
 		return questionAndAnswerPairs;
