@@ -31,6 +31,5 @@ public class LandAnimal extends Player {
 	@Override
 	protected void updateHitbox() {
 		this.getHitbox().update();
-		
 	}
 }
