@@ -58,4 +58,8 @@ public class Background extends GameModel {
 		int newXPosition = this.getXPosition() - this.getSpeed();
 		this.setxPosition(newXPosition);
 	}
+
+	@Override
+	public void reset() {
+	}
 }

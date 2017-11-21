@@ -13,6 +13,7 @@ public abstract class GameModel {
 	protected abstract void setHitbox();
 	protected abstract void updateHitbox();
 	public abstract void onTick();
+	public abstract void reset();
 	
 	public Hitbox getHitbox() {
 		return hitbox;

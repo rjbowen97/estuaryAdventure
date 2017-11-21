@@ -23,5 +23,4 @@ public class LandAnimal extends Player {
 			this.setyPosition(newYPosition);
 		}
 	}
-
 }

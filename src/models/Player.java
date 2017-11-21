@@ -31,6 +31,14 @@ public abstract class Player extends GameModel {
 		}
 	}
 	
+	public void resetScoreStreak() {
+		this.scoreStreak = 0;
+	}
+	
+	@Override
+	public void reset() {
+	}
+	
 	@Override
 	protected void setHitbox() {
 		this.setHitbox(new Hitbox(this));

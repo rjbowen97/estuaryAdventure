@@ -88,6 +88,8 @@ public class Controller {
         	}
     		
     		miniGameView.setVisible(false);
+    		playerModel.resetScoreStreak();
+    		miniGame.resetMiniGameOnNonZeroCorrectAnswerFlag();
     		view.setVisible(true);
     		this.gameState = GameState.Active;
     	}

@@ -69,4 +69,21 @@ public class MiniGame extends GameModel {
 		
 	}
 
+	@Override
+	public void reset() {
+	}
+	
+	public void resetMiniGameOnNonZeroCorrectAnswerFlag() {
+		this.resetCurrentPlayerAnswer();
+		this.resetCorrectAnswerFlag();
+	}
+	
+	private void resetCurrentPlayerAnswer() {
+		this.currentPlayerAnswer = "";
+	}
+	
+	private void resetCorrectAnswerFlag() {
+		this.correctAnswerFlag = 0;
+	}
+
 }

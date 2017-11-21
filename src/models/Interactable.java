@@ -99,5 +99,9 @@ public class Interactable extends GameModel {
 		this.setxPosition(newXPosition);
 		this.updateHitbox();
 	}
+
+	@Override
+	public void reset() {
+	}
 	
 }
