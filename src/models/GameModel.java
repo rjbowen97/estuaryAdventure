@@ -12,7 +12,6 @@ public abstract class GameModel {
 	protected abstract void setSpriteImage();
 	protected abstract void setHitbox();
 	protected abstract void updateHitbox();
-	
 	public abstract void onTick();
 	
 	public Hitbox getHitbox() {

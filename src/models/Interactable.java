@@ -24,6 +24,7 @@ public class Interactable extends GameModel {
 		this.setSpeed(Settings.getInteractableSpeed());
 		this.activationTick = activationTick;
 		this.setSpriteImage();
+		this.setHitbox();
 	}
 	
 	@Override
@@ -96,6 +97,7 @@ public class Interactable extends GameModel {
 	public void onTick() {
 		int newXPosition = this.getXPosition() - this.getSpeed();
 		this.setxPosition(newXPosition);
+		this.updateHitbox();
 	}
 	
 }

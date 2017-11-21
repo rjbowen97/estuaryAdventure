@@ -8,6 +8,7 @@ public class LandAnimal extends Player {
 	
 	@Override
 	public void onTick() {
+		this.updateHitbox();
 	}
 	
 	@Override
@@ -22,14 +23,5 @@ public class LandAnimal extends Player {
 			this.setyPosition(newYPosition);
 		}
 	}
-	
-	@Override
-	protected void setHitbox() {
-		this.setHitbox(new Hitbox(this));
-	}
 
-	@Override
-	protected void updateHitbox() {
-		this.getHitbox().update();
-	}
 }
