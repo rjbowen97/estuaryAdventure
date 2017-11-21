@@ -26,6 +26,9 @@ public class Controller {
 		this.backgroundModels = backgroundModels;
 		this.interactableModels = interactableModels;
 		this.view = new View(playerModel, backgroundModels, this, interactableModels);
+		this.gameOverView = new GameOverView();
+		
+		this.gameState = GameState.Active;
 	}
     
     public void onPlayerComponentMouseReleased(MouseEvent mouseEvent) {
@@ -33,16 +36,32 @@ public class Controller {
     }
     
     public void tick(int tickNumber){
-    	tickModels(tickNumber);
-    	checkGameState();
-    	tickView();
+    	if (gameState.equals(GameState.Active)) {
+    		GameStateActiveTick(tickNumber);
+    	}
+    	
+    	else { //gameOver
+    		GameStateGameOverTick();
+    	}
+    	
     }
     
     private void checkGameState() {
     	if (playerModel.getHealth() <= 0) {
     		view.setVisible(false);
-    		gameOverView = new GameOverView();
+    		gameOverView.setVisible(true);
+    		this.gameState = GameState.GameOver;
     	}
+    }
+    
+    private void GameStateGameOverTick() {
+    	gameOverView.repaint();
+    }
+    
+    private void GameStateActiveTick(int tickNumber) {
+    	tickModels(tickNumber);
+    	checkGameState();
+    	tickView();
     }
 	
 	private void tickModels(int tickNumber) {

@@ -9,31 +9,25 @@ import javax.swing.JPanel;
 import controller.Settings;
 
 public class GameOverView extends JFrame {
-	
+
 	public GameOverView() {
 		this.setBounds(0,0,Settings.getViewDimensionDefault(), Settings.getViewDimensionDefault());
-		this.add(new GameOverPane());
-		this.setVisible(true);
+		this.getContentPane().add(new GameOverComponent());
+		this.setVisible(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
-	
-	private class GameOverPane extends JPanel {
-		public GameOverPane() {
-			this.add(new GameOverComponent());
+
+	private class GameOverComponent extends JComponent {
+		public GameOverComponent() {
+			this.setBounds(0,0,Settings.getViewDimensionDefault(), Settings.getViewDimensionDefault());
 		}
-		
-		
-		private class GameOverComponent extends JComponent {
-			public GameOverComponent() {
-			}
-			
-			@Override
-			public void paint(Graphics g) {
-				g.drawString("GAME OVER", Settings.getViewDimensionDefault() / 2, Settings.getViewDimensionDefault() / 2);
-			}
-			
+
+		@Override
+		public void paintComponent(Graphics g) {
+			g.drawString("GAME OVER", 500, 500);
 		}
-		
+
 	}
+
 }
 
