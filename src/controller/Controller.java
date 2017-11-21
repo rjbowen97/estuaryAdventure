@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import models.Background;
 import models.Interactable;
 import models.Player;
+import quizMiniGame.MiniGame;
+import quizMiniGame.MiniGameView;
 import views.GameOverView;
 import views.View;
 
@@ -21,12 +23,18 @@ public class Controller {
     private View view;
     private GameOverView gameOverView;
     
+    private MiniGame miniGame;
+    private MiniGameView miniGameView;
+    
     public Controller(Player playerModel, ArrayList<Background> backgroundModels, ArrayList<Interactable> interactableModels) {
 		this.playerModel = playerModel;
 		this.backgroundModels = backgroundModels;
 		this.interactableModels = interactableModels;
 		this.view = new View(playerModel, backgroundModels, this, interactableModels);
 		this.gameOverView = new GameOverView();
+		
+		this.miniGame = new MiniGame();
+		this.miniGameView = new MiniGameView(this.miniGame);
 		
 		this.gameState = GameState.Active;
 	}
@@ -38,6 +46,10 @@ public class Controller {
     public void tick(int tickNumber){
     	if (gameState.equals(GameState.Active)) {
     		GameStateActiveTick(tickNumber);
+    	}
+    	
+    	if (gameState.equals(GameState.MiniGame)) {
+    		
     	}
     	
     	else { //gameOver
@@ -52,16 +64,23 @@ public class Controller {
     		gameOverView.setVisible(true);
     		this.gameState = GameState.GameOver;
     	}
+    	
+    	if (playerModel.getScore() >= 1) {
+    		view.setVisible(false);
+    		miniGameView.setVisible(true);
+    		this.gameState = GameState.MiniGame;
+    	}
+    	
     }
     
     private void GameStateGameOverTick() {
-    	gameOverView.repaint();
+    	tickViews();
     }
     
     private void GameStateActiveTick(int tickNumber) {
     	tickModels(tickNumber);
     	checkGameState();
-    	tickView();
+    	tickViews();
     }
 	
 	private void tickModels(int tickNumber) {
@@ -110,7 +129,8 @@ public class Controller {
 		this.playerModel.onTick();
 	}
 	
-	private void tickView(){
+	private void tickViews(){
+		gameOverView.repaint();
 		view.repaint();
 	}
     

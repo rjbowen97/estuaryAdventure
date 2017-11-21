@@ -51,7 +51,6 @@ public class GameWrapper {
 	}
 	
 	private static ArrayList<Interactable> generateInteractableModels() {
-		
 		ArrayList<Interactable> interactableModels = new ArrayList<Interactable>();
 		
     	for (int interactableIndex = 0; interactableIndex < 100; interactableIndex++) {
