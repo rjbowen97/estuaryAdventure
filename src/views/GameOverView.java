@@ -1,5 +1,7 @@
 package views;
 
+import java.awt.Graphics;
+
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -23,7 +25,11 @@ public class GameOverView extends JFrame {
 		
 		private class GameOverComponent extends JComponent {
 			public GameOverComponent() {
-				
+			}
+			
+			@Override
+			public void paint(Graphics g) {
+				g.drawString("GAME OVER", Settings.getViewDimensionDefault() / 2, Settings.getViewDimensionDefault() / 2);
 			}
 			
 		}

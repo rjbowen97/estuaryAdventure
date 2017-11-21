@@ -16,6 +16,8 @@ public class Controller {
     private Player playerModel;
     private ArrayList<Interactable> interactableModels;
     
+    private GameState gameState;
+    
     private View view;
     private GameOverView gameOverView;
     
