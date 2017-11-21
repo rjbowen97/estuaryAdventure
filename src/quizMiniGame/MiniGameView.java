@@ -1,10 +1,9 @@
 package quizMiniGame;
 
 import java.awt.Graphics;
-import java.util.ArrayList;
 
-import javax.swing.JComponent;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 import controller.Settings;
 
@@ -16,19 +15,20 @@ public class MiniGameView extends JFrame {
 		this.miniGame = miniGame;
 		
 		this.setBounds(0,0,Settings.getViewDimensionDefault(), Settings.getViewDimensionDefault());
-		this.getContentPane().add(new MiniGameComponent());
+		this.getContentPane().add(new MiniGamePanel());
 		this.setVisible(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
-	private class MiniGameComponent extends JComponent {
-		public MiniGameComponent() {
+	private class MiniGamePanel extends JPanel {
+		
+		public MiniGamePanel() {
 			this.setBounds(0,0,Settings.getViewDimensionDefault(), Settings.getViewDimensionDefault());
 		}
 		
 		@Override
 		public void paintComponent(Graphics g) {
-			
+			g.drawString(miniGame.getCurrentQuestionAndAnswerPair().question, 500, 500);
 		}
 	}
 }
