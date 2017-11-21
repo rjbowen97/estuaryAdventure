@@ -4,7 +4,6 @@ import java.awt.Graphics;
 
 import javax.swing.JComponent;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 import controller.Settings;
 

@@ -1,11 +1,9 @@
 package controller;
 
-import java.io.File;
 import java.util.ArrayList;
 
 import models.Background;
 import models.Interactable;
-import models.LandAnimal;
 import models.NonLandAnimal;
 import models.Player;
 
@@ -33,7 +31,7 @@ public class GameWrapper {
 		for(int tickNumber = 0; tickNumber < 1000; tickNumber++){
 			try {
 				controller.tick(tickNumber);
-				Thread.sleep(50);
+				Thread.sleep(20);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
