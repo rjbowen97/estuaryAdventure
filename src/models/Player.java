@@ -57,20 +57,22 @@ public abstract class Player extends GameModel {
 	
 	@Override
 	protected void setSpriteImage() {
-		BufferedImage spriteImageToUse = null;
+		BufferedImage nonScaledSpriteImageToUse = null;
 		
 		try {
 			File spriteFile = new File("./Graphics/Avatars/Bird/Bird.png");
 			
 			if(spriteFile.exists() == true){
-				spriteImageToUse = ImageIO.read(spriteFile);
+				nonScaledSpriteImageToUse = ImageIO.read(spriteFile);
 			}
 		}
 		catch (IOException e) {
 			e.printStackTrace();
 		}
 		
-		this.setSpriteImage(spriteImageToUse);
+		BufferedImage scaledSpriteImageToUse = ImageScaler.scaleImageToInputRatio(nonScaledSpriteImageToUse, 0.2, 0.2);
+		
+		this.setSpriteImage(scaledSpriteImageToUse);
 	}
 	
 	public abstract void onMouseReleased(MouseEvent mouseEvent);

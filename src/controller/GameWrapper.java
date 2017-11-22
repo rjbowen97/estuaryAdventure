@@ -33,7 +33,7 @@ public class GameWrapper {
 		for(int tickNumber = 0; tickNumber < 1000; tickNumber++){
 			try {
 				controller.tick(tickNumber);
-				Thread.sleep(50);
+				Thread.sleep(250);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
