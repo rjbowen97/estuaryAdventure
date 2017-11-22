@@ -27,7 +27,7 @@ public class GameWrapper {
 		ArrayList<Background> backgroundModels = new ArrayList<Background>(generateBackgroundModels());
 		ArrayList<Interactable> interactableModels = new ArrayList<Interactable>(generateInteractableModels());
 		
-		controller = new Controller(playerModel, backgroundModels, interactableModels);
+		controller = new Controller(playerModel, interactableModels, backgroundModels);
 	}
 	
 	private static void startGame() {
