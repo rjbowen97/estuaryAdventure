@@ -49,7 +49,7 @@ public class Controller {
 		}
 
 		if (gameState.equals(GameState.MiniGame)) {
-			GameStateMiniGameTick();
+			miniGameGameStateTick();
 		}
 
 		else { //gameOver
@@ -72,7 +72,7 @@ public class Controller {
 		}
 	}
 
-	private void GameStateMiniGameTick() {
+	private void miniGameGameStateTick() {
 		this.miniGame.onTick();
 
 		if (this.miniGame.getCorrectAnswerFlag() == 0) {
