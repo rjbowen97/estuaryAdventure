@@ -25,6 +25,8 @@ public class Controller {
 
 	private MiniGame miniGame;
 	private MiniGameView miniGameView;
+	
+	private int tickNumber = 0;
 
 	public Controller(Player playerModel, ArrayList<Background> backgroundModels, ArrayList<Interactable> interactableModels) {
 		this.playerModel = playerModel;
@@ -43,9 +45,9 @@ public class Controller {
 		playerModel.onMouseReleased(mouseEvent);
 	}
 
-	public void tick(int tickNumber){
+	public void tick(){
 		if (gameState.equals(GameState.Active)) {
-			GameStateActiveTick(tickNumber);
+			GameStateActiveTick();
 		}
 
 		if (gameState.equals(GameState.MiniGame)) {
@@ -55,6 +57,8 @@ public class Controller {
 		else { //gameOver
 			GameStateGameOverTick();
 		}
+		
+		this.tickNumber++;
 
 	}
 
@@ -102,15 +106,15 @@ public class Controller {
 		gameOverView.repaint();
 	}
 
-	private void GameStateActiveTick(int tickNumber) {
-		tickModels(tickNumber);
+	private void GameStateActiveTick() {
+		tickModels();
 		checkGameState();
 		tickView();
 	}
 
-	private void tickModels(int tickNumber) {
+	private void tickModels() {
 		tickBackgroundModels();
-		tickInteractableModels(tickNumber);
+		tickInteractableModels();
 		tickPlayerModel();
 		detectCollisions();
 	}
@@ -137,7 +141,7 @@ public class Controller {
 		}
 	}
 
-	private void tickInteractableModels(int tickNumber) {
+	private void tickInteractableModels() {
 		for (Interactable interactableModel :interactableModels) {
 
 			if (interactableModel.getActivationTick() == tickNumber) {

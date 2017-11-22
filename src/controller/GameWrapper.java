@@ -30,10 +30,10 @@ public class GameWrapper {
 	}
 	
 	private static void startGame() {
-		for(int tickNumber = 0; tickNumber < 1000; tickNumber++){
+		while (true) {
 			try {
-				controller.tick(tickNumber);
-				Thread.sleep(250);
+				controller.tick();
+				Thread.sleep(25);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -43,9 +43,7 @@ public class GameWrapper {
 	private static ArrayList<Background> generateBackgroundModels() {
 		ArrayList<Background> backgroundModels = new ArrayList<Background>();
     	for (int backgroundImageFileIndex = 0; backgroundImageFileIndex < Settings.getNumberOfBackgroundLayers(); backgroundImageFileIndex++) {
-    		backgroundModels.add(new Background(Settings.getBackgroundXPositionDefault(backgroundImageFileIndex),
-    											Settings.getBackgroundYPositionDefault(backgroundImageFileIndex),
-    											backgroundImageFileIndex));
+    		backgroundModels.add(new Background(0, 0, backgroundImageFileIndex));
     	}
     	return backgroundModels;
 	}

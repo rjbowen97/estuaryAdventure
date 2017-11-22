@@ -26,11 +26,6 @@ class PlayerComponent extends JComponent{
 
 	@Override
 	public void paintComponent(Graphics g) {
-		g.fillRect(playerModel.getHitbox().topLeftCorner.x - 10, playerModel.getHitbox().topLeftCorner.y - 10, 10, 10);
-		g.fillRect(playerModel.getHitbox().topRightCorner.x, playerModel.getHitbox().topRightCorner.y, 10, 10);
-		g.fillRect(playerModel.getHitbox().bottomLeftCorner.x - 10, playerModel.getHitbox().bottomLeftCorner.y + 10, 10, 10);
-		g.fillRect(playerModel.getHitbox().bottomRightCorner.x, playerModel.getHitbox().bottomRightCorner.y, 10, 10);
-		
 		g.drawImage(playerModel.getSpriteImage(), playerModel.getXPosition(), playerModel.getYPosition(), null);
 	}
 	

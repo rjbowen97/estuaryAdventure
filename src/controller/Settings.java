@@ -41,14 +41,6 @@ public class Settings {
 		return Integer.parseInt(globalSettings.getProperty("viewDimensionY"));
 	}
 	
-	public static int getBackgroundXPositionDefault(int backgroundLayerIndex) {
-		return Integer.parseInt(globalSettings.getProperty("background" + backgroundLayerIndex + "XPosition"));
-	}
-	
-	public static int getBackgroundYPositionDefault(int backgroundLayerIndex) {
-		return Integer.parseInt(globalSettings.getProperty("background" + backgroundLayerIndex + "YPosition"));
-	}
-	
 	public static int getBackgroundBaseSpeed(int backgroundLayerIndex) {
 		return Integer.parseInt(globalSettings.getProperty("background" + backgroundLayerIndex + "BaseSpeed"));
 	}
