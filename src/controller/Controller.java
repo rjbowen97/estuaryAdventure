@@ -14,11 +14,11 @@ import views.View;
 
 public class Controller {
 
-	private GameState gameState;
 	public ActiveGameState activeGameState;
 	public MiniGameGameState miniGameGameState;
 	public GameOverGameState gameOverGameState;
 	
+	private GameState gameState;
 
 	public Controller(Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels) {
 
@@ -31,28 +31,16 @@ public class Controller {
 
 	public void tick(){
 		if (gameState.equals(GameState.Active)) {
-			gameStateActiveTick();
+			this.activeGameState.onTick();
 		}
 
 		if (gameState.equals(GameState.MiniGame)) {
-			gameStateMiniGameTick();
+			this.miniGameGameState.onTick();
 		}
 
 		else { //gameOver
-			gameStateGameOverTick();
+			this.gameOverGameState.onTick();
 		}
-	}
-
-	private void gameStateActiveTick() {
-		
-	}
-
-	private void gameStateMiniGameTick() {
-		
-	}
-
-	private void gameStateGameOverTick() {
-		
 	}
 	
 	public void changeGameStateFromActiveToMinigame() {
@@ -63,6 +51,7 @@ public class Controller {
 	
 	public void changeGameStateFromMiniGameToActive(boolean answerWasCorrect) {
 		if (answerWasCorrect) {
+			activeGameState.playerModel.resetScoreStreak();
 			activeGameState.playerModel.powerUp();
 		}
 		
@@ -75,13 +64,10 @@ public class Controller {
 		activeGameState.view.setVisible(true);
 		
 		this.gameState = GameState.Active;
-		
 	}
 	
 	public void changeGameStateFromActiveToGameOver() {
 		this.gameState = GameState.GameOver;
 
 	}
-
-
 }

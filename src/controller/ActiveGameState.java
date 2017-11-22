@@ -19,10 +19,11 @@ public class ActiveGameState {
 	private int tickNumber = 0;
 	
 	public ActiveGameState(Controller controller, Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels) {
+		this.controller = controller;
 		this.playerModel = playerModel;
 		this.interactableModels = interactableModels;
 		this.backgroundModels = backgroundModels;
-		this.view = new View(playerModel, backgroundModels, this.controller, interactableModels);
+		this.view = new View(playerModel, backgroundModels, controller, interactableModels);
 	}
 	
 	public void onTick() {
