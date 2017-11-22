@@ -14,9 +14,9 @@ import views.View;
 
 public class Controller {
 
-	private ArrayList<Background> backgroundModels;
 	private Player playerModel;
 	private ArrayList<Interactable> interactableModels;
+	private ArrayList<Background> backgroundModels;
 
 	private GameState gameState;
 
@@ -69,7 +69,7 @@ public class Controller {
 			this.gameState = GameState.GameOver;
 		}
 
-		if (playerModel.getScoreStreak() > Settings.getMiniGameRequiredScoreStreak()) {
+		if (playerModel.getScoreStreak() >= Settings.getMiniGameRequiredScoreStreak()) {
 			view.setVisible(false);
 			miniGameView.setVisible(true);
 			this.gameState = GameState.MiniGame;
