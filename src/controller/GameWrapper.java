@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import models.Background;
 import models.ImageScaler;
 import models.Interactable;
+import models.LandAnimal;
 import models.NonLandAnimal;
 import models.Player;
 
@@ -22,7 +23,7 @@ public class GameWrapper {
 		Settings settings = new Settings();
 		ImageScaler imageScaler = new ImageScaler();
 		
-		Player playerModel = new NonLandAnimal();
+		Player playerModel = new LandAnimal();
 		ArrayList<Background> backgroundModels = new ArrayList<Background>(generateBackgroundModels());
 		ArrayList<Interactable> interactableModels = new ArrayList<Interactable>(generateInteractableModels());
 		

@@ -14,6 +14,8 @@ public class HUDPane extends JPanel{
 	
 	private JLabel healthLabel;
 	private JLabel scoreLabel;
+	private JLabel scoreStreakLabel;
+	
 	
 	
 	public HUDPane(Player playerModel) {
@@ -23,10 +25,11 @@ public class HUDPane extends JPanel{
 		
 		this.healthLabel = new JLabel("HEALTH: " + this.playerModel.getHealth());
 		this.scoreLabel = new JLabel("SCORE: " + this.playerModel.getScore());
-				
+		this.scoreStreakLabel = new JLabel("SCORE STREAK: " + this.playerModel.getScoreStreak());
 				
 		this.add(healthLabel);
 		this.add(scoreLabel);
+		this.add(scoreStreakLabel);
 		
 		this.setOpaque(false);
 	}
@@ -35,6 +38,7 @@ public class HUDPane extends JPanel{
 	public void paintComponent(Graphics g) {
 		this.healthLabel.setText("HEALTH: " + this.playerModel.getHealth());
 		this.scoreLabel.setText("SCORE: " + this.playerModel.getScore());
+		this.scoreStreakLabel.setText("SCORE STREAK: " + this.playerModel.getScoreStreak());
 		
 	}
 	

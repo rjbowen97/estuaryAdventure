@@ -19,7 +19,7 @@ public class Interactable extends GameModel {
 	
 	public Interactable(int activationTick) {
 		this.setxPosition(Settings.getInteractableStartXPosition());
-		this.setyPosition(random.nextInt(Settings.getViewDimensionYDefault() - 100));
+		this.setyPosition(random.nextInt(Settings.getViewDimensionYDefault() - 100)); // -100 because this is the spriteImage height for interactables
 		this.isFood = random.nextBoolean();
 		this.setSpeed(Settings.getInteractableSpeed());
 		this.activationTick = activationTick;
@@ -50,10 +50,14 @@ public class Interactable extends GameModel {
 		}
 		
 		if (this.isFood == true) {
+			
+			foodImage = ImageScaler.scaleImageToInputRatio(foodImage, 0.5, 0.5);
+			
 			this.setSpriteImage(foodImage);
 		}
 		
 		else {
+			notFoodImage = ImageScaler.scaleImageToInputRatio(notFoodImage, 0.5, 0.5);
 			this.setSpriteImage(notFoodImage);
 		}
 	}
