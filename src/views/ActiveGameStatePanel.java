@@ -10,14 +10,14 @@ import models.Background;
 import models.Interactable;
 import models.Player;
 
-public class MainLayeredPane extends JLayeredPane {
+public class ActiveGameStatePanel extends JLayeredPane {
 	
 	private PlayerComponent playerComponent;
 	private BackgroundLayeredPane backgroundLayeredPane;
 	private InteractableComponent interactableComponent;
 	private HUDPane hudPane;
 	
-	public MainLayeredPane(Player playerModel, ArrayList<Background> backgroundModels, Controller controller, ArrayList<Interactable> interactableModels) {
+	public ActiveGameStatePanel(Player playerModel, ArrayList<Background> backgroundModels, Controller controller, ArrayList<Interactable> interactableModels) {
 		this.backgroundLayeredPane = new BackgroundLayeredPane(backgroundModels);
 		this.playerComponent = new PlayerComponent(playerModel, controller);
 		this.interactableComponent = new InteractableComponent(interactableModels);

@@ -8,8 +8,8 @@ import models.Background;
 import models.Interactable;
 import models.Player;
 import quizMiniGame.MiniGame;
-import quizMiniGame.MiniGameView;
-import views.GameOverView;
+import quizMiniGame.MiniGameGameStatePanel;
+import views.GameOverGameStatePanel;
 import views.View;
 
 public class Controller {
@@ -17,16 +17,21 @@ public class Controller {
 	public ActiveGameState activeGameState;
 	public MiniGameGameState miniGameGameState;
 	public GameOverGameState gameOverGameState;
-	
+
+	public View view;
+
 	private GameState gameState;
 
 	public Controller(Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels) {
 
+
 		this.activeGameState = new ActiveGameState(this, playerModel, interactableModels, backgroundModels);
 		this.miniGameGameState = new MiniGameGameState(this);
 		this.gameOverGameState = new GameOverGameState();
-		
+
 		this.gameState = GameState.Active;
+		this.view = new View(playerModel, backgroundModels, this, interactableModels);
+		this.view.setContentPane(activeGameState.activeGameStatePanel);
 	}
 
 	public void tick(){
@@ -41,31 +46,31 @@ public class Controller {
 		else { //gameOver
 			this.gameOverGameState.onTick();
 		}
+		this.view.repaint();
+
 	}
-	
+
 	public void changeGameStateFromActiveToMinigame() {
-		activeGameState.view.setVisible(false);
-		miniGameGameState.miniGameView.setVisible(true);
+		this.view.setContentPane(miniGameGameState.miniGameGameStatePanel);
 		this.gameState = GameState.MiniGame;
 	}
-	
+
 	public void changeGameStateFromMiniGameToActive(boolean answerWasCorrect) {
 		if (answerWasCorrect) {
 			activeGameState.playerModel.resetScoreStreak();
 			activeGameState.playerModel.powerUp();
 		}
-		
+
 		else {
 			activeGameState.playerModel.resetScoreStreak();
 			miniGameGameState.miniGame.resetMiniGameOnNonZeroCorrectAnswerFlag();
 		}
-		
-		miniGameGameState.miniGameView.setVisible(false);
-		activeGameState.view.setVisible(true);
-		
+
+		this.view.setContentPane(activeGameState.activeGameStatePanel);
+
 		this.gameState = GameState.Active;
 	}
-	
+
 	public void changeGameStateFromActiveToGameOver() {
 		this.gameState = GameState.GameOver;
 

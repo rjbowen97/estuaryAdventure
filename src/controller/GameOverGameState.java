@@ -1,18 +1,18 @@
 package controller;
 
-import views.GameOverView;
+import views.GameOverGameStatePanel;
 
 public class GameOverGameState {
 
-	private GameOverView gameOverView;
+	private GameOverGameStatePanel gameOverGameStatePanel;
 	private int tickNumber = 0;
 	
 	public GameOverGameState() {
-		this.gameOverView = new GameOverView();
+		this.gameOverGameStatePanel = new GameOverGameStatePanel();
 	}
 	
 	public void onTick() {
-		gameOverView.repaint();
+		gameOverGameStatePanel.repaint();
 		this.tickNumber++;
 	}
 	

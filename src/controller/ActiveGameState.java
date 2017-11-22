@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import models.Background;
 import models.Interactable;
 import models.Player;
+import views.ActiveGameStatePanel;
 import views.View;
 
 public class ActiveGameState {
@@ -13,23 +14,22 @@ public class ActiveGameState {
 	public Controller controller;
 	public Player playerModel;
 	public ArrayList<Interactable> interactableModels;
-	public ArrayList<Background> backgroundModels;
-	public View view;
+	public ArrayList<Background> backgroundModels;	
+	public ActiveGameStatePanel activeGameStatePanel;
 	
 	private int tickNumber = 0;
 	
 	public ActiveGameState(Controller controller, Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels) {
+		this.activeGameStatePanel = new ActiveGameStatePanel(playerModel, backgroundModels, controller, interactableModels);
 		this.controller = controller;
 		this.playerModel = playerModel;
 		this.interactableModels = interactableModels;
 		this.backgroundModels = backgroundModels;
-		this.view = new View(playerModel, backgroundModels, controller, interactableModels);
 	}
 	
 	public void onTick() {
 		tickModels();
 		checkGameState();
-		tickView();
 		this.tickNumber++;
 	}
 	
@@ -87,14 +87,6 @@ public class ActiveGameState {
 		if (playerModel.getScoreStreak() >= Settings.getMiniGameRequiredScoreStreak()) {
 			this.controller.changeGameStateFromActiveToMinigame();;
 		}
-	}
-	
-	private void tickView(){
-		view.repaint();
-	}
-	
-	public void activateThisGameState() {
-		this.view.setVisible(true);
 	}
 	
 	public void onPlayerComponentMouseReleased(MouseEvent mouseEvent) {

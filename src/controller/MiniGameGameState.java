@@ -1,20 +1,20 @@
 package controller;
 
 import quizMiniGame.MiniGame;
-import quizMiniGame.MiniGameView;
+import quizMiniGame.MiniGameGameStatePanel;
 
 public class MiniGameGameState {
 
 	public Controller controller;
 	public MiniGame miniGame;
-	public MiniGameView miniGameView;
+	public MiniGameGameStatePanel miniGameGameStatePanel;
 
 	private int tickNumber = 0;
 
 	public MiniGameGameState(Controller controller) {
 		this.controller = controller;
 		this.miniGame = new MiniGame();
-		this.miniGameView = new MiniGameView(this.miniGame, this.controller);
+		this.miniGameGameStatePanel = new MiniGameGameStatePanel(this.miniGame, controller);
 	}
 
 	public void onTick() {
