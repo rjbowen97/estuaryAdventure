@@ -50,6 +50,18 @@ public class Controller {
 	public void onPlayerComponentMouseReleased(MouseEvent mouseEvent) {
 		playerModel.onMouseReleased(mouseEvent);
 	}
+	
+	public void changeGameStateFromActiveToMinigame() {
+		
+	}
+	
+	public void changeGameStateFromMiniGameToActive() {
+		
+	}
+	
+	public void changeGameStateFromActiveToGameOver() {
+		
+	}
 
 
 }

@@ -5,14 +5,16 @@ import quizMiniGame.MiniGameView;
 
 public class MiniGameGameState {
 
+	private Controller controller;
 	private MiniGame miniGame;
 	private MiniGameView miniGameView;
 
 	private int tickNumber = 0;
 
-	public MiniGameGameState() {
+	public MiniGameGameState(Controller controller) {
+		this.controller = controller;
 		this.miniGame = new MiniGame();
-		this.miniGameView = new MiniGameView(this.miniGame, this);
+		this.miniGameView = new MiniGameView(this.miniGame, this.controller);
 	}
 
 	public void onTick() {

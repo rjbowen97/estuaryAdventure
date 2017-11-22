@@ -9,6 +9,7 @@ import views.View;
 
 public class ActiveGameState {
 	
+	private Controller controller;
 	private Player playerModel;
 	private ArrayList<Interactable> interactableModels;
 	private ArrayList<Background> backgroundModels;
@@ -16,11 +17,11 @@ public class ActiveGameState {
 	
 	private int tickNumber = 0;
 	
-	public ActiveGameState() {
+	public ActiveGameState(Controller controller, Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels) {
 		this.playerModel = playerModel;
 		this.interactableModels = interactableModels;
 		this.backgroundModels = backgroundModels;
-		this.view = new View(playerModel, backgroundModels, this, interactableModels);
+		this.view = new View(playerModel, backgroundModels, this.controller, interactableModels);
 	}
 	
 	public void onTick() {
@@ -79,14 +80,12 @@ public class ActiveGameState {
 	private void checkGameState() {
 		if (playerModel.getHealth() <= 0) {
 			view.setVisible(false);
-			gameOverView.setVisible(true);
-			this.controller.gameState = GameState.GameOver;
+			this.controller.changeGameStateFromActiveToGameOver();
 		}
 
 		if (playerModel.getScoreStreak() >= Settings.getMiniGameRequiredScoreStreak()) {
 			view.setVisible(false);
-			miniGameView.setVisible(true);
-			this.controller.gameState = GameState.MiniGame;
+			this.controller.changeGameStateFromActiveToMinigame();;
 		}
 	}
 	
@@ -94,6 +93,9 @@ public class ActiveGameState {
 		view.repaint();
 	}
 	
+	public void activateThisGameState() {
+		this.view.setVisible(true);
+	}
 	
 	
 }
