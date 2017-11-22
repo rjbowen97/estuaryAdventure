@@ -100,4 +100,8 @@ public abstract class Player extends GameModel {
 	public int getScoreStreak() {
 		return scoreStreak;
 	}
+	
+	public boolean getPoweredUp() {
+		return poweredUp;
+	}
 }
