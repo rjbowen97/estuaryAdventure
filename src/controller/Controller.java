@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import models.Background;
 import models.Interactable;
 import models.Player;
+import models.ScoreBoard;
+import models.ScoreBoardManager;
 import quizMiniGame.MiniGame;
 import quizMiniGame.MiniGameView;
 import views.GameOverView;
@@ -18,6 +20,7 @@ public class Controller {
 	private ArrayList<Interactable> interactableModels;
 	private ArrayList<Background> backgroundModels;
 	private MiniGame miniGame;
+	private ScoreBoard scoreBoard;
 
 	private View view;
 	private MiniGameView miniGameView;
@@ -26,14 +29,15 @@ public class Controller {
 	private GameState gameState;
 	private int tickNumber = 0;
 
-	public Controller(Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels) {
+	public Controller(Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels, ScoreBoard scoreBoard) {
 		this.playerModel = playerModel;
 		this.interactableModels = interactableModels;
 		this.backgroundModels = backgroundModels;
+		this.scoreBoard=scoreBoard;
 		this.view = new View(playerModel, backgroundModels, this, interactableModels);
 
 		this.miniGame = new MiniGame();
-		this.miniGameView = new MiniGameView(this.miniGame, this);
+		//this.miniGameView = new MiniGameView(this.miniGame, this);
 
 		this.gameOverView = new GameOverView();
 		this.gameState = GameState.Active;
@@ -43,8 +47,9 @@ public class Controller {
 		if (gameState.equals(GameState.Active)) {
 			gameStateActiveTick();
 		}
-
-		if (gameState.equals(GameState.MiniGame)) {
+		
+		
+		else if (gameState.equals(GameState.MiniGame)) {
 			gameStateMiniGameTick();
 		}
 
@@ -116,6 +121,7 @@ public class Controller {
 
 		if (playerModel.getScoreStreak() >= Settings.getMiniGameRequiredScoreStreak()) {
 			view.setVisible(false);
+			this.miniGameView = new MiniGameView(this.miniGame, this); 
 			miniGameView.setVisible(true);
 			this.gameState = GameState.MiniGame;
 		}
@@ -152,6 +158,8 @@ public class Controller {
 	}
 
 	private void gameStateGameOverTick() {
+		scoreBoard.addNewScore(playerModel);
+		ScoreBoardManager.saveScoreboard(scoreBoard);
 		gameOverView.repaint();
 	}
 
