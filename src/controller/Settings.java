@@ -76,4 +76,11 @@ public class Settings {
 	public static int getInteractableSpeed() {
 		return Integer.parseInt(globalSettings.getProperty("interactableSpeed"));
 	}
+	
+	public static int getMiniGameRequiredScoreStreak() {
+		return Integer.parseInt(globalSettings.getProperty("miniGameRequiredScoreStreak"));
+	}
+	
+	
+	
 }

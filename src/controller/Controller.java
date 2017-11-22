@@ -65,7 +65,7 @@ public class Controller {
 			this.gameState = GameState.GameOver;
 		}
 
-		if (playerModel.getScoreStreak() > 1) {
+		if (playerModel.getScoreStreak() > Settings.getMiniGameRequiredScoreStreak()) {
 			view.setVisible(false);
 			miniGameView.setVisible(true);
 			this.gameState = GameState.MiniGame;
