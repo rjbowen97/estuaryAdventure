@@ -5,9 +5,9 @@ import quizMiniGame.MiniGameView;
 
 public class MiniGameGameState {
 
-	private Controller controller;
-	private MiniGame miniGame;
-	private MiniGameView miniGameView;
+	public Controller controller;
+	public MiniGame miniGame;
+	public MiniGameView miniGameView;
 
 	private int tickNumber = 0;
 
@@ -25,17 +25,12 @@ public class MiniGameGameState {
 
 		else {
 			if (this.miniGame.getCorrectAnswerFlag() > 0) {
-				playerModel.powerUp();
+				controller.changeGameStateFromMiniGameToActive(true);
 			}
 
 			else if (this.miniGame.getCorrectAnswerFlag() < 0) {
+				controller.changeGameStateFromMiniGameToActive(false);
 			}
-
-			miniGameView.setVisible(false);
-			playerModel.resetScoreStreak();
-			miniGame.resetMiniGameOnNonZeroCorrectAnswerFlag();
-			view.setVisible(true);
-			this.gameState = GameState.Active;
 		}
 		this.tickNumber++;
 	}

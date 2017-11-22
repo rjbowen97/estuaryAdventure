@@ -15,9 +15,17 @@ import views.View;
 public class Controller {
 
 	private GameState gameState;
+	public ActiveGameState activeGameState;
+	public MiniGameGameState miniGameGameState;
+	public GameOverGameState gameOverGameState;
+	
 
 	public Controller(Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels) {
 
+		this.activeGameState = new ActiveGameState(this, playerModel, interactableModels, backgroundModels);
+		this.miniGameGameState = new MiniGameGameState(this);
+		this.gameOverGameState = new GameOverGameState();
+		
 		this.gameState = GameState.Active;
 	}
 
@@ -46,21 +54,33 @@ public class Controller {
 	private void gameStateGameOverTick() {
 		
 	}
-
-	public void onPlayerComponentMouseReleased(MouseEvent mouseEvent) {
-		playerModel.onMouseReleased(mouseEvent);
-	}
 	
 	public void changeGameStateFromActiveToMinigame() {
-		
+		activeGameState.view.setVisible(false);
+		miniGameGameState.miniGameView.setVisible(true);
+		this.gameState = GameState.MiniGame;
 	}
 	
-	public void changeGameStateFromMiniGameToActive() {
+	public void changeGameStateFromMiniGameToActive(boolean answerWasCorrect) {
+		if (answerWasCorrect) {
+			activeGameState.playerModel.powerUp();
+		}
+		
+		else {
+			activeGameState.playerModel.resetScoreStreak();
+			miniGameGameState.miniGame.resetMiniGameOnNonZeroCorrectAnswerFlag();
+		}
+		
+		miniGameGameState.miniGameView.setVisible(false);
+		activeGameState.view.setVisible(true);
+		
+		this.gameState = GameState.Active;
 		
 	}
 	
 	public void changeGameStateFromActiveToGameOver() {
-		
+		this.gameState = GameState.GameOver;
+
 	}
 
 

@@ -58,19 +58,19 @@ public class MiniGameView extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			if (e.getActionCommand().equals("answerA")) {
-				controller.setMiniGameCurrentPlayerAnswer("A");
+				controller.miniGameGameState.setMiniGameCurrentPlayerAnswer("A");
 			}
 
 			else if (e.getActionCommand().equals("answerB")) {
-				controller.setMiniGameCurrentPlayerAnswer("B");
+				controller.miniGameGameState.setMiniGameCurrentPlayerAnswer("B");
 			}
 
 			else if (e.getActionCommand().equals("answerC")) {
-				controller.setMiniGameCurrentPlayerAnswer("C");
+				controller.miniGameGameState.setMiniGameCurrentPlayerAnswer("C");
 			}
 
 			else if (e.getActionCommand().equals("answerD")) {
-				controller.setMiniGameCurrentPlayerAnswer("D");
+				controller.miniGameGameState.setMiniGameCurrentPlayerAnswer("D");
 			}
 
 		}

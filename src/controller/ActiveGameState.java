@@ -1,5 +1,6 @@
 package controller;
 
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 import models.Background;
@@ -9,11 +10,11 @@ import views.View;
 
 public class ActiveGameState {
 	
-	private Controller controller;
-	private Player playerModel;
-	private ArrayList<Interactable> interactableModels;
-	private ArrayList<Background> backgroundModels;
-	private View view;
+	public Controller controller;
+	public Player playerModel;
+	public ArrayList<Interactable> interactableModels;
+	public ArrayList<Background> backgroundModels;
+	public View view;
 	
 	private int tickNumber = 0;
 	
@@ -79,12 +80,10 @@ public class ActiveGameState {
 	
 	private void checkGameState() {
 		if (playerModel.getHealth() <= 0) {
-			view.setVisible(false);
 			this.controller.changeGameStateFromActiveToGameOver();
 		}
 
 		if (playerModel.getScoreStreak() >= Settings.getMiniGameRequiredScoreStreak()) {
-			view.setVisible(false);
 			this.controller.changeGameStateFromActiveToMinigame();;
 		}
 	}
@@ -95,6 +94,10 @@ public class ActiveGameState {
 	
 	public void activateThisGameState() {
 		this.view.setVisible(true);
+	}
+	
+	public void onPlayerComponentMouseReleased(MouseEvent mouseEvent) {
+		playerModel.onMouseReleased(mouseEvent);
 	}
 	
 	
