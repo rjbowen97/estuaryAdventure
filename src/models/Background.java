@@ -35,7 +35,7 @@ public class Background extends GameModel {
 	protected void setSpriteImage() {
 		BufferedImage spriteImageToUse = null;
 		
-    	File backgroundImageFile = new File("./backgrounds/b" + backgroundLayerIndex + ".jpg");
+    	File backgroundImageFile = new File("./Graphics/Backgrounds/AirBackground/b" + backgroundLayerIndex + ".png");
 		try {			
 			if(backgroundImageFile.exists() == true){
 				spriteImageToUse = ImageIO.read(backgroundImageFile);

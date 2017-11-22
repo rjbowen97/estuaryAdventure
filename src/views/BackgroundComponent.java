@@ -22,6 +22,7 @@ public class BackgroundComponent extends JComponent{
 	
 	@Override
 	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
 		g.drawImage(backgroundModel.getSpriteImage(), backgroundModel.getXPosition(), backgroundModel.getYPosition(), null);
 	}
 	
