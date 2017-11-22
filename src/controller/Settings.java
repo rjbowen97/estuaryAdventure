@@ -77,6 +77,7 @@ public class Settings {
 		return Integer.parseInt(globalSettings.getProperty("miniGameRequiredScoreStreak"));
 	}
 	
-	
-	
+	public static int getMillisecondsBetweenTick() {
+		return Integer.parseInt(globalSettings.getProperty("millisecondsBetweenTick"));
+	}
 }

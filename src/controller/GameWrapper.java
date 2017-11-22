@@ -33,7 +33,7 @@ public class GameWrapper {
 		while (true) {
 			try {
 				controller.tick();
-				Thread.sleep(25);
+				Thread.sleep(Settings.getMillisecondsBetweenTick());
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

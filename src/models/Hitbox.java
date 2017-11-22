@@ -111,7 +111,7 @@ public class Hitbox {
 		}
 
 		public boolean isAbove(Point otherPoint) {
-			if (this.y < otherPoint.y) {
+			if (this.y <= otherPoint.y) {
 				return true;
 			}
 
@@ -119,7 +119,7 @@ public class Hitbox {
 		}
 
 		public boolean isToTheRightOf(Point otherPoint) {
-			if (this.x > otherPoint.x) {
+			if (this.x >= otherPoint.x) {
 				return true;
 			}
 
