@@ -28,7 +28,7 @@ public class MainLayeredPane extends JLayeredPane {
 		this.add(playerComponent, new Integer(2));
 		this.add(hudPane, new Integer(3));
 		
-		this.setBounds(0,0,Settings.getViewDimensionDefault(), Settings.getViewDimensionDefault());
+		this.setBounds(0,0,Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault());
 		this.setVisible(true);
 	}
 }

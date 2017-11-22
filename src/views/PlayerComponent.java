@@ -19,7 +19,7 @@ class PlayerComponent extends JComponent{
 		
 		this.controller = controller;
 		this.playerModel = playerModel;
-		this.setBounds(playerModel.getXPosition(),playerModel.getYPosition(),Settings.getViewDimensionDefault(), Settings.getViewDimensionDefault());
+		this.setBounds(playerModel.getXPosition(),playerModel.getYPosition(),Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault());
 		this.addMouseListener(new PlayerComponentMouseListener());
 		this.setVisible(true);
 	}

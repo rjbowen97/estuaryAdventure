@@ -1,5 +1,7 @@
 package models;
 
+import java.awt.geom.AffineTransform;
+import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -33,19 +35,20 @@ public class Background extends GameModel {
 	
 	@Override
 	protected void setSpriteImage() {
-		BufferedImage spriteImageToUse = null;
+		BufferedImage nonScaledSpriteImageToUse = null;
 		
     	File backgroundImageFile = new File("./Graphics/Backgrounds/AirBackground/b" + backgroundLayerIndex + ".png");
 		try {			
 			if(backgroundImageFile.exists() == true){
-				spriteImageToUse = ImageIO.read(backgroundImageFile);
+				nonScaledSpriteImageToUse = ImageIO.read(backgroundImageFile);
 			}
 		}
 		catch (IOException e) {
 			e.printStackTrace();
 		}
 		
-		this.setSpriteImage(spriteImageToUse);
+		BufferedImage scaledSpriteImageToUse = ImageScaler.scaleImageToViewSize(nonScaledSpriteImageToUse);
+		this.setSpriteImage(scaledSpriteImageToUse);
 		
 	}
 	

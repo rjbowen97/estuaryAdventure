@@ -18,10 +18,8 @@ public class HUDPane extends JPanel{
 	
 	public HUDPane(Player playerModel) {
 		this.playerModel = playerModel;
-		
-		int mainFrameDimension = Settings.getViewDimensionDefault();
-		
-		this.setBounds(0, 0, mainFrameDimension, mainFrameDimension);
+				
+		this.setBounds(0, 0, Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault());
 		
 		this.healthLabel = new JLabel("HEALTH: " + this.playerModel.getHealth());
 		this.scoreLabel = new JLabel("SCORE: " + this.playerModel.getScore());

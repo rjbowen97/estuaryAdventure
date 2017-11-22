@@ -33,8 +33,12 @@ public class Settings {
 		return Integer.parseInt(globalSettings.getProperty("numberOfBackgroundLayers"));	
 	}
 	
-	public static int getViewDimensionDefault() {
-		return Integer.parseInt(globalSettings.getProperty("viewDimension"));
+	public static int getViewDimensionXDefault() {
+		return Integer.parseInt(globalSettings.getProperty("viewDimensionX"));
+	}
+	
+	public static int getViewDimensionYDefault() {
+		return Integer.parseInt(globalSettings.getProperty("viewDimensionY"));
 	}
 	
 	public static int getBackgroundXPositionDefault(int backgroundLayerIndex) {

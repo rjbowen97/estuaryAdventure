@@ -19,7 +19,7 @@ public class Interactable extends GameModel {
 	
 	public Interactable(int activationTick) {
 		this.setxPosition(Settings.getInteractableStartXPosition());
-		this.setyPosition(random.nextInt(Settings.getViewDimensionDefault()));
+		this.setyPosition(random.nextInt(Settings.getViewDimensionYDefault()));
 		this.isFood = random.nextBoolean();
 		this.setSpeed(Settings.getInteractableSpeed());
 		this.activationTick = activationTick;

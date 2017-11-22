@@ -20,7 +20,7 @@ public class MiniGameView extends JFrame {
 		this.miniGame = miniGame;
 		this.controller = controller;
 
-		this.setBounds(0,0,Settings.getViewDimensionDefault(), Settings.getViewDimensionDefault());
+		this.setBounds(0,0,Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault());
 		this.setContentPane(new MiniGamePanel());
 		this.setVisible(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

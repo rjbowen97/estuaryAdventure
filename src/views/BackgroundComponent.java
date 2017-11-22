@@ -10,12 +10,9 @@ import models.Background;
 public class BackgroundComponent extends JComponent{
 	
 	private Background backgroundModel;
-	private int mainFrameDimension;
 	
 	BackgroundComponent(Background backgroundModel){
-		
-		this.mainFrameDimension = Settings.getViewDimensionDefault();
-		this.setBounds(0,0,mainFrameDimension,mainFrameDimension);
+		this.setBounds(0,0,Settings.getViewDimensionXDefault(),Settings.getViewDimensionYDefault());
 		this.backgroundModel = backgroundModel;
 		this.setVisible(true);
 	}

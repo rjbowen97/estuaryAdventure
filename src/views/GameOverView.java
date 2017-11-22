@@ -12,7 +12,7 @@ import controller.Settings;
 public class GameOverView extends JFrame {
 
 	public GameOverView() {
-		this.setBounds(0,0,Settings.getViewDimensionDefault(), Settings.getViewDimensionDefault());
+		this.setBounds(0,0,Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault());
 		this.setContentPane(new GameOverPanel());
 		this.setVisible(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -23,7 +23,7 @@ public class GameOverView extends JFrame {
 			JLabel gameOverLabel = new JLabel("GAME OVER");
 			gameOverLabel.setSize(100,100);
 			this.add(gameOverLabel);
-			this.setBounds(0,0,Settings.getViewDimensionDefault(), Settings.getViewDimensionDefault());
+			this.setBounds(0,0,Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault());
 		}
 	}
 }

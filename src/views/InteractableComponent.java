@@ -15,7 +15,7 @@ public class InteractableComponent extends JComponent {
 	public InteractableComponent(ArrayList<Interactable> interactableModels) {
 		this.interactableModels = interactableModels;
 		
-		this.setBounds(0,0,Settings.getViewDimensionDefault(), Settings.getViewDimensionDefault());
+		this.setBounds(0,0,Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault());
 		
 		this.setVisible(true);
 	}

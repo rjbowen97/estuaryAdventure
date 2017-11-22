@@ -15,9 +15,8 @@ public class View extends JFrame {
 	
 	public View(Player playerModel, ArrayList<Background> backgroundModels, Controller controller, ArrayList<Interactable> interactableModels) {
 
-		this.setBounds(0,0,Settings.getViewDimensionDefault(), Settings.getViewDimensionDefault());
+		this.setBounds(0,0,Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault());
 		mainLayeredPane = new MainLayeredPane(playerModel, backgroundModels, controller, interactableModels);
-		
 		this.setContentPane(mainLayeredPane);
 		this.setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
