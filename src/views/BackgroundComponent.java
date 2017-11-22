@@ -21,6 +21,8 @@ public class BackgroundComponent extends JComponent{
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		g.drawImage(backgroundModel.getSpriteImage(), backgroundModel.getXPosition(), backgroundModel.getYPosition(), null);
+		g.drawImage(backgroundModel.getSpriteImage(), backgroundModel.getXPosition() + Settings.getViewDimensionXDefault(), backgroundModel.getYPosition(), null);
+		
 	}
 	
 }

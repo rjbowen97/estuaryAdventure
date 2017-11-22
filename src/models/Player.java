@@ -60,7 +60,7 @@ public abstract class Player extends GameModel {
 		BufferedImage spriteImageToUse = null;
 		
 		try {
-			File spriteFile = new File("./sprites/sprite.jpg");
+			File spriteFile = new File("./Graphics/Avatars/Bird/Bird.png");
 			
 			if(spriteFile.exists() == true){
 				spriteImageToUse = ImageIO.read(spriteFile);
