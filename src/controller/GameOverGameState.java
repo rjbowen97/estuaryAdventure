@@ -4,7 +4,7 @@ import views.GameOverGameStatePanel;
 
 public class GameOverGameState {
 
-	private GameOverGameStatePanel gameOverGameStatePanel;
+	public GameOverGameStatePanel gameOverGameStatePanel;
 	private int tickNumber = 0;
 	
 	public GameOverGameState() {

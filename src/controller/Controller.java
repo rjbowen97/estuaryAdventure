@@ -72,6 +72,7 @@ public class Controller {
 	}
 
 	public void changeGameStateFromActiveToGameOver() {
+		this.view.setContentPane(gameOverGameState.gameOverGameStatePanel);
 		this.gameState = GameState.GameOver;
 
 	}
