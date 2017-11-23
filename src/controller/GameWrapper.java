@@ -37,7 +37,7 @@ public class GameWrapper {
 		ArrayList<Interactable> interactableModels = new ArrayList<Interactable>(generateInteractableModels());
 		
 		ScoreBoard myScoreBoard = ScoreBoardManager.loadScoreBoard();
-		controller = new Controller(playerModel, interactableModels, backgroundModels,myScoreBoard);
+		controller = new Controller(playerModel, interactableModels, backgroundModels, myScoreBoard);
 		
 		
 	}
