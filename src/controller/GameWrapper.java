@@ -1,5 +1,11 @@
 package controller;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 import models.Background;
@@ -8,6 +14,9 @@ import models.Interactable;
 import models.LandAnimal;
 import models.NonLandAnimal;
 import models.Player;
+import models.ScoreBoard;
+import models.ScoreBoardEntry;
+import models.ScoreBoardManager;
 
 
 public class GameWrapper {
@@ -27,7 +36,10 @@ public class GameWrapper {
 		ArrayList<Background> backgroundModels = new ArrayList<Background>(generateBackgroundModels());
 		ArrayList<Interactable> interactableModels = new ArrayList<Interactable>(generateInteractableModels());
 		
-		controller = new Controller(playerModel, interactableModels, backgroundModels);
+		ScoreBoard myScoreBoard = ScoreBoardManager.loadScoreBoard();
+		controller = new Controller(playerModel, interactableModels, backgroundModels,myScoreBoard);
+		
+		
 	}
 	
 	private static void startGame() {

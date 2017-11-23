@@ -76,6 +76,7 @@ public class MiniGame extends GameModel {
 	public void resetMiniGameOnNonZeroCorrectAnswerFlag() {
 		this.resetCurrentPlayerAnswer();
 		this.resetCorrectAnswerFlag();
+		this.moveToNextQuestion();
 	}
 	
 	private void resetCurrentPlayerAnswer() {
@@ -85,5 +86,17 @@ public class MiniGame extends GameModel {
 	private void resetCorrectAnswerFlag() {
 		this.correctAnswerFlag = 0;
 	}
+	
+	private void moveToNextQuestion(){
+		int currIndex = questionAndAnswerPairs.indexOf(currentQuestionAndAnswerPair);
+		int newIndex = (currIndex+1)%questionAndAnswerPairs.size();
+		currentQuestionAndAnswerPair = questionAndAnswerPairs.get(newIndex);
+	}
 
 }
+
+
+
+
+
+
