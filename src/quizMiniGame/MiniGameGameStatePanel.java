@@ -19,7 +19,6 @@ public class MiniGameGameStatePanel extends JPanel implements ActionListener {
 	JButton answerAButton;
 	JButton answerBButton;
 	JButton answerCButton;
-	JButton answerDButton;
 
 	public MiniGameGameStatePanel(MiniGame miniGame, Controller controller) {
 		
@@ -29,7 +28,6 @@ public class MiniGameGameStatePanel extends JPanel implements ActionListener {
 		answerAButton = new JButton(miniGame.getCurrentQuestionAndAnswerPair().answerA);
 		answerBButton = new JButton(miniGame.getCurrentQuestionAndAnswerPair().answerB);
 		answerCButton = new JButton(miniGame.getCurrentQuestionAndAnswerPair().answerC);
-		answerDButton = new JButton(miniGame.getCurrentQuestionAndAnswerPair().answerD);
 		
 		this.add(new JLabel(miniGame.getCurrentQuestionAndAnswerPair().question));
 
@@ -42,14 +40,9 @@ public class MiniGameGameStatePanel extends JPanel implements ActionListener {
 		answerCButton.setActionCommand("answerC");
 		answerCButton.addActionListener(this);
 
-		answerDButton.setActionCommand("answerD");
-		answerDButton.addActionListener(this);
-
-
 		this.add(answerAButton);
 		this.add(answerBButton);
 		this.add(answerCButton);
-		this.add(answerDButton);
 		
 		this.setBounds(0, 0, Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault());
 		
@@ -69,10 +62,5 @@ public class MiniGameGameStatePanel extends JPanel implements ActionListener {
 		else if (e.getActionCommand().equals("answerC")) {
 			controller.miniGameGameState.setMiniGameCurrentPlayerAnswer("C");
 		}
-
-		else if (e.getActionCommand().equals("answerD")) {
-			controller.miniGameGameState.setMiniGameCurrentPlayerAnswer("D");
-		}
-
 	}
 }
