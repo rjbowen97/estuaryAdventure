@@ -1,5 +1,6 @@
 package quizMiniGame;
 
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -16,6 +17,7 @@ public class MiniGameGameStatePanel extends JPanel implements ActionListener {
 	MiniGame miniGame;
 	Controller controller;
 
+	JLabel questionLabel;
 	JButton answerAButton;
 	JButton answerBButton;
 	JButton answerCButton;
@@ -29,7 +31,8 @@ public class MiniGameGameStatePanel extends JPanel implements ActionListener {
 		answerBButton = new JButton(miniGame.getCurrentQuestionAndAnswerPair().answerB);
 		answerCButton = new JButton(miniGame.getCurrentQuestionAndAnswerPair().answerC);
 		
-		this.add(new JLabel(miniGame.getCurrentQuestionAndAnswerPair().question));
+		this.questionLabel = new JLabel(miniGame.getCurrentQuestionAndAnswerPair().question);
+		this.add(this.questionLabel);
 
 		answerAButton.setActionCommand("answerA");
 		answerAButton.addActionListener(this);
@@ -47,6 +50,15 @@ public class MiniGameGameStatePanel extends JPanel implements ActionListener {
 		this.setBounds(0, 0, Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault());
 		
 		this.setVisible(true);
+	}
+	
+	@Override
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		questionLabel.setText(miniGame.getCurrentQuestionAndAnswerPair().question);
+		answerAButton.setText(miniGame.getCurrentQuestionAndAnswerPair().answerA);
+		answerBButton.setText(miniGame.getCurrentQuestionAndAnswerPair().answerB);
+		answerCButton.setText(miniGame.getCurrentQuestionAndAnswerPair().answerC);
 	}
 
 	@Override
