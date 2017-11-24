@@ -1,17 +1,11 @@
 package controller;
 
 
-import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 import models.Background;
 import models.Interactable;
 import models.Player;
-import models.ScoreBoard;
-import models.ScoreBoardManager;
-import quizMiniGame.MiniGame;
-import quizMiniGame.MiniGameGameStatePanel;
-import views.GameOverGameStatePanel;
 import views.View;
 
 public class Controller {

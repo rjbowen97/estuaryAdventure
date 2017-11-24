@@ -7,7 +7,6 @@ import models.Background;
 import models.Interactable;
 import models.Player;
 import views.ActiveGameStatePanel;
-import views.View;
 
 public class ActiveGameState {
 	

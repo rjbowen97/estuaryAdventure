@@ -1,22 +1,12 @@
 package controller;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 import models.Background;
 import models.ImageScaler;
 import models.Interactable;
 import models.LandAnimal;
-import models.NonLandAnimal;
 import models.Player;
-import models.ScoreBoard;
-import models.ScoreBoardEntry;
-import models.ScoreBoardManager;
 
 
 public class GameWrapper {
