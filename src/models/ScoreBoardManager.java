@@ -10,7 +10,6 @@ import java.io.ObjectOutputStream;
 public class ScoreBoardManager {
 
 	public ScoreBoardManager() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public static ScoreBoard loadScoreBoard(){

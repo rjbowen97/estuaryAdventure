@@ -25,7 +25,7 @@ public class Controller {
 	public Controller(Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels, ScoreBoard scoreBoard) {
 		this.activeGameState = new ActiveGameState(this, playerModel, interactableModels, backgroundModels);
 		this.miniGameGameState = new MiniGameGameState(this);
-		this.gameOverGameState = new GameOverGameState();
+		this.gameOverGameState = new GameOverGameState(scoreBoard);
 		
 		this.scoreBoard = scoreBoard;
 

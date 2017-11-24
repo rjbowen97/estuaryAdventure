@@ -7,14 +7,19 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import controller.GameOverGameState;
 import controller.Settings;
 
 public class GameOverGameStatePanel extends JPanel {
 	
-	public GameOverGameStatePanel() {
+	GameOverGameState gameOverGameState;
+	
+	public GameOverGameStatePanel(GameOverGameState gameOverGameState) {
+		this.gameOverGameState = gameOverGameState;
+		
 		JLabel gameOverLabel = new JLabel("GAME OVER");
-		gameOverLabel.setSize(100,100);
 		this.add(gameOverLabel);
+		
 		this.setBounds(0,0,Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault());
 	}
 }
