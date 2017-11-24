@@ -24,5 +24,4 @@ public class BackgroundComponent extends JComponent{
 		g.drawImage(backgroundModel.getSpriteImage(), backgroundModel.getXPosition() + Settings.getViewDimensionXDefault(), backgroundModel.getYPosition(), null);
 		
 	}
-	
 }

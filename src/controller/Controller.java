@@ -1,163 +1,84 @@
 package controller;
 
 
-import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 import models.Background;
 import models.Interactable;
 import models.Player;
-import quizMiniGame.MiniGame;
-import quizMiniGame.MiniGameView;
-import views.GameOverView;
+import models.ScoreBoard;
+import models.ScoreBoardManager;
+import views.ScoreBoardPanel;
 import views.View;
 
 public class Controller {
 
-	private Player playerModel;
-	private ArrayList<Interactable> interactableModels;
-	private ArrayList<Background> backgroundModels;
-	private MiniGame miniGame;
+	public ActiveGameState activeGameState;
+	public MiniGameGameState miniGameGameState;
+	public GameOverGameState gameOverGameState;
+	public ScoreBoard scoreBoard;
+	
 
-	private View view;
-	private MiniGameView miniGameView;
-	private GameOverView gameOverView;
+	public View view;
 
 	private GameState gameState;
-	private int tickNumber = 0;
 
-	public Controller(Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels) {
-		this.playerModel = playerModel;
-		this.interactableModels = interactableModels;
-		this.backgroundModels = backgroundModels;
-		this.view = new View(playerModel, backgroundModels, this, interactableModels);
+	public Controller(Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels, ScoreBoard scoreBoard) {
+		this.activeGameState = new ActiveGameState(this, playerModel, interactableModels, backgroundModels);
+		this.miniGameGameState = new MiniGameGameState(this);
+		
+		this.scoreBoard = scoreBoard;
+		this.scoreBoard.scoreBoardPanel = new ScoreBoardPanel(this.scoreBoard);
+		
+		this.gameOverGameState = new GameOverGameState(this);
+		
 
-		this.miniGame = new MiniGame();
-		this.miniGameView = new MiniGameView(this.miniGame, this);
-
-		this.gameOverView = new GameOverView();
 		this.gameState = GameState.Active;
+		this.view = new View(playerModel, backgroundModels, this, interactableModels);
+		this.view.setContentPane(activeGameState.activeGameStatePanel);
 	}
 
 	public void tick(){
 		if (gameState.equals(GameState.Active)) {
-			gameStateActiveTick();
+			this.activeGameState.onTick();
 		}
 
 		if (gameState.equals(GameState.MiniGame)) {
-			gameStateMiniGameTick();
+			this.miniGameGameState.onTick();
 		}
 
 		else { //gameOver
-			gameStateGameOverTick();
+			this.gameOverGameState.onTick();
 		}
+		this.view.repaint();
 
-		this.tickNumber++;
 	}
 
-	private void gameStateActiveTick() {
-		tickModels();
-		checkGameState();
-		tickView();
+	public void changeGameStateFromActiveToMinigame() {
+		this.view.setContentPane(miniGameGameState.miniGameGameStatePanel);
+		this.gameState = GameState.MiniGame;
 	}
 
-	private void tickModels() {
-		tickBackgroundModels();
-		tickInteractableModels();
-		tickPlayerModel();
-		detectCollisions();
-	}
-
-	private void tickBackgroundModels() {
-		for (Background backgroundModel : backgroundModels) {
-			backgroundModel.onTick();
+	public void changeGameStateFromMiniGameToActive(int correctAnswerCount) {
+		if (correctAnswerCount > 0) {
+			activeGameState.playerModel.onMiniGameEnd(correctAnswerCount);
 		}
+		
+		miniGameGameState.miniGame.resetMiniGame();
+		activeGameState.playerModel.resetScoreStreak();
+		
+		this.view.setContentPane(activeGameState.activeGameStatePanel);
+		this.gameState = GameState.Active;
+		
 	}
 
-	private void tickInteractableModels() {
-		for (Interactable interactableModel :interactableModels) {
+	public void changeGameStateFromActiveToGameOver() {
+		scoreBoard.addNewScore(activeGameState.playerModel);
+		ScoreBoardManager.saveScoreboard(scoreBoard);
+		
+		this.view.setContentPane(gameOverGameState.gameOverGameStatePanel);
+		this.view.setContentPane(scoreBoard.scoreBoardPanel);
+		this.gameState = GameState.GameOver;
 
-			if (interactableModel.getActivationTick() == tickNumber) {
-				interactableModel.activate();
-			}
-
-			if (interactableModel.isActive()) {
-				interactableModel.onTick();				
-			}
-		}
 	}
-
-	private void tickPlayerModel() {
-		this.playerModel.onTick();
-	}
-
-	private void detectCollisions() {
-		detectPlayerInteractableCollisions();
-	}
-
-	private void detectPlayerInteractableCollisions() {
-		for (Interactable interactableModel : interactableModels) {
-
-			if (interactableModel.isActive()) {
-				if (playerModel.getHitbox().isOverlapping(interactableModel.getHitbox())) {
-					playerModel.onCollisionWithInteractableModel(interactableModel);
-					interactableModel.onCollisionWithPlayerModel(playerModel);
-				}
-			}
-		}
-	}
-
-	private void checkGameState() {
-		if (playerModel.getHealth() <= 0) {
-			view.setVisible(false);
-			gameOverView.setVisible(true);
-			this.gameState = GameState.GameOver;
-		}
-
-		if (playerModel.getScoreStreak() >= Settings.getMiniGameRequiredScoreStreak()) {
-			view.setVisible(false);
-			miniGameView.setVisible(true);
-			this.gameState = GameState.MiniGame;
-		}
-	}
-
-	private void tickView(){
-		view.repaint();
-	}
-
-	private void gameStateMiniGameTick() {
-		this.miniGame.onTick();
-
-		if (this.miniGame.getCorrectAnswerFlag() == 0) {
-		}
-
-		else {
-			if (this.miniGame.getCorrectAnswerFlag() > 0) {
-				playerModel.powerUp();
-			}
-
-			else if (this.miniGame.getCorrectAnswerFlag() < 0) {
-			}
-
-			miniGameView.setVisible(false);
-			playerModel.resetScoreStreak();
-			miniGame.resetMiniGameOnNonZeroCorrectAnswerFlag();
-			view.setVisible(true);
-			this.gameState = GameState.Active;
-		}
-	}
-
-	public void setMiniGameCurrentPlayerAnswer(String currentPlayerAnswer) {
-		this.miniGame.setCurrentPlayerAnswer(currentPlayerAnswer);
-	}
-
-	private void gameStateGameOverTick() {
-		gameOverView.repaint();
-	}
-
-	public void onPlayerComponentMouseReleased(MouseEvent mouseEvent) {
-		playerModel.onMouseReleased(mouseEvent);
-	}
-
-
 }

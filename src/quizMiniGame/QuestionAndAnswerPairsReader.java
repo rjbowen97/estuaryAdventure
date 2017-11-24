@@ -31,7 +31,6 @@ public class QuestionAndAnswerPairsReader {
 										elementNodeAtCurrentIndex.getElementsByTagName("answerA").item(0).getTextContent(),
 										elementNodeAtCurrentIndex.getElementsByTagName("answerB").item(0).getTextContent(),
 										elementNodeAtCurrentIndex.getElementsByTagName("answerC").item(0).getTextContent(),
-										elementNodeAtCurrentIndex.getElementsByTagName("answerD").item(0).getTextContent(),
 										elementNodeAtCurrentIndex.getElementsByTagName("correctAnswer").item(0).getTextContent()));
 			}
 		}

@@ -6,6 +6,7 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JComponent;
 
+import controller.ActiveGameState;
 import controller.Controller;
 import controller.Settings;
 import models.Player;
@@ -49,7 +50,7 @@ class PlayerComponent extends JComponent{
 
 		@Override
 		public void mouseReleased(MouseEvent mouseEvent) {
-			controller.onPlayerComponentMouseReleased(mouseEvent);
+			controller.activeGameState.onPlayerComponentMouseReleased(mouseEvent);
 		}
 	}
 }

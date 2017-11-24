@@ -6,8 +6,9 @@ import models.Background;
 import models.ImageScaler;
 import models.Interactable;
 import models.LandAnimal;
-import models.NonLandAnimal;
 import models.Player;
+import models.ScoreBoard;
+import models.ScoreBoardManager;
 
 
 public class GameWrapper {
@@ -27,7 +28,9 @@ public class GameWrapper {
 		ArrayList<Background> backgroundModels = new ArrayList<Background>(generateBackgroundModels());
 		ArrayList<Interactable> interactableModels = new ArrayList<Interactable>(generateInteractableModels());
 		
-		controller = new Controller(playerModel, interactableModels, backgroundModels);
+		ScoreBoard scoreBoard = ScoreBoardManager.loadScoreBoard();
+		
+		controller = new Controller(playerModel, interactableModels, backgroundModels, scoreBoard);
 	}
 	
 	private static void startGame() {
