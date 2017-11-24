@@ -3,26 +3,41 @@ package models;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import views.ScoreBoardPanel;
+
 public class ScoreBoard implements Serializable{
 	
-	public ArrayList<ScoreBoardEntry> scores;
+	public ScoreBoardPanel scoreBoardPanel;
+	
+	public ArrayList<ScoreBoardEntry> scoreBoardEntries;
 
 	public ScoreBoard() {
-		scores=new ArrayList<ScoreBoardEntry>();	
+		scoreBoardEntries = new ArrayList<ScoreBoardEntry>();	
+		this.scoreBoardPanel = new ScoreBoardPanel(this);
 	}
 	
 	public void addNewScore(ScoreBoardEntry newEntry){
-		scores.add(newEntry);
-		scores.sort(null);
-		if(scores.size()==10){
-			scores.remove(10);
-		}		
+		scoreBoardEntries.add(newEntry);
+		scoreBoardEntries.sort(null);
+		if (scoreBoardEntries.size() == 10) {
+			scoreBoardEntries.remove(10);
+		}
 	}
 	
-	public void addNewScore(Player thePlayer){
-		ScoreBoardEntry entry = new ScoreBoardEntry();
-		entry.name="default";
-		entry.score = thePlayer.getScore()+thePlayer.getHealth();
-		this.addNewScore(entry);
+	public void addNewScore(Player player) {
+		ScoreBoardEntry scoreBoardEntry = new ScoreBoardEntry();
+		scoreBoardEntry.name = "default";
+		scoreBoardEntry.score = calculateFinalPlayerScore(player);
+		this.addNewScore(scoreBoardEntry);
 	}
+	
+	private int calculateFinalPlayerScore(Player player) {
+		int finalPlayerScore = 0;
+		
+		finalPlayerScore += player.getScore();
+		finalPlayerScore += player.getHealth();
+		
+		return finalPlayerScore;
+	}
+	
 }
