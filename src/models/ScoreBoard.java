@@ -18,7 +18,7 @@ public class ScoreBoard implements Serializable{
 	public void addNewScore(ScoreBoardEntry newEntry){
 		scoreBoardEntries.add(newEntry);
 		scoreBoardEntries.sort(null);
-		if (scoreBoardEntries.size() == 10) {
+		if (scoreBoardEntries.size() > 10) {
 			scoreBoardEntries.remove(10);
 		}
 	}
