@@ -25,9 +25,9 @@ public class Controller {
 	public Controller(Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels, ScoreBoard scoreBoard) {
 		this.activeGameState = new ActiveGameState(this, playerModel, interactableModels, backgroundModels);
 		this.miniGameGameState = new MiniGameGameState(this);
-		this.gameOverGameState = new GameOverGameState(scoreBoard);
-		
 		this.scoreBoard = scoreBoard;
+		this.gameOverGameState = new GameOverGameState(this);
+		
 
 		this.gameState = GameState.Active;
 		this.view = new View(playerModel, backgroundModels, this, interactableModels);
@@ -69,11 +69,11 @@ public class Controller {
 	}
 
 	public void changeGameStateFromActiveToGameOver() {
-		
 		scoreBoard.addNewScore(activeGameState.playerModel);
 		ScoreBoardManager.saveScoreboard(scoreBoard);
 		
 		this.view.setContentPane(gameOverGameState.gameOverGameStatePanel);
+		this.view.setContentPane(scoreBoard.scoreBoardPanel);
 		this.gameState = GameState.GameOver;
 
 	}
