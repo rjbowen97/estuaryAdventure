@@ -1,66 +1,70 @@
 package controller;
 
 
-import models.*;
-import views.View;
-
-import javax.swing.JComponent;
-
-import java.awt.Graphics;
-import java.awt.event.*;
-import java.io.File;
 import java.util.ArrayList;
 
+import models.Background;
+import models.Interactable;
+import models.Player;
+import views.View;
+
 public class Controller {
-	
-    String birdSprite = "sprite.png";
-    String fishSprite = "sprite.png";
-    String crabSprite = "sprite.png";
-    
-    //models
-    
-    public Background background;
-    public Player playerModel;
-    
-    //view
-    private View view;
-    
-    /*
-     * The controllers need to have their own custom listeners that they attach to the
-     * view's custom component to define when the components update
-     * Controller tells View to update components on mouse motion 
-     */
-    /*
-     * This constructor for controller takes an instance of Player and View so that it can
-     * update the view and model
-     * @param model An object of the Player class that can be updated through the controller
-     * @param view An object of the View class taht can be updated through the controller  
-     * @see Player
-     * @see View
-     */
-    public Controller(Player model, View view) {
-		this.playerModel = model;
-		this.view = view;
+
+	public ActiveGameState activeGameState;
+	public MiniGameGameState miniGameGameState;
+	public GameOverGameState gameOverGameState;
+
+	public View view;
+
+	private GameState gameState;
+
+	public Controller(Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels) {
+		this.activeGameState = new ActiveGameState(this, playerModel, interactableModels, backgroundModels);
+		this.miniGameGameState = new MiniGameGameState(this);
+		this.gameOverGameState = new GameOverGameState();
+
+		this.gameState = GameState.Active;
+		this.view = new View(playerModel, backgroundModels, this, interactableModels);
+		this.view.setContentPane(activeGameState.activeGameStatePanel);
 	}
-    /*
-     * This method consolidates the updates into one call
-     */
-    public void update(){
-    	updateModel();
-    	updateView();
-    }
-	
-	public void updateModel() {
+
+	public void tick(){
+		if (gameState.equals(GameState.Active)) {
+			this.activeGameState.onTick();
+		}
+
+		if (gameState.equals(GameState.MiniGame)) {
+			this.miniGameGameState.onTick();
+		}
+
+		else { //gameOver
+			this.gameOverGameState.onTick();
+		}
+		this.view.repaint();
+
+	}
+
+	public void changeGameStateFromActiveToMinigame() {
+		this.view.setContentPane(miniGameGameState.miniGameGameStatePanel);
+		this.gameState = GameState.MiniGame;
+	}
+
+	public void changeGameStateFromMiniGameToActive(int correctAnswerCount) {
+		if (correctAnswerCount > 0) {
+			activeGameState.playerModel.onMiniGameEnd(correctAnswerCount);
+		}
+		
+		miniGameGameState.miniGame.resetMiniGame();
+		activeGameState.playerModel.resetScoreStreak();
+		
+		this.view.setContentPane(activeGameState.activeGameStatePanel);
+		this.gameState = GameState.Active;
 		
 	}
-	/*
-	 * This method changes position according to model changes and updates and repaints the view
-	 */
-	public void updateView(){
-		view.updatePlayer(playerModel.getXPosition(), playerModel.getYPosition());
-		view.updateBackgrounds();
-		view.repaint();
+
+	public void changeGameStateFromActiveToGameOver() {
+		this.view.setContentPane(gameOverGameState.gameOverGameStatePanel);
+		this.gameState = GameState.GameOver;
+
 	}
-    
-	
 }

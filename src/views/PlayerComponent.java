@@ -1,52 +1,56 @@
 package views;
 
 import java.awt.Graphics;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
-import javax.imageio.ImageIO;
 import javax.swing.JComponent;
 
+import controller.ActiveGameState;
+import controller.Controller;
+import controller.Settings;
 import models.Player;
 
 class PlayerComponent extends JComponent{
 	
-	Player playerModel;
-	private int xPosition;
-	private int yPosition;
-	BufferedImage playerImage;
+	private Player playerModel;
+	private Controller controller;
 	
-	PlayerComponent(Player playerModel){
+	PlayerComponent(Player playerModel, Controller controller){
 		
+		this.controller = controller;
 		this.playerModel = playerModel;
-		
-		this.xPosition = this.playerModel.getXPosition();
-		this.yPosition = this.playerModel.getYPosition();
-		this.setSize(this.playerModel.getSize(),this.playerModel.getSize());
-		try {
-			File imageFile = new File(playerModel.getSpriteFile());
-			if(imageFile.exists() == true){
-				playerImage = ImageIO.read(imageFile);
-			}
-		}			
-		catch (IOException e) {
-			e.printStackTrace();
-		}
+		this.setBounds(playerModel.getXPosition(),playerModel.getYPosition(),Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault());
+		this.addMouseListener(new PlayerComponentMouseListener());
 		this.setVisible(true);
 	}
-	
+
 	@Override
-	public void paintComponent(Graphics g){
-		super.paintComponent(g);
-		g.drawImage(playerImage, xPosition, yPosition, null);
+	public void paintComponent(Graphics g) {
+		g.drawImage(playerModel.getSpriteImage(), playerModel.getXPosition(), playerModel.getYPosition(), null);
 	}
 	
-	void updateComponent(int x, int y){
-		//this.xPosition = x;
-		//this.yPosition = y;
-		this.xPosition += 4;
-		this.yPosition++;
-		repaint();
+	private class PlayerComponentMouseListener implements MouseListener {
+		@Override
+		public void mouseClicked(MouseEvent mouseEvent) {
+		}
+
+		@Override
+		public void mouseEntered(MouseEvent mouseEvent) {
+		}
+
+		@Override
+		public void mouseExited(MouseEvent mouseEvent) {
+		}
+
+		@Override
+		public void mousePressed(MouseEvent mouseEvent) {
+			
+		}
+
+		@Override
+		public void mouseReleased(MouseEvent mouseEvent) {
+			controller.activeGameState.onPlayerComponentMouseReleased(mouseEvent);
+		}
 	}
 }

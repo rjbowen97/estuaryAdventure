@@ -1,40 +1,63 @@
 package controller;
 
-import java.io.File;
 import java.util.ArrayList;
 
-import models.*;
-import views.View;
+import models.Background;
+import models.ImageScaler;
+import models.Interactable;
+import models.LandAnimal;
+import models.Player;
 
-/*
- * This class essentially wraps the game up into a presentable/runnable product, Player model is
- * defined as well as the background. 
- */
+
 public class GameWrapper {
 	
+	private static Controller controller;
+	
 	public static void main(String[] args) {
-		
+		setUpGame();
+		startGame();
+	}
+	
+	private static void setUpGame() {
 		Settings settings = new Settings();
+		ImageScaler imageScaler = new ImageScaler();
 		
-		Player mainModel = new Player(PlayerAnimalType.BIRD);
-		ArrayList<Background> backgroundModels = new ArrayList<Background>();
-    	File[] backgroundImageFiles = new File("./backgrounds").listFiles();
-    	for(File currentBackgroundImageFiles: backgroundImageFiles){
-    		backgroundModels.add(new Background(currentBackgroundImageFiles,
-    				Integer.parseInt(settings.globalSettings.get("backgroundXPosition").toString()),
-    				Integer.parseInt(settings.globalSettings.get("backgroundYPosition").toString())));
-    	}  
-    	
-		Controller mainController = new Controller(mainModel, new View(mainModel, backgroundModels));
-
-		for(int i = 0; i < 1000; i++){
+		Player playerModel = new LandAnimal();
+		ArrayList<Background> backgroundModels = new ArrayList<Background>(generateBackgroundModels());
+		ArrayList<Interactable> interactableModels = new ArrayList<Interactable>(generateInteractableModels());
+		
+		controller = new Controller(playerModel, interactableModels, backgroundModels);
+		
+		
+	}
+	
+	private static void startGame() {
+		while (true) {
 			try {
-				mainController.update();
-				Thread.sleep(100);
+				controller.tick();
+				Thread.sleep(Settings.getMillisecondsBetweenTick());
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
+	}
+	
+	private static ArrayList<Background> generateBackgroundModels() {
+		ArrayList<Background> backgroundModels = new ArrayList<Background>();
+    	for (int backgroundImageFileIndex = 0; backgroundImageFileIndex < Settings.getNumberOfBackgroundLayers(); backgroundImageFileIndex++) {
+    		backgroundModels.add(new Background(0, 0, backgroundImageFileIndex));
+    	}
+    	return backgroundModels;
+	}
+	
+	private static ArrayList<Interactable> generateInteractableModels() {
+		ArrayList<Interactable> interactableModels = new ArrayList<Interactable>();
+		
+    	for (int interactableIndex = 0; interactableIndex < 100; interactableIndex++) {
+    		interactableModels.add(new Interactable(interactableIndex * 5));
+    	}
+    	
+    	return interactableModels;
 	}
 	
 }

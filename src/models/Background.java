@@ -1,68 +1,68 @@
 package models;
 
+import java.awt.geom.AffineTransform;
+import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-public class Background {
+import controller.Settings;
 
-	private int xPosition;
-	private int yPosition;
-	private int backgroundWidth;
-	private int backgroundHeight;
-	private String backgroundImagefileName;
+public class Background extends GameModel {
+
+	private int backgroundLayerIndex;
+
+	public Background(int xPosition, int yPosition, int backgroundLayerIndex) {
+		this.setxPosition(xPosition);
+		this.setyPosition(yPosition);
+		this.backgroundLayerIndex = backgroundLayerIndex;
+		this.setSpeed(Settings.getBackgroundBaseSpeed(backgroundLayerIndex));
+		this.setSpriteImage();
+	}
 	
-	public Background(File backgroundImageFile, int xPosition, int yPosition) {
-		this.setXPosition(xPosition);
-		this.setPositionY(yPosition);
+	@Override
+	protected void setHitbox() {
+		this.setHitbox(new Hitbox(this));
+	}
+
+	@Override
+	protected void updateHitbox() {
+		this.getHitbox().update();
 		
-		this.backgroundImagefileName = "./Backgrounds/" + backgroundImageFile.getName();
 	}
 	
-	public void setBackgroundWidth(int backgroundWidth) {
-		this.backgroundWidth = backgroundWidth;
-	}
-
-	public void setBackgroundHeight(int backgroundHeight) {
-		this.backgroundHeight = backgroundHeight;
-	}
-
-	public int getBackgroundWidth() {
-		return backgroundWidth;
-	}
-
-	public int getBackgroundHeight() {
-		return backgroundHeight;
-	}
-
-	public int getXPosition() {
-		return xPosition;
+	@Override
+	protected void setSpriteImage() {
+		BufferedImage nonScaledSpriteImageToUse = null;
+		
+    	File backgroundImageFile = new File("./Graphics/Backgrounds/AirBackground/b" + backgroundLayerIndex + ".png");
+		try {			
+			if(backgroundImageFile.exists() == true){
+				nonScaledSpriteImageToUse = ImageIO.read(backgroundImageFile);
+			}
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		BufferedImage scaledSpriteImageToUse = ImageScaler.scaleImageToViewSize(nonScaledSpriteImageToUse);
+		this.setSpriteImage(scaledSpriteImageToUse);
+		
 	}
 	
-	public int getYPosition() {
-		return yPosition;
+	@Override
+	public void onTick() {
+		this.updateBackgroundPositions();
 	}
 
-	protected void setXPosition(int poisitionX) {
-		this.xPosition = poisitionX;
+	private void updateBackgroundPositions() {
+		int newXPosition = this.getXPosition() - this.getSpeed();
+		this.setxPosition(newXPosition);
 	}
 
-	public void updatePosition(){
-		this.xPosition += 1;
+	@Override
+	public void reset() {
 	}
-
-	protected void setPositionY(int positionY) {
-		this.yPosition = positionY;
-	}
-
-
-	public String getBackgroundImagefileName() {
-		return backgroundImagefileName;
-	}
-
 }

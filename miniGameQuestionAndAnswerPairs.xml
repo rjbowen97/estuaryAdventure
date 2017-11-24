@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<QuestionsAndAnswers>
+
+	<QuestionAndAnswer ID="0">
+		<Question>How many legs does a dog have?</Question>
+		<answerA>4</answerA>
+		<answerB>2</answerB>
+		<answerC>8</answerC>
+		<correctAnswer>A</correctAnswer>
+	</QuestionAndAnswer>
+	
+	<QuestionAndAnswer ID="1">
+		<Question>How many legs does a human have?</Question>
+		<answerA>23</answerA>
+		<answerB>7</answerB>
+		<answerC>2</answerC>
+		<correctAnswer>C</correctAnswer>
+	</QuestionAndAnswer>
+
+</QuestionsAndAnswers>
