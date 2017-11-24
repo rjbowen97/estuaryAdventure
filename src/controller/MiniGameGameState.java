@@ -20,17 +20,11 @@ public class MiniGameGameState {
 	public void onTick() {
 		this.miniGame.onTick();
 
-		if (this.miniGame.getCorrectAnswerFlag() == 0) {
+		if (this.miniGame.isActive) {
 		}
 
 		else {
-			if (this.miniGame.getCorrectAnswerFlag() > 0) {
-				controller.changeGameStateFromMiniGameToActive(true);
-			}
-
-			else if (this.miniGame.getCorrectAnswerFlag() < 0) {
-				controller.changeGameStateFromMiniGameToActive(false);
-			}
+			controller.changeGameStateFromMiniGameToActive(miniGame.correctAnswerCount);
 		}
 		this.tickNumber++;
 	}

@@ -1,6 +1,7 @@
 package quizMiniGame;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import models.GameModel;
 
@@ -12,7 +13,9 @@ public class MiniGame extends GameModel {
 	
 	private String currentPlayerAnswer = "";
 	
-	private int correctAnswerFlag = 0;
+	public boolean isActive = true;
+	
+	public int correctAnswerCount = 0;
 	
 	public MiniGame() {
 		QuestionAndAnswerPairsReader questionAndAnswerPairsReader = new QuestionAndAnswerPairsReader();
@@ -27,23 +30,25 @@ public class MiniGame extends GameModel {
 	
 	private void updateCorrectAnswerFlag() {
 		
+		Random random = new Random();
+		
 		if (currentPlayerAnswer.isEmpty()) {
-			this.correctAnswerFlag = 0;
+			this.isActive = true;
 		}
 		
 		else {
 			if (currentPlayerAnswer.equals(currentQuestionAndAnswerPair.correctAnswer)) {
-				this.correctAnswerFlag = 1;
+				this.isActive = true;
+				
+				this.currentPlayerAnswer = "";
+				this.currentQuestionAndAnswerPair = this.questionAndAnswerPairs.get(random.nextInt(questionAndAnswerPairs.size()));
+				this.correctAnswerCount++;
 			}
 			
 			else {
-				this.correctAnswerFlag = -1;
+				this.isActive = false;
 			}
 		}
-	}
-	
-	public int getCorrectAnswerFlag() {
-		return this.correctAnswerFlag;
 	}
 	
 	public QuestionAndAnswerPair getCurrentQuestionAndAnswerPair() {
@@ -70,17 +75,13 @@ public class MiniGame extends GameModel {
 	public void reset() {
 	}
 	
-	public void resetMiniGameOnNonZeroCorrectAnswerFlag() {
+	public void resetMiniGame() {
+		this.correctAnswerCount = 0;
 		this.resetCurrentPlayerAnswer();
-		this.resetCorrectAnswerFlag();
 	}
 	
 	private void resetCurrentPlayerAnswer() {
 		this.currentPlayerAnswer = "";
-	}
-	
-	private void resetCorrectAnswerFlag() {
-		this.correctAnswerFlag = 0;
 	}
 }
 

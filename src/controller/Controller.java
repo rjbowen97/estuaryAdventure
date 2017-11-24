@@ -55,12 +55,12 @@ public class Controller {
 		this.gameState = GameState.MiniGame;
 	}
 
-	public void changeGameStateFromMiniGameToActive(boolean answerWasCorrect) {
-		if (answerWasCorrect) {
-			activeGameState.playerModel.powerUp();
+	public void changeGameStateFromMiniGameToActive(int correctAnswerCount) {
+		if (correctAnswerCount > 0) {
+			activeGameState.playerModel.onMiniGameEnd(correctAnswerCount);
 		}
 		
-		miniGameGameState.miniGame.resetMiniGameOnNonZeroCorrectAnswerFlag();
+		miniGameGameState.miniGame.resetMiniGame();
 		activeGameState.playerModel.resetScoreStreak();
 		
 		this.view.setContentPane(activeGameState.activeGameStatePanel);

@@ -24,7 +24,12 @@ public abstract class Player extends GameModel {
 		this.setHitbox();
 	}
 
-	public void powerUp() {
+	public void onMiniGameEnd(int correctAnswerCount) {
+		this.powerUp();
+		this.score += correctAnswerCount;
+	}
+	
+	private void powerUp() {
 		if (this.poweredUp == false) {
 			this.poweredUp = true;
 			System.out.println("POWERED UP!");
