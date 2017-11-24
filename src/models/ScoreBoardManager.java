@@ -15,38 +15,36 @@ public class ScoreBoardManager {
 
 	public static ScoreBoard loadScoreBoard(){
 		
-		ScoreBoard theReturn=new ScoreBoard();
+		ScoreBoard loadedScoreBoard = new ScoreBoard();
 		
 		try {
 			ObjectInputStream input = new ObjectInputStream(new FileInputStream("scores.txt"));
-			theReturn=(ScoreBoard)(input.readObject());
+			loadedScoreBoard = (ScoreBoard) input.readObject();
 			input.close();
 			
 		} catch (FileNotFoundException e) {
-			return theReturn;
+			return loadedScoreBoard;
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return theReturn;
+		
+		return loadedScoreBoard;
 	}
 	
-	public static void saveScoreboard(ScoreBoard scores){
+	public static void saveScoreboard(ScoreBoard scoreBoard){
 		
-		ObjectOutputStream output;
+		ObjectOutputStream outputObjectStream;
+		
 		try {
-			output = new ObjectOutputStream(new FileOutputStream("scores.txt"));
-			output.writeObject(scores);
-			output.close();
+			outputObjectStream = new ObjectOutputStream(new FileOutputStream("scores.txt"));
+			outputObjectStream.writeObject(scoreBoard);
+			outputObjectStream.close();
 			
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}		
 	}

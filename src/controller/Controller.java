@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import models.Background;
 import models.Interactable;
 import models.Player;
+import models.ScoreBoard;
+import models.ScoreBoardManager;
 import views.View;
 
 public class Controller {
@@ -13,15 +15,19 @@ public class Controller {
 	public ActiveGameState activeGameState;
 	public MiniGameGameState miniGameGameState;
 	public GameOverGameState gameOverGameState;
+	public ScoreBoard scoreBoard;
+	
 
 	public View view;
 
 	private GameState gameState;
 
-	public Controller(Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels) {
+	public Controller(Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels, ScoreBoard scoreBoard) {
 		this.activeGameState = new ActiveGameState(this, playerModel, interactableModels, backgroundModels);
 		this.miniGameGameState = new MiniGameGameState(this);
 		this.gameOverGameState = new GameOverGameState();
+		
+		this.scoreBoard = scoreBoard;
 
 		this.gameState = GameState.Active;
 		this.view = new View(playerModel, backgroundModels, this, interactableModels);
@@ -63,6 +69,10 @@ public class Controller {
 	}
 
 	public void changeGameStateFromActiveToGameOver() {
+		
+		scoreBoard.addNewScore(activeGameState.playerModel);
+		ScoreBoardManager.saveScoreboard(scoreBoard);
+		
 		this.view.setContentPane(gameOverGameState.gameOverGameStatePanel);
 		this.gameState = GameState.GameOver;
 
