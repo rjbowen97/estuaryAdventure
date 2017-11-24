@@ -57,9 +57,15 @@ public class Controller {
 
 	public void changeGameStateFromMiniGameToActive(boolean answerWasCorrect) {
 		if (answerWasCorrect) {
-			activeGameState.playerModel.resetScoreStreak();
 			activeGameState.playerModel.powerUp();
 		}
+		
+		miniGameGameState.miniGame.resetMiniGameOnNonZeroCorrectAnswerFlag();
+		activeGameState.playerModel.resetScoreStreak();
+		
+		this.view.setContentPane(activeGameState.activeGameStatePanel);
+		this.gameState = GameState.Active;
+		
 	}
 
 	public void changeGameStateFromActiveToGameOver() {

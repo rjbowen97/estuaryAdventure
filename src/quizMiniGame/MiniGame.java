@@ -56,17 +56,14 @@ public class MiniGame extends GameModel {
 	
 	@Override
 	protected void setSpriteImage() {
-		
 	}
 
 	@Override
 	protected void setHitbox() {
-		
 	}
 
 	@Override
 	protected void updateHitbox() {
-		
 	}
 
 	@Override
