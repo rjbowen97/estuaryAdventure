@@ -22,17 +22,19 @@ public class MiniGameGameStatePanel extends JPanel implements ActionListener {
 	JButton answerBButton;
 	JButton answerCButton;
 
+	JLabel correctAnswerCountLabel;
+	
 	public MiniGameGameStatePanel(MiniGame miniGame, Controller controller) {
 		
 		this.miniGame = miniGame;
 		this.controller = controller;
+		
+		this.questionLabel = new JLabel(miniGame.getCurrentQuestionAndAnswerPair().question);
+		this.add(this.questionLabel);
 
 		answerAButton = new JButton(miniGame.getCurrentQuestionAndAnswerPair().answerA);
 		answerBButton = new JButton(miniGame.getCurrentQuestionAndAnswerPair().answerB);
 		answerCButton = new JButton(miniGame.getCurrentQuestionAndAnswerPair().answerC);
-		
-		this.questionLabel = new JLabel(miniGame.getCurrentQuestionAndAnswerPair().question);
-		this.add(this.questionLabel);
 
 		answerAButton.setActionCommand("answerA");
 		answerAButton.addActionListener(this);
@@ -47,6 +49,9 @@ public class MiniGameGameStatePanel extends JPanel implements ActionListener {
 		this.add(answerBButton);
 		this.add(answerCButton);
 		
+		this.correctAnswerCountLabel = new JLabel("SCORE ADDED: " + String.valueOf(miniGame.correctAnswerCount));
+		this.add(this.correctAnswerCountLabel);
+		
 		this.setBounds(0, 0, Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault());
 		
 		this.setVisible(true);
@@ -55,6 +60,7 @@ public class MiniGameGameStatePanel extends JPanel implements ActionListener {
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
+		correctAnswerCountLabel.setText("SCORE ADDED: " + String.valueOf(miniGame.correctAnswerCount));
 		questionLabel.setText(miniGame.getCurrentQuestionAndAnswerPair().question);
 		answerAButton.setText(miniGame.getCurrentQuestionAndAnswerPair().answerA);
 		answerBButton.setText(miniGame.getCurrentQuestionAndAnswerPair().answerB);
