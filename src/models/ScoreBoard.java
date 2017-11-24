@@ -13,7 +13,6 @@ public class ScoreBoard implements Serializable{
 
 	public ScoreBoard() {
 		scoreBoardEntries = new ArrayList<ScoreBoardEntry>();	
-		this.scoreBoardPanel = new ScoreBoardPanel(this);
 	}
 	
 	public void addNewScore(ScoreBoardEntry newEntry){

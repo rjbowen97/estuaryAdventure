@@ -8,6 +8,7 @@ import models.Interactable;
 import models.Player;
 import models.ScoreBoard;
 import models.ScoreBoardManager;
+import views.ScoreBoardPanel;
 import views.View;
 
 public class Controller {
@@ -25,7 +26,10 @@ public class Controller {
 	public Controller(Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels, ScoreBoard scoreBoard) {
 		this.activeGameState = new ActiveGameState(this, playerModel, interactableModels, backgroundModels);
 		this.miniGameGameState = new MiniGameGameState(this);
+		
 		this.scoreBoard = scoreBoard;
+		this.scoreBoard.scoreBoardPanel = new ScoreBoardPanel(this.scoreBoard);
+		
 		this.gameOverGameState = new GameOverGameState(this);
 		
 
