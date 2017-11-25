@@ -3,6 +3,7 @@ package quizMiniGame;
 import java.util.ArrayList;
 import java.util.Random;
 
+import controller.Settings;
 import models.GameModel;
 
 public class MiniGame extends GameModel {
@@ -17,8 +18,11 @@ public class MiniGame extends GameModel {
 	
 	public int correctAnswerCount = 0;
 	
+	public int questionLimit;
+	
 	public MiniGame() {
 		QuestionAndAnswerPairsReader questionAndAnswerPairsReader = new QuestionAndAnswerPairsReader();
+		this.questionLimit = Settings.getMiniGameQuestionLimit();
 		this.questionAndAnswerPairs = questionAndAnswerPairsReader.getQuestionAndAnswerPairs();
 		this.currentQuestionAndAnswerPair = this.questionAndAnswerPairs.get(0);
 	}
@@ -43,6 +47,10 @@ public class MiniGame extends GameModel {
 				this.currentPlayerAnswer = "";
 				this.currentQuestionAndAnswerPair = this.questionAndAnswerPairs.get(random.nextInt(questionAndAnswerPairs.size()));
 				this.correctAnswerCount++;
+				
+				if(this.correctAnswerCount==this.questionLimit){
+					this.isActive = false;
+				}
 			}
 			
 			else {
