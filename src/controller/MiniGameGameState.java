@@ -14,6 +14,7 @@ public class MiniGameGameState {
 	public MiniGameGameState(Controller controller) {
 		this.controller = controller;
 		this.miniGame = new MiniGame();
+		this.miniGame.questionLimit = Settings.getMiniGameQuestionLimit();
 		this.miniGameGameStatePanel = new MiniGameGameStatePanel(this.miniGame, controller);
 	}
 

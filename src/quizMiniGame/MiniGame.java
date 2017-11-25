@@ -17,6 +17,8 @@ public class MiniGame extends GameModel {
 	
 	public int correctAnswerCount = 0;
 	
+	public int questionLimit = 1;
+	
 	public MiniGame() {
 		QuestionAndAnswerPairsReader questionAndAnswerPairsReader = new QuestionAndAnswerPairsReader();
 		this.questionAndAnswerPairs = questionAndAnswerPairsReader.getQuestionAndAnswerPairs();
@@ -43,6 +45,10 @@ public class MiniGame extends GameModel {
 				this.currentPlayerAnswer = "";
 				this.currentQuestionAndAnswerPair = this.questionAndAnswerPairs.get(random.nextInt(questionAndAnswerPairs.size()));
 				this.correctAnswerCount++;
+				
+				if(this.correctAnswerCount==this.questionLimit){
+					this.isActive = false;
+				}
 			}
 			
 			else {

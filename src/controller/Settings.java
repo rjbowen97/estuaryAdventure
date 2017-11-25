@@ -80,4 +80,7 @@ public class Settings {
 	public static int getMillisecondsBetweenTick() {
 		return Integer.parseInt(globalSettings.getProperty("millisecondsBetweenTick"));
 	}
+	public static int getMiniGameQuestionLimit() {
+		return Integer.parseInt(globalSettings.getProperty("miniGameQuestionLimit"));
+	}
 }
