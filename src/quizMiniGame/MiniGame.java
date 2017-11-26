@@ -48,7 +48,7 @@ public class MiniGame extends GameModel {
 				this.currentQuestionAndAnswerPair = this.questionAndAnswerPairs.get(random.nextInt(questionAndAnswerPairs.size()));
 				this.correctAnswerCount++;
 				
-				if(this.correctAnswerCount==this.questionLimit){
+				if (this.correctAnswerCount == this.questionLimit) {
 					this.isActive = false;
 				}
 			}

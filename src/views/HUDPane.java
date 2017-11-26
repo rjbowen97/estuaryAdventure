@@ -48,6 +48,10 @@ public class HUDPane extends JPanel{
 			this.poweredUpLabel.setVisible(true);
 		}
 		
+		else {
+			this.poweredUpLabel.setVisible(false);
+		}
+		
 	}
 	
 	

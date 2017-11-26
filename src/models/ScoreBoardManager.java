@@ -12,12 +12,12 @@ public class ScoreBoardManager {
 	public ScoreBoardManager() {
 	}
 
-	public static ScoreBoard loadScoreBoard(){
+	public static ScoreBoard loadScoreBoard(String fileName){
 		
 		ScoreBoard loadedScoreBoard = new ScoreBoard();
 		
 		try {
-			ObjectInputStream input = new ObjectInputStream(new FileInputStream("scores.txt"));
+			ObjectInputStream input = new ObjectInputStream(new FileInputStream(fileName));
 			loadedScoreBoard = (ScoreBoard) input.readObject();
 			input.close();
 			
@@ -32,12 +32,12 @@ public class ScoreBoardManager {
 		return loadedScoreBoard;
 	}
 	
-	public static void saveScoreboard(ScoreBoard scoreBoard){
+	public static void saveScoreboard(ScoreBoard scoreBoard, String fileName){
 		
 		ObjectOutputStream outputObjectStream;
 		
 		try {
-			outputObjectStream = new ObjectOutputStream(new FileOutputStream("scores.txt"));
+			outputObjectStream = new ObjectOutputStream(new FileOutputStream(fileName));
 			outputObjectStream.writeObject(scoreBoard);
 			outputObjectStream.close();
 			

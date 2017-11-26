@@ -89,8 +89,16 @@ public abstract class Player extends GameModel {
 		}
 
 		else {
-			this.health--;			
-			this.scoreStreak = 0;
+			
+			if (this.poweredUp == true) {
+				this.poweredUp = false;
+			}
+			
+			else {
+				this.health--;			
+				this.scoreStreak = 0;
+			}
+			
 		}
 	}
 
