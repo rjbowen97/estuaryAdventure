@@ -12,7 +12,7 @@ import controller.Controller;
 import controller.MenuState;
 import controller.Settings;
 
-public class MenuPanel extends JPanel {
+public class MenuPanel extends JPanel  {
 	
 	public Rectangle playButton = new Rectangle(Settings.getViewDimensionXDefault()/2, 300, 150, 75);
 	public Rectangle quitButton = new Rectangle(Settings.getViewDimensionXDefault()/2, 600, 150, 75);

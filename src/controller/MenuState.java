@@ -2,7 +2,7 @@ package controller;
 
 import views.MenuPanel;
 
-public class MenuState {
+public class MenuState  {
 	public Controller controller;
 	public MenuPanel menuPanel;
 
