@@ -7,7 +7,7 @@ import views.GameOverGameStatePanel;
 /**
  * The Class GameOverGameState.
  */
-public class GameOverGameState {
+public class GameOverGameState implements GameStateInterface {
 
 	/** The controller. */
 	private Controller controller;

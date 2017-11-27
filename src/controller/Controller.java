@@ -20,7 +20,6 @@ public class Controller {
 
 	public MenuGameState menuGameState;
 
-
 	/** The active game state. */
 	public ActiveGameState activeGameState;
 	
@@ -32,7 +31,6 @@ public class Controller {
 	
 	/** The score board. */
 	public ScoreBoard scoreBoard;
-	public MenuPanel menu;
 
 	/** The view. */
 	public View view;
@@ -61,17 +59,17 @@ public class Controller {
 
 		this.gameState = GameState.MainMenu;
 		this.view = new View(playerModel, backgroundModels, this, interactableModels);
-		this.view.setContentPane(activeGameState.activeGameStatePanel);
+		this.view.setContentPane(menuGameState.menuPanel);
 	}
 
 	/**
 	 * Tick.
 	 */
 	public void tick(){
-		if(gameState.equals(GameState.MainMenu))
-		{
-			
+		if (gameState.equals(GameState.MainMenu)) {
+			this.menuGameState.onTick();
 		}
+		
 		if (gameState.equals(GameState.Active)) {
 			this.activeGameState.onTick();
 		}

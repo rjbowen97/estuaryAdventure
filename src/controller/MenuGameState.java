@@ -2,7 +2,7 @@ package controller;
 
 import views.MenuPanel;
 
-public class MenuGameState  {
+public class MenuGameState implements GameStateInterface {
 	public Controller controller;
 	public MenuPanel menuPanel;
 
@@ -13,5 +13,6 @@ public class MenuGameState  {
 	}
 	public void onTick()
 	{
+		
 	}
 }

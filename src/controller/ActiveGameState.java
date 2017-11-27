@@ -12,7 +12,7 @@ import views.ActiveGameStatePanel;
 /**
  * The Class ActiveGameState.
  */
-public class ActiveGameState {
+public class ActiveGameState implements GameStateInterface {
 	
 	/** The controller. */
 	public Controller controller;
