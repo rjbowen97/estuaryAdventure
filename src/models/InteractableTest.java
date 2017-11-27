@@ -8,15 +8,19 @@ import org.junit.Test;
 
 import controller.Settings;
 
-public class InteractableTest extends Settings{
+public class InteractableTest {
 	
-	Interactable testInteractable;
-	int activationTick, yPos;
+	private Player player;
+	private Interactable testInteractable;
+	private int activationTick, yPos;
+	private Settings set;
 
 	@Before
 	public void setUp() throws Exception {
+		set = new Settings();
 		activationTick = 0;
 		testInteractable = new Interactable(activationTick);
+		player = new LandAnimal();
 		yPos = testInteractable.getYPosition();
 	}
 
@@ -48,10 +52,11 @@ public class InteractableTest extends Settings{
 //	}
 //
 //
-//	@Test
-//	public void testOnCollisionWithPlayerModel() {
-//		fail("Not yet implemented");
-//	}
+	@Test
+	public void testOnCollisionWithPlayerModel() {
+		testInteractable.onCollisionWithPlayerModel(player);
+		assertTrue(testInteractable.isActive() == false);
+	}
 //
 
 //	@Test
