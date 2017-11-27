@@ -54,6 +54,8 @@ public class HitboxTest{
 	public void tearDown() throws Exception {
 	}
 	
+	
+	//helper func for cleaner code
 	private void setNewModelCoords(int x, int y, GameModel mod){
 		mod = new Background(x,y, 1);
 		overLapHb = new Hitbox(mod);

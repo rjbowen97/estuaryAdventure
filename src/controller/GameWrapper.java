@@ -25,6 +25,7 @@ public class GameWrapper {
 		ImageScaler imageScaler = new ImageScaler();
 		
 		Player playerModel = new LandAnimal();
+		
 		ArrayList<Background> backgroundModels = new ArrayList<Background>(generateBackgroundModels());
 		ArrayList<Interactable> interactableModels = new ArrayList<Interactable>(generateInteractableModels());
 		
