@@ -173,5 +173,4 @@ public class Settings {
 	public static String getScoreFileName() {
 		return globalSettings.getProperty("scoreFileName");
 	}
-	
 }
