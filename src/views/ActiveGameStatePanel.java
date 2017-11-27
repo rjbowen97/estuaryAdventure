@@ -2,10 +2,20 @@ package views;
 
 import java.util.ArrayList;
 
+import javax.swing.BoxLayout;
+import javax.swing.JButton;
 import javax.swing.JLayeredPane;
+import javax.swing.JPanel;
+import javax.swing.JTextPane;
+import javax.swing.Popup;
 
 import controller.Controller;
 import controller.Settings;
+import javafx.scene.Scene;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import models.Background;
 import models.Interactable;
 import models.Player;
@@ -37,6 +47,7 @@ public class ActiveGameStatePanel extends JLayeredPane {
 	 * @param interactableModels the interactable models
 	 */
 	public ActiveGameStatePanel(Player playerModel, ArrayList<Background> backgroundModels, Controller controller, ArrayList<Interactable> interactableModels) {
+
 		this.backgroundLayeredPane = new BackgroundLayeredPane(backgroundModels);
 		this.playerComponent = new PlayerComponent(playerModel, controller);
 		this.interactableComponent = new InteractableComponent(interactableModels);
@@ -49,5 +60,7 @@ public class ActiveGameStatePanel extends JLayeredPane {
 		
 		this.setBounds(0,0,Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault());
 		this.setVisible(true);
+		
+		
 	}
 }

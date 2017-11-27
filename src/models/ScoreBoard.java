@@ -3,6 +3,8 @@ package models;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import javax.swing.JButton;
+
 import views.ScoreBoardPanel;
 
 // TODO: Auto-generated Javadoc

@@ -7,11 +7,24 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ScoreBoardManager.
+ */
 public class ScoreBoardManager {
 
+	/**
+	 * Instantiates a new score board manager.
+	 */
 	public ScoreBoardManager() {
 	}
 
+	/**
+	 * Load score board.
+	 *
+	 * @param fileName the file name
+	 * @return the score board
+	 */
 	public static ScoreBoard loadScoreBoard(String fileName){
 		
 		ScoreBoard loadedScoreBoard = new ScoreBoard();
@@ -32,6 +45,12 @@ public class ScoreBoardManager {
 		return loadedScoreBoard;
 	}
 	
+	/**
+	 * Save scoreboard.
+	 *
+	 * @param scoreBoard the score board
+	 * @param fileName the file name
+	 */
 	public static void saveScoreboard(ScoreBoard scoreBoard, String fileName){
 		
 		ObjectOutputStream outputObjectStream;

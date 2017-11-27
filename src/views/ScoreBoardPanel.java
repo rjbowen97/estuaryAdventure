@@ -33,7 +33,7 @@ public class ScoreBoardPanel extends JPanel {
 		this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 		
 		for (ScoreBoardEntry scoreBoardEntry : scoreBoard.scoreBoardEntries) {
-			this.scoreBoardEntryLabels.add(new JLabel(scoreBoardEntry.name + " " + scoreBoardEntry.score));	
+			this.scoreBoardEntryLabels.add(new JLabel("UserName: " + scoreBoardEntry.name + " Score: " + scoreBoardEntry.score));	
 		}
 		
 		for (JLabel jLabel : scoreBoardEntryLabels) {
