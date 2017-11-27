@@ -6,7 +6,7 @@ package controller;
  */
 public enum GameState {
 
-	MainMenu,
+	Menu,
 	
 	/** The Active. */
 	Active,

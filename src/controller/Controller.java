@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import models.Background;
 import models.Interactable;
+import models.Menu;
 import models.Player;
 import models.ScoreBoard;
 import models.ScoreBoardManager;
@@ -46,8 +47,8 @@ public class Controller {
 	 * @param backgroundModels the background models
 	 * @param scoreBoard the score board
 	 */
-	public Controller(Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels, ScoreBoard scoreBoard) {
-		this.menuGameState = new MenuGameState(this);
+	public Controller(Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels, ScoreBoard scoreBoard, Menu menuModel) {
+		this.menuGameState = new MenuGameState(menuModel, this);
 		this.activeGameState = new ActiveGameState(this, playerModel, interactableModels, backgroundModels);
 		this.miniGameGameState = new MiniGameGameState(this);
 		
@@ -57,7 +58,7 @@ public class Controller {
 		this.gameOverGameState = new GameOverGameState(this);
 		
 
-		this.gameState = GameState.MainMenu;
+		this.gameState = GameState.Menu;
 		this.view = new View(playerModel, backgroundModels, this, interactableModels);
 		this.view.setContentPane(menuGameState.menuPanel);
 	}
@@ -66,7 +67,7 @@ public class Controller {
 	 * Tick.
 	 */
 	public void tick(){
-		if (gameState.equals(GameState.MainMenu)) {
+		if (gameState.equals(GameState.Menu)) {
 			this.menuGameState.onTick();
 		}
 		
