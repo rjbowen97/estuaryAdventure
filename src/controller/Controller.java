@@ -12,18 +12,42 @@ import views.MenuPanel;
 import views.ScoreBoardPanel;
 import views.View;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Controller.
+ */
 public class Controller {
+
 	public MenuState menuState;
+
+
+	/** The active game state. */
 	public ActiveGameState activeGameState;
+	
+	/** The mini game game state. */
 	public MiniGameGameState miniGameGameState;
+	
+	/** The game over game state. */
 	public GameOverGameState gameOverGameState;
+	
+	/** The score board. */
 	public ScoreBoard scoreBoard;
 	public MenuPanel menu;
 
+	/** The view. */
 	public View view;
 
+	/** The game state. */
 	private GameState gameState;
 
+	/**
+	 * Instantiates a new controller.
+	 *
+	 * @param playerModel the player model
+	 * @param interactableModels the interactable models
+	 * @param backgroundModels the background models
+	 * @param scoreBoard the score board
+	 */
 	public Controller(Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels, ScoreBoard scoreBoard) {
 		this.menuState = new MenuState(this);
 		this.activeGameState = new ActiveGameState(this, playerModel, interactableModels, backgroundModels);
@@ -40,6 +64,9 @@ public class Controller {
 		this.view.setContentPane(activeGameState.activeGameStatePanel);
 	}
 
+	/**
+	 * Tick.
+	 */
 	public void tick(){
 		if(gameState.equals(GameState.MainMenu))
 		{
@@ -60,11 +87,19 @@ public class Controller {
 
 	}
 
+	/**
+	 * Change game state from active to minigame.
+	 */
 	public void changeGameStateFromActiveToMinigame() {
 		this.view.setContentPane(miniGameGameState.miniGameGameStatePanel);
 		this.gameState = GameState.MiniGame;
 	}
 
+	/**
+	 * Change game state from mini game to active.
+	 *
+	 * @param correctAnswerCount the correct answer count
+	 */
 	public void changeGameStateFromMiniGameToActive(int correctAnswerCount) {
 		if (correctAnswerCount > 0) {
 			activeGameState.playerModel.onMiniGameEnd(correctAnswerCount);
@@ -78,9 +113,12 @@ public class Controller {
 		
 	}
 
+	/**
+	 * Change game state from active to game over.
+	 */
 	public void changeGameStateFromActiveToGameOver() {
 		scoreBoard.addNewScore(activeGameState.playerModel);
-		ScoreBoardManager.saveScoreboard(scoreBoard);
+		ScoreBoardManager.saveScoreboard(scoreBoard,Settings.getScoreFileName());
 		
 		this.view.setContentPane(gameOverGameState.gameOverGameStatePanel);
 		this.view.setContentPane(scoreBoard.scoreBoardPanel);

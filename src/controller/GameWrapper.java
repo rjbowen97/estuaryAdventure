@@ -11,15 +11,28 @@ import models.ScoreBoard;
 import models.ScoreBoardManager;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class GameWrapper.
+ */
 public class GameWrapper {
 	
+	/** The controller. */
 	private static Controller controller;
 	
+	/**
+	 * The main method.
+	 *
+	 * @param args the arguments
+	 */
 	public static void main(String[] args) {
 		setUpGame();
 		startGame();
 	}
 	
+	/**
+	 * Sets the up game.
+	 */
 	private static void setUpGame() {
 		Settings settings = new Settings();
 		ImageScaler imageScaler = new ImageScaler();
@@ -28,11 +41,14 @@ public class GameWrapper {
 		ArrayList<Background> backgroundModels = new ArrayList<Background>(generateBackgroundModels());
 		ArrayList<Interactable> interactableModels = new ArrayList<Interactable>(generateInteractableModels());
 		
-		ScoreBoard scoreBoard = ScoreBoardManager.loadScoreBoard();
+		ScoreBoard scoreBoard = ScoreBoardManager.loadScoreBoard(settings.getScoreFileName());
 		
 		controller = new Controller(playerModel, interactableModels, backgroundModels, scoreBoard);
 	}
 	
+	/**
+	 * Start game.
+	 */
 	private static void startGame() {
 		while (true) {
 			try {
@@ -44,6 +60,11 @@ public class GameWrapper {
 		}
 	}
 	
+	/**
+	 * Generate background models.
+	 *
+	 * @return the array list
+	 */
 	private static ArrayList<Background> generateBackgroundModels() {
 		ArrayList<Background> backgroundModels = new ArrayList<Background>();
     	for (int backgroundImageFileIndex = 0; backgroundImageFileIndex < Settings.getNumberOfBackgroundLayers(); backgroundImageFileIndex++) {
@@ -52,6 +73,11 @@ public class GameWrapper {
     	return backgroundModels;
 	}
 	
+	/**
+	 * Generate interactable models.
+	 *
+	 * @return the array list
+	 */
 	private static ArrayList<Interactable> generateInteractableModels() {
 		ArrayList<Interactable> interactableModels = new ArrayList<Interactable>();
 		

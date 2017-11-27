@@ -7,17 +7,30 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ScoreBoardManager.
+ */
 public class ScoreBoardManager {
 
+	/**
+	 * Instantiates a new score board manager.
+	 */
 	public ScoreBoardManager() {
 	}
 
-	public static ScoreBoard loadScoreBoard(){
+	/**
+	 * Load score board.
+	 *
+	 * @param fileName the file name
+	 * @return the score board
+	 */
+	public static ScoreBoard loadScoreBoard(String fileName){
 		
 		ScoreBoard loadedScoreBoard = new ScoreBoard();
 		
 		try {
-			ObjectInputStream input = new ObjectInputStream(new FileInputStream("scores.txt"));
+			ObjectInputStream input = new ObjectInputStream(new FileInputStream(fileName));
 			loadedScoreBoard = (ScoreBoard) input.readObject();
 			input.close();
 			
@@ -32,12 +45,18 @@ public class ScoreBoardManager {
 		return loadedScoreBoard;
 	}
 	
-	public static void saveScoreboard(ScoreBoard scoreBoard){
+	/**
+	 * Save scoreboard.
+	 *
+	 * @param scoreBoard the score board
+	 * @param fileName the file name
+	 */
+	public static void saveScoreboard(ScoreBoard scoreBoard, String fileName){
 		
 		ObjectOutputStream outputObjectStream;
 		
 		try {
-			outputObjectStream = new ObjectOutputStream(new FileOutputStream("scores.txt"));
+			outputObjectStream = new ObjectOutputStream(new FileOutputStream(fileName));
 			outputObjectStream.writeObject(scoreBoard);
 			outputObjectStream.close();
 			

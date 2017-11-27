@@ -9,14 +9,29 @@ import javax.imageio.ImageIO;
 
 import controller.Settings;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Interactable.
+ */
 public class Interactable extends GameModel {
 
+	/** The is food. */
 	private boolean isFood;	
+	
+	/** The activation tick. */
 	private int activationTick;
+	
+	/** The is active. */
 	private boolean isActive = false;
 	
+	/** The random. */
 	private Random random = new Random();
 	
+	/**
+	 * Instantiates a new interactable.
+	 *
+	 * @param activationTick the activation tick
+	 */
 	public Interactable(int activationTick) {
 		this.setxPosition(Settings.getInteractableStartXPosition());
 		this.setyPosition(random.nextInt(Settings.getViewDimensionYDefault() - 100)); // -100 because this is the spriteImage height for interactables
@@ -27,6 +42,9 @@ public class Interactable extends GameModel {
 		this.setHitbox();
 	}
 	
+	/* (non-Javadoc)
+	 * @see models.GameModel#setSpriteImage()
+	 */
 	@Override
 	protected void setSpriteImage() {
 		
@@ -62,41 +80,76 @@ public class Interactable extends GameModel {
 		}
 	}
 	
+	/**
+	 * On collision with player model.
+	 *
+	 * @param playerModel the player model
+	 */
 	public void onCollisionWithPlayerModel(Player playerModel) {
 		this.deactivate();
 	}
 	
+	/**
+	 * Deactivate.
+	 */
 	private void deactivate() {
 		this.isActive = false;
 	}
 	
+	/**
+	 * Activate.
+	 */
 	public void activate() {
 		this.isActive = true;
 	}
 	
+	/**
+	 * Checks if is food.
+	 *
+	 * @return true, if is food
+	 */
 	public boolean isFood() {
 		return isFood;
 	}
 	
+	/**
+	 * Checks if is active.
+	 *
+	 * @return true, if is active
+	 */
 	public boolean isActive() {
 		return this.isActive;
 	}
 	
+	/**
+	 * Gets the activation tick.
+	 *
+	 * @return the activation tick
+	 */
 	public int getActivationTick() {
 		return this.activationTick;
 	}
 	
+	/* (non-Javadoc)
+	 * @see models.GameModel#setHitbox()
+	 */
 	@Override
 	protected void setHitbox() {
 		this.setHitbox(new Hitbox(this));
 	}
 
+	/* (non-Javadoc)
+	 * @see models.GameModel#updateHitbox()
+	 */
 	@Override
 	protected void updateHitbox() {
 		this.getHitbox().update();
 		
 	}
 	
+	/* (non-Javadoc)
+	 * @see models.GameModel#onTick()
+	 */
 	@Override
 	public void onTick() {
 		int newXPosition = this.getXPosition() - this.getSpeed();
@@ -104,6 +157,9 @@ public class Interactable extends GameModel {
 		this.updateHitbox();
 	}
 
+	/* (non-Javadoc)
+	 * @see models.GameModel#reset()
+	 */
 	@Override
 	public void reset() {
 	}

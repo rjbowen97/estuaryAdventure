@@ -4,13 +4,23 @@ import java.awt.event.MouseEvent;
 
 import controller.Settings;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class LandAnimal.
+ */
 public class LandAnimal extends Player {
 	
+	/* (non-Javadoc)
+	 * @see models.Player#onTick()
+	 */
 	@Override
 	public void onTick() {
 		super.onTick();
 	}
 	
+	/* (non-Javadoc)
+	 * @see models.Player#onMouseReleased(java.awt.event.MouseEvent)
+	 */
 	@Override
 	public void onMouseReleased(MouseEvent mouseEvent) {
 		if (mouseEvent.getY() > this.getYPosition()) {
