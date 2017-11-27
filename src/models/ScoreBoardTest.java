@@ -4,12 +4,22 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ScoreBoardTest.
+ */
 public class ScoreBoardTest {
 
+	/**
+	 * Instantiates a new score board test.
+	 */
 	public ScoreBoardTest() {
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * Test add new score.
+	 */
 	@Test
 	public void testAddNewScore() {
 		//create a new scoreBoard

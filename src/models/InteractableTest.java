@@ -8,22 +8,50 @@ import org.junit.Test;
 
 import controller.Settings;
 
-public class InteractableTest extends Settings{
+// TODO: Auto-generated Javadoc
+/**
+ * The Class InteractableTest.
+ */
+public class InteractableTest {
 	
-	Interactable testInteractable;
-	int activationTick, yPos;
+	/** The player. */
+	private Player player;
+	
+	/** The test interactable. */
+	private Interactable testInteractable;
+	
+	/** The y pos. */
+	private int activationTick, yPos;
+	
+	/** The set. */
+	private Settings set;
 
+	/**
+	 * Sets the up.
+	 *
+	 * @throws Exception the exception
+	 */
 	@Before
 	public void setUp() throws Exception {
+		set = new Settings();
 		activationTick = 0;
 		testInteractable = new Interactable(activationTick);
+		player = new LandAnimal();
 		yPos = testInteractable.getYPosition();
 	}
 
+	/**
+	 * Tear down.
+	 *
+	 * @throws Exception the exception
+	 */
 	@After
 	public void tearDown() throws Exception {
 	}
 
+	/**
+	 * Test interactable.
+	 */
 	@Test
 	public void testInteractable() {
 		assertTrue(testInteractable.getSpeed() == Settings.getInteractableSpeed());
@@ -35,6 +63,9 @@ public class InteractableTest extends Settings{
 		assertTrue(testInteractable.isActive());
 	}
 
+	/**
+	 * Test on tick.
+	 */
 	@Test
 	public void testOnTick() {
 		int newX = Settings.getInteractableStartXPosition() - testInteractable.getSpeed();
@@ -47,11 +78,15 @@ public class InteractableTest extends Settings{
 //		fail("Not yet implemented");
 //	}
 //
+/**
+ * Test on collision with player model.
+ */
 //
-//	@Test
-//	public void testOnCollisionWithPlayerModel() {
-//		fail("Not yet implemented");
-//	}
+	@Test
+	public void testOnCollisionWithPlayerModel() {
+		testInteractable.onCollisionWithPlayerModel(player);
+		assertTrue(testInteractable.isActive() == false);
+	}
 //
 
 //	@Test
