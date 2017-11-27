@@ -17,7 +17,7 @@ public class GameWrapper {
 	
 	public static void main(String[] args) {
 		setUpGame();
-		startGame();
+		startGame(); 
 	}
 	
 	private static void setUpGame() {

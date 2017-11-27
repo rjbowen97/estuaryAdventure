@@ -43,7 +43,7 @@ public class Controller {
 			this.activeGameState.onTick();
 		}
 
-		if (gameState.equals(GameState.MiniGame)) {
+		else if (gameState.equals(GameState.MiniGame)) {
 			this.miniGameGameState.onTick();
 		}
 

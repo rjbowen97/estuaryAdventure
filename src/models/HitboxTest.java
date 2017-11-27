@@ -37,6 +37,8 @@ public class HitboxTest{
 		assertTrue(hitbox.topRightCorner.y == orig_y);
 		assertTrue(hitbox.bottomRightCorner.y == orig_y + model.getSpriteImage().getHeight());
 		hitbox.update();
+		
+		//assert values havent changed
 		assertTrue(hitbox.topLeftCorner.x == orig_x);
 		assertTrue(hitbox.bottomLeftCorner.x == orig_x);
 		assertTrue(hitbox.topRightCorner.x == orig_x + model.getSpriteImage().getWidth());

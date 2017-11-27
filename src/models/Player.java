@@ -17,7 +17,7 @@ public abstract class Player extends GameModel {
 	private int scoreStreak = 0;
 
 	public Player() {
-
+ 
 		this.setxPosition(Settings.getPlayerStartXPosition());
 		this.setyPosition(Settings.getPlayerStartYPosition());
 		this.setSpriteImage();
