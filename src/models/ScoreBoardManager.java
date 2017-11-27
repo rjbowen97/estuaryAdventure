@@ -20,8 +20,8 @@ public class ScoreBoardManager {
 	}
 
 	/**
-	 * Load score board.
-	 *
+	 * takes in the filename as a parameter. Creates a new score board, inputs, and reads
+	 * 
 	 * @param fileName the file name
 	 * @return the score board
 	 */
@@ -46,8 +46,8 @@ public class ScoreBoardManager {
 	}
 	
 	/**
-	 * Save scoreboard.
-	 *
+	 * Saves the current score board, taking in the filename to hold it and the score board itself
+	 * writes to the file
 	 * @param scoreBoard the score board
 	 * @param fileName the file name
 	 */
