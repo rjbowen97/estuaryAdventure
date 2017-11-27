@@ -11,8 +11,17 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class QuestionAndAnswerPairsReader.
+ */
 public class QuestionAndAnswerPairsReader {
 	
+	/**
+	 * Gets the question and answer pairs.
+	 *
+	 * @return the question and answer pairs
+	 */
 	public ArrayList<QuestionAndAnswerPair> getQuestionAndAnswerPairs() {
 		
 		
@@ -37,6 +46,11 @@ public class QuestionAndAnswerPairsReader {
 		return questionAndAnswerPairs;
 	}
 	
+	/**
+	 * Gets the question and answer pairs document from XML.
+	 *
+	 * @return the question and answer pairs document from XML
+	 */
 	public Document getQuestionAndAnswerPairsDocumentFromXML() {
 		try {
 

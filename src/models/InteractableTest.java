@@ -8,13 +8,29 @@ import org.junit.Test;
 
 import controller.Settings;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class InteractableTest.
+ */
 public class InteractableTest {
 	
+	/** The player. */
 	private Player player;
+	
+	/** The test interactable. */
 	private Interactable testInteractable;
+	
+	/** The y pos. */
 	private int activationTick, yPos;
+	
+	/** The set. */
 	private Settings set;
 
+	/**
+	 * Sets the up.
+	 *
+	 * @throws Exception the exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 		set = new Settings();
@@ -24,10 +40,18 @@ public class InteractableTest {
 		yPos = testInteractable.getYPosition();
 	}
 
+	/**
+	 * Tear down.
+	 *
+	 * @throws Exception the exception
+	 */
 	@After
 	public void tearDown() throws Exception {
 	}
 
+	/**
+	 * Test interactable.
+	 */
 	@Test
 	public void testInteractable() {
 		assertTrue(testInteractable.getSpeed() == Settings.getInteractableSpeed());
@@ -39,6 +63,9 @@ public class InteractableTest {
 		assertTrue(testInteractable.isActive());
 	}
 
+	/**
+	 * Test on tick.
+	 */
 	@Test
 	public void testOnTick() {
 		int newX = Settings.getInteractableStartXPosition() - testInteractable.getSpeed();
@@ -51,6 +78,9 @@ public class InteractableTest {
 //		fail("Not yet implemented");
 //	}
 //
+/**
+ * Test on collision with player model.
+ */
 //
 	@Test
 	public void testOnCollisionWithPlayerModel() {

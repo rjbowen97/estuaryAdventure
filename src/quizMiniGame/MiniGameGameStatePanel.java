@@ -12,18 +12,39 @@ import javax.swing.JPanel;
 import controller.Controller;
 import controller.Settings;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class MiniGameGameStatePanel.
+ */
 public class MiniGameGameStatePanel extends JPanel implements ActionListener {
 
+	/** The mini game. */
 	MiniGame miniGame;
+	
+	/** The controller. */
 	Controller controller;
 
+	/** The question label. */
 	JLabel questionLabel;
+	
+	/** The answer A button. */
 	JButton answerAButton;
+	
+	/** The answer B button. */
 	JButton answerBButton;
+	
+	/** The answer C button. */
 	JButton answerCButton;
 
+	/** The correct answer count label. */
 	JLabel correctAnswerCountLabel;
 	
+	/**
+	 * Instantiates a new mini game game state panel.
+	 *
+	 * @param miniGame the mini game
+	 * @param controller the controller
+	 */
 	public MiniGameGameStatePanel(MiniGame miniGame, Controller controller) {
 		
 		this.miniGame = miniGame;
@@ -57,6 +78,9 @@ public class MiniGameGameStatePanel extends JPanel implements ActionListener {
 		this.setVisible(true);
 	}
 	
+	/* (non-Javadoc)
+	 * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
+	 */
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
@@ -67,6 +91,9 @@ public class MiniGameGameStatePanel extends JPanel implements ActionListener {
 		answerCButton.setText(miniGame.getCurrentQuestionAndAnswerPair().answerC);
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand().equals("answerA")) {

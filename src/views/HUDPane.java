@@ -8,16 +8,33 @@ import javax.swing.JPanel;
 import controller.Settings;
 import models.Player;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class HUDPane.
+ */
 public class HUDPane extends JPanel{
 	
+	/** The player model. */
 	private Player playerModel;
 	
+	/** The health label. */
 	private JLabel healthLabel;
+	
+	/** The score label. */
 	private JLabel scoreLabel;
+	
+	/** The score streak label. */
 	private JLabel scoreStreakLabel;
+	
+	/** The powered up label. */
 	private JLabel poweredUpLabel;
 	
 	
+	/**
+	 * Instantiates a new HUD pane.
+	 *
+	 * @param playerModel the player model
+	 */
 	public HUDPane(Player playerModel) {
 		this.playerModel = playerModel;
 				
@@ -38,6 +55,9 @@ public class HUDPane extends JPanel{
 		this.setOpaque(false);
 	}
 	
+	/* (non-Javadoc)
+	 * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
+	 */
 	@Override
 	public void paintComponent(Graphics g) {
 		this.healthLabel.setText("HEALTH: " + this.playerModel.getHealth());

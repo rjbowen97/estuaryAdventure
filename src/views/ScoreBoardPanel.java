@@ -10,11 +10,23 @@ import controller.Settings;
 import models.ScoreBoard;
 import models.ScoreBoardEntry;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ScoreBoardPanel.
+ */
 public class ScoreBoardPanel extends JPanel {
 	
+	/** The score board. */
 	ScoreBoard scoreBoard;
+	
+	/** The score board entry labels. */
 	ArrayList<JLabel> scoreBoardEntryLabels = new ArrayList<JLabel>();
 	
+	/**
+	 * Instantiates a new score board panel.
+	 *
+	 * @param scoreBoard the score board
+	 */
 	public ScoreBoardPanel(ScoreBoard scoreBoard) {
 		this.scoreBoard = scoreBoard;
 		

@@ -8,13 +8,29 @@ import org.junit.Test;
 
 import controller.Settings;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class PlayerTest.
+ */
 public class PlayerTest {
 	
+	/** The player. */
 	private LandAnimal player;
+	
+	/** The compare player. */
 	private LandAnimal comparePlayer;
+	
+	/** The inter 2. */
 	private Interactable inter, inter2;
+	
+	/** The set. */
 	Settings set;
 
+	/**
+	 * Sets the up.
+	 *
+	 * @throws Exception the exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 		set = new Settings();
@@ -23,15 +39,26 @@ public class PlayerTest {
 		inter = new Interactable(0);
 	}
 
+	/**
+	 * Tear down.
+	 *
+	 * @throws Exception the exception
+	 */
 	@After
 	public void tearDown() throws Exception {
 	}
 
+	/**
+	 * Test player.
+	 */
 	@Test
 	public void testPlayer() {
 		assertTrue(player.getHealth() == comparePlayer.getHealth());
 	}
 
+	/**
+	 * Test on mini game end.
+	 */
 	@Test
 	public void testOnMiniGameEnd() {
 		player.onMiniGameEnd(10);
@@ -40,6 +67,9 @@ public class PlayerTest {
 		assertTrue(player.getScore() == 20);
 	}
 
+	/**
+	 * Test reset score streak.
+	 */
 	@Test
 	public void testResetScoreStreak() {
 		assertTrue(comparePlayer.getScoreStreak() == 0);
@@ -53,6 +83,9 @@ public class PlayerTest {
 		//assertTrue(comparePlayer.getScoreStreak() == 1);
 	}
 
+	/**
+	 * Test on collision with interactable model.
+	 */
 	@Test
 	public void testOnCollisionWithInteractableModel() {
 		while(!inter.isFood())
