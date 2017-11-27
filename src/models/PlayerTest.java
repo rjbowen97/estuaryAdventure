@@ -55,7 +55,7 @@ public class PlayerTest {
 
 	@Test
 	public void testOnCollisionWithInteractableModel() {
-		while(inter.isFood())
+		while(!inter.isFood())
 			inter = new Interactable(0);
 		player.onCollisionWithInteractableModel(inter);
 		assertTrue(player.getScore() == 1);
