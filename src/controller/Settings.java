@@ -1,4 +1,4 @@
-	package controller;
+package controller;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -87,5 +87,4 @@ public class Settings {
 	public static String getScoreFileName(){
 		return globalSettings.getProperty("scoreFileName");
 	}
-	
 }

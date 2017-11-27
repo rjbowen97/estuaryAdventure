@@ -18,4 +18,37 @@
 		<correctAnswer>C</correctAnswer>
 	</QuestionAndAnswer>
 
+	<QuestionAndAnswer ID="2">
+		<Question>Are Estuaries Dynamic Ecosystems?</Question>
+		<answerA>True</answerA>
+		<answerB>False</answerB>
+		<answerC></answerC>
+		<correctAnswer>A</correctAnswer>
+	</QuestionAndAnswer>
+	
+	<QuestionAndAnswer ID="3">
+		<Question>Estuaries' water runs from fresh to mixed to salt</Question>
+		<answerA>True</answerA>
+		<answerB>False</answerB>
+		<answerC></answerC>
+		<correctAnswer>A</correctAnswer>
+	</QuestionAndAnswer>
+	
+	<QuestionAndAnswer ID="4">
+		<Question>Horseshoe Crabs live in Estuaries</Question>
+		<answerA>True</answerA>
+		<answerB>False</answerB>
+		<answerC></answerC>
+		<correctAnswer>A</correctAnswer>
+	</QuestionAndAnswer>
+	
+	<QuestionAndAnswer ID="5">
+		<Question>Batman defensds Estuary for a hobby</Question>
+		<answerA>True</answerA>
+		<answerB>False</answerB>
+		<answerC></answerC>
+		<correctAnswer>B</correctAnswer>
+	</QuestionAndAnswer>
+
+
 </QuestionsAndAnswers>

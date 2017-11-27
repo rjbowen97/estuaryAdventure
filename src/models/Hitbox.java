@@ -26,13 +26,13 @@ public class Hitbox {
 	}
 
 	public boolean isOverlapping(Hitbox otherHitbox) {
-		if (!this.topLeftCorner.isAbove(otherHitbox.topLeftCorner)
+		
+	if (!this.topLeftCorner.isAbove(otherHitbox.topLeftCorner)
 				&& (this.topLeftCorner.isAbove(otherHitbox.bottomLeftCorner))
 				&& this.topLeftCorner.isToTheRightOf(otherHitbox.topLeftCorner)
 				&& !this.topLeftCorner.isToTheRightOf(otherHitbox.topRightCorner)) {
-
-			return true;
-		}
+		return true;
+	}
 
 		if (!this.topRightCorner.isAbove(otherHitbox.topLeftCorner)
 				&& (this.topRightCorner.isAbove(otherHitbox.bottomLeftCorner))
@@ -64,7 +64,6 @@ public class Hitbox {
 				&& (otherHitbox.topLeftCorner.isAbove(this.bottomLeftCorner))
 				&& otherHitbox.topLeftCorner.isToTheRightOf(this.topLeftCorner)
 				&& !otherHitbox.topLeftCorner.isToTheRightOf(this.topRightCorner)) {
-
 			return true;
 		}
 
@@ -72,7 +71,6 @@ public class Hitbox {
 				&& (otherHitbox.topRightCorner.isAbove(this.bottomLeftCorner))
 				&& otherHitbox.topRightCorner.isToTheRightOf(this.topLeftCorner)
 				&& !otherHitbox.topRightCorner.isToTheRightOf(this.topRightCorner)) {
-
 			return true;
 		}
 
@@ -80,7 +78,6 @@ public class Hitbox {
 				&& (otherHitbox.bottomLeftCorner.isAbove(this.bottomLeftCorner))
 				&& otherHitbox.bottomLeftCorner.isToTheRightOf(this.topLeftCorner)
 				&& !otherHitbox.bottomLeftCorner.isToTheRightOf(this.topRightCorner)) {
-
 			return true;
 		}
 
@@ -88,7 +85,6 @@ public class Hitbox {
 				&& (otherHitbox.bottomRightCorner.isAbove(this.bottomLeftCorner))
 				&& otherHitbox.bottomRightCorner.isToTheRightOf(this.topLeftCorner)
 				&& !otherHitbox.bottomRightCorner.isToTheRightOf(this.topRightCorner)) {
-
 			return true;
 		}
 
@@ -100,6 +96,10 @@ public class Hitbox {
 		public int x;
 		public int y;
 
+		public String toString(){
+			return "X: " + this.x + "\nY: " + this.y;
+		}
+		
 		public Point(int x, int y) {
 			this.x = x;
 			this.y = y;
