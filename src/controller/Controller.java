@@ -18,7 +18,7 @@ import views.View;
  */
 public class Controller {
 
-	public MenuState menuState;
+	public MenuGameState menuGameState;
 
 
 	/** The active game state. */
@@ -49,7 +49,7 @@ public class Controller {
 	 * @param scoreBoard the score board
 	 */
 	public Controller(Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels, ScoreBoard scoreBoard) {
-		this.menuState = new MenuState(this);
+		this.menuGameState = new MenuGameState(this);
 		this.activeGameState = new ActiveGameState(this, playerModel, interactableModels, backgroundModels);
 		this.miniGameGameState = new MiniGameGameState(this);
 		

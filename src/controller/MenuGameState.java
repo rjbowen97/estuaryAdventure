@@ -2,11 +2,11 @@ package controller;
 
 import views.MenuPanel;
 
-public class MenuState  {
+public class MenuGameState  {
 	public Controller controller;
 	public MenuPanel menuPanel;
 
-	public MenuState(Controller controller)
+	public MenuGameState(Controller controller)
 	{
 		this.controller = controller;
 		this.menuPanel = new MenuPanel(controller, this);

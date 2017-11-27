@@ -9,7 +9,7 @@ import java.awt.Rectangle;
 import javax.swing.JPanel;
 
 import controller.Controller;
-import controller.MenuState;
+import controller.MenuGameState;
 import controller.Settings;
 
 public class MenuPanel extends JPanel  {
@@ -17,11 +17,11 @@ public class MenuPanel extends JPanel  {
 	public Rectangle playButton = new Rectangle(Settings.getViewDimensionXDefault()/2, 300, 150, 75);
 	public Rectangle quitButton = new Rectangle(Settings.getViewDimensionXDefault()/2, 600, 150, 75);
 	private Controller controller;
-	private MenuState menuState;
+	private MenuGameState menuGameState;
 		
-	public MenuPanel(Controller controller, MenuState menuState) {
+	public MenuPanel(Controller controller, MenuGameState menuGameState) {
 		this.controller = controller;
-		this.menuState = menuState;
+		this.menuGameState = menuGameState;
 		this.setBounds(0, 0, Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault());
 		this.setVisible(true);
 	}
