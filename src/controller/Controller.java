@@ -1,6 +1,11 @@
 package controller;
 
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import models.Background;
@@ -13,7 +18,7 @@ import views.MenuPanel;
 import views.ScoreBoardPanel;
 import views.View;
 
-public class Controller {
+public class Controller implements Serializable {
 
 	public MenuGameState menuGameState;
 
@@ -28,6 +33,21 @@ public class Controller {
 	public View view;
 
 	private GameState gameState;
+	
+	public void saveCurrentControllerState() {
+		try {
+			FileOutputStream fileOutputStream = new FileOutputStream("/tmp/controller.ser");
+			ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+			objectOutputStream.writeObject(this);
+			objectOutputStream.close();
+			fileOutputStream.close();
+			System.out.println("Controller successfully saved to file!");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
 
 	/**
 	 * Instantiates a new controller.
