@@ -7,7 +7,7 @@ import quizMiniGame.MiniGameGameStatePanel;
 /**
  * The Class MiniGameGameState.
  */
-public class MiniGameGameState implements GameStateInterface{
+public class MiniGameGameState implements GameStateInterface {
 
 	/** The controller. */
 	public Controller controller;

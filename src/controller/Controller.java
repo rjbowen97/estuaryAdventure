@@ -82,8 +82,13 @@ public class Controller {
 		else { //gameOver
 			this.gameOverGameState.onTick();
 		}
+		
 		this.view.repaint();
-
+	}
+	
+	public void changeGameStateFromMenuToActive() {
+		this.view.setContentPane(activeGameState.activeGameStatePanel);
+		this.gameState = GameState.Active;
 	}
 
 	/**

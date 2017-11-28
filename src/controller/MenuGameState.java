@@ -16,6 +16,6 @@ public class MenuGameState implements GameStateInterface {
 	}
 	public void onTick()
 	{
-		
+		menu.onTick();
 	}
 }

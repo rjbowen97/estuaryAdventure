@@ -6,6 +6,7 @@ import models.Background;
 import models.ImageScaler;
 import models.Interactable;
 import models.LandAnimal;
+import models.Menu;
 import models.Player;
 import models.ScoreBoard;
 import models.ScoreBoardManager;
@@ -37,13 +38,14 @@ public class GameWrapper {
 		Settings settings = new Settings();
 		ImageScaler imageScaler = new ImageScaler();
 		
+		Menu menuModel = new Menu();
 		Player playerModel = new LandAnimal();
 		ArrayList<Background> backgroundModels = new ArrayList<Background>(generateBackgroundModels());
 		ArrayList<Interactable> interactableModels = new ArrayList<Interactable>(generateInteractableModels());
 		
 		ScoreBoard scoreBoard = ScoreBoardManager.loadScoreBoard(settings.getScoreFileName());
 		
-		controller = new Controller(playerModel, interactableModels, backgroundModels, scoreBoard);
+		controller = new Controller(playerModel, interactableModels, backgroundModels, scoreBoard, menuModel);
 	}
 	
 	/**
