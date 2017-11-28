@@ -58,13 +58,13 @@ public class View extends JFrame implements Serializable {
 		InputMap rootPaneInputMap = this.getRootPane().getInputMap();
 		ActionMap rootPaneActionMap = this.getRootPane().getActionMap();
 		
-		rootPaneInputMap.put(KeyStroke.getKeyStroke('m'), "activateMiniGameGameState");
-		ActivateMiniGameGameStateAction activateMiniGameGameStateAction = new ActivateMiniGameGameStateAction();
-		rootPaneActionMap.put("activateMiniGameGameState", activateMiniGameGameStateAction);
-		
 		rootPaneInputMap.put(KeyStroke.getKeyStroke('a'), "activateActiveGameState");
 		ActivateActiveGameStateAction activeGameAction = new ActivateActiveGameStateAction();
 		rootPaneActionMap.put("activateActiveGameState", activeGameAction);
+
+		rootPaneInputMap.put(KeyStroke.getKeyStroke('m'), "activateMiniGameGameState");
+		ActivateMiniGameGameStateAction activateMiniGameGameStateAction = new ActivateMiniGameGameStateAction();
+		rootPaneActionMap.put("activateMiniGameGameState", activateMiniGameGameStateAction);
 
 		rootPaneInputMap.put(KeyStroke.getKeyStroke('g'), "activateGameOverGameState");
 		ActivateGameOverGameStateAction activateGameOverGameStateAction = new ActivateGameOverGameStateAction();
@@ -83,38 +83,6 @@ public class View extends JFrame implements Serializable {
 		rootPaneActionMap.put("resetLevel", resetLevelAction);
 	}
 	
-	private class ResetLevelAction extends AbstractAction {
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			System.out.println("Resetting level");
-			controller.resetLevel();
-		}
-	}
-	
-	private class ChangeToAirLevelAction extends AbstractAction {
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			System.out.println("Changing to air level");
-			controller.changeLevels("a");
-		}
-	}
-	
-	private class ChangeToWaterLevelAction extends AbstractAction {
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			System.out.println("Changing to water");
-			controller.changeLevels("w");;
-		}
-	}
-	
-	private class ActivateMiniGameGameStateAction extends AbstractAction {
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			System.out.println("Activating MiniGameGameState");
-			controller.changeGameStateFromActiveToMinigame();
-		}
-	}
-	
 	private class ActivateActiveGameStateAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -122,12 +90,44 @@ public class View extends JFrame implements Serializable {
 			controller.changeGameStateFromMenuToActive();
 		}
 	}
-	
+
+	private class ActivateMiniGameGameStateAction extends AbstractAction {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			System.out.println("Activating MiniGameGameState");
+			controller.changeGameStateFromActiveToMinigame();
+		}
+	}
+
 	private class ActivateGameOverGameStateAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			System.out.println("Activating GameOverGameState");
 			controller.changeGameStateFromActiveToGameOver();
+		}
+	}
+
+	private class ChangeToAirLevelAction extends AbstractAction {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			System.out.println("Changing to air level");
+			controller.changeLevels("a");
+		}
+	}
+
+	private class ChangeToWaterLevelAction extends AbstractAction {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			System.out.println("Changing to water");
+			controller.changeLevels("w");;
+		}
+	}
+
+	private class ResetLevelAction extends AbstractAction {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			System.out.println("Resetting level");
+			controller.resetLevel();
 		}
 	}
 	
