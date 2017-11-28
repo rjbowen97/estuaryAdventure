@@ -17,15 +17,10 @@ import views.View;
 public class Controller implements Serializable {
 
 	public MenuGameState menuGameState;
-
 	public ActiveGameState activeGameState;
-	
 	public MiniGameGameState miniGameGameState;
-	
 	public GameOverGameState gameOverGameState;
-	
 	public ScoreBoard scoreBoard;
-
 	public View view;
 
 	private GameState gameState;
@@ -101,6 +96,12 @@ public class Controller implements Serializable {
 		this.view.setContentPane(view.menuPanel);
 	}
 	
+	/**
+	 * Changes the current level
+	 * 
+	 * @param targetLevel the level to change to
+	 */
+	
 	public void changeLevels(String targetLevel) {
 		if (targetLevel.equals("a")) {
 			this.activeGameState.playerModel.playerAnimalType = PlayerAnimalType.BIRD;
@@ -119,6 +120,10 @@ public class Controller implements Serializable {
 		}
 	}
 	
+	
+	/**
+	 * resets the current level
+	 */
 	public void resetLevel() {
 		activeGameState.playerModel.xPosition = 0;
 		activeGameState.playerModel.yPosition = 0;
