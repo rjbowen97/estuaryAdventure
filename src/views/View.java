@@ -2,26 +2,42 @@ package views;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.Serializable;
 import java.util.ArrayList;
 
+import javax.swing.AbstractAction;
+import javax.swing.ActionMap;
+import javax.swing.InputMap;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
+import javax.swing.KeyStroke;
 
 import controller.Controller;
 import controller.Settings;
 import models.Background;
 import models.Interactable;
 import models.Player;
+import quizMiniGame.MiniGameGameStatePanel;
 
 // TODO: Auto-generated Javadoc
 /**
  * The Class View.
  */
-public class View extends JFrame {
+public class View extends JFrame implements Serializable {
 
+	public ActiveGameStatePanel activeGameStatePanel;
+	public GameOverGameStatePanel gameOverGameStatePanel;
+	public MenuPanel menuPanel;
+	public MiniGameGameStatePanel miniGameGameStatePanel;
+
+	Controller controller;
+
+	public void reloadImages() {
+	}
+	
 	/**
 	 * Instantiates a new view.
 	 *
@@ -31,10 +47,64 @@ public class View extends JFrame {
 	 * @param interactableModels the interactable models
 	 */
 	public View(Player playerModel, ArrayList<Background> backgroundModels, Controller controller, ArrayList<Interactable> interactableModels) {
-
 		
+		this.activeGameStatePanel = new ActiveGameStatePanel(playerModel, backgroundModels, controller, interactableModels);
+		this.gameOverGameStatePanel = new GameOverGameStatePanel(controller);
+		this.menuPanel = new MenuPanel(controller.menuGameState.menu, controller);
+		this.miniGameGameStatePanel = new MiniGameGameStatePanel(controller.miniGameGameState.miniGame, controller);
+
+		this.controller = controller;
+		initializeKeyBindings();
 		this.setBounds(0,0,Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault());
 		this.setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
+	
+	private void initializeKeyBindings() {
+		InputMap rootPaneInputMap = this.getRootPane().getInputMap();
+		ActionMap rootPaneActionMap = this.getRootPane().getActionMap();
+		
+		rootPaneInputMap.put(KeyStroke.getKeyStroke('m'), "miniGame");
+		miniGameAction miniGameAction = new miniGameAction();
+		rootPaneActionMap.put("miniGame", miniGameAction);
+		
+		rootPaneInputMap.put(KeyStroke.getKeyStroke('a'), "activeGame");
+		activeGameAction activeGameAction = new activeGameAction();
+		rootPaneActionMap.put("activeGame", activeGameAction);
+
+		rootPaneInputMap.put(KeyStroke.getKeyStroke('g'), "gameOver");
+		gameOverAction gameOverAction = new gameOverAction();
+		rootPaneActionMap.put("gameOver", gameOverAction);
+		
+	}
+	
+	private class miniGameAction extends AbstractAction {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			System.out.println("Mini game activating...");
+			controller.changeGameStateFromActiveToMinigame();
+		}
+	}
+	
+	private class activeGameAction extends AbstractAction {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			System.out.println("active game activating...");
+			controller.changeGameStateFromMenuToActive();
+		}
+	}
+	
+	private class gameOverAction extends AbstractAction {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			System.out.println("game over activating...");
+			controller.changeGameStateFromActiveToGameOver();
+		}
+	}
+	
 }
+
+
+
+
+

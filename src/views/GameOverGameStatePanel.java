@@ -1,6 +1,7 @@
 package views;
 
 import java.awt.Graphics;
+import java.io.Serializable;
 
 import javax.swing.JComponent;
 import javax.swing.JFrame;
@@ -15,7 +16,7 @@ import controller.Settings;
 /**
  * The Class GameOverGameStatePanel.
  */
-public class GameOverGameStatePanel extends JPanel {
+public class GameOverGameStatePanel extends JPanel implements Serializable {
 	
 	/** The controller. */
 	Controller controller;
@@ -29,8 +30,7 @@ public class GameOverGameStatePanel extends JPanel {
 	 * @param gameOverGameState the game over game state
 	 * @param controller the controller
 	 */
-	public GameOverGameStatePanel(GameOverGameState gameOverGameState, Controller controller) {
-		this.gameOverGameState = gameOverGameState;
+	public GameOverGameStatePanel(Controller controller) {
 		this.controller = controller;
 		
 		JLabel gameOverLabel = new JLabel("GAME OVER");

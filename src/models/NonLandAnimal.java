@@ -1,6 +1,7 @@
 package models;
 
 import java.awt.event.MouseEvent;
+import java.io.Serializable;
 
 import controller.Settings;
 
@@ -8,7 +9,7 @@ import controller.Settings;
 /**
  * The Class NonLandAnimal.
  */
-public class NonLandAnimal extends Player {
+public class NonLandAnimal extends Player implements Serializable {
 	
 	/* (non-Javadoc)
 	 * @see models.Player#onTick()
@@ -42,4 +43,9 @@ public class NonLandAnimal extends Player {
 		int newYPosition = this.getYPosition() - Settings.getNonLandAnimalFlapSpeed();
 		this.setyPosition(newYPosition);
 	}
+	
+	public String toString(){
+		return super.toString() + "\nType: Non-Land Animal";
+	}
+	
 }

@@ -1,15 +1,12 @@
 package models;
 
-public class Menu extends GameModel {
+import java.io.Serializable;
+
+public class Menu extends GameModel implements Serializable {
 	
 	String currentSelection;
 	
 	public Menu() {
-		
-	}
-
-	@Override
-	protected void setSpriteImage() {
 		
 	}
 
@@ -30,6 +27,11 @@ public class Menu extends GameModel {
 
 	@Override
 	public void reset() {
+		
+	}
+
+	@Override
+	protected void setSpriteFilePath() {
 		
 	}
 	

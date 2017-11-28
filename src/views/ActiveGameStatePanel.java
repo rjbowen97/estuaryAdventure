@@ -1,5 +1,6 @@
 package views;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import javax.swing.BoxLayout;
@@ -24,19 +25,19 @@ import models.Player;
 /**
  * The Class ActiveGameStatePanel.
  */
-public class ActiveGameStatePanel extends JLayeredPane {
+public class ActiveGameStatePanel extends JLayeredPane implements Serializable {
 	
 	/** The player component. */
-	private PlayerComponent playerComponent;
+	public PlayerComponent playerComponent;
 	
 	/** The background layered pane. */
-	private BackgroundLayeredPane backgroundLayeredPane;
+	public BackgroundLayeredPane backgroundLayeredPane;
 	
 	/** The interactable component. */
-	private InteractableComponent interactableComponent;
+	public InteractableComponent interactableComponent;
 	
 	/** The hud pane. */
-	private HUDPane hudPane;
+	public HUDPane hudPane;
 	
 	/**
 	 * Instantiates a new active game state panel.
@@ -47,7 +48,7 @@ public class ActiveGameStatePanel extends JLayeredPane {
 	 * @param interactableModels the interactable models
 	 */
 	public ActiveGameStatePanel(Player playerModel, ArrayList<Background> backgroundModels, Controller controller, ArrayList<Interactable> interactableModels) {
-
+		
 		this.backgroundLayeredPane = new BackgroundLayeredPane(backgroundModels);
 		this.playerComponent = new PlayerComponent(playerModel, controller);
 		this.interactableComponent = new InteractableComponent(interactableModels);

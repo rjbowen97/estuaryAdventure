@@ -4,6 +4,7 @@ import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.io.Serializable;
 
 import javax.imageio.ImageIO;
 
@@ -13,7 +14,7 @@ import controller.Settings;
 /**
  * The Class Player.
  */
-public abstract class Player extends GameModel {
+public abstract class Player extends GameModel implements Serializable {
 
 	private String playerName;
 	
@@ -37,7 +38,11 @@ public abstract class Player extends GameModel {
 		this.playerName = "Default";
 		this.setxPosition(Settings.getPlayerStartXPosition());
 		this.setyPosition(Settings.getPlayerStartYPosition());
-		this.setSpriteImage();
+		
+		this.setHeight(75);
+		this.setWidth(75);
+		
+		this.setSpriteFilePath();
 		this.setHitbox();
 	}
 
@@ -102,26 +107,7 @@ public abstract class Player extends GameModel {
 
 	/* (non-Javadoc)
 	 * @see models.GameModel#setSpriteImage()
-	 */
-	@Override
-	protected void setSpriteImage() {
-		BufferedImage nonScaledSpriteImageToUse = null;
-
-		try {
-			File spriteFile = new File("./Graphics/Avatars/Bird/Bird.png");
-
-			if(spriteFile.exists() == true){
-				nonScaledSpriteImageToUse = ImageIO.read(spriteFile);
-			}
-		}
-		catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		BufferedImage scaledSpriteImageToUse = ImageScaler.scaleImageToInputRatio(nonScaledSpriteImageToUse, 0.2, 0.2);
-
-		this.setSpriteImage(scaledSpriteImageToUse);
-	}
+	 */	
 
 	/**
 	 * On mouse released.
@@ -197,5 +183,16 @@ public abstract class Player extends GameModel {
 	 */
 	public boolean getPoweredUp() {
 		return poweredUp;
+	}
+	
+	public String toString(){
+		return super.toString() + "Player Name: " + this.playerName + "\nHealth: " + this.health + "\nScore: " + this.score + "\nPowered UP: " + this.poweredUp +
+				"\nScore Streak: " + this.scoreStreak;
+	}
+
+	@Override
+	protected void setSpriteFilePath() {
+		this.spriteFilePath = "./Graphics/Avatars/Bird/Bird.png";
+
 	}
 }

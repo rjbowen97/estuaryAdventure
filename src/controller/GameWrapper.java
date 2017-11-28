@@ -1,9 +1,9 @@
 package controller;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import models.Background;
-import models.ImageScaler;
 import models.Interactable;
 import models.LandAnimal;
 import models.Menu;
@@ -15,9 +15,9 @@ import models.ScoreBoardManager;
 /**
  * The Class GameWrapper. In this class, the game is set up and run.
  */
-public class GameWrapper {
+public class GameWrapper implements Serializable {
 	
-	private static Controller controller;
+	public static Controller controller;
 	
 	/**
 	 * The main method.
@@ -34,7 +34,6 @@ public class GameWrapper {
 	 */
 	private static void setUpGame() {
 		Settings settings = new Settings();
-		ImageScaler imageScaler = new ImageScaler();
 		
 		Menu menuModel = new Menu();
 		Player playerModel = new LandAnimal();

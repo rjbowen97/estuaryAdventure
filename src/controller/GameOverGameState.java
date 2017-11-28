@@ -1,14 +1,14 @@
 package controller;
 
+import java.io.Serializable;
+
 import models.ScoreBoard;
 import views.GameOverGameStatePanel;
 import views.ScoreBoardPanel;
 
-public class GameOverGameState implements GameStateInterface {
+public class GameOverGameState implements GameStateInterface, Serializable {
 
 	private Controller controller;
-	
-	public GameOverGameStatePanel gameOverGameStatePanel;
 	
 	private int tickNumber = 0;
 	
@@ -19,15 +19,12 @@ public class GameOverGameState implements GameStateInterface {
 	 */
 	public GameOverGameState(Controller controller) {
 		this.controller = controller;
-		this.gameOverGameStatePanel = new GameOverGameStatePanel(this, controller);
 	}
 	
 	/**
 	 * called each tick by the controller if this is the current active gameState
 	 */
 	public void onTick() {
-		gameOverGameStatePanel.repaint();
-		controller.scoreBoard.scoreBoardPanel.repaint();
 		this.tickNumber++;
 	}
 	

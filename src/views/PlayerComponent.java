@@ -3,7 +3,12 @@ package views;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.io.Serializable;
 
+import javax.imageio.ImageIO;
 import javax.swing.JComponent;
 
 import controller.ActiveGameState;
@@ -15,13 +20,15 @@ import models.Player;
 /**
  * The Class PlayerComponent.
  */
-class PlayerComponent extends JComponent{
+class PlayerComponent extends JComponent implements Serializable {
 	
 	/** The player model. */
 	private Player playerModel;
 	
 	/** The controller. */
 	private Controller controller;
+	
+	private transient BufferedImage playerSprite;
 	
 	/**
 	 * Instantiates a new player component.
@@ -30,9 +37,9 @@ class PlayerComponent extends JComponent{
 	 * @param controller the controller
 	 */
 	PlayerComponent(Player playerModel, Controller controller){
-		
 		this.controller = controller;
 		this.playerModel = playerModel;
+		setPlayerSpriteImage();
 		this.setBounds(playerModel.getXPosition(),playerModel.getYPosition(),Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault());
 		this.addMouseListener(new PlayerComponentMouseListener());
 		this.setVisible(true);
@@ -43,7 +50,33 @@ class PlayerComponent extends JComponent{
 	 */
 	@Override
 	public void paintComponent(Graphics g) {
-		g.drawImage(playerModel.getSpriteImage(), playerModel.getXPosition(), playerModel.getYPosition(), null);
+		g.drawImage(this.playerSprite, playerModel.getXPosition(), playerModel.getYPosition(), null);
+	}
+	
+	public void setPlayerSpriteImage() {
+		
+		ImageScaler imageScaler = new ImageScaler();
+		
+		BufferedImage unscaledImage = null;
+		
+		BufferedImage scaledImage;
+
+		try {
+			File spriteFile = new File(playerModel.spriteFilePath);
+
+			if(spriteFile.exists() == true){
+				unscaledImage = ImageIO.read(spriteFile);
+			}
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		double xRatio = ((double) this.playerModel.getWidth()) / ((double) unscaledImage.getWidth());
+		double yRatio = ((double) this.playerModel.getHeight()) / ((double) unscaledImage.getHeight());
+		scaledImage = imageScaler.scaleImageToInputRatio(unscaledImage, xRatio, yRatio);
+		
+		this.playerSprite = scaledImage;
 	}
 	
 	/**

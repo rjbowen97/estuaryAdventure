@@ -1,6 +1,7 @@
 package views;
 
 import java.awt.Graphics;
+import java.io.Serializable;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -12,7 +13,7 @@ import models.Player;
 /**
  * The Class HUDPane.
  */
-public class HUDPane extends JPanel{
+public class HUDPane extends JPanel implements Serializable {
 	
 	/** The player model. */
 	private Player playerModel;

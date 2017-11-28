@@ -1,5 +1,6 @@
 package views;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import javax.swing.JLayeredPane;
@@ -11,7 +12,7 @@ import models.Background;
 /**
  * The Class BackgroundLayeredPane.
  */
-public class BackgroundLayeredPane extends JLayeredPane {
+public class BackgroundLayeredPane extends JLayeredPane implements Serializable {
 	
 	/** The background components. */
 	private ArrayList<BackgroundComponent> backgroundComponents;

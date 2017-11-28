@@ -1,19 +1,19 @@
 package controller;
 
+import java.io.Serializable;
+
 import quizMiniGame.MiniGame;
 import quizMiniGame.MiniGameGameStatePanel;
 
 /**
  * The Class MiniGameGameState.
  */
-public class MiniGameGameState implements GameStateInterface {
+public class MiniGameGameState implements GameStateInterface, Serializable {
 
 	public Controller controller;
 	
 	public MiniGame miniGame;
 	
-	public MiniGameGameStatePanel miniGameGameStatePanel;
-
 	private int tickNumber = 0;
 
 	/**
@@ -24,7 +24,6 @@ public class MiniGameGameState implements GameStateInterface {
 	public MiniGameGameState(Controller controller) {
 		this.controller = controller;
 		this.miniGame = new MiniGame();
-		this.miniGameGameStatePanel = new MiniGameGameStatePanel(this.miniGame, controller);
 	}
 
 	/**

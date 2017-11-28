@@ -1,10 +1,12 @@
 package models;
 
+import java.io.Serializable;
+
 // TODO: Auto-generated Javadoc
 /**
  * The Class Hitbox.
  */
-public class Hitbox {
+public class Hitbox implements Serializable {
 
 	/** The game model. */
 	private GameModel gameModel;
@@ -30,9 +32,9 @@ public class Hitbox {
 	public Hitbox(GameModel gameModel) {
 		this.gameModel = gameModel;
 		this.topLeftCorner = new Point(gameModel.getXPosition(),gameModel.getYPosition());
-		this.topRightCorner = new Point(gameModel.getXPosition() + gameModel.getSpriteImage().getWidth(), gameModel.getYPosition());
-		this.bottomLeftCorner = new Point(gameModel.getXPosition(),gameModel.getYPosition() + gameModel.getSpriteImage().getHeight());
-		this.bottomRightCorner = new Point(gameModel.getXPosition() + gameModel.getSpriteImage().getWidth(), gameModel.getYPosition() + gameModel.getSpriteImage().getHeight());
+		this.topRightCorner = new Point(gameModel.getXPosition() + gameModel.getWidth(), gameModel.getYPosition());
+		this.bottomLeftCorner = new Point(gameModel.getXPosition(),gameModel.getYPosition() + gameModel.getHeight());
+		this.bottomRightCorner = new Point(gameModel.getXPosition() + gameModel.getWidth(), gameModel.getYPosition() + gameModel.getHeight());
 	}
 
 	/**
@@ -40,9 +42,9 @@ public class Hitbox {
 	 */
 	public void update() {
 		this.topLeftCorner.update(gameModel.getXPosition(),gameModel.getYPosition());
-		this.topRightCorner.update(gameModel.getXPosition() + gameModel.getSpriteImage().getWidth(), gameModel.getYPosition());
-		this.bottomLeftCorner.update(gameModel.getXPosition(),gameModel.getYPosition() + gameModel.getSpriteImage().getHeight());
-		this.bottomRightCorner.update(gameModel.getXPosition() + gameModel.getSpriteImage().getWidth(), gameModel.getYPosition() + gameModel.getSpriteImage().getHeight());
+		this.topRightCorner.update(gameModel.getXPosition() + gameModel.getWidth(), gameModel.getYPosition());
+		this.bottomLeftCorner.update(gameModel.getXPosition(),gameModel.getYPosition() + gameModel.getHeight());
+		this.bottomRightCorner.update(gameModel.getXPosition() + gameModel.getWidth(), gameModel.getYPosition() + gameModel.getHeight());
 	}
 
 	/**
@@ -117,11 +119,19 @@ public class Hitbox {
 		return false;
 
 	}
+	
+	public String toString(){
+		String result = "Top Left Corner X: " + this.topLeftCorner.x + " Y:" + this.topLeftCorner.y +
+				"Top Right Corner X: " + this.topRightCorner.x + " Y:" + this.topRightCorner.y +
+				"Bottom Left Corner X: " + this.bottomLeftCorner.x + " Y:" + this.bottomLeftCorner.y +
+				"Bottom Right Corner X: " + this.bottomRightCorner.x + " Y:" + this.bottomRightCorner.y;
+		return result;
+	}
 
 	/**
 	 * The Class Point.
 	 */
-	public class Point {
+	public class Point implements Serializable {
 		
 		/** The x. */
 		public int x;

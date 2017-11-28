@@ -1,6 +1,7 @@
 package models;
 
 import java.awt.event.MouseEvent;
+import java.io.Serializable;
 
 import controller.Settings;
 
@@ -8,7 +9,7 @@ import controller.Settings;
 /**
  * The Class LandAnimal.
  */
-public class LandAnimal extends Player {
+public class LandAnimal extends Player implements Serializable {
 	
 	/* (non-Javadoc)
 	 * @see models.Player#onTick()
@@ -32,5 +33,9 @@ public class LandAnimal extends Player {
 			int newYPosition = this.getYPosition() - Settings.getLandAnimalShuffleSpeed();
 			this.setyPosition(newYPosition);
 		}
+	}
+	
+	public String toString(){
+		return super.toString() + "\nType: Land Animal"; 
 	}
 }

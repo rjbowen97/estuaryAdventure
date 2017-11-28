@@ -1,5 +1,6 @@
 package quizMiniGame;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -10,7 +11,7 @@ import models.GameModel;
 /**
  * The Class MiniGame.
  */
-public class MiniGame extends GameModel {
+public class MiniGame extends GameModel implements Serializable {
 	
 	/** The question and answer pairs. */
 	private ArrayList<QuestionAndAnswerPair> questionAndAnswerPairs;
@@ -96,12 +97,6 @@ public class MiniGame extends GameModel {
 		this.currentPlayerAnswer = currentPlayerAnswer;
 	}
 	
-	/* (non-Javadoc)
-	 * @see models.GameModel#setSpriteImage()
-	 */
-	@Override
-	protected void setSpriteImage() {
-	}
 
 	/* (non-Javadoc)
 	 * @see models.GameModel#setHitbox()
@@ -137,6 +132,12 @@ public class MiniGame extends GameModel {
 	 */
 	private void resetCurrentPlayerAnswer() {
 		this.currentPlayerAnswer = "";
+	}
+
+	@Override
+	protected void setSpriteFilePath() {
+		// TODO Auto-generated method stub
+		
 	}
 }
 

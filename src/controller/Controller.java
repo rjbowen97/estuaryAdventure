@@ -1,6 +1,13 @@
 package controller;
 
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import models.Background;
@@ -13,7 +20,7 @@ import views.MenuPanel;
 import views.ScoreBoardPanel;
 import views.View;
 
-public class Controller {
+public class Controller implements Serializable {
 
 	public MenuGameState menuGameState;
 
@@ -28,6 +35,52 @@ public class Controller {
 	public View view;
 
 	private GameState gameState;
+	
+//	public void setCurrentControllerState() {
+//		Controller controllerIn = null;
+//		
+//	      try {
+//	         FileInputStream fileIn = new FileInputStream("controller.ser");
+//	         ObjectInputStream in = new ObjectInputStream(fileIn);
+//	         controllerIn = (Controller) in.readObject();
+//	         in.close();
+//	         fileIn.close();
+//	      } catch (IOException i) {
+//	         i.printStackTrace();
+//	         return;
+//	      } catch (ClassNotFoundException c) {
+//	         System.out.println("Employee class not found");
+//	         c.printStackTrace();
+//	         return;
+//	      }
+//	      System.out.println(controllerIn.toString());
+//	      
+//	      this.view.setVisible(false);
+//	      
+//	      GameWrapper.controller = controllerIn;
+//	      GameWrapper.controller.reloadImages();
+//	      
+//	      GameWrapper.controller.view.setVisible(true);
+//	}
+//	
+//	public void reloadImages() {
+//		this.view.reloadImages();
+//	}
+//	
+//	public void saveCurrentControllerState() {
+//		try {
+//			FileOutputStream fileOutputStream = new FileOutputStream("controller.ser");
+//			ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+//			objectOutputStream.writeObject(this);
+//			objectOutputStream.close();
+//			fileOutputStream.close();
+//			System.out.println("Controller successfully saved to file!");
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		
+//	}
 
 	/**
 	 * Instantiates a new controller.
@@ -52,7 +105,7 @@ public class Controller {
 
 		this.gameState = GameState.Menu;
 		this.view = new View(playerModel, backgroundModels, this, interactableModels);
-		this.view.setContentPane(menuGameState.menuPanel);
+		this.view.setContentPane(view.menuPanel);
 	}
 
 	/**
@@ -82,7 +135,7 @@ public class Controller {
 	 * Change game state from menu to active.
 	 */
 	public void changeGameStateFromMenuToActive() {
-		this.view.setContentPane(activeGameState.activeGameStatePanel);
+		this.view.setContentPane(view.activeGameStatePanel);
 		this.gameState = GameState.Active;
 	}
 
@@ -90,7 +143,7 @@ public class Controller {
 	 * Change game state from active to minigame.
 	 */
 	public void changeGameStateFromActiveToMinigame() {
-		this.view.setContentPane(miniGameGameState.miniGameGameStatePanel);
+		this.view.setContentPane(view.miniGameGameStatePanel);
 		this.gameState = GameState.MiniGame;
 	}
 
@@ -105,10 +158,12 @@ public class Controller {
 			activeGameState.playerModel.onMiniGameEnd(correctAnswerCount);
 		}
 		
+		view.miniGameGameStatePanel.displayCorrectAnswer();
+		
 		miniGameGameState.miniGame.resetMiniGame();
 		activeGameState.playerModel.resetScoreStreak();
 		
-		this.view.setContentPane(activeGameState.activeGameStatePanel);
+		this.view.setContentPane(view.activeGameStatePanel);
 		this.gameState = GameState.Active;
 		
 	}
@@ -121,7 +176,7 @@ public class Controller {
 		ScoreBoardManager.saveScoreboard(scoreBoard,Settings.getScoreFileName());
 		this.scoreBoard = ScoreBoardManager.loadScoreBoard(Settings.getScoreFileName());
 		
-		this.view.setContentPane(gameOverGameState.gameOverGameStatePanel);
+		this.view.setContentPane(view.gameOverGameStatePanel);
 		this.view.setContentPane(scoreBoard.scoreBoardPanel);
 		this.gameState = GameState.GameOver;
 

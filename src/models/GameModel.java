@@ -1,24 +1,45 @@
 package models;
 
 import java.awt.image.BufferedImage;
+import java.io.Serializable;
 
 // TODO: Auto-generated Javadoc
 /**
  * The Class GameModel.
  */
-public abstract class GameModel {
+public abstract class GameModel implements Serializable {
 	
 	/** The x position. */
 	private int xPosition;
 	
 	/** The y position. */
 	private int yPosition;
+
+	private int height;
+	
+	private int width;
 	
 	/** The sprite image. */
-	private BufferedImage spriteImage;
+	public String spriteFilePath;
 	
 	/** The speed. */
 	private int speed = 0;
+	
+	public int getHeight() {
+		return height;
+	}
+
+	public void setHeight(int height) {
+		this.height = height;
+	}
+
+	public int getWidth() {
+		return width;
+	}
+
+	public void setWidth(int width) {
+		this.width = width;
+	}
 	
 	/** The hitbox. */
 	private Hitbox hitbox;
@@ -26,7 +47,7 @@ public abstract class GameModel {
 	/**
 	 * Sets the sprite image.
 	 */
-	protected abstract void setSpriteImage();
+	protected abstract void setSpriteFilePath();
 	
 	/**
 	 * Sets the hitbox.
@@ -94,15 +115,6 @@ public abstract class GameModel {
 	}
 	
 	/**
-	 * Gets the sprite image.
-	 *
-	 * @return the sprite image
-	 */
-	public BufferedImage getSpriteImage() {
-		return this.spriteImage;
-	}
-	
-	/**
 	 * Sets the x position.
 	 *
 	 * @param xPosition the new x position
@@ -129,14 +141,10 @@ public abstract class GameModel {
 		this.speed = speed;
 	}
 	
-	/**
-	 * Sets the sprite image.
-	 *
-	 * @param spriteImage the new sprite image
-	 */
-	protected void setSpriteImage(BufferedImage spriteImage) {
-		this.spriteImage = spriteImage;
+	public String toString(){
+		String result = "X Position: " + this.getXPosition() + "\nY Position: " + this.getYPosition()+
+				"\nSpeed: " + this.getSpeed() + "\n";
+		return result;
 	}
-	
 	
 }

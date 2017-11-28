@@ -2,6 +2,8 @@ package models;
 
 import static org.junit.Assert.*;
 
+import java.io.Serializable;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,7 +14,7 @@ import controller.Settings;
 /**
  * The Class PlayerTest.
  */
-public class PlayerTest {
+public class PlayerTest implements Serializable {
 	
 	/** The player. */
 	private LandAnimal player;

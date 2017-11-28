@@ -1,15 +1,16 @@
 package controller;
 
+import java.io.Serializable;
+
 import models.Menu;
 import views.MenuPanel;
 
 /**
  * The Class MenuGameState.
  */
-public class MenuGameState implements GameStateInterface {
+public class MenuGameState implements GameStateInterface, Serializable {
 	
 	public Controller controller;
-	public MenuPanel menuPanel;
 	public Menu menu;
 
 	/**
@@ -22,7 +23,6 @@ public class MenuGameState implements GameStateInterface {
 	{
 		this.menu = menu;
 		this.controller = controller;
-		this.menuPanel = new MenuPanel(menu, controller);
 	}
 	
 	/* (non-Javadoc)
