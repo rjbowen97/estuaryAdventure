@@ -1,6 +1,7 @@
 package views;
 
 import java.awt.Graphics;
+import java.io.Serializable;
 
 import javax.swing.JComponent;
 
@@ -11,7 +12,7 @@ import models.Background;
 /**
  * The Class BackgroundComponent.
  */
-public class BackgroundComponent extends JComponent{
+public class BackgroundComponent extends JComponent implements Serializable {
 	
 	/** The background model. */
 	private Background backgroundModel;

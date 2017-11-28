@@ -1,6 +1,7 @@
 package views;
 
 import java.awt.Graphics;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import javax.swing.JComponent;
@@ -12,7 +13,7 @@ import models.Interactable;
 /**
  * The Class InteractableComponent.
  */
-public class InteractableComponent extends JComponent {
+public class InteractableComponent extends JComponent implements Serializable {
 	
 	/** The interactable models. */
 	private ArrayList<Interactable> interactableModels;

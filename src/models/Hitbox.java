@@ -1,10 +1,12 @@
 package models;
 
+import java.io.Serializable;
+
 // TODO: Auto-generated Javadoc
 /**
  * The Class Hitbox.
  */
-public class Hitbox {
+public class Hitbox implements Serializable {
 
 	/** The game model. */
 	private GameModel gameModel;
@@ -121,7 +123,7 @@ public class Hitbox {
 	/**
 	 * The Class Point.
 	 */
-	public class Point {
+	public class Point implements Serializable {
 		
 		/** The x. */
 		public int x;

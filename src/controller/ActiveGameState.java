@@ -1,6 +1,7 @@
 package controller;
 
 import java.awt.event.MouseEvent;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import models.Background;
@@ -8,7 +9,7 @@ import models.Interactable;
 import models.Player;
 import views.ActiveGameStatePanel;
 
-public class ActiveGameState implements GameStateInterface {
+public class ActiveGameState implements GameStateInterface, Serializable {
 	
 	public Controller controller;
 	

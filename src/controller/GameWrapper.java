@@ -1,5 +1,6 @@
 package controller;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import models.Background;
@@ -15,7 +16,7 @@ import models.ScoreBoardManager;
 /**
  * The Class GameWrapper. In this class, the game is set up and run.
  */
-public class GameWrapper {
+public class GameWrapper implements Serializable {
 	
 	private static Controller controller;
 	

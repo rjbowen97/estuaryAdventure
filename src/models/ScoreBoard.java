@@ -11,7 +11,7 @@ import views.ScoreBoardPanel;
 /**
  * The Class ScoreBoard.
  */
-public class ScoreBoard implements Serializable{
+public class ScoreBoard implements Serializable {
 	
 	/** The score board panel. */
 	public ScoreBoardPanel scoreBoardPanel;

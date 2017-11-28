@@ -1,12 +1,13 @@
 package models;
 
 import java.awt.image.BufferedImage;
+import java.io.Serializable;
 
 // TODO: Auto-generated Javadoc
 /**
  * The Class GameModel.
  */
-public abstract class GameModel {
+public abstract class GameModel implements Serializable {
 	
 	/** The x position. */
 	private int xPosition;

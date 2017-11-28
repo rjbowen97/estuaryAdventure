@@ -36,7 +36,7 @@ public class Controller implements Serializable {
 	
 	public void saveCurrentControllerState() {
 		try {
-			FileOutputStream fileOutputStream = new FileOutputStream("/tmp/controller.ser");
+			FileOutputStream fileOutputStream = new FileOutputStream("controller.ser");
 			ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
 			objectOutputStream.writeObject(this);
 			objectOutputStream.close();

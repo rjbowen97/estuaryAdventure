@@ -3,6 +3,7 @@ package quizMiniGame;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.Serializable;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -16,7 +17,7 @@ import controller.Settings;
 /**
  * The Class MiniGameGameStatePanel.
  */
-public class MiniGameGameStatePanel extends JPanel implements ActionListener {
+public class MiniGameGameStatePanel extends JPanel implements ActionListener, Serializable {
 
 	/** The mini game. */
 	MiniGame miniGame;

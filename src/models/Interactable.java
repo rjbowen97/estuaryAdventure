@@ -3,6 +3,7 @@ package models;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.Random;
 
 import javax.imageio.ImageIO;
@@ -13,7 +14,7 @@ import controller.Settings;
 /**
  * The Class Interactable.
  */
-public class Interactable extends GameModel {
+public class Interactable extends GameModel implements Serializable {
 
 	/** The is food. */
 	private boolean isFood;	

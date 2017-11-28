@@ -1,12 +1,14 @@
 package controller;
 
+import java.io.Serializable;
+
 import models.Menu;
 import views.MenuPanel;
 
 /**
  * The Class MenuGameState.
  */
-public class MenuGameState implements GameStateInterface {
+public class MenuGameState implements GameStateInterface, Serializable {
 	
 	public Controller controller;
 	public MenuPanel menuPanel;

@@ -5,6 +5,7 @@ import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.io.Serializable;
 
 import javax.imageio.ImageIO;
 
@@ -14,7 +15,7 @@ import controller.Settings;
 /**
  * The Class Background.
  */
-public class Background extends GameModel {
+public class Background extends GameModel implements Serializable {
 
 	/** The background layer index. */
 	private int backgroundLayerIndex;

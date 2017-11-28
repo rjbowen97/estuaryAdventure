@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
+import java.io.Serializable;
 
 import controller.Settings;
 
@@ -11,7 +12,7 @@ import controller.Settings;
 /**
  * The Class ImageScaler.
  */
-public class ImageScaler {
+public class ImageScaler implements Serializable {
 	
 	
 	/**

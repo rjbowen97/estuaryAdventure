@@ -7,6 +7,7 @@ import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.Serializable;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -17,7 +18,7 @@ import controller.MenuGameState;
 import controller.Settings;
 import models.Menu;
 
-public class MenuPanel extends JPanel implements ActionListener  {
+public class MenuPanel extends JPanel implements ActionListener, Serializable  {
 
 	private Controller controller;
 	private Menu menu;

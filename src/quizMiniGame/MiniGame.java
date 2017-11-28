@@ -1,5 +1,6 @@
 package quizMiniGame;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -10,7 +11,7 @@ import models.GameModel;
 /**
  * The Class MiniGame.
  */
-public class MiniGame extends GameModel {
+public class MiniGame extends GameModel implements Serializable {
 	
 	/** The question and answer pairs. */
 	private ArrayList<QuestionAndAnswerPair> questionAndAnswerPairs;

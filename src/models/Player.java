@@ -4,6 +4,7 @@ import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.io.Serializable;
 
 import javax.imageio.ImageIO;
 
@@ -13,7 +14,7 @@ import controller.Settings;
 /**
  * The Class Player.
  */
-public abstract class Player extends GameModel {
+public abstract class Player extends GameModel implements Serializable{
 
 	private String playerName;
 	

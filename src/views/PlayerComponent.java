@@ -3,6 +3,7 @@ package views;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.Serializable;
 
 import javax.swing.JComponent;
 
@@ -15,7 +16,7 @@ import models.Player;
 /**
  * The Class PlayerComponent.
  */
-class PlayerComponent extends JComponent{
+class PlayerComponent extends JComponent implements Serializable {
 	
 	/** The player model. */
 	private Player playerModel;

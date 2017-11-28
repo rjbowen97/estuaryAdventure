@@ -1,6 +1,7 @@
 package views;
 
 import java.awt.Graphics;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import javax.swing.BoxLayout;
@@ -15,7 +16,7 @@ import models.ScoreBoardEntry;
 /**
  * The Class ScoreBoardPanel.
  */
-public class ScoreBoardPanel extends JPanel {
+public class ScoreBoardPanel extends JPanel implements Serializable {
 	
 	/** The score board. */
 	ScoreBoard scoreBoard;

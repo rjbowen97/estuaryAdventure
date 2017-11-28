@@ -1,6 +1,7 @@
 package models;
 
 import java.awt.event.MouseEvent;
+import java.io.Serializable;
 
 import controller.Settings;
 
@@ -8,7 +9,7 @@ import controller.Settings;
 /**
  * The Class NonLandAnimal.
  */
-public class NonLandAnimal extends Player {
+public class NonLandAnimal extends Player implements Serializable {
 	
 	/* (non-Javadoc)
 	 * @see models.Player#onTick()
