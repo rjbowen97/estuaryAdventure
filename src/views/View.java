@@ -76,6 +76,31 @@ public class View extends JFrame implements Serializable {
 		gameOverAction gameOverAction = new gameOverAction();
 		rootPaneActionMap.put("gameOver", gameOverAction);
 		
+		rootPaneInputMap.put(KeyStroke.getKeyStroke('i'), "changeToAir");
+		changeToAirAction changeToAirAction = new changeToAirAction();
+		rootPaneActionMap.put("changeToAir", changeToAirAction);
+
+		rootPaneInputMap.put(KeyStroke.getKeyStroke('w'), "changeToWater");
+		changeToWaterAction changeToWaterAction= new changeToWaterAction();
+		rootPaneActionMap.put("changeToWater", changeToWaterAction);
+	}
+	
+
+	
+	private class changeToAirAction extends AbstractAction {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			System.out.println("Changing to air");
+			controller.changeLevels("a");
+		}
+	}
+	
+	private class changeToWaterAction extends AbstractAction {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			System.out.println("Changing to water");
+			controller.changeLevels("w");;
+		}
 	}
 	
 	private class miniGameAction extends AbstractAction {

@@ -14,6 +14,7 @@ import models.Background;
 import models.Interactable;
 import models.Menu;
 import models.Player;
+import models.PlayerAnimalType;
 import models.ScoreBoard;
 import models.ScoreBoardManager;
 import views.MenuPanel;
@@ -101,11 +102,28 @@ public class Controller implements Serializable {
 		this.scoreBoard.scoreBoardPanel = new ScoreBoardPanel(this.scoreBoard);
 		
 		this.gameOverGameState = new GameOverGameState(this);
-		
 
 		this.gameState = GameState.Menu;
 		this.view = new View(playerModel, backgroundModels, this, interactableModels);
 		this.view.setContentPane(view.menuPanel);
+	}
+	
+	public void changeLevels(String targetLevel) {
+		if (targetLevel.equals("a")) {
+			this.activeGameState.playerModel.playerAnimalType = PlayerAnimalType.BIRD;
+			
+			for (Background background : activeGameState.backgroundModels) {
+				background.backgroundType = "a";
+			}
+		}
+		
+		else {
+			this.activeGameState.playerModel.playerAnimalType = PlayerAnimalType.FISH;
+
+			for (Background background : activeGameState.backgroundModels) {
+				background.backgroundType = "w";
+			}
+		}
 	}
 
 	/**
