@@ -15,6 +15,7 @@ public class HitboxTest{
 	private GameModel model, offModel, overLappingModel;
 	private Settings set;
 	private int orig_x =10, orig_y =10;
+	
 	@Before
 	public void setUp() throws Exception {
 		set = new Settings();
@@ -79,7 +80,6 @@ public class HitboxTest{
 		//rest cant be tested
 		setNewModelCoords(hitbox.bottomRightCorner.x,hitbox.bottomRightCorner.y+1,overLappingModel);
 		assertTrue(hitbox.isOverlapping(overLapHb)==false);
-		
 	}
 
 	

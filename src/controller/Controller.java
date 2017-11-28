@@ -18,7 +18,6 @@ public class Controller {
 	public GameOverGameState gameOverGameState;
 	public ScoreBoard scoreBoard;
 	
-
 	public View view;
 
 	private GameState gameState;
