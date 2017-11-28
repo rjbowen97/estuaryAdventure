@@ -8,10 +8,10 @@ import java.io.Serializable;
 public abstract class GameModel implements Serializable {
 	
 	/** The x position of the game model */
-	private int xPosition;
+	public int xPosition;
 	
 	/** The y position of the game model */
-	private int yPosition;
+	public int yPosition;
 
 	private int height;
 	

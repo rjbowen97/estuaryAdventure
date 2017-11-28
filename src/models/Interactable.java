@@ -14,10 +14,10 @@ public class Interactable extends GameModel implements Serializable {
 	private boolean isFood;	
 	
 	/** The activation tick. */
-	private int activationTick;
+	public int activationTick;
 	
 	/** The is active. */
-	private boolean isActive = false;
+	public boolean isActive = false;
 	
 	/** The random. */
 	private Random random = new Random();

@@ -14,10 +14,10 @@ public abstract class Player extends GameModel implements Serializable {
 	private String playerName;
 	
 	/** The health of the player */
-	private int health = 3;
+	public int health = 3;
 	
 	/** The score. */
-	private int score = 0;
+	public int score = 0;
 	
 	/** Whether the player has earned a power up or not, initially false */
 	private boolean poweredUp = false;

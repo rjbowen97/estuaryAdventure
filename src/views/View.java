@@ -77,9 +77,20 @@ public class View extends JFrame implements Serializable {
 		rootPaneInputMap.put(KeyStroke.getKeyStroke('w'), "changeToWater");
 		changeToWaterAction changeToWaterAction= new changeToWaterAction();
 		rootPaneActionMap.put("changeToWater", changeToWaterAction);
+		
+		rootPaneInputMap.put(KeyStroke.getKeyStroke('r'), "resetLevel");
+		resetLevelAction resetLevelAction= new resetLevelAction();
+		rootPaneActionMap.put("resetLevel", resetLevelAction);
+		
 	}
 	
-
+	private class resetLevelAction extends AbstractAction {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			System.out.println("Resetting level");
+			controller.resetLevel();
+		}
+	}
 	
 	private class changeToAirAction extends AbstractAction {
 		@Override

@@ -104,7 +104,7 @@ public class Controller implements Serializable {
 	public void changeLevels(String targetLevel) {
 		if (targetLevel.equals("a")) {
 			this.activeGameState.playerModel.playerAnimalType = PlayerAnimalType.BIRD;
-			
+
 			for (Background background : activeGameState.backgroundModels) {
 				background.backgroundType = "a";
 			}
@@ -116,6 +116,26 @@ public class Controller implements Serializable {
 			for (Background background : activeGameState.backgroundModels) {
 				background.backgroundType = "w";
 			}
+		}
+	}
+	
+	public void resetLevel() {
+		activeGameState.playerModel.xPosition = 0;
+		activeGameState.playerModel.yPosition = 0;
+		activeGameState.playerModel.score = 0;
+		activeGameState.playerModel.resetScoreStreak();
+		activeGameState.playerModel.health = 3;
+		
+		for (Background background : activeGameState.backgroundModels) {
+			background.xPosition = 0;
+		}
+		
+		int releaseTime = 0;
+		for (Interactable interactable : activeGameState.interactableModels) {
+			interactable.isActive = false;
+			interactable.xPosition = Settings.getInteractableStartXPosition();
+			interactable.activationTick = releaseTime;
+			releaseTime += 5;
 		}
 	}
 
@@ -190,8 +210,12 @@ public class Controller implements Serializable {
 		this.view.setContentPane(view.gameOverGameStatePanel);
 		this.view.setContentPane(scoreBoard.scoreBoardPanel);
 		this.gameState = GameState.GameOver;
-
 	}
+	
+	/**
+	 * Sets the player name
+	 * @param playerName new player name
+	 */
 	
 	public void setPlayerName(String playerName) {
 		this.activeGameState.playerModel.setPlayerName(playerName);
