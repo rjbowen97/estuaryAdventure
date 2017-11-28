@@ -24,7 +24,7 @@ public class ScoreBoard implements Serializable {
 	 * creates an arrayList of ScoreBoardEntry objects
 	 */
 	public ScoreBoard() {
-		scoreBoardEntries = new ArrayList<ScoreBoardEntry>();	
+		scoreBoardEntries = new ArrayList<ScoreBoardEntry>();	 
 	}
 	
 	/**

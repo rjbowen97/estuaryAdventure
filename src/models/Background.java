@@ -96,4 +96,11 @@ public class Background extends GameModel implements Serializable {
 	@Override
 	public void reset() {
 	}
+	
+	public String toString(){
+		String result =super.toString();
+		result += "\nLayer Index: "+ backgroundLayerIndex;
+		return result;
+	}
+	
 }

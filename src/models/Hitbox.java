@@ -119,6 +119,14 @@ public class Hitbox implements Serializable {
 		return false;
 
 	}
+	
+	public String toString(){
+		String result = "Top Left Corner X: " + this.topLeftCorner.x + " Y:" + this.topLeftCorner.y +
+				"Top Right Corner X: " + this.topRightCorner.x + " Y:" + this.topRightCorner.y +
+				"Bottom Left Corner X: " + this.bottomLeftCorner.x + " Y:" + this.bottomLeftCorner.y +
+				"Bottom Right Corner X: " + this.bottomRightCorner.x + " Y:" + this.bottomRightCorner.y;
+		return result;
+	}
 
 	/**
 	 * The Class Point.

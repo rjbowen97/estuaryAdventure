@@ -34,4 +34,8 @@ public class LandAnimal extends Player implements Serializable {
 			this.setyPosition(newYPosition);
 		}
 	}
+	
+	public String toString(){
+		return super.toString() + "\nType: Land Animal"; 
+	}
 }

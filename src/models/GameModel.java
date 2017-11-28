@@ -139,5 +139,10 @@ public abstract class GameModel implements Serializable {
 		this.spriteImage = spriteImage;
 	}
 	
+	public String toString(){
+		String result = "X Position: " + this.getXPosition() + "\nY Position: " + this.getYPosition()+
+				"\nSpeed: " + this.getSpeed() + "\n";
+		return result;
+	}
 	
 }
