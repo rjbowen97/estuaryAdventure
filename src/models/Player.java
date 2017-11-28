@@ -15,6 +15,8 @@ import controller.Settings;
  */
 public abstract class Player extends GameModel {
 
+	private String playerName;
+	
 	/** The health. */
 	private int health = 3;
 	
@@ -32,6 +34,7 @@ public abstract class Player extends GameModel {
 	 */
 	public Player() {
  
+		this.playerName = "Default";
 		this.setxPosition(Settings.getPlayerStartXPosition());
 		this.setyPosition(Settings.getPlayerStartYPosition());
 		this.setSpriteImage();
@@ -152,6 +155,14 @@ public abstract class Player extends GameModel {
 		}
 	}
 
+	public void setPlayerName(String playerName) {
+		this.playerName = playerName;
+	}
+	
+	public String getPlayerName() {
+		return this.playerName;
+	}
+	
 	/**
 	 * Gets the health.
 	 *

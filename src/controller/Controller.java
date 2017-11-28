@@ -125,4 +125,8 @@ public class Controller {
 		this.gameState = GameState.GameOver;
 
 	}
+	
+	public void setPlayerName(String playerName) {
+		this.activeGameState.playerModel.setPlayerName(playerName);
+	}
 }
