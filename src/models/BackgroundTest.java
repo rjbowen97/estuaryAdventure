@@ -16,14 +16,30 @@ import org.junit.Test;
 
 import controller.Settings;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class BackgroundTest.
+ */
 public class BackgroundTest {
 	
+	/** The test image. */
 	private BufferedImage testImage;
+	
+	/** The y pos. */
 	private int xPos, yPos;
+	
+	/** The layer pos. */
 	private static int layerPos;
+	
+	/** The bck grnd. */
 	static Background bckGrnd;
+	
+	/** The settings. */
 	Settings settings;
 	
+	/**
+	 * Sets the up.
+	 */
 	@Before
 	public void setUp(){
 		settings = new Settings();
@@ -37,6 +53,9 @@ public class BackgroundTest {
 		}
 	}
 	
+	/**
+	 * Test background 0 layer.
+	 */
 	@Test
 	public void testBackground0Layer() {
 		
@@ -47,6 +66,9 @@ public class BackgroundTest {
 		assertTrue(bckGrnd.getYPosition() == 30);
 	}
 	
+	/**
+	 * Test background 1 layer.
+	 */
 	@Test
 	public void testBackground1Layer() {
 		
@@ -58,6 +80,9 @@ public class BackgroundTest {
 		assertTrue(bckGrnd.getYPosition() == 30);
 	}
 	
+	/**
+	 * Test background 2 layer.
+	 */
 	@Test
 	public void testBackground2Layer() {
 		
@@ -69,6 +94,9 @@ public class BackgroundTest {
 		assertTrue(bckGrnd.getYPosition() == 30);
 	}
 	
+	/**
+	 * Test background 3 layer.
+	 */
 	@Test
 	public void testBackground3Layer() {
 		
@@ -80,6 +108,9 @@ public class BackgroundTest {
 		assertTrue(bckGrnd.getYPosition() == 30);
 	}
 	
+	/**
+	 * Test background 4 layer.
+	 */
 	@Test
 	public void testBackground4Layer() {
 		
@@ -91,6 +122,9 @@ public class BackgroundTest {
 		assertTrue(bckGrnd.getYPosition() == 30);
 	}
 	
+	/**
+	 * Test tick.
+	 */
 	@Test
 	public void testTick(){
 		bckGrnd = new Background(xPos, yPos, 0);
@@ -99,6 +133,9 @@ public class BackgroundTest {
 		assertTrue(bckGrnd.getXPosition() == newX);
 	}
 
+	/**
+	 * Test hit box.
+	 */
 	@Test
 	public void testHitBox(){
 		Hitbox testHitB = new Hitbox(new Background(40,30,0));
@@ -108,6 +145,9 @@ public class BackgroundTest {
 		assertTrue(bckGrnd.getHitbox().isOverlapping(testHitB));
 	}
 	
+	/**
+	 * Test reset.
+	 */
 	//currently does nothing
 	@Test
 	public void testReset() {

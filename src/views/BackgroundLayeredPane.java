@@ -7,10 +7,20 @@ import javax.swing.JLayeredPane;
 import controller.Settings;
 import models.Background;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class BackgroundLayeredPane.
+ */
 public class BackgroundLayeredPane extends JLayeredPane {
 	
+	/** The background components. */
 	private ArrayList<BackgroundComponent> backgroundComponents;
 	
+	/**
+	 * Instantiates a new background layered pane.
+	 *
+	 * @param backgroundModels the background models
+	 */
 	public BackgroundLayeredPane(ArrayList<Background> backgroundModels) {
 		
 		backgroundComponents = new ArrayList<BackgroundComponent>();

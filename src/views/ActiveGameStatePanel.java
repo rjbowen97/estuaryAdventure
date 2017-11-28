@@ -20,13 +20,32 @@ import models.Background;
 import models.Interactable;
 import models.Player;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ActiveGameStatePanel.
+ */
 public class ActiveGameStatePanel extends JLayeredPane {
 	
+	/** The player component. */
 	private PlayerComponent playerComponent;
+	
+	/** The background layered pane. */
 	private BackgroundLayeredPane backgroundLayeredPane;
+	
+	/** The interactable component. */
 	private InteractableComponent interactableComponent;
+	
+	/** The hud pane. */
 	private HUDPane hudPane;
 	
+	/**
+	 * Instantiates a new active game state panel.
+	 *
+	 * @param playerModel the player model
+	 * @param backgroundModels the background models
+	 * @param controller the controller
+	 * @param interactableModels the interactable models
+	 */
 	public ActiveGameStatePanel(Player playerModel, ArrayList<Background> backgroundModels, Controller controller, ArrayList<Interactable> interactableModels) {
 
 		this.backgroundLayeredPane = new BackgroundLayeredPane(backgroundModels);

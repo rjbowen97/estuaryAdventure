@@ -9,13 +9,29 @@ import org.junit.Test;
 import controller.Settings;
 import models.Hitbox.Point;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class HitboxTest.
+ */
 public class HitboxTest{
 
+	/** The over lap hb. */
 	private Hitbox hitbox, offHb, overLapHb;
+	
+	/** The over lapping model. */
 	private GameModel model, offModel, overLappingModel;
+	
+	/** The set. */
 	private Settings set;
+	
+	/** The orig y. */
 	private int orig_x =10, orig_y =10;
 	
+	/**
+	 * Sets the up.
+	 *
+	 * @throws Exception the exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 		set = new Settings();
@@ -26,6 +42,9 @@ public class HitboxTest{
 		overLapHb = new Hitbox(overLappingModel);
 	}
 
+	/**
+	 * Test update.
+	 */
 	//demonstrates hitboxes only change positions if the model updates its position, cant update on own
 	@Test
 	public void testUpdate(){
@@ -38,8 +57,6 @@ public class HitboxTest{
 		assertTrue(hitbox.topRightCorner.y == orig_y);
 		assertTrue(hitbox.bottomRightCorner.y == orig_y + model.getSpriteImage().getHeight());
 		hitbox.update();
-		
-		//assert values havent changed
 		assertTrue(hitbox.topLeftCorner.x == orig_x);
 		assertTrue(hitbox.bottomLeftCorner.x == orig_x);
 		assertTrue(hitbox.topRightCorner.x == orig_x + model.getSpriteImage().getWidth());
@@ -51,17 +68,30 @@ public class HitboxTest{
 	}
 	
 	
+	/**
+	 * Tear down.
+	 *
+	 * @throws Exception the exception
+	 */
 	@After
 	public void tearDown() throws Exception {
 	}
 	
-	
-	//helper func for cleaner code
+	/**
+	 * Sets the new model coords.
+	 *
+	 * @param x the x
+	 * @param y the y
+	 * @param mod the mod
+	 */
 	private void setNewModelCoords(int x, int y, GameModel mod){
 		mod = new Background(x,y, 1);
 		overLapHb = new Hitbox(mod);
 	}
 
+	/**
+	 * Test overlapping.
+	 */
 	@Test
 	public void testOverlapping() {
 		//tests first case
@@ -80,9 +110,6 @@ public class HitboxTest{
 		//rest cant be tested
 		setNewModelCoords(hitbox.bottomRightCorner.x,hitbox.bottomRightCorner.y+1,overLappingModel);
 		assertTrue(hitbox.isOverlapping(overLapHb)==false);
+		
 	}
-
-	
-	
-
 }
