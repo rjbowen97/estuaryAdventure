@@ -30,8 +30,7 @@ public class GameOverGameStatePanel extends JPanel implements Serializable {
 	 * @param gameOverGameState the game over game state
 	 * @param controller the controller
 	 */
-	public GameOverGameStatePanel(GameOverGameState gameOverGameState, Controller controller) {
-		this.gameOverGameState = gameOverGameState;
+	public GameOverGameStatePanel(Controller controller) {
 		this.controller = controller;
 		
 		JLabel gameOverLabel = new JLabel("GAME OVER");

@@ -18,9 +18,7 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	public ArrayList<Interactable> interactableModels;
 	
 	public ArrayList<Background> backgroundModels;	
-	
-	public ActiveGameStatePanel activeGameStatePanel;
-	
+		
 	private int tickNumber = 0;
 	
 	/**
@@ -32,7 +30,6 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	 * @param backgroundModels An array of background models
 	 */
 	public ActiveGameState(Controller controller, Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels) {
-		this.activeGameStatePanel = new ActiveGameStatePanel(playerModel, backgroundModels, controller, interactableModels);
 		this.controller = controller;
 		this.playerModel = playerModel;
 		this.interactableModels = interactableModels;

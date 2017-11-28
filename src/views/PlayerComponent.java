@@ -28,7 +28,7 @@ class PlayerComponent extends JComponent implements Serializable {
 	/** The controller. */
 	private Controller controller;
 	
-	private BufferedImage playerSprite;
+	private transient BufferedImage playerSprite;
 	
 	/**
 	 * Instantiates a new player component.

@@ -22,8 +22,8 @@ public class InteractableComponent extends JComponent implements Serializable {
 	/** The interactable models. */
 	private ArrayList<Interactable> interactableModels;
 
-	private BufferedImage foodImage;
-	private BufferedImage notFoodImage;
+	private transient BufferedImage foodImage;
+	private transient BufferedImage notFoodImage;
 
 	/**
 	 * Instantiates a new interactable component.
@@ -32,7 +32,8 @@ public class InteractableComponent extends JComponent implements Serializable {
 	 */
 	public InteractableComponent(ArrayList<Interactable> interactableModels) {
 		this.interactableModels = interactableModels;
-
+		this.setSpriteImage();
+		
 		this.setBounds(0,0,Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault());
 
 		this.setVisible(true);
@@ -59,6 +60,8 @@ public class InteractableComponent extends JComponent implements Serializable {
 
 	protected void setSpriteImage() {
 
+		ImageScaler imageScaler = new ImageScaler();
+		
 		BufferedImage foodImage = null;
 		BufferedImage notFoodImage = null;
 
@@ -78,8 +81,13 @@ public class InteractableComponent extends JComponent implements Serializable {
 		catch (IOException e) {
 			e.printStackTrace();
 		}			
-		this.foodImage = foodImage;
-		this.notFoodImage = notFoodImage;
+
+		double xRatio = ((double) this.interactableModels.get(0).getWidth()) / ((double) foodImage.getWidth());
+		double yRatio = ((double) this.interactableModels.get(0).getHeight()) / ((double) foodImage.getHeight());
+		
+		this.foodImage = imageScaler.scaleImageToInputRatio(foodImage, xRatio, yRatio);
+		this.notFoodImage = imageScaler.scaleImageToInputRatio(notFoodImage, xRatio, yRatio);
+		
 	}
 }
 

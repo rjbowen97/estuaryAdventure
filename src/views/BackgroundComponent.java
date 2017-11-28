@@ -20,7 +20,7 @@ public class BackgroundComponent extends JComponent implements Serializable {
 	
 	/** The background model. */
 	private Background backgroundModel;
-	private BufferedImage spriteImage;
+	private transient BufferedImage spriteImage;
 	
 	/**
 	 * Instantiates a new background component.

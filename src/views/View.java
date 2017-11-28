@@ -20,12 +20,19 @@ import controller.Settings;
 import models.Background;
 import models.Interactable;
 import models.Player;
+import quizMiniGame.MiniGameGameStatePanel;
 
 // TODO: Auto-generated Javadoc
 /**
  * The Class View.
  */
 public class View extends JFrame implements Serializable {
+
+	public ActiveGameStatePanel activeGameStatePanel;
+	public GameOverGameStatePanel gameOverGameStatePanel;
+	public MenuPanel menuPanel;
+	public MiniGameGameStatePanel miniGameGameStatePanel;
+
 
 	Controller controller;
 	/**
@@ -37,6 +44,12 @@ public class View extends JFrame implements Serializable {
 	 * @param interactableModels the interactable models
 	 */
 	public View(Player playerModel, ArrayList<Background> backgroundModels, Controller controller, ArrayList<Interactable> interactableModels) {
+		
+		this.activeGameStatePanel = new ActiveGameStatePanel(playerModel, backgroundModels, controller, interactableModels);
+		this.gameOverGameStatePanel = new GameOverGameStatePanel(controller);
+		this.menuPanel = new MenuPanel(controller.menuGameState.menu, controller);
+		this.miniGameGameStatePanel = new MiniGameGameStatePanel(controller.miniGameGameState.miniGame, controller);
+
 		this.controller = controller;
 		initializeKeyBindings();
 		
@@ -50,9 +63,13 @@ public class View extends JFrame implements Serializable {
 		ActionMap rootPaneActionMap = this.getRootPane().getActionMap();
 		
 		rootPaneInputMap.put(KeyStroke.getKeyStroke('s'), "save");
-		
 		SaveAction saveAction = new SaveAction();
 		rootPaneActionMap.put("save", saveAction);
+		
+		rootPaneInputMap.put(KeyStroke.getKeyStroke('l'), "load");
+		LoadAction loadAction = new LoadAction();
+		rootPaneActionMap.put("load", loadAction);
+		
 	}
 	
 	private class SaveAction extends AbstractAction {
@@ -60,6 +77,14 @@ public class View extends JFrame implements Serializable {
 		public void actionPerformed(ActionEvent e) {
 			System.out.println("Saving...");
 			controller.saveCurrentControllerState();
+		}
+	}
+	
+	private class LoadAction extends AbstractAction {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			System.out.println("Loading...");
+			controller.setCurrentControllerState();
 		}
 	}
 	

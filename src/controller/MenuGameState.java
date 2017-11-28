@@ -11,7 +11,6 @@ import views.MenuPanel;
 public class MenuGameState implements GameStateInterface, Serializable {
 	
 	public Controller controller;
-	public MenuPanel menuPanel;
 	public Menu menu;
 
 	/**
@@ -24,7 +23,6 @@ public class MenuGameState implements GameStateInterface, Serializable {
 	{
 		this.menu = menu;
 		this.controller = controller;
-		this.menuPanel = new MenuPanel(menu, controller);
 	}
 	
 	/* (non-Javadoc)

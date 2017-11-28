@@ -1,9 +1,11 @@
 package controller;
 
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -33,6 +35,32 @@ public class Controller implements Serializable {
 	public View view;
 
 	private GameState gameState;
+	
+	public void setCurrentControllerState() {
+		Controller controllerIn = null;
+		
+	      try {
+	         FileInputStream fileIn = new FileInputStream("controller.ser");
+	         ObjectInputStream in = new ObjectInputStream(fileIn);
+	         controllerIn = (Controller) in.readObject();
+	         in.close();
+	         fileIn.close();
+	      } catch (IOException i) {
+	         i.printStackTrace();
+	         return;
+	      } catch (ClassNotFoundException c) {
+	         System.out.println("Employee class not found");
+	         c.printStackTrace();
+	         return;
+	      }
+	      System.out.println(controllerIn.toString());
+	      
+	      this.view.setVisible(false);
+	      
+	      GameWrapper.controller = controllerIn;
+	      
+	      GameWrapper.controller.view.setVisible(true);
+	}
 	
 	public void saveCurrentControllerState() {
 		try {
@@ -72,7 +100,7 @@ public class Controller implements Serializable {
 
 		this.gameState = GameState.Menu;
 		this.view = new View(playerModel, backgroundModels, this, interactableModels);
-		this.view.setContentPane(menuGameState.menuPanel);
+		this.view.setContentPane(view.menuPanel);
 	}
 
 	/**
@@ -102,7 +130,7 @@ public class Controller implements Serializable {
 	 * Change game state from menu to active.
 	 */
 	public void changeGameStateFromMenuToActive() {
-		this.view.setContentPane(activeGameState.activeGameStatePanel);
+		this.view.setContentPane(view.activeGameStatePanel);
 		this.gameState = GameState.Active;
 	}
 
@@ -110,7 +138,7 @@ public class Controller implements Serializable {
 	 * Change game state from active to minigame.
 	 */
 	public void changeGameStateFromActiveToMinigame() {
-		this.view.setContentPane(miniGameGameState.miniGameGameStatePanel);
+		this.view.setContentPane(view.miniGameGameStatePanel);
 		this.gameState = GameState.MiniGame;
 	}
 
@@ -125,12 +153,12 @@ public class Controller implements Serializable {
 			activeGameState.playerModel.onMiniGameEnd(correctAnswerCount);
 		}
 		
-		miniGameGameState.miniGameGameStatePanel.displayCorrectAnswer();
+		view.miniGameGameStatePanel.displayCorrectAnswer();
 		
 		miniGameGameState.miniGame.resetMiniGame();
 		activeGameState.playerModel.resetScoreStreak();
 		
-		this.view.setContentPane(activeGameState.activeGameStatePanel);
+		this.view.setContentPane(view.activeGameStatePanel);
 		this.gameState = GameState.Active;
 		
 	}
@@ -143,7 +171,7 @@ public class Controller implements Serializable {
 		ScoreBoardManager.saveScoreboard(scoreBoard,Settings.getScoreFileName());
 		this.scoreBoard = ScoreBoardManager.loadScoreBoard(Settings.getScoreFileName());
 		
-		this.view.setContentPane(gameOverGameState.gameOverGameStatePanel);
+		this.view.setContentPane(view.gameOverGameStatePanel);
 		this.view.setContentPane(scoreBoard.scoreBoardPanel);
 		this.gameState = GameState.GameOver;
 

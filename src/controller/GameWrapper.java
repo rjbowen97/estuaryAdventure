@@ -17,7 +17,7 @@ import models.ScoreBoardManager;
  */
 public class GameWrapper implements Serializable {
 	
-	private static Controller controller;
+	public static Controller controller;
 	
 	/**
 	 * The main method.

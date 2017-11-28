@@ -14,8 +14,6 @@ public class MiniGameGameState implements GameStateInterface, Serializable {
 	
 	public MiniGame miniGame;
 	
-	public MiniGameGameStatePanel miniGameGameStatePanel;
-
 	private int tickNumber = 0;
 
 	/**
@@ -26,7 +24,6 @@ public class MiniGameGameState implements GameStateInterface, Serializable {
 	public MiniGameGameState(Controller controller) {
 		this.controller = controller;
 		this.miniGame = new MiniGame();
-		this.miniGameGameStatePanel = new MiniGameGameStatePanel(this.miniGame, controller);
 	}
 
 	/**
