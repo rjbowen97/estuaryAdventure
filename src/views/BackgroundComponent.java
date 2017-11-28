@@ -20,7 +20,8 @@ public class BackgroundComponent extends JComponent implements Serializable {
 	
 	/** The background model. */
 	private Background backgroundModel;
-	private transient BufferedImage spriteImage;
+	private transient BufferedImage airBackgroundImage;
+	private transient BufferedImage waterBackgroundImage;
 	
 	/**
 	 * Instantiates a new background component.
@@ -40,31 +41,52 @@ public class BackgroundComponent extends JComponent implements Serializable {
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		g.drawImage(this.spriteImage, backgroundModel.getXPosition(), backgroundModel.getYPosition(), null);
-		g.drawImage(this.spriteImage, backgroundModel.getXPosition() + Settings.getViewDimensionXDefault(), backgroundModel.getYPosition(), null);
+		if (backgroundModel.backgroundType.equals("a")) {
+			g.drawImage(this.airBackgroundImage, backgroundModel.getXPosition(), backgroundModel.getYPosition(), null);
+			g.drawImage(this.airBackgroundImage, backgroundModel.getXPosition() + Settings.getViewDimensionXDefault(), backgroundModel.getYPosition(), null);
+		}
+		
+		else {
+			g.drawImage(this.waterBackgroundImage, backgroundModel.getXPosition(), backgroundModel.getYPosition(), null);
+			g.drawImage(this.waterBackgroundImage, backgroundModel.getXPosition() + Settings.getViewDimensionXDefault(), backgroundModel.getYPosition(), null);
+		}
 	}
 	
 	public void setBackgroundSpriteImage() {
+		String airBackgroundFilePath = "./Graphics/Backgrounds/AirBackground/b" + backgroundModel.backgroundLayerIndex + ".png";
+		String waterBackgroundFilePath = "./Graphics/Backgrounds/WaterBackground/b" + backgroundModel.backgroundLayerIndex + ".png";
+		
 		ImageScaler imageScaler = new ImageScaler();
 		
-		BufferedImage unscaledImage = null;
+		BufferedImage unscaledAirImage = null;
+		BufferedImage unscaledWaterImage = null;
 		
-    	File backgroundImageFile = new File(backgroundModel.spriteFilePath);
+    	File airBackgroundImageFile = new File(airBackgroundFilePath);
+    	File waterBackgroundImageFile = new File(waterBackgroundFilePath);
     	
 		try {			
-			if (backgroundImageFile.exists() == true){
-				unscaledImage = ImageIO.read(backgroundImageFile);
+			if (airBackgroundImageFile.exists() == true){
+				unscaledAirImage = ImageIO.read(airBackgroundImageFile);
+			}
+			
+			if (waterBackgroundImageFile.exists() == true){
+				unscaledWaterImage = ImageIO.read(waterBackgroundImageFile);
 			}
 		}
 		catch (IOException e) {
 			e.printStackTrace();
 		}
 
-		double xRatio = ((double) this.backgroundModel.getWidth()) / ((double) unscaledImage.getWidth());
-		double yRatio = ((double) this.backgroundModel.getHeight()) / ((double) unscaledImage.getHeight());
+		double xRatio = ((double) this.backgroundModel.getWidth()) / ((double) unscaledAirImage.getWidth());
+		double yRatio = ((double) this.backgroundModel.getHeight()) / ((double) unscaledAirImage.getHeight());
+		BufferedImage scaledAirSpriteImage = imageScaler.scaleImageToInputRatio(unscaledAirImage, xRatio, yRatio);
 		
-		BufferedImage scaledSpriteImage = imageScaler.scaleImageToInputRatio(unscaledImage, xRatio, yRatio);
+		xRatio = ((double) this.backgroundModel.getWidth()) / ((double) unscaledWaterImage.getWidth());
+		yRatio = ((double) this.backgroundModel.getHeight()) / ((double) unscaledWaterImage.getHeight());
+		BufferedImage scaledWaterSpriteImage = imageScaler.scaleImageToInputRatio(unscaledWaterImage, xRatio, yRatio);
 		
-		this.spriteImage = scaledSpriteImage;
+		this.airBackgroundImage = scaledAirSpriteImage;
+		this.waterBackgroundImage = scaledWaterSpriteImage;
+		
 	}
 }

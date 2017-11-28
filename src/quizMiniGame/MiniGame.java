@@ -133,12 +133,6 @@ public class MiniGame extends GameModel implements Serializable {
 	private void resetCurrentPlayerAnswer() {
 		this.currentPlayerAnswer = "";
 	}
-
-	@Override
-	protected void setSpriteFilePath() {
-		// TODO Auto-generated method stub
-		
-	}
 }
 
 

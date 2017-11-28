@@ -15,6 +15,7 @@ import controller.ActiveGameState;
 import controller.Controller;
 import controller.Settings;
 import models.Player;
+import models.PlayerAnimalType;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -28,7 +29,8 @@ class PlayerComponent extends JComponent implements Serializable {
 	/** The controller. */
 	private Controller controller;
 	
-	private transient BufferedImage playerSprite;
+	private transient BufferedImage birdSprite;
+	private transient BufferedImage fishSprite;
 	
 	/**
 	 * Instantiates a new player component.
@@ -39,7 +41,7 @@ class PlayerComponent extends JComponent implements Serializable {
 	PlayerComponent(Player playerModel, Controller controller){
 		this.controller = controller;
 		this.playerModel = playerModel;
-		setPlayerSpriteImage();
+		setPlayerSpriteImages();
 		this.setBounds(playerModel.getXPosition(),playerModel.getYPosition(),Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault());
 		this.addMouseListener(new PlayerComponentMouseListener());
 		this.setVisible(true);
@@ -50,33 +52,60 @@ class PlayerComponent extends JComponent implements Serializable {
 	 */
 	@Override
 	public void paintComponent(Graphics g) {
-		g.drawImage(this.playerSprite, playerModel.getXPosition(), playerModel.getYPosition(), null);
+		
+		if (playerModel.playerAnimalType.equals(PlayerAnimalType.BIRD)) {
+			g.drawImage(this.birdSprite, playerModel.getXPosition(), playerModel.getYPosition(), null);
+		}
+		
+		else {
+			g.drawImage(this.fishSprite, playerModel.getXPosition(), playerModel.getYPosition(), null);
+			
+		}
 	}
 	
-	public void setPlayerSpriteImage() {
+	public void setPlayerSpriteImages() {
+
+		String birdSpriteFilePath = "./Graphics/Avatars/Bird/Bird.png";
+		String fishSpriteFilePath = "./Graphics/Avatars/Fish/fish.png";
 		
 		ImageScaler imageScaler = new ImageScaler();
 		
-		BufferedImage unscaledImage = null;
+		BufferedImage unscaledBirdImage = null;
+		BufferedImage unscaledFishImage = null;
 		
-		BufferedImage scaledImage;
+		BufferedImage scaledBirdImage;
+		BufferedImage scaledFishImage;
 
 		try {
-			File spriteFile = new File(playerModel.spriteFilePath);
+			File birdSpriteFile = new File(birdSpriteFilePath);
+			File fishSpriteFile = new File(fishSpriteFilePath);
 
-			if(spriteFile.exists() == true){
-				unscaledImage = ImageIO.read(spriteFile);
+			if (birdSpriteFile.exists() == true){
+				unscaledBirdImage = ImageIO.read(birdSpriteFile);
 			}
+			
+			if (fishSpriteFile.exists() == true){
+				unscaledFishImage = ImageIO.read(fishSpriteFile);
+			}
+			
 		}
 		catch (IOException e) {
 			e.printStackTrace();
 		}
-
-		double xRatio = ((double) this.playerModel.getWidth()) / ((double) unscaledImage.getWidth());
-		double yRatio = ((double) this.playerModel.getHeight()) / ((double) unscaledImage.getHeight());
-		scaledImage = imageScaler.scaleImageToInputRatio(unscaledImage, xRatio, yRatio);
 		
-		this.playerSprite = scaledImage;
+		double xRatio = 0;
+		double yRatio = 0;
+		
+		xRatio = ((double) this.playerModel.getWidth()) / ((double) unscaledBirdImage.getWidth());
+		yRatio = ((double) this.playerModel.getHeight()) / ((double) unscaledBirdImage.getHeight());
+		scaledBirdImage = imageScaler.scaleImageToInputRatio(unscaledBirdImage, xRatio, yRatio);
+		
+		xRatio = ((double) this.playerModel.getWidth()) / ((double) unscaledFishImage.getWidth());
+		yRatio = ((double) this.playerModel.getHeight()) / ((double) unscaledFishImage.getHeight());
+		scaledFishImage = imageScaler.scaleImageToInputRatio(unscaledFishImage, xRatio, yRatio);
+		
+		this.birdSprite = scaledBirdImage;
+		this.fishSprite = scaledFishImage;
 	}
 	
 	/**

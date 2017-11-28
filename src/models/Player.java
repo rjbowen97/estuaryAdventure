@@ -30,6 +30,8 @@ public abstract class Player extends GameModel implements Serializable {
 	/** The score streak. */
 	private int scoreStreak = 0;
 
+	public PlayerAnimalType playerAnimalType;
+	
 	/**
 	 * Instantiates a new player, their position and their username
 	 */
@@ -41,8 +43,7 @@ public abstract class Player extends GameModel implements Serializable {
 		
 		this.setHeight(75);
 		this.setWidth(75);
-		
-		this.setSpriteFilePath();
+		this.playerAnimalType = PlayerAnimalType.FISH;
 		this.setHitbox();
 	}
 
@@ -188,11 +189,5 @@ public abstract class Player extends GameModel implements Serializable {
 	public String toString(){
 		return super.toString() + "Player Name: " + this.playerName + "\nHealth: " + this.health + "\nScore: " + this.score + "\nPowered UP: " + this.poweredUp +
 				"\nScore Streak: " + this.scoreStreak;
-	}
-
-	@Override
-	protected void setSpriteFilePath() {
-		this.spriteFilePath = "./Graphics/Avatars/Bird/Bird.png";
-
 	}
 }

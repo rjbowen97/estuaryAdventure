@@ -29,10 +29,4 @@ public class Menu extends GameModel implements Serializable {
 	public void reset() {
 		
 	}
-
-	@Override
-	protected void setSpriteFilePath() {
-		
-	}
-	
 }

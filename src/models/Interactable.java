@@ -137,11 +137,4 @@ public class Interactable extends GameModel implements Serializable {
 		return super.toString() + "\nIs Active: " + this.isActive + "\nIs Food: " + this.isFood + 
 				"\nActivation Tick: " + this.activationTick;
 	}
-
-	@Override
-	protected void setSpriteFilePath() {
-		this.spriteFilePath = "";
-	}
-	
-	
 }
