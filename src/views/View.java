@@ -28,7 +28,6 @@ import models.Player;
 public class View extends JFrame implements Serializable {
 
 	Controller controller;
-	
 	/**
 	 * Instantiates a new view.
 	 *
@@ -38,7 +37,6 @@ public class View extends JFrame implements Serializable {
 	 * @param interactableModels the interactable models
 	 */
 	public View(Player playerModel, ArrayList<Background> backgroundModels, Controller controller, ArrayList<Interactable> interactableModels) {
-		
 		this.controller = controller;
 		initializeKeyBindings();
 		
