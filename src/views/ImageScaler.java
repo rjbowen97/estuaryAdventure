@@ -1,9 +1,13 @@
 package views;
 
-import java.awt.Graphics;
+
+import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.geom.AffineTransform;
 import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
+
+import javax.swing.ImageIcon;
 
 import controller.Settings;
 
@@ -12,8 +16,6 @@ import controller.Settings;
  * The Class ImageScaler.
  */
 public class ImageScaler {
-	
-	
 	/**
 	 * Instantiates a new image scaler.
 	 */
@@ -29,16 +31,21 @@ public class ImageScaler {
 	 * @return the buffered image
 	 */
 	public BufferedImage scaleImageToInputRatio(BufferedImage nonScaledImage, double xRatio, double yRatio) {
-		BufferedImage scaledImage = new BufferedImage(nonScaledImage.getWidth(), nonScaledImage.getHeight(), BufferedImage.TYPE_INT_ARGB);
-		AffineTransform affineTransform = new AffineTransform();
+		Image img = nonScaledImage;
 
-		affineTransform.scale(xRatio, yRatio);
+        BufferedImage bi = new BufferedImage((int) (xRatio * img.getWidth(null)),
+        									(int) (yRatio * img.getHeight(null)),
+        									BufferedImage.TYPE_INT_ARGB);
 
-		AffineTransformOp scaleOP = new AffineTransformOp(affineTransform, AffineTransformOp.TYPE_BILINEAR);
-		scaledImage = scaleOP.filter(nonScaledImage, scaledImage);
-		
-		BufferedImage scaledAndCroppedImage = scaledImage.getSubimage(0, 0, (int) (nonScaledImage.getWidth() * xRatio), (int) (nonScaledImage.getHeight() * yRatio));
-		return scaledAndCroppedImage; //or use it however you want
+        Graphics2D grph = (Graphics2D) bi.getGraphics();
+        grph.scale(xRatio, yRatio);
+
+        // everything drawn with grph from now on will get scaled.
+
+        grph.drawImage(img, 0, 0, null);
+        grph.dispose();
+
+        return bi;
 	}
 	
 	/**
@@ -57,7 +64,6 @@ public class ImageScaler {
 
 		AffineTransformOp scaleOP = new AffineTransformOp(affineTransform, AffineTransformOp.TYPE_BILINEAR);
 		scaledImage = scaleOP.filter(nonScaledImage, scaledImage);
-
 		
 		return scaledImage;
 		

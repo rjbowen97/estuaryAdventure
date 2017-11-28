@@ -54,20 +54,30 @@ class PlayerComponent extends JComponent implements Serializable {
 	}
 	
 	private void setPlayerSpriteImage() {
-		BufferedImage spriteImageToUse = null;
+		
+		ImageScaler imageScaler = new ImageScaler();
+		
+		BufferedImage unscaledImage = null;
+		
+		BufferedImage scaledImage;
 
 		try {
 			File spriteFile = new File(playerModel.spriteFilePath);
 
 			if(spriteFile.exists() == true){
-				spriteImageToUse = ImageIO.read(spriteFile);
+				unscaledImage = ImageIO.read(spriteFile);
 			}
 		}
 		catch (IOException e) {
 			e.printStackTrace();
 		}
 
-		this.playerSprite = spriteImageToUse;
+		double xRatio = ((double) this.playerModel.getWidth()) / ((double) unscaledImage.getWidth());
+		double yRatio = ((double) this.playerModel.getHeight()) / ((double) unscaledImage.getHeight());
+		
+		scaledImage = imageScaler.scaleImageToInputRatio(unscaledImage, xRatio, yRatio);
+		
+		this.playerSprite = scaledImage;
 	}
 	
 	/**

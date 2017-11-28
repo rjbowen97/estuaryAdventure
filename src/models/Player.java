@@ -38,6 +38,10 @@ public abstract class Player extends GameModel implements Serializable {
 		this.playerName = "Default";
 		this.setxPosition(Settings.getPlayerStartXPosition());
 		this.setyPosition(Settings.getPlayerStartYPosition());
+		
+		this.setHeight(75);
+		this.setWidth(75);
+		
 		this.setSpriteFilePath();
 		this.setHitbox();
 	}
