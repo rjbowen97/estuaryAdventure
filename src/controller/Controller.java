@@ -16,30 +16,55 @@ import views.View;
 
 public class Controller implements Serializable {
 
+	private GameState gameState;
+	
 	public MenuGameState menuGameState;
 	public ActiveGameState activeGameState;
 	public MiniGameGameState miniGameGameState;
 	public GameOverGameState gameOverGameState;
 	public ScoreBoard scoreBoard;
 	public View view;
-
-	private GameState gameState;
 	
-	public Controller(Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels, ScoreBoard scoreBoard, Menu menuModel) {
-		this.menuGameState = new MenuGameState(menuModel, this);
+	public Controller(Menu menuModel, Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels, ScoreBoard scoreBoard) {
+		this.gameState = GameState.MENU;
+
+		this.menuGameState = new MenuGameState(this, menuModel);
 		this.activeGameState = new ActiveGameState(this, playerModel, interactableModels, backgroundModels);
 		this.miniGameGameState = new MiniGameGameState(this);
 		
+		this.gameOverGameState = new GameOverGameState();
+		
 		this.scoreBoard = scoreBoard;
 		this.scoreBoard.scoreBoardPanel = new ScoreBoardPanel(this.scoreBoard);
-		
-		this.gameOverGameState = new GameOverGameState(this);
 
-		this.gameState = GameState.Menu;
+		
 		this.view = new View(playerModel, backgroundModels, this, interactableModels);
 		this.view.setContentPane(view.menuPanel);
 	}
 	
+	/**
+	 * Called every tick by the gameWrapper main loop. Depending on the current game state, the appropriate onTick function is called
+	 */
+	public void tick(){
+		if (gameState.equals(GameState.MENU)) {
+			this.menuGameState.onTick();
+		}
+		
+		if (gameState.equals(GameState.ACTIVE)) {
+			this.activeGameState.onTick();
+		}
+	
+		if (gameState.equals(GameState.MINI_GAME)) {
+			this.miniGameGameState.onTick();
+		}
+	
+		else { //gameOver
+			this.gameOverGameState.onTick();
+		}
+		
+		this.view.repaint();
+	}
+
 	/**
 	 * Changes the current level
 	 * 
@@ -100,34 +125,11 @@ public class Controller implements Serializable {
 	}
 
 	/**
-	 * Called every tick by the gameWrapper main loop. Depending on the current game state, the appropriate onTick function is called
-	 */
-	public void tick(){
-		if (gameState.equals(GameState.Menu)) {
-			this.menuGameState.onTick();
-		}
-		
-		if (gameState.equals(GameState.Active)) {
-			this.activeGameState.onTick();
-		}
-
-		if (gameState.equals(GameState.MiniGame)) {
-			this.miniGameGameState.onTick();
-		}
-
-		else { //gameOver
-			this.gameOverGameState.onTick();
-		}
-		
-		this.view.repaint();
-	}
-	
-	/**
 	 * Change game state from menu to active.
 	 */
 	public void changeGameStateFromMenuToActive() {
 		this.view.setContentPane(view.activeGameStatePanel);
-		this.gameState = GameState.Active;
+		this.gameState = GameState.ACTIVE;
 	}
 
 	/**
@@ -135,7 +137,7 @@ public class Controller implements Serializable {
 	 */
 	public void changeGameStateFromActiveToMinigame() {
 		this.view.setContentPane(view.miniGameGameStatePanel);
-		this.gameState = GameState.MiniGame;
+		this.gameState = GameState.MINI_GAME;
 	}
 
 	/**
@@ -155,7 +157,7 @@ public class Controller implements Serializable {
 		activeGameState.playerModel.resetScoreStreak();
 		
 		this.view.setContentPane(view.activeGameStatePanel);
-		this.gameState = GameState.Active;
+		this.gameState = GameState.ACTIVE;
 		
 	}
 
@@ -164,12 +166,12 @@ public class Controller implements Serializable {
 	 */
 	public void changeGameStateFromActiveToGameOver() {
 		scoreBoard.addNewScore(activeGameState.playerModel);
-		ScoreBoardManager.saveScoreboard(scoreBoard,Settings.getScoreFileName());
-		this.scoreBoard = ScoreBoardManager.loadScoreBoard(Settings.getScoreFileName());
+		ScoreBoardManager.saveScoreboard(scoreBoard,Settings.getScoreBoardFileName());
+		this.scoreBoard = ScoreBoardManager.loadScoreBoard(Settings.getScoreBoardFileName());
 		
 		this.view.setContentPane(view.gameOverGameStatePanel);
 		this.view.setContentPane(scoreBoard.scoreBoardPanel);
-		this.gameState = GameState.GameOver;
+		this.gameState = GameState.GAME_OVER;
 	}
 	
 	/**
