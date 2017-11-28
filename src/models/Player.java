@@ -18,20 +18,20 @@ public abstract class Player extends GameModel implements Serializable {
 
 	private String playerName;
 	
-	/** The health. */
+	/** The health of the player */
 	private int health = 3;
 	
 	/** The score. */
 	private int score = 0;
 	
-	/** The powered up. */
+	/** Whether the player has earned a power up or not, initially false */
 	private boolean poweredUp = false;
 	
 	/** The score streak. */
 	private int scoreStreak = 0;
 
 	/**
-	 * Instantiates a new player.
+	 * Instantiates a new player, their position and their username
 	 */
 	public Player() {
  
@@ -47,7 +47,7 @@ public abstract class Player extends GameModel implements Serializable {
 	}
 
 	/**
-	 * On mini game end.
+	 * On mini game end, adds how many correct answers and adds the powerup and score 
 	 *
 	 * @param correctAnswerCount the correct answer count
 	 */
@@ -57,7 +57,7 @@ public abstract class Player extends GameModel implements Serializable {
 	}
 	
 	/**
-	 * Power up.
+	 * If the player achieves the powerup, the player receives it, if not they do not
 	 */
 	private void powerUp() {
 		if (this.poweredUp == false) {
@@ -117,7 +117,7 @@ public abstract class Player extends GameModel implements Serializable {
 	public abstract void onMouseReleased(MouseEvent mouseEvent);
 
 	/**
-	 * On collision with interactable model.
+	 * Determines actions based on what interactable the player comes into contact with, if it is food, player goes into minigame, if not player loses health
 	 *
 	 * @param interactableModel the interactable model
 	 */
@@ -177,7 +177,7 @@ public abstract class Player extends GameModel implements Serializable {
 	}
 
 	/**
-	 * Gets the powered up.
+	 * Checks whether player is poweredUp or not
 	 *
 	 * @return the powered up
 	 */

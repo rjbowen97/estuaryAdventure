@@ -19,7 +19,8 @@ public class LandAnimal extends Player implements Serializable {
 		super.onTick();
 	}
 	
-	/* (non-Javadoc)
+	/* 
+	 * On mouse release, find where the mouse was released and if it is above the current animal then the animal rises up, if below the animal goes down
 	 * @see models.Player#onMouseReleased(java.awt.event.MouseEvent)
 	 */
 	@Override

@@ -9,7 +9,6 @@ import org.junit.Test;
 import controller.Settings;
 import models.Hitbox.Point;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class HitboxTest.
  */
@@ -28,7 +27,7 @@ public class HitboxTest{
 	private int orig_x =10, orig_y =10;
 	
 	/**
-	 * Sets the up.
+	 * Sets the up
 	 *
 	 * @throws Exception the exception
 	 */
