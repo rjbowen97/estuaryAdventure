@@ -7,8 +7,8 @@ import java.io.Serializable;
  * The Enum GameState.
  */
 public enum GameState implements Serializable {
-	Menu,
-	Active,
-	MiniGame,
-	GameOver,
+	MENU,
+	ACTIVE,
+	MINI_GAME,
+	GAME_OVER,
 }

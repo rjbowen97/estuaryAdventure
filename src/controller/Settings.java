@@ -39,14 +39,14 @@ public class Settings implements Serializable {
 	}
 	
 	/**
-	 * Gets the number of background layers.
+	 * Gets the milliseconds between tick.
 	 *
-	 * @return the number of background layers
+	 * @return the milliseconds between tick
 	 */
-	public static int getNumberOfBackgroundLayers() {
-		return Integer.parseInt(globalSettings.getProperty("numberOfBackgroundLayers"));	
+	public static int getMillisecondsBetweenTick() {
+		return Integer.parseInt(globalSettings.getProperty("millisecondsBetweenTick"));
 	}
-	
+
 	/**
 	 * Gets the view dimension X default.
 	 *
@@ -55,7 +55,7 @@ public class Settings implements Serializable {
 	public static int getViewDimensionXDefault() {
 		return Integer.parseInt(globalSettings.getProperty("viewDimensionX"));
 	}
-	
+
 	/**
 	 * Gets the view dimension Y default.
 	 *
@@ -63,6 +63,60 @@ public class Settings implements Serializable {
 	 */
 	public static int getViewDimensionYDefault() {
 		return Integer.parseInt(globalSettings.getProperty("viewDimensionY"));
+	}
+
+	/**
+	 * Gets the player start X position.
+	 *
+	 * @return the player start X position
+	 */
+	public static int getPlayerStartXPosition() {
+		return Integer.parseInt(globalSettings.getProperty("playerStartXPosition"));
+	}
+
+	/**
+	 * Gets the player start Y position.
+	 *
+	 * @return the player start Y position
+	 */
+	public static int getPlayerStartYPosition() {
+		return Integer.parseInt(globalSettings.getProperty("playerStartYPosition"));
+	}
+
+	/**
+	 * Gets the non land animal flap speed.
+	 *
+	 * @return the non land animal flap speed
+	 */
+	public static int getNonLandAnimalFlapSpeed() {
+		return Integer.parseInt(globalSettings.getProperty("nonLandAnimalFlapSpeed"));
+	}
+
+	/**
+	 * Gets the non land animal fall speed.
+	 *
+	 * @return the non land animal fall speed
+	 */
+	public static int getNonLandAnimalFallSpeed() {
+		return Integer.parseInt(globalSettings.getProperty("nonLandAnimalFallSpeed"));
+	}
+
+	/**
+	 * Gets the land animal shuffle speed.
+	 *
+	 * @return the land animal shuffle speed
+	 */
+	public static int getLandAnimalShuffleSpeed() {
+		return Integer.parseInt(globalSettings.getProperty("landAnimalShuffleSpeed"));
+	}
+
+	/**
+	 * Gets the number of background layers.
+	 *
+	 * @return the number of background layers
+	 */
+	public static int getNumberOfBackgroundLayers() {
+		return Integer.parseInt(globalSettings.getProperty("numberOfBackgroundLayers"));	
 	}
 	
 	/**
@@ -73,51 +127,6 @@ public class Settings implements Serializable {
 	 */
 	public static int getBackgroundBaseSpeed(int backgroundLayerIndex) {
 		return Integer.parseInt(globalSettings.getProperty("background" + backgroundLayerIndex + "BaseSpeed"));
-	}
-	
-	/**
-	 * Gets the non land animal fall speed.
-	 *
-	 * @return the non land animal fall speed
-	 */
-	public static int getNonLandAnimalFallSpeed() {
-		return Integer.parseInt(globalSettings.getProperty("nonLandAnimalFallSpeed"));
-	}
-	
-	/**
-	 * Gets the non land animal flap speed.
-	 *
-	 * @return the non land animal flap speed
-	 */
-	public static int getNonLandAnimalFlapSpeed() {
-		return Integer.parseInt(globalSettings.getProperty("nonLandAnimalFlapSpeed"));
-	}
-	
-	/**
-	 * Gets the land animal shuffle speed.
-	 *
-	 * @return the land animal shuffle speed
-	 */
-	public static int getLandAnimalShuffleSpeed() {
-		return Integer.parseInt(globalSettings.getProperty("landAnimalShuffleSpeed"));
-	}
-	
-	/**
-	 * Gets the player start X position.
-	 *
-	 * @return the player start X position
-	 */
-	public static int getPlayerStartXPosition() {
-		return Integer.parseInt(globalSettings.getProperty("playerStartXPosition"));
-	}
-	
-	/**
-	 * Gets the player start Y position.
-	 *
-	 * @return the player start Y position
-	 */
-	public static int getPlayerStartYPosition() {
-		return Integer.parseInt(globalSettings.getProperty("playerStartYPosition"));
 	}
 	
 	/**
@@ -148,15 +157,6 @@ public class Settings implements Serializable {
 	}
 	
 	/**
-	 * Gets the milliseconds between tick.
-	 *
-	 * @return the milliseconds between tick
-	 */
-	public static int getMillisecondsBetweenTick() {
-		return Integer.parseInt(globalSettings.getProperty("millisecondsBetweenTick"));
-	}
-	
-	/**
 	 * Gets the mini game question limit.
 	 *
 	 * @return the mini game question limit
@@ -164,13 +164,13 @@ public class Settings implements Serializable {
 	public static int getMiniGameQuestionLimit() {
 		return Integer.parseInt(globalSettings.getProperty("miniGameQuestionLimit"));
 	}
-	
+
 	/**
 	 * Gets the score file name.
 	 *
 	 * @return the score file name
 	 */
-	public static String getScoreFileName() {
-		return globalSettings.getProperty("scoreFileName");
+	public static String getScoreBoardFileName() {
+		return globalSettings.getProperty("scoreBoardFileName");
 	}
 }

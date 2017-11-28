@@ -22,8 +22,10 @@ public class InteractableComponent extends JComponent implements Serializable {
 	/** The interactable models. */
 	private ArrayList<Interactable> interactableModels;
 
-	private transient BufferedImage foodImage;
-	private transient BufferedImage notFoodImage;
+	private transient BufferedImage airFoodImage;
+	private transient BufferedImage airNotFoodImage;
+	private transient BufferedImage waterFoodImage;
+	private transient BufferedImage waterNotFoodImage;
 
 	/**
 	 * Instantiates a new interactable component.
@@ -48,11 +50,23 @@ public class InteractableComponent extends JComponent implements Serializable {
 			if (interactableModel.isActive() == true) {
 				
 				if (interactableModel.isFood()) {
-					g.drawImage(this.foodImage, interactableModel.getXPosition(), interactableModel.getYPosition(), null);
+					if (interactableModel.isInWater) {
+						g.drawImage(this.waterFoodImage, interactableModel.getXPosition(), interactableModel.getYPosition(), null);						
+					}
+					else {
+						g.drawImage(this.airFoodImage, interactableModel.getXPosition(), interactableModel.getYPosition(), null);
+					}
 				}
 				
 				else {
-					g.drawImage(this.notFoodImage, interactableModel.getXPosition(), interactableModel.getYPosition(), null);
+					if (interactableModel.isInWater) {
+						g.drawImage(this.waterNotFoodImage, interactableModel.getXPosition(), interactableModel.getYPosition(), null);
+					}
+					
+					else {
+						g.drawImage(this.airNotFoodImage, interactableModel.getXPosition(), interactableModel.getYPosition(), null);
+					}
+					
 				}
 			}
 		}
@@ -61,33 +75,53 @@ public class InteractableComponent extends JComponent implements Serializable {
 	protected void setSpriteImage() {
 
 		ImageScaler imageScaler = new ImageScaler();
-		
-		BufferedImage foodImage = null;
-		BufferedImage notFoodImage = null;
+
+		BufferedImage airFoodImage = null;
+		BufferedImage airNotFoodImage = null;
+		BufferedImage waterFoodImage = null;
+		BufferedImage waterNotFoodImage = null;
 
 		try {
+			File airFoodFile = new File("./Graphics/Fruit/Fruit/apple.png");
+			File airNotFoodFile = new File("./Graphics/More Interactables/skull.png");
+			File waterFoodFile = new File("./Graphics/More Interactables/Enemy Fish.png");
+			File waterNotFoodFile = new File("./Graphics/Enemy fish.png");
 			
-			File foodFile = new File("./sprites/foodSprite.jpg");
-			File notFoodFile = new File("./sprites/notFoodSprite.jpg");
-
-			if(foodFile.exists() == true){
-				foodImage = ImageIO.read(foodFile);
+			if (airFoodFile.exists() == true){
+				airFoodImage = ImageIO.read(airFoodFile);
 			}
 
-			if(notFoodFile.exists() == true){
-				notFoodImage = ImageIO.read(notFoodFile);
+			if (airNotFoodFile.exists() == true){
+				airNotFoodImage = ImageIO.read(airNotFoodFile);
+			}
+			
+			if (waterFoodFile.exists() == true){
+				waterFoodImage = ImageIO.read(waterFoodFile);
+			}
+
+			if (waterNotFoodFile.exists() == true){
+				waterNotFoodImage = ImageIO.read(waterNotFoodFile);
 			}
 		}
 		catch (IOException e) {
 			e.printStackTrace();
 		}			
+		
+		double xRatio = ((double) this.interactableModels.get(0).getWidth()) / ((double) airFoodImage.getWidth());
+		double yRatio = ((double) this.interactableModels.get(0).getHeight()) / ((double) airFoodImage.getHeight());
+		this.airFoodImage = imageScaler.scaleImageToInputRatio(airFoodImage, xRatio, yRatio);
 
-		double xRatio = ((double) this.interactableModels.get(0).getWidth()) / ((double) foodImage.getWidth());
-		double yRatio = ((double) this.interactableModels.get(0).getHeight()) / ((double) foodImage.getHeight());
-		
-		this.foodImage = imageScaler.scaleImageToInputRatio(foodImage, xRatio, yRatio);
-		this.notFoodImage = imageScaler.scaleImageToInputRatio(notFoodImage, xRatio, yRatio);
-		
+		xRatio = ((double) this.interactableModels.get(0).getWidth()) / ((double) airNotFoodImage.getWidth());
+		yRatio = ((double) this.interactableModels.get(0).getHeight()) / ((double) airNotFoodImage.getHeight());
+		this.airNotFoodImage = imageScaler.scaleImageToInputRatio(airNotFoodImage, xRatio, yRatio);
+
+		xRatio = ((double) this.interactableModels.get(0).getWidth()) / ((double) waterFoodImage.getWidth());
+		yRatio = ((double) this.interactableModels.get(0).getHeight()) / ((double) waterFoodImage.getHeight());
+		this.waterFoodImage = imageScaler.scaleImageToInputRatio(waterFoodImage, xRatio, yRatio);
+
+		xRatio = ((double) this.interactableModels.get(0).getWidth()) / ((double) waterNotFoodImage.getWidth());
+		yRatio = ((double) this.interactableModels.get(0).getHeight()) / ((double) waterNotFoodImage.getHeight());
+		this.waterNotFoodImage = imageScaler.scaleImageToInputRatio(waterNotFoodImage, xRatio, yRatio);
 	}
 }
 

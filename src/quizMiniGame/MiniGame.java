@@ -9,7 +9,7 @@ import models.GameModel;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class MiniGame.
+ * The Class MINI_GAME.
  */
 public class MiniGame extends GameModel implements Serializable {
 	
