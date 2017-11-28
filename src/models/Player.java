@@ -14,7 +14,7 @@ import controller.Settings;
 /**
  * The Class Player.
  */
-public abstract class Player extends GameModel implements Serializable{
+public abstract class Player extends GameModel implements Serializable {
 
 	private String playerName;
 	
@@ -38,7 +38,7 @@ public abstract class Player extends GameModel implements Serializable{
 		this.playerName = "Default";
 		this.setxPosition(Settings.getPlayerStartXPosition());
 		this.setyPosition(Settings.getPlayerStartYPosition());
-		this.setSpriteImage();
+		this.spriteFilePath = "./Graphics/Avatars/Bird/Bird.png";
 		this.setHitbox();
 	}
 
@@ -103,26 +103,7 @@ public abstract class Player extends GameModel implements Serializable{
 
 	/* (non-Javadoc)
 	 * @see models.GameModel#setSpriteImage()
-	 */
-	@Override
-	protected void setSpriteImage() {
-		BufferedImage nonScaledSpriteImageToUse = null;
-
-		try {
-			File spriteFile = new File("./Graphics/Avatars/Bird/Bird.png");
-
-			if(spriteFile.exists() == true){
-				nonScaledSpriteImageToUse = ImageIO.read(spriteFile);
-			}
-		}
-		catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		BufferedImage scaledSpriteImageToUse = ImageScaler.scaleImageToInputRatio(nonScaledSpriteImageToUse, 0.2, 0.2);
-
-		this.setSpriteImage(scaledSpriteImageToUse);
-	}
+	 */	
 
 	/**
 	 * On mouse released.

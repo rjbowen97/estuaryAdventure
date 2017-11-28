@@ -16,7 +16,7 @@ public abstract class GameModel implements Serializable {
 	private int yPosition;
 	
 	/** The sprite image. */
-	private BufferedImage spriteImage;
+	public String spriteFilePath;
 	
 	/** The speed. */
 	private int speed = 0;
@@ -27,7 +27,7 @@ public abstract class GameModel implements Serializable {
 	/**
 	 * Sets the sprite image.
 	 */
-	protected abstract void setSpriteImage();
+	protected abstract void setSpriteFilePath();
 	
 	/**
 	 * Sets the hitbox.
@@ -95,15 +95,6 @@ public abstract class GameModel implements Serializable {
 	}
 	
 	/**
-	 * Gets the sprite image.
-	 *
-	 * @return the sprite image
-	 */
-	public BufferedImage getSpriteImage() {
-		return this.spriteImage;
-	}
-	
-	/**
 	 * Sets the x position.
 	 *
 	 * @param xPosition the new x position
@@ -128,15 +119,6 @@ public abstract class GameModel implements Serializable {
 	 */
 	protected void setSpeed(int speed) {
 		this.speed = speed;
-	}
-	
-	/**
-	 * Sets the sprite image.
-	 *
-	 * @param spriteImage the new sprite image
-	 */
-	protected void setSpriteImage(BufferedImage spriteImage) {
-		this.spriteImage = spriteImage;
 	}
 	
 	public String toString(){

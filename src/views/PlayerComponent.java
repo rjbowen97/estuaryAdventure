@@ -3,13 +3,18 @@ package views;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.io.Serializable;
 
+import javax.imageio.ImageIO;
 import javax.swing.JComponent;
 
 import controller.ActiveGameState;
 import controller.Controller;
 import controller.Settings;
+import models.ImageScaler;
 import models.Player;
 
 // TODO: Auto-generated Javadoc
@@ -24,6 +29,8 @@ class PlayerComponent extends JComponent implements Serializable {
 	/** The controller. */
 	private Controller controller;
 	
+	private BufferedImage playerSprite;
+	
 	/**
 	 * Instantiates a new player component.
 	 *
@@ -31,7 +38,6 @@ class PlayerComponent extends JComponent implements Serializable {
 	 * @param controller the controller
 	 */
 	PlayerComponent(Player playerModel, Controller controller){
-		
 		this.controller = controller;
 		this.playerModel = playerModel;
 		this.setBounds(playerModel.getXPosition(),playerModel.getYPosition(),Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault());
@@ -44,7 +50,26 @@ class PlayerComponent extends JComponent implements Serializable {
 	 */
 	@Override
 	public void paintComponent(Graphics g) {
-		g.drawImage(playerModel.getSpriteImage(), playerModel.getXPosition(), playerModel.getYPosition(), null);
+		g.drawImage(this.playerSprite, playerModel.getXPosition(), playerModel.getYPosition(), null);
+	}
+	
+	private void setPlayerSpriteImage() {
+		BufferedImage nonScaledSpriteImageToUse = null;
+
+		try {
+			File spriteFile = new File(playerModel.spritePath);
+
+			if(spriteFile.exists() == true){
+				nonScaledSpriteImageToUse = ImageIO.read(spriteFile);
+			}
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		BufferedImage scaledSpriteImageToUse = ImageScaler.scaleImageToInputRatio(nonScaledSpriteImageToUse, 0.2, 0.2);
+
+		this.playerSprite = scaledSpriteImageToUse;
 	}
 	
 	/**
