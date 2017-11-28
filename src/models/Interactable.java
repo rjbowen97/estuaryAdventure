@@ -16,7 +16,6 @@ import controller.Settings;
  */
 public class Interactable extends GameModel implements Serializable {
 
-	/** The is food. */
 	private boolean isFood;	
 	
 	/** The activation tick. */
@@ -29,7 +28,7 @@ public class Interactable extends GameModel implements Serializable {
 	private Random random = new Random();
 	
 	/**
-	 * Instantiates a new interactable.
+	 * Creates a new interactable, determines its position and whether or not it is food
 	 *
 	 * @param activationTick the activation tick
 	 */
@@ -50,7 +49,7 @@ public class Interactable extends GameModel implements Serializable {
 	 */
 	
 	/**
-	 * On collision with player model.
+	 * On collision with player model eliminate the interactable
 	 *
 	 * @param playerModel the player model
 	 */
@@ -59,7 +58,7 @@ public class Interactable extends GameModel implements Serializable {
 	}
 	
 	/**
-	 * Deactivate.
+	 * Deactivate
 	 */
 	private void deactivate() {
 		this.isActive = false;
@@ -138,11 +137,4 @@ public class Interactable extends GameModel implements Serializable {
 		return super.toString() + "\nIs Active: " + this.isActive + "\nIs Food: " + this.isFood + 
 				"\nActivation Tick: " + this.activationTick;
 	}
-
-	@Override
-	protected void setSpriteFilePath() {
-		this.spriteFilePath = "";
-	}
-	
-	
 }

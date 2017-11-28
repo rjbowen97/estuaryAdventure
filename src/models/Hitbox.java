@@ -11,21 +11,21 @@ public class Hitbox implements Serializable {
 	/** The game model. */
 	private GameModel gameModel;
 
-	/** The top left corner. */
+	/** The top left corner of the hitbox */
 	public Point topLeftCorner;
 	
-	/** The top right corner. */
+	/** The top right corner of the hitbox */
 	public Point topRightCorner;
 	
-	/** The bottom left corner. */
+	/** The bottom left corner of the hitbox */
 	public Point bottomLeftCorner;
 	
-	/** The bottom right corner. */
+	/** The bottom right corner of the hitbox */
 	public Point bottomRightCorner;
 
 
 	/**
-	 * Instantiates a new hitbox.
+	 * Instantiates a new hitbox and sets all the points
 	 *
 	 * @param gameModel the game model
 	 */
@@ -38,7 +38,7 @@ public class Hitbox implements Serializable {
 	}
 
 	/**
-	 * Update.
+	 * Update as the hitbox moves
 	 */
 	public void update() {
 		this.topLeftCorner.update(gameModel.getXPosition(),gameModel.getYPosition());
@@ -48,10 +48,10 @@ public class Hitbox implements Serializable {
 	}
 
 	/**
-	 * Checks if is overlapping.
+	 * Checks if the hitbox is overlapping with another hitbox, which triggers events in the program
 	 *
 	 * @param otherHitbox the other hitbox
-	 * @return true, if is overlapping
+	 * @return true, if is overlapping with another hitbox
 	 */
 	public boolean isOverlapping(Hitbox otherHitbox) {
 		
@@ -119,17 +119,8 @@ public class Hitbox implements Serializable {
 		return false;
 
 	}
-	
-	public String toString(){
-		String result = "Top Left Corner X: " + this.topLeftCorner.x + " Y:" + this.topLeftCorner.y +
-				"Top Right Corner X: " + this.topRightCorner.x + " Y:" + this.topRightCorner.y +
-				"Bottom Left Corner X: " + this.bottomLeftCorner.x + " Y:" + this.bottomLeftCorner.y +
-				"Bottom Right Corner X: " + this.bottomRightCorner.x + " Y:" + this.bottomRightCorner.y;
-		return result;
-	}
-
-	/**
-	 * The Class Point.
+	/*
+	 * Point class that hold the position of points on a hitbox
 	 */
 	public class Point implements Serializable {
 		
@@ -149,8 +140,8 @@ public class Hitbox implements Serializable {
 		/**
 		 * Instantiates a new point.
 		 *
-		 * @param x the x
-		 * @param y the y
+		 * @param x the x position of the Point
+		 * @param y the y position of the Point
 		 */
 		public Point(int x, int y) {
 			this.x = x;
@@ -160,8 +151,8 @@ public class Hitbox implements Serializable {
 		/**
 		 * Update.
 		 *
-		 * @param x the x
-		 * @param y the y
+		 * @param x the x position of the Point
+		 * @param y the y position of the Point
 		 */
 		public void update(int x, int y) {
 			this.x = x;
@@ -169,10 +160,10 @@ public class Hitbox implements Serializable {
 		}
 
 		/**
-		 * Checks if is above.
+		 * Checks if Point is above another Point
 		 *
-		 * @param otherPoint the other point
-		 * @return true, if is above
+		 * @param otherPoint the other point position
+		 * @return true, if is above 
 		 */
 		public boolean isAbove(Point otherPoint) {
 			if (this.y <= otherPoint.y) {
@@ -183,9 +174,9 @@ public class Hitbox implements Serializable {
 		}
 
 		/**
-		 * Checks if is to the right of.
+		 * Checks if is to the right of another Point
 		 *
-		 * @param otherPoint the other point
+		 * @param otherPoint the other point position
 		 * @return true, if is to the right of
 		 */
 		public boolean isToTheRightOf(Point otherPoint) {

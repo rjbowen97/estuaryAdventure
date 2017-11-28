@@ -22,16 +22,16 @@ import controller.Settings;
  */
 public class BackgroundTest {
 	
-	/** The test image. */
+	/** The test image for background */
 	private BufferedImage testImage;
 	
 	/** The y pos. */
 	private int xPos, yPos;
 	
-	/** The layer pos. */
+	/** The layer position in relation to the background */
 	private static int layerPos;
 	
-	/** The bck grnd. */
+	/** The example background */
 	static Background bckGrnd;
 	
 	/** The settings. */
