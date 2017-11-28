@@ -35,7 +35,6 @@ public class Background extends GameModel implements Serializable {
 		
 		this.backgroundLayerIndex = backgroundLayerIndex;
 		this.setSpeed(Settings.getBackgroundBaseSpeed(backgroundLayerIndex));
-		this.setSpriteImage();
 	}
 	
 	/* (non-Javadoc)
@@ -87,6 +86,11 @@ public class Background extends GameModel implements Serializable {
 		String result =super.toString();
 		result += "\nLayer Index: "+ backgroundLayerIndex;
 		return result;
+	}
+
+	@Override
+	protected void setSpriteFilePath() {
+		spriteFilePath = "./Graphics/Backgrounds/AirBackground/b" + this.backgroundLayerIndex + ".png";
 	}
 	
 }

@@ -30,6 +30,7 @@ public class BackgroundComponent extends JComponent implements Serializable {
 	BackgroundComponent(Background backgroundModel){
 		this.setBounds(0,0,Settings.getViewDimensionXDefault(),Settings.getViewDimensionYDefault());
 		this.backgroundModel = backgroundModel;
+		setBackgroundSpriteImage();
 		this.setVisible(true);
 	}
 	
@@ -41,13 +42,12 @@ public class BackgroundComponent extends JComponent implements Serializable {
 		super.paintComponent(g);
 		g.drawImage(this.spriteImage, backgroundModel.getXPosition(), backgroundModel.getYPosition(), null);
 		g.drawImage(this.spriteImage, backgroundModel.getXPosition() + Settings.getViewDimensionXDefault(), backgroundModel.getYPosition(), null);
-		
 	}
 	
-	protected void setBackgroundSpriteImage() {
+	private void setBackgroundSpriteImage() {
 		BufferedImage spriteImageToUse = null;
 		
-    	File backgroundImageFile = new File("./Graphics/Backgrounds/AirBackground/b" + backgroundModel.backgroundLayerIndex + ".png");
+    	File backgroundImageFile = new File(backgroundModel.spriteFilePath);
 		try {			
 			if(backgroundImageFile.exists() == true){
 				spriteImageToUse = ImageIO.read(backgroundImageFile);

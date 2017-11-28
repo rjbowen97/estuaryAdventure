@@ -46,40 +46,6 @@ public class Interactable extends GameModel implements Serializable {
 	/* (non-Javadoc)
 	 * @see models.GameModel#setSpriteImage()
 	 */
-	@Override
-	protected void setSpriteImage() {
-		
-		BufferedImage foodImage = null;
-		BufferedImage notFoodImage = null;
-		
-		try {
-			File foodFile = new File("./sprites/foodSprite.jpg");
-			File notFoodFile = new File("./sprites/notFoodSprite.jpg");
-			
-			if(foodFile.exists() == true){
-				foodImage = ImageIO.read(foodFile);
-			}
-			
-			if(notFoodFile.exists() == true){
-				notFoodImage = ImageIO.read(notFoodFile);
-			}
-		}
-		catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		if (this.isFood == true) {
-			
-			foodImage = ImageScaler.scaleImageToInputRatio(foodImage, 0.5, 0.5);
-			
-			this.setSpriteImage(foodImage);
-		}
-		
-		else {
-			notFoodImage = ImageScaler.scaleImageToInputRatio(notFoodImage, 0.5, 0.5);
-			this.setSpriteImage(notFoodImage);
-		}
-	}
 	
 	/**
 	 * On collision with player model.
