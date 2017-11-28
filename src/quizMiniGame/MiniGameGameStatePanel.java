@@ -39,6 +39,8 @@ public class MiniGameGameStatePanel extends JPanel implements ActionListener {
 	/** The correct answer count label. */
 	JLabel correctAnswerCountLabel;
 	
+	JLabel correctAnswerLabel;
+	
 	/**
 	 * Instantiates a new mini game game state panel.
 	 *
@@ -73,6 +75,9 @@ public class MiniGameGameStatePanel extends JPanel implements ActionListener {
 		this.correctAnswerCountLabel = new JLabel("SCORE ADDED: " + String.valueOf(miniGame.correctAnswerCount));
 		this.add(this.correctAnswerCountLabel);
 		
+		this.correctAnswerLabel = new JLabel();
+		this.add(correctAnswerLabel);
+		
 		this.setBounds(0, 0, Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault());
 		
 		this.setVisible(true);
@@ -106,6 +111,18 @@ public class MiniGameGameStatePanel extends JPanel implements ActionListener {
 
 		else if (e.getActionCommand().equals("answerC")) {
 			controller.miniGameGameState.setMiniGameCurrentPlayerAnswer("C");
+		}
+	}
+	
+	public void displayCorrectAnswer() {
+		this.correctAnswerLabel.setText("Sorry, " + miniGame.getCurrentQuestionAndAnswerPair().correctAnswer + " was the correct answer!");
+		
+		this.repaint();
+		try {
+			Thread.sleep(4000);
+			
+		} catch (InterruptedException e) {
+			e.printStackTrace();
 		}
 	}
 }

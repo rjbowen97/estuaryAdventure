@@ -105,6 +105,8 @@ public class Controller {
 			activeGameState.playerModel.onMiniGameEnd(correctAnswerCount);
 		}
 		
+		miniGameGameState.miniGameGameStatePanel.displayCorrectAnswer();
+		
 		miniGameGameState.miniGame.resetMiniGame();
 		activeGameState.playerModel.resetScoreStreak();
 		
