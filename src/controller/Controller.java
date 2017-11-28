@@ -109,6 +109,11 @@ public class Controller implements Serializable {
 			for (Background background : activeGameState.backgroundModels) {
 				background.backgroundType = "a";
 			}
+			
+			for (Interactable interactable : activeGameState.interactableModels) {
+				interactable.isInWater = false;
+			}
+			
 		}
 		
 		else {
@@ -116,6 +121,10 @@ public class Controller implements Serializable {
 
 			for (Background background : activeGameState.backgroundModels) {
 				background.backgroundType = "w";
+			}
+			
+			for (Interactable interactable : activeGameState.interactableModels) {
+				interactable.isInWater = true;
 			}
 		}
 	}

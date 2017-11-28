@@ -11,6 +11,8 @@ import controller.Settings;
  */
 public class Interactable extends GameModel implements Serializable {
 
+	public boolean isInWater = false;
+	
 	private boolean isFood;	
 	
 	/** The activation tick. */
@@ -30,8 +32,8 @@ public class Interactable extends GameModel implements Serializable {
 	public Interactable(int activationTick) {
 		this.setxPosition(Settings.getInteractableStartXPosition());
 		this.setyPosition(random.nextInt(Settings.getViewDimensionYDefault() - 100)); // -100 because this is the spriteImage height for interactables
-		this.setWidth(50);
-		this.setHeight(50);
+		this.setWidth(150);
+		this.setHeight(150);
 		
 		this.isFood = random.nextBoolean();
 		this.setSpeed(Settings.getInteractableSpeed());
