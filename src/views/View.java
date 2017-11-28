@@ -28,9 +28,6 @@ public class View extends JFrame implements Serializable {
 	public MiniGameGameStatePanel miniGameGameStatePanel;
 
 	Controller controller;
-
-	public void reloadImages() {
-	}
 	
 	/**
 	 * Instantiates a new view.
