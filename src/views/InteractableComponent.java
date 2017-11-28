@@ -66,7 +66,6 @@ public class InteractableComponent extends JComponent implements Serializable {
 		BufferedImage notFoodImage = null;
 
 		try {
-			
 			File foodFile = new File("./sprites/foodSprite.jpg");
 			File notFoodFile = new File("./sprites/notFoodSprite.jpg");
 
