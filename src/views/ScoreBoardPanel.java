@@ -1,5 +1,6 @@
 package views;
 
+import java.awt.Graphics;
 import java.util.ArrayList;
 
 import javax.swing.BoxLayout;
@@ -42,6 +43,15 @@ public class ScoreBoardPanel extends JPanel {
 		
 		this.setBounds(0, 0, Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault());
 		this.setVisible(true);
+	}
+	
+	@Override
+	public void paintComponent(Graphics g) {
+		int currentLabelIndex = 0;
+		for (JLabel jLabel : scoreBoardEntryLabels) {
+			jLabel.setText(scoreBoard.scoreBoardEntries.get(currentLabelIndex).name + " Score: " + scoreBoard.scoreBoardEntries.get(currentLabelIndex).score);
+			currentLabelIndex++;
+		}
 	}
 
 }
