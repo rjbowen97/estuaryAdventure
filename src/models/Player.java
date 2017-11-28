@@ -201,7 +201,7 @@ public abstract class Player extends GameModel implements Serializable{
 	}
 	
 	public String toString(){
-		return "Player Name: " + this.playerName + "\nHealth: " + this.health + "\nScore: " + this.score + "\nPowered UP: " + this.poweredUp +
+		return super.toString() + "Player Name: " + this.playerName + "\nHealth: " + this.health + "\nScore: " + this.score + "\nPowered UP: " + this.poweredUp +
 				"\nScore Streak: " + this.scoreStreak;
 	}
 }
