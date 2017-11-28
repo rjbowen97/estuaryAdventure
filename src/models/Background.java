@@ -15,7 +15,7 @@ import controller.Settings;
 /**
  * The Class Background.
  */
-public class Background extends GameModel implements Serializable{
+public class Background extends GameModel{
 
 	/** The background layer index. */
 	private int backgroundLayerIndex;
@@ -96,4 +96,11 @@ public class Background extends GameModel implements Serializable{
 	@Override
 	public void reset() {
 	}
+	
+	public String toString(){
+		String result =super.toString();
+		result += "\nLayer Index: "+ backgroundLayerIndex;
+		return result;
+	}
+	
 }

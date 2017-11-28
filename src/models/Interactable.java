@@ -164,4 +164,11 @@ public class Interactable extends GameModel {
 	public void reset() {
 	}
 	
+	
+	public String toString(){
+		return super.toString() + "\nIs Active: " + this.isActive + "\nIs Food: " + this.isFood + 
+				"\nActivation Tick: " + this.activationTick;
+	}
+	
+	
 }

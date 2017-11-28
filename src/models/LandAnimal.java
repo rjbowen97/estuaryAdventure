@@ -33,4 +33,8 @@ public class LandAnimal extends Player {
 			this.setyPosition(newYPosition);
 		}
 	}
+	
+	public String toString(){
+		return super.toString() + "\nType: Land Animal"; 
+	}
 }

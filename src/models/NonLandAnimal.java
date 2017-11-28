@@ -42,4 +42,9 @@ public class NonLandAnimal extends Player {
 		int newYPosition = this.getYPosition() - Settings.getNonLandAnimalFlapSpeed();
 		this.setyPosition(newYPosition);
 	}
+	
+	public String toString(){
+		return super.toString() + "\nType: Non-Land Animal";
+	}
+	
 }

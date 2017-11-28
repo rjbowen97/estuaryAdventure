@@ -198,4 +198,9 @@ public abstract class Player extends GameModel {
 	public boolean getPoweredUp() {
 		return poweredUp;
 	}
+	
+	public String toString(){
+		return "Player Name: " + this.playerName + "\nHealth: " + this.health + "\nScore: " + this.score + "\nPowered UP: " + this.poweredUp +
+				"\nScore Streak: " + this.scoreStreak;
+	}
 }
