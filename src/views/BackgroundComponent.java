@@ -47,20 +47,23 @@ public class BackgroundComponent extends JComponent implements Serializable {
 	private void setBackgroundSpriteImage() {
 		ImageScaler imageScaler = new ImageScaler();
 		
-		BufferedImage nonScaledSpriteImage = null;
+		BufferedImage unscaledImage = null;
 		
     	File backgroundImageFile = new File(backgroundModel.spriteFilePath);
     	
 		try {			
 			if (backgroundImageFile.exists() == true){
-				nonScaledSpriteImage = ImageIO.read(backgroundImageFile);
+				unscaledImage = ImageIO.read(backgroundImageFile);
 			}
 		}
 		catch (IOException e) {
 			e.printStackTrace();
 		}
+
+		double xRatio = ((double) this.backgroundModel.getWidth()) / ((double) unscaledImage.getWidth());
+		double yRatio = ((double) this.backgroundModel.getHeight()) / ((double) unscaledImage.getHeight());
 		
-		BufferedImage scaledSpriteImage = imageScaler.scaleImageToViewSize(nonScaledSpriteImage);
+		BufferedImage scaledSpriteImage = imageScaler.scaleImageToInputRatio(unscaledImage, xRatio, yRatio);
 		
 		this.spriteImage = scaledSpriteImage;
 	}

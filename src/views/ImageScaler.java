@@ -47,25 +47,4 @@ public class ImageScaler {
 
         return bi;
 	}
-	
-	/**
-	 * Scale image to view size.
-	 *
-	 * @param nonScaledImage the non scaled image
-	 * @return the buffered image
-	 */
-	public BufferedImage scaleImageToViewSize(BufferedImage nonScaledImage) {
-		
-		BufferedImage scaledImage = new BufferedImage(nonScaledImage.getWidth(), nonScaledImage.getHeight(), BufferedImage.TYPE_INT_ARGB);
-		AffineTransform affineTransform = new AffineTransform();
-
-		affineTransform.scale(((float) Settings.getViewDimensionXDefault()) / ((float) nonScaledImage.getWidth()),
-				((float) Settings.getViewDimensionYDefault()) / ((float) nonScaledImage.getHeight()));
-
-		AffineTransformOp scaleOP = new AffineTransformOp(affineTransform, AffineTransformOp.TYPE_BILINEAR);
-		scaledImage = scaleOP.filter(nonScaledImage, scaledImage);
-		
-		return scaledImage;
-		
-	}
 }

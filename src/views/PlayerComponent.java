@@ -74,7 +74,6 @@ class PlayerComponent extends JComponent implements Serializable {
 
 		double xRatio = ((double) this.playerModel.getWidth()) / ((double) unscaledImage.getWidth());
 		double yRatio = ((double) this.playerModel.getHeight()) / ((double) unscaledImage.getHeight());
-		
 		scaledImage = imageScaler.scaleImageToInputRatio(unscaledImage, xRatio, yRatio);
 		
 		this.playerSprite = scaledImage;
