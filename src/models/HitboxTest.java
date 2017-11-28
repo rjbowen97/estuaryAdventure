@@ -1,15 +1,13 @@
 package models;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 import controller.Settings;
-import models.Hitbox.Point;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class HitboxTest.
  */
@@ -28,7 +26,7 @@ public class HitboxTest{
 	private int orig_x =10, orig_y =10;
 	
 	/**
-	 * Sets the up.
+	 * Sets the up
 	 *
 	 * @throws Exception the exception
 	 */
@@ -50,21 +48,21 @@ public class HitboxTest{
 	public void testUpdate(){
 		assertTrue(hitbox.topLeftCorner.x == orig_x);
 		assertTrue(hitbox.bottomLeftCorner.x == orig_x);
-		assertTrue(hitbox.topRightCorner.x == orig_x + model.getSpriteImage().getWidth());
-		assertTrue(hitbox.bottomRightCorner.x == orig_x + model.getSpriteImage().getWidth());
+		assertTrue(hitbox.topRightCorner.x == orig_x + model.getWidth());
+		assertTrue(hitbox.bottomRightCorner.x == orig_x + model.getWidth());
 		assertTrue(hitbox.topLeftCorner.y == orig_y);
-		assertTrue(hitbox.bottomLeftCorner.y == orig_y + model.getSpriteImage().getHeight());
+		assertTrue(hitbox.bottomLeftCorner.y == orig_y + model.getHeight());
 		assertTrue(hitbox.topRightCorner.y == orig_y);
-		assertTrue(hitbox.bottomRightCorner.y == orig_y + model.getSpriteImage().getHeight());
+		assertTrue(hitbox.bottomRightCorner.y == orig_y + model.getHeight());
 		hitbox.update();
 		assertTrue(hitbox.topLeftCorner.x == orig_x);
 		assertTrue(hitbox.bottomLeftCorner.x == orig_x);
-		assertTrue(hitbox.topRightCorner.x == orig_x + model.getSpriteImage().getWidth());
-		assertTrue(hitbox.bottomRightCorner.x == orig_x + model.getSpriteImage().getWidth());
+		assertTrue(hitbox.topRightCorner.x == orig_x + model.getWidth());
+		assertTrue(hitbox.bottomRightCorner.x == orig_x + model.getWidth());
 		assertTrue(hitbox.topLeftCorner.y == orig_y);
-		assertTrue(hitbox.bottomLeftCorner.y == orig_y + model.getSpriteImage().getHeight());
+		assertTrue(hitbox.bottomLeftCorner.y == orig_y + model.getHeight());
 		assertTrue(hitbox.topRightCorner.y == orig_y);
-		assertTrue(hitbox.bottomRightCorner.y == orig_y + model.getSpriteImage().getHeight());
+		assertTrue(hitbox.bottomRightCorner.y == orig_y + model.getHeight());
 	}
 	
 	

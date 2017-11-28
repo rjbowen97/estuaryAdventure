@@ -1,11 +1,7 @@
 package models;
 
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
+import java.io.Serializable;
 import java.util.Random;
-
-import javax.imageio.ImageIO;
 
 import controller.Settings;
 
@@ -13,75 +9,42 @@ import controller.Settings;
 /**
  * The Class Interactable.
  */
-public class Interactable extends GameModel {
+public class Interactable extends GameModel implements Serializable {
 
-	/** The is food. */
 	private boolean isFood;	
 	
 	/** The activation tick. */
-	private int activationTick;
+	public int activationTick;
 	
 	/** The is active. */
-	private boolean isActive = false;
+	public boolean isActive = false;
 	
 	/** The random. */
 	private Random random = new Random();
 	
 	/**
-	 * Instantiates a new interactable.
+	 * Creates a new interactable, determines its position and whether or not it is food
 	 *
 	 * @param activationTick the activation tick
 	 */
 	public Interactable(int activationTick) {
 		this.setxPosition(Settings.getInteractableStartXPosition());
 		this.setyPosition(random.nextInt(Settings.getViewDimensionYDefault() - 100)); // -100 because this is the spriteImage height for interactables
+		this.setWidth(50);
+		this.setHeight(50);
+		
 		this.isFood = random.nextBoolean();
 		this.setSpeed(Settings.getInteractableSpeed());
 		this.activationTick = activationTick;
-		this.setSpriteImage();
 		this.setHitbox();
 	}
 	
 	/* (non-Javadoc)
 	 * @see models.GameModel#setSpriteImage()
 	 */
-	@Override
-	protected void setSpriteImage() {
-		
-		BufferedImage foodImage = null;
-		BufferedImage notFoodImage = null;
-		
-		try {
-			File foodFile = new File("./sprites/foodSprite.jpg");
-			File notFoodFile = new File("./sprites/notFoodSprite.jpg");
-			
-			if(foodFile.exists() == true){
-				foodImage = ImageIO.read(foodFile);
-			}
-			
-			if(notFoodFile.exists() == true){
-				notFoodImage = ImageIO.read(notFoodFile);
-			}
-		}
-		catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		if (this.isFood == true) {
-			
-			foodImage = ImageScaler.scaleImageToInputRatio(foodImage, 0.5, 0.5);
-			
-			this.setSpriteImage(foodImage);
-		}
-		
-		else {
-			notFoodImage = ImageScaler.scaleImageToInputRatio(notFoodImage, 0.5, 0.5);
-			this.setSpriteImage(notFoodImage);
-		}
-	}
 	
 	/**
-	 * On collision with player model.
+	 * On collision with player model eliminate the interactable
 	 *
 	 * @param playerModel the player model
 	 */
@@ -90,7 +53,7 @@ public class Interactable extends GameModel {
 	}
 	
 	/**
-	 * Deactivate.
+	 * Deactivate
 	 */
 	private void deactivate() {
 		this.isActive = false;
@@ -164,4 +127,9 @@ public class Interactable extends GameModel {
 	public void reset() {
 	}
 	
+	
+	public String toString(){
+		return super.toString() + "\nIs Active: " + this.isActive + "\nIs Food: " + this.isFood + 
+				"\nActivation Tick: " + this.activationTick;
+	}
 }

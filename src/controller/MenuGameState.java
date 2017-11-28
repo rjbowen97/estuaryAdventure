@@ -1,19 +1,32 @@
 package controller;
 
-import models.Menu;
-import views.MenuPanel;
+import java.io.Serializable;
 
-public class MenuGameState implements GameStateInterface {
+import models.Menu;
+
+/**
+ * The Class MenuGameState.
+ */
+public class MenuGameState implements GameStateInterface, Serializable {
+	
 	public Controller controller;
-	public MenuPanel menuPanel;
 	public Menu menu;
 
+	/**
+	 * Instantiates a new menu game state.
+	 *
+	 * @param menu the menu model
+	 * @param controller the main controller
+	 */
 	public MenuGameState(Menu menu, Controller controller)
 	{
 		this.menu = menu;
 		this.controller = controller;
-		this.menuPanel = new MenuPanel(menu, controller);
 	}
+	
+	/* (non-Javadoc)
+	 * @see controller.GameStateInterface#onTick()
+	 */
 	public void onTick()
 	{
 		menu.onTick();

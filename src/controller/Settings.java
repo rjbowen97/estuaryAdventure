@@ -3,19 +3,19 @@ package controller;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.Serializable;
 import java.util.Properties;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class Settings.
  */
-public class Settings {
+public class Settings implements Serializable {
 	
 	/** The global settings. */
 	private static Properties globalSettings;
 	
 	/**
-	 * Instantiates a new settings.
+	 * Instantiates a new settings. All methods of settings are static, instantiating simply eliminates null pointer errors
 	 */
 	public Settings() {
 		globalSettings = new Properties();

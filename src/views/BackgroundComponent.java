@@ -1,7 +1,12 @@
 package views;
 
 import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.io.Serializable;
 
+import javax.imageio.ImageIO;
 import javax.swing.JComponent;
 
 import controller.Settings;
@@ -11,10 +16,12 @@ import models.Background;
 /**
  * The Class BackgroundComponent.
  */
-public class BackgroundComponent extends JComponent{
+public class BackgroundComponent extends JComponent implements Serializable {
 	
 	/** The background model. */
 	private Background backgroundModel;
+	private transient BufferedImage airBackgroundImage;
+	private transient BufferedImage waterBackgroundImage;
 	
 	/**
 	 * Instantiates a new background component.
@@ -24,6 +31,7 @@ public class BackgroundComponent extends JComponent{
 	BackgroundComponent(Background backgroundModel){
 		this.setBounds(0,0,Settings.getViewDimensionXDefault(),Settings.getViewDimensionYDefault());
 		this.backgroundModel = backgroundModel;
+		setBackgroundSpriteImage();
 		this.setVisible(true);
 	}
 	
@@ -33,8 +41,52 @@ public class BackgroundComponent extends JComponent{
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		g.drawImage(backgroundModel.getSpriteImage(), backgroundModel.getXPosition(), backgroundModel.getYPosition(), null);
-		g.drawImage(backgroundModel.getSpriteImage(), backgroundModel.getXPosition() + Settings.getViewDimensionXDefault(), backgroundModel.getYPosition(), null);
+		if (backgroundModel.backgroundType.equals("a")) {
+			g.drawImage(this.airBackgroundImage, backgroundModel.getXPosition(), backgroundModel.getYPosition(), null);
+			g.drawImage(this.airBackgroundImage, backgroundModel.getXPosition() + Settings.getViewDimensionXDefault(), backgroundModel.getYPosition(), null);
+		}
+		
+		else {
+			g.drawImage(this.waterBackgroundImage, backgroundModel.getXPosition(), backgroundModel.getYPosition(), null);
+			g.drawImage(this.waterBackgroundImage, backgroundModel.getXPosition() + Settings.getViewDimensionXDefault(), backgroundModel.getYPosition(), null);
+		}
+	}
+	
+	public void setBackgroundSpriteImage() {
+		String airBackgroundFilePath = "./Graphics/Backgrounds/AirBackground/b" + backgroundModel.backgroundLayerIndex + ".png";
+		String waterBackgroundFilePath = "./Graphics/Backgrounds/WaterBackground/b" + backgroundModel.backgroundLayerIndex + ".png";
+		
+		ImageScaler imageScaler = new ImageScaler();
+		
+		BufferedImage unscaledAirImage = null;
+		BufferedImage unscaledWaterImage = null;
+		
+    	File airBackgroundImageFile = new File(airBackgroundFilePath);
+    	File waterBackgroundImageFile = new File(waterBackgroundFilePath);
+    	
+		try {			
+			if (airBackgroundImageFile.exists() == true){
+				unscaledAirImage = ImageIO.read(airBackgroundImageFile);
+			}
+			
+			if (waterBackgroundImageFile.exists() == true){
+				unscaledWaterImage = ImageIO.read(waterBackgroundImageFile);
+			}
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		double xRatio = ((double) this.backgroundModel.getWidth()) / ((double) unscaledAirImage.getWidth());
+		double yRatio = ((double) this.backgroundModel.getHeight()) / ((double) unscaledAirImage.getHeight());
+		BufferedImage scaledAirSpriteImage = imageScaler.scaleImageToInputRatio(unscaledAirImage, xRatio, yRatio);
+		
+		xRatio = ((double) this.backgroundModel.getWidth()) / ((double) unscaledWaterImage.getWidth());
+		yRatio = ((double) this.backgroundModel.getHeight()) / ((double) unscaledWaterImage.getHeight());
+		BufferedImage scaledWaterSpriteImage = imageScaler.scaleImageToInputRatio(unscaledWaterImage, xRatio, yRatio);
+		
+		this.airBackgroundImage = scaledAirSpriteImage;
+		this.waterBackgroundImage = scaledWaterSpriteImage;
 		
 	}
 }

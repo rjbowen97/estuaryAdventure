@@ -1,5 +1,7 @@
 package views;
 
+import java.awt.Graphics;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import javax.swing.BoxLayout;
@@ -14,7 +16,7 @@ import models.ScoreBoardEntry;
 /**
  * The Class ScoreBoardPanel.
  */
-public class ScoreBoardPanel extends JPanel {
+public class ScoreBoardPanel extends JPanel implements Serializable {
 	
 	/** The score board. */
 	ScoreBoard scoreBoard;
@@ -36,12 +38,25 @@ public class ScoreBoardPanel extends JPanel {
 			this.scoreBoardEntryLabels.add(new JLabel("UserName: " + scoreBoardEntry.name + " Score: " + scoreBoardEntry.score));	
 		}
 		
+		while (scoreBoardEntryLabels.size() < 10) {
+			scoreBoardEntryLabels.add(new JLabel());
+		}
+		
 		for (JLabel jLabel : scoreBoardEntryLabels) {
 			this.add(jLabel);
 		}
 		
 		this.setBounds(0, 0, Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault());
 		this.setVisible(true);
+	}
+	
+	@Override
+	public void paintComponent(Graphics g) {
+		int currentLabelIndex = 0;
+		for (ScoreBoardEntry scoreBoardEntry : scoreBoard.scoreBoardEntries) {
+			scoreBoardEntryLabels.get(currentLabelIndex).setText(scoreBoardEntry.name + " Score: " + scoreBoardEntry.score);
+			currentLabelIndex++;
+		}
 	}
 
 }

@@ -1,46 +1,56 @@
 package models;
 
-import java.awt.image.BufferedImage;
+import java.io.Serializable;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class GameModel.
  */
-public abstract class GameModel {
+public abstract class GameModel implements Serializable {
 	
-	/** The x position. */
-	private int xPosition;
+	/** The x position of the game model */
+	public int xPosition;
 	
-	/** The y position. */
-	private int yPosition;
+	/** The y position of the game model */
+	public int yPosition;
+
+	private int height;
 	
-	/** The sprite image. */
-	private BufferedImage spriteImage;
+	private int width;
 	
-	/** The speed. */
+	
+	/** The speed, initially set to 0 */
 	private int speed = 0;
 	
-	/** The hitbox. */
+	public int getHeight() {
+		return height;
+	}
+
+	public void setHeight(int height) {
+		this.height = height;
+	}
+
+	public int getWidth() {
+		return width;
+	}
+
+	public void setWidth(int width) {
+		this.width = width;
+	}
+	
+	/** Initiate a hitbox for the image */
 	private Hitbox hitbox;
 	
-	/**
-	 * Sets the sprite image.
-	 */
-	protected abstract void setSpriteImage();
 	
 	/**
-	 * Sets the hitbox.
+	 * Sets the hitbox for the image/gamemodel
 	 */
 	protected abstract void setHitbox();
 	
 	/**
-	 * Update hitbox.
+	 * Update hitbox for image
 	 */
 	protected abstract void updateHitbox();
 	
-	/**
-	 * On tick.
-	 */
 	public abstract void onTick();
 	
 	/**
@@ -49,7 +59,7 @@ public abstract class GameModel {
 	public abstract void reset();
 	
 	/**
-	 * Gets the hitbox.
+	 * Gets the hitbox of the image/game model
 	 *
 	 * @return the hitbox
 	 */
@@ -58,16 +68,16 @@ public abstract class GameModel {
 	}
 	
 	/**
-	 * Sets the hitbox.
+	 * Sets the hitbox for the image/game model
 	 *
-	 * @param hitbox the new hitbox
+	 * @param hitbox which is the new hitbox
 	 */
 	protected void setHitbox(Hitbox hitbox) {
 		this.hitbox = hitbox;
 	}
 	
 	/**
-	 * Gets the x position.
+	 * Gets the x position of the model
 	 *
 	 * @return the x position
 	 */
@@ -76,7 +86,7 @@ public abstract class GameModel {
 	}
 	
 	/**
-	 * Gets the y position.
+	 * Gets the y position of the model
 	 *
 	 * @return the y position
 	 */
@@ -85,7 +95,7 @@ public abstract class GameModel {
 	}
 	
 	/**
-	 * Gets the speed.
+	 * Gets the speed of the model
 	 *
 	 * @return the speed
 	 */
@@ -94,16 +104,7 @@ public abstract class GameModel {
 	}
 	
 	/**
-	 * Gets the sprite image.
-	 *
-	 * @return the sprite image
-	 */
-	public BufferedImage getSpriteImage() {
-		return this.spriteImage;
-	}
-	
-	/**
-	 * Sets the x position.
+	 * Sets the x position of the model
 	 *
 	 * @param xPosition the new x position
 	 */
@@ -112,7 +113,7 @@ public abstract class GameModel {
 	}
 
 	/**
-	 * Sets the y position.
+	 * Sets the y position of the model
 	 *
 	 * @param yPosition the new y position
 	 */
@@ -121,22 +122,20 @@ public abstract class GameModel {
 	}
 	
 	/**
-	 * Sets the speed.
+	 * Sets the speed of the model
 	 *
 	 * @param speed the new speed
 	 */
 	protected void setSpeed(int speed) {
 		this.speed = speed;
 	}
-	
-	/**
-	 * Sets the sprite image.
-	 *
-	 * @param spriteImage the new sprite image
+	/*
+	 * toString method to return where the game model is
 	 */
-	protected void setSpriteImage(BufferedImage spriteImage) {
-		this.spriteImage = spriteImage;
+	public String toString(){
+		String result = "X Position: " + this.getXPosition() + "\nY Position: " + this.getYPosition()+
+				"\nSpeed: " + this.getSpeed() + "\n";
+		return result;
 	}
-	
 	
 }

@@ -3,25 +3,33 @@ package views;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.io.Serializable;
 
+import javax.imageio.ImageIO;
 import javax.swing.JComponent;
 
-import controller.ActiveGameState;
 import controller.Controller;
 import controller.Settings;
 import models.Player;
+import models.PlayerAnimalType;
 
 // TODO: Auto-generated Javadoc
 /**
  * The Class PlayerComponent.
  */
-class PlayerComponent extends JComponent{
+class PlayerComponent extends JComponent implements Serializable {
 	
 	/** The player model. */
 	private Player playerModel;
 	
 	/** The controller. */
 	private Controller controller;
+	
+	private transient BufferedImage birdSprite;
+	private transient BufferedImage fishSprite;
 	
 	/**
 	 * Instantiates a new player component.
@@ -30,9 +38,9 @@ class PlayerComponent extends JComponent{
 	 * @param controller the controller
 	 */
 	PlayerComponent(Player playerModel, Controller controller){
-		
 		this.controller = controller;
 		this.playerModel = playerModel;
+		setPlayerSpriteImages();
 		this.setBounds(playerModel.getXPosition(),playerModel.getYPosition(),Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault());
 		this.addMouseListener(new PlayerComponentMouseListener());
 		this.setVisible(true);
@@ -43,7 +51,60 @@ class PlayerComponent extends JComponent{
 	 */
 	@Override
 	public void paintComponent(Graphics g) {
-		g.drawImage(playerModel.getSpriteImage(), playerModel.getXPosition(), playerModel.getYPosition(), null);
+		
+		if (playerModel.playerAnimalType.equals(PlayerAnimalType.BIRD)) {
+			g.drawImage(this.birdSprite, playerModel.getXPosition(), playerModel.getYPosition(), null);
+		}
+		
+		else {
+			g.drawImage(this.fishSprite, playerModel.getXPosition(), playerModel.getYPosition(), null);
+			
+		}
+	}
+	
+	public void setPlayerSpriteImages() {
+
+		String birdSpriteFilePath = "./Graphics/Avatars/Bird/Bird.png";
+		String fishSpriteFilePath = "./Graphics/Avatars/Fish/fish.png";
+		
+		ImageScaler imageScaler = new ImageScaler();
+		
+		BufferedImage unscaledBirdImage = null;
+		BufferedImage unscaledFishImage = null;
+		
+		BufferedImage scaledBirdImage;
+		BufferedImage scaledFishImage;
+
+		try {
+			File birdSpriteFile = new File(birdSpriteFilePath);
+			File fishSpriteFile = new File(fishSpriteFilePath);
+
+			if (birdSpriteFile.exists() == true){
+				unscaledBirdImage = ImageIO.read(birdSpriteFile);
+			}
+			
+			if (fishSpriteFile.exists() == true){
+				unscaledFishImage = ImageIO.read(fishSpriteFile);
+			}
+			
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		double xRatio = 0;
+		double yRatio = 0;
+		
+		xRatio = ((double) this.playerModel.getWidth()) / ((double) unscaledBirdImage.getWidth());
+		yRatio = ((double) this.playerModel.getHeight()) / ((double) unscaledBirdImage.getHeight());
+		scaledBirdImage = imageScaler.scaleImageToInputRatio(unscaledBirdImage, xRatio, yRatio);
+		
+		xRatio = ((double) this.playerModel.getWidth()) / ((double) unscaledFishImage.getWidth());
+		yRatio = ((double) this.playerModel.getHeight()) / ((double) unscaledFishImage.getHeight());
+		scaledFishImage = imageScaler.scaleImageToInputRatio(unscaledFishImage, xRatio, yRatio);
+		
+		this.birdSprite = scaledBirdImage;
+		this.fishSprite = scaledFishImage;
 	}
 	
 	/**

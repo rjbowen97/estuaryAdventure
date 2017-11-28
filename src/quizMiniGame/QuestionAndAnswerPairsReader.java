@@ -1,6 +1,7 @@
 package quizMiniGame;
 
 import java.io.File;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -15,7 +16,7 @@ import org.w3c.dom.NodeList;
 /**
  * The Class QuestionAndAnswerPairsReader.
  */
-public class QuestionAndAnswerPairsReader {
+public class QuestionAndAnswerPairsReader implements Serializable {
 	
 	/**
 	 * Gets the question and answer pairs.

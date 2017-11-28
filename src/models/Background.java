@@ -1,12 +1,6 @@
 package models;
 
-import java.awt.geom.AffineTransform;
-import java.awt.image.AffineTransformOp;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
+import java.io.Serializable;
 
 import controller.Settings;
 
@@ -14,10 +8,12 @@ import controller.Settings;
 /**
  * The Class Background.
  */
-public class Background extends GameModel {
+public class Background extends GameModel implements Serializable {
 
 	/** The background layer index. */
-	private int backgroundLayerIndex;
+	public int backgroundLayerIndex;
+	
+	public String backgroundType;
 
 	/**
 	 * Instantiates a new background.
@@ -29,9 +25,11 @@ public class Background extends GameModel {
 	public Background(int xPosition, int yPosition, int backgroundLayerIndex) {
 		this.setxPosition(xPosition);
 		this.setyPosition(yPosition);
+		this.setWidth(Settings.getViewDimensionXDefault());
+		this.setHeight(Settings.getViewDimensionYDefault());
 		this.backgroundLayerIndex = backgroundLayerIndex;
+		this.backgroundType = "w";
 		this.setSpeed(Settings.getBackgroundBaseSpeed(backgroundLayerIndex));
-		this.setSpriteImage();
 	}
 	
 	/* (non-Javadoc)
@@ -54,24 +52,7 @@ public class Background extends GameModel {
 	/* (non-Javadoc)
 	 * @see models.GameModel#setSpriteImage()
 	 */
-	@Override
-	protected void setSpriteImage() {
-		BufferedImage nonScaledSpriteImageToUse = null;
-		
-    	File backgroundImageFile = new File("./Graphics/Backgrounds/AirBackground/b" + backgroundLayerIndex + ".png");
-		try {			
-			if(backgroundImageFile.exists() == true){
-				nonScaledSpriteImageToUse = ImageIO.read(backgroundImageFile);
-			}
-		}
-		catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		BufferedImage scaledSpriteImageToUse = ImageScaler.scaleImageToViewSize(nonScaledSpriteImageToUse);
-		this.setSpriteImage(scaledSpriteImageToUse);
-		
-	}
+	
 	
 	/* (non-Javadoc)
 	 * @see models.GameModel#onTick()
@@ -95,4 +76,10 @@ public class Background extends GameModel {
 	@Override
 	public void reset() {
 	}
+	
+	public String toString(){
+		String result =super.toString();
+		result += "\nLayer Index: "+ backgroundLayerIndex;
+		return result;
+	}	
 }

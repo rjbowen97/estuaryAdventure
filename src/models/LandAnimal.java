@@ -1,6 +1,7 @@
 package models;
 
 import java.awt.event.MouseEvent;
+import java.io.Serializable;
 
 import controller.Settings;
 
@@ -8,7 +9,7 @@ import controller.Settings;
 /**
  * The Class LandAnimal.
  */
-public class LandAnimal extends Player {
+public class LandAnimal extends Player implements Serializable {
 	
 	/* (non-Javadoc)
 	 * @see models.Player#onTick()
@@ -18,7 +19,8 @@ public class LandAnimal extends Player {
 		super.onTick();
 	}
 	
-	/* (non-Javadoc)
+	/* 
+	 * On mouse release, find where the mouse was released and if it is above the current animal then the animal rises up, if below the animal goes down
 	 * @see models.Player#onMouseReleased(java.awt.event.MouseEvent)
 	 */
 	@Override
@@ -32,5 +34,9 @@ public class LandAnimal extends Player {
 			int newYPosition = this.getYPosition() - Settings.getLandAnimalShuffleSpeed();
 			this.setyPosition(newYPosition);
 		}
+	}
+	
+	public String toString(){
+		return super.toString() + "\nType: Land Animal"; 
 	}
 }

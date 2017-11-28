@@ -1,39 +1,32 @@
 package controller;
 
-import quizMiniGame.MiniGame;
-import quizMiniGame.MiniGameGameStatePanel;
+import java.io.Serializable;
 
-// TODO: Auto-generated Javadoc
+import quizMiniGame.MiniGame;
+
 /**
  * The Class MiniGameGameState.
  */
-public class MiniGameGameState implements GameStateInterface {
+public class MiniGameGameState implements GameStateInterface, Serializable {
 
-	/** The controller. */
 	public Controller controller;
 	
-	/** The mini game. */
 	public MiniGame miniGame;
 	
-	/** The mini game game state panel. */
-	public MiniGameGameStatePanel miniGameGameStatePanel;
-
-	/** The tick number. */
 	private int tickNumber = 0;
 
 	/**
 	 * Instantiates a new mini game game state.
 	 *
-	 * @param controller the controller
+	 * @param controller the main controller
 	 */
 	public MiniGameGameState(Controller controller) {
 		this.controller = controller;
 		this.miniGame = new MiniGame();
-		this.miniGameGameStatePanel = new MiniGameGameStatePanel(this.miniGame, controller);
 	}
 
 	/**
-	 * On tick.
+	 * Called every tick when this game state is the current active game state
 	 */
 	public void onTick() {
 		this.miniGame.onTick();

@@ -1,10 +1,12 @@
 package quizMiniGame;
 
+import java.io.Serializable;
+
 // TODO: Auto-generated Javadoc
 /**
  * The Class QuestionAndAnswerPair.
  */
-public class QuestionAndAnswerPair {
+public class QuestionAndAnswerPair implements Serializable {
 	
 	/** The question. */
 	String question;

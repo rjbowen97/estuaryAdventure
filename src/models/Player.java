@@ -1,11 +1,7 @@
 package models;
 
 import java.awt.event.MouseEvent;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-
-import javax.imageio.ImageIO;
+import java.io.Serializable;
 
 import controller.Settings;
 
@@ -13,33 +9,41 @@ import controller.Settings;
 /**
  * The Class Player.
  */
-public abstract class Player extends GameModel {
+public abstract class Player extends GameModel implements Serializable {
 
-	/** The health. */
-	private int health = 3;
+	private String playerName;
+	
+	/** The health of the player */
+	public int health = 3;
 	
 	/** The score. */
-	private int score = 0;
+	public int score = 0;
 	
-	/** The powered up. */
+	/** Whether the player has earned a power up or not, initially false */
 	private boolean poweredUp = false;
 	
 	/** The score streak. */
 	private int scoreStreak = 0;
 
+	public PlayerAnimalType playerAnimalType;
+	
 	/**
-	 * Instantiates a new player.
+	 * Instantiates a new player, their position and their username
 	 */
 	public Player() {
  
+		this.playerName = "Default";
 		this.setxPosition(Settings.getPlayerStartXPosition());
 		this.setyPosition(Settings.getPlayerStartYPosition());
-		this.setSpriteImage();
+		
+		this.setHeight(75);
+		this.setWidth(75);
+		this.playerAnimalType = PlayerAnimalType.FISH;
 		this.setHitbox();
 	}
 
 	/**
-	 * On mini game end.
+	 * On mini game end, adds how many correct answers and adds the powerup and score 
 	 *
 	 * @param correctAnswerCount the correct answer count
 	 */
@@ -49,7 +53,7 @@ public abstract class Player extends GameModel {
 	}
 	
 	/**
-	 * Power up.
+	 * If the player achieves the powerup, the player receives it, if not they do not
 	 */
 	private void powerUp() {
 		if (this.poweredUp == false) {
@@ -99,26 +103,7 @@ public abstract class Player extends GameModel {
 
 	/* (non-Javadoc)
 	 * @see models.GameModel#setSpriteImage()
-	 */
-	@Override
-	protected void setSpriteImage() {
-		BufferedImage nonScaledSpriteImageToUse = null;
-
-		try {
-			File spriteFile = new File("./Graphics/Avatars/Bird/Bird.png");
-
-			if(spriteFile.exists() == true){
-				nonScaledSpriteImageToUse = ImageIO.read(spriteFile);
-			}
-		}
-		catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		BufferedImage scaledSpriteImageToUse = ImageScaler.scaleImageToInputRatio(nonScaledSpriteImageToUse, 0.2, 0.2);
-
-		this.setSpriteImage(scaledSpriteImageToUse);
-	}
+	 */	
 
 	/**
 	 * On mouse released.
@@ -128,7 +113,7 @@ public abstract class Player extends GameModel {
 	public abstract void onMouseReleased(MouseEvent mouseEvent);
 
 	/**
-	 * On collision with interactable model.
+	 * Determines actions based on what interactable the player comes into contact with, if it is food, player goes into minigame, if not player loses health
 	 *
 	 * @param interactableModel the interactable model
 	 */
@@ -152,6 +137,14 @@ public abstract class Player extends GameModel {
 		}
 	}
 
+	public void setPlayerName(String playerName) {
+		this.playerName = playerName;
+	}
+	
+	public String getPlayerName() {
+		return this.playerName;
+	}
+	
 	/**
 	 * Gets the health.
 	 *
@@ -180,11 +173,16 @@ public abstract class Player extends GameModel {
 	}
 
 	/**
-	 * Gets the powered up.
+	 * Checks whether player is poweredUp or not
 	 *
 	 * @return the powered up
 	 */
 	public boolean getPoweredUp() {
 		return poweredUp;
+	}
+	
+	public String toString(){
+		return super.toString() + "Player Name: " + this.playerName + "\nHealth: " + this.health + "\nScore: " + this.score + "\nPowered UP: " + this.poweredUp +
+				"\nScore Streak: " + this.scoreStreak;
 	}
 }

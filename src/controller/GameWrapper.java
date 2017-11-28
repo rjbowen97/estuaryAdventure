@@ -1,9 +1,9 @@
 package controller;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import models.Background;
-import models.ImageScaler;
 import models.Interactable;
 import models.LandAnimal;
 import models.Menu;
@@ -12,14 +12,12 @@ import models.ScoreBoard;
 import models.ScoreBoardManager;
 
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class GameWrapper.
+ * The Class GameWrapper. In this class, the game is set up and run.
  */
-public class GameWrapper {
+public class GameWrapper implements Serializable {
 	
-	/** The controller. */
-	private static Controller controller;
+	public static Controller controller;
 	
 	/**
 	 * The main method.
@@ -32,24 +30,23 @@ public class GameWrapper {
 	}
 	
 	/**
-	 * Sets the up game.
+	 * Creates all of the models and the controller to be used in the game
 	 */
 	private static void setUpGame() {
 		Settings settings = new Settings();
-		ImageScaler imageScaler = new ImageScaler();
 		
 		Menu menuModel = new Menu();
 		Player playerModel = new LandAnimal();
 		ArrayList<Background> backgroundModels = new ArrayList<Background>(generateBackgroundModels());
 		ArrayList<Interactable> interactableModels = new ArrayList<Interactable>(generateInteractableModels());
 		
-		ScoreBoard scoreBoard = ScoreBoardManager.loadScoreBoard(settings.getScoreFileName());
+		ScoreBoard scoreBoard = ScoreBoardManager.loadScoreBoard(Settings.getScoreFileName());
 		
 		controller = new Controller(playerModel, interactableModels, backgroundModels, scoreBoard, menuModel);
 	}
 	
 	/**
-	 * Start game.
+	 * Loops every specified interval of time. In each loop, the controller object's tick function is called
 	 */
 	private static void startGame() {
 		while (true) {
@@ -63,9 +60,9 @@ public class GameWrapper {
 	}
 	
 	/**
-	 * Generate background models.
+	 * Generates background models.
 	 *
-	 * @return the array list
+	 * @return An array list of background models
 	 */
 	private static ArrayList<Background> generateBackgroundModels() {
 		ArrayList<Background> backgroundModels = new ArrayList<Background>();
@@ -76,9 +73,9 @@ public class GameWrapper {
 	}
 	
 	/**
-	 * Generate interactable models.
+	 * Generates interactable models.
 	 *
-	 * @return the array list
+	 * @return An array list of interactable models
 	 */
 	private static ArrayList<Interactable> generateInteractableModels() {
 		ArrayList<Interactable> interactableModels = new ArrayList<Interactable>();

@@ -6,12 +6,13 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
 // TODO: Auto-generated Javadoc
 /**
  * The Class ScoreBoardManager.
  */
-public class ScoreBoardManager {
+public class ScoreBoardManager implements Serializable {
 
 	/**
 	 * Instantiates a new score board manager.
