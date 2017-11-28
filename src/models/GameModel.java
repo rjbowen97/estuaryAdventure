@@ -21,6 +21,26 @@ public abstract class GameModel implements Serializable {
 	/** The speed. */
 	private int speed = 0;
 	
+	public int getHeight() {
+		return height;
+	}
+
+	public void setHeight(int height) {
+		this.height = height;
+	}
+
+	public int getWidth() {
+		return width;
+	}
+
+	public void setWidth(int width) {
+		this.width = width;
+	}
+
+	private int height;
+	
+	private int width;
+	
 	/** The hitbox. */
 	private Hitbox hitbox;
 	

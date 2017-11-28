@@ -1,8 +1,12 @@
 package views;
 
 import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.io.Serializable;
 
+import javax.imageio.ImageIO;
 import javax.swing.JComponent;
 
 import controller.Settings;
@@ -16,6 +20,7 @@ public class BackgroundComponent extends JComponent implements Serializable {
 	
 	/** The background model. */
 	private Background backgroundModel;
+	private BufferedImage spriteImage;
 	
 	/**
 	 * Instantiates a new background component.
@@ -34,8 +39,23 @@ public class BackgroundComponent extends JComponent implements Serializable {
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		g.drawImage(backgroundModel.getSpriteImage(), backgroundModel.getXPosition(), backgroundModel.getYPosition(), null);
-		g.drawImage(backgroundModel.getSpriteImage(), backgroundModel.getXPosition() + Settings.getViewDimensionXDefault(), backgroundModel.getYPosition(), null);
+		g.drawImage(this.spriteImage, backgroundModel.getXPosition(), backgroundModel.getYPosition(), null);
+		g.drawImage(this.spriteImage, backgroundModel.getXPosition() + Settings.getViewDimensionXDefault(), backgroundModel.getYPosition(), null);
 		
+	}
+	
+	protected void setBackgroundSpriteImage() {
+		BufferedImage spriteImageToUse = null;
+		
+    	File backgroundImageFile = new File("./Graphics/Backgrounds/AirBackground/b" + backgroundModel.backgroundLayerIndex + ".png");
+		try {			
+			if(backgroundImageFile.exists() == true){
+				spriteImageToUse = ImageIO.read(backgroundImageFile);
+			}
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+		this.spriteImage = spriteImageToUse;
 	}
 }

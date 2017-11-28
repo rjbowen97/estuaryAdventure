@@ -18,7 +18,7 @@ import controller.Settings;
 public class Background extends GameModel implements Serializable {
 
 	/** The background layer index. */
-	private int backgroundLayerIndex;
+	public int backgroundLayerIndex;
 
 	/**
 	 * Instantiates a new background.
@@ -30,6 +30,9 @@ public class Background extends GameModel implements Serializable {
 	public Background(int xPosition, int yPosition, int backgroundLayerIndex) {
 		this.setxPosition(xPosition);
 		this.setyPosition(yPosition);
+		this.setWidth(Settings.getViewDimensionXDefault());
+		this.setHeight(Settings.getViewDimensionYDefault());
+		
 		this.backgroundLayerIndex = backgroundLayerIndex;
 		this.setSpeed(Settings.getBackgroundBaseSpeed(backgroundLayerIndex));
 		this.setSpriteImage();
@@ -55,24 +58,7 @@ public class Background extends GameModel implements Serializable {
 	/* (non-Javadoc)
 	 * @see models.GameModel#setSpriteImage()
 	 */
-	@Override
-	protected void setSpriteImage() {
-		BufferedImage nonScaledSpriteImageToUse = null;
-		
-    	File backgroundImageFile = new File("./Graphics/Backgrounds/AirBackground/b" + backgroundLayerIndex + ".png");
-		try {			
-			if(backgroundImageFile.exists() == true){
-				nonScaledSpriteImageToUse = ImageIO.read(backgroundImageFile);
-			}
-		}
-		catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		BufferedImage scaledSpriteImageToUse = ImageScaler.scaleImageToViewSize(nonScaledSpriteImageToUse);
-		this.setSpriteImage(scaledSpriteImageToUse);
-		
-	}
+	
 	
 	/* (non-Javadoc)
 	 * @see models.GameModel#onTick()

@@ -32,9 +32,9 @@ public class Hitbox implements Serializable {
 	public Hitbox(GameModel gameModel) {
 		this.gameModel = gameModel;
 		this.topLeftCorner = new Point(gameModel.getXPosition(),gameModel.getYPosition());
-		this.topRightCorner = new Point(gameModel.getXPosition() + gameModel.getSpriteImage().getWidth(), gameModel.getYPosition());
-		this.bottomLeftCorner = new Point(gameModel.getXPosition(),gameModel.getYPosition() + gameModel.getSpriteImage().getHeight());
-		this.bottomRightCorner = new Point(gameModel.getXPosition() + gameModel.getSpriteImage().getWidth(), gameModel.getYPosition() + gameModel.getSpriteImage().getHeight());
+		this.topRightCorner = new Point(gameModel.getXPosition() + gameModel.getWidth(), gameModel.getYPosition());
+		this.bottomLeftCorner = new Point(gameModel.getXPosition(),gameModel.getYPosition() + gameModel.getHeight());
+		this.bottomRightCorner = new Point(gameModel.getXPosition() + gameModel.getWidth(), gameModel.getYPosition() + gameModel.getHeight());
 	}
 
 	/**
@@ -42,9 +42,9 @@ public class Hitbox implements Serializable {
 	 */
 	public void update() {
 		this.topLeftCorner.update(gameModel.getXPosition(),gameModel.getYPosition());
-		this.topRightCorner.update(gameModel.getXPosition() + gameModel.getSpriteImage().getWidth(), gameModel.getYPosition());
-		this.bottomLeftCorner.update(gameModel.getXPosition(),gameModel.getYPosition() + gameModel.getSpriteImage().getHeight());
-		this.bottomRightCorner.update(gameModel.getXPosition() + gameModel.getSpriteImage().getWidth(), gameModel.getYPosition() + gameModel.getSpriteImage().getHeight());
+		this.topRightCorner.update(gameModel.getXPosition() + gameModel.getWidth(), gameModel.getYPosition());
+		this.bottomLeftCorner.update(gameModel.getXPosition(),gameModel.getYPosition() + gameModel.getHeight());
+		this.bottomRightCorner.update(gameModel.getXPosition() + gameModel.getWidth(), gameModel.getYPosition() + gameModel.getHeight());
 	}
 
 	/**

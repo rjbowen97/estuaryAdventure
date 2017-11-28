@@ -14,7 +14,6 @@ import javax.swing.JComponent;
 import controller.ActiveGameState;
 import controller.Controller;
 import controller.Settings;
-import models.ImageScaler;
 import models.Player;
 
 // TODO: Auto-generated Javadoc
@@ -40,6 +39,7 @@ class PlayerComponent extends JComponent implements Serializable {
 	PlayerComponent(Player playerModel, Controller controller){
 		this.controller = controller;
 		this.playerModel = playerModel;
+		setPlayerSpriteImage();
 		this.setBounds(playerModel.getXPosition(),playerModel.getYPosition(),Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault());
 		this.addMouseListener(new PlayerComponentMouseListener());
 		this.setVisible(true);
@@ -54,22 +54,20 @@ class PlayerComponent extends JComponent implements Serializable {
 	}
 	
 	private void setPlayerSpriteImage() {
-		BufferedImage nonScaledSpriteImageToUse = null;
+		BufferedImage spriteImageToUse = null;
 
 		try {
-			File spriteFile = new File(playerModel.spritePath);
+			File spriteFile = new File(playerModel.spriteFilePath);
 
 			if(spriteFile.exists() == true){
-				nonScaledSpriteImageToUse = ImageIO.read(spriteFile);
+				spriteImageToUse = ImageIO.read(spriteFile);
 			}
 		}
 		catch (IOException e) {
 			e.printStackTrace();
 		}
 
-		BufferedImage scaledSpriteImageToUse = ImageScaler.scaleImageToInputRatio(nonScaledSpriteImageToUse, 0.2, 0.2);
-
-		this.playerSprite = scaledSpriteImageToUse;
+		this.playerSprite = spriteImageToUse;
 	}
 	
 	/**
