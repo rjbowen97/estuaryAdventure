@@ -97,12 +97,6 @@ public class MiniGame extends GameModel implements Serializable {
 		this.currentPlayerAnswer = currentPlayerAnswer;
 	}
 	
-	/* (non-Javadoc)
-	 * @see models.GameModel#setSpriteImage()
-	 */
-	@Override
-	protected void setSpriteImage() {
-	}
 
 	/* (non-Javadoc)
 	 * @see models.GameModel#setHitbox()
@@ -138,6 +132,12 @@ public class MiniGame extends GameModel implements Serializable {
 	 */
 	private void resetCurrentPlayerAnswer() {
 		this.currentPlayerAnswer = "";
+	}
+
+	@Override
+	protected void setSpriteFilePath() {
+		// TODO Auto-generated method stub
+		
 	}
 }
 

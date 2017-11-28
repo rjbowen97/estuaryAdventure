@@ -11,11 +11,6 @@ public class Menu extends GameModel implements Serializable {
 	}
 
 	@Override
-	protected void setSpriteImage() {
-		
-	}
-
-	@Override
 	protected void setHitbox() {
 		
 	}
@@ -32,6 +27,11 @@ public class Menu extends GameModel implements Serializable {
 
 	@Override
 	public void reset() {
+		
+	}
+
+	@Override
+	protected void setSpriteFilePath() {
 		
 	}
 	

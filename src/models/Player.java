@@ -38,7 +38,7 @@ public abstract class Player extends GameModel implements Serializable {
 		this.playerName = "Default";
 		this.setxPosition(Settings.getPlayerStartXPosition());
 		this.setyPosition(Settings.getPlayerStartYPosition());
-		this.spriteFilePath = "./Graphics/Avatars/Bird/Bird.png";
+		this.setSpriteFilePath();
 		this.setHitbox();
 	}
 
@@ -184,5 +184,11 @@ public abstract class Player extends GameModel implements Serializable {
 	public String toString(){
 		return super.toString() + "Player Name: " + this.playerName + "\nHealth: " + this.health + "\nScore: " + this.score + "\nPowered UP: " + this.poweredUp +
 				"\nScore Streak: " + this.scoreStreak;
+	}
+
+	@Override
+	protected void setSpriteFilePath() {
+		this.spriteFilePath = "./Graphics/Avatars/Bird/Bird.png";
+
 	}
 }

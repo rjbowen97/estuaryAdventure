@@ -39,7 +39,6 @@ public class Interactable extends GameModel implements Serializable {
 		this.isFood = random.nextBoolean();
 		this.setSpeed(Settings.getInteractableSpeed());
 		this.activationTick = activationTick;
-		this.setSpriteImage();
 		this.setHitbox();
 	}
 	
@@ -135,6 +134,11 @@ public class Interactable extends GameModel implements Serializable {
 	public String toString(){
 		return super.toString() + "\nIs Active: " + this.isActive + "\nIs Food: " + this.isFood + 
 				"\nActivation Tick: " + this.activationTick;
+	}
+
+	@Override
+	protected void setSpriteFilePath() {
+		this.spriteFilePath = "";
 	}
 	
 	
