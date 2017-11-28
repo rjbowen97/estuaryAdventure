@@ -142,6 +142,9 @@ public class Controller implements Serializable {
 			interactable.activationTick = releaseTime;
 			releaseTime += 5;
 		}
+		
+		miniGameGameState.miniGame.resetMiniGame();
+		
 	}
 
 	/**
