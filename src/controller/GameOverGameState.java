@@ -2,10 +2,6 @@ package controller;
 
 import java.io.Serializable;
 
-import models.ScoreBoard;
-import views.GameOverGameStatePanel;
-import views.ScoreBoardPanel;
-
 public class GameOverGameState implements GameStateInterface, Serializable {
 
 	private Controller controller;

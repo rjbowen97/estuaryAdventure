@@ -3,13 +3,7 @@ package views;
 
 import java.awt.Graphics2D;
 import java.awt.Image;
-import java.awt.geom.AffineTransform;
-import java.awt.image.AffineTransformOp;
 import java.awt.image.BufferedImage;
-
-import javax.swing.ImageIcon;
-
-import controller.Settings;
 
 // TODO: Auto-generated Javadoc
 /**

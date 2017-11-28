@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import models.Background;
 import models.Interactable;
 import models.Player;
-import views.ActiveGameStatePanel;
 
 public class ActiveGameState implements GameStateInterface, Serializable {
 	

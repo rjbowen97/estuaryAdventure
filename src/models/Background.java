@@ -1,13 +1,6 @@
 package models;
 
-import java.awt.geom.AffineTransform;
-import java.awt.image.AffineTransformOp;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.io.Serializable;
-
-import javax.imageio.ImageIO;
 
 import controller.Settings;
 

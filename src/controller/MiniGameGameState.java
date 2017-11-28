@@ -3,7 +3,6 @@ package controller;
 import java.io.Serializable;
 
 import quizMiniGame.MiniGame;
-import quizMiniGame.MiniGameGameStatePanel;
 
 /**
  * The Class MiniGameGameState.

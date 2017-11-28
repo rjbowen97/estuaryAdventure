@@ -3,7 +3,6 @@ package controller;
 import java.io.Serializable;
 
 import models.Menu;
-import views.MenuPanel;
 
 /**
  * The Class MenuGameState.

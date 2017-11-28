@@ -11,7 +11,6 @@ import java.io.Serializable;
 import javax.imageio.ImageIO;
 import javax.swing.JComponent;
 
-import controller.ActiveGameState;
 import controller.Controller;
 import controller.Settings;
 import models.Player;
