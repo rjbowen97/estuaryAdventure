@@ -32,7 +32,7 @@ public class Background extends GameModel implements Serializable {
 		this.setyPosition(yPosition);
 		this.setWidth(Settings.getViewDimensionXDefault());
 		this.setHeight(Settings.getViewDimensionYDefault());
-		
+		this.setSpriteFilePath();
 		this.backgroundLayerIndex = backgroundLayerIndex;
 		this.setSpeed(Settings.getBackgroundBaseSpeed(backgroundLayerIndex));
 	}

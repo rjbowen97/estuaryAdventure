@@ -48,6 +48,7 @@ public class BackgroundComponent extends JComponent implements Serializable {
 		BufferedImage spriteImageToUse = null;
 		
     	File backgroundImageFile = new File(backgroundModel.spriteFilePath);
+    	
 		try {			
 			if(backgroundImageFile.exists() == true){
 				spriteImageToUse = ImageIO.read(backgroundImageFile);
