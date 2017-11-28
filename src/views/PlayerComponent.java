@@ -53,7 +53,7 @@ class PlayerComponent extends JComponent implements Serializable {
 		g.drawImage(this.playerSprite, playerModel.getXPosition(), playerModel.getYPosition(), null);
 	}
 	
-	private void setPlayerSpriteImage() {
+	public void setPlayerSpriteImage() {
 		
 		ImageScaler imageScaler = new ImageScaler();
 		

@@ -58,8 +58,13 @@ public class Controller implements Serializable {
 	      this.view.setVisible(false);
 	      
 	      GameWrapper.controller = controllerIn;
+	      GameWrapper.controller.reloadImages();
 	      
 	      GameWrapper.controller.view.setVisible(true);
+	}
+	
+	public void reloadImages() {
+		this.view.reloadImages();
 	}
 	
 	public void saveCurrentControllerState() {

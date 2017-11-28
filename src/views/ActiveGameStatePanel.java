@@ -28,16 +28,16 @@ import models.Player;
 public class ActiveGameStatePanel extends JLayeredPane implements Serializable {
 	
 	/** The player component. */
-	private PlayerComponent playerComponent;
+	public PlayerComponent playerComponent;
 	
 	/** The background layered pane. */
-	private BackgroundLayeredPane backgroundLayeredPane;
+	public BackgroundLayeredPane backgroundLayeredPane;
 	
 	/** The interactable component. */
-	private InteractableComponent interactableComponent;
+	public InteractableComponent interactableComponent;
 	
 	/** The hud pane. */
-	private HUDPane hudPane;
+	public HUDPane hudPane;
 	
 	/**
 	 * Instantiates a new active game state panel.

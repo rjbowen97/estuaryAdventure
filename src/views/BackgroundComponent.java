@@ -44,7 +44,7 @@ public class BackgroundComponent extends JComponent implements Serializable {
 		g.drawImage(this.spriteImage, backgroundModel.getXPosition() + Settings.getViewDimensionXDefault(), backgroundModel.getYPosition(), null);
 	}
 	
-	private void setBackgroundSpriteImage() {
+	public void setBackgroundSpriteImage() {
 		ImageScaler imageScaler = new ImageScaler();
 		
 		BufferedImage unscaledImage = null;

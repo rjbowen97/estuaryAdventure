@@ -33,8 +33,11 @@ public class View extends JFrame implements Serializable {
 	public MenuPanel menuPanel;
 	public MiniGameGameStatePanel miniGameGameStatePanel;
 
-
 	Controller controller;
+
+	public void reloadImages() {
+	}
+	
 	/**
 	 * Instantiates a new view.
 	 *
@@ -52,7 +55,6 @@ public class View extends JFrame implements Serializable {
 
 		this.controller = controller;
 		initializeKeyBindings();
-		
 		this.setBounds(0,0,Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault());
 		this.setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
