@@ -8,37 +8,27 @@ import models.Interactable;
 import models.Player;
 import views.ActiveGameStatePanel;
 
-// TODO: Auto-generated Javadoc
-/**
- * The Class ActiveGameState.
- */
 public class ActiveGameState implements GameStateInterface {
 	
-	/** The controller. */
 	public Controller controller;
 	
-	/** The player model. */
 	public Player playerModel;
 	
-	/** The interactable models. */
 	public ArrayList<Interactable> interactableModels;
 	
-	/** The background models. */
 	public ArrayList<Background> backgroundModels;	
 	
-	/** The active game state panel. */
 	public ActiveGameStatePanel activeGameStatePanel;
 	
-	/** The tick number. */
 	private int tickNumber = 0;
 	
 	/**
 	 * Instantiates a new active game state.
 	 *
-	 * @param controller the controller
-	 * @param playerModel the player model
-	 * @param interactableModels the interactable models
-	 * @param backgroundModels the background models
+	 * @param controller The main controller created in the gameWrapper constructor
+	 * @param playerModel Player model constructed in the gameWrapper constructor
+	 * @param interactableModels An array of interactable models
+	 * @param backgroundModels An array of background models
 	 */
 	public ActiveGameState(Controller controller, Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels) {
 		this.activeGameStatePanel = new ActiveGameStatePanel(playerModel, backgroundModels, controller, interactableModels);
@@ -49,7 +39,7 @@ public class ActiveGameState implements GameStateInterface {
 	}
 	
 	/**
-	 * On tick.
+	 * This function is called every tick when the active game state is the current game state of the game
 	 */
 	public void onTick() {
 		tickModels();
@@ -58,7 +48,7 @@ public class ActiveGameState implements GameStateInterface {
 	}
 	
 	/**
-	 * Tick models.
+	 * Calls helper functions to tick various models in the active game state object
 	 */
 	private void tickModels() {
 		tickBackgroundModels();
@@ -68,7 +58,7 @@ public class ActiveGameState implements GameStateInterface {
 	}
 
 	/**
-	 * Tick background models.
+	 * Ticks each background model in the backgroundModels ArrayList
 	 */
 	private void tickBackgroundModels() {
 		for (Background backgroundModel : backgroundModels) {
@@ -77,7 +67,7 @@ public class ActiveGameState implements GameStateInterface {
 	}
 
 	/**
-	 * Tick interactable models.
+	 * Ticks each interactable model in the interactableModels ArrayList
 	 */
 	private void tickInteractableModels() {
 		for (Interactable interactableModel :interactableModels) {
@@ -93,21 +83,23 @@ public class ActiveGameState implements GameStateInterface {
 	}
 
 	/**
-	 * Tick player model.
+	 * Ticks player model
 	 */
 	private void tickPlayerModel() {
 		this.playerModel.onTick();
 	}
 
 	/**
-	 * Detect collisions.
+	 * Calls helper functions to handle collision detections
 	 */
 	private void detectCollisions() {
 		detectPlayerInteractableCollisions();
 	}
 
 	/**
-	 * Detect player interactable collisions.
+	 * Detects player-interactable collisions. Goes through each interactable in the interactableModels arrayList,
+	 * And checks if the current interactable is active. If the model is active, and its hitbox is overlapping with the
+	 * player hitbox, then the appropriate functions are called
 	 */
 	private void detectPlayerInteractableCollisions() {
 		for (Interactable interactableModel : interactableModels) {
@@ -122,7 +114,7 @@ public class ActiveGameState implements GameStateInterface {
 	}
 	
 	/**
-	 * Check game state.
+	 * Checks if the game state needs to be change
 	 */
 	private void checkGameState() {
 		if (playerModel.getHealth() <= 0) {
@@ -135,7 +127,7 @@ public class ActiveGameState implements GameStateInterface {
 	}
 	
 	/**
-	 * On player component mouse released.
+	 * Called when a mouseclick is detected
 	 *
 	 * @param mouseEvent the mouse event
 	 */

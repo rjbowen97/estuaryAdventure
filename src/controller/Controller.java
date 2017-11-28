@@ -13,39 +13,31 @@ import views.MenuPanel;
 import views.ScoreBoardPanel;
 import views.View;
 
-// TODO: Auto-generated Javadoc
-/**
- * The Class Controller.
- */
 public class Controller {
 
 	public MenuGameState menuGameState;
 
-	/** The active game state. */
 	public ActiveGameState activeGameState;
 	
-	/** The mini game game state. */
 	public MiniGameGameState miniGameGameState;
 	
-	/** The game over game state. */
 	public GameOverGameState gameOverGameState;
 	
-	/** The score board. */
 	public ScoreBoard scoreBoard;
 
-	/** The view. */
 	public View view;
 
-	/** The game state. */
 	private GameState gameState;
 
 	/**
 	 * Instantiates a new controller.
 	 *
-	 * @param playerModel the player model
+	 * @param playerModel the main player model
 	 * @param interactableModels the interactable models
 	 * @param backgroundModels the background models
 	 * @param scoreBoard the score board
+	 * @param menuModel the score board
+	 * 
 	 */
 	public Controller(Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels, ScoreBoard scoreBoard, Menu menuModel) {
 		this.menuGameState = new MenuGameState(menuModel, this);
@@ -64,7 +56,7 @@ public class Controller {
 	}
 
 	/**
-	 * Tick.
+	 * Called every tick by the gameWrapper main loop. Depending on the current game state, the appropriate onTick function is called
 	 */
 	public void tick(){
 		if (gameState.equals(GameState.Menu)) {
@@ -86,6 +78,9 @@ public class Controller {
 		this.view.repaint();
 	}
 	
+	/**
+	 * Change game state from menu to active.
+	 */
 	public void changeGameStateFromMenuToActive() {
 		this.view.setContentPane(activeGameState.activeGameStatePanel);
 		this.gameState = GameState.Active;
@@ -100,9 +95,10 @@ public class Controller {
 	}
 
 	/**
-	 * Change game state from mini game to active.
+	 * Change game state from mini game to active. If the player answers more than zero questions correct,
+	 * a helper method is called
 	 *
-	 * @param correctAnswerCount the correct answer count
+	 * @param correctAnswerCount The amount of questions answered correctly by the player in the miniGame's main loop
 	 */
 	public void changeGameStateFromMiniGameToActive(int correctAnswerCount) {
 		if (correctAnswerCount > 0) {

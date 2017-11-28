@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class Settings.
  */
@@ -15,7 +14,7 @@ public class Settings {
 	private static Properties globalSettings;
 	
 	/**
-	 * Instantiates a new settings.
+	 * Instantiates a new settings. All methods of settings are static, instantiating simply eliminates null pointer errors
 	 */
 	public Settings() {
 		globalSettings = new Properties();
