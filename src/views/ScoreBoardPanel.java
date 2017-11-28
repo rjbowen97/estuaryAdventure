@@ -37,6 +37,10 @@ public class ScoreBoardPanel extends JPanel {
 			this.scoreBoardEntryLabels.add(new JLabel("UserName: " + scoreBoardEntry.name + " Score: " + scoreBoardEntry.score));	
 		}
 		
+		while (scoreBoardEntryLabels.size() < 10) {
+			scoreBoardEntryLabels.add(new JLabel());
+		}
+		
 		for (JLabel jLabel : scoreBoardEntryLabels) {
 			this.add(jLabel);
 		}
@@ -48,8 +52,8 @@ public class ScoreBoardPanel extends JPanel {
 	@Override
 	public void paintComponent(Graphics g) {
 		int currentLabelIndex = 0;
-		for (JLabel jLabel : scoreBoardEntryLabels) {
-			jLabel.setText(scoreBoard.scoreBoardEntries.get(currentLabelIndex).name + " Score: " + scoreBoard.scoreBoardEntries.get(currentLabelIndex).score);
+		for (ScoreBoardEntry scoreBoardEntry : scoreBoard.scoreBoardEntries) {
+			scoreBoardEntryLabels.get(currentLabelIndex).setText(scoreBoardEntry.name + " Score: " + scoreBoardEntry.score);
 			currentLabelIndex++;
 		}
 	}

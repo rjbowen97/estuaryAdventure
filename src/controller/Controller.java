@@ -119,6 +119,7 @@ public class Controller {
 	public void changeGameStateFromActiveToGameOver() {
 		scoreBoard.addNewScore(activeGameState.playerModel);
 		ScoreBoardManager.saveScoreboard(scoreBoard,Settings.getScoreFileName());
+		this.scoreBoard = ScoreBoardManager.loadScoreBoard(Settings.getScoreFileName());
 		
 		this.view.setContentPane(gameOverGameState.gameOverGameStatePanel);
 		this.view.setContentPane(scoreBoard.scoreBoardPanel);

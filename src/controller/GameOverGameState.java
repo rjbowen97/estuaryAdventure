@@ -2,6 +2,7 @@ package controller;
 
 import models.ScoreBoard;
 import views.GameOverGameStatePanel;
+import views.ScoreBoardPanel;
 
 public class GameOverGameState implements GameStateInterface {
 
@@ -26,6 +27,7 @@ public class GameOverGameState implements GameStateInterface {
 	 */
 	public void onTick() {
 		gameOverGameStatePanel.repaint();
+		controller.scoreBoard.scoreBoardPanel.repaint();
 		this.tickNumber++;
 	}
 	
