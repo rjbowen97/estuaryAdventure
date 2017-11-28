@@ -36,51 +36,51 @@ public class Controller implements Serializable {
 
 	private GameState gameState;
 	
-	public void setCurrentControllerState() {
-		Controller controllerIn = null;
-		
-	      try {
-	         FileInputStream fileIn = new FileInputStream("controller.ser");
-	         ObjectInputStream in = new ObjectInputStream(fileIn);
-	         controllerIn = (Controller) in.readObject();
-	         in.close();
-	         fileIn.close();
-	      } catch (IOException i) {
-	         i.printStackTrace();
-	         return;
-	      } catch (ClassNotFoundException c) {
-	         System.out.println("Employee class not found");
-	         c.printStackTrace();
-	         return;
-	      }
-	      System.out.println(controllerIn.toString());
-	      
-	      this.view.setVisible(false);
-	      
-	      GameWrapper.controller = controllerIn;
-	      GameWrapper.controller.reloadImages();
-	      
-	      GameWrapper.controller.view.setVisible(true);
-	}
-	
-	public void reloadImages() {
-		this.view.reloadImages();
-	}
-	
-	public void saveCurrentControllerState() {
-		try {
-			FileOutputStream fileOutputStream = new FileOutputStream("controller.ser");
-			ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
-			objectOutputStream.writeObject(this);
-			objectOutputStream.close();
-			fileOutputStream.close();
-			System.out.println("Controller successfully saved to file!");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-	}
+//	public void setCurrentControllerState() {
+//		Controller controllerIn = null;
+//		
+//	      try {
+//	         FileInputStream fileIn = new FileInputStream("controller.ser");
+//	         ObjectInputStream in = new ObjectInputStream(fileIn);
+//	         controllerIn = (Controller) in.readObject();
+//	         in.close();
+//	         fileIn.close();
+//	      } catch (IOException i) {
+//	         i.printStackTrace();
+//	         return;
+//	      } catch (ClassNotFoundException c) {
+//	         System.out.println("Employee class not found");
+//	         c.printStackTrace();
+//	         return;
+//	      }
+//	      System.out.println(controllerIn.toString());
+//	      
+//	      this.view.setVisible(false);
+//	      
+//	      GameWrapper.controller = controllerIn;
+//	      GameWrapper.controller.reloadImages();
+//	      
+//	      GameWrapper.controller.view.setVisible(true);
+//	}
+//	
+//	public void reloadImages() {
+//		this.view.reloadImages();
+//	}
+//	
+//	public void saveCurrentControllerState() {
+//		try {
+//			FileOutputStream fileOutputStream = new FileOutputStream("controller.ser");
+//			ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+//			objectOutputStream.writeObject(this);
+//			objectOutputStream.close();
+//			fileOutputStream.close();
+//			System.out.println("Controller successfully saved to file!");
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		
+//	}
 
 	/**
 	 * Instantiates a new controller.

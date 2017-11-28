@@ -64,29 +64,41 @@ public class View extends JFrame implements Serializable {
 		InputMap rootPaneInputMap = this.getRootPane().getInputMap();
 		ActionMap rootPaneActionMap = this.getRootPane().getActionMap();
 		
-		rootPaneInputMap.put(KeyStroke.getKeyStroke('s'), "save");
-		SaveAction saveAction = new SaveAction();
-		rootPaneActionMap.put("save", saveAction);
+		rootPaneInputMap.put(KeyStroke.getKeyStroke('m'), "miniGame");
+		miniGameAction miniGameAction = new miniGameAction();
+		rootPaneActionMap.put("miniGame", miniGameAction);
 		
-		rootPaneInputMap.put(KeyStroke.getKeyStroke('l'), "load");
-		LoadAction loadAction = new LoadAction();
-		rootPaneActionMap.put("load", loadAction);
+		rootPaneInputMap.put(KeyStroke.getKeyStroke('a'), "activeGame");
+		activeGameAction activeGameAction = new activeGameAction();
+		rootPaneActionMap.put("activeGame", activeGameAction);
+
+		rootPaneInputMap.put(KeyStroke.getKeyStroke('g'), "gameOver");
+		gameOverAction gameOverAction = new gameOverAction();
+		rootPaneActionMap.put("gameOver", gameOverAction);
 		
 	}
 	
-	private class SaveAction extends AbstractAction {
+	private class miniGameAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			System.out.println("Saving...");
-			controller.saveCurrentControllerState();
+			System.out.println("Mini game activating...");
+			controller.changeGameStateFromActiveToMinigame();
 		}
 	}
 	
-	private class LoadAction extends AbstractAction {
+	private class activeGameAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			System.out.println("Loading...");
-			controller.setCurrentControllerState();
+			System.out.println("active game activating...");
+			controller.changeGameStateFromMenuToActive();
+		}
+	}
+	
+	private class gameOverAction extends AbstractAction {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			System.out.println("game over activating...");
+			controller.changeGameStateFromActiveToGameOver();
 		}
 	}
 	
