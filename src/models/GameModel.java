@@ -14,6 +14,10 @@ public abstract class GameModel implements Serializable {
 	
 	/** The y position. */
 	private int yPosition;
+
+	private int height;
+	
+	private int width;
 	
 	/** The sprite image. */
 	public String spriteFilePath;
@@ -36,10 +40,6 @@ public abstract class GameModel implements Serializable {
 	public void setWidth(int width) {
 		this.width = width;
 	}
-
-	private int height;
-	
-	private int width;
 	
 	/** The hitbox. */
 	private Hitbox hitbox;
