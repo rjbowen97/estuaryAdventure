@@ -26,7 +26,6 @@ public class Interactable extends GameModel implements Serializable {
 	
 	/**
 	 * Creates a new interactable, determines its position and whether or not it is food
-	 *
 	 * @param activationTick the activation tick
 	 */
 	public Interactable(int activationTick) {

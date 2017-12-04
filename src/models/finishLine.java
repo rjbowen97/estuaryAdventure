@@ -30,13 +30,35 @@ public class finishLine extends GameModel implements Serializable{
 		this.setSpeed(Settings.getInteractableSpeed());
 		this.activationTick = activationTick;
 		this.setHitbox();
+		this.isFood = false;
 
 	}
 	
 	public void onCollisionWithPlayerModel(Player playerModel) {
 		this.deactivate();
 	}
+	/**
+	 * Checks if is active.
+	 * @return true, if is active
+	 */
+	public boolean isActive() {
+		return this.isActive;
+	}
+	/**
+	 * Checks if is food.
+	 * @return true, if is food
+	 */
+	public boolean isFood() {
+		return isFood;
+	}
+	/**
+	 * Gets the activation tick.
+	 * @return the activation tick
+	 */
 	
+	public int getActivationTick() {
+		return this.activationTick;
+	}
 	/**
 	 * Deactivate
 	 */
@@ -54,26 +76,23 @@ public class finishLine extends GameModel implements Serializable{
 
 	@Override
 	protected void setHitbox() {
-		// TODO Auto-generated method stub
-		
+		this.setHitbox(new Hitbox(this));		
 	}
 
 	@Override
 	protected void updateHitbox() {
-		// TODO Auto-generated method stub
-		
+		this.getHitbox().update();		
 	}
 
 	@Override
 	public void onTick() {
-		// TODO Auto-generated method stub
-		
+		int newXPosition = this.getXPosition() - this.getSpeed();
+		this.setxPosition(newXPosition);
+		this.updateHitbox();
 	}
 
 	@Override
 	public void reset() {
-		// TODO Auto-generated method stub
-		
 	}
 
 }
