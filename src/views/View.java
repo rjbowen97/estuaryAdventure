@@ -1,4 +1,5 @@
 package views;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -47,6 +48,8 @@ public class View extends JFrame implements Serializable {
 		this.controller = controller;
 		initializeKeyBindings();
 		this.setBounds(0,0,Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault());
+		this.setExtendedState(JFrame.MAXIMIZED_BOTH); 
+		this.setUndecorated(true);
 		this.setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
