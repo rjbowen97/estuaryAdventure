@@ -7,18 +7,15 @@ import java.util.ArrayList;
 import models.Background;
 import models.Interactable;
 import models.Player;
-import views.ActiveGameStatePanel;
 
 public class ActiveGameState implements GameStateInterface, Serializable {
 	
 	public Controller controller;
 	
 	public Player playerModel;
-	
 	public ArrayList<Interactable> interactableModels;
-	
 	public ArrayList<Background> backgroundModels;	
-		
+	
 	private int tickNumber = 0;
 	
 	/**
@@ -41,8 +38,8 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	 */
 	public void onTick() {
 		tickModels();
-		checkGameState();
-		this.tickNumber++;
+		changeGameStateIfNeeded();
+		tickNumber++;
 	}
 	
 	/**
@@ -114,13 +111,13 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	/**
 	 * Checks if the game state needs to be change
 	 */
-	private void checkGameState() {
+	private void changeGameStateIfNeeded() {
 		if (playerModel.getHealth() <= 0) {
-			this.controller.changeGameStateFromActiveToGameOver();
+			controller.changeGameStateFromActiveToGameOver();
 		}
 
 		if (playerModel.getScoreStreak() >= Settings.getMiniGameRequiredScoreStreak()) {
-			this.controller.changeGameStateFromActiveToMinigame();;
+			controller.changeGameStateFromActiveToMinigame();;
 		}
 	}
 	

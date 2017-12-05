@@ -1,12 +1,7 @@
 package models;
 
 import java.awt.event.MouseEvent;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.io.Serializable;
-
-import javax.imageio.ImageIO;
 
 import controller.Settings;
 
@@ -19,10 +14,10 @@ public abstract class Player extends GameModel implements Serializable {
 	private String playerName;
 	
 	/** The health of the player */
-	private int health = 3;
+	public int health = 3;
 	
 	/** The score. */
-	private int score = 0;
+	public int score = 0;
 	
 	/** Whether the player has earned a power up or not, initially false */
 	private boolean poweredUp = false;
@@ -30,6 +25,8 @@ public abstract class Player extends GameModel implements Serializable {
 	/** The score streak. */
 	private int scoreStreak = 0;
 
+	public PlayerAnimalType playerAnimalType;
+	
 	/**
 	 * Instantiates a new player, their position and their username
 	 */
@@ -38,11 +35,10 @@ public abstract class Player extends GameModel implements Serializable {
 		this.playerName = "Default";
 		this.setxPosition(Settings.getPlayerStartXPosition());
 		this.setyPosition(Settings.getPlayerStartYPosition());
-		
-		this.setHeight(75);
-		this.setWidth(75);
-		
-		this.setSpriteFilePath();
+
+		this.setHeight(150);
+		this.setWidth(150);
+		this.playerAnimalType = PlayerAnimalType.FISH;
 		this.setHitbox();
 	}
 
@@ -188,11 +184,5 @@ public abstract class Player extends GameModel implements Serializable {
 	public String toString(){
 		return super.toString() + "Player Name: " + this.playerName + "\nHealth: " + this.health + "\nScore: " + this.score + "\nPowered UP: " + this.poweredUp +
 				"\nScore Streak: " + this.scoreStreak;
-	}
-
-	@Override
-	protected void setSpriteFilePath() {
-		this.spriteFilePath = "./Graphics/Avatars/Bird/Bird.png";
-
 	}
 }

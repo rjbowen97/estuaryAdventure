@@ -1,18 +1,12 @@
 package views;
-import java.awt.Dimension;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.Serializable;
 import java.util.ArrayList;
 
 import javax.swing.AbstractAction;
 import javax.swing.ActionMap;
 import javax.swing.InputMap;
-import javax.swing.JButton;
-import javax.swing.JDialog;
 import javax.swing.JFrame;
-import javax.swing.JLayeredPane;
-import javax.swing.JPanel;
 import javax.swing.KeyStroke;
 
 import controller.Controller;
@@ -34,9 +28,6 @@ public class View extends JFrame implements Serializable {
 	public MiniGameGameStatePanel miniGameGameStatePanel;
 
 	Controller controller;
-
-	public void reloadImages() {
-	}
 	
 	/**
 	 * Instantiates a new view.
@@ -64,41 +55,76 @@ public class View extends JFrame implements Serializable {
 		InputMap rootPaneInputMap = this.getRootPane().getInputMap();
 		ActionMap rootPaneActionMap = this.getRootPane().getActionMap();
 		
-		rootPaneInputMap.put(KeyStroke.getKeyStroke('m'), "miniGame");
-		miniGameAction miniGameAction = new miniGameAction();
-		rootPaneActionMap.put("miniGame", miniGameAction);
-		
-		rootPaneInputMap.put(KeyStroke.getKeyStroke('a'), "activeGame");
-		activeGameAction activeGameAction = new activeGameAction();
-		rootPaneActionMap.put("activeGame", activeGameAction);
+		rootPaneInputMap.put(KeyStroke.getKeyStroke('a'), "activateActiveGameState");
+		ActivateActiveGameStateAction activeGameAction = new ActivateActiveGameStateAction();
+		rootPaneActionMap.put("activateActiveGameState", activeGameAction);
 
-		rootPaneInputMap.put(KeyStroke.getKeyStroke('g'), "gameOver");
-		gameOverAction gameOverAction = new gameOverAction();
-		rootPaneActionMap.put("gameOver", gameOverAction);
+		rootPaneInputMap.put(KeyStroke.getKeyStroke('m'), "activateMiniGameGameState");
+		ActivateMiniGameGameStateAction activateMiniGameGameStateAction = new ActivateMiniGameGameStateAction();
+		rootPaneActionMap.put("activateMiniGameGameState", activateMiniGameGameStateAction);
+
+		rootPaneInputMap.put(KeyStroke.getKeyStroke('g'), "activateGameOverGameState");
+		ActivateGameOverGameStateAction activateGameOverGameStateAction = new ActivateGameOverGameStateAction();
+		rootPaneActionMap.put("activateGameOverGameState", activateGameOverGameStateAction);
 		
+		rootPaneInputMap.put(KeyStroke.getKeyStroke('i'), "changeToAirLevel");
+		ChangeToAirLevelAction changeToAirLevelAction = new ChangeToAirLevelAction();
+		rootPaneActionMap.put("changeToAirLevel", changeToAirLevelAction);
+
+		rootPaneInputMap.put(KeyStroke.getKeyStroke('w'), "changeToWaterLevel");
+		ChangeToWaterLevelAction changeToWaterLevelAction= new ChangeToWaterLevelAction();
+		rootPaneActionMap.put("changeToWaterLevel", changeToWaterLevelAction);
+		
+		rootPaneInputMap.put(KeyStroke.getKeyStroke('r'), "resetLevel");
+		ResetLevelAction resetLevelAction= new ResetLevelAction();
+		rootPaneActionMap.put("resetLevel", resetLevelAction);
 	}
 	
-	private class miniGameAction extends AbstractAction {
+	private class ActivateActiveGameStateAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			System.out.println("Mini game activating...");
-			controller.changeGameStateFromActiveToMinigame();
-		}
-	}
-	
-	private class activeGameAction extends AbstractAction {
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			System.out.println("active game activating...");
+			System.out.println("Activating ActiveGameState");
 			controller.changeGameStateFromMenuToActive();
 		}
 	}
-	
-	private class gameOverAction extends AbstractAction {
+
+	private class ActivateMiniGameGameStateAction extends AbstractAction {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			System.out.println("game over activating...");
+			System.out.println("Activating MiniGameGameState");
+			controller.changeGameStateFromActiveToMinigame();
+		}
+	}
+
+	private class ActivateGameOverGameStateAction extends AbstractAction {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			System.out.println("Activating GameOverGameState");
 			controller.changeGameStateFromActiveToGameOver();
+		}
+	}
+
+	private class ChangeToAirLevelAction extends AbstractAction {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			System.out.println("Changing to air level");
+			controller.changeLevels("a");
+		}
+	}
+
+	private class ChangeToWaterLevelAction extends AbstractAction {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			System.out.println("Changing to water");
+			controller.changeLevels("w");;
+		}
+	}
+
+	private class ResetLevelAction extends AbstractAction {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			System.out.println("Resetting level");
+			controller.resetLevel();
 		}
 	}
 	

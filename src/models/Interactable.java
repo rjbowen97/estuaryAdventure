@@ -1,12 +1,7 @@
 package models;
 
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.io.Serializable;
 import java.util.Random;
-
-import javax.imageio.ImageIO;
 
 import controller.Settings;
 
@@ -16,27 +11,28 @@ import controller.Settings;
  */
 public class Interactable extends GameModel implements Serializable {
 
+	public boolean isInWater = true;
+	
 	private boolean isFood;	
 	
 	/** The activation tick. */
-	private int activationTick;
+	public int activationTick;
 	
 	/** The is active. */
-	private boolean isActive = false;
+	public boolean isActive = false;
 	
 	/** The random. */
 	private Random random = new Random();
 	
 	/**
 	 * Creates a new interactable, determines its position and whether or not it is food
-	 *
 	 * @param activationTick the activation tick
 	 */
 	public Interactable(int activationTick) {
 		this.setxPosition(Settings.getInteractableStartXPosition());
 		this.setyPosition(random.nextInt(Settings.getViewDimensionYDefault() - 100)); // -100 because this is the spriteImage height for interactables
-		this.setWidth(50);
-		this.setHeight(50);
+		this.setWidth(100);
+		this.setHeight(100);
 		
 		this.isFood = random.nextBoolean();
 		this.setSpeed(Settings.getInteractableSpeed());
@@ -134,14 +130,7 @@ public class Interactable extends GameModel implements Serializable {
 	
 	
 	public String toString(){
-		return super.toString() + "\nIs Active: " + this.isActive + "\nIs Food: " + this.isFood + 
+		return super.toString() + "\nIs ACTIVE: " + this.isActive + "\nIs Food: " + this.isFood + 
 				"\nActivation Tick: " + this.activationTick;
 	}
-
-	@Override
-	protected void setSpriteFilePath() {
-		this.spriteFilePath = "";
-	}
-	
-	
 }

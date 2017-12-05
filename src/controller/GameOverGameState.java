@@ -2,13 +2,8 @@ package controller;
 
 import java.io.Serializable;
 
-import models.ScoreBoard;
-import views.GameOverGameStatePanel;
-import views.ScoreBoardPanel;
-
 public class GameOverGameState implements GameStateInterface, Serializable {
 
-	private Controller controller;
 	
 	private int tickNumber = 0;
 	
@@ -17,8 +12,7 @@ public class GameOverGameState implements GameStateInterface, Serializable {
 	 *
 	 * @param controller the main controller passed from the controller
 	 */
-	public GameOverGameState(Controller controller) {
-		this.controller = controller;
+	public GameOverGameState() {
 	}
 	
 	/**

@@ -1,6 +1,5 @@
 package models;
 
-import java.awt.image.BufferedImage;
 import java.io.Serializable;
 
 /**
@@ -9,17 +8,15 @@ import java.io.Serializable;
 public abstract class GameModel implements Serializable {
 	
 	/** The x position of the game model */
-	private int xPosition;
+	public int xPosition;
 	
 	/** The y position of the game model */
-	private int yPosition;
+	public int yPosition;
 
 	private int height;
 	
 	private int width;
 	
-	/** The sprite image. */
-	public String spriteFilePath;
 	
 	/** The speed, initially set to 0 */
 	private int speed = 0;
@@ -43,10 +40,6 @@ public abstract class GameModel implements Serializable {
 	/** Initiate a hitbox for the image */
 	private Hitbox hitbox;
 	
-	/**
-	 * Sets the sprite image.
-	 */
-	protected abstract void setSpriteFilePath();
 	
 	/**
 	 * Sets the hitbox for the image/gamemodel

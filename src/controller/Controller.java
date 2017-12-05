@@ -1,12 +1,6 @@
 package controller;
 
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -14,129 +8,128 @@ import models.Background;
 import models.Interactable;
 import models.Menu;
 import models.Player;
+import models.PlayerAnimalType;
 import models.ScoreBoard;
 import models.ScoreBoardManager;
-import views.MenuPanel;
 import views.ScoreBoardPanel;
 import views.View;
 
 public class Controller implements Serializable {
 
-	public MenuGameState menuGameState;
-
-	public ActiveGameState activeGameState;
-	
-	public MiniGameGameState miniGameGameState;
-	
-	public GameOverGameState gameOverGameState;
-	
-	public ScoreBoard scoreBoard;
-
-	public View view;
-
 	private GameState gameState;
 	
-//	public void setCurrentControllerState() {
-//		Controller controllerIn = null;
-//		
-//	      try {
-//	         FileInputStream fileIn = new FileInputStream("controller.ser");
-//	         ObjectInputStream in = new ObjectInputStream(fileIn);
-//	         controllerIn = (Controller) in.readObject();
-//	         in.close();
-//	         fileIn.close();
-//	      } catch (IOException i) {
-//	         i.printStackTrace();
-//	         return;
-//	      } catch (ClassNotFoundException c) {
-//	         System.out.println("Employee class not found");
-//	         c.printStackTrace();
-//	         return;
-//	      }
-//	      System.out.println(controllerIn.toString());
-//	      
-//	      this.view.setVisible(false);
-//	      
-//	      GameWrapper.controller = controllerIn;
-//	      GameWrapper.controller.reloadImages();
-//	      
-//	      GameWrapper.controller.view.setVisible(true);
-//	}
-//	
-//	public void reloadImages() {
-//		this.view.reloadImages();
-//	}
-//	
-//	public void saveCurrentControllerState() {
-//		try {
-//			FileOutputStream fileOutputStream = new FileOutputStream("controller.ser");
-//			ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
-//			objectOutputStream.writeObject(this);
-//			objectOutputStream.close();
-//			fileOutputStream.close();
-//			System.out.println("Controller successfully saved to file!");
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		
-//	}
+	public MenuGameState menuGameState;
+	public ActiveGameState activeGameState;
+	public MiniGameGameState miniGameGameState;
+	public GameOverGameState gameOverGameState;
+	public ScoreBoard scoreBoard;
+	public View view;
+	
+	public Controller(Menu menuModel, Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels, ScoreBoard scoreBoard) {
+		this.gameState = GameState.MENU;
 
-	/**
-	 * Instantiates a new controller.
-	 *
-	 * @param playerModel the main player model
-	 * @param interactableModels the interactable models
-	 * @param backgroundModels the background models
-	 * @param scoreBoard the score board
-	 * @param menuModel the score board
-	 * 
-	 */
-	public Controller(Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels, ScoreBoard scoreBoard, Menu menuModel) {
-		this.menuGameState = new MenuGameState(menuModel, this);
+		this.menuGameState = new MenuGameState(this, menuModel);
 		this.activeGameState = new ActiveGameState(this, playerModel, interactableModels, backgroundModels);
 		this.miniGameGameState = new MiniGameGameState(this);
 		
+		this.gameOverGameState = new GameOverGameState();
+		
 		this.scoreBoard = scoreBoard;
 		this.scoreBoard.scoreBoardPanel = new ScoreBoardPanel(this.scoreBoard);
-		
-		this.gameOverGameState = new GameOverGameState(this);
-		
 
-		this.gameState = GameState.Menu;
+		
 		this.view = new View(playerModel, backgroundModels, this, interactableModels);
 		this.view.setContentPane(view.menuPanel);
 	}
-
+	
 	/**
 	 * Called every tick by the gameWrapper main loop. Depending on the current game state, the appropriate onTick function is called
 	 */
 	public void tick(){
-		if (gameState.equals(GameState.Menu)) {
+		if (gameState.equals(GameState.MENU)) {
 			this.menuGameState.onTick();
 		}
 		
-		if (gameState.equals(GameState.Active)) {
+		if (gameState.equals(GameState.ACTIVE)) {
 			this.activeGameState.onTick();
 		}
-
-		if (gameState.equals(GameState.MiniGame)) {
+	
+		if (gameState.equals(GameState.MINI_GAME)) {
 			this.miniGameGameState.onTick();
 		}
-
+	
 		else { //gameOver
 			this.gameOverGameState.onTick();
 		}
 		
 		this.view.repaint();
 	}
+
+	/**
+	 * Changes the current level
+	 * 
+	 * @param targetLevel the level to change to
+	 */
+	public void changeLevels(String targetLevel) {
+		if (targetLevel.equals("a")) {
+			this.activeGameState.playerModel.playerAnimalType = PlayerAnimalType.BIRD;
+
+			for (Background background : activeGameState.backgroundModels) {
+				background.backgroundType = "a";
+			}
+			
+			for (Interactable interactable : activeGameState.interactableModels) {
+				interactable.isInWater = false;
+			}
+			
+		}
+		
+		else {
+			this.activeGameState.playerModel.playerAnimalType = PlayerAnimalType.FISH;
+
+			for (Background background : activeGameState.backgroundModels) {
+				background.backgroundType = "w";
+			}
+			
+			for (Interactable interactable : activeGameState.interactableModels) {
+				interactable.isInWater = true;
+			}
+		}
+	}
 	
+	
+	/**
+	 * resets the current level
+	 */
+	public void resetLevel() {
+		activeGameState.playerModel.xPosition = 0;
+		activeGameState.playerModel.yPosition = 0;
+		activeGameState.playerModel.score = 0;
+		activeGameState.playerModel.resetScoreStreak();
+		activeGameState.playerModel.health = 3;
+		
+		for (Background background : activeGameState.backgroundModels) {
+			background.xPosition = 0;
+		}
+		
+		int releaseTime = 0;
+		for (Interactable interactable : activeGameState.interactableModels) {
+			interactable.isActive = false;
+			interactable.xPosition = Settings.getInteractableStartXPosition();
+			interactable.activationTick = releaseTime;
+			releaseTime += 5;
+		}
+		
+		miniGameGameState.miniGame.resetMiniGame();
+		
+	}
+
 	/**
 	 * Change game state from menu to active.
 	 */
 	public void changeGameStateFromMenuToActive() {
 		this.view.setContentPane(view.activeGameStatePanel);
-		this.gameState = GameState.Active;
+		this.gameState = GameState.ACTIVE;
 	}
 
 	/**
@@ -144,7 +137,7 @@ public class Controller implements Serializable {
 	 */
 	public void changeGameStateFromActiveToMinigame() {
 		this.view.setContentPane(view.miniGameGameStatePanel);
-		this.gameState = GameState.MiniGame;
+		this.gameState = GameState.MINI_GAME;
 	}
 
 	/**
@@ -164,7 +157,7 @@ public class Controller implements Serializable {
 		activeGameState.playerModel.resetScoreStreak();
 		
 		this.view.setContentPane(view.activeGameStatePanel);
-		this.gameState = GameState.Active;
+		this.gameState = GameState.ACTIVE;
 		
 	}
 
@@ -173,14 +166,18 @@ public class Controller implements Serializable {
 	 */
 	public void changeGameStateFromActiveToGameOver() {
 		scoreBoard.addNewScore(activeGameState.playerModel);
-		ScoreBoardManager.saveScoreboard(scoreBoard,Settings.getScoreFileName());
-		this.scoreBoard = ScoreBoardManager.loadScoreBoard(Settings.getScoreFileName());
+		ScoreBoardManager.saveScoreboard(scoreBoard,Settings.getScoreBoardFileName());
+		this.scoreBoard = ScoreBoardManager.loadScoreBoard(Settings.getScoreBoardFileName());
 		
 		this.view.setContentPane(view.gameOverGameStatePanel);
 		this.view.setContentPane(scoreBoard.scoreBoardPanel);
-		this.gameState = GameState.GameOver;
-
+		this.gameState = GameState.GAME_OVER;
 	}
+	
+	/**
+	 * Sets the player name
+	 * @param playerName new player name
+	 */
 	
 	public void setPlayerName(String playerName) {
 		this.activeGameState.playerModel.setPlayerName(playerName);
