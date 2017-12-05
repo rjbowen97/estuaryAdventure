@@ -35,7 +35,7 @@ public class finishLine extends Interactable implements Serializable{
 	}
 	@Override 
 	public void onCollisionWithPlayerModel(Player playerModel) {
-		this.deactivate();
+		
 	}
 	/**
 	 * Checks if is active.
