@@ -3,6 +3,7 @@ package views;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 import java.io.Serializable;
 
 import javax.swing.JButton;
@@ -35,6 +36,7 @@ public class MenuPanel extends JPanel implements ActionListener, Serializable  {
 	JButton mediumButton;
 	JButton hardButton;
 	
+	JButton quitButton;
 
 	public MenuPanel(Menu menu, Controller controller) {
 		this.menu = menu;
@@ -55,15 +57,21 @@ public class MenuPanel extends JPanel implements ActionListener, Serializable  {
 		setNameButton.addActionListener(this);
 		
 		this.playButton = new JButton("Play!");
-		playButton.setBounds(Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault(), 10,10);
+		playButton.setBounds(Settings.getViewDimensionXDefault()-20, Settings.getViewDimensionYDefault()-20, 10,10);
 		
 		playButton.setActionCommand("play");
 		playButton.addActionListener(this);
+		
+		this.quitButton = new JButton("quit");
+		playButton.setBounds(0, 0, 10, 10);
+		this.quitButton.addActionListener(this);
+
 		
 		this.add(difficultyLabel);
 		this.add(nameField);
 		this.add(setNameButton);
 		this.add(this.playButton);
+		this.add(this.quitButton);
 		
 		this.setBounds(0, 0, Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault());
 		this.setVisible(true);
@@ -78,6 +86,10 @@ public class MenuPanel extends JPanel implements ActionListener, Serializable  {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand().equals("play")) {
 			controller.changeGameStateFromMenuToActive();
+		}
+		if (e.getActionCommand().equals("quit")) {
+			this.setVisible(false);
+			System.exit(0);
 		}
 		
 		else if (e.getActionCommand().equals("setName")) {
