@@ -10,6 +10,7 @@ import models.Menu;
 import models.Player;
 import models.ScoreBoard;
 import models.ScoreBoardManager;
+import models.finishLine;
 
 
 /**
@@ -70,7 +71,7 @@ public class GameWrapper implements Serializable {
 		for (int interactableIndex = 0; interactableIndex < Settings.getInteractableCount(); interactableIndex++) {
 			interactableModels.add(new Interactable(interactableIndex * Settings.getInteractableReleaseInterval()));
 		}
-		
+		interactableModels.add(new finishLine(Settings.getInteractableCount() * Settings.getInteractableReleaseInterval(), controller));
 		return interactableModels;
 	}
 

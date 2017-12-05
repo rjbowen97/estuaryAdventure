@@ -3,11 +3,12 @@ package models;
 import java.io.Serializable;
 import java.util.Random;
 
+import controller.Controller;
 import controller.Settings;
 
 public class finishLine extends Interactable implements Serializable{
 	
-
+	public Controller controller;
 	public boolean isInWater = true;
 	
 	private boolean isFood;	
@@ -22,20 +23,21 @@ public class finishLine extends Interactable implements Serializable{
 	private Random random = new Random();
 	
 
-	public finishLine(int activationTick) {
+	public finishLine(int activationTick, Controller controller) {
 		this.setxPosition(Settings.getInteractableStartXPosition());
-		//this.setyPosition(); // -100 because this is the spriteImage height for interactables
+		this.setyPosition(0);
 		this.setWidth(100);
 		this.setHeight(Settings.getViewDimensionYDefault());
 		this.setSpeed(Settings.getInteractableSpeed());
 		this.activationTick = activationTick;
 		this.setHitbox();
 		this.isFood = false;
+		this.controller = controller;
 
 	}
 	@Override 
 	public void onCollisionWithPlayerModel(Player playerModel) {
-		
+		playerModel.score += 1;
 	}
 	/**
 	 * Checks if is active.
