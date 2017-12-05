@@ -67,8 +67,8 @@ public class GameWrapper implements Serializable {
 	private static ArrayList<Interactable> generateInteractableModels() {
 		ArrayList<Interactable> interactableModels = new ArrayList<Interactable>();
 		
-		for (int interactableIndex = 0; interactableIndex < 100; interactableIndex++) {
-			interactableModels.add(new Interactable(interactableIndex * 5));
+		for (int interactableIndex = 0; interactableIndex < Settings.getInteractableCount(); interactableIndex++) {
+			interactableModels.add(new Interactable(interactableIndex * Settings.getInteractableReleaseInterval()));
 		}
 		
 		return interactableModels;

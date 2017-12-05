@@ -173,4 +173,13 @@ public class Settings implements Serializable {
 	public static String getScoreBoardFileName() {
 		return globalSettings.getProperty("scoreBoardFileName");
 	}
+	public static int getInteractableCount()
+	{
+		return Integer.parseInt(globalSettings.getProperty("interactableCount"));
+	}
+	public static int getInteractableReleaseInterval()
+	{
+		return Integer.parseInt(globalSettings.getProperty("interactableReleaseInterval"));
+	}
+	
 }

@@ -5,7 +5,7 @@ import java.util.Random;
 
 import controller.Settings;
 
-public class finishLine extends GameModel implements Serializable{
+public class finishLine extends Interactable implements Serializable{
 	
 
 	public boolean isInWater = true;
@@ -26,14 +26,14 @@ public class finishLine extends GameModel implements Serializable{
 		this.setxPosition(Settings.getInteractableStartXPosition());
 		//this.setyPosition(); // -100 because this is the spriteImage height for interactables
 		this.setWidth(100);
-		this.setHeight(1000);
+		this.setHeight(Settings.getViewDimensionYDefault());
 		this.setSpeed(Settings.getInteractableSpeed());
 		this.activationTick = activationTick;
 		this.setHitbox();
 		this.isFood = false;
 
 	}
-	
+	@Override 
 	public void onCollisionWithPlayerModel(Player playerModel) {
 		this.deactivate();
 	}
