@@ -3,18 +3,18 @@
 <QuestionsAndAnswers>
 
 	<QuestionAndAnswer ID="0">
-		<Question>How many legs does a dog have?</Question>
-		<answerA>4</answerA>
-		<answerB>2</answerB>
-		<answerC>8</answerC>
-		<correctAnswer>A</correctAnswer>
+		<Question>What is an Estuary?</Question>
+		<answerA>A species of crab</answerA>
+		<answerB>Where fresh water from a river meets salt water from the ocean or bay</answerB>
+		<answerC>A place where lions live</answerC>
+		<correctAnswer>B</correctAnswer>
 	</QuestionAndAnswer>
 	
 	<QuestionAndAnswer ID="1">
-		<Question>How many legs does a human have?</Question>
-		<answerA>23</answerA>
-		<answerB>7</answerB>
-		<answerC>2</answerC>
+		<Question>What do shorebirds eat when they migrate to the Delaware Estuary</Question>
+		<answerA>Seaweed</answerA>
+		<answerB>Leftover pizza from Tourists</answerB>
+		<answerC>Horseshoe crab eggs</answerC>
 		<correctAnswer>C</correctAnswer>
 	</QuestionAndAnswer>
 
@@ -43,12 +43,81 @@
 	</QuestionAndAnswer>
 	
 	<QuestionAndAnswer ID="5">
-		<Question>Batman defensds Estuary for a hobby</Question>
+		<Question>The Delaware Estuary houses the largest population of horseshoe crabs in the entire world</Question>
+		<answerA>True</answerA>
+		<answerB>False</answerB>
+		<answerC></answerC><correctAnswer>A</correctAnswer>
+		
+	</QuestionAndAnswer>
+	<QuestionAndAnswer ID="6">
+		<Question>The Delaware Estuary is an eco-system.</Question>
+		<answerA>True</answerA>
+		<answerB>False</answerB>
+		<answerC></answerC>
+		<correctAnswer>A</correctAnswer>
+	</QuestionAndAnswer>
+	<QuestionAndAnswer ID="7">
+		<Question>St. Jones River is located in Sussex County</Question>
+		<answerA>True</answerA>
+		<answerB>False</answerB>
+		<answerC></answerC>
+		<correctAnswer>A</correctAnswer>
+	</QuestionAndAnswer>
+	<QuestionAndAnswer ID="8">
+		<Question>What does DNERR stand for?</Question><answerA>Don't Need Estuary Research Reserve</answerA>
+		<answerB>Delaware National Estuarine Research Reserve</answerB>
+		<answerC>Delaware National Eating Red Raviolis </answerC>
+		<correctAnswer>B</correctAnswer>
+		</QuestionAndAnswer>
+	<QuestionAndAnswer ID="9">
+		<Question>
+			Which one of the following is the largest estuary in the
+			world?
+		</Question>
+		<answerA>St. Jones River</answerA>
+		<answerB>St. Lawrence River</answerB>
+		<answerC>Tokyo Bay</answerC>
+		<correctAnswer>B</correctAnswer>
+	</QuestionAndAnswer>
+	<QuestionAndAnswer ID="10">
+		<Question>What is the main difference between a Lagoon and an Estuary?</Question><answerA>Spongebob lives in a Lagoon</answerA>
+		<answerB>There aren't any Lagoons located in the United States</answerB>
+		<answerC>Lagoons are shallower and the flow of water is slower</answerC>
+		<correctAnswer>C</correctAnswer>
+	</QuestionAndAnswer>
+	<QuestionAndAnswer ID="11">
+		<Question>Human Pollution is a major problem for Estuaries</Question>
+		<answerA>True</answerA>
+		<answerB>False</answerB>
+		<answerC></answerC>
+		<correctAnswer>A</correctAnswer>
+	</QuestionAndAnswer>
+	<QuestionAndAnswer ID="12">
+		<Question>Overfishing is NOT a problem for Estuary</Question>
 		<answerA>True</answerA>
 		<answerB>False</answerB>
 		<answerC></answerC>
 		<correctAnswer>B</correctAnswer>
 	</QuestionAndAnswer>
+	<QuestionAndAnswer ID="13">
+		<Question>What is a watershed?</Question><answerA>Where you wash your clothes</answerA>
+		<answerB>An area of land drained by a river or other body of water</answerB>
+		<answerC>A shed where you go and get water</answerC>
+		<correctAnswer>B</correctAnswer>
+	</QuestionAndAnswer>
+	<QuestionAndAnswer ID="14">
+		<Question>The Delaware is located only in Delaware</Question>
+		<answerA>True</answerA><answerB>False</answerB>
+		<answerC></answerC>
+		<correctAnswer>B</correctAnswer>
+		
+	</QuestionAndAnswer>
+	<QuestionAndAnswer ID="15">
+		<Question>Are horseshoe in danger from overharvesting?</Question>
+		<answerA>Yes</answerA>
+		<answerB>No</answerB>
+		<answerC></answerC>
+		<correctAnswer>A</correctAnswer></QuestionAndAnswer>
 
 
 </QuestionsAndAnswers>
