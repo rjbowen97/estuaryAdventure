@@ -35,7 +35,7 @@ public class InteractableComponent extends JComponent implements Serializable {
 	public InteractableComponent(ArrayList<Interactable> interactableModels) {
 		this.interactableModels = interactableModels;
 		this.setSpriteImage();
-		
+
 		this.setBounds(0,0,Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault());
 
 		this.setVisible(true);
@@ -49,30 +49,35 @@ public class InteractableComponent extends JComponent implements Serializable {
 		int sizeOfModels = interactableModels.size();
 		int index = 0;
 		for (Interactable interactableModel : interactableModels) {
+			index++;
+
 			if (interactableModel.isActive() == true) {
-				if (interactableModel.isFood()) {
-					index++;
-					if(index == sizeOfModels)
-					{
-						g.drawImage(this.finishLineImage, interactableModel.getXPosition(), interactableModel.getYPosition(), null);	
-					}
-					if (interactableModel.isInWater) {
-						g.drawImage(this.waterFoodImage, interactableModel.getXPosition(), interactableModel.getYPosition(), null);						
-					}
-					else {
-						g.drawImage(this.airFoodImage, interactableModel.getXPosition(), interactableModel.getYPosition(), null);
-					}
+
+				if (index == sizeOfModels - 1)
+				{
+					g.drawImage(this.finishLineImage, interactableModel.getXPosition(), interactableModel.getYPosition(), null);	
 				}
-				
+
 				else {
-					if (interactableModel.isInWater) {
-						g.drawImage(this.waterNotFoodImage, interactableModel.getXPosition(), interactableModel.getYPosition(), null);
+					if (interactableModel.isFood()) {
+
+						if (interactableModel.isInWater) {
+							g.drawImage(this.waterFoodImage, interactableModel.getXPosition(), interactableModel.getYPosition(), null);						
+						}
+						else {
+							g.drawImage(this.airFoodImage, interactableModel.getXPosition(), interactableModel.getYPosition(), null);
+						}
 					}
-					
+
 					else {
-						g.drawImage(this.airNotFoodImage, interactableModel.getXPosition(), interactableModel.getYPosition(), null);
+						if (interactableModel.isInWater) {
+							g.drawImage(this.waterNotFoodImage, interactableModel.getXPosition(), interactableModel.getYPosition(), null);
+						}
+
+						else {
+							g.drawImage(this.airNotFoodImage, interactableModel.getXPosition(), interactableModel.getYPosition(), null);
+						}
 					}
-					
 				}
 			}
 		}
@@ -101,7 +106,7 @@ public class InteractableComponent extends JComponent implements Serializable {
 			if (airNotFoodFile.exists() == true){
 				airNotFoodImage = ImageIO.read(airNotFoodFile);
 			}
-			
+
 			if (waterFoodFile.exists() == true){
 				waterFoodImage = ImageIO.read(waterFoodFile);
 			}
@@ -116,7 +121,7 @@ public class InteractableComponent extends JComponent implements Serializable {
 		catch (IOException e) {
 			e.printStackTrace();
 		}			
-		
+
 		double xRatio = ((double) this.interactableModels.get(0).getWidth()) / ((double) airFoodImage.getWidth());
 		double yRatio = ((double) this.interactableModels.get(0).getHeight()) / ((double) airFoodImage.getHeight());
 		this.airFoodImage = imageScaler.scaleImageToInputRatio(airFoodImage, xRatio, yRatio);
@@ -132,10 +137,10 @@ public class InteractableComponent extends JComponent implements Serializable {
 		xRatio = ((double) this.interactableModels.get(0).getWidth()) / ((double) waterNotFoodImage.getWidth());
 		yRatio = ((double) this.interactableModels.get(0).getHeight()) / ((double) waterNotFoodImage.getHeight());
 		this.waterNotFoodImage = imageScaler.scaleImageToInputRatio(waterNotFoodImage, xRatio, yRatio);
-		
-		xRatio = ((double) this.interactableModels.get(0).getWidth()) / ((double) finishLineImage.getWidth());
-		yRatio = ((double) this.interactableModels.get(0).getHeight()) / ((double) finishLineImage.getHeight());
-		this.waterNotFoodImage = imageScaler.scaleImageToInputRatio(finishLineImage, xRatio, yRatio);
+
+		xRatio = ((double) this.interactableModels.get(interactableModels.size() - 1).getWidth()) / ((double) finishLineImage.getWidth());
+		yRatio = ((double) this.interactableModels.get(interactableModels.size() - 1).getHeight()) / ((double) finishLineImage.getHeight());
+		this.finishLineImage = imageScaler.scaleImageToInputRatio(finishLineImage, xRatio, Settings.getViewDimensionYDefault());
 	}
 }
 
