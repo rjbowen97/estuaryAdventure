@@ -10,6 +10,7 @@ import models.Menu;
 import models.Player;
 import models.ScoreBoard;
 import models.ScoreBoardManager;
+import models.finishLine;
 
 
 /**
@@ -37,12 +38,12 @@ public class GameWrapper implements Serializable {
 		
 		Menu menuModel = new Menu();
 		Player playerModel = new LandAnimal();
-		ArrayList<Background> backgroundModels = new ArrayList<Background>(generateBackgroundModels());
 		ArrayList<Interactable> interactableModels = new ArrayList<Interactable>(generateInteractableModels());
+		ArrayList<Background> backgroundModels = new ArrayList<Background>(generateBackgroundModels());
 		
-		ScoreBoard scoreBoard = ScoreBoardManager.loadScoreBoard(Settings.getScoreFileName());
+		ScoreBoard scoreBoard = ScoreBoardManager.loadScoreBoard(Settings.getScoreBoardFileName());
 		
-		controller = new Controller(playerModel, interactableModels, backgroundModels, scoreBoard, menuModel);
+		controller = new Controller(menuModel, playerModel, interactableModels, backgroundModels, scoreBoard);
 	}
 	
 	/**
@@ -60,6 +61,21 @@ public class GameWrapper implements Serializable {
 	}
 	
 	/**
+	 * Generates interactable models.
+	 *
+	 * @return An array list of interactable models
+	 */
+	private static ArrayList<Interactable> generateInteractableModels() {
+		ArrayList<Interactable> interactableModels = new ArrayList<Interactable>();
+		
+		for (int interactableIndex = 0; interactableIndex < Settings.getInteractableCount(); interactableIndex++) {
+			interactableModels.add(new Interactable(interactableIndex * Settings.getInteractableReleaseInterval()));
+		}
+		interactableModels.add(new finishLine(Settings.getInteractableCount() * Settings.getInteractableReleaseInterval(), controller));
+		return interactableModels;
+	}
+
+	/**
 	 * Generates background models.
 	 *
 	 * @return An array list of background models
@@ -70,21 +86,6 @@ public class GameWrapper implements Serializable {
     		backgroundModels.add(new Background(0, 0, backgroundImageFileIndex));
     	}
     	return backgroundModels;
-	}
-	
-	/**
-	 * Generates interactable models.
-	 *
-	 * @return An array list of interactable models
-	 */
-	private static ArrayList<Interactable> generateInteractableModels() {
-		ArrayList<Interactable> interactableModels = new ArrayList<Interactable>();
-		
-    	for (int interactableIndex = 0; interactableIndex < 100; interactableIndex++) {
-    		interactableModels.add(new Interactable(interactableIndex * 5));
-    	}
-    	
-    	return interactableModels;
 	}
 	
 }

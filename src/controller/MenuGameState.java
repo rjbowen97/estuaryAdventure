@@ -14,14 +14,13 @@ public class MenuGameState implements GameStateInterface, Serializable {
 
 	/**
 	 * Instantiates a new menu game state.
-	 *
-	 * @param menu the menu model
 	 * @param controller the main controller
+	 * @param menu the menu model
 	 */
-	public MenuGameState(Menu menu, Controller controller)
+	public MenuGameState(Controller controller, Menu menu)
 	{
-		this.menu = menu;
 		this.controller = controller;
+		this.menu = menu;
 	}
 	
 	/* (non-Javadoc)

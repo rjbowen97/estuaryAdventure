@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 public class GameOverGameState implements GameStateInterface, Serializable {
 
-	private Controller controller;
 	
 	private int tickNumber = 0;
 	
@@ -13,8 +12,7 @@ public class GameOverGameState implements GameStateInterface, Serializable {
 	 *
 	 * @param controller the main controller passed from the controller
 	 */
-	public GameOverGameState(Controller controller) {
-		this.controller = controller;
+	public GameOverGameState() {
 	}
 	
 	/**
