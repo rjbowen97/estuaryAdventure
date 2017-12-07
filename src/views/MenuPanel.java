@@ -4,7 +4,11 @@ import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -32,7 +36,7 @@ import javax.swing.border.TitledBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.BevelBorder;
 
-public class MenuPanel extends JPanel implements ActionListener, Serializable  {
+public class MenuPanel extends JPanel implements ActionListener, Serializable {
 
 	private Controller controller;
 	private Menu menu;
@@ -57,7 +61,7 @@ public class MenuPanel extends JPanel implements ActionListener, Serializable  {
 	private JPanel actionPanel;
 	private JPanel panel;
 
-	public MenuPanel(Menu menu, Controller controller) {
+	public MenuPanel(Menu menu, Controller controller)  {
 		this.menu = menu;
 		this.controller = controller;
 		
@@ -126,6 +130,7 @@ public class MenuPanel extends JPanel implements ActionListener, Serializable  {
 		AbstractFormatter formatter = nameField.getFormatter();
 		
 		this.setVisible(true);
+		
 	}
 	@Override
 	public void paintComponent(Graphics g)
@@ -144,7 +149,29 @@ public class MenuPanel extends JPanel implements ActionListener, Serializable  {
 		}
 		
 		else if (e.getActionCommand().equals("setName")) {
-			controller.setPlayerName(this.nameField.getText());
+			
+			String name = this.nameField.getText();
+			Scanner s = null;
+			try {
+				s = new Scanner(new File("swearWords.txt"));
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			ArrayList<String> badWords = new ArrayList<String>();
+			while (s.hasNext()){
+			    badWords.add(s.next());
+			}
+			s.close();
+			
+			for(String a: badWords)
+			{
+				if(name.equals(a))
+				{
+					name = "Censored";
+				}
+			}
+			controller.setPlayerName(name);
 		}
 		
 	}
