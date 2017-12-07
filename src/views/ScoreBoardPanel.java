@@ -35,7 +35,7 @@ public class ScoreBoardPanel extends JPanel implements Serializable, ActionListe
 	ArrayList<JLabel> scoreBoardEntryLabels = new ArrayList<JLabel>();
 
 	//buttons
-		JButton playButton;
+		JButton replayButton;
 		
 		JButton quitButton;
 		private final ButtonGroup actionButtons = new ButtonGroup();
@@ -70,27 +70,26 @@ public class ScoreBoardPanel extends JPanel implements Serializable, ActionListe
 		for (JLabel jLabel : scoreBoardEntryLabels) {
 			jLabel.setBounds(0, y, scorePanel.getWidth(), 20);
 			y+=10;
-			scorePanel.add(jLabel);
+			this.add(jLabel);
 		}
 		actionPanel = new JPanel();
 		actionPanel.setBorder(new EmptyBorder(0, 0, 0, 0));
 		actionPanel.setBounds(46, 186, 337, 46);
 		add(actionPanel);
 		actionPanel.setLayout(null);
-		
-		this.playButton = new JButton("Play!");
-		playButton.setBounds(6, 16, 80, 23);
-		actionPanel.add(playButton);
-		playButton.setAlignmentY(Component.BOTTOM_ALIGNMENT);
-		actionButtons.add(playButton);
-		
-		playButton.setActionCommand("play");
 //		scorePanel.setBounds(200, 0, 400, 450);
 //		this.add(scorePanel);
 		this.setBounds(0, 0, 800, 450);
 		
 		JButton quitButton = new JButton("Quit");
 		quitButton.addActionListener(this);
+		
+		this.replayButton = new JButton("Replay");
+		add(replayButton);
+		replayButton.setAlignmentY(Component.BOTTOM_ALIGNMENT);
+		actionButtons.add(replayButton);
+		
+		replayButton.setActionCommand("replay");
 		add(quitButton);
 		
 	}
@@ -106,12 +105,12 @@ public class ScoreBoardPanel extends JPanel implements Serializable, ActionListe
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if (e.getActionCommand().equals("play")) {
+		if (e.getActionCommand().equals("replay")) {
 			controller.changeGameStateFromMenuToActive();
 		}
 		if(e.getActionCommand() == "Quit"){
 			System.exit(0);
-			}
+		}
 	}
 
 }

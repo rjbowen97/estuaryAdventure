@@ -35,6 +35,9 @@ import javax.swing.JSplitPane;
 import javax.swing.border.TitledBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.BevelBorder;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
 
 public class MenuPanel extends JPanel implements ActionListener, Serializable {
 
@@ -44,8 +47,7 @@ public class MenuPanel extends JPanel implements ActionListener, Serializable {
 	JFormattedTextField nameField;
 	JButton setNameButton;
 	
-	JLabel difficultyLabel = new JLabel("Difficulty");
-	
+	JLabel illegalName = new JLabel("Illegal Name: Please Enter New Name");
 
 	//labels
 	JLabel nameLabel;
@@ -59,59 +61,33 @@ public class MenuPanel extends JPanel implements ActionListener, Serializable {
 	JButton quitButton;
 	private final ButtonGroup actionButtons = new ButtonGroup();
 	private JPanel actionPanel;
-	private JPanel panel;
+	private JPanel namePanel;
 
 	public MenuPanel(Menu in_menu, Controller controller) {
 		this.menu = in_menu;
 		this.controller = controller;
+		setBounds(new Rectangle(0, 0, 960, 540));
 		
 		Settings set = new Settings();
+		illegalName.setMaximumSize(new Dimension(200, 14));
+		illegalName.setVisible(false);
 		setLayout(null);
-		difficultyLabel.setBounds(184, 140, 60, 14);
-		difficultyLabel.setVerticalTextPosition(SwingConstants.BOTTOM);
-		difficultyLabel.setAlignmentY(Component.BOTTOM_ALIGNMENT);
-		difficultyLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		difficultyLabel.setVerticalAlignment(SwingConstants.TOP);
 		
-				
-		this.add(difficultyLabel);
-		
-		actionPanel = new JPanel();
-		actionPanel.setBorder(new EmptyBorder(0, 0, 0, 0));
-		actionPanel.setBounds(46, 186, 337, 46);
-		add(actionPanel);
-		actionPanel.setLayout(null);
-		
-		this.playButton = new JButton("Play!");
-		playButton.setBounds(6, 16, 80, 23);
-		actionPanel.add(playButton);
-		playButton.setAlignmentY(Component.BOTTOM_ALIGNMENT);
-		actionButtons.add(playButton);
-		
-		playButton.setActionCommand("play");
-		
-		this.quitButton = new JButton("Quit");
-		quitButton.setBounds(251, 16, 80, 23);
-		actionPanel.add(quitButton);
-		actionButtons.add(quitButton);
-		this.quitButton.addActionListener(this);
-		playButton.addActionListener(this);
-		
-		panel = new JPanel();
-		panel.setBorder(null);
-		panel.setBounds(32, 11, 381, 75);
-		add(panel);
-		panel.setLayout(null);
+		namePanel = new JPanel();
+		namePanel.setBounds(132, 65, 381, 70);
+		namePanel.setBorder(null);
+		add(namePanel);
+		namePanel.setLayout(null);
 		
 		nameLabel = new JLabel("Name:");
 		nameLabel.setBounds(6, 16, 36, 14);
-		panel.add(nameLabel);
+		namePanel.add(nameLabel);
 		nameLabel.setAlignmentY(Component.TOP_ALIGNMENT);
 		nameLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		nameLabel.setBackground(UIManager.getColor("Label.background"));
 		this.nameField = new JFormattedTextField();
 		nameField.setBounds(52, 16, 323, 18);
-		panel.add(nameField);
+		namePanel.add(nameField);
 		nameField.setPreferredSize(new Dimension(300, 20));
 		nameField.setFocusLostBehavior(JFormattedTextField.COMMIT);
 		nameField.setMinimumSize(new Dimension(40, 20));
@@ -122,12 +98,39 @@ public class MenuPanel extends JPanel implements ActionListener, Serializable {
 		
 		this.setNameButton = new JButton("Set name");
 		setNameButton.setBounds(129, 45, 80, 23);
-		panel.add(setNameButton);
+		namePanel.add(setNameButton);
 		setNameButton.setAlignmentY(Component.TOP_ALIGNMENT);
 		actionButtons.add(setNameButton);
 		this.setNameButton.setActionCommand("setName");
+		illegalName.setBounds(243, 45, 80, 14);
+		namePanel.add(illegalName);
+		illegalName.setVerticalTextPosition(SwingConstants.BOTTOM);
+		illegalName.setAlignmentY(Component.BOTTOM_ALIGNMENT);
+		illegalName.setHorizontalAlignment(SwingConstants.CENTER);
+		illegalName.setVerticalAlignment(SwingConstants.TOP);
 		setNameButton.addActionListener(this);
-		AbstractFormatter formatter = nameField.getFormatter();
+		
+		actionPanel = new JPanel();
+		actionPanel.setBounds(132, 188, 381, 46);
+		actionPanel.setBorder(new EmptyBorder(0, 0, 0, 0));
+		add(actionPanel);
+		actionPanel.setLayout(null);
+		
+		this.playButton = new JButton("Play!");
+		playButton.setBounds(247, 11, 80, 23);
+		actionPanel.add(playButton);
+		playButton.setAlignmentY(Component.BOTTOM_ALIGNMENT);
+		actionButtons.add(playButton);
+		
+		playButton.setActionCommand("play");
+		
+		this.quitButton = new JButton("Quit");
+		quitButton.setBounds(10, 11, 80, 23);
+		actionPanel.add(quitButton);
+		actionButtons.add(quitButton);
+		this.quitButton.addActionListener(this);
+		playButton.addActionListener(this);
+		
 		
 		this.setVisible(true);
 		
@@ -140,8 +143,12 @@ public class MenuPanel extends JPanel implements ActionListener, Serializable {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		String name = this.nameField.getText();
 		if (e.getActionCommand().equals("play")) {
-			controller.changeGameStateFromMenuToActive();
+			if(name == "N/A" || name == "Default" || name.isEmpty()){ 
+			}else{
+				controller.changeGameStateFromMenuToActive();
+			}
 		}
 		if (e.getActionCommand().equals("Quit")) {
 			this.setVisible(false);
@@ -150,7 +157,7 @@ public class MenuPanel extends JPanel implements ActionListener, Serializable {
 		
 		else if (e.getActionCommand().equals("setName")) {
 			
-			String name = this.nameField.getText();
+			
 			Scanner s = null;
 			try {
 				s = new Scanner(new File("swearWords.txt"));
@@ -168,7 +175,11 @@ public class MenuPanel extends JPanel implements ActionListener, Serializable {
 			{
 				if(name.equals(a))
 				{
-					name = "Censored";
+					illegalName.setVisible(true);
+					name = "N/A";
+					break;
+				}else{
+					illegalName.setVisible(false);
 				}
 			}
 			controller.setPlayerName(name);

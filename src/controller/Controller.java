@@ -41,6 +41,7 @@ public class Controller implements Serializable {
 		
 		this.view = new View(playerModel, backgroundModels, this, interactableModels, finishLine);
 		this.view.setContentPane(view.menuPanel);
+		this.view.setLocationRelativeTo(null);
 	}
 	
 	/**
