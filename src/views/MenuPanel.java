@@ -61,8 +61,8 @@ public class MenuPanel extends JPanel implements ActionListener, Serializable {
 	private JPanel actionPanel;
 	private JPanel panel;
 
-	public MenuPanel(Menu menu, Controller controller)  {
-		this.menu = menu;
+	public MenuPanel(Menu in_menu, Controller controller) {
+		this.menu = in_menu;
 		this.controller = controller;
 		
 		Settings set = new Settings();
@@ -74,7 +74,7 @@ public class MenuPanel extends JPanel implements ActionListener, Serializable {
 		difficultyLabel.setVerticalAlignment(SwingConstants.TOP);
 		
 				
-				this.add(difficultyLabel);
+		this.add(difficultyLabel);
 		
 		actionPanel = new JPanel();
 		actionPanel.setBorder(new EmptyBorder(0, 0, 0, 0));
