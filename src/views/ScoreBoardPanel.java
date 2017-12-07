@@ -108,6 +108,15 @@ public class ScoreBoardPanel extends JPanel implements Serializable, ActionListe
 		if (e.getActionCommand() == "replay") {
 			System.out.println("swag");
 			controller.resetLevel();
+			
+			if (controller.activeGameState.interactableModels.get(0).isInWater) {				
+				controller.changeLevels("a");
+			}
+			
+			else {
+				controller.changeLevels("w");
+			}
+			
 			controller.changeGameStateFromMenuToActive();
 		}
 		else if(e.getActionCommand() == "Quit"){
