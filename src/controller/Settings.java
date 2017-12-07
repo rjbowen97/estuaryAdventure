@@ -182,4 +182,8 @@ public class Settings implements Serializable {
 		return Integer.parseInt(globalSettings.getProperty("interactableReleaseInterval"));
 	}
 	
+	public static int getFinishLineRelease() {
+		return Integer.parseInt(globalSettings.getProperty("finishLineReleaseTime"));
+	}
+	
 }

@@ -124,6 +124,9 @@ public class Controller implements Serializable {
 			releaseTime += 5;
 		}
 		
+		this.activeGameState.finishLineModel = new finishLine(Settings.getFinishLineRelease(), this);
+		this.activeGameState.setTickNumber(0);
+		
 		miniGameGameState.miniGame.resetMiniGame();
 		
 	}

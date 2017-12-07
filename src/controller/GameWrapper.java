@@ -41,7 +41,7 @@ public class GameWrapper implements Serializable {
 		ArrayList<Interactable> interactableModels = new ArrayList<Interactable>(generateInteractableModels());
 		ArrayList<Background> backgroundModels = new ArrayList<Background>(generateBackgroundModels());
 		
-		finishLine finishLine = new finishLine(100, controller);
+		finishLine finishLine = new finishLine(Settings.getFinishLineRelease(), controller);
 		
 		ScoreBoard scoreBoard = ScoreBoardManager.loadScoreBoard(Settings.getScoreBoardFileName());
 		

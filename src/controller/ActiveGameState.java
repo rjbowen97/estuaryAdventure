@@ -43,7 +43,7 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	public void onTick() {
 		tickModels();
 		changeGameStateIfNeeded();
-		tickNumber++;
+		setTickNumber(getTickNumber() + 1);
 	}
 	
 	/**
@@ -59,7 +59,7 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	
 	private void tickFinishLineModel() {
 		
-		if (finishLineModel.getActivationTick() == tickNumber) {
+		if (finishLineModel.getActivationTick() == getTickNumber()) {
 			finishLineModel.activate();
 		}
 		
@@ -84,7 +84,7 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	private void tickInteractableModels() {
 		for (Interactable interactableModel :interactableModels) {
 
-			if (interactableModel.getActivationTick() == tickNumber) {
+			if (interactableModel.getActivationTick() == getTickNumber()) {
 				interactableModel.activate();
 			}
 
@@ -152,6 +152,20 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	 */
 	public void onPlayerComponentMouseReleased(MouseEvent mouseEvent) {
 		playerModel.onMouseReleased(mouseEvent);
+	}
+
+	/**
+	 * @return the tickNumber
+	 */
+	public int getTickNumber() {
+		return tickNumber;
+	}
+
+	/**
+	 * @param tickNumber the tickNumber to set
+	 */
+	public void setTickNumber(int tickNumber) {
+		this.tickNumber = tickNumber;
 	}
 	
 	

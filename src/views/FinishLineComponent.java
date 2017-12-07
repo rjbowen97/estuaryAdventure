@@ -55,7 +55,7 @@ public class FinishLineComponent extends JComponent implements Serializable {
 	}
 
 	@Override
-	public void paintComponent(Graphics g) {		
+	public void paintComponent(Graphics g) {
 		if (finishLineModel.isActive() == true) {
 			g.drawImage(this.finishLineImage, finishLineModel.getXPosition(), finishLineModel.getYPosition(), null);	
 		}
