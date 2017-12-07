@@ -68,6 +68,26 @@ public class Controller implements Serializable {
 		
 		this.view.repaint();
 	}
+	
+	public void pauseActiveGameStateModels() {
+		for (Background background : activeGameState.backgroundModels) {
+			background.setSpeed(0);
+		}
+		
+		for (Interactable interactable : activeGameState.interactableModels) {
+			interactable.setSpeed(0);
+		}
+	}
+	
+	public void resumeActiveGameStateModels() {
+		for (Background background : activeGameState.backgroundModels) {
+			background.setSpeed(0);
+		}
+		
+		for (Interactable interactable : activeGameState.interactableModels) {
+			interactable.setSpeed(0);
+		}
+	}
 
 	/**
 	 * Changes the current level

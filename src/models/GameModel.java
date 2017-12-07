@@ -126,7 +126,7 @@ public abstract class GameModel implements Serializable {
 	 *
 	 * @param speed the new speed
 	 */
-	protected void setSpeed(int speed) {
+	public void setSpeed(int speed) {
 		this.speed = speed;
 	}
 	/*
