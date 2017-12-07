@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 import javax.swing.JLayeredPane;
+import javax.swing.JTextArea;
 
 import controller.Controller;
 import controller.Settings;
@@ -56,7 +57,19 @@ public class ActiveGameStatePanel extends JLayeredPane implements Serializable {
 		
 		this.setBounds(0,0,Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault());
 		this.setVisible(true);
-		
-		
+	}
+	
+	private JTextArea stepOneArea;
+	
+	public void addTutorialText(int step) {
+		if (step == 0) {
+			stepOneArea = new JTextArea("Click above or below your estuary friend"
+					+ "\nto move towards its food source!");
+			
+			stepOneArea.setBounds(100,100,200, 200);
+			stepOneArea.setEditable(false);
+			this.add(stepOneArea, new Integer(5));
+			stepOneArea.setVisible(true);
+		}
 	}
 }

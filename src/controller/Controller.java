@@ -105,6 +105,10 @@ public class Controller implements Serializable {
 		
 		activeGameState.finishLineModel.setSpeed(Settings.getInteractableSpeed());
 	}
+	
+	public void triggerTutorialStepDisplay(int step) {
+		view.activeGameStatePanel.addTutorialText(step);
+	}
 
 	/**
 	 * Changes the current level

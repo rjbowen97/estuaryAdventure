@@ -11,18 +11,18 @@ import models.finishLine;
 import sun.security.krb5.internal.TicketFlags;
 
 public class ActiveGameState implements GameStateInterface, Serializable {
-	
+
 	public Controller controller;
-	
+
 	public Player playerModel;
 	public ArrayList<Interactable> interactableModels;
 	public ArrayList<Background> backgroundModels;
 	public finishLine finishLineModel;
-	
+
 	public boolean isTutorial = true;
-	
+
 	private int tickNumber = 0;
-	
+
 	/**
 	 * Instantiates a new active game state.
 	 *
@@ -38,29 +38,35 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 		this.backgroundModels = backgroundModels;
 		this.finishLineModel = finishLine;
 	}
-	
+
 	/**
 	 * This function is called every tick when the active game state is the current game state of the game
 	 */
 	public void onTick() {
-		
+
 		if (isTutorial) {
 			if (tickNumber < 50) {
-				
+
+			}
+
+			else if (tickNumber > 50 && tickNumber < 100) {
+				controller.triggerTutorialStepDisplay(0);
+				controller.pauseActiveGameStateModels();
 			}
 			
-			else {
-				if (tickNumber > 50) {
-					controller.pauseActiveGameStateModels();
-				}
+			else if (tickNumber > 50 && tickNumber < 100) {
+				controller.pauseActiveGameStateModels();
 			}
+
+
+
 		}
-		
+
 		tickModels();
 		changeGameStateIfNeeded();
 		setTickNumber(getTickNumber() + 1);
 	}
-	
+
 	/**
 	 * Calls helper functions to tick various models in the active game state object
 	 */
@@ -71,17 +77,17 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 		tickFinishLineModel();
 		detectCollisions();
 	}
-	
+
 	private void tickFinishLineModel() {
-		
+
 		if (finishLineModel.getActivationTick() == getTickNumber()) {
 			finishLineModel.activate();
 		}
-		
+
 		if (finishLineModel.isActive) {
 			this.finishLineModel.onTick();
 		}
-		
+
 	}
 
 	/**
@@ -123,7 +129,7 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 		detectPlayerInteractableCollisions();
 		detectPlayerFinishLineCollision();
 	}
-	
+
 	private void detectPlayerFinishLineCollision() {
 		if (finishLineModel.getHitbox().isOverlapping(playerModel.getHitbox())) {
 			finishLineModel.onCollisionWithPlayerModel(playerModel);
@@ -146,7 +152,7 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 			}
 		}
 	}
-	
+
 	/**
 	 * Checks if the game state needs to be change
 	 */
@@ -159,7 +165,7 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 			controller.changeGameStateFromActiveToMinigame();;
 		}
 	}
-	
+
 	/**
 	 * Called when a mouseclick is detected
 	 *
@@ -182,7 +188,6 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	public void setTickNumber(int tickNumber) {
 		this.tickNumber = tickNumber;
 	}
-	
-	
+
+
 }
- 
