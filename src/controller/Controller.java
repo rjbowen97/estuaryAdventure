@@ -135,13 +135,18 @@ public class Controller implements Serializable {
 		this.view.setContentPane(view.activeGameStatePanel);
 		this.gameState = GameState.ACTIVE;
 	}
-
+	
 	/**
 	 * Change game state from active to minigame.
 	 */
 	public void changeGameStateFromActiveToMinigame() {
 		this.view.setContentPane(view.miniGameGameStatePanel);
 		this.gameState = GameState.MINI_GAME;
+	}
+	
+	public void changeGameStateFromGameOverToMenu(){
+		this.view.setContentPane(view.menuPanel);
+		this.gameState = GameState.MENU;
 	}
 
 	/**

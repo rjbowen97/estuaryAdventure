@@ -106,7 +106,7 @@ public class ScoreBoardPanel extends JPanel implements Serializable, ActionListe
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand().equals("replay")) {
-			controller.changeGameStateFromMenuToActive();
+			controller.resetLevel();
 		}
 		if(e.getActionCommand() == "Quit"){
 			System.exit(0);
