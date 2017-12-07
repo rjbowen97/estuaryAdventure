@@ -45,21 +45,33 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	public void onTick() {
 
 		if (isTutorial) {
-			if (tickNumber < 50) {
-
-			}
-
-			else if (tickNumber > 50 && tickNumber < 100) {
-				controller.triggerTutorialStepDisplay(0);
-				controller.pauseActiveGameStateModels();
+			
+			
+			if (tickNumber == 1) {
+				controller.activeGameState.interactableModels.get(0).activationTick = this.getTickNumber() + 1;
 			}
 			
-			else if (tickNumber > 50 && tickNumber < 100) {
-				controller.pauseActiveGameStateModels();
+			if (tickNumber < 25) {
+				
 			}
 
-
-
+			else if (tickNumber > 25 && tickNumber < 50) {
+				controller.triggerTutorialStepDisplay(0);
+				controller.pauseActiveGameStateModels();
+				
+			}
+			
+			else if (tickNumber > 50 && tickNumber < 75) {
+				controller.resumeActiveGameStateModels();
+			}
+			
+			else if (tickNumber == 100) {
+				controller.activeGameState.interactableModels.get(1).activationTick = this.getTickNumber() + 1;
+			}
+			
+			else if (tickNumber > 125 && tickNumber < 150) {
+				controller.pauseActiveGameStateModels();
+			}
 		}
 
 		tickModels();

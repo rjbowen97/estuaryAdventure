@@ -75,10 +75,14 @@ public class Controller implements Serializable {
 		ArrayList<Interactable> tutorialInteractables =  new ArrayList<Interactable>();
 		
 		this.activeGameState.interactableModels = tutorialInteractables;
-		
-		Interactable goodInteractable = new Interactable(20);
+		Interactable goodInteractable = new Interactable(-1);
 		goodInteractable.setFood(true);
 		this.activeGameState.interactableModels.add(goodInteractable);
+		
+		Interactable goodInteractableTwo = new Interactable(-1);
+		goodInteractableTwo.setFood(true);
+		this.activeGameState.interactableModels.add(goodInteractableTwo);
+		
 		this.view.activeGameStatePanel.interactableComponent.interactableModels = tutorialInteractables;
 	}
 	
