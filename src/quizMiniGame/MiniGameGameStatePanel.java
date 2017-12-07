@@ -1,6 +1,7 @@
 package quizMiniGame;
 
 import java.awt.Graphics;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.Serializable;
@@ -59,6 +60,10 @@ public class MiniGameGameStatePanel extends JPanel implements ActionListener, Se
 		answerBButton = new JButton(miniGame.getCurrentQuestionAndAnswerPair().answerB);
 		answerCButton = new JButton(miniGame.getCurrentQuestionAndAnswerPair().answerC);
 
+		answerAButton.setMargin(new Insets(0,0,0,0));
+		answerBButton.setMargin(new Insets(0,0,0,0));
+		answerCButton.setMargin(new Insets(0,0,0,0)); 
+		
 		answerAButton.setActionCommand("answerA");
 		answerAButton.addActionListener(this);
 
