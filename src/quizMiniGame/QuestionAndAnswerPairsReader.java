@@ -37,6 +37,14 @@ public class QuestionAndAnswerPairsReader implements Serializable {
 			if (nodeAtCurrentIndex.getNodeType() == Node.ELEMENT_NODE) {
 				Element elementNodeAtCurrentIndex = (Element) nodeAtCurrentIndex;
 
+				//easy
+				//get two true or false q's
+				
+				//med
+				//get two anything q's
+				
+				
+				//hard
 				questionAndAnswerPairs.add(new QuestionAndAnswerPair(elementNodeAtCurrentIndex.getElementsByTagName("Question").item(0).getTextContent(),
 										elementNodeAtCurrentIndex.getElementsByTagName("answerA").item(0).getTextContent(),
 										elementNodeAtCurrentIndex.getElementsByTagName("answerB").item(0).getTextContent(),

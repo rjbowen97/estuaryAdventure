@@ -78,7 +78,7 @@ public class MiniGameGameStatePanel extends JPanel implements ActionListener, Se
 		this.correctAnswerLabel = new JLabel();
 		this.add(correctAnswerLabel);
 		
-		this.setBounds(0, 0, Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault());
+		this.setBounds(400, 400, 100, 100);
 		
 		this.setVisible(true);
 	}

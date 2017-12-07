@@ -26,6 +26,11 @@ import java.awt.Component;
 import java.awt.Rectangle;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFormattedTextField.AbstractFormatter;
+import java.awt.Dimension;
+import javax.swing.JSplitPane;
+import javax.swing.border.TitledBorder;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.BevelBorder;
 
 public class MenuPanel extends JPanel implements ActionListener, Serializable  {
 
@@ -49,68 +54,76 @@ public class MenuPanel extends JPanel implements ActionListener, Serializable  {
 	
 	JButton quitButton;
 	private final ButtonGroup actionButtons = new ButtonGroup();
+	private JPanel actionPanel;
+	private JPanel panel;
 
 	public MenuPanel(Menu menu, Controller controller) {
 		this.menu = menu;
 		this.controller = controller;
 		
 		Settings set = new Settings();
-		setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
+		setLayout(null);
+		difficultyLabel.setBounds(184, 140, 60, 14);
+		difficultyLabel.setVerticalTextPosition(SwingConstants.BOTTOM);
+		difficultyLabel.setAlignmentY(Component.BOTTOM_ALIGNMENT);
+		difficultyLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		difficultyLabel.setVerticalAlignment(SwingConstants.TOP);
 		
-		nameLabel = new JLabel("Name:");
-		nameLabel.setAlignmentY(Component.TOP_ALIGNMENT);
-		nameLabel.setHorizontalAlignment(SwingConstants.LEFT);
-		nameLabel.setBackground(UIManager.getColor("Label.background"));
-
-		//label it
-		this.add(nameLabel);
-		this.nameField = new JFormattedTextField();
-		nameField.setAlignmentY(10.0f);
-		nameField.setAlignmentX(10.0f);
-		nameField.setToolTipText("enter your name here");
-		nameField.setHorizontalAlignment(SwingConstants.LEFT);
-		AbstractFormatter formatter = nameField.getFormatter();
-		if(formatter != null){
-			String username = nameField.getText();
-			try{
-				formatter.stringToValue(username);
-			} catch (java.text.ParseException e) {
-				e.printStackTrace();
-			}
-		}
+				
+				this.add(difficultyLabel);
 		
-		this.setNameButton = new JButton("Set name");
-		setNameButton.setHorizontalAlignment(SwingConstants.LEFT);
-		setNameButton.setAlignmentY(Component.TOP_ALIGNMENT);
-		actionButtons.add(setNameButton);
-		this.setNameButton.setActionCommand("setName");
-		setNameButton.addActionListener(this);
+		actionPanel = new JPanel();
+		actionPanel.setBorder(new EmptyBorder(0, 0, 0, 0));
+		actionPanel.setBounds(46, 186, 337, 46);
+		add(actionPanel);
+		actionPanel.setLayout(null);
 		
 		this.playButton = new JButton("Play!");
+		playButton.setBounds(6, 16, 80, 23);
+		actionPanel.add(playButton);
 		playButton.setAlignmentY(Component.BOTTOM_ALIGNMENT);
 		actionButtons.add(playButton);
 		
 		playButton.setActionCommand("play");
-		playButton.addActionListener(this);
 		
 		this.quitButton = new JButton("Quit");
-		quitButton.setAlignmentX(Component.CENTER_ALIGNMENT);
-		quitButton.setBounds(new Rectangle(100, 40, 20, 20));
-		quitButton.setHorizontalAlignment(SwingConstants.LEFT);
-		quitButton.setVerticalAlignment(SwingConstants.TOP);
+		quitButton.setBounds(251, 16, 80, 23);
+		actionPanel.add(quitButton);
 		actionButtons.add(quitButton);
 		this.quitButton.addActionListener(this);
-		this.add(nameField);
-				difficultyLabel.setVerticalTextPosition(SwingConstants.BOTTOM);
-				difficultyLabel.setAlignmentY(Component.BOTTOM_ALIGNMENT);
-				difficultyLabel.setHorizontalAlignment(SwingConstants.RIGHT);
-				difficultyLabel.setVerticalAlignment(SwingConstants.TOP);
+		playButton.addActionListener(this);
 		
-				
-				this.add(difficultyLabel);
-		this.add(setNameButton);
-		this.add(this.playButton);
-		this.add(this.quitButton);
+		panel = new JPanel();
+		panel.setBorder(null);
+		panel.setBounds(32, 11, 381, 75);
+		add(panel);
+		panel.setLayout(null);
+		
+		nameLabel = new JLabel("Name:");
+		nameLabel.setBounds(6, 16, 36, 14);
+		panel.add(nameLabel);
+		nameLabel.setAlignmentY(Component.TOP_ALIGNMENT);
+		nameLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		nameLabel.setBackground(UIManager.getColor("Label.background"));
+		this.nameField = new JFormattedTextField();
+		nameField.setBounds(52, 16, 323, 18);
+		panel.add(nameField);
+		nameField.setPreferredSize(new Dimension(300, 20));
+		nameField.setFocusLostBehavior(JFormattedTextField.COMMIT);
+		nameField.setMinimumSize(new Dimension(40, 20));
+		nameField.setAlignmentY(10.0f);
+		nameField.setAlignmentX(10.0f);
+		nameField.setToolTipText("enter your name here");
+		nameField.setHorizontalAlignment(SwingConstants.LEFT);
+		
+		this.setNameButton = new JButton("Set name");
+		setNameButton.setBounds(129, 45, 80, 23);
+		panel.add(setNameButton);
+		setNameButton.setAlignmentY(Component.TOP_ALIGNMENT);
+		actionButtons.add(setNameButton);
+		this.setNameButton.setActionCommand("setName");
+		setNameButton.addActionListener(this);
+		AbstractFormatter formatter = nameField.getFormatter();
 		
 		this.setVisible(true);
 	}
@@ -125,7 +138,7 @@ public class MenuPanel extends JPanel implements ActionListener, Serializable  {
 		if (e.getActionCommand().equals("play")) {
 			controller.changeGameStateFromMenuToActive();
 		}
-		if (e.getActionCommand().equals("quit")) {
+		if (e.getActionCommand().equals("Quit")) {
 			this.setVisible(false);
 			System.exit(0);
 		}
