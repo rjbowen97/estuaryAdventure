@@ -84,7 +84,7 @@ public class ScoreBoardPanel extends JPanel implements Serializable, ActionListe
 		JButton quitButton = new JButton("Quit");
 		quitButton.addActionListener(this);
 		
-		this.replayButton = new JButton("Replay");
+		this.replayButton = new JButton("Play again for a new level!");
 		add(replayButton);
 		replayButton.setAlignmentY(Component.BOTTOM_ALIGNMENT);
 		actionButtons.add(replayButton);
@@ -116,6 +116,8 @@ public class ScoreBoardPanel extends JPanel implements Serializable, ActionListe
 			else {
 				controller.changeLevels("w");
 			}
+			
+			controller.activeGameState.isTutorial = false;
 			
 			controller.changeGameStateFromMenuToActive();
 		}

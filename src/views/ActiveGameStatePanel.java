@@ -65,11 +65,12 @@ public class ActiveGameStatePanel extends JLayeredPane implements Serializable {
 	
 	public void addTutorialText(int step) {
 		
-		int screenMiddleX = Settings.getViewDimensionXDefault() / 2;
-		int screenMiddleY = Settings.getViewDimensionYDefault() / 2;
+		int screenMiddleX = Settings.getViewDimensionXDefault() - 210;
+		int screenMiddleY = Settings.getViewDimensionYDefault() - 210;
 		
 		if (step == 0) {
-			stepOneArea = new JTextArea("Click above or below your American Shad"
+			stepOneArea = new JTextArea("Click above or below your"
+					+ "\nAmerican Shad"
 					+ "\nestuary friend towards"
 					+ "\n its food source!");
 			
@@ -86,7 +87,11 @@ public class ActiveGameStatePanel extends JLayeredPane implements Serializable {
 			stepTwoArea.setEditable(false);
 			this.add(stepTwoArea, new Integer(6));
 			stepTwoArea.setVisible(true);
-			
+		}
+		
+		else {
+			stepOneArea.setVisible(false);
+			stepTwoArea.setVisible(false);
 		}
 		
 	}
