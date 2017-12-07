@@ -4,6 +4,7 @@ package controller;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import javafx.animation.SequentialTransitionBuilder;
 import models.Background;
 import models.Interactable;
 import models.Menu;
@@ -68,6 +69,50 @@ public class Controller implements Serializable {
 		
 		this.view.repaint();
 	}
+	
+	public void setInteractablesToTutorialSet() {
+		
+		ArrayList<Interactable> tutorialInteractables =  new ArrayList<Interactable>();
+		
+		this.activeGameState.interactableModels = tutorialInteractables;
+		Interactable goodInteractable = new Interactable(-1);
+		goodInteractable.setFood(true);
+		this.activeGameState.interactableModels.add(goodInteractable);
+		
+		Interactable badInteractable = new Interactable(-1);
+		badInteractable.setFood(false);
+		this.activeGameState.interactableModels.add(badInteractable);
+		
+		this.view.activeGameStatePanel.interactableComponent.interactableModels = tutorialInteractables;
+	}
+	
+	public void pauseActiveGameStateModels() {
+		for (Background background : activeGameState.backgroundModels) {
+			background.setSpeed(0);
+		}
+		
+		for (Interactable interactable : activeGameState.interactableModels) {
+			interactable.setSpeed(0);
+		}
+		
+		activeGameState.finishLineModel.setSpeed(0);
+	}
+	
+	public void resumeActiveGameStateModels() {
+		for (Background background : activeGameState.backgroundModels) {
+			background.setSpeed(Settings.getBackgroundBaseSpeed(background.backgroundLayerIndex));
+		}
+		
+		for (Interactable interactable : activeGameState.interactableModels) {
+			interactable.setSpeed(Settings.getInteractableSpeed());
+		}
+		
+		activeGameState.finishLineModel.setSpeed(Settings.getInteractableSpeed());
+	}
+	
+	public void triggerTutorialStepDisplay(int step) {
+		view.activeGameStatePanel.addTutorialText(step);
+	}
 
 	/**
 	 * Changes the current level
@@ -116,19 +161,28 @@ public class Controller implements Serializable {
 			background.xPosition = 0;
 		}
 		
-		int releaseTime = 0;
-		for (Interactable interactable : activeGameState.interactableModels) {
-			interactable.isActive = false;
-			interactable.xPosition = Settings.getInteractableStartXPosition();
-			interactable.activationTick = releaseTime;
-			releaseTime += 5;
-		}
+		ArrayList<Interactable> interactables = new ArrayList<Interactable>();
+		
+		interactables = generateInteractableModels();
+		
+		activeGameState.interactableModels = interactables;
+		view.activeGameStatePanel.interactableComponent.interactableModels = interactables;
+		
 		
 		this.activeGameState.finishLineModel = new finishLine(Settings.getFinishLineRelease(), this);
 		this.activeGameState.setTickNumber(0);
 		
 		miniGameGameState.miniGame.resetMiniGame();
+	}
+	
+	private ArrayList<Interactable> generateInteractableModels() {
+		ArrayList<Interactable> interactableModels = new ArrayList<Interactable>();
 		
+		for (int interactableIndex = 0; interactableIndex < Settings.getInteractableCount(); interactableIndex++) {
+			interactableModels.add(new Interactable(interactableIndex * Settings.getInteractableReleaseInterval()));
+		}
+		
+		return interactableModels;
 	}
 
 	/**

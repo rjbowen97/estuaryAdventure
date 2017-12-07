@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 import javax.swing.JLayeredPane;
+import javax.swing.JTextArea;
 
 import controller.Controller;
 import controller.Settings;
@@ -56,7 +57,37 @@ public class ActiveGameStatePanel extends JLayeredPane implements Serializable {
 		
 		this.setBounds(0,0,Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault());
 		this.setVisible(true);
+	}
+	
+	private JTextArea stepOneArea;
+	private JTextArea stepTwoArea;
+	
+	
+	public void addTutorialText(int step) {
 		
+		int screenMiddleX = Settings.getViewDimensionXDefault() / 2;
+		int screenMiddleY = Settings.getViewDimensionYDefault() / 2;
+		
+		if (step == 0) {
+			stepOneArea = new JTextArea("Click above or below your American Shad"
+					+ "\nestuary friend towards"
+					+ "\n its food source!");
+			
+			stepOneArea.setBounds(screenMiddleX, screenMiddleY, 200, 200);
+			stepOneArea.setEditable(false);
+			this.add(stepOneArea, new Integer(5));
+			stepOneArea.setVisible(true);
+		}
+		
+		else if (step == 1) {
+			stepTwoArea = new JTextArea("Watch out for his larger predators!");
+			
+			stepTwoArea.setBounds(screenMiddleX, screenMiddleY, 200, 200);
+			stepTwoArea.setEditable(false);
+			this.add(stepTwoArea, new Integer(6));
+			stepTwoArea.setVisible(true);
+			
+		}
 		
 	}
 }

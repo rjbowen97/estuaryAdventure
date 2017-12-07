@@ -19,7 +19,7 @@ public abstract class GameModel implements Serializable {
 	
 	
 	/** The speed, initially set to 0 */
-	private int speed = 0;
+	protected int speed = 0;
 	
 	public int getHeight() {
 		return height;
@@ -126,7 +126,7 @@ public abstract class GameModel implements Serializable {
 	 *
 	 * @param speed the new speed
 	 */
-	protected void setSpeed(int speed) {
+	public void setSpeed(int speed) {
 		this.speed = speed;
 	}
 	/*

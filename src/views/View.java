@@ -115,7 +115,7 @@ public class View extends JFrame implements Serializable {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			System.out.println("Changing to air level");
-			controller.changeLevels("a");
+			controller.pauseActiveGameStateModels();
 		}
 	}
 
@@ -123,7 +123,7 @@ public class View extends JFrame implements Serializable {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			System.out.println("Changing to water");
-			controller.changeLevels("w");;
+			controller.resumeActiveGameStateModels();
 		}
 	}
 

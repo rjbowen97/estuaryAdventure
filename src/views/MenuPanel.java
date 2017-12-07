@@ -147,6 +147,7 @@ public class MenuPanel extends JPanel implements ActionListener, Serializable {
 		if (e.getActionCommand().equals("play")) {
 			if(name == "N/A" || name == "Default" || name.isEmpty()){ 
 			}else{
+				controller.setInteractablesToTutorialSet();
 				controller.changeGameStateFromMenuToActive();
 			}
 		}
