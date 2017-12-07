@@ -7,13 +7,17 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 import javax.swing.BoxLayout;
+import javax.swing.ButtonGroup;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
 
+import controller.Controller;
 import controller.Settings;
 import models.ScoreBoard;
 import models.ScoreBoardEntry;
 import java.awt.Button;
+import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JButton;
@@ -29,14 +33,25 @@ public class ScoreBoardPanel extends JPanel implements Serializable, ActionListe
 	
 	/** The score board entry labels. */
 	ArrayList<JLabel> scoreBoardEntryLabels = new ArrayList<JLabel>();
+
+	//buttons
+		JButton playButton;
+		
+		JButton quitButton;
+		private final ButtonGroup actionButtons = new ButtonGroup();
+		private JPanel actionPanel;
+		private JPanel panel;
+
+		private Controller controller;
 	
 	/**
 	 * Instantiates a new score board panel.
 	 *
 	 * @param scoreBoard the score board
 	 */
-	public ScoreBoardPanel(ScoreBoard scoreBoard) {
+	public ScoreBoardPanel(ScoreBoard scoreBoard, Controller controller) {
 		this.scoreBoard = scoreBoard;
+		this.controller = controller;
 		
 		this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
 		
@@ -57,6 +72,19 @@ public class ScoreBoardPanel extends JPanel implements Serializable, ActionListe
 			y+=10;
 			scorePanel.add(jLabel);
 		}
+		actionPanel = new JPanel();
+		actionPanel.setBorder(new EmptyBorder(0, 0, 0, 0));
+		actionPanel.setBounds(46, 186, 337, 46);
+		add(actionPanel);
+		actionPanel.setLayout(null);
+		
+		this.playButton = new JButton("Play!");
+		playButton.setBounds(6, 16, 80, 23);
+		actionPanel.add(playButton);
+		playButton.setAlignmentY(Component.BOTTOM_ALIGNMENT);
+		actionButtons.add(playButton);
+		
+		playButton.setActionCommand("play");
 //		scorePanel.setBounds(200, 0, 400, 450);
 //		this.add(scorePanel);
 		this.setBounds(0, 0, 800, 450);
@@ -78,9 +106,12 @@ public class ScoreBoardPanel extends JPanel implements Serializable, ActionListe
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-//		if(e.getActionCommand() == "Quit"){
+		if (e.getActionCommand().equals("play")) {
+			controller.changeGameStateFromMenuToActive();
+		}
+		if(e.getActionCommand() == "Quit"){
 			System.exit(0);
-	//	}
+			}
 	}
 
 }

@@ -25,6 +25,7 @@ public class Controller implements Serializable {
 	public GameOverGameState gameOverGameState;
 	public ScoreBoard scoreBoard;
 	public View view;
+
 	
 	public Controller(Menu menuModel, Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels, ScoreBoard scoreBoard, finishLine finishLine) {
 		this.gameState = GameState.MENU;
@@ -36,8 +37,7 @@ public class Controller implements Serializable {
 		this.gameOverGameState = new GameOverGameState();
 		
 		this.scoreBoard = scoreBoard;
-		this.scoreBoard.scoreBoardPanel = new ScoreBoardPanel(this.scoreBoard);
-
+		this.scoreBoard.scoreBoardPanel = new ScoreBoardPanel(this.scoreBoard, this);
 		
 		this.view = new View(playerModel, backgroundModels, this, interactableModels, finishLine);
 		this.view.setContentPane(view.menuPanel);
