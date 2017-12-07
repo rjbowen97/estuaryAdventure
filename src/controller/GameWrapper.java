@@ -41,9 +41,11 @@ public class GameWrapper implements Serializable {
 		ArrayList<Interactable> interactableModels = new ArrayList<Interactable>(generateInteractableModels());
 		ArrayList<Background> backgroundModels = new ArrayList<Background>(generateBackgroundModels());
 		
+		finishLine finishLine = new finishLine(100, controller);
+		
 		ScoreBoard scoreBoard = ScoreBoardManager.loadScoreBoard(Settings.getScoreBoardFileName());
 		
-		controller = new Controller(menuModel, playerModel, interactableModels, backgroundModels, scoreBoard);
+		controller = new Controller(menuModel, playerModel, interactableModels, backgroundModels, scoreBoard, finishLine);
 	}
 	
 	/**
@@ -71,7 +73,7 @@ public class GameWrapper implements Serializable {
 		for (int interactableIndex = 0; interactableIndex < Settings.getInteractableCount(); interactableIndex++) {
 			interactableModels.add(new Interactable(interactableIndex * Settings.getInteractableReleaseInterval()));
 		}
-		interactableModels.add(new finishLine(Settings.getInteractableCount() * Settings.getInteractableReleaseInterval(), controller));
+		
 		return interactableModels;
 	}
 

@@ -26,7 +26,7 @@ public class InteractableComponent extends JComponent implements Serializable {
 	private transient BufferedImage airNotFoodImage;
 	private transient BufferedImage waterFoodImage;
 	private transient BufferedImage waterNotFoodImage;
-	private transient BufferedImage finishLineImage;
+	
 	/**
 	 * Instantiates a new interactable component.
 	 *
@@ -52,31 +52,23 @@ public class InteractableComponent extends JComponent implements Serializable {
 			index++;
 
 			if (interactableModel.isActive() == true) {
+				if (interactableModel.isFood()) {
 
-				if (index == sizeOfModels - 1)
-				{
-					g.drawImage(this.finishLineImage, interactableModel.getXPosition(), interactableModel.getYPosition(), null);	
+					if (interactableModel.isInWater) {
+						g.drawImage(this.waterFoodImage, interactableModel.getXPosition(), interactableModel.getYPosition(), null);						
+					}
+					else {
+						g.drawImage(this.airFoodImage, interactableModel.getXPosition(), interactableModel.getYPosition(), null);
+					}
 				}
 
 				else {
-					if (interactableModel.isFood()) {
-
-						if (interactableModel.isInWater) {
-							g.drawImage(this.waterFoodImage, interactableModel.getXPosition(), interactableModel.getYPosition(), null);						
-						}
-						else {
-							g.drawImage(this.airFoodImage, interactableModel.getXPosition(), interactableModel.getYPosition(), null);
-						}
+					if (interactableModel.isInWater) {
+						g.drawImage(this.waterNotFoodImage, interactableModel.getXPosition(), interactableModel.getYPosition(), null);
 					}
 
 					else {
-						if (interactableModel.isInWater) {
-							g.drawImage(this.waterNotFoodImage, interactableModel.getXPosition(), interactableModel.getYPosition(), null);
-						}
-
-						else {
-							g.drawImage(this.airNotFoodImage, interactableModel.getXPosition(), interactableModel.getYPosition(), null);
-						}
+						g.drawImage(this.airNotFoodImage, interactableModel.getXPosition(), interactableModel.getYPosition(), null);
 					}
 				}
 			}
@@ -91,14 +83,12 @@ public class InteractableComponent extends JComponent implements Serializable {
 		BufferedImage airNotFoodImage = null;
 		BufferedImage waterFoodImage = null;
 		BufferedImage waterNotFoodImage = null;
-		BufferedImage finishLineImage = null;
 
 		try {
 			File airFoodFile = new File("./Graphics/Fruit/Fruit/apple.png");
 			File airNotFoodFile = new File("./Graphics/More Interactables/skull.png");
 			File waterFoodFile = new File("./Graphics/More Interactables/Enemy Fish.png");
 			File waterNotFoodFile = new File("./Graphics/Enemy fish.png");
-			File finishLineFile = new File("./Graphics/FinishLine/finishLine.png");
 			if (airFoodFile.exists() == true){
 				airFoodImage = ImageIO.read(airFoodFile);
 			}
@@ -113,9 +103,6 @@ public class InteractableComponent extends JComponent implements Serializable {
 
 			if (waterNotFoodFile.exists() == true){
 				waterNotFoodImage = ImageIO.read(waterNotFoodFile);
-			}
-			if(finishLineFile.exists() == true){
-				finishLineImage = ImageIO.read(finishLineFile);
 			}
 		}
 		catch (IOException e) {
@@ -137,10 +124,6 @@ public class InteractableComponent extends JComponent implements Serializable {
 		xRatio = ((double) this.interactableModels.get(0).getWidth()) / ((double) waterNotFoodImage.getWidth());
 		yRatio = ((double) this.interactableModels.get(0).getHeight()) / ((double) waterNotFoodImage.getHeight());
 		this.waterNotFoodImage = imageScaler.scaleImageToInputRatio(waterNotFoodImage, xRatio, yRatio);
-
-		xRatio = ((double) this.interactableModels.get(interactableModels.size() - 1).getWidth()) / ((double) finishLineImage.getWidth());
-		yRatio = ((double) this.interactableModels.get(interactableModels.size() - 1).getHeight()) / ((double) finishLineImage.getHeight());
-		this.finishLineImage = imageScaler.scaleImageToInputRatio(finishLineImage, xRatio, Settings.getViewDimensionYDefault());
 	}
 }
 
