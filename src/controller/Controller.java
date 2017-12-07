@@ -11,6 +11,7 @@ import models.Player;
 import models.PlayerAnimalType;
 import models.ScoreBoard;
 import models.ScoreBoardManager;
+import models.finishLine;
 import views.ScoreBoardPanel;
 import views.View;
 
@@ -25,21 +26,24 @@ public class Controller implements Serializable {
 	public ScoreBoard scoreBoard;
 	public View view;
 	
-	public Controller(Menu menuModel, Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels, ScoreBoard scoreBoard) {
+	public ScoreBoardPanel scoreBoardPanel;
+
+	
+	public Controller(Menu menuModel, Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels, ScoreBoard scoreBoard, finishLine finishLine) {
 		this.gameState = GameState.MENU;
 
 		this.menuGameState = new MenuGameState(this, menuModel);
-		this.activeGameState = new ActiveGameState(this, playerModel, interactableModels, backgroundModels);
+		this.activeGameState = new ActiveGameState(this, playerModel, interactableModels, backgroundModels, finishLine);
 		this.miniGameGameState = new MiniGameGameState(this);
 		
 		this.gameOverGameState = new GameOverGameState();
 		
 		this.scoreBoard = scoreBoard;
-		this.scoreBoard.scoreBoardPanel = new ScoreBoardPanel(this.scoreBoard);
-
+		this.scoreBoardPanel = new ScoreBoardPanel(this.scoreBoard, this);
 		
-		this.view = new View(playerModel, backgroundModels, this, interactableModels);
+		this.view = new View(playerModel, backgroundModels, this, interactableModels, finishLine);
 		this.view.setContentPane(view.menuPanel);
+		this.view.setLocationRelativeTo(null);
 	}
 	
 	/**
@@ -120,6 +124,9 @@ public class Controller implements Serializable {
 			releaseTime += 5;
 		}
 		
+		this.activeGameState.finishLineModel = new finishLine(Settings.getFinishLineRelease(), this);
+		this.activeGameState.setTickNumber(0);
+		
 		miniGameGameState.miniGame.resetMiniGame();
 		
 	}
@@ -131,13 +138,18 @@ public class Controller implements Serializable {
 		this.view.setContentPane(view.activeGameStatePanel);
 		this.gameState = GameState.ACTIVE;
 	}
-
+	
 	/**
 	 * Change game state from active to minigame.
 	 */
 	public void changeGameStateFromActiveToMinigame() {
 		this.view.setContentPane(view.miniGameGameStatePanel);
 		this.gameState = GameState.MINI_GAME;
+	}
+	
+	public void changeGameStateFromGameOverToMenu(){
+		this.view.setContentPane(view.menuPanel);
+		this.gameState = GameState.MENU;
 	}
 
 	/**
@@ -170,7 +182,7 @@ public class Controller implements Serializable {
 		this.scoreBoard = ScoreBoardManager.loadScoreBoard(Settings.getScoreBoardFileName());
 		
 		this.view.setContentPane(view.gameOverGameStatePanel);
-		this.view.setContentPane(scoreBoard.scoreBoardPanel);
+		this.view.setContentPane(scoreBoardPanel);
 		this.gameState = GameState.GAME_OVER;
 	}
 	

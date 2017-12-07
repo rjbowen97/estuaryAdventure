@@ -15,7 +15,10 @@ import controller.Settings;
 import models.Background;
 import models.Interactable;
 import models.Player;
+import models.finishLine;
 import quizMiniGame.MiniGameGameStatePanel;
+import java.awt.Frame;
+import java.awt.GridLayout;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -38,18 +41,19 @@ public class View extends JFrame implements Serializable {
 	 * @param controller the controller
 	 * @param interactableModels the interactable models
 	 */
-	public View(Player playerModel, ArrayList<Background> backgroundModels, Controller controller, ArrayList<Interactable> interactableModels) {
+	public View(Player playerModel, ArrayList<Background> backgroundModels, Controller controller, ArrayList<Interactable> interactableModels, finishLine finishLine) {
 		
-		this.activeGameStatePanel = new ActiveGameStatePanel(playerModel, backgroundModels, controller, interactableModels);
+		this.activeGameStatePanel = new ActiveGameStatePanel(playerModel, backgroundModels, controller, interactableModels, finishLine);
 		this.gameOverGameStatePanel = new GameOverGameStatePanel(controller);
 		this.menuPanel = new MenuPanel(controller.menuGameState.menu, controller);
 		this.miniGameGameStatePanel = new MiniGameGameStatePanel(controller.miniGameGameState.miniGame, controller);
-
 		this.controller = controller;
 		initializeKeyBindings();
 		this.setBounds(0,0,Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault());
-		this.setExtendedState(JFrame.MAXIMIZED_BOTH); 
+		this.setExtendedState(Frame.MAXIMIZED_BOTH); 
 		this.setUndecorated(true);
+		this.setLocationRelativeTo(null);
+		this.menuPanel.setLocation(Settings.getViewDimensionXDefault()/2, 0);
 		this.setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}

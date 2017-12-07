@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import models.Background;
 import models.Interactable;
 import models.Player;
+import models.finishLine;
+import sun.security.krb5.internal.TicketFlags;
 
 public class ActiveGameState implements GameStateInterface, Serializable {
 	
@@ -14,7 +16,8 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	
 	public Player playerModel;
 	public ArrayList<Interactable> interactableModels;
-	public ArrayList<Background> backgroundModels;	
+	public ArrayList<Background> backgroundModels;
+	public finishLine finishLineModel;
 	
 	private int tickNumber = 0;
 	
@@ -26,11 +29,12 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	 * @param interactableModels An array of interactable models
 	 * @param backgroundModels An array of background models
 	 */
-	public ActiveGameState(Controller controller, Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels) {
+	public ActiveGameState(Controller controller, Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels, finishLine finishLine) {
 		this.controller = controller;
 		this.playerModel = playerModel;
 		this.interactableModels = interactableModels;
 		this.backgroundModels = backgroundModels;
+		this.finishLineModel = finishLine;
 	}
 	
 	/**
@@ -39,7 +43,7 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	public void onTick() {
 		tickModels();
 		changeGameStateIfNeeded();
-		tickNumber++;
+		setTickNumber(getTickNumber() + 1);
 	}
 	
 	/**
@@ -49,7 +53,20 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 		tickBackgroundModels();
 		tickInteractableModels();
 		tickPlayerModel();
+		tickFinishLineModel();
 		detectCollisions();
+	}
+	
+	private void tickFinishLineModel() {
+		
+		if (finishLineModel.getActivationTick() == getTickNumber()) {
+			finishLineModel.activate();
+		}
+		
+		if (finishLineModel.isActive) {
+			this.finishLineModel.onTick();
+		}
+		
 	}
 
 	/**
@@ -67,7 +84,7 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	private void tickInteractableModels() {
 		for (Interactable interactableModel :interactableModels) {
 
-			if (interactableModel.getActivationTick() == tickNumber) {
+			if (interactableModel.getActivationTick() == getTickNumber()) {
 				interactableModel.activate();
 			}
 
@@ -89,6 +106,13 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	 */
 	private void detectCollisions() {
 		detectPlayerInteractableCollisions();
+		detectPlayerFinishLineCollision();
+	}
+	
+	private void detectPlayerFinishLineCollision() {
+		if (finishLineModel.getHitbox().isOverlapping(playerModel.getHitbox())) {
+			finishLineModel.onCollisionWithPlayerModel(playerModel);
+		}
 	}
 
 	/**
@@ -129,6 +153,21 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	public void onPlayerComponentMouseReleased(MouseEvent mouseEvent) {
 		playerModel.onMouseReleased(mouseEvent);
 	}
+
+	/**
+	 * @return the tickNumber
+	 */
+	public int getTickNumber() {
+		return tickNumber;
+	}
+
+	/**
+	 * @param tickNumber the tickNumber to set
+	 */
+	public void setTickNumber(int tickNumber) {
+		this.tickNumber = tickNumber;
+	}
 	
 	
 }
+ 

@@ -26,7 +26,7 @@ public class finishLine extends Interactable implements Serializable{
 	public finishLine(int activationTick, Controller controller) {
 		this.setxPosition(Settings.getInteractableStartXPosition());
 		this.setyPosition(0);
-		this.setWidth(100);
+		this.setWidth(200);
 		this.setHeight(Settings.getViewDimensionYDefault());
 		this.setSpeed(Settings.getInteractableSpeed());
 		this.activationTick = activationTick;
@@ -38,6 +38,7 @@ public class finishLine extends Interactable implements Serializable{
 	@Override 
 	public void onCollisionWithPlayerModel(Player playerModel) {
 		playerModel.score += 1;
+		playerModel.health -= 1;
 	}
 	/**
 	 * Checks if is active.
