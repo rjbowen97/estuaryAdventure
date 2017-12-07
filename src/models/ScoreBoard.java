@@ -3,16 +3,11 @@ package models;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-import views.ScoreBoardPanel;
-
 // TODO: Auto-generated Javadoc
 /**
  * The Class ScoreBoard.
  */
 public class ScoreBoard implements Serializable {
-	
-	/** The score board panel. */
-	public ScoreBoardPanel scoreBoardPanel;
 	
 	/** The score board entries array */
 	public ArrayList<ScoreBoardEntry> scoreBoardEntries;

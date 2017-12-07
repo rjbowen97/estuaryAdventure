@@ -25,6 +25,8 @@ public class Controller implements Serializable {
 	public GameOverGameState gameOverGameState;
 	public ScoreBoard scoreBoard;
 	public View view;
+	
+	public ScoreBoardPanel scoreBoardPanel;
 
 	
 	public Controller(Menu menuModel, Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels, ScoreBoard scoreBoard, finishLine finishLine) {
@@ -37,7 +39,7 @@ public class Controller implements Serializable {
 		this.gameOverGameState = new GameOverGameState();
 		
 		this.scoreBoard = scoreBoard;
-		this.scoreBoard.scoreBoardPanel = new ScoreBoardPanel(this.scoreBoard, this);
+		this.scoreBoardPanel = new ScoreBoardPanel(this.scoreBoard, this);
 		
 		this.view = new View(playerModel, backgroundModels, this, interactableModels, finishLine);
 		this.view.setContentPane(view.menuPanel);
@@ -172,7 +174,7 @@ public class Controller implements Serializable {
 		this.scoreBoard = ScoreBoardManager.loadScoreBoard(Settings.getScoreBoardFileName());
 		
 		this.view.setContentPane(view.gameOverGameStatePanel);
-		this.view.setContentPane(scoreBoard.scoreBoardPanel);
+		this.view.setContentPane(scoreBoardPanel);
 		this.gameState = GameState.GAME_OVER;
 	}
 	

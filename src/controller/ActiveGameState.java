@@ -106,6 +106,13 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	 */
 	private void detectCollisions() {
 		detectPlayerInteractableCollisions();
+		detectPlayerFinishLineCollision();
+	}
+	
+	private void detectPlayerFinishLineCollision() {
+		if (finishLineModel.getHitbox().isOverlapping(playerModel.getHitbox())) {
+			finishLineModel.onCollisionWithPlayerModel(playerModel);
+		}
 	}
 
 	/**

@@ -38,6 +38,7 @@ public class finishLine extends Interactable implements Serializable{
 	@Override 
 	public void onCollisionWithPlayerModel(Player playerModel) {
 		playerModel.score += 1;
+		playerModel.health -= 1;
 	}
 	/**
 	 * Checks if is active.
