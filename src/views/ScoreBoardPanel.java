@@ -88,7 +88,7 @@ public class ScoreBoardPanel extends JPanel implements Serializable, ActionListe
 		add(replayButton);
 		replayButton.setAlignmentY(Component.BOTTOM_ALIGNMENT);
 		actionButtons.add(replayButton);
-		
+		replayButton.addActionListener(this);
 		replayButton.setActionCommand("replay");
 		add(quitButton);
 		
@@ -105,10 +105,13 @@ public class ScoreBoardPanel extends JPanel implements Serializable, ActionListe
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if (e.getActionCommand().equals("replay")) {
+		if (e.getActionCommand() == "replay") {
+			System.out.println("swag");
 			controller.resetLevel();
+			controller.changeGameStateFromMenuToActive();
 		}
-		if(e.getActionCommand() == "Quit"){
+		else if(e.getActionCommand() == "Quit"){
+			System.out.println("1");
 			System.exit(0);
 		}
 	}
