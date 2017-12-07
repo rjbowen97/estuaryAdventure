@@ -4,6 +4,7 @@ package controller;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import javafx.animation.SequentialTransitionBuilder;
 import models.Background;
 import models.Interactable;
 import models.Menu;
@@ -77,6 +78,8 @@ public class Controller implements Serializable {
 		for (Interactable interactable : activeGameState.interactableModels) {
 			interactable.setSpeed(0);
 		}
+		
+		activeGameState.finishLineModel.setSpeed(0);
 	}
 	
 	public void resumeActiveGameStateModels() {
@@ -87,6 +90,8 @@ public class Controller implements Serializable {
 		for (Interactable interactable : activeGameState.interactableModels) {
 			interactable.setSpeed(Settings.getInteractableSpeed());
 		}
+		
+		activeGameState.finishLineModel.setSpeed(Settings.getInteractableSpeed());
 	}
 
 	/**
