@@ -81,11 +81,11 @@ public class Controller implements Serializable {
 	
 	public void resumeActiveGameStateModels() {
 		for (Background background : activeGameState.backgroundModels) {
-			background.setSpeed(0);
+			background.setSpeed(Settings.getBackgroundBaseSpeed(background.backgroundLayerIndex));
 		}
 		
 		for (Interactable interactable : activeGameState.interactableModels) {
-			interactable.setSpeed(0);
+			interactable.setSpeed(Settings.getInteractableSpeed());
 		}
 	}
 

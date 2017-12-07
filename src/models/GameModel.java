@@ -19,7 +19,7 @@ public abstract class GameModel implements Serializable {
 	
 	
 	/** The speed, initially set to 0 */
-	private int speed = 0;
+	protected int speed = 0;
 	
 	public int getHeight() {
 		return height;
