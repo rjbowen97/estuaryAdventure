@@ -38,7 +38,7 @@ public class Interactable extends GameModel implements Serializable {
 		this.setWidth(100);
 		this.setHeight(100);
 		
-		this.isFood = random.nextBoolean();
+		this.setFood(random.nextBoolean());
 		this.setSpeed(Settings.getInteractableSpeed());
 		this.activationTick = activationTick;
 		this.setHitbox();
@@ -134,7 +134,13 @@ public class Interactable extends GameModel implements Serializable {
 	
 	
 	public String toString(){
-		return super.toString() + "\nIs ACTIVE: " + this.isActive + "\nIs Food: " + this.isFood + 
+		return super.toString() + "\nIs ACTIVE: " + this.isActive + "\nIs Food: " + this.isFood() + 
 				"\nActivation Tick: " + this.activationTick;
+	}
+	/**
+	 * @param isFood the isFood to set
+	 */
+	public void setFood(boolean isFood) {
+		this.isFood = isFood;
 	}
 }

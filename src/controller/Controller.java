@@ -70,6 +70,18 @@ public class Controller implements Serializable {
 		this.view.repaint();
 	}
 	
+	public void setInteractablesToTutorialSet() {
+		
+		ArrayList<Interactable> tutorialInteractables =  new ArrayList<Interactable>();
+		
+		this.activeGameState.interactableModels = tutorialInteractables;
+		
+		Interactable goodInteractable = new Interactable(20);
+		goodInteractable.setFood(true);
+		this.activeGameState.interactableModels.add(goodInteractable);
+		this.view.activeGameStatePanel.interactableComponent.interactableModels = tutorialInteractables;
+	}
+	
 	public void pauseActiveGameStateModels() {
 		for (Background background : activeGameState.backgroundModels) {
 			background.setSpeed(0);
@@ -141,19 +153,28 @@ public class Controller implements Serializable {
 			background.xPosition = 0;
 		}
 		
-		int releaseTime = 0;
-		for (Interactable interactable : activeGameState.interactableModels) {
-			interactable.isActive = false;
-			interactable.xPosition = Settings.getInteractableStartXPosition();
-			interactable.activationTick = releaseTime;
-			releaseTime += 5;
-		}
+		ArrayList<Interactable> interactables = new ArrayList<Interactable>();
+		
+		interactables = generateInteractableModels();
+		
+		activeGameState.interactableModels = interactables;
+		view.activeGameStatePanel.interactableComponent.interactableModels = interactables;
+		
 		
 		this.activeGameState.finishLineModel = new finishLine(Settings.getFinishLineRelease(), this);
 		this.activeGameState.setTickNumber(0);
 		
 		miniGameGameState.miniGame.resetMiniGame();
+	}
+	
+	private ArrayList<Interactable> generateInteractableModels() {
+		ArrayList<Interactable> interactableModels = new ArrayList<Interactable>();
 		
+		for (int interactableIndex = 0; interactableIndex < Settings.getInteractableCount(); interactableIndex++) {
+			interactableModels.add(new Interactable(interactableIndex * Settings.getInteractableReleaseInterval()));
+		}
+		
+		return interactableModels;
 	}
 
 	/**

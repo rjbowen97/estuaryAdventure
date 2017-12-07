@@ -19,6 +19,8 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	public ArrayList<Background> backgroundModels;
 	public finishLine finishLineModel;
 	
+	public boolean isTutorial = true;
+	
 	private int tickNumber = 0;
 	
 	/**
@@ -41,6 +43,19 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	 * This function is called every tick when the active game state is the current game state of the game
 	 */
 	public void onTick() {
+		
+		if (isTutorial) {
+			if (tickNumber < 50) {
+				
+			}
+			
+			else {
+				if (tickNumber > 50) {
+					controller.pauseActiveGameStateModels();
+				}
+			}
+		}
+		
 		tickModels();
 		changeGameStateIfNeeded();
 		setTickNumber(getTickNumber() + 1);

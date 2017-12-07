@@ -20,7 +20,7 @@ import models.Interactable;
 public class InteractableComponent extends JComponent implements Serializable {
 
 	/** The interactable models. */
-	private ArrayList<Interactable> interactableModels;
+	public ArrayList<Interactable> interactableModels;
 
 	private transient BufferedImage airFoodImage;
 	private transient BufferedImage airNotFoodImage;
