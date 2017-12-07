@@ -79,9 +79,9 @@ public class Controller implements Serializable {
 		goodInteractable.setFood(true);
 		this.activeGameState.interactableModels.add(goodInteractable);
 		
-		Interactable goodInteractableTwo = new Interactable(-1);
-		goodInteractableTwo.setFood(true);
-		this.activeGameState.interactableModels.add(goodInteractableTwo);
+		Interactable badInteractable = new Interactable(-1);
+		badInteractable.setFood(false);
+		this.activeGameState.interactableModels.add(badInteractable);
 		
 		this.view.activeGameStatePanel.interactableComponent.interactableModels = tutorialInteractables;
 	}

@@ -51,10 +51,6 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 				controller.activeGameState.interactableModels.get(0).activationTick = this.getTickNumber() + 1;
 			}
 			
-			if (tickNumber < 25) {
-				
-			}
-
 			else if (tickNumber > 25 && tickNumber < 50) {
 				controller.triggerTutorialStepDisplay(0);
 				controller.pauseActiveGameStateModels();
@@ -70,7 +66,12 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 			}
 			
 			else if (tickNumber > 125 && tickNumber < 150) {
+				controller.triggerTutorialStepDisplay(1);
 				controller.pauseActiveGameStateModels();
+			}
+			
+			else if (tickNumber > 150) {
+				controller.resumeActiveGameStateModels();
 			}
 		}
 
