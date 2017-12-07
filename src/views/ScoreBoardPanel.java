@@ -1,6 +1,8 @@
 package views;
 
 import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -11,12 +13,16 @@ import javax.swing.JPanel;
 import controller.Settings;
 import models.ScoreBoard;
 import models.ScoreBoardEntry;
+import java.awt.Button;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JButton;
 
 // TODO: Auto-generated Javadoc
 /**
  * The Class ScoreBoardPanel.
  */
-public class ScoreBoardPanel extends JPanel implements Serializable {
+public class ScoreBoardPanel extends JPanel implements Serializable, ActionListener{
 	
 	/** The score board. */
 	ScoreBoard scoreBoard;
@@ -42,12 +48,23 @@ public class ScoreBoardPanel extends JPanel implements Serializable {
 			scoreBoardEntryLabels.add(new JLabel());
 		}
 		
+		int y = 10;
+		JPanel scorePanel = new JPanel();
+		scorePanel.setBounds(0, 0, 800, 450);
+		add(scorePanel);
 		for (JLabel jLabel : scoreBoardEntryLabels) {
-			this.add(jLabel);
+			jLabel.setBounds(0, y, scorePanel.getWidth(), 20);
+			y+=10;
+			scorePanel.add(jLabel);
 		}
+//		scorePanel.setBounds(200, 0, 400, 450);
+//		this.add(scorePanel);
+		this.setBounds(0, 0, 800, 450);
 		
-		this.setBounds(0, 0, Settings.getViewDimensionXDefault(), Settings.getViewDimensionYDefault());
-		this.setVisible(true);
+		JButton quitButton = new JButton("Quit");
+		quitButton.addActionListener(this);
+		add(quitButton);
+		
 	}
 	
 	@Override
@@ -57,6 +74,13 @@ public class ScoreBoardPanel extends JPanel implements Serializable {
 			scoreBoardEntryLabels.get(currentLabelIndex).setText(scoreBoardEntry.name + " Score: " + scoreBoardEntry.score);
 			currentLabelIndex++;
 		}
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+//		if(e.getActionCommand() == "Quit"){
+			System.exit(0);
+	//	}
 	}
 
 }
