@@ -32,11 +32,11 @@ public class ScoreBoardManager implements Serializable {
 		
 		try {
 			ObjectInputStream input = new ObjectInputStream(new FileInputStream(fileName));
-			loadedScoreBoard = (ScoreBoard) input.readObject();
+			if(input != null) loadedScoreBoard = (ScoreBoard) input.readObject();
 			input.close();
 			
 		} catch (FileNotFoundException e) {
-			return loadedScoreBoard;
+			return null;
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {

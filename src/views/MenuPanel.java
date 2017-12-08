@@ -69,7 +69,7 @@ public class MenuPanel extends JPanel implements ActionListener, Serializable {
 		setBounds(new Rectangle(0, 0, 960, 540));
 		
 		Settings set = new Settings();
-		illegalName.setMaximumSize(new Dimension(200, 14));
+		illegalName.setMaximumSize(new Dimension(200, 20));
 		illegalName.setVisible(false);
 		setLayout(null);
 		
@@ -86,6 +86,7 @@ public class MenuPanel extends JPanel implements ActionListener, Serializable {
 		nameLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		nameLabel.setBackground(UIManager.getColor("Label.background"));
 		this.nameField = new JFormattedTextField();
+		this.nameField.setMargin(new Insets(0,0,0, 0));
 		nameField.setBounds(52, 16, 323, 18);
 		namePanel.add(nameField);
 		nameField.setPreferredSize(new Dimension(300, 20));
@@ -97,6 +98,8 @@ public class MenuPanel extends JPanel implements ActionListener, Serializable {
 		nameField.setHorizontalAlignment(SwingConstants.LEFT);
 		
 		this.setNameButton = new JButton("Set name");
+		setNameButton.setMargin(new Insets(0, 0, 0, 0));
+		setNameButton.setMinimumSize(new Dimension(120, 23));
 		setNameButton.setBounds(129, 45, 80, 23);
 		namePanel.add(setNameButton);
 		setNameButton.setAlignmentY(Component.TOP_ALIGNMENT);
@@ -117,6 +120,7 @@ public class MenuPanel extends JPanel implements ActionListener, Serializable {
 		actionPanel.setLayout(null);
 		
 		this.playButton = new JButton("Play!");
+		this.playButton.setMargin(new Insets(0,0,0, 0));
 		playButton.setBounds(247, 11, 80, 23);
 		actionPanel.add(playButton);
 		playButton.setAlignmentY(Component.BOTTOM_ALIGNMENT);
@@ -125,6 +129,7 @@ public class MenuPanel extends JPanel implements ActionListener, Serializable {
 		playButton.setActionCommand("play");
 		
 		this.quitButton = new JButton("Quit");
+		this.quitButton.setMargin(new Insets(0,0,0, 0));
 		quitButton.setBounds(10, 11, 80, 23);
 		actionPanel.add(quitButton);
 		actionButtons.add(quitButton);
@@ -174,7 +179,7 @@ public class MenuPanel extends JPanel implements ActionListener, Serializable {
 			
 			for(String a: badWords)
 			{
-				if(name.equals(a))
+				if(name.equals(a) || name.equals(a.toUpperCase()) || name.equals(a.toLowerCase()))
 				{
 					illegalName.setVisible(true);
 					name = "N/A";

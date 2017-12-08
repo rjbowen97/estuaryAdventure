@@ -39,7 +39,6 @@ public class ScoreBoardPanel extends JPanel implements Serializable, ActionListe
 		
 		JButton quitButton;
 		private final ButtonGroup actionButtons = new ButtonGroup();
-		private JPanel actionPanel;
 		private JPanel panel;
 
 		private Controller controller;
@@ -72,11 +71,6 @@ public class ScoreBoardPanel extends JPanel implements Serializable, ActionListe
 			y+=10;
 			this.add(jLabel);
 		}
-		actionPanel = new JPanel();
-		actionPanel.setBorder(new EmptyBorder(0, 0, 0, 0));
-		actionPanel.setBounds(46, 186, 337, 46);
-		add(actionPanel);
-		actionPanel.setLayout(null);
 //		scorePanel.setBounds(200, 0, 400, 450);
 //		this.add(scorePanel);
 		this.setBounds(0, 0, 800, 450);

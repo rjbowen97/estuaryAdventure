@@ -28,7 +28,7 @@ public class ActiveGameStatePanel extends JLayeredPane implements Serializable {
 	/** The interactable component. */
 	public InteractableComponent interactableComponent;
 	
-	public FinishLineComponent finishLineComponent;
+//	public FinishLineComponent finishLineComponent;
 	
 	/** The hud pane. */
 	public HUDPane hudPane;
@@ -47,10 +47,10 @@ public class ActiveGameStatePanel extends JLayeredPane implements Serializable {
 		this.playerComponent = new PlayerComponent(playerModel, controller);
 		this.interactableComponent = new InteractableComponent(interactableModels);
 		this.hudPane = new HUDPane(playerModel);
-		this.finishLineComponent = new FinishLineComponent(finishLine);
+//		this.finishLineComponent = new FinishLineComponent(finishLine);
 		
 		this.add(backgroundLayeredPane, new Integer(0));
-		this.add(finishLineComponent, new Integer(1));
+//		this.add(finishLineComponent, new Integer(1));
 		this.add(interactableComponent, new Integer(2));
 		this.add(playerComponent, new Integer(3));
 		this.add(hudPane, new Integer(4));
