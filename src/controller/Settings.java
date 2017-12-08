@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.io.Serializable;
 import java.util.Properties;
 
+// TODO: Auto-generated Javadoc
 /**
  * The Class Settings.
  */
@@ -173,15 +174,32 @@ public class Settings implements Serializable {
 	public static String getScoreBoardFileName() {
 		return globalSettings.getProperty("scoreBoardFileName");
 	}
+	
+	/**
+	 * Gets the interactable count.
+	 *
+	 * @return the interactable count
+	 */
 	public static int getInteractableCount()
 	{
 		return Integer.parseInt(globalSettings.getProperty("interactableCount"));
 	}
+	
+	/**
+	 * Gets the interactable release interval.
+	 *
+	 * @return the interactable release interval
+	 */
 	public static int getInteractableReleaseInterval()
 	{
 		return Integer.parseInt(globalSettings.getProperty("interactableReleaseInterval"));
 	}
 	
+	/**
+	 * Gets the finish line release.
+	 *
+	 * @return the finish line release
+	 */
 	public static int getFinishLineRelease() {
 		return Integer.parseInt(globalSettings.getProperty("finishLineReleaseTime"));
 	}

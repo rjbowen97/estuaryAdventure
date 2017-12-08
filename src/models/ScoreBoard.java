@@ -9,7 +9,7 @@ import java.util.ArrayList;
  */
 public class ScoreBoard implements Serializable {
 	
-	/** The score board entries array */
+	/**  The score board entries array. */
 	public ArrayList<ScoreBoardEntry> scoreBoardEntries;
 
 	/**
@@ -22,7 +22,8 @@ public class ScoreBoard implements Serializable {
 	
 	/**
 	 * Adds the new entry to the arrayList, sorts it in descending order
-	 * and lops off the 11th element, keeping the top 10 scores
+	 * and lops off the 11th element, keeping the top 10 scores.
+	 *
 	 * @param newEntry the new entry
 	 */
 	public void addNewScore(ScoreBoardEntry newEntry){
@@ -35,7 +36,8 @@ public class ScoreBoard implements Serializable {
 	
 	/**
 	 * Adds the new score taking in a player object as a parameter,
-	 * and calls the new entry add score method using the players information
+	 * and calls the new entry add score method using the players information.
+	 *
 	 * @param playerModel the player
 	 */
 	public void addNewScore(Player playerModel) {
@@ -47,7 +49,8 @@ public class ScoreBoard implements Serializable {
 	
 	/**
 	 * Calculate final player score by adding health and score
-	 * score is number of interactables collected and number of questions correct
+	 * score is number of interactables collected and number of questions correct.
+	 *
 	 * @param playerModel the player
 	 * @return the int
 	 */

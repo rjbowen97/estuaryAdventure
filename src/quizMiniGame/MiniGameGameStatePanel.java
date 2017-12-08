@@ -40,6 +40,7 @@ public class MiniGameGameStatePanel extends JPanel implements ActionListener, Se
 	/** The correct answer count label. */
 	JLabel correctAnswerCountLabel;
 	
+	/** The correct answer label. */
 	JLabel correctAnswerLabel;
 	
 	/**
@@ -119,6 +120,9 @@ public class MiniGameGameStatePanel extends JPanel implements ActionListener, Se
 		}
 	}
 	
+	/**
+	 * Display correct answer.
+	 */
 	public void displayCorrectAnswer() {
 		this.correctAnswerLabel.setText("Sorry, " + miniGame.getCurrentQuestionAndAnswerPair().correctAnswer + " was the correct answer!");
 		

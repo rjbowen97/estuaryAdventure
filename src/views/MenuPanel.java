@@ -39,30 +39,62 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class MenuPanel.
+ */
 public class MenuPanel extends JPanel implements ActionListener, Serializable {
 
+	/** The controller. */
 	private Controller controller;
+	
+	/** The menu. */
 	private Menu menu;
 	
+	/** The name field. */
 	JFormattedTextField nameField;
+	
+	/** The set name button. */
 	JButton setNameButton;
 	
+	/** The illegal name. */
 	JLabel illegalName = new JLabel("Illegal Name: Please Enter New Name");
 
+	/** The name label. */
 	//labels
 	JLabel nameLabel;
 	
+	/** The play button. */
 	//buttons
 	JButton playButton;
+	
+	/** The easy button. */
 	JButton easyButton;
+	
+	/** The medium button. */
 	JButton mediumButton;
+	
+	/** The hard button. */
 	JButton hardButton;
 	
+	/** The quit button. */
 	JButton quitButton;
+	
+	/** The action buttons. */
 	private final ButtonGroup actionButtons = new ButtonGroup();
+	
+	/** The action panel. */
 	private JPanel actionPanel;
+	
+	/** The name panel. */
 	private JPanel namePanel;
 
+	/**
+	 * Instantiates a new menu panel.
+	 *
+	 * @param in_menu the in menu
+	 * @param controller the controller
+	 */
 	public MenuPanel(Menu in_menu, Controller controller) {
 		this.menu = in_menu;
 		this.controller = controller;
@@ -140,12 +172,19 @@ public class MenuPanel extends JPanel implements ActionListener, Serializable {
 		this.setVisible(true);
 		
 	}
+	
+	/* (non-Javadoc)
+	 * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
+	 */
 	@Override
 	public void paintComponent(Graphics g)
 	{
 
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String name = this.nameField.getText();

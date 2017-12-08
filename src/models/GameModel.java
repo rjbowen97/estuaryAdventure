@@ -2,55 +2,81 @@ package models;
 
 import java.io.Serializable;
 
+// TODO: Auto-generated Javadoc
 /**
  * The Class GameModel.
  */
 public abstract class GameModel implements Serializable {
 	
-	/** The x position of the game model */
+	/**  The x position of the game model. */
 	public int xPosition;
 	
-	/** The y position of the game model */
+	/**  The y position of the game model. */
 	public int yPosition;
 
+	/** The height. */
 	private int height;
 	
+	/** The width. */
 	private int width;
 	
 	
-	/** The speed, initially set to 0 */
+	/**  The speed, initially set to 0. */
 	protected int speed = 0;
 	
+	/**
+	 * Gets the height.
+	 *
+	 * @return the height
+	 */
 	public int getHeight() {
 		return height;
 	}
 
+	/**
+	 * Sets the height.
+	 *
+	 * @param height the new height
+	 */
 	public void setHeight(int height) {
 		this.height = height;
 	}
 
+	/**
+	 * Gets the width.
+	 *
+	 * @return the width
+	 */
 	public int getWidth() {
 		return width;
 	}
 
+	/**
+	 * Sets the width.
+	 *
+	 * @param width the new width
+	 */
 	public void setWidth(int width) {
 		this.width = width;
 	}
 	
-	/** Initiate a hitbox for the image */
+	/**  Initiate a hitbox for the image. */
 	private Hitbox hitbox;
 	
 	
 	/**
-	 * Sets the hitbox for the image/gamemodel
+	 * Sets the hitbox for the image/gamemodel.
 	 */
 	protected abstract void setHitbox();
 	
 	/**
-	 * Update hitbox for image
+	 * Update hitbox for image.
 	 */
 	protected abstract void updateHitbox();
 	
+	/**
+	 * On tick.
+	 */
 	public abstract void onTick();
 	
 	/**
@@ -59,7 +85,7 @@ public abstract class GameModel implements Serializable {
 	public abstract void reset();
 	
 	/**
-	 * Gets the hitbox of the image/game model
+	 * Gets the hitbox of the image/game model.
 	 *
 	 * @return the hitbox
 	 */
@@ -68,7 +94,7 @@ public abstract class GameModel implements Serializable {
 	}
 	
 	/**
-	 * Sets the hitbox for the image/game model
+	 * Sets the hitbox for the image/game model.
 	 *
 	 * @param hitbox which is the new hitbox
 	 */
@@ -77,7 +103,7 @@ public abstract class GameModel implements Serializable {
 	}
 	
 	/**
-	 * Gets the x position of the model
+	 * Gets the x position of the model.
 	 *
 	 * @return the x position
 	 */
@@ -86,7 +112,7 @@ public abstract class GameModel implements Serializable {
 	}
 	
 	/**
-	 * Gets the y position of the model
+	 * Gets the y position of the model.
 	 *
 	 * @return the y position
 	 */
@@ -95,7 +121,7 @@ public abstract class GameModel implements Serializable {
 	}
 	
 	/**
-	 * Gets the speed of the model
+	 * Gets the speed of the model.
 	 *
 	 * @return the speed
 	 */
@@ -104,7 +130,7 @@ public abstract class GameModel implements Serializable {
 	}
 	
 	/**
-	 * Sets the x position of the model
+	 * Sets the x position of the model.
 	 *
 	 * @param xPosition the new x position
 	 */
@@ -113,7 +139,7 @@ public abstract class GameModel implements Serializable {
 	}
 
 	/**
-	 * Sets the y position of the model
+	 * Sets the y position of the model.
 	 *
 	 * @param yPosition the new y position
 	 */
@@ -122,13 +148,17 @@ public abstract class GameModel implements Serializable {
 	}
 	
 	/**
-	 * Sets the speed of the model
+	 * Sets the speed of the model.
 	 *
 	 * @param speed the new speed
 	 */
 	public void setSpeed(int speed) {
 		this.speed = speed;
 	}
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	/*
 	 * toString method to return where the game model is
 	 */

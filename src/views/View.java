@@ -26,11 +26,19 @@ import java.awt.GridLayout;
  */
 public class View extends JFrame implements Serializable {
 
+	/** The active game state panel. */
 	public ActiveGameStatePanel activeGameStatePanel;
+	
+	/** The game over game state panel. */
 	public GameOverGameStatePanel gameOverGameStatePanel;
+	
+	/** The menu panel. */
 	public MenuPanel menuPanel;
+	
+	/** The mini game game state panel. */
 	public MiniGameGameStatePanel miniGameGameStatePanel;
 
+	/** The controller. */
 	Controller controller;
 	
 	/**
@@ -40,6 +48,7 @@ public class View extends JFrame implements Serializable {
 	 * @param backgroundModels the background models
 	 * @param controller the controller
 	 * @param interactableModels the interactable models
+	 * @param finishLine the finish line
 	 */
 	public View(Player playerModel, ArrayList<Background> backgroundModels, Controller controller, ArrayList<Interactable> interactableModels, finishLine finishLine) {
 		
@@ -58,6 +67,9 @@ public class View extends JFrame implements Serializable {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
+	/**
+	 * Initialize key bindings.
+	 */
 	private void initializeKeyBindings() {
 		InputMap rootPaneInputMap = this.getRootPane().getInputMap();
 		ActionMap rootPaneActionMap = this.getRootPane().getActionMap();
@@ -87,7 +99,14 @@ public class View extends JFrame implements Serializable {
 		rootPaneActionMap.put("resetLevel", resetLevelAction);
 	}
 	
+	/**
+	 * The Class ActivateActiveGameStateAction.
+	 */
 	private class ActivateActiveGameStateAction extends AbstractAction {
+		
+		/* (non-Javadoc)
+		 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+		 */
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			System.out.println("Activating ActiveGameState");
@@ -95,7 +114,14 @@ public class View extends JFrame implements Serializable {
 		}
 	}
 
+	/**
+	 * The Class ActivateMiniGameGameStateAction.
+	 */
 	private class ActivateMiniGameGameStateAction extends AbstractAction {
+		
+		/* (non-Javadoc)
+		 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+		 */
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			System.out.println("Activating MiniGameGameState");
@@ -103,7 +129,14 @@ public class View extends JFrame implements Serializable {
 		}
 	}
 
+	/**
+	 * The Class ActivateGameOverGameStateAction.
+	 */
 	private class ActivateGameOverGameStateAction extends AbstractAction {
+		
+		/* (non-Javadoc)
+		 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+		 */
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			System.out.println("Activating GameOverGameState");
@@ -111,7 +144,14 @@ public class View extends JFrame implements Serializable {
 		}
 	}
 
+	/**
+	 * The Class ChangeToAirLevelAction.
+	 */
 	private class ChangeToAirLevelAction extends AbstractAction {
+		
+		/* (non-Javadoc)
+		 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+		 */
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			System.out.println("Changing to air level");
@@ -119,7 +159,14 @@ public class View extends JFrame implements Serializable {
 		}
 	}
 
+	/**
+	 * The Class ChangeToWaterLevelAction.
+	 */
 	private class ChangeToWaterLevelAction extends AbstractAction {
+		
+		/* (non-Javadoc)
+		 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+		 */
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			System.out.println("Changing to water");
@@ -127,7 +174,14 @@ public class View extends JFrame implements Serializable {
 		}
 	}
 
+	/**
+	 * The Class ResetLevelAction.
+	 */
 	private class ResetLevelAction extends AbstractAction {
+		
+		/* (non-Javadoc)
+		 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+		 */
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			System.out.println("Resetting level");

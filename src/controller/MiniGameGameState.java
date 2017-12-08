@@ -4,15 +4,19 @@ import java.io.Serializable;
 
 import quizMiniGame.MiniGame;
 
+// TODO: Auto-generated Javadoc
 /**
  * The Class MiniGameGameState.
  */
 public class MiniGameGameState implements GameStateInterface, Serializable {
 
+	/** The controller. */
 	public Controller controller;
 	
+	/** The mini game. */
 	public MiniGame miniGame;
 	
+	/** The tick number. */
 	private int tickNumber = 0;
 
 	/**
@@ -26,7 +30,7 @@ public class MiniGameGameState implements GameStateInterface, Serializable {
 	}
 
 	/**
-	 * Called every tick when this game state is the current active game state
+	 * Called every tick when this game state is the current active game state.
 	 */
 	public void onTick() {
 		this.miniGame.onTick();

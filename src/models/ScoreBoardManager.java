@@ -48,7 +48,8 @@ public class ScoreBoardManager implements Serializable {
 	
 	/**
 	 * Saves the current score board, taking in the filename to hold it and the score board itself
-	 * writes to the file
+	 * writes to the file.
+	 *
 	 * @param scoreBoard the score board
 	 * @param fileName the file name
 	 */

@@ -28,7 +28,10 @@ class PlayerComponent extends JComponent implements Serializable {
 	/** The controller. */
 	private Controller controller;
 	
+	/** The bird sprite. */
 	private transient BufferedImage birdSprite;
+	
+	/** The fish sprite. */
 	private transient BufferedImage fishSprite;
 	
 	/**
@@ -62,6 +65,9 @@ class PlayerComponent extends JComponent implements Serializable {
 		}
 	}
 	
+	/**
+	 * Sets the player sprite images.
+	 */
 	public void setPlayerSpriteImages() {
 
 		String birdSpriteFilePath = "./Graphics/Avatars/Bird/Bird.png";

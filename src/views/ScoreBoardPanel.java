@@ -34,19 +34,27 @@ public class ScoreBoardPanel extends JPanel implements Serializable, ActionListe
 	/** The score board entry labels. */
 	ArrayList<JLabel> scoreBoardEntryLabels = new ArrayList<JLabel>();
 
+	/** The replay button. */
 	//buttons
 		JButton replayButton;
 		
+		/** The quit button. */
 		JButton quitButton;
+		
+		/** The action buttons. */
 		private final ButtonGroup actionButtons = new ButtonGroup();
+		
+		/** The panel. */
 		private JPanel panel;
 
+		/** The controller. */
 		private Controller controller;
 	
 	/**
 	 * Instantiates a new score board panel.
 	 *
 	 * @param scoreBoard the score board
+	 * @param controller the controller
 	 */
 	public ScoreBoardPanel(ScoreBoard scoreBoard, Controller controller) {
 		this.scoreBoard = scoreBoard;
@@ -88,6 +96,9 @@ public class ScoreBoardPanel extends JPanel implements Serializable, ActionListe
 		
 	}
 	
+	/* (non-Javadoc)
+	 * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
+	 */
 	@Override
 	public void paintComponent(Graphics g) {
 		int currentLabelIndex = 0;
@@ -97,6 +108,9 @@ public class ScoreBoardPanel extends JPanel implements Serializable, ActionListe
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand() == "replay") {

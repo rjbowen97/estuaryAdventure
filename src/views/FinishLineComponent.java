@@ -12,12 +12,23 @@ import javax.swing.JComponent;
 import controller.Settings;
 import models.finishLine;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class FinishLineComponent.
+ */
 public class FinishLineComponent extends JComponent implements Serializable {
 
+	/** The finish line model. */
 	private finishLine finishLineModel;
 
+	/** The finish line image. */
 	private BufferedImage finishLineImage;
 
+	/**
+	 * Instantiates a new finish line component.
+	 *
+	 * @param finishLine the finish line
+	 */
 	public FinishLineComponent(finishLine finishLine) {
 		this.finishLineModel = finishLine;
 
@@ -28,6 +39,9 @@ public class FinishLineComponent extends JComponent implements Serializable {
 
 	}
 
+	/**
+	 * Sets the sprite image.
+	 */
 	protected void setSpriteImage() {
 
 		ImageScaler imageScaler = new ImageScaler();
@@ -54,6 +68,9 @@ public class FinishLineComponent extends JComponent implements Serializable {
 		this.finishLineImage = scaledFinishLineImage;
 	}
 
+	/* (non-Javadoc)
+	 * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
+	 */
 	@Override
 	public void paintComponent(Graphics g) {
 //		if (finishLineModel.isActive() == true) {

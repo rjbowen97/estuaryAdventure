@@ -20,7 +20,11 @@ public class BackgroundComponent extends JComponent implements Serializable {
 	
 	/** The background model. */
 	private Background backgroundModel;
+	
+	/** The air background image. */
 	private transient BufferedImage airBackgroundImage;
+	
+	/** The water background image. */
 	private transient BufferedImage waterBackgroundImage;
 	
 	/**
@@ -52,6 +56,9 @@ public class BackgroundComponent extends JComponent implements Serializable {
 		}
 	}
 	
+	/**
+	 * Sets the background sprite image.
+	 */
 	public void setBackgroundSpriteImage() {
 		String airBackgroundFilePath = "./Graphics/Backgrounds/AirBackground/b" + backgroundModel.backgroundLayerIndex + ".png";
 		String waterBackgroundFilePath = "./Graphics/Backgrounds/WaterBackground/b" + backgroundModel.backgroundLayerIndex + ".png";

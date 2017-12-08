@@ -22,9 +22,16 @@ public class InteractableComponent extends JComponent implements Serializable {
 	/** The interactable models. */
 	public ArrayList<Interactable> interactableModels;
 
+	/** The air food image. */
 	private transient BufferedImage airFoodImage;
+	
+	/** The air not food image. */
 	private transient BufferedImage airNotFoodImage;
+	
+	/** The water food image. */
 	private transient BufferedImage waterFoodImage;
+	
+	/** The water not food image. */
 	private transient BufferedImage waterNotFoodImage;
 	
 	/**
@@ -75,6 +82,9 @@ public class InteractableComponent extends JComponent implements Serializable {
 		}
 	}
 
+	/**
+	 * Sets the sprite image.
+	 */
 	protected void setSpriteImage() {
 
 		ImageScaler imageScaler = new ImageScaler();

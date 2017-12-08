@@ -5,23 +5,43 @@ import java.util.Scanner;
 
 import controller.Settings;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class consoleGameWrapper.
+ */
 public class consoleGameWrapper {
 
+	/** The Constant gameHeight. */
 	private final static int gameWidth = 300, gameHeight = 200;
+	
+	/** The player. */
 	private static Player player;
+	
+	/** The score board. */
 	private ScoreBoard scoreBoard;
+	
+	/** The inters. */
 	private static ArrayList<Interactable> inters;
 	
 	
+	/** The settings. */
 	private static Settings settings;
 	
 	
+	/**
+	 * The main method.
+	 *
+	 * @param args the arguments
+	 */
 	public static void main(String[] args) {
 		System.out.println("Estuary Adventure!");
 		setUpGame();
 		startGame();
 	}
 	
+	/**
+	 * Sets the up game.
+	 */
 	private static void setUpGame(){
 		settings = new Settings();
 		player = new LandAnimal();
@@ -36,6 +56,9 @@ public class consoleGameWrapper {
 		System.out.println(player.toString());
 	}
 
+	/**
+	 * Start game.
+	 */
 	private static void startGame(){
 		Scanner sc = new Scanner(System.in);
 		String userChoice;
@@ -85,6 +108,11 @@ public class consoleGameWrapper {
 		}
 	}
 	
+	/**
+	 * Generate interactable.
+	 *
+	 * @return the array list
+	 */
 	private static ArrayList<Interactable> generateInteractable() {
 		ArrayList<Interactable> interactables = new ArrayList<Interactable>();
 		

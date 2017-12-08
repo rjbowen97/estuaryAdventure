@@ -13,11 +13,13 @@ import models.ScoreBoardManager;
 import models.finishLine;
 
 
+// TODO: Auto-generated Javadoc
 /**
  * The Class GameWrapper. In this class, the game is set up and run.
  */
 public class GameWrapper implements Serializable {
 	
+	/** The controller. */
 	public static Controller controller;
 	
 	/**
@@ -31,7 +33,7 @@ public class GameWrapper implements Serializable {
 	}
 	
 	/**
-	 * Creates all of the models and the controller to be used in the game
+	 * Creates all of the models and the controller to be used in the game.
 	 */
 	private static void setUpGame() {
 		Settings settings = new Settings();

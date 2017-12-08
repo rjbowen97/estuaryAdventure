@@ -10,17 +10,31 @@ import models.Player;
 import models.finishLine;
 import sun.security.krb5.internal.TicketFlags;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ActiveGameState.
+ */
 public class ActiveGameState implements GameStateInterface, Serializable {
 
+	/** The controller. */
 	public Controller controller;
 
+	/** The player model. */
 	public Player playerModel;
+	
+	/** The interactable models. */
 	public ArrayList<Interactable> interactableModels;
+	
+	/** The background models. */
 	public ArrayList<Background> backgroundModels;
+	
+	/** The finish line model. */
 	public finishLine finishLineModel;
 
+	/** The is tutorial. */
 	public boolean isTutorial = true;
 
+	/** The tick number. */
 	private int tickNumber = 0;
 
 	/**
@@ -30,6 +44,7 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	 * @param playerModel Player model constructed in the gameWrapper constructor
 	 * @param interactableModels An array of interactable models
 	 * @param backgroundModels An array of background models
+	 * @param finishLine the finish line
 	 */
 	public ActiveGameState(Controller controller, Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels, finishLine finishLine) {
 		this.controller = controller;
@@ -40,7 +55,7 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	}
 
 	/**
-	 * This function is called every tick when the active game state is the current game state of the game
+	 * This function is called every tick when the active game state is the current game state of the game.
 	 */
 	public void onTick() {
 
@@ -83,7 +98,7 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	}
 
 	/**
-	 * Calls helper functions to tick various models in the active game state object
+	 * Calls helper functions to tick various models in the active game state object.
 	 */
 	private void tickModels() {
 		tickBackgroundModels();
@@ -93,6 +108,9 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 		detectCollisions();
 	}
 
+	/**
+	 * Tick finish line model.
+	 */
 	private void tickFinishLineModel() {
 
 		if (finishLineModel.getActivationTick() == getTickNumber()) {
@@ -106,7 +124,7 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	}
 
 	/**
-	 * Ticks each background model in the backgroundModels ArrayList
+	 * Ticks each background model in the backgroundModels ArrayList.
 	 */
 	private void tickBackgroundModels() {
 		for (Background backgroundModel : backgroundModels) {
@@ -115,7 +133,7 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	}
 
 	/**
-	 * Ticks each interactable model in the interactableModels ArrayList
+	 * Ticks each interactable model in the interactableModels ArrayList.
 	 */
 	private void tickInteractableModels() {
 		for (Interactable interactableModel :interactableModels) {
@@ -131,20 +149,23 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	}
 
 	/**
-	 * Ticks player model
+	 * Ticks player model.
 	 */
 	private void tickPlayerModel() {
 		this.playerModel.onTick();
 	}
 
 	/**
-	 * Calls helper functions to handle collision detections
+	 * Calls helper functions to handle collision detections.
 	 */
 	private void detectCollisions() {
 		detectPlayerInteractableCollisions();
 		detectPlayerFinishLineCollision();
 	}
 
+	/**
+	 * Detect player finish line collision.
+	 */
 	private void detectPlayerFinishLineCollision() {
 		if (finishLineModel.getHitbox().isOverlapping(playerModel.getHitbox())) {
 			finishLineModel.onCollisionWithPlayerModel(playerModel);
@@ -169,7 +190,7 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	}
 
 	/**
-	 * Checks if the game state needs to be change
+	 * Checks if the game state needs to be change.
 	 */
 	private void changeGameStateIfNeeded() {
 		if (playerModel.getHealth() <= 0) {
@@ -182,7 +203,7 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	}
 
 	/**
-	 * Called when a mouseclick is detected
+	 * Called when a mouseclick is detected.
 	 *
 	 * @param mouseEvent the mouse event
 	 */
@@ -191,6 +212,8 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	}
 
 	/**
+	 * Gets the tick number.
+	 *
 	 * @return the tickNumber
 	 */
 	public int getTickNumber() {
@@ -198,6 +221,8 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	}
 
 	/**
+	 * Sets the tick number.
+	 *
 	 * @param tickNumber the tickNumber to set
 	 */
 	public void setTickNumber(int tickNumber) {

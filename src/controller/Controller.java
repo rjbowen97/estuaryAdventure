@@ -16,20 +16,47 @@ import models.finishLine;
 import views.ScoreBoardPanel;
 import views.View;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Controller.
+ */
 public class Controller implements Serializable {
 
+	/** The game state. */
 	private GameState gameState;
 	
+	/** The menu game state. */
 	public MenuGameState menuGameState;
+	
+	/** The active game state. */
 	public ActiveGameState activeGameState;
+	
+	/** The mini game game state. */
 	public MiniGameGameState miniGameGameState;
+	
+	/** The game over game state. */
 	public GameOverGameState gameOverGameState;
+	
+	/** The score board. */
 	public ScoreBoard scoreBoard;
+	
+	/** The view. */
 	public View view;
 	
+	/** The score board panel. */
 	public ScoreBoardPanel scoreBoardPanel;
 
 	
+	/**
+	 * Instantiates a new controller.
+	 *
+	 * @param menuModel the menu model
+	 * @param playerModel the player model
+	 * @param interactableModels the interactable models
+	 * @param backgroundModels the background models
+	 * @param scoreBoard the score board
+	 * @param finishLine the finish line
+	 */
 	public Controller(Menu menuModel, Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels, ScoreBoard scoreBoard, finishLine finishLine) {
 		this.gameState = GameState.MENU;
 
@@ -70,6 +97,9 @@ public class Controller implements Serializable {
 		this.view.repaint();
 	}
 	
+	/**
+	 * Sets the interactables to tutorial set.
+	 */
 	public void setInteractablesToTutorialSet() {
 		
 		ArrayList<Interactable> tutorialInteractables =  new ArrayList<Interactable>();
@@ -86,6 +116,9 @@ public class Controller implements Serializable {
 		this.view.activeGameStatePanel.interactableComponent.interactableModels = tutorialInteractables;
 	}
 	
+	/**
+	 * Pause active game state models.
+	 */
 	public void pauseActiveGameStateModels() {
 		for (Background background : activeGameState.backgroundModels) {
 			background.setSpeed(0);
@@ -98,6 +131,9 @@ public class Controller implements Serializable {
 		activeGameState.finishLineModel.setSpeed(0);
 	}
 	
+	/**
+	 * Resume active game state models.
+	 */
 	public void resumeActiveGameStateModels() {
 		for (Background background : activeGameState.backgroundModels) {
 			background.setSpeed(Settings.getBackgroundBaseSpeed(background.backgroundLayerIndex));
@@ -110,13 +146,18 @@ public class Controller implements Serializable {
 		activeGameState.finishLineModel.setSpeed(Settings.getInteractableSpeed());
 	}
 	
+	/**
+	 * Trigger tutorial step display.
+	 *
+	 * @param step the step
+	 */
 	public void triggerTutorialStepDisplay(int step) {
 		view.activeGameStatePanel.addTutorialText(step);
 	}
 
 	/**
-	 * Changes the current level
-	 * 
+	 * Changes the current level.
+	 *
 	 * @param targetLevel the level to change to
 	 */
 	public void changeLevels(String targetLevel) {
@@ -148,7 +189,7 @@ public class Controller implements Serializable {
 	
 	
 	/**
-	 * resets the current level
+	 * resets the current level.
 	 */
 	public void resetLevel() {
 		activeGameState.playerModel.xPosition = 0;
@@ -175,6 +216,11 @@ public class Controller implements Serializable {
 		miniGameGameState.miniGame.resetMiniGame();
 	}
 	
+	/**
+	 * Generate interactable models.
+	 *
+	 * @return the array list
+	 */
 	private ArrayList<Interactable> generateInteractableModels() {
 		ArrayList<Interactable> interactableModels = new ArrayList<Interactable>();
 		
@@ -201,6 +247,9 @@ public class Controller implements Serializable {
 		this.gameState = GameState.MINI_GAME;
 	}
 	
+	/**
+	 * Change game state from game over to menu.
+	 */
 	public void changeGameStateFromGameOverToMenu(){
 		this.view.setContentPane(view.menuPanel);
 		this.gameState = GameState.MENU;
@@ -241,7 +290,8 @@ public class Controller implements Serializable {
 	}
 	
 	/**
-	 * Sets the player name
+	 * Sets the player name.
+	 *
 	 * @param playerName new player name
 	 */
 	

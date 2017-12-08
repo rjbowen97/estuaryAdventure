@@ -11,8 +11,10 @@ import controller.Settings;
  */
 public class Interactable extends GameModel implements Serializable {
 
+	/** The is in water. */
 	public boolean isInWater = true;
 	
+	/** The is food. */
 	private boolean isFood;	
 	
 	/** The activation tick. */
@@ -24,12 +26,17 @@ public class Interactable extends GameModel implements Serializable {
 	/** The random. */
 	private Random random = new Random();
 
+	/**
+	 * Instantiates a new interactable.
+	 */
 	public Interactable()
 	{
 		
 	}
+	
 	/**
-	 * Creates a new interactable, determines its position and whether or not it is food
+	 * Creates a new interactable, determines its position and whether or not it is food.
+	 *
 	 * @param activationTick the activation tick
 	 */
 	public Interactable(int activationTick) {
@@ -49,7 +56,7 @@ public class Interactable extends GameModel implements Serializable {
 	 */
 	
 	/**
-	 * On collision with player model eliminate the interactable
+	 * On collision with player model eliminate the interactable.
 	 *
 	 * @param playerModel the player model
 	 */
@@ -58,7 +65,7 @@ public class Interactable extends GameModel implements Serializable {
 	}
 	
 	/**
-	 * Deactivate
+	 * Deactivate.
 	 */
 	private void deactivate() {
 		this.isActive = false;
@@ -133,11 +140,17 @@ public class Interactable extends GameModel implements Serializable {
 	}
 	
 	
+	/* (non-Javadoc)
+	 * @see models.GameModel#toString()
+	 */
 	public String toString(){
 		return super.toString() + "\nIs ACTIVE: " + this.isActive + "\nIs Food: " + this.isFood() + 
 				"\nActivation Tick: " + this.activationTick;
 	}
+	
 	/**
+	 * Sets the food.
+	 *
 	 * @param isFood the isFood to set
 	 */
 	public void setFood(boolean isFood) {

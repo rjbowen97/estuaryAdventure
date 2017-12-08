@@ -13,6 +13,7 @@ public class Background extends GameModel implements Serializable {
 	/** The background layer index. */
 	public int backgroundLayerIndex;
 	
+	/** The background type. */
 	public String backgroundType;
 
 	/**
@@ -77,6 +78,9 @@ public class Background extends GameModel implements Serializable {
 	public void reset() {
 	}
 	
+	/* (non-Javadoc)
+	 * @see models.GameModel#toString()
+	 */
 	public String toString(){
 		String result =super.toString();
 		result += "\nLayer Index: "+ backgroundLayerIndex;

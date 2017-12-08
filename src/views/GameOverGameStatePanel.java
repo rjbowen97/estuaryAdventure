@@ -24,7 +24,6 @@ public class GameOverGameStatePanel extends JPanel implements Serializable {
 	/**
 	 * Instantiates a new game over game state panel.
 	 *
-	 * @param gameOverGameState the game over game state
 	 * @param controller the controller
 	 */
 	public GameOverGameStatePanel(Controller controller) {
