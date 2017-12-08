@@ -30,6 +30,7 @@ public class HUDPane extends JPanel implements Serializable {
 	/** The powered up label. */
 	private JLabel poweredUpLabel;
 	
+	/** The player name label. */
 	private JLabel playerNameLabel;
 	
 	

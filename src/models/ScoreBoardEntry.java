@@ -36,6 +36,9 @@ public class ScoreBoardEntry implements Serializable, java.lang.Comparable<Score
 		}
 	}
 	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
 	public String toString(){
 		return "Name: " + this.name + "\nScore: " + this.score;
 	}

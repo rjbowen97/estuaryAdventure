@@ -4,12 +4,16 @@ import java.io.Serializable;
 
 import models.Menu;
 
+// TODO: Auto-generated Javadoc
 /**
  * The Class MenuGameState.
  */
 public class MenuGameState implements GameStateInterface, Serializable {
 	
+	/** The controller. */
 	public Controller controller;
+	
+	/** The menu. */
 	public Menu menu;
 
 	/**

@@ -20,16 +20,16 @@ import controller.Settings;
  */
 public class BackgroundTest {
 	
-	/** The test image for background */
+	/**  The test image for background. */
 	private BufferedImage testImage;
 	
 	/** The y pos. */
 	private int xPos, yPos;
 	
-	/** The layer position in relation to the background */
+	/**  The layer position in relation to the background. */
 	private static int layerPos;
 	
-	/** The example background */
+	/**  The example background. */
 	static Background bckGrnd;
 	
 	/** The settings. */

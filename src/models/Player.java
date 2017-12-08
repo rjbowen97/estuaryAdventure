@@ -11,24 +11,26 @@ import controller.Settings;
  */
 public abstract class Player extends GameModel implements Serializable {
 
+	/** The player name. */
 	private String playerName;
 	
-	/** The health of the player */
+	/**  The health of the player. */
 	public int health = 3;
 	
 	/** The score. */
 	public int score = 0;
 	
-	/** Whether the player has earned a power up or not, initially false */
+	/**  Whether the player has earned a power up or not, initially false. */
 	private boolean poweredUp = false;
 	
 	/** The score streak. */
 	private int scoreStreak = 0;
 
+	/** The player animal type. */
 	public PlayerAnimalType playerAnimalType;
 	
 	/**
-	 * Instantiates a new player, their position and their username
+	 * Instantiates a new player, their position and their username.
 	 */
 	public Player() {
  
@@ -43,7 +45,7 @@ public abstract class Player extends GameModel implements Serializable {
 	}
 
 	/**
-	 * On mini game end, adds how many correct answers and adds the powerup and score 
+	 * On mini game end, adds how many correct answers and adds the powerup and score .
 	 *
 	 * @param correctAnswerCount the correct answer count
 	 */
@@ -53,7 +55,7 @@ public abstract class Player extends GameModel implements Serializable {
 	}
 	
 	/**
-	 * If the player achieves the powerup, the player receives it, if not they do not
+	 * If the player achieves the powerup, the player receives it, if not they do not.
 	 */
 	private void powerUp() {
 		if (this.poweredUp == false) {
@@ -113,7 +115,7 @@ public abstract class Player extends GameModel implements Serializable {
 	public abstract void onMouseReleased(MouseEvent mouseEvent);
 
 	/**
-	 * Determines actions based on what interactable the player comes into contact with, if it is food, player goes into minigame, if not player loses health
+	 * Determines actions based on what interactable the player comes into contact with, if it is food, player goes into minigame, if not player loses health.
 	 *
 	 * @param interactableModel the interactable model
 	 */
@@ -137,10 +139,20 @@ public abstract class Player extends GameModel implements Serializable {
 		}
 	}
 
+	/**
+	 * Sets the player name.
+	 *
+	 * @param playerName the new player name
+	 */
 	public void setPlayerName(String playerName) {
 		this.playerName = playerName;
 	}
 	
+	/**
+	 * Gets the player name.
+	 *
+	 * @return the player name
+	 */
 	public String getPlayerName() {
 		return this.playerName;
 	}
@@ -173,7 +185,7 @@ public abstract class Player extends GameModel implements Serializable {
 	}
 
 	/**
-	 * Checks whether player is poweredUp or not
+	 * Checks whether player is poweredUp or not.
 	 *
 	 * @return the powered up
 	 */
@@ -181,6 +193,9 @@ public abstract class Player extends GameModel implements Serializable {
 		return poweredUp;
 	}
 	
+	/* (non-Javadoc)
+	 * @see models.GameModel#toString()
+	 */
 	public String toString(){
 		return super.toString() + "Player Name: " + this.playerName + "\nHealth: " + this.health + "\nScore: " + this.score + "\nPowered UP: " + this.poweredUp +
 				"\nScore Streak: " + this.scoreStreak;

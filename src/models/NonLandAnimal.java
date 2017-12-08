@@ -44,6 +44,9 @@ public class NonLandAnimal extends Player implements Serializable {
 		this.setyPosition(newYPosition);
 	}
 	
+	/* (non-Javadoc)
+	 * @see models.Player#toString()
+	 */
 	public String toString(){
 		return super.toString() + "\nType: Non-Land Animal";
 	}

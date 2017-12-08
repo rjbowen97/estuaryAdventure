@@ -40,6 +40,7 @@ public class ActiveGameStatePanel extends JLayeredPane implements Serializable {
 	 * @param backgroundModels the background models
 	 * @param controller the controller
 	 * @param interactableModels the interactable models
+	 * @param finishLine the finish line
 	 */
 	public ActiveGameStatePanel(Player playerModel, ArrayList<Background> backgroundModels, Controller controller, ArrayList<Interactable> interactableModels, finishLine finishLine) {
 		
@@ -59,10 +60,18 @@ public class ActiveGameStatePanel extends JLayeredPane implements Serializable {
 		this.setVisible(true);
 	}
 	
+	/** The step one area. */
 	private JTextArea stepOneArea;
+	
+	/** The step two area. */
 	private JTextArea stepTwoArea;
 	
 	
+	/**
+	 * Adds the tutorial text.
+	 *
+	 * @param step the step
+	 */
 	public void addTutorialText(int step) {
 		
 		int screenMiddleX = Settings.getViewDimensionXDefault() - 210;

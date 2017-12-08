@@ -1,11 +1,21 @@
 package models;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ScoreBoardManagerTest.
+ */
 public class ScoreBoardManagerTest {
 
+	/**
+	 * Instantiates a new score board manager test.
+	 */
 	public ScoreBoardManagerTest() {
 		// TODO Auto-generated constructor stub
 	}
 	
+	/**
+	 * Test load save score board.
+	 */
 	public void testLoadSaveScoreBoard(){
 		//verify there is no file on the disk
 		

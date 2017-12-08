@@ -11,21 +11,21 @@ public class Hitbox implements Serializable {
 	/** The game model. */
 	private GameModel gameModel;
 
-	/** The top left corner of the hitbox */
+	/**  The top left corner of the hitbox. */
 	public Point topLeftCorner;
 	
-	/** The top right corner of the hitbox */
+	/**  The top right corner of the hitbox. */
 	public Point topRightCorner;
 	
-	/** The bottom left corner of the hitbox */
+	/**  The bottom left corner of the hitbox. */
 	public Point bottomLeftCorner;
 	
-	/** The bottom right corner of the hitbox */
+	/**  The bottom right corner of the hitbox. */
 	public Point bottomRightCorner;
 
 
 	/**
-	 * Instantiates a new hitbox and sets all the points
+	 * Instantiates a new hitbox and sets all the points.
 	 *
 	 * @param gameModel the game model
 	 */
@@ -38,7 +38,7 @@ public class Hitbox implements Serializable {
 	}
 
 	/**
-	 * Update as the hitbox moves
+	 * Update as the hitbox moves.
 	 */
 	public void update() {
 		this.topLeftCorner.update(gameModel.getXPosition(),gameModel.getYPosition());
@@ -48,7 +48,7 @@ public class Hitbox implements Serializable {
 	}
 
 	/**
-	 * Checks if the hitbox is overlapping with another hitbox, which triggers events in the program
+	 * Checks if the hitbox is overlapping with another hitbox, which triggers events in the program.
 	 *
 	 * @param otherHitbox the other hitbox
 	 * @return true, if is overlapping with another hitbox
@@ -119,6 +119,10 @@ public class Hitbox implements Serializable {
 		return false;
 
 	}
+	
+	/**
+	 * The Class Point.
+	 */
 	/*
 	 * Point class that hold the position of points on a hitbox
 	 */
@@ -160,10 +164,10 @@ public class Hitbox implements Serializable {
 		}
 
 		/**
-		 * Checks if Point is above another Point
+		 * Checks if Point is above another Point.
 		 *
 		 * @param otherPoint the other point position
-		 * @return true, if is above 
+		 * @return true, if is above
 		 */
 		public boolean isAbove(Point otherPoint) {
 			if (this.y <= otherPoint.y) {
@@ -174,7 +178,7 @@ public class Hitbox implements Serializable {
 		}
 
 		/**
-		 * Checks if is to the right of another Point
+		 * Checks if is to the right of another Point.
 		 *
 		 * @param otherPoint the other point position
 		 * @return true, if is to the right of
