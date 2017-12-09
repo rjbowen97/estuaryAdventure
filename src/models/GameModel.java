@@ -2,9 +2,8 @@ package models;
 
 import java.io.Serializable;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class GameModel.
+ * An abstract class inherited by all models in the game
  */
 public abstract class GameModel implements Serializable {
 	
@@ -20,9 +19,11 @@ public abstract class GameModel implements Serializable {
 	/** The width. */
 	private int width;
 	
-	
 	/**  The speed, initially set to 0. */
 	protected int speed = 0;
+	
+	/**  The hitbox. */
+	private Hitbox hitbox;
 	
 	/**
 	 * Gets the height.
@@ -60,32 +61,28 @@ public abstract class GameModel implements Serializable {
 		this.width = width;
 	}
 	
-	/**  Initiate a hitbox for the image. */
-	private Hitbox hitbox;
-	
-	
 	/**
-	 * Sets the hitbox for the image/gamemodel.
+	 * Sets the hitbox for the gamemodel based on its width and height.
 	 */
 	protected abstract void setHitbox();
 	
 	/**
-	 * Update hitbox for image.
+	 * Updates the game models' hitbox position.
 	 */
 	protected abstract void updateHitbox();
 	
 	/**
-	 * On tick.
+	 * What the model is to perform when ticked.
 	 */
 	public abstract void onTick();
 	
 	/**
-	 * Reset.
+	 * Resets the model to a state as if it was just created
 	 */
 	public abstract void reset();
 	
 	/**
-	 * Gets the hitbox of the image/game model.
+	 * Gets the hitbox of the game model.
 	 *
 	 * @return the hitbox
 	 */
@@ -94,7 +91,7 @@ public abstract class GameModel implements Serializable {
 	}
 	
 	/**
-	 * Sets the hitbox for the image/game model.
+	 * Sets the hitbox for the game model.
 	 *
 	 * @param hitbox which is the new hitbox
 	 */
@@ -156,9 +153,6 @@ public abstract class GameModel implements Serializable {
 		this.speed = speed;
 	}
 	
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
 	/*
 	 * toString method to return where the game model is
 	 */

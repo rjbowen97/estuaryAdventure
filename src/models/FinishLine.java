@@ -23,17 +23,13 @@ public class FinishLine extends Interactable implements Serializable{
 	/** The activation tick. */
 	public int activationTick;
 	
-	/** The is active. */
+	/** Determines if this model is visible and moving. */
 	public boolean isActive = false;
-	
-	/** The random. */
-	private Random random = new Random();
-	
 
 	/**
-	 * Instantiates a new finish line.
+	 * Instantiates a new finish line model.
 	 *
-	 * @param activationTick the activation tick
+	 * @param activationTick the activation tick to deploy the finish line
 	 * @param controller the controller
 	 */
 	public FinishLine(int activationTick, Controller controller) {
@@ -57,25 +53,27 @@ public class FinishLine extends Interactable implements Serializable{
 		playerModel.score += 1;
 		playerModel.health -= 1;
 	}
+	
 	/**
-	 * Checks if is active.
-	 * @return true, if is active
+	 * Checks if the model is active.
+	 * @return true, if it is active
 	 */
 	public boolean isActive() {
 		return this.isActive;
 	}
+	
 	/**
-	 * Checks if is food.
-	 * @return true, if is food
+	 * Checks if the model is food.
+	 * @return true, if it is food
 	 */
 	public boolean isFood() {
 		return isFood;
 	}
+	
 	/**
 	 * Gets the activation tick.
 	 * @return the activation tick
 	 */
-	
 	public int getActivationTick() {
 		return this.activationTick;
 	}

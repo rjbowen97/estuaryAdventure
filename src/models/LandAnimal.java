@@ -5,7 +5,6 @@ import java.io.Serializable;
 
 import controller.Settings;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class LandAnimal.
  */
@@ -19,16 +18,14 @@ public class LandAnimal extends Player implements Serializable {
 		super.onTick();
 	}
 	
-	/* (non-Javadoc)
-	 * @see models.Player#onMouseReleased(java.awt.event.MouseEvent)
-	 */
 	/* 
-	 * On mouse release, find where the mouse was released and if it is above the current animal then the animal rises up, if below the animal goes down
+	 * On mouse release, find where the mouse was released and if it is above the current animal then the animal rises up,
+	 * if below, the animal goes down.
 	 * @see models.Player#onMouseReleased(java.awt.event.MouseEvent)
 	 */
 	@Override
 	public void onMouseReleased(MouseEvent mouseEvent) {
-		if (mouseEvent.getY() > this.getYPosition()) {
+		if (mouseEvent.getY() > this.getYPosition() + (this.getHeight() / 2)) {
 			int newYPosition = this.getYPosition() + Settings.getLandAnimalShuffleSpeed();
 			this.setyPosition(newYPosition);
 		}

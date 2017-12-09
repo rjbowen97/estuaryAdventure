@@ -5,7 +5,6 @@ import java.util.Random;
 
 import controller.Settings;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class Interactable.
  */
@@ -29,15 +28,14 @@ public class Interactable extends GameModel implements Serializable {
 	/**
 	 * Instantiates a new interactable.
 	 */
-	public Interactable()
-	{
+	public Interactable() {
 		
 	}
 	
 	/**
 	 * Creates a new interactable, determines its position and whether or not it is food.
 	 *
-	 * @param activationTick the activation tick
+	 * @param activationTick The tick on which to deploy the interactable
 	 */
 	public Interactable(int activationTick) {
 		this.setxPosition(Settings.getInteractableStartXPosition());
@@ -51,12 +49,8 @@ public class Interactable extends GameModel implements Serializable {
 		this.setHitbox();
 	}
 	
-	/* (non-Javadoc)
-	 * @see models.GameModel#setSpriteImage()
-	 */
-	
 	/**
-	 * On collision with player model eliminate the interactable.
+	 * On collision with player model, eliminate the interactable.
 	 *
 	 * @param playerModel the player model
 	 */
@@ -138,7 +132,6 @@ public class Interactable extends GameModel implements Serializable {
 	@Override
 	public void reset() {
 	}
-	
 	
 	/* (non-Javadoc)
 	 * @see models.GameModel#toString()

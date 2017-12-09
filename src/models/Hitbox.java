@@ -2,9 +2,8 @@ package models;
 
 import java.io.Serializable;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class Hitbox.
+ * The Class Hitbox, which is used to perform collision logic between interactables.
  */
 public class Hitbox implements Serializable {
 
@@ -13,13 +12,13 @@ public class Hitbox implements Serializable {
 
 	/**  The top left corner of the hitbox. */
 	public Point topLeftCorner;
-	
+
 	/**  The top right corner of the hitbox. */
 	public Point topRightCorner;
-	
+
 	/**  The bottom left corner of the hitbox. */
 	public Point bottomLeftCorner;
-	
+
 	/**  The bottom right corner of the hitbox. */
 	public Point bottomRightCorner;
 
@@ -38,7 +37,7 @@ public class Hitbox implements Serializable {
 	}
 
 	/**
-	 * Update as the hitbox moves.
+	 * Updates as the hitbox moves.
 	 */
 	public void update() {
 		this.topLeftCorner.update(gameModel.getXPosition(),gameModel.getYPosition());
@@ -54,13 +53,13 @@ public class Hitbox implements Serializable {
 	 * @return true, if is overlapping with another hitbox
 	 */
 	public boolean isOverlapping(Hitbox otherHitbox) {
-		
-	if (!this.topLeftCorner.isAbove(otherHitbox.topLeftCorner)
+
+		if (!this.topLeftCorner.isAbove(otherHitbox.topLeftCorner)
 				&& (this.topLeftCorner.isAbove(otherHitbox.bottomLeftCorner))
 				&& this.topLeftCorner.isToTheRightOf(otherHitbox.topLeftCorner)
 				&& !this.topLeftCorner.isToTheRightOf(otherHitbox.topRightCorner)) {
-		return true;
-	}
+			return true;
+		}
 
 		if (!this.topRightCorner.isAbove(otherHitbox.topLeftCorner)
 				&& (this.topRightCorner.isAbove(otherHitbox.bottomLeftCorner))
@@ -119,18 +118,15 @@ public class Hitbox implements Serializable {
 		return false;
 
 	}
-	
-	/**
-	 * The Class Point.
-	 */
+
 	/*
-	 * Point class that hold the position of points on a hitbox
+	 * Point class that holds the position of points on a hitbox
 	 */
 	public class Point implements Serializable {
-		
+
 		/** The x. */
 		public int x;
-		
+
 		/** The y. */
 		public int y;
 
@@ -140,7 +136,7 @@ public class Hitbox implements Serializable {
 		public String toString(){
 			return "X: " + this.x + "\nY: " + this.y;
 		}
-		
+
 		/**
 		 * Instantiates a new point.
 		 *
