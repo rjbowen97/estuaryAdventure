@@ -1,4 +1,4 @@
-package models;
+package testing;
 
 import static org.junit.Assert.assertTrue;
 
@@ -7,6 +7,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 import controller.Settings;
+import models.Background;
+import models.GameModel;
+import models.Hitbox;
 
 // TODO: Auto-generated Javadoc
 /**

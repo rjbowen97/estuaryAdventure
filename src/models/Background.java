@@ -36,7 +36,7 @@ public class Background extends GameModel implements Serializable {
 	 * @see models.GameModel#setHitbox()
 	 */
 	@Override
-	protected void setHitbox() {
+	public void setHitbox() {
 		this.setHitbox(new Hitbox(this));
 	}
 
@@ -44,7 +44,7 @@ public class Background extends GameModel implements Serializable {
 	 * @see models.GameModel#updateHitbox()
 	 */
 	@Override
-	protected void updateHitbox() {
+	public void updateHitbox() {
 		this.getHitbox().update();
 		
 	}

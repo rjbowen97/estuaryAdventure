@@ -1,8 +1,11 @@
-package models;
+package testing;
 
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
+
+import models.ScoreBoard;
+import models.ScoreBoardEntry;
 
 // TODO: Auto-generated Javadoc
 /**

@@ -1,4 +1,4 @@
-package models;
+package testing;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -13,6 +13,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import controller.Settings;
+import models.Background;
+import models.Hitbox;
 
 /**
  * The Class BackgroundTest.

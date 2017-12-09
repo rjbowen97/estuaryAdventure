@@ -1,4 +1,4 @@
-package models;
+package testing;
 
 import static org.junit.Assert.assertTrue;
 
@@ -9,6 +9,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import controller.Settings;
+import models.Interactable;
+import models.LandAnimal;
 
 // TODO: Auto-generated Javadoc
 /**

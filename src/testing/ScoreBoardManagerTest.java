@@ -1,4 +1,4 @@
-package models;
+package testing;
 
 // TODO: Auto-generated Javadoc
 /**
