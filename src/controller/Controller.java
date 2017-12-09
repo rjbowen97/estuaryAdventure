@@ -72,7 +72,8 @@ public class Controller implements Serializable {
 	}
 	
 	/**
-	 * Called every tick by the gameWrapper main loop. Depending on the current game state, the appropriate onTick function is called
+	 * Called every tick by the gameWrapper main loop. Depending on the current game state, the appropriate onTick function is called.
+	 * This function then updates the view.
 	 */
 	public void tick(){
 		if (gameState.equals(GameState.MENU)) {
@@ -95,7 +96,7 @@ public class Controller implements Serializable {
 	}
 	
 	/**
-	 * Sets the interactables to tutorial set.
+	 * Sets the interactable models to a controlled tutorial set.
 	 */
 	public void setInteractablesToTutorialSet() {
 		
@@ -114,7 +115,7 @@ public class Controller implements Serializable {
 	}
 	
 	/**
-	 * Pause active game state models.
+	 * Pauses active game state models for the tutorial.
 	 */
 	public void pauseActiveGameStateModels() {
 		for (Background background : activeGameState.backgroundModels) {
@@ -129,7 +130,7 @@ public class Controller implements Serializable {
 	}
 	
 	/**
-	 * Resume active game state models.
+	 * Resumes the active game state for the tutorial.
 	 */
 	public void resumeActiveGameStateModels() {
 		for (Background background : activeGameState.backgroundModels) {
@@ -144,18 +145,18 @@ public class Controller implements Serializable {
 	}
 	
 	/**
-	 * Trigger tutorial step display.
+	 * Displays the appropriate text field during the tutorial.
 	 *
-	 * @param step the step
+	 * @param step The step of the text field currently being shown
 	 */
 	public void triggerTutorialStepDisplay(int step) {
 		view.activeGameStatePanel.addTutorialText(step);
 	}
 
 	/**
-	 * Changes the current level.
+	 * Changes the sprites of the models to reflect the current level environment (water or air).
 	 *
-	 * @param targetLevel the level to change to
+	 * @param targetLevel the level to change to (a for air, or w for water)
 	 */
 	public void changeLevels(String targetLevel) {
 		if (targetLevel.equals("a")) {
@@ -184,7 +185,7 @@ public class Controller implements Serializable {
 	}
 	
 	/**
-	 * resets the current level.
+	 * resets the current level by setting the model properties to their starting values.
 	 */
 	public void resetLevel() {
 		activeGameState.playerModel.xPosition = 0;
@@ -204,7 +205,6 @@ public class Controller implements Serializable {
 		activeGameState.interactableModels = interactables;
 		view.activeGameStatePanel.interactableComponent.interactableModels = interactables;
 		
-		
 		this.activeGameState.finishLineModel = new finishLine(Settings.getFinishLineRelease(), this);
 		this.activeGameState.setTickNumber(0);
 		
@@ -212,9 +212,10 @@ public class Controller implements Serializable {
 	}
 	
 	/**
-	 * Generate interactable models.
+	 * Generates interactable models based on the amount of interactables and the
+	 * release time intervals set in the globalSettings.properties file.
 	 *
-	 * @return the array list
+	 * @return the ArrayList of interactable models
 	 */
 	private ArrayList<Interactable> generateInteractableModels() {
 		ArrayList<Interactable> interactableModels = new ArrayList<Interactable>();
@@ -227,7 +228,7 @@ public class Controller implements Serializable {
 	}
 
 	/**
-	 * Change game state from menu to active.
+	 * Changes the game state from menu to active.
 	 */
 	public void changeGameStateFromMenuToActive() {
 		this.view.setContentPane(view.activeGameStatePanel);
@@ -235,7 +236,7 @@ public class Controller implements Serializable {
 	}
 	
 	/**
-	 * Change game state from active to minigame.
+	 * Changes the game state from active to minigame.
 	 */
 	public void changeGameStateFromActiveToMinigame() {
 		this.view.getContentPane().add(view.miniGameGameStatePanel, new Integer(7));
@@ -243,7 +244,7 @@ public class Controller implements Serializable {
 	}
 	
 	/**
-	 * Change game state from game over to menu.
+	 * Changes the game state from game over to menu.
 	 */
 	public void changeGameStateFromGameOverToMenu(){
 		this.view.setContentPane(view.menuPanel);
@@ -251,7 +252,7 @@ public class Controller implements Serializable {
 	}
 
 	/**
-	 * Change game state from mini game to active. If the player answers more than zero questions correct,
+	 * Changes the game state from mini game to active. If the player answers more than zero questions correct,
 	 * a helper method is called
 	 *
 	 * @param correctAnswerCount The amount of questions answered correctly by the player in the miniGame's main loop
@@ -279,7 +280,7 @@ public class Controller implements Serializable {
 	}
 
 	/**
-	 * Change game state from active to game over.
+	 * Changes the game state from active to game over.
 	 */
 	public void changeGameStateFromActiveToGameOver() {
 		scoreBoard.addNewScore(activeGameState.playerModel);
