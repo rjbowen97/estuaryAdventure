@@ -2,9 +2,8 @@ package models;
 
 import java.io.Serializable;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Enum PlayerAnimalType.
+ * The Enum PlayerAnimalType, which determines the sprite to use for the animal.
  */
 public enum PlayerAnimalType implements Serializable {
 	

@@ -2,9 +2,9 @@ package quizMiniGame;
 
 import java.io.Serializable;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class QuestionAndAnswerPair.
+ * The Class QuestionAndAnswerPair, which consists of a question, several possible answers, and the 
+ * index of the correct answer
  */
 public class QuestionAndAnswerPair implements Serializable {
 	
@@ -20,7 +20,7 @@ public class QuestionAndAnswerPair implements Serializable {
 	/** The answer C. */
 	String answerC;
 	
-	/** The correct answer. */
+	/** The correct answer index. */
 	String correctAnswer;
 	
 	/**
@@ -30,7 +30,7 @@ public class QuestionAndAnswerPair implements Serializable {
 	 * @param answerA the answer A
 	 * @param answerB the answer B
 	 * @param answerC the answer C
-	 * @param correctAnswer the correct answer
+	 * @param correctAnswer the correct answer index
 	 */
 	public QuestionAndAnswerPair(String question, String answerA, String answerB, String answerC, String correctAnswer) {
 		this.question = question;

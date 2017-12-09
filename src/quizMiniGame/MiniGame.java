@@ -9,7 +9,7 @@ import models.GameModel;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class MINI_GAME.
+ * The Class MiniGame, which keeps track of the player's answer and various question and answer pairs
  */
 public class MiniGame extends GameModel implements Serializable {
 	
@@ -22,18 +22,18 @@ public class MiniGame extends GameModel implements Serializable {
 	/** The current player answer. */
 	private String currentPlayerAnswer = "";
 	
-	/** The correct answer count. */
+	/** The number of questions answered correctly by the player. */
 	public int correctAnswerCount = 0;
 	
-	/** The question limit. */
+	/** The amount of questions able to be answered in a row before the minigame ends. */
 	public int questionLimit;
 	
-	/** The is active. */
+	/** True if the minigame is currently being playerd. */
 	public boolean isActive = true;
 	
 	
 	/**
-	 * Instantiates a new mini game.
+	 * Instantiates a new MiniGame.
 	 */
 	public MiniGame() {
 		QuestionAndAnswerPairsReader questionAndAnswerPairsReader = new QuestionAndAnswerPairsReader();
@@ -51,7 +51,7 @@ public class MiniGame extends GameModel implements Serializable {
 	}
 	
 	/**
-	 * Update correct answer flag.
+	 * Updates the correct answer flag if the player answers the current question and answer pair.
 	 */
 	private void updateCorrectAnswerFlag() {
 		

@@ -12,13 +12,12 @@ import javax.swing.JPanel;
 
 import controller.Controller;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class MiniGameGameStatePanel.
  */
 public class MiniGameGameStatePanel extends JPanel implements ActionListener, Serializable {
 
-	/** The mini game. */
+	/** The MiniGame model to display. */
 	MiniGame miniGame;
 
 	/** The controller. */
@@ -43,9 +42,9 @@ public class MiniGameGameStatePanel extends JPanel implements ActionListener, Se
 	JLabel correctAnswerLabel;
 
 	/**
-	 * Instantiates a new mini game game state panel.
+	 * Instantiates a new MiniGame game state panel.
 	 *
-	 * @param miniGame the mini game
+	 * @param miniGame the miniGame
 	 * @param controller the controller
 	 */
 	public MiniGameGameStatePanel(MiniGame miniGame, Controller controller) {
@@ -89,7 +88,11 @@ public class MiniGameGameStatePanel extends JPanel implements ActionListener, Se
 		this.setVisible(true);
 	}
 
-	/* (non-Javadoc)
+	/**
+	 * Displays to the screen the current state of the Minigame, including the question and possible answers.
+	 * Displays the player's correct answer streak .
+	 * Displays the correct answer to the current question if answered wrong
+	 * 
 	 * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
 	 */
 	@Override
@@ -116,7 +119,8 @@ public class MiniGameGameStatePanel extends JPanel implements ActionListener, Se
 		}
 	}
 
-	/* (non-Javadoc)
+	/** 
+	 * Detects if one of the answer buttons is clicked
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
 	@Override
@@ -135,16 +139,19 @@ public class MiniGameGameStatePanel extends JPanel implements ActionListener, Se
 	}
 
 	/**
-	 * Display correct answer.
+	 * Displays the correct answer if the player selects the wrong button.
+	 * Also hides the buttons so the player is not tempted to click them anymore
 	 */
 	public void displayCorrectAnswer() {
 		answerAButton.setVisible(false);
 		answerBButton.setVisible(false);
 		answerCButton.setVisible(false);
 		correctAnswerLabel.setVisible(true);
-
 	}
 
+	/**
+	 * Rehides the correct answer label
+	 */
 	public void hideCorrectAnswer() {
 		answerAButton.setVisible(true);
 		answerBButton.setVisible(true);

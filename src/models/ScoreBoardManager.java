@@ -8,9 +8,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class ScoreBoardManager.
+ * The Class ScoreBoardManager, which loads and saves scoreboards to a serialized file
  */
 public class ScoreBoardManager implements Serializable {
 

@@ -2,13 +2,12 @@ package models;
 
 import java.io.Serializable;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class ScoreBoardEntry.
+ * The Class ScoreBoardEntry, which is comparable to other entries based on score.
  */
 public class ScoreBoardEntry implements Serializable, java.lang.Comparable<ScoreBoardEntry>{
 	
-	/** The name. */
+	/** The name associated with the score. */
 	public String name;
 	
 	/** The score. */

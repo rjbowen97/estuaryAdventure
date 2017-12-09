@@ -5,7 +5,6 @@ import java.io.Serializable;
 
 import controller.Settings;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class NonLandAnimal.
  */
@@ -21,7 +20,7 @@ public class NonLandAnimal extends Player implements Serializable {
 	}
 	
 	/**
-	 * Fall down.
+	 * Fall down, which brings the player down a set amount each tick
 	 */
 	private void fallDown() {
 		int newYPosition = this.getYPosition() + Settings.getNonLandAnimalFallSpeed();
@@ -37,7 +36,7 @@ public class NonLandAnimal extends Player implements Serializable {
 	}
 	
 	/**
-	 * Flap.
+	 * Flap, which moves the player up by a set amount
 	 */
 	private void flap() {
 		int newYPosition = this.getYPosition() - Settings.getNonLandAnimalFlapSpeed();

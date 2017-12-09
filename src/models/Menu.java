@@ -2,7 +2,6 @@ package models;
 
 import java.io.Serializable;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class Menu.
  */

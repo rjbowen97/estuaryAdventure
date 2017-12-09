@@ -5,7 +5,6 @@ import java.io.Serializable;
 
 import controller.Settings;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class Player.
  */
@@ -17,7 +16,7 @@ public abstract class Player extends GameModel implements Serializable {
 	/**  The health of the player. */
 	public int health = 3;
 	
-	/** The score. */
+	/** The score of the player. */
 	public int score = 0;
 	
 	/**  Whether the player has earned a power up or not, initially false. */
@@ -26,11 +25,11 @@ public abstract class Player extends GameModel implements Serializable {
 	/** The score streak. */
 	private int scoreStreak = 0;
 
-	/** The player animal type. */
+	/** The player animal type enum. */
 	public PlayerAnimalType playerAnimalType;
 	
 	/**
-	 * Instantiates a new player, their position and their username.
+	 * Instantiates a new player, their position, and their username.
 	 */
 	public Player() {
  
@@ -45,7 +44,7 @@ public abstract class Player extends GameModel implements Serializable {
 	}
 
 	/**
-	 * On mini game end, adds how many correct answers and adds the powerup and score .
+	 * On mini game end, adds how many correct answers to the score and activates the power up variable.
 	 *
 	 * @param correctAnswerCount the correct answer count
 	 */
@@ -55,17 +54,16 @@ public abstract class Player extends GameModel implements Serializable {
 	}
 	
 	/**
-	 * If the player achieves the powerup, the player receives it, if not they do not.
+	 * Powers up the player if it is not already powered up.
 	 */
 	private void powerUp() {
 		if (this.poweredUp == false) {
 			this.poweredUp = true;
-			System.out.println("POWERED UP!");
 		}
 	}
 
 	/**
-	 * Reset score streak.
+	 * Resets the score streak of the player.
 	 */
 	public void resetScoreStreak() {
 		this.scoreStreak = 0;
@@ -103,10 +101,6 @@ public abstract class Player extends GameModel implements Serializable {
 
 	}
 
-	/* (non-Javadoc)
-	 * @see models.GameModel#setSpriteImage()
-	 */	
-
 	/**
 	 * On mouse released.
 	 *
@@ -115,7 +109,9 @@ public abstract class Player extends GameModel implements Serializable {
 	public abstract void onMouseReleased(MouseEvent mouseEvent);
 
 	/**
-	 * Determines actions based on what interactable the player comes into contact with, if it is food, player goes into minigame, if not player loses health.
+	 * Determines actions based on what interactable the player comes into contact with.
+	 * If it is food, player's score and scoreStreak are incremented. If not, the player loses health (unless powered up, which deactivates the
+	 * powered up).
 	 *
 	 * @param interactableModel the interactable model
 	 */
@@ -126,7 +122,6 @@ public abstract class Player extends GameModel implements Serializable {
 		}
 
 		else {
-			
 			if (this.poweredUp == true) {
 				this.poweredUp = false;
 			}
@@ -135,12 +130,11 @@ public abstract class Player extends GameModel implements Serializable {
 				this.health--;			
 				this.scoreStreak = 0;
 			}
-			
 		}
 	}
 
 	/**
-	 * Sets the player name.
+	 * Sets the player's name.
 	 *
 	 * @param playerName the new player name
 	 */
