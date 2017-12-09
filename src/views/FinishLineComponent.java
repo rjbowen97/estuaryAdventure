@@ -10,7 +10,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JComponent;
 
 import controller.Settings;
-import models.finishLine;
+import models.FinishLine;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -19,7 +19,7 @@ import models.finishLine;
 public class FinishLineComponent extends JComponent implements Serializable {
 
 	/** The finish line model. */
-	private finishLine finishLineModel;
+	private FinishLine finishLineModel;
 
 	/** The finish line image. */
 	private BufferedImage finishLineImage;
@@ -28,10 +28,10 @@ public class FinishLineComponent extends JComponent implements Serializable {
 	 * Instantiates a new finish line component. In our final project we were not able to instantiate the view portion of our 
 	 * finishline as we could not find a way to make it reappear at a certain point on game restart
 	 *
-	 * @param finishLine the finish line
+	 * @param FinishLine the finish line
 	 */
-	public FinishLineComponent(finishLine finishLine) {
-		this.finishLineModel = finishLine;
+	public FinishLineComponent(FinishLine FinishLine) {
+		this.finishLineModel = FinishLine;
 
 		this.setSpriteImage();
 
@@ -49,7 +49,7 @@ public class FinishLineComponent extends JComponent implements Serializable {
 
 		BufferedImage unscaledFinishLineImage = null;
 
-		File finishLineFile = new File("./Graphics/finishLine/finishLine.png");
+		File finishLineFile = new File("./Graphics/FinishLine/FinishLine.png");
 
 		if (finishLineFile.exists() == true) {
 			try {
