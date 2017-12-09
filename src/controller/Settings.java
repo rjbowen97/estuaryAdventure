@@ -6,17 +6,18 @@ import java.io.InputStream;
 import java.io.Serializable;
 import java.util.Properties;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class Settings.
+ * This class contains static methods that can be called to get global Settings to be used throughout
+ * the codebase.
  */
 public class Settings implements Serializable {
 	
-	/** The global settings. */
+	/** A properties object to store globale settings. */
 	private static Properties globalSettings;
 	
 	/**
-	 * Instantiates a new settings. All methods of settings are static, instantiating simply eliminates null pointer errors
+	 * Instantiates a new settings object.
+	 * All methods of settings are static, instantiating simply eliminates null pointer errors
 	 */
 	public Settings() {
 		globalSettings = new Properties();

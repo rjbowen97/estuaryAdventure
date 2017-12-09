@@ -2,9 +2,8 @@ package controller;
 
 import java.io.Serializable;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Enum GameState.
+ * An enum representing the different gameStates the game is in
  */
 public enum GameState implements Serializable {
 	

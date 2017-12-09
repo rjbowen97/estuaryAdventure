@@ -2,7 +2,6 @@ package controller;
 
 import java.io.Serializable;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class GameOverGameState.
  */

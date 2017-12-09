@@ -4,9 +4,8 @@ import java.io.Serializable;
 
 import quizMiniGame.MiniGame;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class MiniGameGameState.
+ * The Class MiniGameGameState, which is responsible for the business logic of the minigame.
  */
 public class MiniGameGameState implements GameStateInterface, Serializable {
 
@@ -45,7 +44,7 @@ public class MiniGameGameState implements GameStateInterface, Serializable {
 	}
 
 	/**
-	 * Sets the mini game current player answer.
+	 * Stores the answer supplied by the player in the minigame.
 	 *
 	 * @param currentPlayerAnswer the new mini game current player answer
 	 */

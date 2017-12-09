@@ -13,7 +13,6 @@ import models.ScoreBoardManager;
 import models.finishLine;
 
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class GameWrapper. In this class, the game is set up and run.
  */
@@ -23,7 +22,7 @@ public class GameWrapper implements Serializable {
 	public static Controller controller;
 	
 	/**
-	 * The main method.
+	 * The main method, which sets up the game and then runs it
 	 *
 	 * @param args the arguments
 	 */
@@ -33,6 +32,7 @@ public class GameWrapper implements Serializable {
 	}
 	
 	/**
+	 * Instantiates a Settings object so its static methods can be used throughout the codebase and
 	 * Creates all of the models and the controller to be used in the game.
 	 */
 	private static void setUpGame() {
@@ -51,7 +51,7 @@ public class GameWrapper implements Serializable {
 	}
 	
 	/**
-	 * Loops every specified interval of time. In each loop, the controller object's tick function is called
+	 * Loops every specified interval of time. In each loop, the controller instance's tick function is called
 	 */
 	private static void startGame() {
 		while (true) {

@@ -4,9 +4,8 @@ import java.io.Serializable;
 
 import models.Menu;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class MenuGameState.
+ * MenuGameState is the first GameState to be ticked when the game is launched. Here, the menu logic is performed
  */
 public class MenuGameState implements GameStateInterface, Serializable {
 	
