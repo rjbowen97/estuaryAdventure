@@ -11,7 +11,7 @@ import models.Player;
 import models.PlayerAnimalType;
 import models.ScoreBoard;
 import models.ScoreBoardManager;
-import models.FinishLine;
+import models.finishLine;
 import views.ScoreBoardPanel;
 import views.View;
 
@@ -52,13 +52,13 @@ public class Controller implements Serializable {
 	 * @param interactableModels the interactable models
 	 * @param backgroundModels the background models
 	 * @param scoreBoard the score board
-	 * @param FinishLine the finish line
+	 * @param finishLine the finish line
 	 */
-	public Controller(Menu menuModel, Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels, ScoreBoard scoreBoard, FinishLine FinishLine) {
+	public Controller(Menu menuModel, Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels, ScoreBoard scoreBoard, finishLine finishLine) {
 		this.gameState = GameState.MENU;
 
 		this.menuGameState = new MenuGameState(this, menuModel);
-		this.activeGameState = new ActiveGameState(this, playerModel, interactableModels, backgroundModels, FinishLine);
+		this.activeGameState = new ActiveGameState(this, playerModel, interactableModels, backgroundModels, finishLine);
 		this.miniGameGameState = new MiniGameGameState(this);
 		
 		this.gameOverGameState = new GameOverGameState();
@@ -66,7 +66,7 @@ public class Controller implements Serializable {
 		this.scoreBoard = scoreBoard;
 		this.scoreBoardPanel = new ScoreBoardPanel(this.scoreBoard, this);
 		
-		this.view = new View(playerModel, backgroundModels, this, interactableModels, FinishLine);
+		this.view = new View(playerModel, backgroundModels, this, interactableModels, finishLine);
 		this.view.setContentPane(view.menuPanel);
 		this.view.setLocationRelativeTo(null);
 	}
@@ -205,7 +205,7 @@ public class Controller implements Serializable {
 		activeGameState.interactableModels = interactables;
 		view.activeGameStatePanel.interactableComponent.interactableModels = interactables;
 		
-		this.activeGameState.finishLineModel = new FinishLine(Settings.getFinishLineRelease(), this);
+		this.activeGameState.finishLineModel = new finishLine(Settings.getFinishLineRelease(), this);
 		this.activeGameState.setTickNumber(0);
 		
 		miniGameGameState.miniGame.resetMiniGame();

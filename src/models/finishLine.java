@@ -7,9 +7,9 @@ import controller.Controller;
 import controller.Settings;
 
 /**
- * The Class FinishLine, which ends the game when a player collides with it.
+ * The Class finishLine, which ends the game when a player collides with it.
  */
-public class FinishLine extends Interactable implements Serializable{
+public class finishLine extends Interactable implements Serializable{
 	
 	/** The controller. */
 	public Controller controller;
@@ -17,7 +17,7 @@ public class FinishLine extends Interactable implements Serializable{
 	/** Determines if the finish line is in the air or underwater. */
 	public boolean isInWater = true;
 	
-	/** Determines if a player is hurt when colliding with a FinishLine. */
+	/** Determines if a player is hurt when colliding with a finishLine. */
 	private boolean isFood;	
 	
 	/** The activation tick. */
@@ -32,7 +32,7 @@ public class FinishLine extends Interactable implements Serializable{
 	 * @param activationTick the activation tick to deploy the finish line
 	 * @param controller the controller
 	 */
-	public FinishLine(int activationTick, Controller controller) {
+	public finishLine(int activationTick, Controller controller) {
 		this.setxPosition(Settings.getInteractableStartXPosition());
 		this.setyPosition(0);
 		this.setWidth(200);

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import models.Background;
 import models.Interactable;
 import models.Player;
-import models.FinishLine;
+import models.finishLine;
 
 /**
  * This class contains the main gameplay elements, such as the food, predators, and player
@@ -27,7 +27,7 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	public ArrayList<Background> backgroundModels;
 	
 	/** The finish line model. */
-	public FinishLine finishLineModel;
+	public finishLine finishLineModel;
 
 	/** Is set to true on the first runthrough of the game */
 	public boolean isTutorial = true;
@@ -43,14 +43,14 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	 * @param playerModel Player model constructed in the gameWrapper constructor
 	 * @param interactableModels An array of interactable models
 	 * @param backgroundModels An array of background models
-	 * @param FinishLine the finish line model
+	 * @param finishLine the finish line model
 	 */
-	public ActiveGameState(Controller controller, Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels, FinishLine FinishLine) {
+	public ActiveGameState(Controller controller, Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels, finishLine finishLine) {
 		this.controller = controller;
 		this.playerModel = playerModel;
 		this.interactableModels = interactableModels;
 		this.backgroundModels = backgroundModels;
-		this.finishLineModel = FinishLine;
+		this.finishLineModel = finishLine;
 	}
 
 	/**
