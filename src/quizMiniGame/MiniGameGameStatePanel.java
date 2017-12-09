@@ -82,6 +82,7 @@ public class MiniGameGameStatePanel extends JPanel implements ActionListener, Se
 		this.add(this.correctAnswerCountLabel);
 		
 		this.correctAnswerLabel = new JLabel();
+		this.correctAnswerLabel.setVisible(false);
 		this.add(correctAnswerLabel);
 		
 		this.setBounds(400, 400, 500, 500);
@@ -100,6 +101,7 @@ public class MiniGameGameStatePanel extends JPanel implements ActionListener, Se
 		answerAButton.setText(miniGame.getCurrentQuestionAndAnswerPair().answerA);
 		answerBButton.setText(miniGame.getCurrentQuestionAndAnswerPair().answerB);
 		answerCButton.setText(miniGame.getCurrentQuestionAndAnswerPair().answerC);
+		correctAnswerLabel.setText("Sorry, " + miniGame.getCurrentQuestionAndAnswerPair().correctAnswer + " was the correct answer!");
 	}
 
 	/* (non-Javadoc)
@@ -124,14 +126,10 @@ public class MiniGameGameStatePanel extends JPanel implements ActionListener, Se
 	 * Display correct answer.
 	 */
 	public void displayCorrectAnswer() {
-		this.correctAnswerLabel.setText("Sorry, " + miniGame.getCurrentQuestionAndAnswerPair().correctAnswer + " was the correct answer!");
-		
-		this.repaint();
-		try {
-			Thread.sleep(4000);
-			
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+		correctAnswerLabel.setVisible(true);
+	}
+	
+	public void hideCorrectAnswer() {
+		correctAnswerLabel.setVisible(false);
 	}
 }

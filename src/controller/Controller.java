@@ -267,6 +267,13 @@ public class Controller implements Serializable {
 		}
 		
 		view.miniGameGameStatePanel.displayCorrectAnswer();
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		view.miniGameGameStatePanel.hideCorrectAnswer();
 		
 		miniGameGameState.miniGame.resetMiniGame();
 		activeGameState.playerModel.resetScoreStreak();
