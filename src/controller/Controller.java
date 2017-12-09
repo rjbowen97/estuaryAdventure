@@ -243,7 +243,7 @@ public class Controller implements Serializable {
 	 * Change game state from active to minigame.
 	 */
 	public void changeGameStateFromActiveToMinigame() {
-		this.view.setContentPane(view.miniGameGameStatePanel);
+		this.view.getContentPane().add(view.miniGameGameStatePanel, new Integer(7));
 		this.gameState = GameState.MINI_GAME;
 	}
 	
@@ -278,7 +278,7 @@ public class Controller implements Serializable {
 		miniGameGameState.miniGame.resetMiniGame();
 		activeGameState.playerModel.resetScoreStreak();
 		
-		this.view.setContentPane(view.activeGameStatePanel);
+		this.view.getContentPane().remove(view.miniGameGameStatePanel);
 		this.gameState = GameState.ACTIVE;
 		
 	}
