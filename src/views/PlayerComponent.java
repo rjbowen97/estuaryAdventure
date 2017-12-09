@@ -35,7 +35,7 @@ class PlayerComponent extends JComponent implements Serializable {
 	private transient BufferedImage fishSprite;
 	
 	/**
-	 * Instantiates a new player component.
+	 * Instantiates a new player component. This displays either a bird or a fish depending on the environment of the player
 	 *
 	 * @param playerModel the player model
 	 * @param controller the controller

@@ -42,7 +42,7 @@ public class View extends JFrame implements Serializable {
 	Controller controller;
 	
 	/**
-	 * Instantiates a new view.
+	 * Instantiates a new view. This puts everything in the view together into one class so it can be easily modifiable
 	 *
 	 * @param playerModel the player model
 	 * @param backgroundModels the background models
@@ -68,7 +68,7 @@ public class View extends JFrame implements Serializable {
 	}
 	
 	/**
-	 * Initialize key bindings.
+	 * Initialize key bindings. This is how we were able to change states in testing and attempt to root out bugs
 	 */
 	private void initializeKeyBindings() {
 		InputMap rootPaneInputMap = this.getRootPane().getInputMap();
@@ -100,7 +100,7 @@ public class View extends JFrame implements Serializable {
 	}
 	
 	/**
-	 * The Class ActivateActiveGameStateAction.
+	 * The Class ActivateActiveGameStateAction. On change to active gamestate this instantiates the state
 	 */
 	private class ActivateActiveGameStateAction extends AbstractAction {
 		
@@ -115,7 +115,7 @@ public class View extends JFrame implements Serializable {
 	}
 
 	/**
-	 * The Class ActivateMiniGameGameStateAction.
+	 * The Class ActivateMiniGameGameStateAction. On change to the minigame this instantiates the state
 	 */
 	private class ActivateMiniGameGameStateAction extends AbstractAction {
 		
@@ -130,7 +130,7 @@ public class View extends JFrame implements Serializable {
 	}
 
 	/**
-	 * The Class ActivateGameOverGameStateAction.
+	 * The Class ActivateGameOverGameStateAction. Not used in our final edition
 	 */
 	private class ActivateGameOverGameStateAction extends AbstractAction {
 		
@@ -160,7 +160,7 @@ public class View extends JFrame implements Serializable {
 	}
 
 	/**
-	 * The Class ChangeToWaterLevelAction.
+	 * The Class ChangeToWaterLevelAction. On change in levels this instantiates the state
 	 */
 	private class ChangeToWaterLevelAction extends AbstractAction {
 		
@@ -175,7 +175,7 @@ public class View extends JFrame implements Serializable {
 	}
 
 	/**
-	 * The Class ResetLevelAction.
+	 * The Class ResetLevelAction. Resets the level through the controller
 	 */
 	private class ResetLevelAction extends AbstractAction {
 		

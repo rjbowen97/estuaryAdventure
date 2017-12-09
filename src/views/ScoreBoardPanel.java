@@ -51,7 +51,8 @@ public class ScoreBoardPanel extends JPanel implements Serializable, ActionListe
 		private Controller controller;
 	
 	/**
-	 * Instantiates a new score board panel.
+	 * Instantiates a new score board panel. This is what the user sees when they complete the game or it is ended
+	 * This contains scores of previous users who have played the game as well as Replay and quit buttons
 	 *
 	 * @param scoreBoard the score board
 	 * @param controller the controller
@@ -110,6 +111,7 @@ public class ScoreBoardPanel extends JPanel implements Serializable, ActionListe
 
 	/* (non-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 * Listens for user interaction, replays and resets the level upon the ReplayButton and Quits on quit
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {

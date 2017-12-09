@@ -90,7 +90,8 @@ public class MenuPanel extends JPanel implements ActionListener, Serializable {
 	private JPanel namePanel;
 
 	/**
-	 * Instantiates a new menu panel.
+	 * Instantiates a new menu panel. This is what the user sees when the game is started, includes a field for the name, 
+	 * a set name button as well as play and quit buttons
 	 *
 	 * @param in_menu the in menu
 	 * @param controller the controller
@@ -181,6 +182,7 @@ public class MenuPanel extends JPanel implements ActionListener, Serializable {
 
 	/* (non-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+	 * Listens for the user input and checks for naughty words in the name field
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {

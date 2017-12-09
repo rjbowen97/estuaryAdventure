@@ -34,13 +34,14 @@ public class ActiveGameStatePanel extends JLayeredPane implements Serializable {
 	public HUDPane hudPane;
 	
 	/**
-	 * Instantiates a new active game state panel.
+	 * Instantiates a new active game state panel. Combines all the models in the view so they can be displayed in 
+	 * our active Jpanel.
 	 *
 	 * @param playerModel the player model
 	 * @param backgroundModels the background models
 	 * @param controller the controller
 	 * @param interactableModels the interactable models
-	 * @param finishLine the finish line
+	 * @param finishLine the finish line, ended up not being used in our final project as we could not find a way to make it disappear on game restart
 	 */
 	public ActiveGameStatePanel(Player playerModel, ArrayList<Background> backgroundModels, Controller controller, ArrayList<Interactable> interactableModels, finishLine finishLine) {
 		
@@ -60,17 +61,17 @@ public class ActiveGameStatePanel extends JLayeredPane implements Serializable {
 		this.setVisible(true);
 	}
 	
-	/** The step one area. */
+	/** Step one area is our first pause state, used to give the user instructions in a tutorial. */
 	private JTextArea stepOneArea;
 	
-	/** The step two area. */
+	/** Step two area is our second pause state, used to give the user instructions in a tutorial. */
 	private JTextArea stepTwoArea;
 	
 	
 	/**
-	 * Adds the tutorial text.
+	 * Adds the tutorial text using JtextArea so that the user can recieve instructions in the tutorial.
 	 *
-	 * @param step the step
+	 * @param step step is our designation for each pause state
 	 */
 	public void addTutorialText(int step) {
 		
