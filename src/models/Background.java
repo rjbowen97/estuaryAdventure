@@ -4,16 +4,15 @@ import java.io.Serializable;
 
 import controller.Settings;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class Background.
+ * The Class Background, which are models used in the active gamestate panel.
  */
 public class Background extends GameModel implements Serializable {
 
-	/** The background layer index. */
+	/** The background layer index, which is used to determine the layer sprite and speed of the background */
 	public int backgroundLayerIndex;
 	
-	/** The background type. */
+	/** The background type, which is used to determine the level sprite of the background */
 	public String backgroundType;
 
 	/**
@@ -51,11 +50,6 @@ public class Background extends GameModel implements Serializable {
 	}
 	
 	/* (non-Javadoc)
-	 * @see models.GameModel#setSpriteImage()
-	 */
-	
-	
-	/* (non-Javadoc)
 	 * @see models.GameModel#onTick()
 	 */
 	@Override
@@ -64,7 +58,7 @@ public class Background extends GameModel implements Serializable {
 	}
 
 	/**
-	 * Update background positions.
+	 * Updates background positions.
 	 */
 	private void updateBackgroundPositions() {
 		int newXPosition = this.getXPosition() - this.getSpeed();

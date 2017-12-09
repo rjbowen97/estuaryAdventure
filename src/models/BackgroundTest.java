@@ -14,7 +14,6 @@ import org.junit.Test;
 
 import controller.Settings;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class BackgroundTest.
  */

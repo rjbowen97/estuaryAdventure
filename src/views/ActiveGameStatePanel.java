@@ -11,7 +11,7 @@ import controller.Settings;
 import models.Background;
 import models.Interactable;
 import models.Player;
-import models.finishLine;
+import models.FinishLine;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -41,15 +41,15 @@ public class ActiveGameStatePanel extends JLayeredPane implements Serializable {
 	 * @param backgroundModels the background models
 	 * @param controller the controller
 	 * @param interactableModels the interactable models
-	 * @param finishLine the finish line, ended up not being used in our final project as we could not find a way to make it disappear on game restart
+	 * @param FinishLine the finish line, ended up not being used in our final project as we could not find a way to make it disappear on game restart
 	 */
-	public ActiveGameStatePanel(Player playerModel, ArrayList<Background> backgroundModels, Controller controller, ArrayList<Interactable> interactableModels, finishLine finishLine) {
+	public ActiveGameStatePanel(Player playerModel, ArrayList<Background> backgroundModels, Controller controller, ArrayList<Interactable> interactableModels, FinishLine FinishLine) {
 		
 		this.backgroundLayeredPane = new BackgroundLayeredPane(backgroundModels);
 		this.playerComponent = new PlayerComponent(playerModel, controller);
 		this.interactableComponent = new InteractableComponent(interactableModels);
 		this.hudPane = new HUDPane(playerModel);
-//		this.finishLineComponent = new FinishLineComponent(finishLine);
+//		this.finishLineComponent = new FinishLineComponent(FinishLine);
 		
 		this.add(backgroundLayeredPane, new Integer(0));
 //		this.add(finishLineComponent, new Integer(1));

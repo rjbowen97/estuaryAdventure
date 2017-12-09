@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 import controller.Settings;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class consoleGameWrapper.
  */
