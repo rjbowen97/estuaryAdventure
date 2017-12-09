@@ -10,7 +10,7 @@ import models.Menu;
 import models.Player;
 import models.ScoreBoard;
 import models.ScoreBoardManager;
-import models.finishLine;
+import models.FinishLine;
 
 
 /**
@@ -43,11 +43,11 @@ public class GameWrapper implements Serializable {
 		ArrayList<Interactable> interactableModels = new ArrayList<Interactable>(generateInteractableModels());
 		ArrayList<Background> backgroundModels = new ArrayList<Background>(generateBackgroundModels());
 		
-		finishLine finishLine = new finishLine(Settings.getFinishLineRelease(), controller);
+		FinishLine FinishLine = new FinishLine(Settings.getFinishLineRelease(), controller);
 		
 		ScoreBoard scoreBoard = ScoreBoardManager.loadScoreBoard(Settings.getScoreBoardFileName());
 		
-		controller = new Controller(menuModel, playerModel, interactableModels, backgroundModels, scoreBoard, finishLine);
+		controller = new Controller(menuModel, playerModel, interactableModels, backgroundModels, scoreBoard, FinishLine);
 	}
 	
 	/**

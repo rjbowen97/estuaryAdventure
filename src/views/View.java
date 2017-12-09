@@ -15,7 +15,7 @@ import controller.Settings;
 import models.Background;
 import models.Interactable;
 import models.Player;
-import models.finishLine;
+import models.FinishLine;
 import quizMiniGame.MiniGameGameStatePanel;
 
 // TODO: Auto-generated Javadoc
@@ -46,11 +46,11 @@ public class View extends JFrame implements Serializable {
 	 * @param backgroundModels the background models
 	 * @param controller the controller
 	 * @param interactableModels the interactable models
-	 * @param finishLine the finish line
+	 * @param FinishLine the finish line
 	 */
-	public View(Player playerModel, ArrayList<Background> backgroundModels, Controller controller, ArrayList<Interactable> interactableModels, finishLine finishLine) {
+	public View(Player playerModel, ArrayList<Background> backgroundModels, Controller controller, ArrayList<Interactable> interactableModels, FinishLine FinishLine) {
 		
-		this.activeGameStatePanel = new ActiveGameStatePanel(playerModel, backgroundModels, controller, interactableModels, finishLine);
+		this.activeGameStatePanel = new ActiveGameStatePanel(playerModel, backgroundModels, controller, interactableModels, FinishLine);
 		this.gameOverGameStatePanel = new GameOverGameStatePanel(controller);
 		this.menuPanel = new MenuPanel(controller.menuGameState.menu, controller);
 		this.miniGameGameStatePanel = new MiniGameGameStatePanel(controller.miniGameGameState.miniGame, controller);
