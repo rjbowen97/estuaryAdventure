@@ -126,10 +126,18 @@ public class MiniGameGameStatePanel extends JPanel implements ActionListener, Se
 	 * Display correct answer.
 	 */
 	public void displayCorrectAnswer() {
+		answerAButton.setVisible(false);
+		answerBButton.setVisible(false);
+		answerCButton.setVisible(false);
 		correctAnswerLabel.setVisible(true);
+		
 	}
-	
+
 	public void hideCorrectAnswer() {
+		answerAButton.setVisible(true);
+		answerBButton.setVisible(true);
+		answerCButton.setVisible(true);
+		
 		correctAnswerLabel.setVisible(false);
 	}
 }
