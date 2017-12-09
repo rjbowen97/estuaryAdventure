@@ -25,7 +25,8 @@ public class FinishLineComponent extends JComponent implements Serializable {
 	private BufferedImage finishLineImage;
 
 	/**
-	 * Instantiates a new finish line component.
+	 * Instantiates a new finish line component. In our final project we were not able to instantiate the view portion of our 
+	 * finishline as we could not find a way to make it reappear at a certain point on game restart
 	 *
 	 * @param finishLine the finish line
 	 */

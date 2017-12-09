@@ -35,7 +35,8 @@ public class InteractableComponent extends JComponent implements Serializable {
 	private transient BufferedImage waterNotFoodImage;
 	
 	/**
-	 * Instantiates a new interactable component.
+	 * Instantiates a new interactable component. Our interactable components include both the food that the user should go for
+	 * and the enemy the user should avoid. This instantiates a view over these components
 	 *
 	 * @param interactableModels the interactable models
 	 */
@@ -83,7 +84,7 @@ public class InteractableComponent extends JComponent implements Serializable {
 	}
 
 	/**
-	 * Sets the sprite image.
+	 * Sets the sprite image. Scales the sprite properly and places it over the appropriate component
 	 */
 	protected void setSpriteImage() {
 

@@ -35,7 +35,7 @@ public class HUDPane extends JPanel implements Serializable {
 	
 	
 	/**
-	 * Instantiates a new HUD pane.
+	 * Instantiates a new HUD pane. This view takes in the PlayerModel and shows this information to the user in a HUD form
 	 *
 	 * @param playerModel the player model
 	 */

@@ -18,9 +18,10 @@ public class BackgroundLayeredPane extends JLayeredPane implements Serializable 
 	private ArrayList<BackgroundComponent> backgroundComponents;
 	
 	/**
-	 * Instantiates a new background layered pane.
+	 * Instantiates a new background layered pane. We decided to use a layered pane in order to have different background speeds
+	 * for each layer in order to increase immersion and visual efficacy 
 	 *
-	 * @param backgroundModels the background models
+	 * @param backgroundModels the background models, list of layered panes used
 	 */
 	public BackgroundLayeredPane(ArrayList<Background> backgroundModels) {
 		

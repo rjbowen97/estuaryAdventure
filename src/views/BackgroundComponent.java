@@ -28,9 +28,9 @@ public class BackgroundComponent extends JComponent implements Serializable {
 	private transient BufferedImage waterBackgroundImage;
 	
 	/**
-	 * Instantiates a new background component.
+	 * Instantiates a new background component. Allows us to switch between air and water levels
 	 *
-	 * @param backgroundModel the background model
+	 * @param backgroundModel the background model, air or water
 	 */
 	BackgroundComponent(Background backgroundModel){
 		this.setBounds(0,0,Settings.getViewDimensionXDefault(),Settings.getViewDimensionYDefault());
@@ -57,7 +57,7 @@ public class BackgroundComponent extends JComponent implements Serializable {
 	}
 	
 	/**
-	 * Sets the background sprite image.
+	 * Sets the background sprite image. Air or Water, Scales the background image properly to fit the screen
 	 */
 	public void setBackgroundSpriteImage() {
 		String airBackgroundFilePath = "./Graphics/Backgrounds/AirBackground/b" + backgroundModel.backgroundLayerIndex + ".png";

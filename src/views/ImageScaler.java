@@ -20,8 +20,8 @@ public class ImageScaler {
 	 * Scale image to input ratio.
 	 *
 	 * @param nonScaledImage the non scaled image
-	 * @param xRatio the x ratio
-	 * @param yRatio the y ratio
+	 * @param xRatio the x ratio to scale the image to
+	 * @param yRatio the y ratio to scale the image to
 	 * @return the buffered image
 	 */
 	public BufferedImage scaleImageToInputRatio(BufferedImage nonScaledImage, double xRatio, double yRatio) {
