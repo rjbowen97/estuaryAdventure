@@ -8,7 +8,6 @@ import models.Background;
 import models.Interactable;
 import models.Player;
 import models.finishLine;
-import sun.security.krb5.internal.TicketFlags;
 
 /**
  * This class contains the main gameplay elements, such as the food, predators, and player

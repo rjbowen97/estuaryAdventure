@@ -11,7 +11,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import controller.Controller;
-import controller.Settings;
 
 // TODO: Auto-generated Javadoc
 /**

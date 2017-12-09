@@ -1,5 +1,6 @@
 package views;
 
+import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,19 +9,13 @@ import java.util.ArrayList;
 
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 
 import controller.Controller;
-import controller.Settings;
 import models.ScoreBoard;
 import models.ScoreBoardEntry;
-import java.awt.Button;
-import java.awt.Component;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import javax.swing.JButton;
 
 // TODO: Auto-generated Javadoc
 /**

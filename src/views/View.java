@@ -1,5 +1,5 @@
 package views;
-import java.awt.Toolkit;
+import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -17,8 +17,6 @@ import models.Interactable;
 import models.Player;
 import models.finishLine;
 import quizMiniGame.MiniGameGameStatePanel;
-import java.awt.Frame;
-import java.awt.GridLayout;
 
 // TODO: Auto-generated Javadoc
 /**

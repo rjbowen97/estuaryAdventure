@@ -4,7 +4,6 @@ package controller;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-import javafx.animation.SequentialTransitionBuilder;
 import models.Background;
 import models.Interactable;
 import models.Menu;

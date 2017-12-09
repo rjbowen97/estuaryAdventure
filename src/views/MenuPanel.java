@@ -1,43 +1,30 @@
 package views;
 
+import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Insets;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JSlider;
-import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.UIManager;
+import javax.swing.border.EmptyBorder;
 
 import controller.Controller;
 import controller.Settings;
 import models.Menu;
-import oracle.jrockit.jfr.parser.ParseException;
-
-import javax.swing.BoxLayout;
-import javax.swing.SwingConstants;
-import javax.swing.UIManager;
-import javax.swing.ButtonGroup;
-import java.awt.FlowLayout;
-import java.awt.Component;
-import java.awt.Rectangle;
-import javax.swing.JFormattedTextField;
-import javax.swing.JFormattedTextField.AbstractFormatter;
-import java.awt.Dimension;
-import javax.swing.JSplitPane;
-import javax.swing.border.TitledBorder;
-import javax.swing.border.EmptyBorder;
-import javax.swing.border.BevelBorder;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
 
 // TODO: Auto-generated Javadoc
 /**
