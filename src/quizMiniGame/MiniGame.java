@@ -57,15 +57,15 @@ public class MiniGame extends GameModel implements Serializable {
 		
 		Random random = new Random();
 		
-		if (currentPlayerAnswer.isEmpty()) {
+		if (getCurrentPlayerAnswer().isEmpty()) {
 			this.isActive = true;
 		}
 		
 		else {
-			if (currentPlayerAnswer.equals(currentQuestionAndAnswerPair.correctAnswer)) {
+			if (getCurrentPlayerAnswer().equals(currentQuestionAndAnswerPair.correctAnswer)) {
 				this.isActive = true;
 				
-				this.currentPlayerAnswer = "";
+				this.setCurrentPlayerAnswer("");
 				this.currentQuestionAndAnswerPair = this.questionAndAnswerPairs.get(random.nextInt(questionAndAnswerPairs.size()));
 				this.correctAnswerCount++;
 				
@@ -111,7 +111,7 @@ public class MiniGame extends GameModel implements Serializable {
 	 * Reset current player answer.
 	 */
 	private void resetCurrentPlayerAnswer() {
-		this.currentPlayerAnswer = "";
+		this.setCurrentPlayerAnswer("");
 	}
 
 	/* (non-Javadoc)
@@ -133,6 +133,13 @@ public class MiniGame extends GameModel implements Serializable {
 	 */
 	@Override
 	public void reset() {
+	}
+
+	/**
+	 * @return the currentPlayerAnswer
+	 */
+	public String getCurrentPlayerAnswer() {
+		return currentPlayerAnswer;
 	}
 }
 

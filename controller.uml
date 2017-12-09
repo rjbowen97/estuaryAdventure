@@ -1,0 +1,746 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_oEkLgNycEeegOpQB8_uSaw" name="controller">
+  <elementImport xmi:id="_oH-E0NycEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_oH-E0dycEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#byte"/>
+  </elementImport>
+  <elementImport xmi:id="_oH-E0tycEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+  </elementImport>
+  <elementImport xmi:id="_oH-E09ycEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+  </elementImport>
+  <elementImport xmi:id="_oH-E1NycEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
+  </elementImport>
+  <elementImport xmi:id="_oH-r4NycEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+  </elementImport>
+  <elementImport xmi:id="_oH-r4dycEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+  </elementImport>
+  <elementImport xmi:id="_oH-r4tycEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#short"/>
+  </elementImport>
+  <elementImport xmi:id="_oH-r49ycEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_oH-r5NycEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <elementImport xmi:id="_oH-r5dycEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_oH-r5tycEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <packageImport xmi:id="_oHwpcNycEeegOpQB8_uSaw">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packageImport xmi:id="_oH3-MNycEeegOpQB8_uSaw">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_oH_S8NycEeegOpQB8_uSaw" name="controller">
+    <packagedElement xmi:type="uml:Class" xmi:id="_oIGAoNycEeegOpQB8_uSaw" name="Settings" visibility="public">
+      <eAnnotations xmi:id="_oIGAodycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+        <details xmi:id="_oIGAotycEeegOpQB8_uSaw" key="documentation" value=" This class contains static methods that can be called to get global Settings to be used throughout&#xD;&#xA; the codebase.&#xD;&#xA;"/>
+      </eAnnotations>
+      <elementImport xmi:id="_oIRm0dycEeegOpQB8_uSaw" importedElement="_oIRm0NycEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_oIS08NycEeegOpQB8_uSaw" importedElement="_oISN4NycEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_oITcANycEeegOpQB8_uSaw" importedElement="_oIS08dycEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_oITcAdycEeegOpQB8_uSaw" importedElement="_oIPxotycEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_oIUDEtycEeegOpQB8_uSaw" importedElement="_oIUDEdycEeegOpQB8_uSaw" visibility="private"/>
+      <ownedAttribute xmi:id="_oIXGYNycEeegOpQB8_uSaw" name="globalSettings" visibility="private" isStatic="true" type="_oIUDEdycEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_oIXtcNycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oIXtcdycEeegOpQB8_uSaw" key="documentation" value="A properties object to store globale settings."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_oIcl8NycEeegOpQB8_uSaw" name="Settings" visibility="public">
+        <eAnnotations xmi:id="_oIcl8dycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oIcl8tycEeegOpQB8_uSaw" key="documentation" value=" Instantiates a new settings object.&#xD;&#xA; All methods of settings are static, instantiating simply eliminates null pointer errors&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oIiskNycEeegOpQB8_uSaw" name="getMillisecondsBetweenTick" visibility="public" isStatic="true">
+        <eAnnotations xmi:id="_oIiskdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oIisktycEeegOpQB8_uSaw" key="documentation" value=" Gets the milliseconds between tick.&#xD;&#xA; @return the milliseconds between tick&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_oIisk9ycEeegOpQB8_uSaw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oIj6sNycEeegOpQB8_uSaw" name="getViewDimensionXDefault" visibility="public" isStatic="true">
+        <eAnnotations xmi:id="_oIj6sdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oIj6stycEeegOpQB8_uSaw" key="documentation" value=" Gets the view dimension X default.&#xD;&#xA; @return the view dimension X default&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_oIj6s9ycEeegOpQB8_uSaw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oIlI0NycEeegOpQB8_uSaw" name="getViewDimensionYDefault" visibility="public" isStatic="true">
+        <eAnnotations xmi:id="_oIlI0dycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oIlI0tycEeegOpQB8_uSaw" key="documentation" value=" Gets the view dimension Y default.&#xD;&#xA; @return the view dimension Y default&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_oIlI09ycEeegOpQB8_uSaw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oIlv4NycEeegOpQB8_uSaw" name="getPlayerStartXPosition" visibility="public" isStatic="true">
+        <eAnnotations xmi:id="_oIlv4dycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oIlv4tycEeegOpQB8_uSaw" key="documentation" value=" Gets the player start X position.&#xD;&#xA; @return the player start X position&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_oIlv49ycEeegOpQB8_uSaw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oImW8NycEeegOpQB8_uSaw" name="getPlayerStartYPosition" visibility="public" isStatic="true">
+        <eAnnotations xmi:id="_oImW8dycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oImW8tycEeegOpQB8_uSaw" key="documentation" value=" Gets the player start Y position.&#xD;&#xA; @return the player start Y position&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_oImW89ycEeegOpQB8_uSaw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oIm-ANycEeegOpQB8_uSaw" name="getNonLandAnimalFlapSpeed" visibility="public" isStatic="true">
+        <eAnnotations xmi:id="_oIm-AdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oIm-AtycEeegOpQB8_uSaw" key="documentation" value=" Gets the non land animal flap speed.&#xD;&#xA; @return the non land animal flap speed&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_oIm-A9ycEeegOpQB8_uSaw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oInlENycEeegOpQB8_uSaw" name="getNonLandAnimalFallSpeed" visibility="public" isStatic="true">
+        <eAnnotations xmi:id="_oInlEdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oInlEtycEeegOpQB8_uSaw" key="documentation" value=" Gets the non land animal fall speed.&#xD;&#xA; @return the non land animal fall speed&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_oInlE9ycEeegOpQB8_uSaw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oIozMNycEeegOpQB8_uSaw" name="getLandAnimalShuffleSpeed" visibility="public" isStatic="true">
+        <eAnnotations xmi:id="_oIozMdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oIozMtycEeegOpQB8_uSaw" key="documentation" value=" Gets the land animal shuffle speed.&#xD;&#xA; @return the land animal shuffle speed&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_oIozM9ycEeegOpQB8_uSaw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oIpaQNycEeegOpQB8_uSaw" name="getNumberOfBackgroundLayers" visibility="public" isStatic="true">
+        <eAnnotations xmi:id="_oIpaQdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oIpaQtycEeegOpQB8_uSaw" key="documentation" value=" Gets the number of background layers.&#xD;&#xA; @return the number of background layers&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_oIpaQ9ycEeegOpQB8_uSaw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oIqoYNycEeegOpQB8_uSaw" name="getBackgroundBaseSpeed" visibility="public" isStatic="true">
+        <eAnnotations xmi:id="_oIqoYdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oIqoYtycEeegOpQB8_uSaw" key="documentation" value=" Gets the background base speed.&#xD;&#xA; @param backgroundLayerIndex the background layer index&#xD;&#xA; @return the background base speed&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_oIqoY9ycEeegOpQB8_uSaw" name="backgroundLayerIndex">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_oIqoZNycEeegOpQB8_uSaw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oIrPcNycEeegOpQB8_uSaw" name="getInteractableStartXPosition" visibility="public" isStatic="true">
+        <eAnnotations xmi:id="_oIrPcdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oIrPctycEeegOpQB8_uSaw" key="documentation" value=" Gets the interactable start X position.&#xD;&#xA; @return the interactable start X position&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_oIrPc9ycEeegOpQB8_uSaw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oIr2gNycEeegOpQB8_uSaw" name="getInteractableSpeed" visibility="public" isStatic="true">
+        <eAnnotations xmi:id="_oIr2gdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oIr2gtycEeegOpQB8_uSaw" key="documentation" value=" Gets the interactable speed.&#xD;&#xA; @return the interactable speed&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_oIr2g9ycEeegOpQB8_uSaw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oItEoNycEeegOpQB8_uSaw" name="getMiniGameRequiredScoreStreak" visibility="public" isStatic="true">
+        <eAnnotations xmi:id="_oItEodycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oItEotycEeegOpQB8_uSaw" key="documentation" value=" Gets the mini game required score streak.&#xD;&#xA; @return the mini game required score streak&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_oItEo9ycEeegOpQB8_uSaw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oItrsNycEeegOpQB8_uSaw" name="getMiniGameQuestionLimit" visibility="public" isStatic="true">
+        <eAnnotations xmi:id="_oItrsdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oItrstycEeegOpQB8_uSaw" key="documentation" value=" Gets the mini game question limit.&#xD;&#xA; @return the mini game question limit&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_oItrs9ycEeegOpQB8_uSaw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oIuSwNycEeegOpQB8_uSaw" name="getScoreBoardFileName" visibility="public" isStatic="true">
+        <eAnnotations xmi:id="_oIuSwdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oIuSwtycEeegOpQB8_uSaw" key="documentation" value=" Gets the score file name.&#xD;&#xA; @return the score file name&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_oIuSw9ycEeegOpQB8_uSaw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oIu50NycEeegOpQB8_uSaw" name="getInteractableCount" visibility="public" isStatic="true">
+        <eAnnotations xmi:id="_oIu50dycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oIu50tycEeegOpQB8_uSaw" key="documentation" value=" Gets the interactable count.&#xD;&#xA; @return the interactable count&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_oIu509ycEeegOpQB8_uSaw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oIvg4NycEeegOpQB8_uSaw" name="getInteractableReleaseInterval" visibility="public" isStatic="true">
+        <eAnnotations xmi:id="_oIvg4dycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oIvg4tycEeegOpQB8_uSaw" key="documentation" value=" Gets the interactable release interval.&#xD;&#xA; @return the interactable release interval&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_oIvg49ycEeegOpQB8_uSaw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oIwH8NycEeegOpQB8_uSaw" name="getFinishLineRelease" visibility="public" isStatic="true">
+        <eAnnotations xmi:id="_oIwH8dycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oIwH8tycEeegOpQB8_uSaw" key="documentation" value=" Gets the finish line release.&#xD;&#xA; @return the finish line release&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_oIwH89ycEeegOpQB8_uSaw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_oIGnsNycEeegOpQB8_uSaw" name="GameWrapper" visibility="public">
+      <eAnnotations xmi:id="_oIGnsdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+        <details xmi:id="_oIGnstycEeegOpQB8_uSaw" key="documentation" value=" The Class GameWrapper. In this class, the game is set up and run.&#xD;&#xA;"/>
+      </eAnnotations>
+      <elementImport xmi:id="_oI3csNycEeegOpQB8_uSaw" importedElement="_oIPxotycEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_oI3cstycEeegOpQB8_uSaw" importedElement="_oI3csdycEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_oI4DwtycEeegOpQB8_uSaw" importedElement="_oI4DwdycEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_oI4q0dycEeegOpQB8_uSaw" importedElement="_oI4q0NycEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_oI5R4dycEeegOpQB8_uSaw" importedElement="_oI5R4NycEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_oI5R49ycEeegOpQB8_uSaw" importedElement="_oI5R4tycEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_oI548dycEeegOpQB8_uSaw" importedElement="_oI548NycEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_oI6gANycEeegOpQB8_uSaw" importedElement="_oI548tycEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_oI6gAtycEeegOpQB8_uSaw" importedElement="_oI6gAdycEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_oI7HEdycEeegOpQB8_uSaw" importedElement="_oI7HENycEeegOpQB8_uSaw" visibility="private"/>
+      <ownedAttribute xmi:id="_oI9jUNycEeegOpQB8_uSaw" name="controller" visibility="public" isStatic="true" type="_oIIc4NycEeegOpQB8_uSaw" association="_oNoA4NycEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_oI9jUdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oI9jUtycEeegOpQB8_uSaw" key="documentation" value="The controller."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_oJAmoNycEeegOpQB8_uSaw" name="main" visibility="public" isStatic="true">
+        <eAnnotations xmi:id="_oJBNsNycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oJBNsdycEeegOpQB8_uSaw" key="documentation" value=" The main method, which sets up the game and then runs it&#xD;&#xA; @param args the arguments&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_oJBNstycEeegOpQB8_uSaw" name="args">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oJBNs9ycEeegOpQB8_uSaw" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oJDC4NycEeegOpQB8_uSaw" name="setUpGame" visibility="private" isStatic="true">
+        <eAnnotations xmi:id="_oJDC4dycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oJDC4tycEeegOpQB8_uSaw" key="documentation" value=" Instantiates a Settings object so its static methods can be used throughout the codebase and&#xD;&#xA; Creates all of the models and the controller to be used in the game.&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oJE4ENycEeegOpQB8_uSaw" name="startGame" visibility="private" isStatic="true">
+        <eAnnotations xmi:id="_oJE4EdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oJE4EtycEeegOpQB8_uSaw" key="documentation" value=" Loops every specified interval of time. In each loop, the controller instance's tick function is called&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oJHUUNycEeegOpQB8_uSaw" name="generateInteractableModels" visibility="private" isStatic="true">
+        <eAnnotations xmi:id="_oJHUUdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oJHUUtycEeegOpQB8_uSaw" key="documentation" value=" Generates interactable models.&#xD;&#xA; @return An array list of interactable models&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_oJHUU9ycEeegOpQB8_uSaw" type="_oI3csdycEeegOpQB8_uSaw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oJJwkNycEeegOpQB8_uSaw" name="generateBackgroundModels" visibility="private" isStatic="true">
+        <eAnnotations xmi:id="_oJJwkdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oJJwktycEeegOpQB8_uSaw" key="documentation" value=" Generates background models.&#xD;&#xA; @return An array list of background models&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_oJJwk9ycEeegOpQB8_uSaw" type="_oI3csdycEeegOpQB8_uSaw" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_oIHOwNycEeegOpQB8_uSaw" name="ActiveGameState" visibility="public">
+      <eAnnotations xmi:id="_oIHOwdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+        <details xmi:id="_oIHOwtycEeegOpQB8_uSaw" key="documentation" value=" This class contains the main gameplay elements, such as the food, predators, and player&#xD;&#xA;"/>
+      </eAnnotations>
+      <elementImport xmi:id="_oJWk4dycEeegOpQB8_uSaw" importedElement="_oJWk4NycEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_oJWk4tycEeegOpQB8_uSaw" importedElement="_oIPxotycEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_oJWk49ycEeegOpQB8_uSaw" importedElement="_oI3csdycEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_oJWk5NycEeegOpQB8_uSaw" importedElement="_oI4DwdycEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_oJXL8NycEeegOpQB8_uSaw" importedElement="_oI4q0NycEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_oJXzANycEeegOpQB8_uSaw" importedElement="_oI548NycEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_oJXzAdycEeegOpQB8_uSaw" importedElement="_oI7HENycEeegOpQB8_uSaw" visibility="private"/>
+      <ownedAttribute xmi:id="_oJZoMNycEeegOpQB8_uSaw" name="controller" visibility="public" type="_oIIc4NycEeegOpQB8_uSaw" association="_oNoA4tycEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_oJaPQNycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oJaPQdycEeegOpQB8_uSaw" key="documentation" value="The controller."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_oJcEcNycEeegOpQB8_uSaw" name="playerModel" visibility="public" type="_oI548NycEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_oJcrgNycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oJcrgdycEeegOpQB8_uSaw" key="documentation" value="The player model."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_oJgV4NycEeegOpQB8_uSaw" name="interactableModels" visibility="public" type="_oI4q0NycEeegOpQB8_uSaw" isOrdered="true" isUnique="false">
+        <eAnnotations xmi:id="_oJgV4dycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oJgV4tycEeegOpQB8_uSaw" key="documentation" value="The interactable models."/>
+        </eAnnotations>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oJgV49ycEeegOpQB8_uSaw" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_oJknUNycEeegOpQB8_uSaw" name="backgroundModels" visibility="public" type="_oI4DwdycEeegOpQB8_uSaw" isOrdered="true" isUnique="false">
+        <eAnnotations xmi:id="_oJlOYNycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oJlOYdycEeegOpQB8_uSaw" key="documentation" value="The background models."/>
+        </eAnnotations>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oJlOYtycEeegOpQB8_uSaw" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_oJnDkNycEeegOpQB8_uSaw" name="finishLineModel" visibility="public" type="_oI7HENycEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_oJnDkdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oJnDktycEeegOpQB8_uSaw" key="documentation" value="The finish line model."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_oJnqoNycEeegOpQB8_uSaw" name="isTutorial" visibility="public">
+        <eAnnotations xmi:id="_oJnqodycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oJnqotycEeegOpQB8_uSaw" key="documentation" value="Is set to true on the first runthrough of the game"/>
+        </eAnnotations>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_oJpf0NycEeegOpQB8_uSaw" name="" value="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_oJqG4NycEeegOpQB8_uSaw" name="tickNumber" visibility="private">
+        <eAnnotations xmi:id="_oJqG4dycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oJqG4tycEeegOpQB8_uSaw" key="documentation" value="Keeps track of what tick the main gameloop is on. Particularly important for 'releasing'&#xD;&#xA; foods and predators."/>
+        </eAnnotations>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_oJqG49ycEeegOpQB8_uSaw" name="" value="0">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </defaultValue>
+      </ownedAttribute>
+      <interfaceRealization xmi:id="_oJThkNycEeegOpQB8_uSaw" name="controller.GameStateInterface" client="_oIHOwNycEeegOpQB8_uSaw" supplier="_oIK5INycEeegOpQB8_uSaw" contract="_oIK5INycEeegOpQB8_uSaw"/>
+      <ownedOperation xmi:id="_oJ27MNycEeegOpQB8_uSaw" name="ActiveGameState" visibility="public">
+        <eAnnotations xmi:id="_oJ27MdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oJ27MtycEeegOpQB8_uSaw" key="documentation" value=" Instantiates a new active game state.&#xD;&#xA; @param controller The main controller created in the gameWrapper constructor&#xD;&#xA; @param playerModel Player model constructed in the gameWrapper constructor&#xD;&#xA; @param interactableModels An array of interactable models&#xD;&#xA; @param backgroundModels An array of background models&#xD;&#xA; @param FinishLine the finish line model&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_oJ27M9ycEeegOpQB8_uSaw" name="controller" type="_oIIc4NycEeegOpQB8_uSaw"/>
+        <ownedParameter xmi:id="_oJ27NNycEeegOpQB8_uSaw" name="playerModel" type="_oI548NycEeegOpQB8_uSaw"/>
+        <ownedParameter xmi:id="_oJ27NdycEeegOpQB8_uSaw" name="interactableModels" type="_oI3csdycEeegOpQB8_uSaw"/>
+        <ownedParameter xmi:id="_oJ27NtycEeegOpQB8_uSaw" name="backgroundModels" type="_oI3csdycEeegOpQB8_uSaw"/>
+        <ownedParameter xmi:id="_oJ27N9ycEeegOpQB8_uSaw" name="FinishLine" type="_oI7HENycEeegOpQB8_uSaw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oJ4wYNycEeegOpQB8_uSaw" name="onTick" visibility="public">
+        <eAnnotations xmi:id="_oJ4wYdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oJ4wYtycEeegOpQB8_uSaw" key="documentation" value=" Called every tick when the active game state is the current game state of the game.&#xD;&#xA; The tutorial script is iterated through if the current game is a tutorial&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oJ5-gNycEeegOpQB8_uSaw" name="tickTutorialScript" visibility="private">
+        <eAnnotations xmi:id="_oJ5-gdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oJ5-gtycEeegOpQB8_uSaw" key="documentation" value=" A tick based system that guides the player through how to play the game&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oJ7MoNycEeegOpQB8_uSaw" name="tickModels" visibility="private">
+        <eAnnotations xmi:id="_oJ7ModycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oJ7MotycEeegOpQB8_uSaw" key="documentation" value=" Calls helper functions to tick various models in the active game state object.&#xD;&#xA; This also checks for collisions after the models are ticked&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oJ9B0NycEeegOpQB8_uSaw" name="tickBackgroundModels" visibility="private">
+        <eAnnotations xmi:id="_oJ9B0dycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oJ9B0tycEeegOpQB8_uSaw" key="documentation" value=" Ticks each background model in the backgroundModels ArrayList.&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oJ-P8NycEeegOpQB8_uSaw" name="tickInteractableModels" visibility="private">
+        <eAnnotations xmi:id="_oJ-P8dycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oJ-P8tycEeegOpQB8_uSaw" key="documentation" value=" Ticks each interactable model in the interactableModels ArrayList.&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oKAFINycEeegOpQB8_uSaw" name="tickPlayerModel" visibility="private">
+        <eAnnotations xmi:id="_oKAFIdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oKAFItycEeegOpQB8_uSaw" key="documentation" value=" Ticks player model.&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oKBTQNycEeegOpQB8_uSaw" name="tickFinishLineModel" visibility="private">
+        <eAnnotations xmi:id="_oKBTQdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oKBTQtycEeegOpQB8_uSaw" key="documentation" value=" Ticks finish line model.&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oKChYNycEeegOpQB8_uSaw" name="detectCollisions" visibility="private">
+        <eAnnotations xmi:id="_oKChYdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oKChYtycEeegOpQB8_uSaw" key="documentation" value=" Calls helper functions to handle collision detections.&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oKEWkNycEeegOpQB8_uSaw" name="detectPlayerInteractableCollisions" visibility="private">
+        <eAnnotations xmi:id="_oKEWkdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oKEWktycEeegOpQB8_uSaw" key="documentation" value=" Detects player-interactable collisions. Goes through each interactable in the interactableModels arrayList,&#xD;&#xA; and checks if the current interactable is active. If the model is active, and its hitBox is overlapping with the&#xD;&#xA; player hitBox, then the appropriate functions are called&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oKFksNycEeegOpQB8_uSaw" name="detectPlayerFinishLineCollision" visibility="private">
+        <eAnnotations xmi:id="_oKFksdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oKFkstycEeegOpQB8_uSaw" key="documentation" value=" Detect player finish line collision.&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oKGy0NycEeegOpQB8_uSaw" name="changeGameStateIfNeeded" visibility="private">
+        <eAnnotations xmi:id="_oKGy0dycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oKGy0tycEeegOpQB8_uSaw" key="documentation" value=" Checks if the game state needs to be changed.&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oKJPENycEeegOpQB8_uSaw" name="setTickNumber" visibility="public">
+        <eAnnotations xmi:id="_oKJPEdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oKJPEtycEeegOpQB8_uSaw" key="documentation" value=" Sets the tick number.&#xD;&#xA; @param tickNumber the tickNumber to set&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_oKJPE9ycEeegOpQB8_uSaw" name="tickNumber">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oKOHkNycEeegOpQB8_uSaw" name="onPlayerComponentMouseReleased" visibility="public">
+        <eAnnotations xmi:id="_oKOHkdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oKOHktycEeegOpQB8_uSaw" key="documentation" value=" Called when a mouse click is detected.&#xD;&#xA; @param mouseEvent the mouse event&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_oKOHk9ycEeegOpQB8_uSaw" name="mouseEvent" type="_oJWk4NycEeegOpQB8_uSaw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oKOuoNycEeegOpQB8_uSaw" name="getTickNumber" visibility="public">
+        <eAnnotations xmi:id="_oKOuodycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oKOuotycEeegOpQB8_uSaw" key="documentation" value=" Gets the tick number.&#xD;&#xA; @return the tickNumber&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_oKOuo9ycEeegOpQB8_uSaw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_oIIc4NycEeegOpQB8_uSaw" name="Controller" visibility="public">
+      <eAnnotations xmi:id="_oIIc4dycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+        <details xmi:id="_oIIc4tycEeegOpQB8_uSaw" key="documentation" value=" The Class Controller.&#xD;&#xA;"/>
+      </eAnnotations>
+      <elementImport xmi:id="_oKYfoNycEeegOpQB8_uSaw" importedElement="_oIPxotycEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_oKZGsNycEeegOpQB8_uSaw" importedElement="_oI3csdycEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_oKZGsdycEeegOpQB8_uSaw" importedElement="_oI4DwdycEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_oKZGstycEeegOpQB8_uSaw" importedElement="_oI4q0NycEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_oKZtwNycEeegOpQB8_uSaw" importedElement="_oI5R4tycEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_oKZtwdycEeegOpQB8_uSaw" importedElement="_oI548NycEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_oKaU0dycEeegOpQB8_uSaw" importedElement="_oKaU0NycEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_oKaU0tycEeegOpQB8_uSaw" importedElement="_oI548tycEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_oKaU09ycEeegOpQB8_uSaw" importedElement="_oI6gAdycEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_oKa74NycEeegOpQB8_uSaw" importedElement="_oI7HENycEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_oKa749ycEeegOpQB8_uSaw" importedElement="_oKa74tycEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_oKbi8dycEeegOpQB8_uSaw" importedElement="_oKbi8NycEeegOpQB8_uSaw" visibility="private"/>
+      <ownedAttribute xmi:id="_oKf0YNycEeegOpQB8_uSaw" name="gameState" visibility="private" type="_oILgM9ycEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_oKgbcNycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oKgbcdycEeegOpQB8_uSaw" key="documentation" value="The game state."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_oKlT8NycEeegOpQB8_uSaw" name="menuGameState" visibility="public" type="_oILgMNycEeegOpQB8_uSaw" association="_oNoA49ycEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_oKlT8dycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oKlT8tycEeegOpQB8_uSaw" key="documentation" value="The menu game state."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_oKqMcNycEeegOpQB8_uSaw" name="activeGameState" visibility="public" type="_oIHOwNycEeegOpQB8_uSaw" association="_oNoA4tycEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_oKqMcdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oKqMctycEeegOpQB8_uSaw" key="documentation" value="The active game state."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_oKvE8NycEeegOpQB8_uSaw" name="miniGameGameState" visibility="public" type="_oIMHQNycEeegOpQB8_uSaw" association="_oNoA5NycEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_oKvsANycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oKvsAdycEeegOpQB8_uSaw" key="documentation" value="The mini game game state."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_oK0kgNycEeegOpQB8_uSaw" name="gameOverGameState" visibility="public" type="_oIIc49ycEeegOpQB8_uSaw" association="_oNon8NycEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_oK0kgdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oK0kgtycEeegOpQB8_uSaw" key="documentation" value="The game over game state."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_oK6EENycEeegOpQB8_uSaw" name="scoreBoard" visibility="public" type="_oI548tycEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_oK6EEdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oK6EEtycEeegOpQB8_uSaw" key="documentation" value="The score board."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_oK-8kNycEeegOpQB8_uSaw" name="scoreBoardPanel" visibility="public" type="_oKa74tycEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_oK-8kdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oK-8ktycEeegOpQB8_uSaw" key="documentation" value="The score board panel."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_oLD1ENycEeegOpQB8_uSaw" name="view" visibility="public" type="_oKbi8NycEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_oLEcINycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oLEcIdycEeegOpQB8_uSaw" key="documentation" value="The view."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_oLzb8NycEeegOpQB8_uSaw" name="Controller" visibility="public">
+        <eAnnotations xmi:id="_oLzb8dycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oLzb8tycEeegOpQB8_uSaw" key="documentation" value=" Instantiates a new controller.&#xD;&#xA; @param menuModel the menu model&#xD;&#xA; @param playerModel the player model&#xD;&#xA; @param interactableModels the interactable models&#xD;&#xA; @param backgroundModels the background models&#xD;&#xA; @param scoreBoard the score board&#xD;&#xA; @param FinishLine the finish line&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_oLzb89ycEeegOpQB8_uSaw" name="menuModel" type="_oI5R4tycEeegOpQB8_uSaw"/>
+        <ownedParameter xmi:id="_oLzb9NycEeegOpQB8_uSaw" name="playerModel" type="_oI548NycEeegOpQB8_uSaw"/>
+        <ownedParameter xmi:id="_oLzb9dycEeegOpQB8_uSaw" name="interactableModels" type="_oI3csdycEeegOpQB8_uSaw"/>
+        <ownedParameter xmi:id="_oLzb9tycEeegOpQB8_uSaw" name="backgroundModels" type="_oI3csdycEeegOpQB8_uSaw"/>
+        <ownedParameter xmi:id="_oLzb99ycEeegOpQB8_uSaw" name="scoreBoard" type="_oI548tycEeegOpQB8_uSaw"/>
+        <ownedParameter xmi:id="_oLzb-NycEeegOpQB8_uSaw" name="FinishLine" type="_oI7HENycEeegOpQB8_uSaw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oL4UcNycEeegOpQB8_uSaw" name="tick" visibility="public">
+        <eAnnotations xmi:id="_oL4UcdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oL4UctycEeegOpQB8_uSaw" key="documentation" value=" Called every tick by the gameWrapper main loop. Depending on the current game state, the appropriate onTick function is called.&#xD;&#xA; This function then updates the view.&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oL7-0NycEeegOpQB8_uSaw" name="setInteractablesToTutorialSet" visibility="public">
+        <eAnnotations xmi:id="_oL7-0dycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oL7-0tycEeegOpQB8_uSaw" key="documentation" value=" Sets the interactable models to a controlled tutorial set.&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oMAQQNycEeegOpQB8_uSaw" name="pauseActiveGameStateModels" visibility="public">
+        <eAnnotations xmi:id="_oMAQQdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oMAQQtycEeegOpQB8_uSaw" key="documentation" value=" Pauses active game state models for the tutorial.&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oMEhsNycEeegOpQB8_uSaw" name="resumeActiveGameStateModels" visibility="public">
+        <eAnnotations xmi:id="_oMEhsdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oMEhstycEeegOpQB8_uSaw" key="documentation" value=" Resumes the active game state for the tutorial.&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oMJaMNycEeegOpQB8_uSaw" name="triggerTutorialStepDisplay" visibility="public">
+        <eAnnotations xmi:id="_oMJaMdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oMJaMtycEeegOpQB8_uSaw" key="documentation" value=" Displays the appropriate text field during the tutorial.&#xD;&#xA; @param step The step of the text field currently being shown&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_oMJaM9ycEeegOpQB8_uSaw" name="step">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oMNEkNycEeegOpQB8_uSaw" name="changeLevels" visibility="public">
+        <eAnnotations xmi:id="_oMNEkdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oMNEktycEeegOpQB8_uSaw" key="documentation" value=" Changes the sprites of the models to reflect the current level environment (water or air).&#xD;&#xA; @param targetLevel the level to change to (a for air, or w for water)&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_oMNEk9ycEeegOpQB8_uSaw" name="targetLevel">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oMRWANycEeegOpQB8_uSaw" name="resetLevel" visibility="public">
+        <eAnnotations xmi:id="_oMRWAdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oMRWAtycEeegOpQB8_uSaw" key="documentation" value=" resets the current level by setting the model properties to their starting values.&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oMVAYNycEeegOpQB8_uSaw" name="generateInteractableModels" visibility="private">
+        <eAnnotations xmi:id="_oMVAYdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oMVAYtycEeegOpQB8_uSaw" key="documentation" value=" Generates interactable models based on the amount of interactables and the&#xD;&#xA; release time intervals set in the globalSettings.properties file.&#xD;&#xA; @return the ArrayList of interactable models&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_oMVAY9ycEeegOpQB8_uSaw" type="_oI3csdycEeegOpQB8_uSaw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oMYqwNycEeegOpQB8_uSaw" name="changeGameStateFromMenuToActive" visibility="public">
+        <eAnnotations xmi:id="_oMYqwdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oMYqwtycEeegOpQB8_uSaw" key="documentation" value=" Changes the game state from menu to active.&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oMbuENycEeegOpQB8_uSaw" name="changeGameStateFromActiveToMinigame" visibility="public">
+        <eAnnotations xmi:id="_oMbuEdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oMbuEtycEeegOpQB8_uSaw" key="documentation" value=" Changes the game state from active to minigame.&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oMgmkNycEeegOpQB8_uSaw" name="changeGameStateFromGameOverToMenu" visibility="public">
+        <eAnnotations xmi:id="_oMgmkdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oMgmktycEeegOpQB8_uSaw" key="documentation" value=" Changes the game state from game over to menu.&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oMvQENycEeegOpQB8_uSaw" name="changeGameStateFromMiniGameToActive" visibility="public">
+        <eAnnotations xmi:id="_oMvQEdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oMvQEtycEeegOpQB8_uSaw" key="documentation" value=" Changes the game state from mini game to active. If the player answers more than zero questions correct,&#xD;&#xA; a helper method is called&#xD;&#xA; @param correctAnswerCount The amount of questions answered correctly by the player in the miniGame's main loop&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_oMvQE9ycEeegOpQB8_uSaw" name="correctAnswerCount">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oM0IkNycEeegOpQB8_uSaw" name="changeGameStateFromActiveToGameOver" visibility="public">
+        <eAnnotations xmi:id="_oM0IkdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oM0IktycEeegOpQB8_uSaw" key="documentation" value=" Changes the game state from active to game over.&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oM5oINycEeegOpQB8_uSaw" name="setPlayerName" visibility="public">
+        <eAnnotations xmi:id="_oM5oIdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oM5oItycEeegOpQB8_uSaw" key="documentation" value=" Sets the player name.&#xD;&#xA; @param playerName new player name&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_oM5oI9ycEeegOpQB8_uSaw" name="playerName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_oIIc49ycEeegOpQB8_uSaw" name="GameOverGameState" visibility="public">
+      <eAnnotations xmi:id="_oIIc5NycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+        <details xmi:id="_oIIc5dycEeegOpQB8_uSaw" key="documentation" value=" The Class GameOverGameState.&#xD;&#xA;"/>
+      </eAnnotations>
+      <elementImport xmi:id="_oM7dUNycEeegOpQB8_uSaw" importedElement="_oIPxotycEeegOpQB8_uSaw" visibility="private"/>
+      <ownedAttribute xmi:id="_oM8EYNycEeegOpQB8_uSaw" name="tickNumber" visibility="private">
+        <eAnnotations xmi:id="_oM8EYdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oM8EYtycEeegOpQB8_uSaw" key="documentation" value="The tick number."/>
+        </eAnnotations>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_oM8EY9ycEeegOpQB8_uSaw" name="" value="0">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </defaultValue>
+      </ownedAttribute>
+      <interfaceRealization xmi:id="_oM62QNycEeegOpQB8_uSaw" name="controller.GameStateInterface" client="_oIIc49ycEeegOpQB8_uSaw" supplier="_oIK5INycEeegOpQB8_uSaw" contract="_oIK5INycEeegOpQB8_uSaw"/>
+      <ownedOperation xmi:id="_oM8EZNycEeegOpQB8_uSaw" name="GameOverGameState" visibility="public">
+        <eAnnotations xmi:id="_oM8EZdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oM8EZtycEeegOpQB8_uSaw" key="documentation" value=" Instantiates a new game over game state.&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oM8rcNycEeegOpQB8_uSaw" name="onTick" visibility="public">
+        <eAnnotations xmi:id="_oM8rcdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oM8rctycEeegOpQB8_uSaw" key="documentation" value=" called each tick by the controller if this is the current active gameState.&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_oIK5INycEeegOpQB8_uSaw" name="GameStateInterface" visibility="public">
+      <eAnnotations xmi:id="_oIK5IdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+        <details xmi:id="_oIK5ItycEeegOpQB8_uSaw" key="documentation" value=" A functional interface GameStateInterface, which necessitates any game state has&#xD;&#xA; a function to be called when it must be ticked&#xD;&#xA;"/>
+      </eAnnotations>
+      <generalization xmi:id="_oM95kNycEeegOpQB8_uSaw" general="_oIPxotycEeegOpQB8_uSaw"/>
+      <ownedOperation xmi:id="_oM_HsNycEeegOpQB8_uSaw" name="onTick" visibility="public"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_oILgMNycEeegOpQB8_uSaw" name="MenuGameState" visibility="public">
+      <eAnnotations xmi:id="_oILgMdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+        <details xmi:id="_oILgMtycEeegOpQB8_uSaw" key="documentation" value=" MenuGameState is the first GameState to be ticked when the game is launched. Here, the menu logic is performed&#xD;&#xA;"/>
+      </eAnnotations>
+      <elementImport xmi:id="_oNXiMNycEeegOpQB8_uSaw" importedElement="_oIPxotycEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_oNXiMdycEeegOpQB8_uSaw" importedElement="_oI5R4tycEeegOpQB8_uSaw" visibility="private"/>
+      <ownedAttribute xmi:id="_oNYJQNycEeegOpQB8_uSaw" name="controller" visibility="public" type="_oIIc4NycEeegOpQB8_uSaw" association="_oNoA49ycEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_oNYwUNycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oNYwUdycEeegOpQB8_uSaw" key="documentation" value="The controller."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_oNZXYNycEeegOpQB8_uSaw" name="menu" visibility="public" type="_oI5R4tycEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_oNZ-cNycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oNZ-cdycEeegOpQB8_uSaw" key="documentation" value="The menu."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <interfaceRealization xmi:id="_oNW7INycEeegOpQB8_uSaw" name="controller.GameStateInterface" client="_oILgMNycEeegOpQB8_uSaw" supplier="_oIK5INycEeegOpQB8_uSaw" contract="_oIK5INycEeegOpQB8_uSaw"/>
+      <ownedOperation xmi:id="_oNbzoNycEeegOpQB8_uSaw" name="MenuGameState" visibility="public">
+        <eAnnotations xmi:id="_oNcasNycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oNcasdycEeegOpQB8_uSaw" key="documentation" value=" Instantiates a new menu game state.&#xD;&#xA; @param controller the main controller&#xD;&#xA; @param menu the menu model&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_oNcastycEeegOpQB8_uSaw" name="controller" type="_oIIc4NycEeegOpQB8_uSaw"/>
+        <ownedParameter xmi:id="_oNcas9ycEeegOpQB8_uSaw" name="menu" type="_oI5R4tycEeegOpQB8_uSaw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oNdo0NycEeegOpQB8_uSaw" name="onTick" visibility="public"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_oILgM9ycEeegOpQB8_uSaw" name="GameState" visibility="public">
+      <eAnnotations xmi:id="_oILgNNycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+        <details xmi:id="_oILgNdycEeegOpQB8_uSaw" key="documentation" value=" An enum representing the different gameStates the game is in&#xD;&#xA;"/>
+      </eAnnotations>
+      <elementImport xmi:id="_oNfeANycEeegOpQB8_uSaw" importedElement="_oIPxotycEeegOpQB8_uSaw" visibility="private"/>
+      <ownedLiteral xmi:id="_oNfeAdycEeegOpQB8_uSaw" name="MENU">
+        <eAnnotations xmi:id="_oNfeA9ycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oNfeBNycEeegOpQB8_uSaw" key="documentation" value="The menu."/>
+        </eAnnotations>
+        <specification xmi:type="uml:LiteralInteger" xmi:id="_oNfeAtycEeegOpQB8_uSaw"/>
+      </ownedLiteral>
+      <ownedLiteral xmi:id="_oNgFENycEeegOpQB8_uSaw" name="ACTIVE">
+        <eAnnotations xmi:id="_oNgFEtycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oNgFE9ycEeegOpQB8_uSaw" key="documentation" value="The active."/>
+        </eAnnotations>
+        <specification xmi:type="uml:LiteralInteger" xmi:id="_oNgFEdycEeegOpQB8_uSaw"/>
+      </ownedLiteral>
+      <ownedLiteral xmi:id="_oNgFFNycEeegOpQB8_uSaw" name="MINI_GAME">
+        <eAnnotations xmi:id="_oNgFFtycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oNgFF9ycEeegOpQB8_uSaw" key="documentation" value="The mini game."/>
+        </eAnnotations>
+        <specification xmi:type="uml:LiteralInteger" xmi:id="_oNgFFdycEeegOpQB8_uSaw"/>
+      </ownedLiteral>
+      <ownedLiteral xmi:id="_oNgFGNycEeegOpQB8_uSaw" name="GAME_OVER">
+        <eAnnotations xmi:id="_oNgFGtycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oNgFG9ycEeegOpQB8_uSaw" key="documentation" value="The game over."/>
+        </eAnnotations>
+        <specification xmi:type="uml:LiteralInteger" xmi:id="_oNgFGdycEeegOpQB8_uSaw"/>
+      </ownedLiteral>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_oIMHQNycEeegOpQB8_uSaw" name="MiniGameGameState" visibility="public">
+      <eAnnotations xmi:id="_oIMHQdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+        <details xmi:id="_oIMHQtycEeegOpQB8_uSaw" key="documentation" value=" The Class MiniGameGameState, which is responsible for the business logic of the minigame.&#xD;&#xA;"/>
+      </eAnnotations>
+      <elementImport xmi:id="_oNihUNycEeegOpQB8_uSaw" importedElement="_oIPxotycEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_oNjIYtycEeegOpQB8_uSaw" importedElement="_oNjIYdycEeegOpQB8_uSaw" visibility="private"/>
+      <ownedAttribute xmi:id="_oNjvcNycEeegOpQB8_uSaw" name="controller" visibility="public" type="_oIIc4NycEeegOpQB8_uSaw" association="_oNoA5NycEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_oNjvcdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oNjvctycEeegOpQB8_uSaw" key="documentation" value="The controller."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_oNkWgNycEeegOpQB8_uSaw" name="miniGame" visibility="public" type="_oNjIYdycEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_oNkWgdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oNkWgtycEeegOpQB8_uSaw" key="documentation" value="The mini game."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_oNk9kNycEeegOpQB8_uSaw" name="tickNumber" visibility="private">
+        <eAnnotations xmi:id="_oNk9kdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oNk9ktycEeegOpQB8_uSaw" key="documentation" value="The tick number."/>
+        </eAnnotations>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_oNk9k9ycEeegOpQB8_uSaw" name="" value="0">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </defaultValue>
+      </ownedAttribute>
+      <interfaceRealization xmi:id="_oNh6QNycEeegOpQB8_uSaw" name="controller.GameStateInterface" client="_oIMHQNycEeegOpQB8_uSaw" supplier="_oIK5INycEeegOpQB8_uSaw" contract="_oIK5INycEeegOpQB8_uSaw"/>
+      <ownedOperation xmi:id="_oNmLsNycEeegOpQB8_uSaw" name="MiniGameGameState" visibility="public">
+        <eAnnotations xmi:id="_oNmLsdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oNmLstycEeegOpQB8_uSaw" key="documentation" value=" Instantiates a new mini game game state.&#xD;&#xA; @param controller the main controller&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_oNmLs9ycEeegOpQB8_uSaw" name="controller" type="_oIIc4NycEeegOpQB8_uSaw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oNmywNycEeegOpQB8_uSaw" name="onTick" visibility="public">
+        <eAnnotations xmi:id="_oNmywdycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oNmywtycEeegOpQB8_uSaw" key="documentation" value=" Called every tick when this game state is the current active game state.&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_oNnZ0NycEeegOpQB8_uSaw" name="setMiniGameCurrentPlayerAnswer" visibility="public">
+        <eAnnotations xmi:id="_oNnZ0dycEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_oNnZ0tycEeegOpQB8_uSaw" key="documentation" value=" Stores the answer supplied by the player in the minigame.&#xD;&#xA; @param currentPlayerAnswer the new mini game current player answer&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_oNnZ09ycEeegOpQB8_uSaw" name="currentPlayerAnswer">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_oNoA4NycEeegOpQB8_uSaw" name="controller_target" memberEnd="_oI9jUNycEeegOpQB8_uSaw _oNoA4dycEeegOpQB8_uSaw">
+      <ownedEnd xmi:id="_oNoA4dycEeegOpQB8_uSaw" name="target" type="_oIGnsNycEeegOpQB8_uSaw" association="_oNoA4NycEeegOpQB8_uSaw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_oNoA4tycEeegOpQB8_uSaw" name="controller_activeGameState" memberEnd="_oJZoMNycEeegOpQB8_uSaw _oKqMcNycEeegOpQB8_uSaw"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_oNoA49ycEeegOpQB8_uSaw" name="menuGameState_controller" memberEnd="_oKlT8NycEeegOpQB8_uSaw _oNYJQNycEeegOpQB8_uSaw"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_oNoA5NycEeegOpQB8_uSaw" name="miniGameGameState_controller" memberEnd="_oKvE8NycEeegOpQB8_uSaw _oNjvcNycEeegOpQB8_uSaw"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_oNon8NycEeegOpQB8_uSaw" name="gameOverGameState_target" memberEnd="_oK0kgNycEeegOpQB8_uSaw _oNon8dycEeegOpQB8_uSaw">
+      <ownedEnd xmi:id="_oNon8dycEeegOpQB8_uSaw" name="target" type="_oIIc4NycEeegOpQB8_uSaw" association="_oNon8NycEeegOpQB8_uSaw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_oNuHgNycEeegOpQB8_uSaw" name="controller_io" client="_oH_S8NycEeegOpQB8_uSaw" supplier="_oIPxodycEeegOpQB8_uSaw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_oNuHgdycEeegOpQB8_uSaw" name="controller_util" client="_oH_S8NycEeegOpQB8_uSaw" supplier="_oIUDENycEeegOpQB8_uSaw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_oNuHgtycEeegOpQB8_uSaw" name="controller_models" client="_oH_S8NycEeegOpQB8_uSaw" supplier="_oI4DwNycEeegOpQB8_uSaw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_oNuHg9ycEeegOpQB8_uSaw" name="controller_event" client="_oH_S8NycEeegOpQB8_uSaw" supplier="_oJV90dycEeegOpQB8_uSaw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_oNuukNycEeegOpQB8_uSaw" name="controller_views" client="_oH_S8NycEeegOpQB8_uSaw" supplier="_oKa74dycEeegOpQB8_uSaw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_oNuukdycEeegOpQB8_uSaw" name="controller_quizMiniGame" client="_oH_S8NycEeegOpQB8_uSaw" supplier="_oNjIYNycEeegOpQB8_uSaw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_oIPxoNycEeegOpQB8_uSaw" name="java">
+    <packagedElement xmi:type="uml:Package" xmi:id="_oIPxodycEeegOpQB8_uSaw" name="io">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_oIPxotycEeegOpQB8_uSaw" name="Serializable"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_oIRm0NycEeegOpQB8_uSaw" name="FileInputStream"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_oISN4NycEeegOpQB8_uSaw" name="IOException"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_oIS08dycEeegOpQB8_uSaw" name="InputStream"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_oIUDENycEeegOpQB8_uSaw" name="util">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_oIUDEdycEeegOpQB8_uSaw" name="Properties"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_oI3csdycEeegOpQB8_uSaw" name="ArrayList"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_oJV90NycEeegOpQB8_uSaw" name="awt">
+      <packagedElement xmi:type="uml:Package" xmi:id="_oJV90dycEeegOpQB8_uSaw" name="event">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_oJWk4NycEeegOpQB8_uSaw" name="MouseEvent"/>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_oI4DwNycEeegOpQB8_uSaw" name="models">
+    <packagedElement xmi:type="uml:DataType" xmi:id="_oI4DwdycEeegOpQB8_uSaw" name="Background"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_oI4q0NycEeegOpQB8_uSaw" name="Interactable"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_oI5R4NycEeegOpQB8_uSaw" name="LandAnimal"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_oI5R4tycEeegOpQB8_uSaw" name="Menu"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_oI548NycEeegOpQB8_uSaw" name="Player"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_oI548tycEeegOpQB8_uSaw" name="ScoreBoard"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_oI6gAdycEeegOpQB8_uSaw" name="ScoreBoardManager"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_oI7HENycEeegOpQB8_uSaw" name="FinishLine"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_oKaU0NycEeegOpQB8_uSaw" name="PlayerAnimalType"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_oKa74dycEeegOpQB8_uSaw" name="views">
+    <packagedElement xmi:type="uml:DataType" xmi:id="_oKa74tycEeegOpQB8_uSaw" name="ScoreBoardPanel"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_oKbi8NycEeegOpQB8_uSaw" name="View"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_oNjIYNycEeegOpQB8_uSaw" name="quizMiniGame">
+    <packagedElement xmi:type="uml:DataType" xmi:id="_oNjIYdycEeegOpQB8_uSaw" name="MiniGame"/>
+  </packagedElement>
+</uml:Model>

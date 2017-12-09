@@ -1,0 +1,4 @@
+WARNING - 23:59:04: First conversion pass
+WARNING - 23:59:06: Second pass : generating package usages
+WARNING - 23:59:06: Saving uml file /resource/estuaryAdventure/src/views/views.uml
+WARNING - 23:59:06: Uml file /resource/estuaryAdventure/src/views/views.uml saved

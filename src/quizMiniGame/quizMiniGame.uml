@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_lwFyANydEeegOpQB8_uSaw" name="quizMiniGame">
+  <elementImport xmi:id="_lwZUAtydEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_lwZUA9ydEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#byte"/>
+  </elementImport>
+  <elementImport xmi:id="_lwZUBNydEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+  </elementImport>
+  <elementImport xmi:id="_lwZUBdydEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+  </elementImport>
+  <elementImport xmi:id="_lwZUBtydEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
+  </elementImport>
+  <elementImport xmi:id="_lwZUB9ydEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+  </elementImport>
+  <elementImport xmi:id="_lwZUCNydEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+  </elementImport>
+  <elementImport xmi:id="_lwZUCdydEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#short"/>
+  </elementImport>
+  <elementImport xmi:id="_lwZUCtydEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_lwZUC9ydEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <elementImport xmi:id="_lwZUDNydEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_lwZUDdydEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <packageImport xmi:id="_lwZUANydEeegOpQB8_uSaw">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packageImport xmi:id="_lwZUAdydEeegOpQB8_uSaw">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_lwZUDtydEeegOpQB8_uSaw" name="quizMiniGame">
+    <packagedElement xmi:type="uml:Class" xmi:id="_lwZUD9ydEeegOpQB8_uSaw" name="MiniGame" visibility="public">
+      <eAnnotations xmi:id="_lwZUENydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+        <details xmi:id="_lwZUEdydEeegOpQB8_uSaw" key="documentation" value=" The Class MiniGame, which keeps track of the player's answer and various question and answer pairs&#xD;&#xA;"/>
+      </eAnnotations>
+      <elementImport xmi:id="_lwkTI9ydEeegOpQB8_uSaw" importedElement="_lwcXUtydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_lwk6MtydEeegOpQB8_uSaw" importedElement="_lwk6MdydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_lwk6NNydEeegOpQB8_uSaw" importedElement="_lwk6M9ydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_lwk6N9ydEeegOpQB8_uSaw" importedElement="_lwk6NtydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_lwk6ONydEeegOpQB8_uSaw" importedElement="_lwkTIdydEeegOpQB8_uSaw" visibility="private"/>
+      <generalization xmi:id="_lwkTItydEeegOpQB8_uSaw" general="_lwkTIdydEeegOpQB8_uSaw"/>
+      <ownedAttribute xmi:id="_lwnWcNydEeegOpQB8_uSaw" name="questionAndAnswerPairs" visibility="private" type="_lwaiI9ydEeegOpQB8_uSaw" isOrdered="true" isUnique="false" association="_lx1ecNydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_lwnWcdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lwnWctydEeegOpQB8_uSaw" key="documentation" value="The question and answer pairs."/>
+        </eAnnotations>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lwnWc9ydEeegOpQB8_uSaw" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_lwokkNydEeegOpQB8_uSaw" name="currentQuestionAndAnswerPair" visibility="private" type="_lwaiI9ydEeegOpQB8_uSaw" association="_lx1ectydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_lwokkdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lwokktydEeegOpQB8_uSaw" key="documentation" value="The current question and answer pair."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_lwpLoNydEeegOpQB8_uSaw" name="currentPlayerAnswer" visibility="private">
+        <eAnnotations xmi:id="_lwpLodydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lwpLotydEeegOpQB8_uSaw" key="documentation" value="The current player answer."/>
+        </eAnnotations>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_lwpLo9ydEeegOpQB8_uSaw" name="" value="&quot;&quot;">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_lwpLpNydEeegOpQB8_uSaw" name="correctAnswerCount" visibility="public">
+        <eAnnotations xmi:id="_lwpLpdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lwpLptydEeegOpQB8_uSaw" key="documentation" value="The number of questions answered correctly by the player."/>
+        </eAnnotations>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_lwpLp9ydEeegOpQB8_uSaw" name="" value="0">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_lwpysNydEeegOpQB8_uSaw" name="questionLimit" visibility="public">
+        <eAnnotations xmi:id="_lwpysdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lwpystydEeegOpQB8_uSaw" key="documentation" value="The amount of questions able to be answered in a row before the minigame ends."/>
+        </eAnnotations>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_lwpys9ydEeegOpQB8_uSaw" name="isActive" visibility="public">
+        <eAnnotations xmi:id="_lwpytNydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lwpytdydEeegOpQB8_uSaw" key="documentation" value="True if the minigame is currently being playerd."/>
+        </eAnnotations>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_lwpyttydEeegOpQB8_uSaw" name="" value="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </defaultValue>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_lwpyt9ydEeegOpQB8_uSaw" name="MiniGame" visibility="public">
+        <eAnnotations xmi:id="_lwpyuNydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lwpyudydEeegOpQB8_uSaw" key="documentation" value=" Instantiates a new MiniGame.&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_lws2ANydEeegOpQB8_uSaw" name="onTick" visibility="public">
+        <eAnnotations xmi:id="_lws2AdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lws2AtydEeegOpQB8_uSaw" key="documentation" value=" What the model is to perform when ticked.&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_lwvSQNydEeegOpQB8_uSaw" name="updateCorrectAnswerFlag" visibility="private">
+        <eAnnotations xmi:id="_lwvSQdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lwvSQtydEeegOpQB8_uSaw" key="documentation" value=" Updates the correct answer flag if the player answers the current question and answer pair.&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_lwv5UNydEeegOpQB8_uSaw" name="getCurrentQuestionAndAnswerPair" visibility="public">
+        <eAnnotations xmi:id="_lwv5UdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lwv5UtydEeegOpQB8_uSaw" key="documentation" value=" Gets the current question and answer pair.&#xD;&#xA; @return the current question and answer pair&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_lwv5U9ydEeegOpQB8_uSaw" type="_lwaiI9ydEeegOpQB8_uSaw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_lwxHcNydEeegOpQB8_uSaw" name="setCurrentPlayerAnswer" visibility="public">
+        <eAnnotations xmi:id="_lwxHcdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lwxHctydEeegOpQB8_uSaw" key="documentation" value=" Sets the current player answer.&#xD;&#xA; @param currentPlayerAnswer the new current player answer&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_lwxHc9ydEeegOpQB8_uSaw" name="currentPlayerAnswer">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_lwyVkNydEeegOpQB8_uSaw" name="resetMiniGame" visibility="public">
+        <eAnnotations xmi:id="_lwyVkdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lwyVktydEeegOpQB8_uSaw" key="documentation" value=" Reset mini game.&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_lwy8oNydEeegOpQB8_uSaw" name="resetCurrentPlayerAnswer" visibility="private">
+        <eAnnotations xmi:id="_lwy8odydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lwy8otydEeegOpQB8_uSaw" key="documentation" value=" Reset current player answer.&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_lw1Y4NydEeegOpQB8_uSaw" name="setHitbox" visibility="protected">
+        <eAnnotations xmi:id="_lw1Y4dydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lw1Y4tydEeegOpQB8_uSaw" key="documentation" value=" Sets the hitbox for the gamemodel based on its width and height.&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_lw4cMNydEeegOpQB8_uSaw" name="updateHitbox" visibility="protected">
+        <eAnnotations xmi:id="_lw4cMdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lw4cMtydEeegOpQB8_uSaw" key="documentation" value=" Updates the game models' hitbox position.&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_lw8toNydEeegOpQB8_uSaw" name="reset" visibility="public">
+        <eAnnotations xmi:id="_lw8todydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lw8totydEeegOpQB8_uSaw" key="documentation" value=" Resets the model to a state as if it was just created&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_lw-i0NydEeegOpQB8_uSaw" name="getCurrentPlayerAnswer" visibility="public">
+        <eAnnotations xmi:id="_lw-i0dydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lw-i0tydEeegOpQB8_uSaw" key="documentation" value=" @return the currentPlayerAnswer&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_lw-i09ydEeegOpQB8_uSaw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_lwZ7ENydEeegOpQB8_uSaw" name="QuestionAndAnswerPairsReader" visibility="public">
+      <eAnnotations xmi:id="_lwZ7EdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+        <details xmi:id="_lwZ7EtydEeegOpQB8_uSaw" key="documentation" value=" The Class QuestionAndAnswerPairsReader, which reads question and answer pairs from an XML document&#xD;&#xA;"/>
+      </eAnnotations>
+      <elementImport xmi:id="_lxAYAdydEeegOpQB8_uSaw" importedElement="_lxAYANydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_lxAYAtydEeegOpQB8_uSaw" importedElement="_lwcXUtydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_lxAYA9ydEeegOpQB8_uSaw" importedElement="_lwk6MdydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_lxA_ENydEeegOpQB8_uSaw" importedElement="_lxAYB9ydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_lxA_EtydEeegOpQB8_uSaw" importedElement="_lxA_EdydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_lxA_F9ydEeegOpQB8_uSaw" importedElement="_lxA_FtydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_lxBmIdydEeegOpQB8_uSaw" importedElement="_lxBmINydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_lxCNMNydEeegOpQB8_uSaw" importedElement="_lxBmItydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_lxCNMtydEeegOpQB8_uSaw" importedElement="_lxCNMdydEeegOpQB8_uSaw" visibility="private"/>
+      <ownedOperation xmi:id="_lxDbUNydEeegOpQB8_uSaw" name="getQuestionAndAnswerPairs" visibility="public">
+        <eAnnotations xmi:id="_lxDbUdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lxDbUtydEeegOpQB8_uSaw" key="documentation" value=" Gets the question and answer pairs.&#xD;&#xA; @return the question and answer pairs&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_lxDbU9ydEeegOpQB8_uSaw" type="_lwk6MdydEeegOpQB8_uSaw" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_lxFQgNydEeegOpQB8_uSaw" name="getQuestionAndAnswerPairsDocumentFromXML" visibility="public">
+        <eAnnotations xmi:id="_lxFQgdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lxFQgtydEeegOpQB8_uSaw" key="documentation" value=" Gets the question and answer pairs document from XML.&#xD;&#xA; @return the question and answer pairs document read from XML&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_lxFQg9ydEeegOpQB8_uSaw" type="_lxA_FtydEeegOpQB8_uSaw" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_lwaiINydEeegOpQB8_uSaw" name="MiniGameGameStatePanel" visibility="public">
+      <eAnnotations xmi:id="_lwaiIdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+        <details xmi:id="_lwaiItydEeegOpQB8_uSaw" key="documentation" value=" The Class MiniGameGameStatePanel.&#xD;&#xA;"/>
+      </eAnnotations>
+      <elementImport xmi:id="_lxMlRNydEeegOpQB8_uSaw" importedElement="_lxMlQ9ydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_lxMlRtydEeegOpQB8_uSaw" importedElement="_lxMlRdydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_lxMlSNydEeegOpQB8_uSaw" importedElement="_lxMlR9ydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_lxNMUNydEeegOpQB8_uSaw" importedElement="_lxJh8tydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_lxNMUdydEeegOpQB8_uSaw" importedElement="_lwcXUtydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_lxNMU9ydEeegOpQB8_uSaw" importedElement="_lxNMUtydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_lxNMVdydEeegOpQB8_uSaw" importedElement="_lxNMVNydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_lxNMVtydEeegOpQB8_uSaw" importedElement="_lxMlQdydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_lxNMWNydEeegOpQB8_uSaw" importedElement="_lxNMV9ydEeegOpQB8_uSaw" visibility="private"/>
+      <generalization xmi:id="_lxMlQtydEeegOpQB8_uSaw" general="_lxMlQdydEeegOpQB8_uSaw"/>
+      <ownedAttribute xmi:id="_lxPBgNydEeegOpQB8_uSaw" name="miniGame" type="_lwZUD9ydEeegOpQB8_uSaw" association="_lx1edNydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_lxPBgdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lxPBgtydEeegOpQB8_uSaw" key="documentation" value="The MiniGame model to display."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_lxQ2sNydEeegOpQB8_uSaw" name="controller" type="_lxNMV9ydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_lxQ2sdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lxQ2stydEeegOpQB8_uSaw" key="documentation" value="The controller."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_lxSr4NydEeegOpQB8_uSaw" name="questionLabel" type="_lxNMVNydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_lxSr4dydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lxSr4tydEeegOpQB8_uSaw" key="documentation" value="The question label."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_lxVIINydEeegOpQB8_uSaw" name="answerAButton" type="_lxNMUtydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_lxVIIdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lxVIItydEeegOpQB8_uSaw" key="documentation" value="The answer A button."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_lxW9UNydEeegOpQB8_uSaw" name="answerBButton" type="_lxNMUtydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_lxW9UdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lxXkYNydEeegOpQB8_uSaw" key="documentation" value="The answer B button."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_lxZZkNydEeegOpQB8_uSaw" name="answerCButton" type="_lxNMUtydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_lxaAoNydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lxaAodydEeegOpQB8_uSaw" key="documentation" value="The answer C button."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_lxcc4NydEeegOpQB8_uSaw" name="correctAnswerCountLabel" type="_lxNMVNydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_lxcc4dydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lxcc4tydEeegOpQB8_uSaw" key="documentation" value="The correct answer count label."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_lxe5INydEeegOpQB8_uSaw" name="correctAnswerLabel" type="_lxNMVNydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_lxe5IdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lxe5ItydEeegOpQB8_uSaw" key="documentation" value="The correct answer label."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_lxncANydEeegOpQB8_uSaw" name="MiniGameGameStatePanel" visibility="public">
+        <eAnnotations xmi:id="_lxncAdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lxncAtydEeegOpQB8_uSaw" key="documentation" value=" Instantiates a new MiniGame game state panel.&#xD;&#xA; @param miniGame the miniGame&#xD;&#xA; @param controller the controller&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_lxncA9ydEeegOpQB8_uSaw" name="miniGame" type="_lwZUD9ydEeegOpQB8_uSaw"/>
+        <ownedParameter xmi:id="_lxncBNydEeegOpQB8_uSaw" name="controller" type="_lxNMV9ydEeegOpQB8_uSaw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_lxrtcNydEeegOpQB8_uSaw" name="paintComponent" visibility="public">
+        <eAnnotations xmi:id="_lxrtcdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lxrtctydEeegOpQB8_uSaw" key="documentation" value=" Displays to the screen the current state of the Minigame, including the question and possible answers.&#xD;&#xA; Displays the player's correct answer streak .&#xD;&#xA; Displays the correct answer to the current question if answered wrong&#xD;&#xA; &#xD;&#xA; @see javax.swing.JComponent#paintComponent(java.awt.Graphics)&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_lxrtc9ydEeegOpQB8_uSaw" name="g" type="_lxMlQ9ydEeegOpQB8_uSaw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_lxv-4NydEeegOpQB8_uSaw" name="actionPerformed" visibility="public">
+        <eAnnotations xmi:id="_lxv-4dydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lxv-4tydEeegOpQB8_uSaw" key="documentation" value=" Detects if one of the answer buttons is clicked&#xD;&#xA; @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_lxv-49ydEeegOpQB8_uSaw" name="e" type="_lxMlR9ydEeegOpQB8_uSaw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_lxx0ENydEeegOpQB8_uSaw" name="displayCorrectAnswer" visibility="public">
+        <eAnnotations xmi:id="_lxx0EdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lxx0EtydEeegOpQB8_uSaw" key="documentation" value=" Displays the correct answer if the player selects the wrong button.&#xD;&#xA; Also hides the buttons so the player is not tempted to click them anymore&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_lxzCMNydEeegOpQB8_uSaw" name="hideCorrectAnswer" visibility="public">
+        <eAnnotations xmi:id="_lxzCMdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lxzCMtydEeegOpQB8_uSaw" key="documentation" value=" Rehides the correct answer label&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_lwaiI9ydEeegOpQB8_uSaw" name="QuestionAndAnswerPair" visibility="public">
+      <eAnnotations xmi:id="_lwaiJNydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+        <details xmi:id="_lwaiJdydEeegOpQB8_uSaw" key="documentation" value=" The Class QuestionAndAnswerPair, which consists of a question, several possible answers, and the &#xD;&#xA; index of the correct answer&#xD;&#xA;"/>
+      </eAnnotations>
+      <elementImport xmi:id="_lxzpQNydEeegOpQB8_uSaw" importedElement="_lwcXUtydEeegOpQB8_uSaw" visibility="private"/>
+      <ownedAttribute xmi:id="_lxzpQdydEeegOpQB8_uSaw" name="question">
+        <eAnnotations xmi:id="_lxzpQtydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lxzpQ9ydEeegOpQB8_uSaw" key="documentation" value="The question."/>
+        </eAnnotations>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_lx0QUNydEeegOpQB8_uSaw" name="answerA">
+        <eAnnotations xmi:id="_lx0QUdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lx0QUtydEeegOpQB8_uSaw" key="documentation" value="The answer A."/>
+        </eAnnotations>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_lx0QU9ydEeegOpQB8_uSaw" name="answerB">
+        <eAnnotations xmi:id="_lx0QVNydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lx0QVdydEeegOpQB8_uSaw" key="documentation" value="The answer B."/>
+        </eAnnotations>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_lx0QVtydEeegOpQB8_uSaw" name="answerC">
+        <eAnnotations xmi:id="_lx0QV9ydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lx0QWNydEeegOpQB8_uSaw" key="documentation" value="The answer C."/>
+        </eAnnotations>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_lx0QWdydEeegOpQB8_uSaw" name="correctAnswer">
+        <eAnnotations xmi:id="_lx03YNydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lx03YdydEeegOpQB8_uSaw" key="documentation" value="The correct answer index."/>
+        </eAnnotations>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_lx03YtydEeegOpQB8_uSaw" name="QuestionAndAnswerPair" visibility="public">
+        <eAnnotations xmi:id="_lx03Y9ydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_lx03ZNydEeegOpQB8_uSaw" key="documentation" value=" Instantiates a new question and answer pair.&#xD;&#xA; @param question the question&#xD;&#xA; @param answerA the answer A&#xD;&#xA; @param answerB the answer B&#xD;&#xA; @param answerC the answer C&#xD;&#xA; @param correctAnswer the correct answer index&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_lx03ZdydEeegOpQB8_uSaw" name="question">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_lx03ZtydEeegOpQB8_uSaw" name="answerA">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_lx03Z9ydEeegOpQB8_uSaw" name="answerB">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_lx03aNydEeegOpQB8_uSaw" name="answerC">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_lx03adydEeegOpQB8_uSaw" name="correctAnswer">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_lx1ecNydEeegOpQB8_uSaw" name="questionAndAnswerPairs_target" memberEnd="_lwnWcNydEeegOpQB8_uSaw _lx1ecdydEeegOpQB8_uSaw">
+      <ownedEnd xmi:id="_lx1ecdydEeegOpQB8_uSaw" name="target" type="_lwZUD9ydEeegOpQB8_uSaw" association="_lx1ecNydEeegOpQB8_uSaw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_lx1ectydEeegOpQB8_uSaw" name="currentQuestionAndAnswerPair_target" memberEnd="_lwokkNydEeegOpQB8_uSaw _lx1ec9ydEeegOpQB8_uSaw">
+      <ownedEnd xmi:id="_lx1ec9ydEeegOpQB8_uSaw" name="target" type="_lwZUD9ydEeegOpQB8_uSaw" association="_lx1ectydEeegOpQB8_uSaw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_lx1edNydEeegOpQB8_uSaw" name="miniGame_target" memberEnd="_lxPBgNydEeegOpQB8_uSaw _lx1eddydEeegOpQB8_uSaw">
+      <ownedEnd xmi:id="_lx1eddydEeegOpQB8_uSaw" name="target" type="_lwaiINydEeegOpQB8_uSaw" association="_lx1edNydEeegOpQB8_uSaw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_lx_2gNydEeegOpQB8_uSaw" name="quizMiniGame_io" client="_lwZUDtydEeegOpQB8_uSaw" supplier="_lwcXUdydEeegOpQB8_uSaw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_lx_2gdydEeegOpQB8_uSaw" name="quizMiniGame_util" client="_lwZUDtydEeegOpQB8_uSaw" supplier="_lwk6MNydEeegOpQB8_uSaw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_lyAdkNydEeegOpQB8_uSaw" name="quizMiniGame_controller" client="_lwZUDtydEeegOpQB8_uSaw" supplier="_lwk6NdydEeegOpQB8_uSaw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_lyAdkdydEeegOpQB8_uSaw" name="quizMiniGame_models" client="_lwZUDtydEeegOpQB8_uSaw" supplier="_lwkTINydEeegOpQB8_uSaw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_lyAdktydEeegOpQB8_uSaw" name="quizMiniGame_parsers" client="_lwZUDtydEeegOpQB8_uSaw" supplier="_lxAYBtydEeegOpQB8_uSaw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_lyAdk9ydEeegOpQB8_uSaw" name="quizMiniGame_dom" client="_lwZUDtydEeegOpQB8_uSaw" supplier="_lxA_FdydEeegOpQB8_uSaw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_lyAdlNydEeegOpQB8_uSaw" name="quizMiniGame_awt" client="_lwZUDtydEeegOpQB8_uSaw" supplier="_lxJh8NydEeegOpQB8_uSaw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_lyAdldydEeegOpQB8_uSaw" name="quizMiniGame_event" client="_lwZUDtydEeegOpQB8_uSaw" supplier="_lxJh8dydEeegOpQB8_uSaw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_lyAdltydEeegOpQB8_uSaw" name="quizMiniGame_swing" client="_lwZUDtydEeegOpQB8_uSaw" supplier="_lxMlQNydEeegOpQB8_uSaw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_lwcXUNydEeegOpQB8_uSaw" name="java">
+    <packagedElement xmi:type="uml:Package" xmi:id="_lwcXUdydEeegOpQB8_uSaw" name="io">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_lwcXUtydEeegOpQB8_uSaw" name="Serializable"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_lxAYANydEeegOpQB8_uSaw" name="File"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_lwk6MNydEeegOpQB8_uSaw" name="util">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_lwk6MdydEeegOpQB8_uSaw" name="ArrayList"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_lwk6M9ydEeegOpQB8_uSaw" name="Random"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_lxJh8NydEeegOpQB8_uSaw" name="awt">
+      <packagedElement xmi:type="uml:Package" xmi:id="_lxJh8dydEeegOpQB8_uSaw" name="event">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_lxJh8tydEeegOpQB8_uSaw" name="ActionListener"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_lxMlR9ydEeegOpQB8_uSaw" name="ActionEvent"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_lxMlQ9ydEeegOpQB8_uSaw" name="Graphics"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_lxMlRdydEeegOpQB8_uSaw" name="Insets"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_lwkTINydEeegOpQB8_uSaw" name="models">
+    <packagedElement xmi:type="uml:DataType" xmi:id="_lwkTIdydEeegOpQB8_uSaw" name="GameModel"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_lwk6NdydEeegOpQB8_uSaw" name="controller">
+    <packagedElement xmi:type="uml:DataType" xmi:id="_lwk6NtydEeegOpQB8_uSaw" name="Settings"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_lxNMV9ydEeegOpQB8_uSaw" name="Controller"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_lxAYBNydEeegOpQB8_uSaw" name="javax">
+    <packagedElement xmi:type="uml:Package" xmi:id="_lxAYBdydEeegOpQB8_uSaw" name="xml">
+      <packagedElement xmi:type="uml:Package" xmi:id="_lxAYBtydEeegOpQB8_uSaw" name="parsers">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_lxAYB9ydEeegOpQB8_uSaw" name="DocumentBuilder"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_lxA_EdydEeegOpQB8_uSaw" name="DocumentBuilderFactory"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_lxMlQNydEeegOpQB8_uSaw" name="swing">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_lxMlQdydEeegOpQB8_uSaw" name="JPanel"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_lxNMUtydEeegOpQB8_uSaw" name="JButton"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_lxNMVNydEeegOpQB8_uSaw" name="JLabel"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_lxA_E9ydEeegOpQB8_uSaw" name="org">
+    <packagedElement xmi:type="uml:Package" xmi:id="_lxA_FNydEeegOpQB8_uSaw" name="w3c">
+      <packagedElement xmi:type="uml:Package" xmi:id="_lxA_FdydEeegOpQB8_uSaw" name="dom">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_lxA_FtydEeegOpQB8_uSaw" name="Document"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_lxBmINydEeegOpQB8_uSaw" name="Element"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_lxBmItydEeegOpQB8_uSaw" name="Node"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_lxCNMdydEeegOpQB8_uSaw" name="NodeList"/>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

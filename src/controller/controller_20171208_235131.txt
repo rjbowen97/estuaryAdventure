@@ -1,0 +1,19 @@
+WARNING - 23:51:32: First conversion pass
+WARNING - 23:51:32: Second pass : generating package usages
+WARNING - 23:51:32: Saving uml file /resource/estuaryAdventure/controller.uml
+WARNING - 23:51:33: Uml file /resource/estuaryAdventure/controller.uml saved
+WARNING - 23:56:45: Convert models
+WARNING - 23:56:45: First conversion pass
+WARNING - 23:56:45: Second pass : generating package usages
+WARNING - 23:56:45: Saving uml file /resource/estuaryAdventure/src/models.uml
+WARNING - 23:56:45: Uml file /resource/estuaryAdventure/src/models.uml saved
+WARNING - 23:58:25: Convert quizMiniGame
+WARNING - 23:58:25: First conversion pass
+WARNING - 23:58:26: Second pass : generating package usages
+WARNING - 23:58:26: Saving uml file /resource/estuaryAdventure/src/quizMiniGame/quizMiniGame.uml
+WARNING - 23:58:26: Uml file /resource/estuaryAdventure/src/quizMiniGame/quizMiniGame.uml saved
+WARNING - 23:59:04: Convert views
+WARNING - 23:59:04: First conversion pass
+WARNING - 23:59:06: Second pass : generating package usages
+WARNING - 23:59:06: Saving uml file /resource/estuaryAdventure/src/views/views.uml
+WARNING - 23:59:06: Uml file /resource/estuaryAdventure/src/views/views.uml saved

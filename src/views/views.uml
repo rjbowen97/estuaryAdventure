@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_rjhJMNydEeegOpQB8_uSaw" name="views">
+  <elementImport xmi:id="_rj7Y4tydEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_rj7Y49ydEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#byte"/>
+  </elementImport>
+  <elementImport xmi:id="_rj7Y5NydEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+  </elementImport>
+  <elementImport xmi:id="_rj7Y5dydEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+  </elementImport>
+  <elementImport xmi:id="_rj7Y5tydEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
+  </elementImport>
+  <elementImport xmi:id="_rj7Y59ydEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+  </elementImport>
+  <elementImport xmi:id="_rj7Y6NydEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+  </elementImport>
+  <elementImport xmi:id="_rj7Y6dydEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#short"/>
+  </elementImport>
+  <elementImport xmi:id="_rj7Y6tydEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+  </elementImport>
+  <elementImport xmi:id="_rj7Y69ydEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+  </elementImport>
+  <elementImport xmi:id="_rj7Y7NydEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <elementImport xmi:id="_rj7Y7dydEeegOpQB8_uSaw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#UnlimitedNatural"/>
+  </elementImport>
+  <packageImport xmi:id="_rj7Y4NydEeegOpQB8_uSaw">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packageImport xmi:id="_rj7Y4dydEeegOpQB8_uSaw">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_rj7Y7tydEeegOpQB8_uSaw" name="views">
+    <packagedElement xmi:type="uml:Class" xmi:id="_rj7Y79ydEeegOpQB8_uSaw" name="BackgroundComponent" visibility="public">
+      <eAnnotations xmi:id="_rj7_8NydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+        <details xmi:id="_rj7_8dydEeegOpQB8_uSaw" key="documentation" value=" The Class BackgroundComponent.&#xD;&#xA;"/>
+      </eAnnotations>
+      <elementImport xmi:id="_rkMeptydEeegOpQB8_uSaw" importedElement="_rkMepdydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rkMeqdydEeegOpQB8_uSaw" importedElement="_rkMeqNydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rkNFsdydEeegOpQB8_uSaw" importedElement="_rkNFsNydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rkNFs9ydEeegOpQB8_uSaw" importedElement="_rkNFstydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rkNFtNydEeegOpQB8_uSaw" importedElement="_rkKpctydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rkNFt9ydEeegOpQB8_uSaw" importedElement="_rkNFttydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rkNFuNydEeegOpQB8_uSaw" importedElement="_rkMeotydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rkNFu9ydEeegOpQB8_uSaw" importedElement="_rkNFutydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rkNFvtydEeegOpQB8_uSaw" importedElement="_rkNFvdydEeegOpQB8_uSaw" visibility="private"/>
+      <generalization xmi:id="_rkMeo9ydEeegOpQB8_uSaw" general="_rkMeotydEeegOpQB8_uSaw"/>
+      <ownedAttribute xmi:id="_rkO64NydEeegOpQB8_uSaw" name="backgroundModel" visibility="private" type="_rkNFvdydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rkO64dydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rkO64tydEeegOpQB8_uSaw" key="documentation" value="The background model."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rkQJANydEeegOpQB8_uSaw" name="airBackgroundImage" visibility="private" type="_rkMeqNydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rkQJAdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rkQJAtydEeegOpQB8_uSaw" key="documentation" value="The air background image."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rkR-MNydEeegOpQB8_uSaw" name="waterBackgroundImage" visibility="private" type="_rkMeqNydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rkR-MdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rkR-MtydEeegOpQB8_uSaw" key="documentation" value="The water background image."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_rkUacNydEeegOpQB8_uSaw" name="BackgroundComponent">
+        <eAnnotations xmi:id="_rkUacdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rkUactydEeegOpQB8_uSaw" key="documentation" value=" Instantiates a new background component. Allows us to switch between air and water levels&#xD;&#xA; @param backgroundModel the background model, air or water&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_rkUac9ydEeegOpQB8_uSaw" name="backgroundModel" type="_rkNFvdydEeegOpQB8_uSaw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_rkbvMNydEeegOpQB8_uSaw" name="paintComponent" visibility="public">
+        <ownedParameter xmi:id="_rkbvMdydEeegOpQB8_uSaw" name="g" type="_rkMepdydEeegOpQB8_uSaw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_rkeygNydEeegOpQB8_uSaw" name="setBackgroundSpriteImage" visibility="public">
+        <eAnnotations xmi:id="_rkeygdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rkeygtydEeegOpQB8_uSaw" key="documentation" value=" Sets the background sprite image. Air or Water, Scales the background image properly to fit the screen&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_rj7_8tydEeegOpQB8_uSaw" name="FinishLineComponent" visibility="public">
+      <eAnnotations xmi:id="_rj7_89ydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+        <details xmi:id="_rj7_9NydEeegOpQB8_uSaw" key="documentation" value=" The Class FinishLineComponent.&#xD;&#xA;"/>
+      </eAnnotations>
+      <elementImport xmi:id="_rkjrAdydEeegOpQB8_uSaw" importedElement="_rkMepdydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rkjrAtydEeegOpQB8_uSaw" importedElement="_rkMeqNydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rkkSENydEeegOpQB8_uSaw" importedElement="_rkNFsNydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rkkSEdydEeegOpQB8_uSaw" importedElement="_rkNFstydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rkkSEtydEeegOpQB8_uSaw" importedElement="_rkKpctydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rkkSE9ydEeegOpQB8_uSaw" importedElement="_rkNFttydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rkkSFNydEeegOpQB8_uSaw" importedElement="_rkMeotydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rkkSFdydEeegOpQB8_uSaw" importedElement="_rkNFutydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rkkSF9ydEeegOpQB8_uSaw" importedElement="_rkkSFtydEeegOpQB8_uSaw" visibility="private"/>
+      <generalization xmi:id="_rkjrANydEeegOpQB8_uSaw" general="_rkMeotydEeegOpQB8_uSaw"/>
+      <ownedAttribute xmi:id="_rkmHQNydEeegOpQB8_uSaw" name="finishLineModel" visibility="private" type="_rkkSFtydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rkmHQdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rkmHQtydEeegOpQB8_uSaw" key="documentation" value="The finish line model."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rkv4QNydEeegOpQB8_uSaw" name="finishLineImage" visibility="private" type="_rkMeqNydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rkv4QdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rkv4QtydEeegOpQB8_uSaw" key="documentation" value="The finish line image."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_rk1X0NydEeegOpQB8_uSaw" name="FinishLineComponent" visibility="public">
+        <eAnnotations xmi:id="_rk1X0dydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rk1X0tydEeegOpQB8_uSaw" key="documentation" value=" Instantiates a new finish line component. In our final project we were not able to instantiate the view portion of our &#xD;&#xA; finishline as we could not find a way to make it reappear at a certain point on game restart&#xD;&#xA; @param FinishLine the finish line&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_rk1X09ydEeegOpQB8_uSaw" name="FinishLine" type="_rkkSFtydEeegOpQB8_uSaw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_rk4bINydEeegOpQB8_uSaw" name="setSpriteImage" visibility="protected">
+        <eAnnotations xmi:id="_rk4bIdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rk4bItydEeegOpQB8_uSaw" key="documentation" value=" Sets the sprite image.&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_rlDaQNydEeegOpQB8_uSaw" name="paintComponent" visibility="public">
+        <ownedParameter xmi:id="_rlDaQdydEeegOpQB8_uSaw" name="g" type="_rkMepdydEeegOpQB8_uSaw"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_rj7_9dydEeegOpQB8_uSaw" name="BackgroundLayeredPane" visibility="public">
+      <eAnnotations xmi:id="_rj7_9tydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+        <details xmi:id="_rj7_99ydEeegOpQB8_uSaw" key="documentation" value=" The Class BackgroundLayeredPane.&#xD;&#xA;"/>
+      </eAnnotations>
+      <elementImport xmi:id="_rlJg4tydEeegOpQB8_uSaw" importedElement="_rkKpctydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rlKH8tydEeegOpQB8_uSaw" importedElement="_rlKH8dydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rlKH89ydEeegOpQB8_uSaw" importedElement="_rlJg4NydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rlKH9NydEeegOpQB8_uSaw" importedElement="_rkNFutydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rlKH9dydEeegOpQB8_uSaw" importedElement="_rkNFvdydEeegOpQB8_uSaw" visibility="private"/>
+      <generalization xmi:id="_rlJg4dydEeegOpQB8_uSaw" general="_rlJg4NydEeegOpQB8_uSaw"/>
+      <ownedAttribute xmi:id="_rlNyUNydEeegOpQB8_uSaw" name="backgroundComponents" visibility="private" type="_rj7Y79ydEeegOpQB8_uSaw" isOrdered="true" isUnique="false" association="_ryLQQNydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rlNyUdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rlNyUtydEeegOpQB8_uSaw" key="documentation" value="The background components."/>
+        </eAnnotations>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rlNyU9ydEeegOpQB8_uSaw" value="*"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_rlQ1oNydEeegOpQB8_uSaw" name="BackgroundLayeredPane" visibility="public">
+        <eAnnotations xmi:id="_rlQ1odydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rlQ1otydEeegOpQB8_uSaw" key="documentation" value=" Instantiates a new background layered pane. We decided to use a layered pane in order to have different background speeds&#xD;&#xA; for each layer in order to increase immersion and visual efficacy &#xD;&#xA; @param backgroundModels the background models, list of layered panes used&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_rlQ1o9ydEeegOpQB8_uSaw" name="backgroundModels" type="_rlKH8dydEeegOpQB8_uSaw"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_rj8nANydEeegOpQB8_uSaw" name="InteractableComponent" visibility="public">
+      <eAnnotations xmi:id="_rj8nAdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+        <details xmi:id="_rj8nAtydEeegOpQB8_uSaw" key="documentation" value=" The Class InteractableComponent.&#xD;&#xA;"/>
+      </eAnnotations>
+      <elementImport xmi:id="_rldp8dydEeegOpQB8_uSaw" importedElement="_rkMepdydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rldp8tydEeegOpQB8_uSaw" importedElement="_rkMeqNydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rldp89ydEeegOpQB8_uSaw" importedElement="_rkNFsNydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rleRANydEeegOpQB8_uSaw" importedElement="_rkNFstydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rleRAdydEeegOpQB8_uSaw" importedElement="_rkKpctydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rleRAtydEeegOpQB8_uSaw" importedElement="_rlKH8dydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rleRA9ydEeegOpQB8_uSaw" importedElement="_rkNFttydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rleRBNydEeegOpQB8_uSaw" importedElement="_rkMeotydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rleRBdydEeegOpQB8_uSaw" importedElement="_rkNFutydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rleRB9ydEeegOpQB8_uSaw" importedElement="_rleRBtydEeegOpQB8_uSaw" visibility="private"/>
+      <generalization xmi:id="_rldp8NydEeegOpQB8_uSaw" general="_rkMeotydEeegOpQB8_uSaw"/>
+      <ownedAttribute xmi:id="_rljJgNydEeegOpQB8_uSaw" name="interactableModels" visibility="public" type="_rleRBtydEeegOpQB8_uSaw" isOrdered="true" isUnique="false">
+        <eAnnotations xmi:id="_rljJgdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rljJgtydEeegOpQB8_uSaw" key="documentation" value="The interactable models."/>
+        </eAnnotations>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rljJg9ydEeegOpQB8_uSaw" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rlllwNydEeegOpQB8_uSaw" name="airFoodImage" visibility="private" type="_rkMeqNydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rlllwdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rlllwtydEeegOpQB8_uSaw" key="documentation" value="The air food image."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rloCANydEeegOpQB8_uSaw" name="airNotFoodImage" visibility="private" type="_rkMeqNydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rloCAdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rloCAtydEeegOpQB8_uSaw" key="documentation" value="The air not food image."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rlp3MNydEeegOpQB8_uSaw" name="waterFoodImage" visibility="private" type="_rkMeqNydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rlp3MdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rlp3MtydEeegOpQB8_uSaw" key="documentation" value="The water food image."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rlrsYNydEeegOpQB8_uSaw" name="waterNotFoodImage" visibility="private" type="_rkMeqNydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rlsTcNydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rlsTcdydEeegOpQB8_uSaw" key="documentation" value="The water not food image."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_rlxzANydEeegOpQB8_uSaw" name="InteractableComponent" visibility="public">
+        <eAnnotations xmi:id="_rlxzAdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rlxzAtydEeegOpQB8_uSaw" key="documentation" value=" Instantiates a new interactable component. Our interactable components include both the food that the user should go for&#xD;&#xA; and the enemy the user should avoid. This instantiates a view over these components&#xD;&#xA; @param interactableModels the interactable models&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_rlxzA9ydEeegOpQB8_uSaw" name="interactableModels" type="_rlKH8dydEeegOpQB8_uSaw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_rl8yINydEeegOpQB8_uSaw" name="paintComponent" visibility="public">
+        <ownedParameter xmi:id="_rl8yIdydEeegOpQB8_uSaw" name="g" type="_rkMepdydEeegOpQB8_uSaw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_rmBqoNydEeegOpQB8_uSaw" name="setSpriteImage" visibility="protected">
+        <eAnnotations xmi:id="_rmBqodydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rmBqotydEeegOpQB8_uSaw" key="documentation" value=" Sets the sprite image. Scales the sprite properly and places it over the appropriate component&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_rj8nA9ydEeegOpQB8_uSaw" name="MenuPanel" visibility="public">
+      <eAnnotations xmi:id="_rj8nBNydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+        <details xmi:id="_rj8nBdydEeegOpQB8_uSaw" key="documentation" value=" The Class MenuPanel.&#xD;&#xA;"/>
+      </eAnnotations>
+      <elementImport xmi:id="_rmUlk9ydEeegOpQB8_uSaw" importedElement="_rmUlktydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rmVModydEeegOpQB8_uSaw" importedElement="_rmVMoNydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rmVMotydEeegOpQB8_uSaw" importedElement="_rkMepdydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rmVMpNydEeegOpQB8_uSaw" importedElement="_rmVMo9ydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rmVMptydEeegOpQB8_uSaw" importedElement="_rmVMpdydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rmVzsNydEeegOpQB8_uSaw" importedElement="_rmVMp9ydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rmVzsdydEeegOpQB8_uSaw" importedElement="_rmNQ0dydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rmVzstydEeegOpQB8_uSaw" importedElement="_rkNFsNydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rmVztNydEeegOpQB8_uSaw" importedElement="_rmVzs9ydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rmVztdydEeegOpQB8_uSaw" importedElement="_rkKpctydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rmVzttydEeegOpQB8_uSaw" importedElement="_rlKH8dydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rmVzuNydEeegOpQB8_uSaw" importedElement="_rmVzt9ydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rmWawdydEeegOpQB8_uSaw" importedElement="_rmWawNydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rmWaw9ydEeegOpQB8_uSaw" importedElement="_rmWawtydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rmWaxdydEeegOpQB8_uSaw" importedElement="_rmWaxNydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rmWax9ydEeegOpQB8_uSaw" importedElement="_rmWaxtydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rmXB0NydEeegOpQB8_uSaw" importedElement="_rmUlkNydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rmXB0tydEeegOpQB8_uSaw" importedElement="_rmXB0dydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rmXB1NydEeegOpQB8_uSaw" importedElement="_rmXB09ydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rmXB19ydEeegOpQB8_uSaw" importedElement="_rmXB1tydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rmXo4dydEeegOpQB8_uSaw" importedElement="_rmXo4NydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rmXo4tydEeegOpQB8_uSaw" importedElement="_rkNFutydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rmXo5NydEeegOpQB8_uSaw" importedElement="_rmXo49ydEeegOpQB8_uSaw" visibility="private"/>
+      <generalization xmi:id="_rmUlkdydEeegOpQB8_uSaw" general="_rmUlkNydEeegOpQB8_uSaw"/>
+      <ownedAttribute xmi:id="_rmb6UNydEeegOpQB8_uSaw" name="controller" visibility="private" type="_rmXo4NydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rmb6UdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rmb6UtydEeegOpQB8_uSaw" key="documentation" value="The controller."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rme9oNydEeegOpQB8_uSaw" name="menu" visibility="private" type="_rmXo49ydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rme9odydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rme9otydEeegOpQB8_uSaw" key="documentation" value="The menu."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rmioANydEeegOpQB8_uSaw" name="nameField" type="_rmWaxNydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rmioAdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rmioAtydEeegOpQB8_uSaw" key="documentation" value="The name field."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rmmSYNydEeegOpQB8_uSaw" name="setNameButton" type="_rmWawtydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rmmSYdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rmmSYtydEeegOpQB8_uSaw" key="documentation" value="The set name button."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rmp8wNydEeegOpQB8_uSaw" name="illegalName" type="_rmWaxtydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rmp8wdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rmp8wtydEeegOpQB8_uSaw" key="documentation" value="The illegal name."/>
+        </eAnnotations>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_rmp8w9ydEeegOpQB8_uSaw" name="" type="_rmWaxtydEeegOpQB8_uSaw" value="new JLabel(&quot;Illegal Name: Please Enter New Name&quot;)"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rmtnINydEeegOpQB8_uSaw" name="nameLabel" type="_rmWaxtydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rmuOMNydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rmuOMdydEeegOpQB8_uSaw" key="documentation" value="The name label."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rmx4kNydEeegOpQB8_uSaw" name="playButton" type="_rmWawtydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rmx4kdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rmx4ktydEeegOpQB8_uSaw" key="documentation" value="The play button."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rm1i8NydEeegOpQB8_uSaw" name="easyButton" type="_rmWawtydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rm1i8dydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rm1i8tydEeegOpQB8_uSaw" key="documentation" value="The easy button."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rm5NUNydEeegOpQB8_uSaw" name="mediumButton" type="_rmWawtydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rm5NUdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rm5NUtydEeegOpQB8_uSaw" key="documentation" value="The medium button."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rm83sNydEeegOpQB8_uSaw" name="hardButton" type="_rmWawtydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rm83sdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rm9ewNydEeegOpQB8_uSaw" key="documentation" value="The hard button."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rnBJINydEeegOpQB8_uSaw" name="quitButton" type="_rmWawtydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rnBJIdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rnBJItydEeegOpQB8_uSaw" key="documentation" value="The quit button."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rnK6INydEeegOpQB8_uSaw" name="actionButtons" visibility="private" isLeaf="true" type="_rmWawNydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rnLhMNydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rnLhMdydEeegOpQB8_uSaw" key="documentation" value="The action buttons."/>
+        </eAnnotations>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_rnLhMtydEeegOpQB8_uSaw" name="" type="_rmWawNydEeegOpQB8_uSaw" value="new ButtonGroup()"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rnPLkNydEeegOpQB8_uSaw" name="actionPanel" visibility="private" type="_rmUlkNydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rnPLkdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rnPLktydEeegOpQB8_uSaw" key="documentation" value="The action panel."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rnS18NydEeegOpQB8_uSaw" name="namePanel" visibility="private" type="_rmUlkNydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rnS18dydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rnS18tydEeegOpQB8_uSaw" key="documentation" value="The name panel."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_rnecINydEeegOpQB8_uSaw" name="MenuPanel" visibility="public">
+        <eAnnotations xmi:id="_rnecIdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rnecItydEeegOpQB8_uSaw" key="documentation" value=" Instantiates a new menu panel. This is what the user sees when the game is started, includes a field for the name, &#xD;&#xA; a set name button as well as play and quit buttons&#xD;&#xA; @param in_menu the in menu&#xD;&#xA; @param controller the controller&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_rnecI9ydEeegOpQB8_uSaw" name="in_menu" type="_rmXo49ydEeegOpQB8_uSaw"/>
+        <ownedParameter xmi:id="_rnecJNydEeegOpQB8_uSaw" name="controller" type="_rmXo4NydEeegOpQB8_uSaw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_rno0MNydEeegOpQB8_uSaw" name="paintComponent" visibility="public">
+        <ownedParameter xmi:id="_rno0MdydEeegOpQB8_uSaw" name="g" type="_rkMepdydEeegOpQB8_uSaw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_roBOsNydEeegOpQB8_uSaw" name="actionPerformed" visibility="public">
+        <ownedParameter xmi:id="_roBOsdydEeegOpQB8_uSaw" name="e" type="_rmVMp9ydEeegOpQB8_uSaw"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_rj8nBtydEeegOpQB8_uSaw" name="ImageScaler" visibility="public">
+      <eAnnotations xmi:id="_rj8nB9ydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+        <details xmi:id="_rj8nCNydEeegOpQB8_uSaw" key="documentation" value=" The Class ImageScaler.&#xD;&#xA;"/>
+      </eAnnotations>
+      <elementImport xmi:id="_roFgIdydEeegOpQB8_uSaw" importedElement="_roFgINydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_roGHMdydEeegOpQB8_uSaw" importedElement="_roGHMNydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_roGHMtydEeegOpQB8_uSaw" importedElement="_rkMeqNydEeegOpQB8_uSaw" visibility="private"/>
+      <ownedOperation xmi:id="_roGHM9ydEeegOpQB8_uSaw" name="ImageScaler" visibility="public">
+        <eAnnotations xmi:id="_roGHNNydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_roGHNdydEeegOpQB8_uSaw" key="documentation" value=" Instantiates a new image scaler.&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <ownedOperation xmi:id="_roIjcNydEeegOpQB8_uSaw" name="scaleImageToInputRatio" visibility="public">
+        <eAnnotations xmi:id="_roIjcdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_roIjctydEeegOpQB8_uSaw" key="documentation" value=" Scale image to input ratio.&#xD;&#xA; @param nonScaledImage the non scaled image&#xD;&#xA; @param xRatio the x ratio to scale the image to&#xD;&#xA; @param yRatio the y ratio to scale the image to&#xD;&#xA; @return the buffered image&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_roIjc9ydEeegOpQB8_uSaw" name="nonScaledImage" type="_rkMeqNydEeegOpQB8_uSaw"/>
+        <ownedParameter xmi:id="_roIjdNydEeegOpQB8_uSaw" name="xRatio">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_roIjddydEeegOpQB8_uSaw" name="yRatio">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_roIjdtydEeegOpQB8_uSaw" type="_rkMeqNydEeegOpQB8_uSaw" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_rj8nCdydEeegOpQB8_uSaw" name="ActiveGameStatePanel" visibility="public">
+      <eAnnotations xmi:id="_rj8nCtydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+        <details xmi:id="_rj8nC9ydEeegOpQB8_uSaw" key="documentation" value=" The Class ActiveGameStatePanel.&#xD;&#xA;"/>
+      </eAnnotations>
+      <elementImport xmi:id="_roQfQdydEeegOpQB8_uSaw" importedElement="_rkKpctydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_roQfQtydEeegOpQB8_uSaw" importedElement="_rlKH8dydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_roQfQ9ydEeegOpQB8_uSaw" importedElement="_rlJg4NydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_roRGUdydEeegOpQB8_uSaw" importedElement="_roRGUNydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_roRGUtydEeegOpQB8_uSaw" importedElement="_rmXo4NydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_roRGU9ydEeegOpQB8_uSaw" importedElement="_rkNFutydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_roRGVNydEeegOpQB8_uSaw" importedElement="_rkNFvdydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_roRGVdydEeegOpQB8_uSaw" importedElement="_rleRBtydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_roRtYdydEeegOpQB8_uSaw" importedElement="_roRtYNydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_roRtYtydEeegOpQB8_uSaw" importedElement="_rkkSFtydEeegOpQB8_uSaw" visibility="private"/>
+      <generalization xmi:id="_roQfQNydEeegOpQB8_uSaw" general="_rlJg4NydEeegOpQB8_uSaw"/>
+      <ownedAttribute xmi:id="_roUJoNydEeegOpQB8_uSaw" name="playerComponent" visibility="public" type="_rj91I9ydEeegOpQB8_uSaw" association="_ryL3UNydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_roUJodydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_roUJotydEeegOpQB8_uSaw" key="documentation" value="The player component."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_roV-0NydEeegOpQB8_uSaw" name="backgroundLayeredPane" visibility="public" type="_rj7_9dydEeegOpQB8_uSaw" association="_ryL3UtydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_roWl4NydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_roWl4dydEeegOpQB8_uSaw" key="documentation" value="The background layered pane."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_roYbENydEeegOpQB8_uSaw" name="interactableComponent" visibility="public" type="_rj8nANydEeegOpQB8_uSaw" association="_ryL3VNydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_roYbEdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_roYbEtydEeegOpQB8_uSaw" key="documentation" value="The interactable component."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_roa3UNydEeegOpQB8_uSaw" name="hudPane" visibility="public" type="_rj-cMNydEeegOpQB8_uSaw" association="_ryL3VtydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_roa3UdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_roa3UtydEeegOpQB8_uSaw" key="documentation" value="The hud pane."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rocsgNydEeegOpQB8_uSaw" name="stepOneArea" visibility="private" type="_roRGUNydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rocsgdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rocsgtydEeegOpQB8_uSaw" key="documentation" value="Step one area is our first pause state, used to give the user instructions in a tutorial."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rofIwNydEeegOpQB8_uSaw" name="stepTwoArea" visibility="private" type="_roRGUNydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rofIwdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rofIwtydEeegOpQB8_uSaw" key="documentation" value="Step two area is our second pause state, used to give the user instructions in a tutorial."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_rpTBENydEeegOpQB8_uSaw" name="ActiveGameStatePanel" visibility="public">
+        <eAnnotations xmi:id="_rpTBEdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rpTBEtydEeegOpQB8_uSaw" key="documentation" value=" Instantiates a new active game state panel. Combines all the models in the view so they can be displayed in &#xD;&#xA; our active Jpanel.&#xD;&#xA; @param playerModel the player model&#xD;&#xA; @param backgroundModels the background models&#xD;&#xA; @param controller the controller&#xD;&#xA; @param interactableModels the interactable models&#xD;&#xA; @param FinishLine the finish line, ended up not being used in our final project as we could not find a way to make it disappear on game restart&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_rpTBE9ydEeegOpQB8_uSaw" name="playerModel" type="_roRtYNydEeegOpQB8_uSaw"/>
+        <ownedParameter xmi:id="_rpTBFNydEeegOpQB8_uSaw" name="backgroundModels" type="_rlKH8dydEeegOpQB8_uSaw"/>
+        <ownedParameter xmi:id="_rpTBFdydEeegOpQB8_uSaw" name="controller" type="_rmXo4NydEeegOpQB8_uSaw"/>
+        <ownedParameter xmi:id="_rpTBFtydEeegOpQB8_uSaw" name="interactableModels" type="_rlKH8dydEeegOpQB8_uSaw"/>
+        <ownedParameter xmi:id="_rpTBF9ydEeegOpQB8_uSaw" name="FinishLine" type="_rkkSFtydEeegOpQB8_uSaw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_rpVdUNydEeegOpQB8_uSaw" name="addTutorialText" visibility="public">
+        <eAnnotations xmi:id="_rpVdUdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rpVdUtydEeegOpQB8_uSaw" key="documentation" value=" Adds the tutorial text using JtextArea so that the user can recieve instructions in the tutorial.&#xD;&#xA; @param step step is our designation for each pause state&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_rpVdU9ydEeegOpQB8_uSaw" name="step">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_rj9OENydEeegOpQB8_uSaw" name="View" visibility="public">
+      <eAnnotations xmi:id="_rj9OEdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+        <details xmi:id="_rj9OEtydEeegOpQB8_uSaw" key="documentation" value=" The Class View.&#xD;&#xA;"/>
+      </eAnnotations>
+      <elementImport xmi:id="_rpcyE9ydEeegOpQB8_uSaw" importedElement="_rpcyEtydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rpcyFNydEeegOpQB8_uSaw" importedElement="_rmVMp9ydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rpcyFdydEeegOpQB8_uSaw" importedElement="_rkKpctydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rpdZINydEeegOpQB8_uSaw" importedElement="_rlKH8dydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rpdZItydEeegOpQB8_uSaw" importedElement="_rpdZIdydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rpdZJNydEeegOpQB8_uSaw" importedElement="_rpdZI9ydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rpdZJtydEeegOpQB8_uSaw" importedElement="_rpdZJdydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rpdZJ9ydEeegOpQB8_uSaw" importedElement="_rpcyENydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rpdZKdydEeegOpQB8_uSaw" importedElement="_rpdZKNydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rpdZKtydEeegOpQB8_uSaw" importedElement="_rmXo4NydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rpdZK9ydEeegOpQB8_uSaw" importedElement="_rkNFutydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rpdZLNydEeegOpQB8_uSaw" importedElement="_rkNFvdydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rpeAMNydEeegOpQB8_uSaw" importedElement="_rleRBtydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rpeAMdydEeegOpQB8_uSaw" importedElement="_roRtYNydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rpeAMtydEeegOpQB8_uSaw" importedElement="_rkkSFtydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rpeANdydEeegOpQB8_uSaw" importedElement="_rpeANNydEeegOpQB8_uSaw" visibility="private"/>
+      <generalization xmi:id="_rpcyEdydEeegOpQB8_uSaw" general="_rpcyENydEeegOpQB8_uSaw"/>
+      <ownedAttribute xmi:id="_rpnKINydEeegOpQB8_uSaw" name="activeGameStatePanel" visibility="public" type="_rj8nCdydEeegOpQB8_uSaw" association="_ryL3WNydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rpnKIdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rpnKItydEeegOpQB8_uSaw" key="documentation" value="The active game state panel."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rprbkNydEeegOpQB8_uSaw" name="gameOverGameStatePanel" visibility="public" type="_rj91KdydEeegOpQB8_uSaw" association="_ryL3WtydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rprbkdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rprbktydEeegOpQB8_uSaw" key="documentation" value="The game over game state panel."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rpvtANydEeegOpQB8_uSaw" name="menuPanel" visibility="public" type="_rj8nA9ydEeegOpQB8_uSaw" association="_ryL3XNydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rpvtAdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rpvtAtydEeegOpQB8_uSaw" key="documentation" value="The menu panel."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rpz-cNydEeegOpQB8_uSaw" name="miniGameGameStatePanel" visibility="public" type="_rpeANNydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rpz-cdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rpz-ctydEeegOpQB8_uSaw" key="documentation" value="The mini game game state panel."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rp4P4NydEeegOpQB8_uSaw" name="controller" type="_rmXo4NydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rp4P4dydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rp4P4tydEeegOpQB8_uSaw" key="documentation" value="The controller."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_rqmooNydEeegOpQB8_uSaw" name="View" visibility="public">
+        <eAnnotations xmi:id="_rqmoodydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rqmootydEeegOpQB8_uSaw" key="documentation" value=" Instantiates a new view. This puts everything in the view together into one class so it can be easily modifiable&#xD;&#xA; @param playerModel the player model&#xD;&#xA; @param backgroundModels the background models&#xD;&#xA; @param controller the controller&#xD;&#xA; @param interactableModels the interactable models&#xD;&#xA; @param FinishLine the finish line&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_rqmoo9ydEeegOpQB8_uSaw" name="playerModel" type="_roRtYNydEeegOpQB8_uSaw"/>
+        <ownedParameter xmi:id="_rqmopNydEeegOpQB8_uSaw" name="backgroundModels" type="_rlKH8dydEeegOpQB8_uSaw"/>
+        <ownedParameter xmi:id="_rqmopdydEeegOpQB8_uSaw" name="controller" type="_rmXo4NydEeegOpQB8_uSaw"/>
+        <ownedParameter xmi:id="_rqmoptydEeegOpQB8_uSaw" name="interactableModels" type="_rlKH8dydEeegOpQB8_uSaw"/>
+        <ownedParameter xmi:id="_rqmop9ydEeegOpQB8_uSaw" name="FinishLine" type="_rkkSFtydEeegOpQB8_uSaw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_rqrhINydEeegOpQB8_uSaw" name="initializeKeyBindings" visibility="private">
+        <eAnnotations xmi:id="_rqrhIdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rqrhItydEeegOpQB8_uSaw" key="documentation" value=" Initialize key bindings. This is how we were able to change states in testing and attempt to root out bugs&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_rj9OE9ydEeegOpQB8_uSaw" name="ActivateActiveGameStateAction" visibility="private">
+        <eAnnotations xmi:id="_rj9OFNydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rj9OFdydEeegOpQB8_uSaw" key="documentation" value=" The Class ActivateActiveGameStateAction. On change to active gamestate this instantiates the state&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <generalization xmi:id="_rq15MNydEeegOpQB8_uSaw" general="_rpdZIdydEeegOpQB8_uSaw"/>
+        <ownedOperation xmi:id="_rrO6wNydEeegOpQB8_uSaw" name="actionPerformed" visibility="public">
+          <ownedParameter xmi:id="_rrO6wdydEeegOpQB8_uSaw" name="e" type="_rmVMp9ydEeegOpQB8_uSaw"/>
+        </ownedOperation>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_rj9OFtydEeegOpQB8_uSaw" name="ActivateMiniGameGameStateAction" visibility="private">
+        <eAnnotations xmi:id="_rj9OF9ydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rj9OGNydEeegOpQB8_uSaw" key="documentation" value=" The Class ActivateMiniGameGameStateAction. On change to the minigame this instantiates the state&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <generalization xmi:id="_rrkR8NydEeegOpQB8_uSaw" general="_rpdZIdydEeegOpQB8_uSaw"/>
+        <ownedOperation xmi:id="_rr8FYNydEeegOpQB8_uSaw" name="actionPerformed" visibility="public">
+          <ownedParameter xmi:id="_rr8FYdydEeegOpQB8_uSaw" name="e" type="_rmVMp9ydEeegOpQB8_uSaw"/>
+        </ownedOperation>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_rj9OGdydEeegOpQB8_uSaw" name="ActivateGameOverGameStateAction" visibility="private">
+        <eAnnotations xmi:id="_rj9OGtydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rj9OG9ydEeegOpQB8_uSaw" key="documentation" value=" The Class ActivateGameOverGameStateAction. Not used in our final edition&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <generalization xmi:id="_rsSDoNydEeegOpQB8_uSaw" general="_rpdZIdydEeegOpQB8_uSaw"/>
+        <ownedOperation xmi:id="_rsqeINydEeegOpQB8_uSaw" name="actionPerformed" visibility="public">
+          <ownedParameter xmi:id="_rsqeIdydEeegOpQB8_uSaw" name="e" type="_rmVMp9ydEeegOpQB8_uSaw"/>
+        </ownedOperation>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_rj9OHNydEeegOpQB8_uSaw" name="ChangeToAirLevelAction" visibility="private">
+        <eAnnotations xmi:id="_rj9OHdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rj9OHtydEeegOpQB8_uSaw" key="documentation" value=" The Class ChangeToAirLevelAction.&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <generalization xmi:id="_rs5usNydEeegOpQB8_uSaw" general="_rpdZIdydEeegOpQB8_uSaw"/>
+        <ownedOperation xmi:id="_rtdIUNydEeegOpQB8_uSaw" name="actionPerformed" visibility="public">
+          <ownedParameter xmi:id="_rtdIUdydEeegOpQB8_uSaw" name="e" type="_rmVMp9ydEeegOpQB8_uSaw"/>
+        </ownedOperation>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_rj9OH9ydEeegOpQB8_uSaw" name="ChangeToWaterLevelAction" visibility="private">
+        <eAnnotations xmi:id="_rj9OINydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rj9OIdydEeegOpQB8_uSaw" key="documentation" value=" The Class ChangeToWaterLevelAction. On change in levels this instantiates the state&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <generalization xmi:id="_rtp8oNydEeegOpQB8_uSaw" general="_rpdZIdydEeegOpQB8_uSaw"/>
+        <ownedOperation xmi:id="_rt6bUNydEeegOpQB8_uSaw" name="actionPerformed" visibility="public">
+          <ownedParameter xmi:id="_rt6bUdydEeegOpQB8_uSaw" name="e" type="_rmVMp9ydEeegOpQB8_uSaw"/>
+        </ownedOperation>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_rj91INydEeegOpQB8_uSaw" name="ResetLevelAction" visibility="private">
+        <eAnnotations xmi:id="_rj91IdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rj91ItydEeegOpQB8_uSaw" key="documentation" value=" The Class ResetLevelAction. Resets the level through the controller&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <generalization xmi:id="_ruFacNydEeegOpQB8_uSaw" general="_rpdZIdydEeegOpQB8_uSaw"/>
+        <ownedOperation xmi:id="_rudN4NydEeegOpQB8_uSaw" name="actionPerformed" visibility="public">
+          <ownedParameter xmi:id="_rudN4dydEeegOpQB8_uSaw" name="e" type="_rmVMp9ydEeegOpQB8_uSaw"/>
+        </ownedOperation>
+      </nestedClassifier>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_rj91I9ydEeegOpQB8_uSaw" name="PlayerComponent" visibility="package">
+      <eAnnotations xmi:id="_rj91JNydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+        <details xmi:id="_rj91JdydEeegOpQB8_uSaw" key="documentation" value=" The Class PlayerComponent.&#xD;&#xA;"/>
+      </eAnnotations>
+      <elementImport xmi:id="_rvKYgdydEeegOpQB8_uSaw" importedElement="_rkMepdydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rvK_kdydEeegOpQB8_uSaw" importedElement="_rvK_kNydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rvK_k9ydEeegOpQB8_uSaw" importedElement="_rvK_ktydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rvK_lNydEeegOpQB8_uSaw" importedElement="_rkMeqNydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rvK_ldydEeegOpQB8_uSaw" importedElement="_rkNFsNydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rvK_ltydEeegOpQB8_uSaw" importedElement="_rkNFstydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rvK_l9ydEeegOpQB8_uSaw" importedElement="_rkKpctydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rvK_mNydEeegOpQB8_uSaw" importedElement="_rkNFttydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rvLmoNydEeegOpQB8_uSaw" importedElement="_rkMeotydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rvLmodydEeegOpQB8_uSaw" importedElement="_rmXo4NydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rvLmotydEeegOpQB8_uSaw" importedElement="_rkNFutydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rvLmo9ydEeegOpQB8_uSaw" importedElement="_roRtYNydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rvLmpdydEeegOpQB8_uSaw" importedElement="_rvLmpNydEeegOpQB8_uSaw" visibility="private"/>
+      <generalization xmi:id="_rvKYgNydEeegOpQB8_uSaw" general="_rkMeotydEeegOpQB8_uSaw"/>
+      <ownedAttribute xmi:id="_rvOp8NydEeegOpQB8_uSaw" name="playerModel" visibility="private" type="_roRtYNydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rvOp8dydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rvPRANydEeegOpQB8_uSaw" key="documentation" value="The player model."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rvRtQNydEeegOpQB8_uSaw" name="controller" visibility="private" type="_rmXo4NydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rvRtQdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rvRtQtydEeegOpQB8_uSaw" key="documentation" value="The controller."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rvVXoNydEeegOpQB8_uSaw" name="birdSprite" visibility="private" type="_rkMeqNydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rvVXodydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rvVXotydEeegOpQB8_uSaw" key="documentation" value="The bird sprite."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rvXz4NydEeegOpQB8_uSaw" name="fishSprite" visibility="private" type="_rkMeqNydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rvXz4dydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rvXz4tydEeegOpQB8_uSaw" key="documentation" value="The fish sprite."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_rvhk4NydEeegOpQB8_uSaw" name="PlayerComponent">
+        <eAnnotations xmi:id="_rvhk4dydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rvhk4tydEeegOpQB8_uSaw" key="documentation" value=" Instantiates a new player component. This displays either a bird or a fish depending on the environment of the player&#xD;&#xA; @param playerModel the player model&#xD;&#xA; @param controller the controller&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_rvhk49ydEeegOpQB8_uSaw" name="playerModel" type="_roRtYNydEeegOpQB8_uSaw"/>
+        <ownedParameter xmi:id="_rvhk5NydEeegOpQB8_uSaw" name="controller" type="_rmXo4NydEeegOpQB8_uSaw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_rvqHwNydEeegOpQB8_uSaw" name="paintComponent" visibility="public">
+        <ownedParameter xmi:id="_rvqHwdydEeegOpQB8_uSaw" name="g" type="_rkMepdydEeegOpQB8_uSaw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_rvvAQNydEeegOpQB8_uSaw" name="setPlayerSpriteImages" visibility="public">
+        <eAnnotations xmi:id="_rvvAQdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rvvAQtydEeegOpQB8_uSaw" key="documentation" value=" Sets the player sprite images.&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+      </ownedOperation>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_rj91JtydEeegOpQB8_uSaw" name="PlayerComponentMouseListener" visibility="private">
+        <eAnnotations xmi:id="_rj91J9ydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rj91KNydEeegOpQB8_uSaw" key="documentation" value=" The listener interface for receiving playerComponentMouse events.&#xD;&#xA; The class that is interested in processing a playerComponentMouse&#xD;&#xA; event implements this interface, and the object created&#xD;&#xA; with that class is registered with a component using the&#xD;&#xA; component's &lt;code>addPlayerComponentMouseListener&lt;code> method. When&#xD;&#xA; the playerComponentMouse event occurs, that object's appropriate&#xD;&#xA; method is invoked.&#xD;&#xA; @see PlayerComponentMouseEvent&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedOperation xmi:id="_rwBUINydEeegOpQB8_uSaw" name="mouseClicked" visibility="public">
+          <ownedParameter xmi:id="_rwBUIdydEeegOpQB8_uSaw" name="mouseEvent" type="_rvK_kNydEeegOpQB8_uSaw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_rwOIcNydEeegOpQB8_uSaw" name="mouseEntered" visibility="public">
+          <ownedParameter xmi:id="_rwOIcdydEeegOpQB8_uSaw" name="mouseEvent" type="_rvK_kNydEeegOpQB8_uSaw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_rwaVsNydEeegOpQB8_uSaw" name="mouseExited" visibility="public">
+          <ownedParameter xmi:id="_rwaVsdydEeegOpQB8_uSaw" name="mouseEvent" type="_rvK_kNydEeegOpQB8_uSaw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_rwl74NydEeegOpQB8_uSaw" name="mousePressed" visibility="public">
+          <ownedParameter xmi:id="_rwl74dydEeegOpQB8_uSaw" name="mouseEvent" type="_rvK_kNydEeegOpQB8_uSaw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_rwyJINydEeegOpQB8_uSaw" name="mouseReleased" visibility="public">
+          <ownedParameter xmi:id="_rwyJIdydEeegOpQB8_uSaw" name="mouseEvent" type="_rvK_kNydEeegOpQB8_uSaw"/>
+        </ownedOperation>
+      </nestedClassifier>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_rj91KdydEeegOpQB8_uSaw" name="GameOverGameStatePanel" visibility="public">
+      <eAnnotations xmi:id="_rj91KtydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+        <details xmi:id="_rj91K9ydEeegOpQB8_uSaw" key="documentation" value=" The Class GameOverGameStatePanel.&#xD;&#xA;"/>
+      </eAnnotations>
+      <elementImport xmi:id="_rw3osdydEeegOpQB8_uSaw" importedElement="_rkKpctydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rw3ostydEeegOpQB8_uSaw" importedElement="_rmWaxtydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rw3os9ydEeegOpQB8_uSaw" importedElement="_rmUlkNydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rw3otNydEeegOpQB8_uSaw" importedElement="_rmXo4NydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rw3ottydEeegOpQB8_uSaw" importedElement="_rw3otdydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rw3ot9ydEeegOpQB8_uSaw" importedElement="_rkNFutydEeegOpQB8_uSaw" visibility="private"/>
+      <generalization xmi:id="_rw3osNydEeegOpQB8_uSaw" general="_rmUlkNydEeegOpQB8_uSaw"/>
+      <ownedAttribute xmi:id="_rw420NydEeegOpQB8_uSaw" name="controller" type="_rmXo4NydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rw5d4NydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rw5d4dydEeegOpQB8_uSaw" key="documentation" value="The controller."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rw6sANydEeegOpQB8_uSaw" name="gameOverGameState" type="_rw3otdydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rw6sAdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rw6sAtydEeegOpQB8_uSaw" key="documentation" value="The game over game state."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_rw9IQNydEeegOpQB8_uSaw" name="GameOverGameStatePanel" visibility="public">
+        <eAnnotations xmi:id="_rw9IQdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rw9IQtydEeegOpQB8_uSaw" key="documentation" value=" Instantiates a new game over game state panel. This panel was not used in our final project and was replaced with &#xD;&#xA; ScoreBoard Panel&#xD;&#xA; @param controller the controller&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_rw9IQ9ydEeegOpQB8_uSaw" name="controller" type="_rmXo4NydEeegOpQB8_uSaw"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_rj91LNydEeegOpQB8_uSaw" name="ScoreBoardPanel" visibility="public">
+      <eAnnotations xmi:id="_rj91LdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+        <details xmi:id="_rj91LtydEeegOpQB8_uSaw" key="documentation" value=" The Class ScoreBoardPanel.&#xD;&#xA;"/>
+      </eAnnotations>
+      <elementImport xmi:id="_rxGSMNydEeegOpQB8_uSaw" importedElement="_rmUlktydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rxGSMdydEeegOpQB8_uSaw" importedElement="_rkMepdydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rxGSMtydEeegOpQB8_uSaw" importedElement="_rmVMp9ydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rxGSM9ydEeegOpQB8_uSaw" importedElement="_rmNQ0dydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rxGSNNydEeegOpQB8_uSaw" importedElement="_rkKpctydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rxGSNdydEeegOpQB8_uSaw" importedElement="_rlKH8dydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rxGSN9ydEeegOpQB8_uSaw" importedElement="_rxGSNtydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rxGSONydEeegOpQB8_uSaw" importedElement="_rmWawNydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rxGSOdydEeegOpQB8_uSaw" importedElement="_rmWawtydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rxGSOtydEeegOpQB8_uSaw" importedElement="_rmWaxtydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rxGSO9ydEeegOpQB8_uSaw" importedElement="_rmUlkNydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rxGSPNydEeegOpQB8_uSaw" importedElement="_rmXo4NydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rxG5QdydEeegOpQB8_uSaw" importedElement="_rxG5QNydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rxG5Q9ydEeegOpQB8_uSaw" importedElement="_rxG5QtydEeegOpQB8_uSaw" visibility="private"/>
+      <generalization xmi:id="_rxFrINydEeegOpQB8_uSaw" general="_rmUlkNydEeegOpQB8_uSaw"/>
+      <ownedAttribute xmi:id="_rxIucNydEeegOpQB8_uSaw" name="scoreBoard" type="_rxG5QNydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rxIucdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rxIuctydEeegOpQB8_uSaw" key="documentation" value="The score board."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rxMY0NydEeegOpQB8_uSaw" name="scoreBoardEntryLabels" type="_rmWaxtydEeegOpQB8_uSaw" isOrdered="true" isUnique="false">
+        <eAnnotations xmi:id="_rxMY0dydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rxMY0tydEeegOpQB8_uSaw" key="documentation" value="The score board entry labels."/>
+        </eAnnotations>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rxMY1NydEeegOpQB8_uSaw" value="*"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_rxMY09ydEeegOpQB8_uSaw" name="" type="_rmWaxtydEeegOpQB8_uSaw" value="new ArrayList&lt;JLabel>()"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rxO1ENydEeegOpQB8_uSaw" name="replayButton" type="_rmWawtydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rxO1EdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rxO1EtydEeegOpQB8_uSaw" key="documentation" value="The replay button."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rxQqQNydEeegOpQB8_uSaw" name="quitButton" type="_rmWawtydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rxQqQdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rxQqQtydEeegOpQB8_uSaw" key="documentation" value="The quit button."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rxSfcNydEeegOpQB8_uSaw" name="actionButtons" visibility="private" isLeaf="true" type="_rmWawNydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rxSfcdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rxSfctydEeegOpQB8_uSaw" key="documentation" value="The action buttons."/>
+        </eAnnotations>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_rxSfc9ydEeegOpQB8_uSaw" name="" type="_rmWawNydEeegOpQB8_uSaw" value="new ButtonGroup()"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rxUUoNydEeegOpQB8_uSaw" name="panel" visibility="private" type="_rmUlkNydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rxUUodydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rxU7sNydEeegOpQB8_uSaw" key="documentation" value="The panel."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rxWw4NydEeegOpQB8_uSaw" name="controller" visibility="private" type="_rmXo4NydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rxWw4dydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rxWw4tydEeegOpQB8_uSaw" key="documentation" value="The controller."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_rxeFoNydEeegOpQB8_uSaw" name="ScoreBoardPanel" visibility="public">
+        <eAnnotations xmi:id="_rxeFodydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rxeFotydEeegOpQB8_uSaw" key="documentation" value=" Instantiates a new score board panel. This is what the user sees when they complete the game or it is ended&#xD;&#xA; This contains scores of previous users who have played the game as well as Replay and quit buttons&#xD;&#xA; @param scoreBoard the score board&#xD;&#xA; @param controller the controller&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_rxeFo9ydEeegOpQB8_uSaw" name="scoreBoard" type="_rxG5QNydEeegOpQB8_uSaw"/>
+        <ownedParameter xmi:id="_rxeFpNydEeegOpQB8_uSaw" name="controller" type="_rmXo4NydEeegOpQB8_uSaw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_rxmBcNydEeegOpQB8_uSaw" name="paintComponent" visibility="public">
+        <ownedParameter xmi:id="_rxmBcdydEeegOpQB8_uSaw" name="g" type="_rkMepdydEeegOpQB8_uSaw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_rxvycNydEeegOpQB8_uSaw" name="actionPerformed" visibility="public">
+        <ownedParameter xmi:id="_rxvycdydEeegOpQB8_uSaw" name="e" type="_rmVMp9ydEeegOpQB8_uSaw"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_rj-cMNydEeegOpQB8_uSaw" name="HUDPane" visibility="public">
+      <eAnnotations xmi:id="_rj-cMdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+        <details xmi:id="_rj-cMtydEeegOpQB8_uSaw" key="documentation" value=" The Class HUDPane.&#xD;&#xA;"/>
+      </eAnnotations>
+      <elementImport xmi:id="_rx15EdydEeegOpQB8_uSaw" importedElement="_rkMepdydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rx15EtydEeegOpQB8_uSaw" importedElement="_rkKpctydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rx15E9ydEeegOpQB8_uSaw" importedElement="_rmWaxtydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rx15FNydEeegOpQB8_uSaw" importedElement="_rmUlkNydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rx2gINydEeegOpQB8_uSaw" importedElement="_rkNFutydEeegOpQB8_uSaw" visibility="private"/>
+      <elementImport xmi:id="_rx2gIdydEeegOpQB8_uSaw" importedElement="_roRtYNydEeegOpQB8_uSaw" visibility="private"/>
+      <generalization xmi:id="_rx15ENydEeegOpQB8_uSaw" general="_rmUlkNydEeegOpQB8_uSaw"/>
+      <ownedAttribute xmi:id="_rx3uQNydEeegOpQB8_uSaw" name="playerModel" visibility="private" type="_roRtYNydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rx3uQdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rx3uQtydEeegOpQB8_uSaw" key="documentation" value="The player model."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rx5jcNydEeegOpQB8_uSaw" name="healthLabel" visibility="private" type="_rmWaxtydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rx5jcdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rx5jctydEeegOpQB8_uSaw" key="documentation" value="The health label."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rx7YoNydEeegOpQB8_uSaw" name="scoreLabel" visibility="private" type="_rmWaxtydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rx7YodydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rx7YotydEeegOpQB8_uSaw" key="documentation" value="The score label."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rx8mwNydEeegOpQB8_uSaw" name="scoreStreakLabel" visibility="private" type="_rmWaxtydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rx9N0NydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rx9N0dydEeegOpQB8_uSaw" key="documentation" value="The score streak label."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_rx-b8NydEeegOpQB8_uSaw" name="poweredUpLabel" visibility="private" type="_rmWaxtydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_rx-b8dydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_rx-b8tydEeegOpQB8_uSaw" key="documentation" value="The powered up label."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ryARINydEeegOpQB8_uSaw" name="playerNameLabel" visibility="private" type="_rmWaxtydEeegOpQB8_uSaw">
+        <eAnnotations xmi:id="_ryARIdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_ryARItydEeegOpQB8_uSaw" key="documentation" value="The player name label."/>
+        </eAnnotations>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_ryDUcNydEeegOpQB8_uSaw" name="HUDPane" visibility="public">
+        <eAnnotations xmi:id="_ryDUcdydEeegOpQB8_uSaw" source="http://www.eclipse.org/umlgen/reverse/java/doc">
+          <details xmi:id="_ryDUctydEeegOpQB8_uSaw" key="documentation" value=" Instantiates a new HUD pane. This view takes in the PlayerModel and shows this information to the user in a HUD form&#xD;&#xA; @param playerModel the player model&#xD;&#xA;&#x9;"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_ryDUc9ydEeegOpQB8_uSaw" name="playerModel" type="_roRtYNydEeegOpQB8_uSaw"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_ryJbENydEeegOpQB8_uSaw" name="paintComponent" visibility="public">
+        <ownedParameter xmi:id="_ryJbEdydEeegOpQB8_uSaw" name="g" type="_rkMepdydEeegOpQB8_uSaw"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ryLQQNydEeegOpQB8_uSaw" name="backgroundComponents_target" memberEnd="_rlNyUNydEeegOpQB8_uSaw _ryLQQdydEeegOpQB8_uSaw">
+      <ownedEnd xmi:id="_ryLQQdydEeegOpQB8_uSaw" name="target" type="_rj7_9dydEeegOpQB8_uSaw" association="_ryLQQNydEeegOpQB8_uSaw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ryL3UNydEeegOpQB8_uSaw" name="playerComponent_target" memberEnd="_roUJoNydEeegOpQB8_uSaw _ryL3UdydEeegOpQB8_uSaw">
+      <ownedEnd xmi:id="_ryL3UdydEeegOpQB8_uSaw" name="target" type="_rj8nCdydEeegOpQB8_uSaw" association="_ryL3UNydEeegOpQB8_uSaw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ryL3UtydEeegOpQB8_uSaw" name="backgroundLayeredPane_target" memberEnd="_roV-0NydEeegOpQB8_uSaw _ryL3U9ydEeegOpQB8_uSaw">
+      <ownedEnd xmi:id="_ryL3U9ydEeegOpQB8_uSaw" name="target" type="_rj8nCdydEeegOpQB8_uSaw" association="_ryL3UtydEeegOpQB8_uSaw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ryL3VNydEeegOpQB8_uSaw" name="interactableComponent_target" memberEnd="_roYbENydEeegOpQB8_uSaw _ryL3VdydEeegOpQB8_uSaw">
+      <ownedEnd xmi:id="_ryL3VdydEeegOpQB8_uSaw" name="target" type="_rj8nCdydEeegOpQB8_uSaw" association="_ryL3VNydEeegOpQB8_uSaw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ryL3VtydEeegOpQB8_uSaw" name="hudPane_target" memberEnd="_roa3UNydEeegOpQB8_uSaw _ryL3V9ydEeegOpQB8_uSaw">
+      <ownedEnd xmi:id="_ryL3V9ydEeegOpQB8_uSaw" name="target" type="_rj8nCdydEeegOpQB8_uSaw" association="_ryL3VtydEeegOpQB8_uSaw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ryL3WNydEeegOpQB8_uSaw" name="activeGameStatePanel_target" memberEnd="_rpnKINydEeegOpQB8_uSaw _ryL3WdydEeegOpQB8_uSaw">
+      <ownedEnd xmi:id="_ryL3WdydEeegOpQB8_uSaw" name="target" type="_rj9OENydEeegOpQB8_uSaw" association="_ryL3WNydEeegOpQB8_uSaw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ryL3WtydEeegOpQB8_uSaw" name="gameOverGameStatePanel_target" memberEnd="_rprbkNydEeegOpQB8_uSaw _ryL3W9ydEeegOpQB8_uSaw">
+      <ownedEnd xmi:id="_ryL3W9ydEeegOpQB8_uSaw" name="target" type="_rj9OENydEeegOpQB8_uSaw" association="_ryL3WtydEeegOpQB8_uSaw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_ryL3XNydEeegOpQB8_uSaw" name="menuPanel_target" memberEnd="_rpvtANydEeegOpQB8_uSaw _ryL3XdydEeegOpQB8_uSaw">
+      <ownedEnd xmi:id="_ryL3XdydEeegOpQB8_uSaw" name="target" type="_rj9OENydEeegOpQB8_uSaw" association="_ryL3XNydEeegOpQB8_uSaw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_ryZ5wNydEeegOpQB8_uSaw" name="views_awt" client="_rj7Y7tydEeegOpQB8_uSaw" supplier="_rkMepNydEeegOpQB8_uSaw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_ryZ5wdydEeegOpQB8_uSaw" name="views_image" client="_rj7Y7tydEeegOpQB8_uSaw" supplier="_rkMep9ydEeegOpQB8_uSaw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_ryZ5wtydEeegOpQB8_uSaw" name="views_io" client="_rj7Y7tydEeegOpQB8_uSaw" supplier="_rkKpcdydEeegOpQB8_uSaw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_ryZ5w9ydEeegOpQB8_uSaw" name="views_imageio" client="_rj7Y7tydEeegOpQB8_uSaw" supplier="_rkNFtdydEeegOpQB8_uSaw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_ryZ5xNydEeegOpQB8_uSaw" name="views_swing" client="_rj7Y7tydEeegOpQB8_uSaw" supplier="_rkMeodydEeegOpQB8_uSaw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_ryZ5xdydEeegOpQB8_uSaw" name="views_controller" client="_rj7Y7tydEeegOpQB8_uSaw" supplier="_rkNFudydEeegOpQB8_uSaw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_ryZ5xtydEeegOpQB8_uSaw" name="views_models" client="_rj7Y7tydEeegOpQB8_uSaw" supplier="_rkNFvNydEeegOpQB8_uSaw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_ryZ5x9ydEeegOpQB8_uSaw" name="views_util" client="_rj7Y7tydEeegOpQB8_uSaw" supplier="_rlKH8NydEeegOpQB8_uSaw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_ryZ5yNydEeegOpQB8_uSaw" name="views_event" client="_rj7Y7tydEeegOpQB8_uSaw" supplier="_rmNQ0NydEeegOpQB8_uSaw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_ryZ5ydydEeegOpQB8_uSaw" name="views_border" client="_rj7Y7tydEeegOpQB8_uSaw" supplier="_rmXB1dydEeegOpQB8_uSaw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_ryZ5ytydEeegOpQB8_uSaw" name="views_quizMiniGame" client="_rj7Y7tydEeegOpQB8_uSaw" supplier="_rpeAM9ydEeegOpQB8_uSaw"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_rkKpcNydEeegOpQB8_uSaw" name="java">
+    <packagedElement xmi:type="uml:Package" xmi:id="_rkKpcdydEeegOpQB8_uSaw" name="io">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rkKpctydEeegOpQB8_uSaw" name="Serializable"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rkNFsNydEeegOpQB8_uSaw" name="File"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rkNFstydEeegOpQB8_uSaw" name="IOException"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rmVzs9ydEeegOpQB8_uSaw" name="FileNotFoundException"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_rkMepNydEeegOpQB8_uSaw" name="awt">
+      <packagedElement xmi:type="uml:Package" xmi:id="_rkMep9ydEeegOpQB8_uSaw" name="image">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_rkMeqNydEeegOpQB8_uSaw" name="BufferedImage"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rkMepdydEeegOpQB8_uSaw" name="Graphics"/>
+      <packagedElement xmi:type="uml:Package" xmi:id="_rmNQ0NydEeegOpQB8_uSaw" name="event">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_rmNQ0dydEeegOpQB8_uSaw" name="ActionListener"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_rmVMp9ydEeegOpQB8_uSaw" name="ActionEvent"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_rvK_kNydEeegOpQB8_uSaw" name="MouseEvent"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_rvK_ktydEeegOpQB8_uSaw" name="MouseListener"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rmUlktydEeegOpQB8_uSaw" name="Component"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rmVMoNydEeegOpQB8_uSaw" name="Dimension"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rmVMo9ydEeegOpQB8_uSaw" name="Insets"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rmVMpdydEeegOpQB8_uSaw" name="Rectangle"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_roFgINydEeegOpQB8_uSaw" name="Graphics2D"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_roGHMNydEeegOpQB8_uSaw" name="Image"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rpcyEtydEeegOpQB8_uSaw" name="Frame"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_rlKH8NydEeegOpQB8_uSaw" name="util">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rlKH8dydEeegOpQB8_uSaw" name="ArrayList"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rmVzt9ydEeegOpQB8_uSaw" name="Scanner"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_rkMeoNydEeegOpQB8_uSaw" name="javax">
+    <packagedElement xmi:type="uml:Package" xmi:id="_rkMeodydEeegOpQB8_uSaw" name="swing">
+      <packagedElement xmi:type="uml:Package" xmi:id="_rmXB1dydEeegOpQB8_uSaw" name="border">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_rmXB1tydEeegOpQB8_uSaw" name="EmptyBorder"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rkMeotydEeegOpQB8_uSaw" name="JComponent"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rlJg4NydEeegOpQB8_uSaw" name="JLayeredPane"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rmUlkNydEeegOpQB8_uSaw" name="JPanel"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rmWawNydEeegOpQB8_uSaw" name="ButtonGroup"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rmWawtydEeegOpQB8_uSaw" name="JButton"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rmWaxNydEeegOpQB8_uSaw" name="JFormattedTextField"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rmWaxtydEeegOpQB8_uSaw" name="JLabel"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rmXB0dydEeegOpQB8_uSaw" name="SwingConstants"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rmXB09ydEeegOpQB8_uSaw" name="UIManager"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_roRGUNydEeegOpQB8_uSaw" name="JTextArea"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rpcyENydEeegOpQB8_uSaw" name="JFrame"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rpdZIdydEeegOpQB8_uSaw" name="AbstractAction"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rpdZI9ydEeegOpQB8_uSaw" name="ActionMap"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rpdZJdydEeegOpQB8_uSaw" name="InputMap"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rpdZKNydEeegOpQB8_uSaw" name="KeyStroke"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rxGSNtydEeegOpQB8_uSaw" name="BoxLayout"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_rkNFtdydEeegOpQB8_uSaw" name="imageio">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_rkNFttydEeegOpQB8_uSaw" name="ImageIO"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_rkNFudydEeegOpQB8_uSaw" name="controller">
+    <packagedElement xmi:type="uml:DataType" xmi:id="_rkNFutydEeegOpQB8_uSaw" name="Settings"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_rmXo4NydEeegOpQB8_uSaw" name="Controller"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_rw3otdydEeegOpQB8_uSaw" name="GameOverGameState"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_rkNFvNydEeegOpQB8_uSaw" name="models">
+    <packagedElement xmi:type="uml:DataType" xmi:id="_rkNFvdydEeegOpQB8_uSaw" name="Background"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_rkkSFtydEeegOpQB8_uSaw" name="FinishLine"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_rleRBtydEeegOpQB8_uSaw" name="Interactable"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_rmXo49ydEeegOpQB8_uSaw" name="Menu"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_roRtYNydEeegOpQB8_uSaw" name="Player"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_rvLmpNydEeegOpQB8_uSaw" name="PlayerAnimalType"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_rxG5QNydEeegOpQB8_uSaw" name="ScoreBoard"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_rxG5QtydEeegOpQB8_uSaw" name="ScoreBoardEntry"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_rpeAM9ydEeegOpQB8_uSaw" name="quizMiniGame">
+    <packagedElement xmi:type="uml:DataType" xmi:id="_rpeANNydEeegOpQB8_uSaw" name="MiniGameGameStatePanel"/>
+  </packagedElement>
+</uml:Model>
