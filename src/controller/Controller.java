@@ -16,7 +16,6 @@ import models.finishLine;
 import views.ScoreBoardPanel;
 import views.View;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class Controller.
  */

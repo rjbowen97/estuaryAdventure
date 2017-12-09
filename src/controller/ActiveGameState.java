@@ -10,9 +10,8 @@ import models.Player;
 import models.finishLine;
 import sun.security.krb5.internal.TicketFlags;
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class ActiveGameState.
+ * This class contains the main gameplay elements, such as the food, predators, and player
  */
 public class ActiveGameState implements GameStateInterface, Serializable {
 
@@ -31,10 +30,11 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	/** The finish line model. */
 	public finishLine finishLineModel;
 
-	/** The is tutorial. */
+	/** Is set to true on the first runthrough of the game */
 	public boolean isTutorial = true;
 
-	/** The tick number. */
+	/** Keeps track of what tick the main gameloop is on. Particularly important for 'releasing'
+	 * foods and predators. */
 	private int tickNumber = 0;
 
 	/**
@@ -44,7 +44,7 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	 * @param playerModel Player model constructed in the gameWrapper constructor
 	 * @param interactableModels An array of interactable models
 	 * @param backgroundModels An array of background models
-	 * @param finishLine the finish line
+	 * @param finishLine the finish line model
 	 */
 	public ActiveGameState(Controller controller, Player playerModel, ArrayList<Interactable> interactableModels, ArrayList<Background> backgroundModels, finishLine finishLine) {
 		this.controller = controller;
@@ -55,10 +55,11 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	}
 
 	/**
-	 * This function is called every tick when the active game state is the current game state of the game.
+	 * Called every tick when the active game state is the current game state of the game.
+	 * The tutorial script is iterated through if the current game is a tutorial
 	 */
 	public void onTick() {
-
+		
 		if (isTutorial) {
 			tickTutorialScript();
 		}
@@ -68,6 +69,9 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 		setTickNumber(getTickNumber() + 1);
 	}
 	
+	/**
+	 * A tick based system that guides the player through how to play the game
+	 */
 	private void tickTutorialScript() {
 		if (tickNumber == 1) {
 			controller.activeGameState.interactableModels.get(0).activationTick = this.getTickNumber() + 1;
@@ -100,6 +104,7 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 
 	/**
 	 * Calls helper functions to tick various models in the active game state object.
+	 * This also checks for collisions after the models are ticked
 	 */
 	private void tickModels() {
 		tickBackgroundModels();
@@ -142,7 +147,7 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	}
 
 	/**
-	 * Tick finish line model.
+	 * Ticks finish line model.
 	 */
 	private void tickFinishLineModel() {
 	
@@ -166,8 +171,8 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 
 	/**
 	 * Detects player-interactable collisions. Goes through each interactable in the interactableModels arrayList,
-	 * And checks if the current interactable is active. If the model is active, and its hitbox is overlapping with the
-	 * player hitbox, then the appropriate functions are called
+	 * and checks if the current interactable is active. If the model is active, and its hitBox is overlapping with the
+	 * player hitBox, then the appropriate functions are called
 	 */
 	private void detectPlayerInteractableCollisions() {
 		for (Interactable interactableModel : interactableModels) {
@@ -191,7 +196,7 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	}
 
 	/**
-	 * Checks if the game state needs to be change.
+	 * Checks if the game state needs to be changed.
 	 */
 	private void changeGameStateIfNeeded() {
 		if (playerModel.getHealth() <= 0) {
@@ -213,7 +218,7 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	}
 
 	/**
-	 * Called when a mouseclick is detected.
+	 * Called when a mouse click is detected.
 	 *
 	 * @param mouseEvent the mouse event
 	 */
