@@ -114,7 +114,6 @@ public class ScoreBoardPanel extends JPanel implements Serializable, ActionListe
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getActionCommand() == "replay") {
-			System.out.println("swag");
 			controller.resetLevel();
 			
 			if (controller.activeGameState.interactableModels.get(0).isInWater) {				

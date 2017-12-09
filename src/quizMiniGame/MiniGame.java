@@ -22,14 +22,15 @@ public class MiniGame extends GameModel implements Serializable {
 	/** The current player answer. */
 	private String currentPlayerAnswer = "";
 	
-	/** The is active. */
-	public boolean isActive = true;
-	
 	/** The correct answer count. */
 	public int correctAnswerCount = 0;
 	
 	/** The question limit. */
 	public int questionLimit;
+	
+	/** The is active. */
+	public boolean isActive = true;
+	
 	
 	/**
 	 * Instantiates a new mini game.
@@ -98,6 +99,21 @@ public class MiniGame extends GameModel implements Serializable {
 	}
 	
 
+	/**
+	 * Reset mini game.
+	 */
+	public void resetMiniGame() {
+		this.correctAnswerCount = 0;
+		this.resetCurrentPlayerAnswer();
+	}
+
+	/**
+	 * Reset current player answer.
+	 */
+	private void resetCurrentPlayerAnswer() {
+		this.currentPlayerAnswer = "";
+	}
+
 	/* (non-Javadoc)
 	 * @see models.GameModel#setHitbox()
 	 */
@@ -117,21 +133,6 @@ public class MiniGame extends GameModel implements Serializable {
 	 */
 	@Override
 	public void reset() {
-	}
-	
-	/**
-	 * Reset mini game.
-	 */
-	public void resetMiniGame() {
-		this.correctAnswerCount = 0;
-		this.resetCurrentPlayerAnswer();
-	}
-	
-	/**
-	 * Reset current player answer.
-	 */
-	private void resetCurrentPlayerAnswer() {
-		this.currentPlayerAnswer = "";
 	}
 }
 

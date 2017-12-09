@@ -40,12 +40,11 @@ public class Controller implements Serializable {
 	/** The score board. */
 	public ScoreBoard scoreBoard;
 	
-	/** The view. */
-	public View view;
-	
 	/** The score board panel. */
 	public ScoreBoardPanel scoreBoardPanel;
 
+	/** The view. */
+	public View view;
 	
 	/**
 	 * Instantiates a new controller.
@@ -103,8 +102,8 @@ public class Controller implements Serializable {
 	public void setInteractablesToTutorialSet() {
 		
 		ArrayList<Interactable> tutorialInteractables =  new ArrayList<Interactable>();
-		
 		this.activeGameState.interactableModels = tutorialInteractables;
+		
 		Interactable goodInteractable = new Interactable(-1);
 		goodInteractable.setFood(true);
 		this.activeGameState.interactableModels.add(goodInteractable);
@@ -171,7 +170,6 @@ public class Controller implements Serializable {
 			for (Interactable interactable : activeGameState.interactableModels) {
 				interactable.isInWater = false;
 			}
-			
 		}
 		
 		else {
@@ -186,7 +184,6 @@ public class Controller implements Serializable {
 			}
 		}
 	}
-	
 	
 	/**
 	 * resets the current level.

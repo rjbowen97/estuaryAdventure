@@ -60,41 +60,42 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	public void onTick() {
 
 		if (isTutorial) {
-			
-			
-			if (tickNumber == 1) {
-				controller.activeGameState.interactableModels.get(0).activationTick = this.getTickNumber() + 1;
-			}
-			
-			else if (tickNumber > 25 && tickNumber < 50) {
-				controller.triggerTutorialStepDisplay(0);
-				controller.pauseActiveGameStateModels();
-				
-			}
-			
-			else if (tickNumber > 50 && tickNumber < 75) {
-				controller.resumeActiveGameStateModels();
-			}
-			
-			else if (tickNumber == 100) {
-				controller.activeGameState.interactableModels.get(1).activationTick = this.getTickNumber() + 1;
-			}
-			
-			else if (tickNumber > 125 && tickNumber < 150) {
-				controller.triggerTutorialStepDisplay(1);
-				controller.pauseActiveGameStateModels();
-			}
-			
-			else if (tickNumber > 150) {
-				controller.resumeActiveGameStateModels();
-				controller.activeGameState.finishLineModel.activationTick = 151;
-				controller.triggerTutorialStepDisplay(2);
-			}
+			tickTutorialScript();
 		}
 		
 		tickModels();
 		changeGameStateIfNeeded();
 		setTickNumber(getTickNumber() + 1);
+	}
+	
+	private void tickTutorialScript() {
+		if (tickNumber == 1) {
+			controller.activeGameState.interactableModels.get(0).activationTick = this.getTickNumber() + 1;
+		}
+		
+		else if (tickNumber > 25 && tickNumber < 50) {
+			controller.triggerTutorialStepDisplay(0);
+			controller.pauseActiveGameStateModels();
+		}
+		
+		else if (tickNumber > 50 && tickNumber < 75) {
+			controller.resumeActiveGameStateModels();
+		}
+		
+		else if (tickNumber == 100) {
+			controller.activeGameState.interactableModels.get(1).activationTick = this.getTickNumber() + 1;
+		}
+		
+		else if (tickNumber > 125 && tickNumber < 150) {
+			controller.triggerTutorialStepDisplay(1);
+			controller.pauseActiveGameStateModels();
+		}
+		
+		else if (tickNumber > 150) {
+			controller.resumeActiveGameStateModels();
+			controller.activeGameState.finishLineModel.activationTick = 151;
+			controller.triggerTutorialStepDisplay(2);
+		}
 	}
 
 	/**
@@ -106,21 +107,6 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 		tickPlayerModel();
 		tickFinishLineModel();
 		detectCollisions();
-	}
-
-	/**
-	 * Tick finish line model.
-	 */
-	private void tickFinishLineModel() {
-
-		if (finishLineModel.getActivationTick() == getTickNumber()) {
-			finishLineModel.activate();
-		}
-
-		if (finishLineModel.isActive) {
-			this.finishLineModel.onTick();
-		}
-
 	}
 
 	/**
@@ -136,7 +122,7 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	 * Ticks each interactable model in the interactableModels ArrayList.
 	 */
 	private void tickInteractableModels() {
-		for (Interactable interactableModel :interactableModels) {
+		for (Interactable interactableModel : interactableModels) {
 
 			if (interactableModel.getActivationTick() == getTickNumber()) {
 				interactableModel.activate();
@@ -156,20 +142,26 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	}
 
 	/**
+	 * Tick finish line model.
+	 */
+	private void tickFinishLineModel() {
+	
+		if (finishLineModel.getActivationTick() == getTickNumber()) {
+			finishLineModel.activate();
+		}
+	
+		if (finishLineModel.isActive) {
+			this.finishLineModel.onTick();
+		}
+	
+	}
+
+	/**
 	 * Calls helper functions to handle collision detections.
 	 */
 	private void detectCollisions() {
 		detectPlayerInteractableCollisions();
 		detectPlayerFinishLineCollision();
-	}
-
-	/**
-	 * Detect player finish line collision.
-	 */
-	private void detectPlayerFinishLineCollision() {
-		if (finishLineModel.getHitbox().isOverlapping(playerModel.getHitbox())) {
-			finishLineModel.onCollisionWithPlayerModel(playerModel);
-		}
 	}
 
 	/**
@@ -190,6 +182,15 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	}
 
 	/**
+	 * Detect player finish line collision.
+	 */
+	private void detectPlayerFinishLineCollision() {
+		if (finishLineModel.getHitbox().isOverlapping(playerModel.getHitbox())) {
+			finishLineModel.onCollisionWithPlayerModel(playerModel);
+		}
+	}
+
+	/**
 	 * Checks if the game state needs to be change.
 	 */
 	private void changeGameStateIfNeeded() {
@@ -200,6 +201,15 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 		if (playerModel.getScoreStreak() >= Settings.getMiniGameRequiredScoreStreak()) {
 			controller.changeGameStateFromActiveToMinigame();;
 		}
+	}
+
+	/**
+	 * Sets the tick number.
+	 *
+	 * @param tickNumber the tickNumber to set
+	 */
+	public void setTickNumber(int tickNumber) {
+		this.tickNumber = tickNumber;
 	}
 
 	/**
@@ -218,15 +228,6 @@ public class ActiveGameState implements GameStateInterface, Serializable {
 	 */
 	public int getTickNumber() {
 		return tickNumber;
-	}
-
-	/**
-	 * Sets the tick number.
-	 *
-	 * @param tickNumber the tickNumber to set
-	 */
-	public void setTickNumber(int tickNumber) {
-		this.tickNumber = tickNumber;
 	}
 
 

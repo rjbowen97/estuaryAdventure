@@ -21,28 +21,28 @@ public class MiniGameGameStatePanel extends JPanel implements ActionListener, Se
 
 	/** The mini game. */
 	MiniGame miniGame;
-	
+
 	/** The controller. */
 	Controller controller;
 
 	/** The question label. */
 	JLabel questionLabel;
-	
+
 	/** The answer A button. */
 	JButton answerAButton;
-	
+
 	/** The answer B button. */
 	JButton answerBButton;
-	
+
 	/** The answer C button. */
 	JButton answerCButton;
 
 	/** The correct answer count label. */
 	JLabel correctAnswerCountLabel;
-	
+
 	/** The correct answer label. */
 	JLabel correctAnswerLabel;
-	
+
 	/**
 	 * Instantiates a new mini game game state panel.
 	 *
@@ -50,10 +50,10 @@ public class MiniGameGameStatePanel extends JPanel implements ActionListener, Se
 	 * @param controller the controller
 	 */
 	public MiniGameGameStatePanel(MiniGame miniGame, Controller controller) {
-		
+
 		this.miniGame = miniGame;
 		this.controller = controller;
-		
+
 		this.questionLabel = new JLabel(miniGame.getCurrentQuestionAndAnswerPair().question);
 		this.add(this.questionLabel);
 
@@ -64,7 +64,7 @@ public class MiniGameGameStatePanel extends JPanel implements ActionListener, Se
 		answerAButton.setMargin(new Insets(0,0,0,0));
 		answerBButton.setMargin(new Insets(0,0,0,0));
 		answerCButton.setMargin(new Insets(0,0,0,0)); 
-		
+
 		answerAButton.setActionCommand("answerA");
 		answerAButton.addActionListener(this);
 
@@ -77,19 +77,19 @@ public class MiniGameGameStatePanel extends JPanel implements ActionListener, Se
 		this.add(answerAButton);
 		this.add(answerBButton);
 		this.add(answerCButton);
-		
+
 		this.correctAnswerCountLabel = new JLabel("SCORE ADDED: " + String.valueOf(miniGame.correctAnswerCount));
 		this.add(this.correctAnswerCountLabel);
-		
+
 		this.correctAnswerLabel = new JLabel();
 		this.correctAnswerLabel.setVisible(false);
 		this.add(correctAnswerLabel);
-		
+
 		this.setBounds(400, 400, 500, 500);
-		
+
 		this.setVisible(true);
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see javax.swing.JComponent#paintComponent(java.awt.Graphics)
 	 */
@@ -101,7 +101,20 @@ public class MiniGameGameStatePanel extends JPanel implements ActionListener, Se
 		answerAButton.setText(miniGame.getCurrentQuestionAndAnswerPair().answerA);
 		answerBButton.setText(miniGame.getCurrentQuestionAndAnswerPair().answerB);
 		answerCButton.setText(miniGame.getCurrentQuestionAndAnswerPair().answerC);
-		correctAnswerLabel.setText("Sorry, " + miniGame.getCurrentQuestionAndAnswerPair().correctAnswer + " was the correct answer!");
+
+
+		String correctAnswer = miniGame.getCurrentQuestionAndAnswerPair().correctAnswer;
+		if (correctAnswer.equals("A")) {
+			correctAnswerLabel.setText("Sorry, " + miniGame.getCurrentQuestionAndAnswerPair().answerA + " was the correct answer!");
+		}
+		
+		else if (correctAnswer.equals("B")) {
+			correctAnswerLabel.setText("Sorry, " + miniGame.getCurrentQuestionAndAnswerPair().answerB + " was the correct answer!");
+		}
+		
+		else if (correctAnswer.equals("C")) {
+			correctAnswerLabel.setText("Sorry, " + miniGame.getCurrentQuestionAndAnswerPair().answerC + " was the correct answer!");
+		}
 	}
 
 	/* (non-Javadoc)
@@ -121,7 +134,7 @@ public class MiniGameGameStatePanel extends JPanel implements ActionListener, Se
 			controller.miniGameGameState.setMiniGameCurrentPlayerAnswer("C");
 		}
 	}
-	
+
 	/**
 	 * Display correct answer.
 	 */
@@ -130,14 +143,14 @@ public class MiniGameGameStatePanel extends JPanel implements ActionListener, Se
 		answerBButton.setVisible(false);
 		answerCButton.setVisible(false);
 		correctAnswerLabel.setVisible(true);
-		
+
 	}
 
 	public void hideCorrectAnswer() {
 		answerAButton.setVisible(true);
 		answerBButton.setVisible(true);
 		answerCButton.setVisible(true);
-		
+
 		correctAnswerLabel.setVisible(false);
 	}
 }
