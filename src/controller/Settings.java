@@ -24,7 +24,7 @@ public class Settings implements Serializable {
 		InputStream globalSettingsPropertiesInputStream = null;
 
 		try {
-			globalSettingsPropertiesInputStream = new FileInputStream("globalSettings.properties"); 
+			globalSettingsPropertiesInputStream = new FileInputStream("globalSettings.properties");
 			globalSettings.load(globalSettingsPropertiesInputStream);
 
 		} catch (IOException ioException) {
